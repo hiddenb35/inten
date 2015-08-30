@@ -1,0 +1,10 @@
+.idea
+.DS_Store
+*~
+*.bak
+
+/fuel/app/logs/*/*/*
+/fuel/app/cache/*/*
+/fuel/app/config/crypt.php
+
+/vagrant/.vagrant/
