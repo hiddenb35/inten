@@ -46,6 +46,10 @@ echo '------------------------------------------------------------'
 echo '# FuelPHP Setting'
 echo '------------------------------------------------------------'
 curl get.fuelphp.com/oil | sh
+cd /vagrant
+oil refine migrate --version=0
+oil refine migrate
+oil refine migrate:current
 
 
 echo '############################################################'
