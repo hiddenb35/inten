@@ -1,8 +1,9 @@
 <?php echo $header; ?>
 <?php echo $sidebar; ?>
 
-<section class="content">
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
     <?php echo $content; ?>
-</section>
+</div>
 
 <?php echo $footer; ?>
