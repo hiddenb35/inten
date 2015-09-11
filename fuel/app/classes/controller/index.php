@@ -1,14 +1,16 @@
 <?php
 
-Class Controller_Index extends Controller
+Class Controller_Index extends Controller_Based
 {
 	public function action_index()
 	{
-		return View::forge('index');
+		$this->template->header->set('title', 'TOPページ');
+		$this->template->content = View::forge('index');
 	}
 
 	public function action_404()
 	{
-		return View::forge('404');
+		$this->template->header->set('title', '404ﾍﾟｰｼﾞ');
+		$this->template->content = View::forge('404');
 	}
 }
