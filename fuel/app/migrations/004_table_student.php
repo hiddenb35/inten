@@ -35,8 +35,20 @@ class Table_student
 		));
 
 		\Auth::instance('studentauth')
-			->create_student('k013c0000','pass','1999/12/12','test@test.com',0,'太郎','タロウ',
-				'生徒','セイト',1);
+			->create_student('k013c1129','watanabe','1994/9/3','ywatanabeznzt@gmail.com',0,'優樹','ユウキ',
+				'渡辺','ワタナベ',1);
+		\Auth::instance('studentauth')
+			->create_student('k013c1112','narumi','1994/10/13','k013c1112@it-neec.jp',0,'翔太','ショウタ',
+				'鳴海','ナルミ',1);
+		\Auth::instance('studentauth')
+			->create_student('k013c1345','kasai','1994/12/30','k013c1345@it-neec.jp',0,'啓太','ケイタ',
+				'笠井','カサイ',1);
+		\Auth::instance('studentauth')
+			->create_student('k013c1140','kato','1994/10/12','k013c1140@it-neec.jp',0,'拓磨','タクマ',
+				'加藤','カトウ',1);
+		\Auth::instance('studentauth')
+			->create_student('k013c1118','ashizawa','1993/5/25','k013c1118@it-neec.jp',0,'勇輝','ユウキ',
+				'芦沢','アシザワ',1);
 	}
 
 	public function down()
