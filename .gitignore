@@ -8,5 +8,8 @@
 /fuel/app/cache/*/*
 /fuel/app/config/crypt.php
 /fuel/app/config/*/migrations.php
+/fuel/app/views/tests/*
 
 /vagrant/.vagrant/
+
+!.gitkeep
