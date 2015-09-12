@@ -3,7 +3,7 @@
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-    <?php echo $content; ?>
+	<?php echo $content; ?>
 </div>
 
 <?php echo $footer; ?>
