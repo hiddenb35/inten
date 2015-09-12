@@ -50,6 +50,7 @@ cd /vagrant
 oil refine migrate --version=0
 oil refine migrate
 oil refine migrate:current
+oil refine install
 
 
 echo '############################################################'
