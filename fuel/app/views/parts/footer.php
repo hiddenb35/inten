@@ -13,8 +13,6 @@
         </script>
         <!-- Bootstrap 3.3.2 JS -->
         <?php echo Asset::js('bootstrap.min.js'); ?>
-        <!-- Morris.js charts -->
-        <?php echo Asset::js('raphael-min.js'); ?>
         <!-- Sparkline -->
         <?php echo Asset::js('jquery.sparkline.min.js'); ?>
         <!-- jvectormap -->
@@ -35,7 +33,5 @@
         <?php echo Asset::js('fastclick.min.js'); ?>
         <!-- AdminLTE App -->
         <?php echo Asset::js('app.min.js'); ?>
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <?php echo Asset::js('dashboard.js'); ?>
     </body>
 </html>
