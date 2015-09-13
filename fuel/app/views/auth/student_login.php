@@ -20,10 +20,8 @@
 						<input type="password" name="password" value="">
 					</td>
 				</tr>
-				<tr>
-					<input type="submit" value="ログイン">
-				</tr>
 			</form>
 		</table>
+		<button type="submit">ログイン</button>
 	</div>
 </div>
