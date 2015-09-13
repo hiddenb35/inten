@@ -3,7 +3,7 @@
 	<hr>
 	<div>
 		<table>
-			<form action="/auth/login" method="post" value="">
+			<form action="/auth/tlogin" method="post" value="">
 				<tr>
 					<th>
 						ユーザーID
@@ -20,10 +20,8 @@
 						<input type="password" name="password" value="">
 					</td>
 				</tr>
-				<tr>
-					<input type="submit" value="ログイン">
-				</tr>
 			</form>
 		</table>
+		<button type="submit">ログイン</button>
 	</div>
 </div>
