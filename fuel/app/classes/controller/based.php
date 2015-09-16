@@ -1,9 +1,5 @@
 <?php
 
-/**
- * Class Controller_Based
- * ベースとなる継承用のコントローラ
- */
 Class Controller_Based extends Controller_Template
 {
 	public function before()
