@@ -3,13 +3,13 @@
 // todo Viewができ次第、生徒用・教員用に対応
 class Controller_Auth extends Controller_Based
 {
-	public function action_login()
+	public function action_slogin()
 	{
 		$this->template->header->set('title', '生徒用ログインページ');
-		$this->template->content = View::forge('student_login');
+		$this->template->content = View::forge('auth/student_login');
 	}
 
-	public function post_login()
+	public function post_slogin()
 	{
 		$username = Input::post('username');
 		$password = Input::post('password');
@@ -22,7 +22,7 @@ class Controller_Auth extends Controller_Based
 		}
 		else
 		{
-			Response::redirect('auth/login');
+			Response::redirect('auth/slogin');
 		}
 	}
 }
