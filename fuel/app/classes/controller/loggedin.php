@@ -1,6 +1,5 @@
 <?php
 
-// todo リダイレクト先の確認
 class Controller_Loggedin extends Controller_Based
 {
 	public function before()
@@ -11,7 +10,7 @@ class Controller_Loggedin extends Controller_Based
 
 		if (( ! $sauth->check()) && ( ! $tauth->check()))
 		{
-			Response::redirect('auth/login');
+			Response::redirect('auth/slogin');
 		}
 	}
 }
