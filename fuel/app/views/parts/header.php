@@ -11,9 +11,9 @@
 		<!-- Bootstrap 3.3.5 -->
 		<?php echo Asset::css('bootstrap.min.css'); ?>
 		<!-- FontAwesome 4.3.0 -->
-		<?php echo Asset::css('font-awesome.min.css'); ?>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 		<!-- Ionicons 2.0.0 -->
-		<?php echo Asset::css('ionicons.min.css'); ?>
+		<link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
 		<!-- Theme style -->
 		<?php echo Asset::css('AdminLTE.min.css'); ?>
 		<!-- AdminLTE Skins. Choose a skin from the css/skins
