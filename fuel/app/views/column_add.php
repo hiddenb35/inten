@@ -1,3 +1,13 @@
+<section class="content-header">
+    <h1>
+        授業追加
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
 <div id="column_add">
     <form class="form-horizontal">
         <div class="form-group">
@@ -24,27 +34,28 @@
         <div class="form-group">
             <label class="control-label" for="class_id">クラスID</label>
             <div class="controls">
-                <input type="text" class="input-xlarge" id="class_id">
+                <div>
+                    <select name="class_id" size="1">
+                        <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
+                        <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
+                        <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
+                        <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
+                        <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
+                        <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
+                        <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
+                        <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
+                        <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
+                        <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
+                        <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
+                    </select>
+                </div>
+
             </div>
         </div>
-        <div>
-            <select name="class_id" size="1">
-                <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
-                <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
-                <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
-                <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
-                <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
-                <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
-                <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
-                <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
-                <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
-                <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
-                <option value="サンプル1">サンプル1</option><!-- 芦沢ゾーン -->
-            </select>
-        </div>
-        
+
         <button type="button" class="btn btn-primary">登録</button>
         <button type="reset" class="btn btn-warning">キャンセル</button>
 
     </form>
 </div>
+</section>
