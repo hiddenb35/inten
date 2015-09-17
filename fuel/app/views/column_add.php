@@ -44,5 +44,6 @@
         
         <button type="button" class="btn btn-primary">登録</button>
         <button type="reset" class="btn btn-warning">キャンセル</button>
+
     </form>
 </div>
