@@ -38,11 +38,12 @@
         <div class="form-group">
             <label class="control-label" for="classid">クラスID</label>
             <div class="controls">
-                <input type="text" class="input-xlarge" id="classid">
+                <input type="text" class="input-xlarge" id="class_id">
             </div>
         </div>
         
         <button type="button" class="btn btn-primary">登録</button>
-        <button type="button" class="btn btn-warning">キャンセル</button>
+        <button type="reset" class="btn btn-warning">キャンセル</button>
+
     </form>
 </div>
