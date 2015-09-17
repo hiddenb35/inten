@@ -3,7 +3,7 @@
         <div class="form-group">
             <label for="college_name" class="control-label">カレッジ名</label>
             <div class="controls">
-                <input type="text" class="input-xxlarge" id="college_name">
+                <input type="text" class="input-xxlarge" id="college_name" name="name">
             </div>
         </div>
         <div class="form-group">
