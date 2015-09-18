@@ -13,7 +13,7 @@
         <div class="form-group">
             <label for="current_pass" class="control-label">現在のパスワード</label>
             <div class="controls">
-                <input type="text" class="input-xlarge" id="current_pass" name="current_password">
+                <input type="password" class="input-xlarge" id="current_pass" name="current_password">
             </div>
         </div>
 
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group">
-            <button type="button" class="btn btn-primary">変更</button>
+            <button type="submit" class="btn btn-primary">変更</button>
             <button type="reset" class="btn btn-warning">キャンセル</button>
         </div>
     </form>
