@@ -4,7 +4,7 @@
 		時間割
 	</h1>
 	<ol class="breadcrumb">
-		<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+		<li><a href="#"><i class="fa ion-clock"></i> Home</a></li>
 	</ol>
 </section>
 <!-- Main content -->

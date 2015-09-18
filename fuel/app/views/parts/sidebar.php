@@ -5,9 +5,9 @@
 		<ul class="sidebar-menu">
 			<li class="header">MAIN NAVIGATION</li>
 			<li class="treeview">
-				<?php echo Html::anchor('/',
-					'<i class="fa fa-dashboard"></i> <span>time table</span> <i class="fa fa-angle-left pull-right"></i>');
-				?>
+				<a href="/">
+					<i class="fa ion-clock"></i> <span>時間割表示</span>
+				</a>
 			</li>
 		</ul>
 	</section>
