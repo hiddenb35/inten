@@ -12,7 +12,7 @@ Class Controller_Viewtest extends Controller_Based
 			throw new HttpNotFoundException;
 		}
 
-		$this->template->header->set('title', 'ViewTest');
+		$this->template->title = 'ViewTest';
 		$this->template->content = $view;
 	}
 }
