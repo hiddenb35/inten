@@ -9,7 +9,7 @@
 <!-- Main content -->
 <section class="content">
 <div id="pass_update">
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="post">
         <div class="form-group">
             <label for="current_pass" class="control-label">現在のパスワード</label>
             <div class="controls">
