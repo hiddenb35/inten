@@ -9,7 +9,7 @@
 <!-- Main content -->
 <section class="content">
 <div id="login">
-    <form class="form-horizontal">
+    <form class="form-horizontal"　method="post">
         <div class="form-group">
             <div class="input-prepend">
                 <span class="add-on"><i class="ion-social-github"></i></span>
