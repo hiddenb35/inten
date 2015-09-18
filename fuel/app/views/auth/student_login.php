@@ -19,11 +19,11 @@
         <div class="form-group">
             <div class="input-prepend">
                 <span class="add-on"><i class="ion-android-lock"></i></span>
-                <input type="text" class="input-xlarge" id="pass" name="password" placeholder="パスワード">
+                <input type="password" class="input-xlarge" id="pass" name="password" placeholder="パスワード">
             </div>
         </div>
 
-        <button type="button" class="btn btn-primary">ログイン</button>
+        <button type="submit" class="btn btn-primary">ログイン</button>
  
     </form>
 </div>
