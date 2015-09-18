@@ -49,22 +49,18 @@
 		<div class="wrapper">
 			<header class="main-header">
 				<!-- Logo -->
-				<?php echo Html::anchor('/',
-					'<!-- mini logo for sidebar mini 50x50 pixels -->
+				<a href="/" class="logo">
+					<!-- mini logo for sidebar mini 50x50 pixels -->
 					<span class="logo-mini"><b>A</b>LT</span>
 					<!-- logo for regular state and mobile devices -->
-					<span class="logo-lg"><b>Admin</b>LTE</span>',
-					array('class' => 'logo'));
-				?>
+					<span class="logo-lg"><b>Admin</b>LTE</span>
+				</a>
 				<!-- Header Navbar: style can be found in header.less -->
 				<nav class="navbar navbar-static-top" role="navigation">
 					<!-- Sidebar toggle button-->
-					<?php echo Html::anchor('#',
-						'<span class="sr-only">Toggle navigation</span>',
-						array('class' => 'sidebar-toggle',
-								'data-toggle' => 'offcanvas',
-								'role' => 'button'));
-					?>
+					<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+						<span class="sr-only">Toggle navigation</span>
+					</a>
 					<div class="navbar-custom-menu">
 						<ul class="nav navbar-nav">
 							<!-- 案１ -->
@@ -83,7 +79,7 @@
 											<a href="" class="btn btn-default btn-flat">プロフィール</a>
 										</div>
 										<div class="pull-right">
-											<a href="/auth/logput" class="btn btn-default btn-flat">ログアウト</a>
+											<a href="/auth/logout" class="btn btn-default btn-flat">ログアウト</a>
 										</div>
 									</li>
 								</ul>
