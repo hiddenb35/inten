@@ -24,11 +24,19 @@ class Table_student
 			'created_at'      => array('type' => 'int', 'comment' => '作成日時'),
 			'updated_at'      => array('type' => 'int', 'comment' => '更新日時'),
 			'class_id'        => array('type' => 'int', 'unsigned' => true, 'comment' => 'クラスID'),
+			'major_id'        => array('type' => 'int', 'unsigned' => true, 'null' => true, 'comment' => '専攻ID'),
 		), array('id'), true, false, null, array(
 			array(
 				'key'       => 'class_id',
 				'reference' => array(
 					'table'  => 'class',
+					'column' => 'id',
+				),
+			),
+			array(
+				'key' => 'major_id',
+				'reference' => array(
+					'table' => 'major',
 					'column' => 'id',
 				),
 			),
