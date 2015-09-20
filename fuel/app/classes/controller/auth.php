@@ -47,4 +47,29 @@ class Controller_Auth extends Controller_Based
 			Response::redirect('auth/tlogin');
 		}
 	}
+
+	public function action_logout()
+	{
+		if(Auth::check())
+		{
+			if(Auth::instance('studentauth')->check())
+			{
+				Auth::logout();
+				Response::redirect('auth/slogin');
+			}
+			elseif(Auth::instance('teacherauth')->check())
+			{
+				Auth::logout();
+				Response::redirect('auth/tlogin');
+			}
+			else
+			{
+				throw new HttpServerErrorException;
+			}
+		}
+		else
+		{
+			throw new HttpNotFoundException;
+		}
+	}
 }
