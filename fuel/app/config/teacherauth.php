@@ -5,7 +5,7 @@ return array(
 	'db_write_connection' => null,
 	'table_name'          => 'teacher',
 	'table_columns'       => array('*'),
-	'guest_login'         => true,
+	'guest_login'         => false,
 	'multiple_logins'     => false,
 	'remember_me'         => array(
 		'enabled'     => false,
