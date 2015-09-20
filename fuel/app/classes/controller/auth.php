@@ -10,6 +10,11 @@ class Controller_Auth extends Controller_Based
 			$password = Input::post('password');
 			$auth = Auth::instance('studentauth');
 
+			if(Auth::instance('teacherauth')->check())
+			{
+				Auth::logout();
+			}
+
 			if($auth->login($username, $password))
 			{
 				Response::redirect('/');
@@ -32,6 +37,11 @@ class Controller_Auth extends Controller_Based
 			$password = Input::post('password');
 
 			$auth = Auth::instance('teacherauth');
+
+			if(Auth::instance('studentauth')->check())
+			{
+				Auth::logout();
+			}
 
 			if($auth->login($username, $password))
 			{
