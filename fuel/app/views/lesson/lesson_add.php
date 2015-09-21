@@ -8,12 +8,12 @@
 </section>
 <!-- Main content -->
 <section class="content">
-<div id="column_add">
-    <form class="form-horizontal">
+<div id="LESSON_ADD">
+    <form class="form-horizontal" method="post">
         <div class="form-group">
             <label class="control-label" for="column">授業名</label>
             <div class="controls">
-                <input type="text" class="input-xlarge" id="column" name="name">
+                <input type="text" class="input-xlarge" id="name" name="name">
             </div>
         </div>
 
@@ -25,12 +25,12 @@
         </label>
 
         <div class="form-group">
-            <label class="control-label" for="unit">総単位数</label>
+            <label class="control-label" for="sum_credit">総単位数</label>
             <div class="controls">
-                <input type="text" class="input-mini" id="unit" name="sum_credit">
+                <input type="text" class="input-mini" id="sum_credit" name="sum_credit">
             </div>
         </div>
-       
+
         <div class="form-group">
             <label class="control-label" for="class_id">クラスID</label>
             <div class="controls">
@@ -53,7 +53,7 @@
             </div>
         </div>
 
-        <button type="button" class="btn btn-primary">登録</button>
+        <button type="submit" class="btn btn-primary">登録</button>
         <button type="reset" class="btn btn-warning">キャンセル</button>
 
     </form>

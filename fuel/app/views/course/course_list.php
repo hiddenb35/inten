@@ -8,7 +8,7 @@
 </section>
 <!-- Main content -->
 <section class="content">
-<div id="DEPT_LIST">
+<div id="COURSE_LIST">
     <form class="form-horizontal" method="get">
         <div class="form-group">
             <label for="name">学科名</label>

@@ -8,7 +8,7 @@
 </section>
 <!-- Main content -->
 <section class="content">
-<div id="DEPT_EDIT">
+<div id="COURSE_EDIT">
     <form class="form-horizontal" method="post">
 
         <div class="form-group">
