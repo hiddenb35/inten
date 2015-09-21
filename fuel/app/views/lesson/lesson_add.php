@@ -9,7 +9,7 @@
 <!-- Main content -->
 <section class="content">
 <div id="LESSON_ADD">
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="post">
         <div class="form-group">
             <label class="control-label" for="column">授業名</label>
             <div class="controls">
