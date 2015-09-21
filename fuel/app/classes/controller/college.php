@@ -11,7 +11,7 @@ class Controller_College extends Controller_Loggedin
 	public function action_edit()
 	{
 		$this->template->title = 'カレッジの編集';
-		$this->template->content = View::forge('college/college_update');
+		$this->template->content = View::forge('college/college_edit');
 	}
 
 	public function action_list()
