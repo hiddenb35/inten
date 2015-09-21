@@ -1,7 +1,9 @@
 <?php
 
-class Controller_Loggedin extends Controller_Based
+class Controller_Loggedin extends Controller_Template
 {
+
+	public $template = 'template/after_login/template';
 	/**
 	 * @var \Auth\Auth_Driver $auth
 	 */
@@ -24,6 +26,10 @@ class Controller_Loggedin extends Controller_Based
 			'full_name_kana' => $this->get_full_name_kana(),
 			'email' => $this->get_email(),
 		);
+
+		$this->template->header  = View::forge('template/after_login/header');
+		$this->template->sidebar = View::forge('template/after_login/sidebar');
+		$this->template->footer  = View::forge('template/after_login/footer');
 		$this->template->set_global('user_info', $user_info);
 
 	}

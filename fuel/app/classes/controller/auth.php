@@ -1,7 +1,9 @@
 <?php
 
-class Controller_Auth extends Controller_Based
+class Controller_Auth extends Controller_Template
 {
+	public $template = 'template/before_login/template';
+
 	public function action_slogin()
 	{
 		if(Input::method() === 'POST')
@@ -82,45 +84,9 @@ class Controller_Auth extends Controller_Based
 		}
 	}
 
-	public function action_pass_update()
+	public function action_404()
 	{
-		if(!Auth::check())
-		{
-			throw new HttpNotFoundException;
-		}
-
-		$title = 'パスワード変更';
-
-		if(Input::method() === 'POST')
-		{
-			list($auth) = array_values(Auth::verified());
-
-			$val = Validation::forge();
-
-			// todo 現在のパスワードの検証
-			$val->add('current_password', '現在のパスワード')
-				->add_rule('required');
-			$val->add('new_password', '新規パスワード')
-				->add_rule('required')
-				->add_rule('min_length', 4)
-				->add_rule('max_length', 255);
-			$val->add('new_password_confirm', '新規パスワード(確認)')
-				->add_rule('required')
-				->add_rule('match_field', 'new_password');
-
-			if($val->run())
-			{
-				// todo 実際のパスワード変更処理
-				$title = 'パスワードを変更しました';
-			}
-			else
-			{
-				// todo viewへのエラーメッセージのセット
-				$title = 'パスワード変更エラー';
-			}
-		}
-
-		$this->template->title = $title;
-		$this->template->content = View::forge('auth/pass_update');
+		$this->template->title = '404ページ';
+		$this->template->content = View::forge('404');
 	}
 }
