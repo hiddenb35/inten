@@ -1,6 +1,6 @@
 <?php
 
-Class Controller_Viewtest extends Controller_Based
+Class Controller_Viewtest extends Controller_Loggedin
 {
 	public function router($action, $params)
 	{
