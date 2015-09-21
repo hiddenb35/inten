@@ -8,7 +8,7 @@
 </section>
 <!-- Main content -->
 <section class="content">
-<div id="COLLEGE_UPDATE">
+<div id="COLLEGE_EDIT">
     <form class="form-horizontal" method="post">
         <div class="form-group">
             <label for="name" class="control-label">カレッジ名</label>
