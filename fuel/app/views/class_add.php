@@ -9,12 +9,11 @@
 <!-- Main content -->
 <section class="content">
 <div id="CLASS_ADD">
-    <form class="form-horizontal">
-
+    <form class="form-horizontal" method="post">
         <div class="form-group">
-            <label for="class_name" class="control-label">クラス名</label>
+            <label for="name" class="control-label">クラス名</label>
             <div class="controls">
-                <input type="text" class="input-xlarge" id="class_name" name="name">
+                <input type="text" class="input-xlarge" id="name" name="name">
             </div>
         </div>
 
