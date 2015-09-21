@@ -20,17 +20,38 @@ class Provider
 
 		/* 学科 */
 		\DB::insert('course')->columns(array('code','name','year_system','created_at','updated_at','college_id'))
-		   ->values(array('IS', 'ITスペシャリスト科', 4, time(), 0, 1))
-		   ->values(array('CD', '情報処理科', 2, time(), 0, 1))
-		   ->values(array('NT', 'パソコン・ネットワーク科', 2, time(), 0, 1))
-		   ->values(array('J2', '情報ビジネス科', 2, time(), 0, 1))
-		   ->values(array('BD', '放送・映画科', 2, time(), 0, 2))
-		   ->values(array('AD', '声優・俳優科', 2, time(), 0, 2))
-		   ->values(array('MU', 'ミュージックアーティスト科', 2, time(), 0, 3))
-		   ->values(array('CE', 'コンサート・イベント科', 2, time(), 0, 3))
-		   ->values(array('E2', '電子・電気科', 2, time(), 0, 4))
-		   ->values(array('ID', 'CAD設計製図科', 2, time(), 0, 4))
-		   ->execute();
+		   ->values(array('IS', 'ITスペシャリスト科'      , 4, time(), 0, 1))
+		   ->values(array('CD', '情報処理科'              , 2, time(), 0, 1))
+		   ->values(array('NT', 'パソコン・ネットワーク科' , 2, time(), 0, 1))
+		   ->values(array('J2', '情報ビジネス科'          , 2, time(), 0, 1))
+
+		   ->values(array('BD', '放送・映画科',            2, time(), 0, 2))
+		   ->values(array('AD', '声優・俳優科',            2, time(), 0, 2))
+		   ->values(array('SA', 'マンガ・アニメーション科', 2, time(), 0, 2))
+		   ->values(array('GS', 'ゲームクリエイター科',     2, time(), 0, 2))
+		   ->values(array('CG', 'CGクリエイター科',         2, time(), 0, 2))
+		   ->values(array('L4', 'クリエイティブラボ科',     2, time(), 0, 2))
+
+		   ->values(array('MU', 'ミュージックアーティスト科',   2, time(), 0, 3))
+		   ->values(array('CE', 'コンサート・イベント科',       2, time(), 0, 3))
+		   ->values(array('MD', 'レコーディングクリエイター科', 2, time(), 0, 3))
+		   ->values(array('DP', 'ダンスパフォーマンス科',       2, time(), 0, 3))
+
+		   ->values(array('E2', '電子・電気科',   2, time(), 0, 4))
+		   ->values(array('ID', 'CAD設計製図科',  2, time(), 0, 4))
+		   ->values(array('B2', '環境・バイオ科', 2, time(), 0, 4))
+		   ->values(array('UB', '建築設計科',     2, time(), 0, 4))
+		   ->values(array('U4', '建築学科',       2, time(), 0, 4))
+
+			->values(array('MA', 'グラフィックデザイン科',  2, time(), 0, 5))
+			->values(array('WB', 'Webデザイン科',          2, time(), 0, 5))
+			->values(array('D1', 'インテリアデザイン科',    2, time(), 0, 5))
+			->values(array('D2', 'プロダクトデザイン科',    2, time(), 0, 5))
+
+			->values(array('X1', '臨床工学専攻科一年制', 2, time(), 0, 6))
+			->values(array('M1', '医療秘書・事務科',     2, time(), 0, 6))
+			->values(array('M3', '診療情報管理士科',     2, time(), 0, 6))
+			->execute();
 
 		/* クラス */
 		\DB::insert('class')->columns(array('name','created_at','updated_at','course_id'))
