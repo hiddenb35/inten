@@ -20,13 +20,6 @@ class Table_major
 			),
 		));
 
-		\DB::insert('major')->columns(array('name', 'course_id'))
-			->values(array('システム専攻', 1))
-			->values(array('Web専攻', 1))
-			->values(array('組み込み専攻', 1))
-			->values(array('ネットワーク専攻', 1))
-			->values(array('セキュリティ専攻', 1))
-			->execute();
 	}
 
 	public function down()

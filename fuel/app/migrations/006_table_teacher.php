@@ -25,14 +25,6 @@ class Table_teacher
 			'updated_at'      => array('type' => 'int', 'comment' => '更新日時'),
 		), array('id'));
 
-		\Auth::instance('teacherauth')->create_teacher('teacher', 'pass', '1999/12/12', 'test@test.com', 0, '太郎',
-				'タロウ', '教員', 'キョウイン', 1);
-
-		\Auth::instance('teacherauth')->create_teacher('charge', 'pass', '1999/12/12', 'test@test.com', 0, '太郎',
-			'タロウ', '担任', 'タンニン', 5);
-
-		\Auth::instance('teacherauth')->create_teacher('admin', 'pass', '1999/12/12', 'test@test.com', 0, 'Admin',
-			'Admin', 'Admin', 'Admin', 10);
 	}
 
 	public function down()

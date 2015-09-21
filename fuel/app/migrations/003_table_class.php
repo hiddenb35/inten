@@ -22,9 +22,6 @@ class Table_class
 			),
 		));
 
-		\DB::insert('class')->columns(array('name','created_at','updated_at','course_id'))
-			->values(array('IS-07',time(),0,1))
-			->execute();
 	}
 
 	public function down()

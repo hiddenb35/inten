@@ -24,18 +24,6 @@ class Table_course
 			),
 		));
 
-		\DB::insert('course')->columns(array('code','name','year_system','created_at','updated_at','college_id'))
-			->values(array('IS', 'ITスペシャリスト科', 4, time(), 0, 1))
-			->values(array('CD', '情報処理科', 2, time(), 0, 1))
-			->values(array('NT', 'パソコン・ネットワーク科', 2, time(), 0, 1))
-			->values(array('J2', '情報ビジネス科', 2, time(), 0, 1))
-			->values(array('BD', '放送・映画科', 2, time(), 0, 2))
-			->values(array('AD', '声優・俳優科', 2, time(), 0, 2))
-			->values(array('MU', 'ミュージックアーティスト科', 2, time(), 0, 3))
-			->values(array('CE', 'コンサート・イベント科', 2, time(), 0, 3))
-			->values(array('E2', '電子・電気科', 2, time(), 0, 4))
-			->values(array('ID', 'CAD設計製図科', 2, time(), 0, 4))
-			->execute();
 	}
 
 	public function down()

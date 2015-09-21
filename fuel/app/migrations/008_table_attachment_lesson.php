@@ -27,14 +27,6 @@ class Table_attachment_lesson
 			),
 		));
 
-		\DB::insert('attachment_lesson')->columns(array('teacher_id','lesson_id'))
-			->values(array(1,1))->execute();
-		\DB::insert('attachment_lesson')->columns(array('teacher_id','lesson_id'))
-			->values(array(1,2))->execute();
-		\DB::insert('attachment_lesson')->columns(array('teacher_id','lesson_id'))
-			->values(array(1,3))->execute();
-		\DB::insert('attachment_lesson')->columns(array('teacher_id','lesson_id'))
-			->values(array(1,4))->execute();
 	}
 
 	public function down()
