@@ -9,7 +9,7 @@
 <!-- Main content -->
 <section class="content">
 <div id="DEPT_ADD">
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="post">
 
         <div class="form-group">
             <label for="name" class="control-label">学科名</label>
