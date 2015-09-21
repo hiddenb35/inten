@@ -1,6 +1,6 @@
 <section class="content-header">
     <h1>
-        生徒情報閲覧
+        生徒情報閲覧(教員用)
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -8,7 +8,7 @@
 </section>
 <!-- Main content -->
 <section class="content">
-<div id="STUDENT">
+<div id="TEACHER_LIST">
     <div class="container">
         <div class="table-responsive">
             <table class="table table-borderd table-striped table-hover">
