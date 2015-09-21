@@ -14,6 +14,8 @@ class Provider
 		   ->values(array('クリエイターズカレッジ', time(), 0))
 		   ->values(array('ミュージックカレッジ'  , time(), 0))
 		   ->values(array('テクノロジーカレッジ'  , time(), 0))
+		   ->values(array('デザインカレッジ'      , time(), 0))
+		   ->values(array('医療カレッジ'          , time(), 0))
 		   ->execute();
 
 		/* 学科 */
