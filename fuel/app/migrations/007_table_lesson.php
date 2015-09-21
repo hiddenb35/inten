@@ -24,30 +24,6 @@ class Table_lesson
 			),
 		));
 
-		\DB::insert('lesson')
-			->columns(array('name','term','sum_credit','created_at','updated_at','class_id'))
-			->values(array('資格対策講座',0,40,time(),0,1))
-			->execute();
-
-		\DB::insert('lesson')
-			->columns(array('name','term','sum_credit','created_at','updated_at','class_id'))
-			->values(array('C言語プログラミング',0,60,time(),0,1))
-			->execute();
-
-		\DB::insert('lesson')
-			->columns(array('name','term','sum_credit','created_at','updated_at','class_id'))
-			->values(array('経営科学',0,34,time(),0,1))
-			->execute();
-
-		\DB::insert('lesson')
-			->columns(array('name','term','sum_credit','created_at','updated_at','class_id'))
-			->values(array('Javaプログラミング',0,62,time(),0,1))
-			->execute();
-
-		\DB::insert('lesson')
-			->columns(array('name','term','sum_credit','created_at','updated_at','class_id'))
-			->values(array('Linux実習',0,55,time(),0,1))
-			->execute();
 	}
 
 	public function down()
