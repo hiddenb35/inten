@@ -1,6 +1,6 @@
 <section class="content-header">
     <h1>
-        生徒情報閲覧
+        生徒情報閲覧(教員用)
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
