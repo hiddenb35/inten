@@ -1,6 +1,6 @@
 <?php
 
-class Controller_Loggedin extends Controller_Based
+class Controller_Loggedin extends Controller_Template
 {
 	/**
 	 * @var \Auth\Auth_Driver $auth
@@ -24,6 +24,10 @@ class Controller_Loggedin extends Controller_Based
 			'full_name_kana' => $this->get_full_name_kana(),
 			'email' => $this->get_email(),
 		);
+
+		$this->template->header  = View::forge('parts/header');
+		$this->template->sidebar = View::forge('parts/sidebar');
+		$this->template->footer  = View::forge('parts/footer');
 		$this->template->set_global('user_info', $user_info);
 
 	}

@@ -1,7 +1,15 @@
 <?php
 
-class Controller_Auth extends Controller_Based
+class Controller_Auth extends Controller_Template
 {
+	public function before()
+	{
+		parent::before();
+		$this->template->header  = View::forge('parts/header');
+		$this->template->sidebar = View::forge('parts/sidebar');
+		$this->template->footer  = View::forge('parts/footer');
+	}
+
 	public function action_slogin()
 	{
 		if(Input::method() === 'POST')
@@ -80,5 +88,11 @@ class Controller_Auth extends Controller_Based
 		{
 			throw new HttpNotFoundException;
 		}
+	}
+
+	public function action_404()
+	{
+		$this->template->title = '404ページ';
+		$this->template->content = View::forge('404');
 	}
 }
