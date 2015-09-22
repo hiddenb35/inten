@@ -77,6 +77,7 @@
 			<?php echo Asset::js('bootstrap.min.js'); ?>
 			<!-- Morris.js charts -->
 			<?php echo Asset::js('raphael-min.js'); ?>
+			<?php echo Asset::js('morris.min.js') ?>
 			<!-- Sparkline -->
 			<?php echo Asset::js('jquery.sparkline.min.js'); ?>
 			<!-- jvectormap -->
