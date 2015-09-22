@@ -59,12 +59,12 @@ class Provider
 		   ->execute();
 
 		/* 専攻 */
-		\DB::insert('major')->columns(array('name', 'course_id'))
-		   ->values(array('システム専攻', 1))
-		   ->values(array('Web専攻', 1))
-		   ->values(array('組み込み専攻', 1))
-		   ->values(array('ネットワーク専攻', 1))
-		   ->values(array('セキュリティ専攻', 1))
+		\DB::insert('major')->columns(array('name', 'created_at', 'updated_at', 'course_id'))
+		   ->values(array('システム専攻', time(), 0, 1))
+		   ->values(array('Web専攻', time(), 0, 1))
+		   ->values(array('組み込み専攻', time(), 0, 1))
+		   ->values(array('ネットワーク専攻', time(), 0, 1))
+		   ->values(array('セキュリティ専攻', time(), 0, 1))
 		   ->execute();
 
 		/* 生徒 */
