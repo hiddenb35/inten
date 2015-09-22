@@ -37,6 +37,16 @@
 				<li><a href="/class/add"><i class="fa fa-circle-o"></i>クラス追加</a></li>
 			</ul>
 		</li>
+		<li class="treeview">
+			<a href="/">
+				<i class="fa ion-university"></i> <span>教員情報</span> <i class="fa fa-angle-down pull-right"></i>
+			</a>
+			<ul class="treeview-menu">
+				<li><a href="/teacher/list"><i class="fa fa-circle-o"></i>教員一覧</a></li>
+				<li><a href="/teacher/edit"><i class="fa fa-circle-o"></i>教員編集</a></li>
+				<li><a href="/teacher/add"><i class="fa fa-circle-o"></i>教員追加</a></li>
+			</ul>
+		</li>
 		<li>
 			<a href="/lesson/add">
 				<i class="fa ion-university"></i> <span>授業追加</span>
