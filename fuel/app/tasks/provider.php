@@ -85,13 +85,13 @@ class Provider
 			     '芦沢','アシザワ',1);
 
 		/* 教員 */
-		\Auth::instance('teacherauth')->create_teacher('teacher', 'pass', '1999/12/12', 'test@test.com', 0, '太郎',
+		\Auth::instance('teacherauth')->create_teacher('teacher', 'pass', '1999/12/12', 'teacher@teacher.com', 0, '太郎',
 			'タロウ', '教員', 'キョウイン', 1);
 
-		\Auth::instance('teacherauth')->create_teacher('charge', 'pass', '1999/12/12', 'test@test.com', 0, '太郎',
+		\Auth::instance('teacherauth')->create_teacher('charge', 'pass', '1999/12/12', 'charge@charge.com', 0, '太郎',
 			'タロウ', '担任', 'タンニン', 5);
 
-		\Auth::instance('teacherauth')->create_teacher('admin', 'pass', '1999/12/12', 'test@test.com', 0, 'Admin',
+		\Auth::instance('teacherauth')->create_teacher('admin', 'pass', '1999/12/12', 'admin@admin.com', 0, 'Admin',
 			'Admin', 'Admin', 'Admin', 10);
 
 		/* 授業 */

@@ -24,6 +24,8 @@ class Table_teacher
 			'created_at'      => array('type' => 'int', 'comment' => '作成日時'),
 			'updated_at'      => array('type' => 'int', 'comment' => '更新日時'),
 		), array('id'));
+		\DBUtil::create_index('teacher', 'username', '', 'unique');
+		\DBUtil::create_index('teacher', 'email', '', 'unique');
 
 	}
 
