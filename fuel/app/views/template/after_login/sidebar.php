@@ -42,6 +42,11 @@
 				<i class="fa ion-university"></i> <span>授業追加</span>
 			</a>
 		</li>
+		<li>
+			<a href="/setting/pass_update">
+				<i class="fa ion-settings"></i> <span>パスワード変更</span>
+			</a>
+		</li>
 	</ul>
 </section>
 <!-- /.sidebar -->
