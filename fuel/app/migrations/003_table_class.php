@@ -21,7 +21,7 @@ class Table_class
 				),
 			),
 		));
-
+		\DBUtil::create_index('class', array('name'), 'unique', 'unique');
 	}
 
 	public function down()

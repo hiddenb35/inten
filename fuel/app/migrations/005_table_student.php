@@ -41,6 +41,8 @@ class Table_student
 				),
 			),
 		));
+		\DBUtil::create_index('student', 'username', '', 'unique');
+		\DBUtil::create_index('student', 'email', '', 'unique');
 
 	}
 

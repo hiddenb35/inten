@@ -23,6 +23,7 @@ class Table_course
 				),
 			),
 		));
+		\DBUtil::create_index('course', array('code'), 'unique', 'unique');
 
 	}
 
