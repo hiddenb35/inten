@@ -9,6 +9,8 @@ class Table_major
 		\DBUtil::create_table('major', array(
 			'id'         => array('type' => 'int', 'auto_increment' => true, 'unsigned' => true, 'comment' => '専攻ID'),
 			'name'       => array('type' => 'varchar', 'constraint' => 64, 'comment' => '専攻名'),
+			'created_at' => array('type' => 'int', 'comment' => '作成日時'),
+			'updated_at' => array('type' => 'int', 'comment' => '更新日時'),
 			'course_id'  => array('type' => 'int', 'unsigned' => true, 'comment' => '学科ID'),
 		), array('id'), true, false, null, array(
 			array(
