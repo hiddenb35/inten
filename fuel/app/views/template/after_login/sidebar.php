@@ -37,6 +37,11 @@
 				<li><a href="/class/add"><i class="fa fa-circle-o"></i>クラス追加</a></li>
 			</ul>
 		</li>
+		<li>
+			<a href="/lesson/add">
+				<i class="fa ion-university"></i> <span>授業追加</span>
+			</a>
+		</li>
 	</ul>
 </section>
 <!-- /.sidebar -->
