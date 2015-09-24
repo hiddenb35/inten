@@ -75,5 +75,13 @@ Class Model_Teacher extends \Orm\Model
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),
+		'class' => array(
+			'model_to' => 'Model_Class',
+			'key_from' => 'id',
+			'key_to' => 'teacher_id',
+			'cascade_save' => false,
+			'cascade_delete' => false,
+		),
 	);
+
 }

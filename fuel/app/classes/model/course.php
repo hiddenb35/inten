@@ -7,8 +7,14 @@ Class Model_Course extends \Orm\Model
 
 	protected static $_properties = array(
 		'id',
+		'code' => array(
+			'data_type' => 'char',
+		),
 		'name' => array(
 			'data_type' => 'varchar',
+		),
+		'year_system' => array(
+			'data_type' => 'int',
 		),
 		'college_id' => array(
 			'data_type' => 'int',

@@ -49,6 +49,9 @@ Class Model_Student extends \Orm\Model
 		'class_id' => array(
 			'data_type' => 'int',
 		),
+		'major_id' => array(
+			'data_type' => 'int',
+		),
 		'created_at' => array(
 			'data_type' => 'int',
 		),
