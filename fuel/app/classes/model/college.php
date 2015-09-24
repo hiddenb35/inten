@@ -30,4 +30,10 @@ Class Model_College extends \Orm\Model
 			'property' => 'updated_at',
 		),
 	);
+
+	public static function validate()
+	{
+		$val = Validation::forge('exvalidation');
+		return $val;
+	}
 }
