@@ -53,9 +53,18 @@ class Provider
 			->values(array('M3', '診療情報管理士科',     2, time(), 0, 6))
 			->execute();
 
+		/* 教員 */
+		\Auth::instance('teacherauth')->create_teacher('teacher', 'pass', '1999/12/12', 'teacher@teacher.com', 0, '太郎',
+			'タロウ', '教員', 'キョウイン', 1);
+
+		\Auth::instance('teacherauth')->create_teacher('charge', 'pass', '1999/12/12', 'charge@charge.com', 0, '太郎',
+			'タロウ', '担任', 'タンニン', 5);
+
+		\Auth::instance('teacherauth')->create_teacher('admin', 'pass', '1999/12/12', 'admin@admin.com', 0, 'Admin',
+			'Admin', 'Admin', 'Admin', 10);
 		/* クラス */
-		\DB::insert('class')->columns(array('name','created_at','updated_at','course_id'))
-		   ->values(array('IS-07',time(),0,1))
+		\DB::insert('class')->columns(array('name','created_at','updated_at','course_id','teacher_id'))
+		   ->values(array('IS-07',time(),0,1,1))
 		   ->execute();
 
 		/* 専攻 */
@@ -84,15 +93,6 @@ class Provider
 		     ->create_student('k013c1118','ashizawa','1993/5/25','k013c1118@it-neec.jp',0,'勇輝','ユウキ',
 			     '芦沢','アシザワ',1);
 
-		/* 教員 */
-		\Auth::instance('teacherauth')->create_teacher('teacher', 'pass', '1999/12/12', 'teacher@teacher.com', 0, '太郎',
-			'タロウ', '教員', 'キョウイン', 1);
-
-		\Auth::instance('teacherauth')->create_teacher('charge', 'pass', '1999/12/12', 'charge@charge.com', 0, '太郎',
-			'タロウ', '担任', 'タンニン', 5);
-
-		\Auth::instance('teacherauth')->create_teacher('admin', 'pass', '1999/12/12', 'admin@admin.com', 0, 'Admin',
-			'Admin', 'Admin', 'Admin', 10);
 
 		/* 授業 */
 		\DB::insert('lesson')
@@ -139,10 +139,10 @@ class Provider
 			'attendance',
 			'attachment_lesson',
 			'lesson',
-			'teacher',
 			'student',
 			'major',
 			'class',
+			'teacher',
 			'course',
 			'college',
 		);
