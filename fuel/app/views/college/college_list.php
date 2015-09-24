@@ -31,28 +31,35 @@
                     </tr>
                     <tr>
                       <td>2.</td>
-                      <td>ITカレッジ</td>
+                      <td>クリエイターズカレッジ</td>
                       <td>3</td>
                       <td>10</td>
                       <td>2</td>
                     </tr>
                     <tr>
                       <td>3.</td>
-                      <td>ITカレッジ</td>
+                      <td>ミュージックカレッジ</td>
                       <td>3</td>
                       <td>10</td>
                       <td>2</td>
                     </tr>
                     <tr>
                       <td>4.</td>
-                      <td>ITカレッジ</td>
+                      <td>テクノロジーカレッジ</td>
                       <td>3</td>
                       <td>10</td>
                       <td>2</td>
                     </tr>
                     <tr>
                       <td>5.</td>
-                      <td>ITカレッジ</td>
+                      <td>デザインカレッジ</td>
+                      <td>3</td>
+                      <td>10</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>6.</td>
+                      <td>医療カレッジ</td>
                       <td>3</td>
                       <td>10</td>
                       <td>2</td>
