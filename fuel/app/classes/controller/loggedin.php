@@ -25,17 +25,19 @@ class Controller_Loggedin extends Controller_Template
 			'full_name' => $this->get_full_name(),
 			'full_name_kana' => $this->get_full_name_kana(),
 			'email' => $this->get_email(),
+			'body_skin' => 'skin-blue',
 		);
 
 		if($this->is_admin())
 		{
 			$this->template->header  = View::forge('template/after_login/header_admin');
+			$user_info['body_skin'] = 'skin-yellow';
 
 		}
 		elseif($this->is_teacher())
 		{
 			$this->template->header  = View::forge('template/after_login/header_teacher');
-
+			$user_info['body_skin'] = 'skin-red';
 		}
 		elseif($this->is_student())
 		{

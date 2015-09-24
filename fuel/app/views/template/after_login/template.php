@@ -47,7 +47,7 @@
 
 		</script>
 	</head>
-	<body class="skin-blue sidebar-mini">
+	<body class="sidebar-mini <?php echo $user_info['body_skin']; ?>">
 		<div class="wrapper">
 
 			<header class="main-header">
