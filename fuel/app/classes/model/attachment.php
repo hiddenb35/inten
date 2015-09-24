@@ -32,4 +32,10 @@ Class Model_Attachment extends \Orm\Model
 		),
 	);
 
+	public static function validate()
+	{
+		$val = Validation::forge('exvalidation');
+		return $val;
+	}
+
 }
