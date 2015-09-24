@@ -21,7 +21,7 @@ Class Model_Major extends \Orm\Model
 		),
 	);
 
-		protected static $_observers = array(
+	protected static $_observers = array(
 		'Orm\Observer_CreatedAt' => array(
 			'events' => array('before_insert'),
 			'mysql_timestamp' => false,
@@ -33,4 +33,10 @@ Class Model_Major extends \Orm\Model
 			'property' => 'updated_at',
 		),
 	);
+
+	public static function validate()
+	{
+		$val = Validation::forge('exvalidation');
+		return $val;
+	}
 }
