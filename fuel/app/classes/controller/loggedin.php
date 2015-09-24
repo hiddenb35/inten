@@ -27,7 +27,21 @@ class Controller_Loggedin extends Controller_Template
 			'email' => $this->get_email(),
 		);
 
-		$this->template->header  = View::forge('template/after_login/header');
+		if($this->is_admin())
+		{
+			$this->template->header  = View::forge('template/after_login/header_admin');
+
+		}
+		elseif($this->is_teacher())
+		{
+			$this->template->header  = View::forge('template/after_login/header_teacher');
+
+		}
+		elseif($this->is_student())
+		{
+			$this->template->header  = View::forge('template/after_login/header_student');
+		}
+
 		$this->template->sidebar = View::forge('template/after_login/sidebar');
 		$this->template->footer  = View::forge('template/after_login/footer');
 		$this->template->set_global('user_info', $user_info);
