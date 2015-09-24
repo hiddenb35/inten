@@ -20,4 +20,9 @@ class Controller_Teacher extends Controller_Loggedin
 		$this->template->content = View::forge('teacher/teacher_list');
 	}
 
+	public function action_hrteacher()
+	{
+		$this->template->title = '教員の担任割り当て';
+		$this->template->content = View::forge('teacher/hrteacher');
+	}
 }
