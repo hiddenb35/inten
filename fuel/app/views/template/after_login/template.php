@@ -35,7 +35,7 @@
 		<?php echo Asset::css('bootstrap-select.min.css'); ?>
 
 		<!--  -->
-		<?php echo Asset::css('narumi.css'); ?>
+		<?php echo Asset::css('after-login.css'); ?>
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -47,7 +47,7 @@
 
 		</script>
 	</head>
-	<body class="skin-blue sidebar-mini">
+	<body class="sidebar-mini <?php echo $user_info['body_skin']; ?>">
 		<div class="wrapper">
 
 			<header class="main-header">
