@@ -84,4 +84,9 @@ Class Model_Teacher extends \Orm\Model
 		),
 	);
 
+	public static function validate()
+	{
+		$val = Validation::forge('exvalidation');
+		return $val;
+	}
 }
