@@ -82,4 +82,10 @@ Class Model_Student extends \Orm\Model
 			'cascade_delete' => false,
 		),
 	);
+
+	public static function validate()
+	{
+		$val = Validation::forge('exvalidation');
+		return $val;
+	}
 }
