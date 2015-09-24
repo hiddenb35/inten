@@ -46,6 +46,7 @@
 				<li><a href="/teacher/edit"><i class="fa fa-circle-o"></i>教員編集</a></li>
 				<li><a href="/teacher/add"><i class="fa fa-circle-o"></i>教員追加</a></li>
 				<li><a href="/teacher/hrteacher"><i class="fa fa-circle-o"></i>担任割り当て</a></li>
+				<li><a href="/teacher/attachment_lesson"><i class="fa fa-circle-o"></i>授業割り当て</a></li>
 			</ul>
 		</li>
 		<li class="treeview">

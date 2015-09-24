@@ -25,4 +25,10 @@ class Controller_Teacher extends Controller_Loggedin
 		$this->template->title = '教員の担任割り当て';
 		$this->template->content = View::forge('teacher/hrteacher');
 	}
+
+	public function action_attachment_lesson()
+	{
+		$this->template->title = '教員の授業割り当て';
+		$this->template->content = View::forge('teacher/attachment_lesson');
+	}
 }
