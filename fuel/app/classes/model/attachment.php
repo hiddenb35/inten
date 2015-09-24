@@ -1,6 +1,6 @@
 <?php
 
-Class Model_Attachment extends \Orm\Model
+class Model_Attachment extends \Orm\Model
 {
 	protected static $_table_name = 'attachment_lesson';
 	protected static $_primary_key = array('id');
