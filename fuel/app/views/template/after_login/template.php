@@ -31,8 +31,6 @@
 		<?php echo Asset::css('daterangepicker-bs3.css'); ?>
 		<!-- bootstrap wysihtml5 - text editor -->
 		<?php echo Asset::css('bootstrap3-wysihtml5.min.css'); ?>
-		<!-- Bootstrap Select -->
-		<?php echo Asset::css('bootstrap-select.min.css'); ?>
 
 		<!--  -->
 		<?php echo Asset::css('after-login.css'); ?>
@@ -98,8 +96,6 @@
 			<?php echo Asset::js('fastclick.min.js'); ?>
 			<!-- AdminLTE App -->
 			<?php echo Asset::js('app.min.js'); ?>
-			<!-- Bootstrap Select -->
-			<?php echo Asset::js('bootstrap-select.min.js'); ?>
 		</div>
 	</body>
 </html>
