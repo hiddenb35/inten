@@ -86,6 +86,7 @@ class Controller_Auth extends Controller_Template
 
 	public function action_404()
 	{
+		$this->response_status = 404;
 		$this->template->title = '404ページ';
 		$this->template->content = View::forge('404');
 	}
