@@ -13,6 +13,9 @@ Class Model_Class extends \Orm\Model
 		'course_id' => array(
 			'data_type' => 'int',
 		),
+		'teacher_id' => array(
+			'data_type' => 'int',
+		),
 		'created_at' => array(
 			'data_type' => 'int',
 		),
@@ -39,6 +42,13 @@ Class Model_Class extends \Orm\Model
 			'model_to' => 'Model_Student',
 			'key_from' => 'id',
 			'key_to' => 'class_id',
+			'cascade_save' => false,
+			'cascade_delete' => false,
+		),
+		'teacher' => array(
+			'model_to' => 'Model_Teacher',
+			'key_from' => 'teacher_id',
+			'key_to' => 'id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),
