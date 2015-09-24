@@ -12,11 +12,19 @@ class Table_class
 			'created_at' => array('type' => 'int', 'comment' => '作成日時'),
 			'updated_at' => array('type' => 'int', 'comment' => '更新日時'),
 			'course_id'  => array('type' => 'int', 'unsigned' => true, 'comment' => '学科ID'),
+			'teacher_id' => array('type' => 'int', 'unsigned' => true, 'comment' => '教員ID'),
 		), array('id'), true, false, null, array(
 			array(
 				'key'       => 'course_id',
 				'reference' => array(
 					'table'  => 'course',
+					'column' => 'id',
+				),
+			),
+			array(
+				'key' => 'teacher_id',
+				'reference' => array(
+					'table' => 'teacher',
 					'column' => 'id',
 				),
 			),
