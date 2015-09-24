@@ -1,5 +1,5 @@
 <?php
 
-Class Exvalidation
+class Exvalidation
 {
 }
