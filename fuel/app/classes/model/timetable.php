@@ -1,6 +1,6 @@
 <?php
 
-Class Model_Timetable extends \Orm\Model
+class Model_Timetable extends \Orm\Model
 {
 	protected static $_table_name = 'timetable';
 	protected static $_primary_key = array('id');

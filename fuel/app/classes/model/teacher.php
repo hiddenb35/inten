@@ -1,6 +1,6 @@
 <?php
 
-Class Model_Teacher extends \Orm\Model
+class Model_Teacher extends \Orm\Model
 {
 	protected static $_table_name = 'teacher';
 	protected static $_primary_key = array('id');
