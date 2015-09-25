@@ -13,13 +13,9 @@
         <div class="form-group form-group-lg">
             <label for="username" class="control-label col-sm-2">教員番号</label>
             <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-8">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <input type="text" class="form-control" id="username" name="username" placeholder="12345">
-                        </div>
-                    </div>
+                <div class="input-group col-sm-8">
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="12345">
                 </div>
             </div>
         </div>
@@ -27,13 +23,9 @@
         <div class="form-group form-group-lg">
             <label for="password" class="control-label col-sm-2">パスワード</label>
             <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-8">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                            <input type="password" class="form-control" id="password" name="password">
-                        </div>
-                    </div>
+                <div class="input-group col-sm-8">
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <input type="password" class="form-control" id="password" name="password">
                 </div>
             </div>
         </div>
@@ -42,13 +34,9 @@
         <div class="form-group form-group-lg">
             <label for="password_confirm" class="control-label col-sm-2">パスワード(確認)</label>
             <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-8">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                            <input type="text" class="form-control" id="password_confirm" name="password_confirm">
-                        </div>
-                    </div>
+                <div class="input-group col-sm-8">
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <input type="text" class="form-control" id="password_confirm" name="password_confirm">
                 </div>
             </div>
         </div>
@@ -165,13 +153,9 @@
         <div class="form-group form-group-lg">
             <label for="email" class="control-label col-sm-2">メールアドレス</label>
             <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-8">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                            <input type="text" class="form-control" id="email" name="email" placeholder="teacher@kamata.neec.jp">
-                        </div>
-                    </div>
+                <div class="input-group col-sm-8">
+                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="teacher@kamata.neec.jp">
                 </div>
             </div>
         </div>
@@ -179,13 +163,9 @@
         <div class="form-group form-group-lg">
             <label for="email_confirm" class="control-label col-sm-2">メールアドレス(確認)</label>
             <div class="col-sm-10">
-                <div class="row">
-                    <div class="col-sm-8">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                            <input type="text" class="form-control" id="email_confirm" name="email_confirm" placeholder="teacher@kamata.neec.jp">
-                        </div>
-                    </div>
+                <div class="input-group col-sm-8">
+                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                    <input type="text" class="form-control" id="email_confirm" name="email_confirm" placeholder="teacher@kamata.neec.jp">
                 </div>
             </div>
         </div>
