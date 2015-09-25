@@ -11,7 +11,7 @@
 <div id="TEACHER_ADD" class="container">
     <form class="form-horizontal" method="post">
         <div class="form-group form-group-lg">
-            <label for="username" class="control-label col-sm-2">ユーザ名</label>
+            <label for="username" class="control-label col-sm-2">教員番号</label>
             <div class="col-sm-10">
                 <div class="row">
                     <div class="col-sm-8">
@@ -75,7 +75,7 @@
         </div>
 
         <div class="form-group form-group-lg">
-            <label class="control-label col-sm-2">名前(カナ)</label>
+            <label class="control-label col-sm-2">名前(フリガナ)</label>
             <div class="col-sm-10">
                 <div class="row">
                     <div class="col-sm-4">
