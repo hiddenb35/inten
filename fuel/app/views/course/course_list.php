@@ -11,7 +11,7 @@
 <div id="COURSE_LIST">
     <div class="box">
         <div class="box-header with-border">
-            <h3 class="box-title">カレッジ一覧</h3>
+            <h3 class="box-title">学科一覧</h3>
         </div><!-- /.box-header -->
         <div class="box-body">
             <table class="table table-bordered table-striped table-hover">
@@ -32,16 +32,16 @@
                     </tr>
                     <tr>
                         <td>2.</td>
-                        <td>IS</td>
-                        <td>ITスペシャリスト科</td>
-                        <td>4</td>
+                        <td>MD</td>
+                        <td>レコーディングクリエイター科</td>
+                        <td>2</td>
                         <td>ITカレッジ</td>
                     </tr>
                     <tr>
                         <td>3.</td>
-                        <td>IS</td>
-                        <td>ITスペシャリスト科</td>
-                        <td>4</td>
+                        <td>U4</td>
+                        <td>建築学科</td>
+                        <td>2</td>
                         <td>ITカレッジ</td>
                     </tr>
                     <tr>
@@ -49,7 +49,7 @@
                         <td>IS</td>
                         <td>ITスペシャリスト科</td>
                         <td>4</td>
-                        <td>ITカレッジ</td>
+                        <td>クリエイターズカレッジ</td>
                     </tr>
                     <tr>
                         <td>5.</td>
