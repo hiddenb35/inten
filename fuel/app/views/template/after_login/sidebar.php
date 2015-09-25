@@ -33,6 +33,7 @@
 				<i class="fa ion-university"></i> <span>クラス</span> <i class="fa fa-angle-down pull-right"></i>
 			</a>
 			<ul class="treeview-menu">
+				<li><a href="/class/list"><i class="fa fa-circle-o"></i>クラス一覧</a></li>
 				<li><a href="/class/edit"><i class="fa fa-circle-o"></i>クラス編集</a></li>
 				<li><a href="/class/add"><i class="fa fa-circle-o"></i>クラス追加</a></li>
 			</ul>
