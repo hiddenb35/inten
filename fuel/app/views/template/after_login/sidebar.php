@@ -40,6 +40,16 @@
 		</li>
 		<li class="treeview">
 			<a href="/">
+				<i class="fa ion-university"></i> <span>専攻</span> <i class="fa fa-angle-down pull-right"></i>
+			</a>
+			<ul class="treeview-menu">
+				<li><a href="/major/list"><i class="fa fa-circle-o"></i>専攻一覧</a></li>
+				<li><a href="/major/edit"><i class="fa fa-circle-o"></i>専攻編集</a></li>
+				<li><a href="/major/add"><i class="fa fa-circle-o"></i>専攻追加</a></li>
+			</ul>
+		</li>
+		<li class="treeview">
+			<a href="/">
 				<i class="fa ion-university"></i> <span>教員情報</span> <i class="fa fa-angle-down pull-right"></i>
 			</a>
 			<ul class="treeview-menu">
