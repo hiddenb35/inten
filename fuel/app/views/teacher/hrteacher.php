@@ -9,41 +9,38 @@
 	</section>
 	<!-- Main content -->
 	<section class="content">
-		<form class="form-horizontal" method="post">
-			<div class="form-group">
-				<label class="control-label" for="teacher_id">教員</label>
-				<div class="controls">
-					<div>
-						<select name="teacher_id">
-							<option value="0">1</option><!-- 芦沢ゾーン -->
-							<option value="0">1</option><!-- 芦沢ゾーン -->
-							<option value="0">1</option><!-- 芦沢ゾーン -->
-							<option value="0">1</option><!-- 芦沢ゾーン -->
-							<option value="0">1</option><!-- 芦沢ゾーン -->
-					   </select>
-					</div>
-				</div>
+		<div class="box box-warning">
+			<div class="box-header with-border">
+				<h3 class="box-title">General Elements</h3>
 			</div>
-
-			<div class="form-group">
-				<label class="control-label" for="name">クラス名</label>
-				<div class="controls">
-					<div>
-						<select name="name">
-							<option value="0">IS07-1</option><!-- 芦沢ゾーン -->
-							<option value="0">IS07-1</option><!-- 芦沢ゾーン -->
-							<option value="0">IS07-1</option><!-- 芦沢ゾーン -->
-							<option value="0">IS07-1</option><!-- 芦沢ゾーン -->
-							<option value="0">IS07-1</option><!-- 芦沢ゾーン -->
-					   </select>
+			<div class="box-body">
+				<form method="post" role="form">
+					<div class="form-group">
+						<label for="teacher_id">Select</label>
+						<select id="teacher_id" name="teacher_id" class="form-control">
+							<option value="1">教員太郎</option><!-- 芦沢ゾーン -->
+							<option value="2">担任太郎</option><!-- 芦沢ゾーン -->
+							<option value="3">AdminAdmin</option><!-- 芦沢ゾーン -->
+						</select>
 					</div>
-				</div>
+
+					<div class="form-group">
+						<label for="name">クラス名</label>
+						<select id="name" name="name" class="form-control">
+							<option value="IS05-1">IS05-1</option><!-- 芦沢ゾーン -->
+							<option value="IS05-2">IS05-2</option><!-- 芦沢ゾーン -->
+							<option value="IS06-1">IS06-1</option><!-- 芦沢ゾーン -->
+							<option value="IS06-2">IS06-2</option><!-- 芦沢ゾーン -->
+							<option value="IS07-1">IS07-1</option><!-- 芦沢ゾーン -->
+							<option value="IS07-2">IS07-2</option><!-- 芦沢ゾーン -->
+						</select>
+					</div>
+
+					<button type="submit" class="btn btn-primary">登録</button>
+					<button type="reset" class="btn btn-warning">キャンセル</button>
+
+				</form>
 			</div>
-
-
-			<button type="submit" class="btn btn-primary">登録</button>
-			<button type="reset" class="btn btn-warning">キャンセル</button>
-
-		</form>
+		</div>
 	</section>
 </div>
