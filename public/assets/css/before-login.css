@@ -1,42 +1,13 @@
 .content-wrapper {
-	margin-left: 0;
-	background-color: #fff;
+    margin-left: 0;
+    background-color: #fff;
 }
-.icheckbox_square-blue{
-	position: relative;
+.login-logo {
+	text-align: center;
+	font-size: 50px;
 }
-.icheckbox_square-blue input {
-	position: absolute;
-	top: -20%;
-	left: -20%;
-	display: block;
-	width: 140%;
-	height: 140%;
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
-	opacity: 0;
-	background: rgb(255, 255, 255);
-}
-.icheckbox_square-blue input ins {
-	position: absolute;
-	top: -20%;
-	left: -20%;
-	display: block;
-	width: 140%;
-	height: 140%;
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
-	opacity: 0;
-	background: rgb(255, 255, 255);
-}
-.login-box-body {
-	background-color: #39CCCC;
-}
-.login-logo{
-	background: #3399cc;
-}
-#logo {
-	background: #3399cc;
+.login-box {
+    width: 400px;
+    margin: 0 auto;
+    background-color: #39CCCC;
 }
