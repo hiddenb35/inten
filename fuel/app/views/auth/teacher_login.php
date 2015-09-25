@@ -7,11 +7,11 @@
         <div class="login-box-body">
             <form id="login_form" method="post">
                 <div class="form-group has-feedback">
-                    <input type="text" class="form-control input-lg" placeholder="Username">
+                    <input type="text" name="username" class="form-control input-lg" placeholder="Username">
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control input-lg" placeholder="Password">
+                    <input type="password" name="password" class="form-control input-lg" placeholder="Password">
                     <span class="ion-unlocked form-control-feedback"></span>
                 </div>
 <!--                 <div class="row">
