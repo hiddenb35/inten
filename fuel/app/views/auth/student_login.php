@@ -1,39 +1,31 @@
+<div id="LOGIN">
 <div class="login-box">
-      <div class="login-logo">
-        <a href="../../index2.html"><b>ログイン</b></a>
+      <div class="login-logo" id="logo">
+        <b>Login</b>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
-        <form action="../../index2.html" method="post">
+        <form method="post">
           <div class="form-group has-feedback">
-            <input type="email" class="form-control" placeholder="Email">
-            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            <input type="text" class="form-control" placeholder="Username">
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
             <input type="password" class="form-control" placeholder="Password">
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            <span class="ion-unlocked form-control-feedback"></span>
           </div>
           <div class="row">
             <div class="col-xs-8">
               <div class="checkbox icheck">
-                <label class="">
-                  <div class="icheckbox_square-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div> Remember Me
+                <label class="control-label">
+                  <div class="icheckbox_square-blue" aria-checked="false" aria-disabled="false"><input type="checkbox"><ins class="iCheck-helper"></ins></div>
                 </label>
               </div>
             </div><!-- /.col -->
-            <div class="col-xs-4">
-              <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-            </div><!-- /.col -->
+<!--             <div class="col-xs-4">
+ -->              <button type="submit" class="btn btn-primary btn-block btn-flat">ログイン</button>
+<!--             </div> --><!-- /.col -->
           </div>
         </form>
-
-        <div class="social-auth-links text-center">
-          <p>- OR -</p>
-          <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using Facebook</a>
-          <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using Google+</a>
-        </div><!-- /.social-auth-links -->
-
-        <a href="#">I forgot my password</a><br>
-        <a href="register.html" class="text-center">Register a new membership</a>
-
-      </div><!-- /.login-box-body -->
-    </div>
+    </div><!-- /.social-auth-links -->
+</div><!-- /.login-box-body -->
+</div>
