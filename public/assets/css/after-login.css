@@ -84,3 +84,7 @@ table th,td{
 #timetable-table .now {
     background: #bbd4ee !important;
 }
+/*担任割り当てページ*/
+#HRTEACHER.form-button{
+    margin-top: 24px;
+}
