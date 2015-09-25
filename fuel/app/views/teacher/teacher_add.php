@@ -207,9 +207,9 @@
         <div class="form-group">
             <div class="col-sm-10">
                 <div class="row">
-                    <div class="col-sm-12">
-                        <button type="submit" class="btn btn-primary">登録</button>
-                        <button type="reset" class="btn btn-warning">キャンセル</button>
+                    <div class="col-sm-12 text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">登録</button>
+                        <button type="reset" class="btn btn-warning btn-lg">キャンセル</button>
                     </div>
                 </div>
             </div>
