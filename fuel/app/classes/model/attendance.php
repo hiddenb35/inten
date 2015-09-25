@@ -53,4 +53,14 @@ class Model_Attendance extends \Orm\Model
 			'cascade_delete' => false,
 		),
 	);
+
+	public static function validate()
+	{
+		$val = Validation::forge();
+		$val->add_callable('exvalidation');
+		$val->add_field('student_id','生徒ID','required|max_length[10]');
+		$val->add_field('lesson_id','授業ID','required|max_length[10]');
+		$val->add_field('attendance_status','出席情報','required|max_length[11]');
+		return $val;
+	}
 }

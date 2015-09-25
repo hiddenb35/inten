@@ -30,4 +30,12 @@ class Model_College extends \Orm\Model
 			'property' => 'updated_at',
 		),
 	);
+
+	public static function validate()
+	{
+		$val = Validation::forge();
+		$val->add_callable('exvalidation');
+		$val->add_field('name','カレッジ名','required|max_length[64]');
+		return $val;
+	}
 }
