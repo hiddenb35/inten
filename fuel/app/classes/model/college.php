@@ -33,7 +33,9 @@ Class Model_College extends \Orm\Model
 
 	public static function validate()
 	{
-		$val = Validation::forge('exvalidation');
+		$val = Validation::forge();
+		$val->add_callable('exvalidation');
+		$val->add_field('name','カレッジ名','required|max_length[64]');
 		return $val;
 	}
 }
