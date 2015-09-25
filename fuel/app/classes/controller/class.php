@@ -13,4 +13,10 @@ class Controller_Class extends Controller_Loggedin
 		$this->template->title = 'クラスの編集';
 		$this->template->content = View::forge('class/class_edit');
 	}
+
+	public function action_list()
+	{
+		$this->template->title = 'クラス一覧';
+		$this->template->content = View::forge('class/class_list');
+	}
 }
