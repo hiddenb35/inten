@@ -36,7 +36,7 @@
             <div class="col-sm-10">
                 <div class="input-group col-sm-8">
                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                    <input type="text" class="form-control" id="password_confirm" name="password_confirm">
+                    <input type="password" class="form-control" id="password_confirm" name="password_confirm">
                 </div>
             </div>
         </div>
