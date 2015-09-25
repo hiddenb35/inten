@@ -19,49 +19,42 @@
                     <tr>
                         <th>#</th>
                         <th>専攻名</th>
-                        <th>設立可能人数</th>
                         <th>所属学科名</th>
                         <th>所属カレッジ名</th>
                     </tr>
                     <tr>
                         <td>1.</td>
                         <td>システム専攻</td>
-                        <td>7名</td>
                         <td>ITスペシャリスト科</td>
                         <td>ITカレッジ</td>
                     </tr>
                     <tr>
                         <td>2.</td>
                         <td>web専攻</td>
-                        <td>7名</td>
                         <td>ITスペシャリスト科</td>
                         <td>ITカレッジ</td>
                     </tr>
                     <tr>
                         <td>3.</td>
                         <td>ネットワーク専攻</td>
-                        <td>7名</td>
                         <td>ネットワーク科</td>
                         <td>ITカレッジ</td>
                     </tr>
                     <tr>
                         <td>4.</td>
                         <td>ネットワーク専攻</td>
-                        <td>7名</td>
                         <td>ネットワーク科</td>
                         <td>ITカレッジ</td>
                     </tr>
                     <tr>
                         <td>5.</td>
                         <td>ネットワーク専攻</td>
-                        <td>7名</td>
                         <td>ネットワーク科</td>
                         <td>ITカレッジ</td>
                     </tr>
                     <tr>
                         <td>6.</td>
                         <td>ネットワーク専攻</td>
-                        <td>7名</td>
                         <td>ネットワーク科</td>
                         <td>ITカレッジ</td>
                     </tr>
