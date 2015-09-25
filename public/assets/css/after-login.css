@@ -88,3 +88,7 @@ table th,td{
 #HRTEACHER.form-button{
     margin-top: 24px;
 }
+/*授業割り当てページ*/
+#ATTACHMENT_LESSON {
+    margin-top: 24px;
+}
