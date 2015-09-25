@@ -10,13 +10,10 @@
 	<!-- Main content -->
 	<section class="content">
 		<div class="box box-warning">
-			<div class="box-header with-border">
-				<h3 class="box-title">General Elements</h3>
-			</div>
 			<div class="box-body">
 				<form method="post" role="form">
 					<div class="form-group">
-						<label for="teacher_id">Select</label>
+						<label for="teacher_id">教員</label>
 						<select id="teacher_id" name="teacher_id" class="form-control">
 							<option value="1">教員太郎</option><!-- 芦沢ゾーン -->
 							<option value="2">担任太郎</option><!-- 芦沢ゾーン -->
