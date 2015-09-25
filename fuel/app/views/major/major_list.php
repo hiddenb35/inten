@@ -8,7 +8,7 @@
 </section>
 <!-- Main content -->
 <section class="content">
-<div id="CLASS_LIST">
+<div id="MAJOR_LIST">
 	<div class="box">
         <div class="box-header with-border">
             <h3 class="box-title">専攻一覧</h3>
