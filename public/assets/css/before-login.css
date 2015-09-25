@@ -1,13 +1,22 @@
 .content-wrapper {
-    margin-left: 0;
     background-color: #fff;
+}
+#LOGIN {
+	margin-top:150px;
+}
+#login_form {
+	padding: 35px;
 }
 .login-logo {
 	text-align: center;
+	font-family: fantasy;
 	font-size: 50px;
 }
 .login-box {
     width: 400px;
     margin: 0 auto;
     background-color: #39CCCC;
+	-webkit-border-radius: 35px;
+	-moz-border-radius: 35px;
+	border-radius: 35px;
 }
