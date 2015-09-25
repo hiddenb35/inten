@@ -175,9 +175,9 @@
             <div class="col-sm-10">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-default"><input type="radio" name="gender" value="1">男</label>
-                            <label class="btn btn-default"><input type="radio" name="gender" value="2">女</label>
+                        <div data-toggle="buttons">
+                            <label class="btn btn-default"><input type="radio" name="gender" value="1">男性</label>
+                            <label class="btn btn-default"><input type="radio" name="gender" value="2">女性</label>
                         </div>
                     </div>
                 </div>
