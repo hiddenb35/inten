@@ -39,6 +39,7 @@ class Controller_Teacher extends Controller_Loggedin
 
 		$this->template->title = '教員の一覧';
 		$this->template->content = View::forge('teacher/teacher_list');
+		$this->template->content->set('teacher_lists',$teacher_lists);
 	}
 
 	public function action_hrteacher()
