@@ -9,14 +9,13 @@ class Provider
 		self::delete();
 
 		/* カレッジ */
-		\DB::insert('college')->columns(array('name','created_at','updated_at'))
-		   ->values(array('ITカレッジ'           , time(), 0))
-		   ->values(array('クリエイターズカレッジ', time(), 0))
-		   ->values(array('ミュージックカレッジ'  , time(), 0))
-		   ->values(array('テクノロジーカレッジ'  , time(), 0))
-		   ->values(array('デザインカレッジ'      , time(), 0))
-		   ->values(array('医療カレッジ'          , time(), 0))
-		   ->execute();
+		$college_lists = array('ITカレッジ', 'クリエイターズカレッジ', 'ミュージックカレッジ', 'テクノロジーカレッジ', 'デザインカレッジ', '医療カレッジ');
+		$query         = \DB::insert('college')->columns(array('name', 'created_at', 'updated_at'));
+		foreach ($college_lists as $college)
+		{
+			$query->values(array($college, time(), 0));
+		}
+		$query->execute();
 
 		/* 学科 */
 		\DB::insert('course')->columns(array('code','name','year_system','created_at','updated_at','college_id'))
@@ -54,7 +53,7 @@ class Provider
 			->execute();
 
 		/* 教員 */
-		\Auth::instance('teacherauth')->create_teacher('teacher', 'pass', '1999/12/12', 'teacher@teacher.com', 0, '太郎',
+		\Auth::instance('teacherauth')->create_teacher('00000', 'pass', '1999/12/12', 'teacher@teacher.com', 0, '太郎',
 			'タロウ', '教員', 'キョウイン', 1);
 
 		\Auth::instance('teacherauth')->create_teacher('charge', 'pass', '1999/12/12', 'charge@charge.com', 0, '太郎',
