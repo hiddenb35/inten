@@ -82,9 +82,27 @@ class Provider
 		}
 
 		/* クラス */
-		\DB::insert('class')->columns(array('name','created_at','updated_at','course_id','teacher_id'))
-		   ->values(array('IS-07',time(),0,1,1))
-		   ->execute();
+		$class_lists = array(
+			array('name' => 'IS07-1', 'course_id' => 1, 'teacher_id' => 2),
+			array('name' => 'IS07-2', 'course_id' => 1, 'teacher_id' => 3),
+			array('name' => 'GS09-1', 'course_id' => 8, 'teacher_id' => 4),
+			array('name' => 'CG09-1', 'course_id' => 9, 'teacher_id' => 4),
+			array('name' => 'MU02-1', 'course_id' => 11, 'teacher_id' => 5),
+			array('name' => 'MU02-2', 'course_id' => 11, 'teacher_id' => 6),
+			array('name' => 'ID01-1', 'course_id' => 16, 'teacher_id' => 7),
+			array('name' => 'B203-1', 'course_id' => 17, 'teacher_id' => 7),
+			array('name' => 'UB03-1', 'course_id' => 18, 'teacher_id' => 7),
+			array('name' => 'WB04-1', 'course_id' => 21, 'teacher_id' => 8),
+			array('name' => 'X105-1', 'course_id' => 24, 'teacher_id' => 9),
+			array('name' => 'M106-1', 'course_id' => 25, 'teacher_id' => 10),
+		);
+
+		$query = \DB::insert('class')->columns(array('name','created_at','updated_at','course_id','teacher_id'));
+		foreach($class_lists as $class)
+		{
+			$query->values(array($class['name'], time(), 0, $class['course_id'], $class['teacher_id']));
+		}
+		$query->execute();
 
 		/* 専攻 */
 		\DB::insert('major')->columns(array('name', 'created_at', 'updated_at', 'course_id'))
