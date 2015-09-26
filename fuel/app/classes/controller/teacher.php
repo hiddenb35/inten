@@ -120,6 +120,11 @@ class Controller_Teacher extends Controller_Loggedin
 		foreach($classes as $class)
 		{
 			$array = array();
+			$count = count(Model_Student::find('all',array(
+										'where' => array(
+											array('class_id',$class['id'])
+										),
+									)));
 			$array['id'] = $class['id'];
 			$array['name'] = $class['name'];
 			$array['created_at'] = $class['created_at'];
@@ -127,6 +132,7 @@ class Controller_Teacher extends Controller_Loggedin
 			$array['course_name'] = $class->course->name;
 			$array['college_name'] = $class->course->college->name;
 			$array['link_url'] = Uri::create('hoge/hoge',array(),array('class_id' => 1));
+			$array['student_sum'] = $count;
 
 			$class_lists[] = $array;
 		}
@@ -136,5 +142,6 @@ class Controller_Teacher extends Controller_Loggedin
 		$this->template->content = View::forge('teacher/assign_list');
 		$this->template->content->set('class_name',$class_lists);
 		$this->template->content->set('couse_name',$class_lists);
+		$this->template->content->set('class_people',$class_lists);
 	}
 }
