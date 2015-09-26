@@ -16,21 +16,18 @@
 						<div class="form-group col-sm-4">
 							<label for="teacher_id">教員</label>
 							<select id="teacher_id" name="teacher_id" class="form-control">
-								<option value="1">教員太郎</option><!-- 芦沢ゾーン -->
-								<option value="2">担任太郎</option><!-- 芦沢ゾーン -->
-								<option value="3">AdminAdmin</option><!-- 芦沢ゾーン -->
+								<?php foreach ($teacher_lists as $teacher_list): ?>
+									<option value="<?php echo $teacher_list['id']?>"><?php echo $teacher_list['full_name']?></option>
+								<?php endforeach; ?>
 							</select>
 						</div>
 
 						<div class="form-group col-sm-4">
-							<label for="name">クラス名</label>
-							<select id="name" name="name" class="form-control">
-								<option value="IS05-1">IS05-1</option><!-- 芦沢ゾーン -->
-								<option value="IS05-2">IS05-2</option><!-- 芦沢ゾーン -->
-								<option value="IS06-1">IS06-1</option><!-- 芦沢ゾーン -->
-								<option value="IS06-2">IS06-2</option><!-- 芦沢ゾーン -->
-								<option value="IS07-1">IS07-1</option><!-- 芦沢ゾーン -->
-								<option value="IS07-2">IS07-2</option><!-- 芦沢ゾーン -->
+							<label for="class_id">クラス名</label>
+							<select id="class_id" name="class_id" class="form-control">
+								<?php foreach ($class_lists as $class_list): ?>
+									<option value="<?php echo $class_list['id']?>"><?php echo $class_list['name']?></option>
+								<?php endforeach; ?>
 							</select>
 						</div>
 
