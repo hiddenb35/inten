@@ -34,5 +34,6 @@ class Controller_Major extends Controller_Loggedin
 
 		$this->template->title = '専攻一覧';
 		$this->template->content = View::forge('major/major_list');
+		$this->template->content->set('major_lists',$major_lists);
 	}
 }
