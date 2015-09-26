@@ -140,8 +140,6 @@ class Controller_Teacher extends Controller_Loggedin
 
 		$this->template->title = 'クラス一覧';
 		$this->template->content = View::forge('teacher/assign_list');
-		$this->template->content->set('class_name',$class_lists);
-		$this->template->content->set('couse_name',$class_lists);
-		$this->template->content->set('class_people',$class_lists);
+		$this->template->content->set('class_lists',$class_lists);
 	}
 }
