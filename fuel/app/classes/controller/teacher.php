@@ -70,4 +70,10 @@ class Controller_Teacher extends Controller_Loggedin
 		$this->template->title = '教員の授業割り当て';
 		$this->template->content = View::forge('teacher/attachment_lesson');
 	}
+
+	public function action_assign_list()
+	{
+		$this->template->title = 'クラス一覧';
+		$this->template->content = View::forge('teacher/assign_list');
+	}
 }
