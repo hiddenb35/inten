@@ -83,6 +83,16 @@ class Model_Student extends \Orm\Model
 		),
 	);
 
+	protected static $_has_one = array(
+		'major' => array(
+			'model_to' => 'Model_Major',
+			'key_from' => 'major_id',
+			'key_to' => 'id',
+			'cascade_save' => false,
+			'cascade_delete' => false,
+		),
+	);
+
 	public static function validate()
 	{
 		$val = Validation::forge();
