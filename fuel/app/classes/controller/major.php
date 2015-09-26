@@ -16,6 +16,22 @@ class Controller_Major extends Controller_Loggedin
 
 	public function action_list()
 	{
+		$majors = Model_Major::find('all');
+
+		$major_lists = array();
+
+		foreach($majors as $major)
+		{
+			$array = array();
+			$array['name'] = $major['name'];
+			$array['created_at'] = $major['created_at'];
+			$array['updated_at'] = $major['updated_at'];
+			$array['course_name'] = $major->course->name;
+			$array['college_name'] = $major->course->college->name;
+
+			$major_lists = $array;
+		}
+
 		$this->template->title = '専攻一覧';
 		$this->template->content = View::forge('major/major_list');
 	}
