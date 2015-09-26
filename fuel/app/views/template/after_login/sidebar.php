@@ -10,6 +10,16 @@
 		</li>
 		<li class="treeview">
 			<a href="/">
+				<i class="fa ion-university"></i> <span>時間割</span> <i class="fa fa-angle-down pull-right"></i>
+			</a>
+			<ul class="treeview-menu">
+				<li><a href="/timetable/list"><i class="fa fa-circle-o"></i>時間割一覧</a></li>
+				<li><a href="/timetable/edit"><i class="fa fa-circle-o"></i>時間割編集</a></li>
+				<li><a href="/timetable/add"><i class="fa fa-circle-o"></i>時間割作成</a></li>
+			</ul>
+		</li>
+		<li class="treeview">
+			<a href="/">
 				<i class="fa ion-university"></i> <span>カレッジ</span> <i class="fa fa-angle-down pull-right"></i>
 			</a>
 			<ul class="treeview-menu">
