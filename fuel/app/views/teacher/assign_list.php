@@ -19,7 +19,7 @@
 								<div class="class_name h1"><?php echo $class_list['name']; ?></div>
 								<div class="college_name"><?php echo $class_list['college_name']; ?></div>
 								<div class="course_name"><?php echo $class_list['course_name']; ?></div>
-								<div class="class_people"><?php echo $class_list['student_sum']; ?></div>
+								<div class="class_people">人数：<?php echo $class_list['student_sum']; ?>名</div>
 							</div>
 						</a>
 					</div>
