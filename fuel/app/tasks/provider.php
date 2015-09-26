@@ -105,13 +105,31 @@ class Provider
 		$query->execute();
 
 		/* 専攻 */
-		\DB::insert('major')->columns(array('name', 'created_at', 'updated_at', 'course_id'))
-		   ->values(array('システム専攻', time(), 0, 1))
-		   ->values(array('Web専攻', time(), 0, 1))
-		   ->values(array('組み込み専攻', time(), 0, 1))
-		   ->values(array('ネットワーク専攻', time(), 0, 1))
-		   ->values(array('セキュリティ専攻', time(), 0, 1))
-		   ->execute();
+		$major_lists = array(
+			// ITスペシャリスト科
+			array('name' => 'システム専攻', 'course_id' => 1),
+			array('name' => 'Web専攻', 'course_id' => 1),
+			array('name' => '組み込み専攻', 'course_id' => 1),
+			array('name' => 'ネットワーク専攻', 'course_id' => 1),
+			array('name' => 'セキュリティ専攻', 'course_id' => 1),
+			// ゲームクリエイター科
+			array('name' => 'ゲームプログラミング専攻', 'course_id' => 8),
+			array('name' => 'ゲームプランニング専攻', 'course_id' => 8),
+			// コンサート・イベント科
+			array('name' => 'プロモーター専攻', 'course_id' => 12),
+			array('name' => 'マネージャー専攻', 'course_id' => 12),
+			array('name' => 'ライブハウススタッフ専攻', 'course_id' => 12),
+			array('name' => 'ファンクラブスタッフ専攻', 'course_id' => 12),
+			array('name' => 'コンサートPA専攻', 'course_id' => 12),
+			array('name' => 'ライブハウスPA専攻', 'course_id' => 12),
+
+		);
+		$query = \DB::insert('major')->columns(array('name', 'created_at', 'updated_at', 'course_id'));
+		foreach($major_lists as $major)
+		{
+			$query->values(array($major['name'], time(), 0, $major['course_id']));
+		}
+		$query->execute();
 
 		/* 生徒 */
 		\Auth::instance('studentauth')
