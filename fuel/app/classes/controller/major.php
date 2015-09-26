@@ -29,7 +29,7 @@ class Controller_Major extends Controller_Loggedin
 			$array['course_name'] = $major->course->name;
 			$array['college_name'] = $major->course->college->name;
 
-			$major_lists = $array;
+			$major_lists[] = $array;
 		}
 
 		$this->template->title = '専攻一覧';
