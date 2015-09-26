@@ -83,7 +83,36 @@ class Controller_Teacher extends Controller_Loggedin
 
 	public function action_assign_list()
 	{
+		if(!$this->is_teacher())
+		{
+			throw new HttpNotFoundException;
+		}
+		$current_id = $this->get_id();		
+		$classes = Model_Class::find('all',array(
+			'where' => array(
+				array('teacher_id', $current_id),
+			),
+		));
+
+		$class_lists = array();
+
+		foreach($classes as $class)
+		{
+			$array = array();
+			$array['id'] = $class['id'];
+			$array['name'] = $class['name'];
+			$array['created_at'] = $class['created_at'];
+			$array['updated_at'] = $class['updated_at'];
+			$array['course_name'] = $class->course->name;
+			$array['college_name'] = $class->course->college->name;
+
+			$class_lists[] = $array;
+		}
+
+
 		$this->template->title = 'クラス一覧';
 		$this->template->content = View::forge('teacher/assign_list');
+		$this->template->content->set('class_name',$class_lists);
+		$this->template->content->set('couse_name',$class_lists);
 	}
 }
