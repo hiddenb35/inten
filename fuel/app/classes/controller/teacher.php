@@ -63,6 +63,16 @@ class Controller_Teacher extends Controller_Loggedin
 		$this->template->content->set('teacher_lists',$teacher_lists);
 		$this->template->content->set('class_lists',$class_lists);
 
+		if(Input::post())
+		{
+			$class_id = Input::post('class_id');
+			$teacher_id = Input::post('teacher_id');
+
+			$class = Model_Class::find($class_id);
+			$class->teacher_id = $teacher_id;
+			$class->save();
+		}
+
 	}
 
 	public function action_attachment_lesson()
