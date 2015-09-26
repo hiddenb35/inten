@@ -23,10 +23,10 @@
 						</div>
 
 						<div class="form-group col-sm-4">
-							<label for="name">クラス名</label>
-							<select id="name" name="name" class="form-control">
+							<label for="class_id">クラス名</label>
+							<select id="class_id" name="class_id" class="form-control">
 								<?php foreach ($class_lists as $class_list): ?>
-									<option value="<?php echo $class_list['name']?>"><?php echo $class_list['name']?></option>
+									<option value="<?php echo $class_list['id']?>"><?php echo $class_list['name']?></option>
 								<?php endforeach; ?>
 							</select>
 						</div>
