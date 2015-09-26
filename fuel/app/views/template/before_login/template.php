@@ -30,4 +30,7 @@
 	<body>
 	<?php echo $content; ?>
 	</body>
+
+	<!--  -->
+	<?php echo Asset::js('before-login.js'); ?>
 </html>

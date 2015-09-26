@@ -9,14 +9,9 @@
 			</a>
 		</li>
 		<li class="treeview">
-			<a href="/">
-				<i class="fa ion-university"></i> <span>カレッジ</span> <i class="fa fa-angle-down pull-right"></i>
+			<a href="/college/list">
+				<i class="fa ion-university"></i> <span>カレッジ一覧</span>
 			</a>
-			<ul class="treeview-menu">
-				<li><a href="/college/list"><i class="fa fa-circle-o"></i>カレッジ一覧</a></li>
-				<li><a href="/college/edit"><i class="fa fa-circle-o"></i>カレッジ編集</a></li>
-				<li><a href="/college/add"><i class="fa fa-circle-o"></i>カレッジ追加</a></li>
-			</ul>
 		</li>
 		<li class="treeview">
 			<a href="/">
