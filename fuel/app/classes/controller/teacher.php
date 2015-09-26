@@ -105,7 +105,8 @@ class Controller_Teacher extends Controller_Loggedin
 			$array['updated_at'] = $class['updated_at'];
 			$array['course_name'] = $class->course->name;
 			$array['college_name'] = $class->course->college->name;
-
+			$array['link_url'] = Uri::create('http://192.168.33.10/teacher/:some',array('some' => 'timetable_add','and' => '1'),array('class_id' => ':and'));
+			
 			$class_lists[] = $array;
 		}
 
