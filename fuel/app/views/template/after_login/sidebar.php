@@ -77,10 +77,14 @@
 				<li><a href="/student/add"><i class="fa fa-circle-o"></i>生徒追加</a></li>
 			</ul>
 		</li>
-		<li>
-			<a href="/lesson/add">
-				<i class="fa ion-university"></i> <span>授業追加</span>
+		<li class="treeview">
+			<a href="#">
+				<i class="fa ion-university"></i> <span>授業情報</span> <i class="fa fa-angle-down pull-right"></i>
 			</a>
+			<ul class="treeview-menu">
+				<li><a href="/lesson/list"><i class="fa fa-circle-o"></i>授業一覧</a></li>
+				<li><a href="/lesson/add"><i class="fa ion-university"></i> <span>授業追加</span></a></li>
+			</ul>
 		</li>
 		<li>
 			<a href="/setting/pass_update">
