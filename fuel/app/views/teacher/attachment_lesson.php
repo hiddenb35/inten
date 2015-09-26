@@ -11,7 +11,7 @@
 	<section class="content">
 		<div class="box box-warning">
 			<div class="box-body">
-				<form method="post" role="form">
+				<form action="/teacher/attachment_lesson" method="post" role="form">
 					<div class="row">
 						<div class="form-group col-sm-4">
 							<label for="teacher_id">教員</label>
@@ -33,7 +33,7 @@
 							</select>
 						</div>
 
-						<div class="col-sm-4">
+						<div class="col-sm-4 form-button">
 							<button type="submit" class="btn btn-primary">登録</button>
 							<button type="reset" class="btn btn-warning">キャンセル</button>
 						</div>
