@@ -11,54 +11,20 @@
 	<section class="content">
 		<div class="container-fluid">
 			<div class="row">
+				<?php foreach($class_lists as $class_list): ?>
 				<div class="col-sm-6 col-md-3">
 					<div class="box box-info text-center">
-						<a href="#">
+						<a href="<?php echo $class_list['link_url']; ?>">
 							<div class="box-body">
-								<div class="class_name h1">IS07-1</div>
-								<div class="college_name">ITカレッジ</div>
-								<div class="course_name">ITスペシャリスト科</div>
-								<div class="class_people">40名</div>
+								<div class="class_name h1"><?php echo $class_list['name']; ?></div>
+								<div class="college_name"><?php echo $class_list['college_name']; ?></div>
+								<div class="course_name"><?php echo $class_list['course_name']; ?></div>
+								<div class="class_people"><?php echo $class_list['student_sum']; ?></div>
 							</div>
 						</a>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="box box-info text-center">
-						<a href="#">
-							<div class="box-body">
-								<div class="class_name h1">IS07-2</div>
-								<div class="college_name">ITカレッジ</div>
-								<div class="course_name">ITスペシャリスト科</div>
-								<div class="class_people">40名</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="box box-info text-center">
-						<a href="#">
-							<div class="box-body">
-								<div class="class_name h1">IS08-1</div>
-								<div class="college_name">ITカレッジ</div>
-								<div class="course_name">ITスペシャリスト科</div>
-								<div class="class_people">40名</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="box box-info text-center">
-						<a href="#">
-							<div class="box-body">
-								<div class="class_name h1">IS08-2</div>
-								<div class="college_name">ITカレッジ</div>
-								<div class="course_name">ITスペシャリスト科</div>
-								<div class="class_people">40名</div>
-							</div>
-						</a>
-					</div>
-				</div>
+				<?php endforeach; ?>
 			</div>
 		</div>
 	</section>
