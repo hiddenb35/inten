@@ -18,39 +18,46 @@ class Provider
 		$query->execute();
 
 		/* 学科 */
-		\DB::insert('course')->columns(array('code','name','year_system','created_at','updated_at','college_id'))
-		   ->values(array('IS', 'ITスペシャリスト科'      , 4, time(), 0, 1))
-		   ->values(array('CD', '情報処理科'              , 2, time(), 0, 1))
-		   ->values(array('NT', 'パソコン・ネットワーク科' , 2, time(), 0, 1))
-		   ->values(array('J2', '情報ビジネス科'          , 2, time(), 0, 1))
-
-		   ->values(array('BD', '放送・映画科',            2, time(), 0, 2))
-		   ->values(array('AD', '声優・俳優科',            2, time(), 0, 2))
-		   ->values(array('SA', 'マンガ・アニメーション科', 2, time(), 0, 2))
-		   ->values(array('GS', 'ゲームクリエイター科',     2, time(), 0, 2))
-		   ->values(array('CG', 'CGクリエイター科',         2, time(), 0, 2))
-		   ->values(array('L4', 'クリエイティブラボ科',     2, time(), 0, 2))
-
-		   ->values(array('MU', 'ミュージックアーティスト科',   2, time(), 0, 3))
-		   ->values(array('CE', 'コンサート・イベント科',       2, time(), 0, 3))
-		   ->values(array('MD', 'レコーディングクリエイター科', 2, time(), 0, 3))
-		   ->values(array('DP', 'ダンスパフォーマンス科',       2, time(), 0, 3))
-
-		   ->values(array('E2', '電子・電気科',   2, time(), 0, 4))
-		   ->values(array('ID', 'CAD設計製図科',  2, time(), 0, 4))
-		   ->values(array('B2', '環境・バイオ科', 2, time(), 0, 4))
-		   ->values(array('UB', '建築設計科',     2, time(), 0, 4))
-		   ->values(array('U4', '建築学科',       2, time(), 0, 4))
-
-			->values(array('MA', 'グラフィックデザイン科',  2, time(), 0, 5))
-			->values(array('WB', 'Webデザイン科',          2, time(), 0, 5))
-			->values(array('D1', 'インテリアデザイン科',    2, time(), 0, 5))
-			->values(array('D2', 'プロダクトデザイン科',    2, time(), 0, 5))
-
-			->values(array('X1', '臨床工学専攻科一年制', 2, time(), 0, 6))
-			->values(array('M1', '医療秘書・事務科',     2, time(), 0, 6))
-			->values(array('M3', '診療情報管理士科',     2, time(), 0, 6))
-			->execute();
+		$course_lists = array(
+			// ITカレッジ
+			array('code' => 'IS', 'name' => 'ITスペシャリスト科', 'year_system' => 4, 'college_id' => 1),
+			array('code' => 'CD', 'name' => '情報処理科', 'year_system' => 2, 'college_id' => 1),
+			array('code' => 'NT', 'name' => 'パソコン・ネットワーク科', 'year_system' => 2, 'college_id' => 1),
+			array('code' => 'J2', 'name' => '情報ビジネス科', 'year_system' => 2, 'college_id' => 1),
+			// クリエイターズカレッジ
+			array('code' => 'BD', 'name' => '放送・映画科', 'year_system' => 2, 'college_id' => 2),
+			array('code' => 'AD', 'name' => '声優・俳優科', 'year_system' => 2, 'college_id' => 2),
+			array('code' => 'SA', 'name' => 'マンガ・アニメーション科', 'year_system' => 2, 'college_id' => 2),
+			array('code' => 'GS', 'name' => 'ゲームクリエイター科', 'year_system' => 2, 'college_id' => 2),
+			array('code' => 'CG', 'name' => 'CGクリエイター科', 'year_system' => 2, 'college_id' => 2),
+			array('code' => 'L4', 'name' => 'クリエイティブラボ科', 'year_system' => 2, 'college_id' => 2),
+			// ミュージックカレッジ
+			array('code' => 'MU', 'name' => 'ミュージックアーティスト科', 'year_system' => 2, 'college_id' => 3),
+			array('code' => 'CE', 'name' => 'コンサート・イベント科', 'year_system' => 2, 'college_id' => 3),
+			array('code' => 'MD', 'name' => 'レコーディングクリエイター科', 'year_system' => 2, 'college_id' => 3),
+			array('code' => 'DP', 'name' => 'ダンスパフォーマンス科', 'year_system' => 2, 'college_id' => 3),
+			// テクノロジーカレッジ
+			array('code' => 'E2', 'name' => '電子・電気科', 'year_system' => 2, 'college_id' => 4),
+			array('code' => 'ID', 'name' => 'CAD設計製図科', 'year_system' => 2, 'college_id' => 4),
+			array('code' => 'B2', 'name' => '環境・バイオ科', 'year_system' => 2, 'college_id' => 4),
+			array('code' => 'UB', 'name' => '建築設計科', 'year_system' => 2, 'college_id' => 4),
+			array('code' => 'U4', 'name' => '建築学科', 'year_system' => 2, 'college_id' => 4),
+			// デザインカレッジ
+			array('code' => 'MA', 'name' => 'グラフィックデザイン科', 'year_system' => 2, 'college_id' => 5),
+			array('code' => 'WB', 'name' => 'Webデザイン科', 'year_system' => 2, 'college_id' => 5),
+			array('code' => 'D1', 'name' => 'インテリアデザイン科', 'year_system' => 2, 'college_id' => 5),
+			array('code' => 'D2', 'name' => 'プロダクトデザイン科', 'year_system' => 2, 'college_id' => 5),
+			// 医療カレッジ
+			array('code' => 'X1', 'name' => '臨床工学専攻科一年制', 'year_system' => 1, 'college_id' => 6),
+			array('code' => 'M1', 'name' => '医療秘書・事務科', 'year_system' => 2, 'college_id' => 6),
+			array('code' => 'M3', 'name' => '診療情報管理士科', 'year_system' => 2, 'college_id' => 6),
+		);
+		$query = \DB::insert('course')->columns(array('code','name','year_system','created_at','updated_at','college_id'));
+		foreach($course_lists as $course)
+		{
+			$query->values(array($course['code'], $course['name'], $course['year_system'], time(), 0, $course['college_id']));
+		}
+		$query->execute();
 
 		/* 教員 */
 		\Auth::instance('teacherauth')->create_teacher('00000', 'pass', '1999/12/12', 'teacher@teacher.com', 0, '太郎',
