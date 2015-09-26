@@ -60,14 +60,27 @@ class Provider
 		$query->execute();
 
 		/* 教員 */
-		\Auth::instance('teacherauth')->create_teacher('00000', 'pass', '1999/12/12', 'teacher@teacher.com', 0, '太郎',
-			'タロウ', '教員', 'キョウイン', 1);
+		$student_lists = array(
+			array('username' => '00001', 'email' => '00001@test.jp', 'gender' => 1, 'f_name' => '士郎', 'f_name_k' => 'シロウ', 'l_name' => '相田', 'l_name_k' => 'アイダ'),
+			array('username' => '00002', 'email' => '00002@test.jp', 'gender' => 1, 'f_name' => '弘樹', 'f_name_k' => 'ヒロキ', 'l_name' => '井上', 'l_name_k' => 'イノウエ'),
+			array('username' => '00003', 'email' => '00003@test.jp', 'gender' => 1, 'f_name' => '博人', 'f_name_k' => 'ヒロト', 'l_name' => '宇野', 'l_name_k' => 'ウノ'),
+			array('username' => '00004', 'email' => '00004@test.jp', 'gender' => 1, 'f_name' => '光輝', 'f_name_k' => 'コウキ', 'l_name' => '榎田', 'l_name_k' => 'エノダ'),
+			array('username' => '00005', 'email' => '00005@test.jp', 'gender' => 1, 'f_name' => '健太郎', 'f_name_k' => 'ケンタロウ', 'l_name' => '大野田', 'l_name_k' => 'オオノダ'),
+			array('username' => '00006', 'email' => '00006@test.jp', 'gender' => 2, 'f_name' => '夏樹', 'f_name_k' => 'ナツキ', 'l_name' => '加納', 'l_name_k' => 'カノウ'),
+			array('username' => '00007', 'email' => '00007@test.jp', 'gender' => 2, 'f_name' => '愛晶', 'f_name_k' => 'アキ', 'l_name' => '木村', 'l_name_k' => 'キムラ'),
+			array('username' => '00008', 'email' => '00008@test.jp', 'gender' => 2, 'f_name' => '香', 'f_name_k' => 'カオリ', 'l_name' => '九条', 'l_name_k' => 'クジョウ'),
+			array('username' => '00009', 'email' => '00009@test.jp', 'gender' => 2, 'f_name' => '彩', 'f_name_k' => 'サヤカ', 'l_name' => '剣持', 'l_name_k' => 'ケンモチ'),
+			array('username' => '00010', 'email' => '00010@test.jp', 'gender' => 2, 'f_name' => '翼', 'f_name_k' => 'ツバサ', 'l_name' => '小梅', 'l_name_k' => 'コウメ'),
+		);
 
-		\Auth::instance('teacherauth')->create_teacher('charge', 'pass', '1999/12/12', 'charge@charge.com', 0, '太郎',
-			'タロウ', '担任', 'タンニン', 5);
+		\Auth::instance('teacherauth')->create_teacher('admin', 'pass', '1999/12/12', 'admin@admin.jp', 0,
+			'admin', 'admin', 'admin', 'admin', 10);
+		foreach($student_lists as $student)
+		{
+			\Auth::instance('teacherauth')->create_teacher($student['username'], 'pass', '1999/12/12', $student['email'], $student['gender'],
+				$student['f_name'], $student['f_name_k'], $student['l_name'], $student['l_name_k'], 1);
+		}
 
-		\Auth::instance('teacherauth')->create_teacher('admin', 'pass', '1999/12/12', 'admin@admin.com', 0, 'Admin',
-			'Admin', 'Admin', 'Admin', 10);
 		/* クラス */
 		\DB::insert('class')->columns(array('name','created_at','updated_at','course_id','teacher_id'))
 		   ->values(array('IS-07',time(),0,1,1))
