@@ -96,3 +96,7 @@ table th,td{
 #COLLEGE_LIST #form_college_add {
     margin-left: 10px;
 }
+#COLLEGE_LIST .college-name:hover {
+    background: #ddd;
+    cursor: pointer;
+}

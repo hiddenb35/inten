@@ -14,7 +14,7 @@
 				<h3 class="box-title">カレッジ一覧</h3>
 			</div><!-- /.box-header -->
 			<div class="box-body">
-				<table class="table table-bordered table-striped table-hover">
+				<table class="table table-bordered table-striped" id="college_list_table">
 					<tbody>
 						<tr>
 							<th>#</th>
@@ -25,42 +25,42 @@
 						</tr>
 						<tr>
 							<td>1.</td>
-							<td>ITカレッジ</td>
+							<td class="college-name">ITカレッジ</td>
 							<td>3</td>
 							<td>10</td>
 							<td>2</td>
 						</tr>
 						<tr>
 							<td>2.</td>
-							<td>クリエイターズカレッジ</td>
+							<td class="college-name">クリエイターズカレッジ</td>
 							<td>3</td>
 							<td>10</td>
 							<td>2</td>
 						</tr>
 						<tr>
 							<td>3.</td>
-							<td>ミュージックカレッジ</td>
+							<td class="college-name">ミュージックカレッジ</td>
 							<td>3</td>
 							<td>10</td>
 							<td>2</td>
 						</tr>
 						<tr>
 							<td>4.</td>
-							<td>テクノロジーカレッジ</td>
+							<td class="college-name">テクノロジーカレッジ</td>
 							<td>3</td>
 							<td>10</td>
 							<td>2</td>
 						</tr>
 						<tr>
 							<td>5.</td>
-							<td>デザインカレッジ</td>
+							<td class="college-name">デザインカレッジ</td>
 							<td>3</td>
 							<td>10</td>
 							<td>2</td>
 						</tr>
 						<tr>
 							<td>6.</td>
-							<td>医療カレッジ</td>
+							<td class="college-name">医療カレッジ</td>
 							<td>3</td>
 							<td>10</td>
 							<td>2</td>
