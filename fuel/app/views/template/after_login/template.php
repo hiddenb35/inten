@@ -96,6 +96,9 @@
 			<?php echo Asset::js('fastclick.min.js'); ?>
 			<!-- AdminLTE App -->
 			<?php echo Asset::js('app.min.js'); ?>
+
+			<!--  -->
+			<?php echo Asset::js('after-login.js'); ?>
 		</div>
 	</body>
 </html>
