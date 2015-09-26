@@ -92,3 +92,7 @@ table th,td{
 #ATTACHMENT_LESSON .form-button {
     margin-top: 24px;
 }
+/*カレッジ一覧ページ*/
+#COLLEGE_LIST #form_college_add {
+    margin-left: 10px;
+}
