@@ -80,6 +80,11 @@ class Controller_Loggedin extends Controller_Template
 		return ($this->auth->has_access('admin.ok')) ? true : false;
 	}
 
+	public function get_id()
+	{
+		return $this->auth->get('id');
+	}
+
 	public function get_user_number()
 	{
 		return $this->auth->get('username');
