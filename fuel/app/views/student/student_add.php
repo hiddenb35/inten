@@ -1,4 +1,4 @@
-<div id="TEACHER_ADD">
+<div id="STUDENT_ADD">
 <section class="content-header">
     <h1>
         生徒登録
