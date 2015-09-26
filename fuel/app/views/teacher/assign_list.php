@@ -13,42 +13,50 @@
             <div class="row">
                 <div class="col-sm-6 col-md-3">
                     <div class="box box-info text-center">
-                        <div class="box-body">
-                            <div class="class_name h1"><a href="#">IS07-1</a></div>
-                            <div class="college_name">ITカレッジ</div>
-                            <div class="course_name">ITスペシャリスト科</div>
-                            <div class="class_people">40名</div>
-                        </div>
+                        <a href="#">
+                            <div class="box-body">
+                                <div class="class_name h1">IS07-1</div>
+                                <div class="college_name">ITカレッジ</div>
+                                <div class="course_name">ITスペシャリスト科</div>
+                                <div class="class_people">40名</div>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <div class="box box-info text-center">
-                        <div class="box-body text">
-                            <div class="class_name h1"><a href="#">IS07-2</a></div>
-                            <div class="college_name">ITカレッジ</div>
-                            <div class="course_name">ITスペシャリスト科</div>
-                            <div class="class_people">40名</div>
-                        </div>
+                        <a href="#">
+                            <div class="box-body">
+                                <div class="class_name h1">IS07-2</div>
+                                <div class="college_name">ITカレッジ</div>
+                                <div class="course_name">ITスペシャリスト科</div>
+                                <div class="class_people">40名</div>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <div class="box box-info text-center">
-                        <div class="box-body">
-                            <div class="class_name h1"><a href="#">IS08-1</a></div>
-                            <div class="college_name">ITカレッジ</div>
-                            <div class="course_name">ITスペシャリスト科</div>
-                            <div class="class_people">40名</div>
-                        </div>
+                        <a href="#">
+                            <div class="box-body">
+                                <div class="class_name h1">IS08-1</div>
+                                <div class="college_name">ITカレッジ</div>
+                                <div class="course_name">ITスペシャリスト科</div>
+                                <div class="class_people">40名</div>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <div class="box box-info text-center">
-                        <div class="box-body">
-                            <div class="class_name h1"><a href="#">IS08-2</a></div>
-                            <div class="college_name">ITカレッジ</div>
-                            <div class="course_name">ITスペシャリスト科</div>
-                            <div class="class_people">40名</div>
-                        </div>
+                        <a href="#">
+                            <div class="box-body">
+                                <div class="class_name h1">IS08-2</div>
+                                <div class="college_name">ITカレッジ</div>
+                                <div class="course_name">ITスペシャリスト科</div>
+                                <div class="class_people">40名</div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
