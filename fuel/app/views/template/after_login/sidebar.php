@@ -9,9 +9,20 @@
 			</a>
 		</li>
 		<li class="treeview">
+			<a href="/">
+				<i class="fa ion-university"></i> <span>時間割</span> <i class="fa fa-angle-down pull-right"></i>
+			</a>
+			<ul class="treeview-menu">
+				<li><a href="/timetable/list"><i class="fa fa-circle-o"></i>時間割一覧</a></li>
+				<li><a href="/timetable/edit"><i class="fa fa-circle-o"></i>時間割編集</a></li>
+				<li><a href="/timetable/add"><i class="fa fa-circle-o"></i>時間割作成</a></li>
+			</ul>
+		</li>
+		<li class="treeview">
 			<a href="/college/list">
 				<i class="fa ion-university"></i> <span>カレッジ一覧</span>
 			</a>
+
 		</li>
 		<li class="treeview">
 			<a href="/">
@@ -53,7 +64,6 @@
 				<li><a href="/teacher/add"><i class="fa fa-circle-o"></i>教員追加</a></li>
 				<li><a href="/teacher/hrteacher"><i class="fa fa-circle-o"></i>担任割り当て</a></li>
 				<li><a href="/teacher/attachment_lesson"><i class="fa fa-circle-o"></i>授業割り当て</a></li>
-				<li><a href="/teacher/assign_list"><i class="fa fa-circle-o"></i>担当するクラス一覧</a></li>
 			</ul>
 		</li>
 		<li class="treeview">
