@@ -34,6 +34,26 @@ class Model_Major extends \Orm\Model
 		),
 	);
 
+	public static $_has_one = array(
+		'course' => array(
+			'model_to' => 'Model_Course',
+			'key_from' => 'course_id',
+			'key_to' => 'id',
+			'cascade_save' => false,
+			'cascade_delete' => false,
+		),
+	);
+
+	public static $_has_many = array(
+		'student' => array(
+			'model_to' => 'Model_Student',
+			'key_from' => 'id',
+			'key_to' => 'major_id',
+			'cascade_save' => false,
+			'cascade_delete' => false,
+		),
+	);
+
 	public static function validate()
 	{
 		$val = Validation::forge();

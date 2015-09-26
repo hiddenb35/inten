@@ -48,6 +48,13 @@ class Model_Course extends \Orm\Model
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),
+		'major' => array(
+			'model_to' => 'Model_Major',
+			'key_from' => 'id',
+			'key_to' => 'couse_id',
+			'cascade_save' => false,
+			'cascade_delete' => false,
+		),
 	);
 
 	protected static $_belongs_to = array(
