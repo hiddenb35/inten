@@ -85,10 +85,10 @@ table th,td{
     background: #bbd4ee !important;
 }
 /*担任割り当てページ*/
-#HRTEACHER.form-button{
+#HRTEACHER .form-button {
     margin-top: 24px;
 }
 /*授業割り当てページ*/
-#ATTACHMENT_LESSON {
+#ATTACHMENT_LESSON .form-button {
     margin-top: 24px;
 }

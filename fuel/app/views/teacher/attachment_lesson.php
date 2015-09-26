@@ -33,7 +33,7 @@
 							</select>
 						</div>
 
-						<div class="col-sm-4">
+						<div class="col-sm-4 form-button">
 							<button type="submit" class="btn btn-primary">登録</button>
 							<button type="reset" class="btn btn-warning">キャンセル</button>
 						</div>
