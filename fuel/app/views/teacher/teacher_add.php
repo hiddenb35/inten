@@ -48,13 +48,13 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="input-group">
-                            <span class="input-group-addon"><b>姓　</b></span>
+                            <span class="input-group-addon"><b>姓</b></span>
                             <input type="text" class="form-control" id="last_name" name="last_name" placeholder="蒲田">
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="input-group">
-                            <span class="input-group-addon"><b>名　</b></span>
+                            <span class="input-group-addon"><b>名</b></span>
                             <input type="text" class="form-control" id="first_name" name="first_name" placeholder="太郎">
                         </div>
                     </div>
@@ -83,7 +83,7 @@
         </div>
 
         <div class="form-group form-group-lg">
-            <label for="username" class="control-label col-sm-2">生年月日</label>
+            <label class="control-label col-sm-2">生年月日</label>
             <div class="col-sm-10">
                 <div class="row">
                     <div class="col-sm-2">
