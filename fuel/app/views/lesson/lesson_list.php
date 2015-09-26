@@ -20,34 +20,15 @@
 						<th>前後期</th>
 						<th>総単位数</th>
 					</tr>
+					<?php foreach($lesson_lists as $lesson_list): ?>
 					<tr>
-						<td>資格対策講座</td>
-						<td>教員太郎</td>
-						<td>IS-07</td>
-						<td>前期</td>
-						<td>40</td>
+						<td><?php echo $lesson_list['name']?></td>
+						<td><?php echo $lesson_list['attachment']?></td>
+						<td><?php echo $lesson_list['class_name']?></td>
+						<td><?php echo $lesson_list['term']?></td>
+						<td><?php echo $lesson_list['sum_credit']?></td>
 					</tr>
-					<tr>
-						<td>C言語プログラミング</td>
-						<td>教員太郎</td>
-						<td>IS-07</td>
-						<td>前期</td>
-						<td>40</td>
-					</tr>
-					<tr>
-						<td>経営科学</td>
-						<td>教員太郎</td>
-						<td>IS-07</td>
-						<td>前期</td>
-						<td>40</td>
-					</tr>
-					<tr>
-						<td>Javaプログラミング</td>
-						<td>教員太郎</td>
-						<td>IS-07</td>
-						<td>前期</td>
-						<td>40</td>
-					</tr>
+					<?php endforeach; ?>
 					</tbody>
 				</table>
 			</div><!-- /.box-body -->
