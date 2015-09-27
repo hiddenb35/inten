@@ -13,7 +13,7 @@ class Provider
 		$query         = \DB::insert('college')->columns(array('name', 'created_at', 'updated_at'));
 		foreach ($college_lists as $college)
 		{
-			$query->values(array($college, time(), 0));
+			$query->values(array($college, time(), null));
 		}
 		$query->execute();
 
@@ -55,7 +55,7 @@ class Provider
 		$query = \DB::insert('course')->columns(array('code','name','year_system','created_at','updated_at','college_id'));
 		foreach($course_lists as $course)
 		{
-			$query->values(array($course['code'], $course['name'], $course['year_system'], time(), 0, $course['college_id']));
+			$query->values(array($course['code'], $course['name'], $course['year_system'], time(), null, $course['college_id']));
 		}
 		$query->execute();
 
@@ -100,7 +100,7 @@ class Provider
 		$query = \DB::insert('class')->columns(array('name','created_at','updated_at','course_id','teacher_id'));
 		foreach($class_lists as $class)
 		{
-			$query->values(array($class['name'], time(), 0, $class['course_id'], $class['teacher_id']));
+			$query->values(array($class['name'], time(), null, $class['course_id'], $class['teacher_id']));
 		}
 		$query->execute();
 
@@ -127,7 +127,7 @@ class Provider
 		$query = \DB::insert('major')->columns(array('name', 'created_at', 'updated_at', 'course_id'));
 		foreach($major_lists as $major)
 		{
-			$query->values(array($major['name'], time(), 0, $major['course_id']));
+			$query->values(array($major['name'], time(), null, $major['course_id']));
 		}
 		$query->execute();
 
@@ -209,7 +209,7 @@ class Provider
 		$query = \DB::insert('lesson')->columns(array('name','term','sum_credit','created_at','updated_at','class_id'));
 		foreach($lesson_lists as $lesson)
 		{
-			$query->values(array($lesson['name'], $lesson['term'], $lesson['sum_credit'], time(), 0, $lesson['class_id']));
+			$query->values(array($lesson['name'], $lesson['term'], $lesson['sum_credit'], time(), null, $lesson['class_id']));
 		}
 		$query->execute();
 
@@ -295,7 +295,7 @@ class Provider
 			),
 		);
 		$query = \DB::insert('timetable')->columns(array('name','html','created_at','updated_at','is_active','class_id'));
-		$query->values(array('IS07-1前期時間割', json_encode($timetable), time(), 0, 1, 1));
+		$query->values(array('IS07-1前期時間割', json_encode($timetable), time(), null, 1, 1));
 		$query->execute();
 
 	}

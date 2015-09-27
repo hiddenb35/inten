@@ -12,7 +12,7 @@ class Table_course
 			'name'        => array('type' => 'varchar', 'constraint' => 64, 'comment' => '学科名'),
 			'year_system' => array('type' => 'int', 'unsigned' => true, 'comment' => '年制'),
 			'created_at'  => array('type' => 'int', 'comment' => '作成日時'),
-			'updated_at'  => array('type' => 'int', 'comment' => '更新日時'),
+			'updated_at'  => array('type' => 'int', 'null' => true, 'comment' => '更新日時'),
 			'college_id'  => array('type' => 'int', 'unsigned' => true, 'comment' => 'カレッジID'),
 		), array('id'), true, false, null, array(
 			array(

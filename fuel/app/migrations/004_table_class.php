@@ -10,7 +10,7 @@ class Table_class
 			'id'         => array('type' => 'int', 'auto_increment' => true, 'unsigned' => true, 'comment' => 'クラスID'),
 			'name'       => array('type' => 'varchar', 'constraint' => 64, 'comment' => 'クラス名'),
 			'created_at' => array('type' => 'int', 'comment' => '作成日時'),
-			'updated_at' => array('type' => 'int', 'comment' => '更新日時'),
+			'updated_at' => array('type' => 'int', 'null' => true, 'comment' => '更新日時'),
 			'course_id'  => array('type' => 'int', 'unsigned' => true, 'comment' => '学科ID'),
 			'teacher_id' => array('type' => 'int', 'unsigned' => true, 'comment' => '教員ID'),
 		), array('id'), true, false, null, array(
