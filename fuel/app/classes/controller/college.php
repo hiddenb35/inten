@@ -4,17 +4,18 @@ class Controller_College extends Controller_Loggedin
 {
 	public function action_add()
 	{
-		if(Input::method() === 'POST')
+		if(Input::method() !== 'POST')
 		{
-			$name = $_POST['name'];
-			$college = Model_College::forge();
-			$college->name = $name;
-			$college->save();
-
-			Response::redirect('college/list');
+			throw new HttpNotFoundException;
 		}
 
-		throw new HttpNotFoundException;
+		$name = Input::post('name');
+		$college  = Model_College::forge();
+		$college->name = $name;
+		$college->save();
+
+		Response::redirect('college/list');
+
 
 	}
 
