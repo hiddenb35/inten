@@ -15,10 +15,15 @@ class Controller_College extends Controller_Loggedin
 			$college = Model_College::forge();
 			$college->name = $val->validated('name');
 			$college->save();
+
+			Response::redirect('college/list');
 		}
 
-
-		Response::redirect('college/list');
+		$this->template->title = 'エラー';
+		$this->template->content = View::forge('college/college_list');
+		$this->template->content->set('college_lists',$this->_get_list());
+		$this->template->content->set('errors', $val->error_message());
+		$this->template->content->set('inputs', $val->input());
 
 	}
 
@@ -28,7 +33,7 @@ class Controller_College extends Controller_Loggedin
 		$this->template->content = View::forge('college/college_edit');
 	}
 
-	public function action_list($error_lists = array())
+	public function action_list()
 	{
 		$this->template->title = 'カレッジ一覧';
 		$this->template->content = View::forge('college/college_list');
