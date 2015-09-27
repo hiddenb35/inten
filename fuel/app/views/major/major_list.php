@@ -17,14 +17,12 @@
 			<table class="table table-bordered table-hover">
 				<tbody>
 					<tr>
-						<th>#</th>
 						<th>専攻名</th>
 						<th>所属学科名</th>
 						<th>所属カレッジ名</th>
 					</tr>
 					<?php foreach($major_lists as $major_list): ?>
 					<tr>
-						<td>1.</td>
 						<td><?php echo $major_list['name']; ?></td>
 						<td><?php echo $major_list['course_name']; ?></td>
 						<td><?php echo $major_list['college_name']; ?></td>
