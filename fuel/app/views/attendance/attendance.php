@@ -16,7 +16,7 @@
 					<input type="hidden" name="attendance[<?php echo $index; ?>][student_id]" value="<?php echo $student['id']; ?>">
 					<div class="box">
 						<div class="box-header with-border">
-							<h3 class="box-title"><?php echo $student['number']; ?> <?php echo $student['full_name']; ?></h3>
+							<h3 class="box-title"><span class="number"><?php echo $student['number']; ?></span><b><?php echo $student['full_name']; ?></b></h3>
 							<div class="box-tools pull-right">
 								<b class="attendance-status"></b>
 								<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -34,8 +34,8 @@
 				</div>
 			<?php endforeach; ?>
 			<div class="form-group col-xs-12 text-center">
-				<button type="submit" class="btn btn-primary">送信</button>
-				<button type="reset" class="btn btn-warning">リセット</button>
+				<button type="submit" class="btn btn-primary btn-lg">送信</button>
+				<button type="reset" class="btn btn-warning btn-lg">リセット</button>
 			</div>
 		</form>
 	</div>
@@ -58,3 +58,6 @@
 
 	})
 </script>
+<style>
+	#ATTENDANCE .number { font-size: 0.8em; margin-right: 8px; }
+</style>
