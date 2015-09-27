@@ -10,14 +10,13 @@ class Table_attendance
 			'id'                => array('type' => 'int', 'auto_increment' => true, 'unsigned' => true, 'comment' => '出席ID'),
 			'created_at'        => array('type' => 'int', 'comment' => '作成日時'),
 			'updated_at'        => array('type' => 'int', 'null' => true, 'comment' => '更新日時'),
-			'attendance_status' => array('type' => 'int', 'comment' => '出席ステータス'),
-			'student_id'        => array('type' => 'int', 'unsigned' => true, 'comment' => '生徒ID'),
+			'teacher_id'        => array('type' => 'int', 'unsigned' => true, 'comment' => '教員ID'),
 			'lesson_id'         => array('type' => 'int', 'unsigned' => true, 'comment' => '授業ID'),
 		), array('id'), true, false, null, array(
 			array(
-				'key' => 'student_id',
+				'key' => 'teacher_id',
 				'reference' => array(
-					'table' => 'student',
+					'table' => 'teacher',
 					'column' => 'id',
 				),
 			),

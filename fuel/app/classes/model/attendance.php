@@ -7,13 +7,10 @@ class Model_Attendance extends \Orm\Model
 
 	protected static $_properties = array(
 		'id',
-		'student_id' => array(
+		'teacher_id' => array(
 			'data_type' => 'int',
 		),
 		'lesson_id' => array(
-			'data_type' => 'int',
-		),
-		'attendance_status' => array(
 			'data_type' => 'int',
 		),
 		'created_at' => array(
@@ -38,9 +35,9 @@ class Model_Attendance extends \Orm\Model
 	);
 
 	protected static $_belongs_to = array(
-		'student' => array(
-			'model_to' => 'Model_Student',
-			'key_from' => 'student_id',
+		'teacher' => array(
+			'model_to' => 'Model_Teacher',
+			'key_from' => 'teacher_id',
 			'key_to' => 'id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
@@ -58,9 +55,8 @@ class Model_Attendance extends \Orm\Model
 	{
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
-		$val->add_field('student_id','生徒ID','required|max_length[10]');
+		$val->add_field('teacher_id','教員ID','required|max_length[10]');
 		$val->add_field('lesson_id','授業ID','required|max_length[10]');
-		$val->add_field('attendance_status','出席情報','required|max_length[11]');
 		return $val;
 	}
 }
