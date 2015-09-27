@@ -54,7 +54,7 @@ class Model_Timetable extends \Orm\Model
 	{
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
-		$val->add_field('name','時間割','required|max_length[64]');
+		$val->add_field('name','時間割','trim|required|max_length[64]');
 		$val->add_field('html','html','required');
 		$val->add_field('class_id','クラスID','required|max_length[10]');
 		$val->add_field('is_active','アクティブ情報','required|max_length[11]');

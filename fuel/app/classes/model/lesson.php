@@ -70,9 +70,9 @@ class Model_Lesson extends \Orm\Model
 	public static function validate()
 	{
 		$val = Validation::forge();
-		$val->add_field('name','授業名','required|max_length[64]');
+		$val->add_field('name','授業名','trim|required|max_length[64]');
 		$val->add_field('term','前期or後期','required|max_length[11]');
-		$val->add_field('sum_credit','総単位数','required|max_length[10]');
+		$val->add_field('sum_credit','総単位数','trim|required|max_length[10]');
 		$val->add_field('class_id','クラスID','required|max_length[10]');
 		return $val;
 	}
