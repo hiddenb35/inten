@@ -132,22 +132,59 @@ class Provider
 		$query->execute();
 
 		/* 生徒 */
-		\Auth::instance('studentauth')
-		     ->create_student('k013c1129','watanabe','1994/9/3','ywatanabeznzt@gmail.com',0,'優樹','ユウキ',
-			     '渡辺','ワタナベ',1);
-		\Auth::instance('studentauth')
-		     ->create_student('k013c1112','narumi','1994/10/13','k013c1112@it-neec.jp',0,'翔太','ショウタ',
-			     '鳴海','ナルミ',1);
-		\Auth::instance('studentauth')
-		     ->create_student('k013c1345','kasai','1994/12/30','k013c1345@it-neec.jp',0,'啓太','ケイタ',
-			     '笠井','カサイ',1);
-		\Auth::instance('studentauth')
-		     ->create_student('k013c1140','kato','1994/10/12','k013c1140@it-neec.jp',0,'拓磨','タクマ',
-			     '加藤','カトウ',1);
-		\Auth::instance('studentauth')
-		     ->create_student('k013c1118','ashizawa','1993/5/25','k013c1118@it-neec.jp',0,'勇輝','ユウキ',
-			     '芦沢','アシザワ',1);
+		$student_lists = array(
+			array('username' => 'k013c1112', 'pass' => 'narumi', 'date' => '1994/10/13', 'email' => 'k013c1112@it-neec.jp', 'f_name' => '翔太', 'f_name_k' => 'ショウタ', 'l_name' => '鳴海', 'l_name_k' => 'ナルミ'),
+			array('username' => 'k013c1113', 'pass' => 'pass', 'date' => '1994/10/13', 'email' => 'k013c1113@student.jp', 'f_name' => '一郎', 'f_name_k' => 'イチロウ', 'l_name' => '鳴海', 'l_name_k' => 'ナルミ'),
+			array('username' => 'k013c1114', 'pass' => 'pass', 'date' => '1994/10/13', 'email' => 'k013c1114@student.jp', 'f_name' => '二郎', 'f_name_k' => 'ジロウ', 'l_name' => '鳴海', 'l_name_k' => 'ナルミ'),
+			array('username' => 'k013c1115', 'pass' => 'pass', 'date' => '1994/10/13', 'email' => 'k013c1115@student.jp', 'f_name' => '三郎', 'f_name_k' => 'サブロウ', 'l_name' => '鳴海', 'l_name_k' => 'ナルミ'),
+			array('username' => 'k013c1116', 'pass' => 'pass', 'date' => '1994/10/13', 'email' => 'k013c1116@student.jp', 'f_name' => '四郎', 'f_name_k' => 'シロウ', 'l_name' => '鳴海', 'l_name_k' => 'ナルミ'),
+			array('username' => 'k013c1117', 'pass' => 'pass', 'date' => '1994/10/13', 'email' => 'k013c1117@student.jp', 'f_name' => '五郎', 'f_name_k' => 'ゴロウ', 'l_name' => '鳴海', 'l_name_k' => 'ナルミ'),
+			array('username' => 'k013c1118', 'pass' => 'ashizawa', 'date' => '1994/5/25', 'email' => 'k013c1118@it-neec.jp', 'f_name' => '勇輝', 'f_name_k' => 'ユウキ', 'l_name' => '芦沢', 'l_name_k' => 'アシザワ'),
+			array('username' => 'k013c1119', 'pass' => 'pass', 'date' => '1994/5/25', 'email' => 'k013c1119@it-neec.jp', 'f_name' => '一郎', 'f_name_k' => 'イチロウ', 'l_name' => '芦沢', 'l_name_k' => 'アシザワ'),
+			array('username' => 'k013c1120', 'pass' => 'pass', 'date' => '1994/5/25', 'email' => 'k013c1120@it-neec.jp', 'f_name' => '二郎', 'f_name_k' => 'ジロウ', 'l_name' => '芦沢', 'l_name_k' => 'アシザワ'),
+			array('username' => 'k013c1121', 'pass' => 'pass', 'date' => '1994/5/25', 'email' => 'k013c1121@it-neec.jp', 'f_name' => '三郎', 'f_name_k' => 'サブロウ', 'l_name' => '芦沢', 'l_name_k' => 'アシザワ'),
+			array('username' => 'k013c1122', 'pass' => 'pass', 'date' => '1994/5/25', 'email' => 'k013c1122@it-neec.jp', 'f_name' => '四郎', 'f_name_k' => 'シロウ', 'l_name' => '芦沢', 'l_name_k' => 'アシザワ'),
+			array('username' => 'k013c1123', 'pass' => 'pass', 'date' => '1994/5/25', 'email' => 'k013c1123@it-neec.jp', 'f_name' => '五郎', 'f_name_k' => 'ゴロウ', 'l_name' => '芦沢', 'l_name_k' => 'アシザワ'),
+			array('username' => 'k013c1124', 'pass' => 'pass', 'date' => '1994/5/25', 'email' => 'k013c1124@it-neec.jp', 'f_name' => '六郎', 'f_name_k' => 'ロクロウ', 'l_name' => '芦沢', 'l_name_k' => 'アシザワ'),
+			array('username' => 'k013c1125', 'pass' => 'pass', 'date' => '1994/5/25', 'email' => 'k013c1125@it-neec.jp', 'f_name' => '七郎', 'f_name_k' => 'ナナロウ', 'l_name' => '芦沢', 'l_name_k' => 'アシザワ'),
+			array('username' => 'k013c1126', 'pass' => 'pass', 'date' => '1994/5/25', 'email' => 'k013c1126@it-neec.jp', 'f_name' => '八郎', 'f_name_k' => 'ハチロウ', 'l_name' => '芦沢', 'l_name_k' => 'アシザワ'),
+			array('username' => 'k013c1127', 'pass' => 'pass', 'date' => '1994/5/25', 'email' => 'k013c1127@it-neec.jp', 'f_name' => '九郎', 'f_name_k' => 'クロウ', 'l_name' => '芦沢', 'l_name_k' => 'アシザワ'),
+			array('username' => 'k013c1128', 'pass' => 'pass', 'date' => '1994/5/25', 'email' => 'k013c1128@it-neec.jp', 'f_name' => '十郎', 'f_name_k' => 'ジュウロウ', 'l_name' => '芦沢', 'l_name_k' => 'アシザワ'),
+			array('username' => 'k013c1129', 'pass' => 'watanabe', 'date' => '1994/9/3', 'email' => 'ywatanabeznzt@gmail.com', 'f_name' => '優樹', 'f_name_k' => 'ユウキ', 'l_name' => '渡辺', 'l_name_k' => 'ワタナベ'),
+			array('username' => 'k013c1130', 'pass' => 'pass', 'date' => '1994/9/3', 'email' => 'k013c1130@gmail.com', 'f_name' => '一郎', 'f_name_k' => 'イチロウ', 'l_name' => '渡辺', 'l_name_k' => 'ワタナベ'),
+			array('username' => 'k013c1131', 'pass' => 'pass', 'date' => '1994/9/3', 'email' => 'k013c1131@gmail.com', 'f_name' => '二郎', 'f_name_k' => 'ジロウ', 'l_name' => '渡辺', 'l_name_k' => 'ワタナベ'),
+			array('username' => 'k013c1132', 'pass' => 'pass', 'date' => '1994/9/3', 'email' => 'k013c1132@gmail.com', 'f_name' => '三郎', 'f_name_k' => 'サブロウ', 'l_name' => '渡辺', 'l_name_k' => 'ワタナベ'),
+			array('username' => 'k013c1133', 'pass' => 'pass', 'date' => '1994/9/3', 'email' => 'k013c1133@gmail.com', 'f_name' => '四郎', 'f_name_k' => 'シロウ', 'l_name' => '渡辺', 'l_name_k' => 'ワタナベ'),
+			array('username' => 'k013c1134', 'pass' => 'pass', 'date' => '1994/9/3', 'email' => 'k013c1134@gmail.com', 'f_name' => '五郎', 'f_name_k' => 'ゴロウ', 'l_name' => '渡辺', 'l_name_k' => 'ワタナベ'),
+			array('username' => 'k013c1135', 'pass' => 'pass', 'date' => '1994/9/3', 'email' => 'k013c1135@gmail.com', 'f_name' => '六郎', 'f_name_k' => 'ロクロウ', 'l_name' => '渡辺', 'l_name_k' => 'ワタナベ'),
+			array('username' => 'k013c1136', 'pass' => 'pass', 'date' => '1994/9/3', 'email' => 'k013c1136@gmail.com', 'f_name' => '七郎', 'f_name_k' => 'ナナロウ', 'l_name' => '渡辺', 'l_name_k' => 'ワタナベ'),
+			array('username' => 'k013c1137', 'pass' => 'pass', 'date' => '1994/9/3', 'email' => 'k013c1137@gmail.com', 'f_name' => '八郎', 'f_name_k' => 'ハチロウ', 'l_name' => '渡辺', 'l_name_k' => 'ワタナベ'),
+			array('username' => 'k013c1138', 'pass' => 'pass', 'date' => '1994/9/3', 'email' => 'k013c1138@gmail.com', 'f_name' => '九郎', 'f_name_k' => 'クロウ', 'l_name' => '渡辺', 'l_name_k' => 'ワタナベ'),
+			array('username' => 'k013c1139', 'pass' => 'pass', 'date' => '1994/9/3', 'email' => 'k013c1139@gmail.com', 'f_name' => '十郎', 'f_name_k' => 'ジュウロウ', 'l_name' => '渡辺', 'l_name_k' => 'ワタナベ'),
+			array('username' => 'k013c1140', 'pass' => 'kato', 'date' => '1994/10/12', 'email' => 'k013c1140@it-neec.jp', 'f_name' => '一郎', 'f_name_k' => 'イチロウ', 'l_name' => '加藤', 'l_name_k' => 'カトウ'),
+			array('username' => 'k013c1141', 'pass' => 'pass', 'date' => '1994/10/12', 'email' => 'k013c1141@it-neec.jp', 'f_name' => '次郎', 'f_name_k' => 'ジロウ', 'l_name' => '加藤', 'l_name_k' => 'カトウ'),
+			array('username' => 'k013c1142', 'pass' => 'pass', 'date' => '1994/10/12', 'email' => 'k013c1142@it-neec.jp', 'f_name' => '三郎', 'f_name_k' => 'サブロウ', 'l_name' => '加藤', 'l_name_k' => 'カトウ'),
+			array('username' => 'k013c1143', 'pass' => 'pass', 'date' => '1994/10/12', 'email' => 'k013c1143@it-neec.jp', 'f_name' => '四郎', 'f_name_k' => 'シロウ', 'l_name' => '加藤', 'l_name_k' => 'カトウ'),
+			array('username' => 'k013c1144', 'pass' => 'pass', 'date' => '1994/10/12', 'email' => 'k013c1144@it-neec.jp', 'f_name' => '五郎', 'f_name_k' => 'ゴロウ', 'l_name' => '加藤', 'l_name_k' => 'カトウ'),
+			array('username' => 'k013c1345', 'pass' => 'kasai', 'date' => '1994/12/30', 'email' => 'k013c1345@it-neec.jp', 'f_name' => '啓太', 'f_name_k' => 'ケイタ', 'l_name' => '笠井', 'l_name_k' => 'カサイ'),
+			array('username' => 'k013c1346', 'pass' => 'pass', 'date' => '1994/12/30', 'email' => 'k013c1346@it-neec.jp', 'f_name' => '一郎', 'f_name_k' => 'イチロウ', 'l_name' => '笠井', 'l_name_k' => 'カサイ'),
+			array('username' => 'k013c1347', 'pass' => 'pass', 'date' => '1994/12/30', 'email' => 'k013c1347@it-neec.jp', 'f_name' => '次郎', 'f_name_k' => 'ジロウ', 'l_name' => '笠井', 'l_name_k' => 'カサイ'),
+			array('username' => 'k013c1348', 'pass' => 'pass', 'date' => '1994/12/30', 'email' => 'k013c1348@it-neec.jp', 'f_name' => '三郎', 'f_name_k' => 'サブロウ', 'l_name' => '笠井', 'l_name_k' => 'カサイ'),
+			array('username' => 'k013c1349', 'pass' => 'pass', 'date' => '1994/12/30', 'email' => 'k013c1349@it-neec.jp', 'f_name' => '四郎', 'f_name_k' => 'シロウ', 'l_name' => '笠井', 'l_name_k' => 'カサイ'),
+			array('username' => 'k013c1350', 'pass' => 'pass', 'date' => '1994/12/30', 'email' => 'k013c1350@it-neec.jp', 'f_name' => '五郎', 'f_name_k' => 'ゴロウ', 'l_name' => '笠井', 'l_name_k' => 'カサイ'),
+			array('username' => 'k013c1351', 'pass' => 'pass', 'date' => '1994/12/30', 'email' => 'k013c1351@it-neec.jp', 'f_name' => '六郎', 'f_name_k' => 'ロクロウ', 'l_name' => '笠井', 'l_name_k' => 'カサイ'),
+			array('username' => 'k013c1352', 'pass' => 'pass', 'date' => '1994/12/30', 'email' => 'k013c1352@it-neec.jp', 'f_name' => '七郎', 'f_name_k' => 'ナナロウ', 'l_name' => '笠井', 'l_name_k' => 'カサイ'),
+			array('username' => 'k013c1353', 'pass' => 'pass', 'date' => '1994/12/30', 'email' => 'k013c1353@it-neec.jp', 'f_name' => '八郎', 'f_name_k' => 'ハチロウ', 'l_name' => '笠井', 'l_name_k' => 'カサイ'),
+			array('username' => 'k013c1354', 'pass' => 'pass', 'date' => '1994/12/30', 'email' => 'k013c1354@it-neec.jp', 'f_name' => '九郎', 'f_name_k' => 'クロウ', 'l_name' => '笠井', 'l_name_k' => 'カサイ'),
+			array('username' => 'k013c1355', 'pass' => 'pass', 'date' => '1994/12/30', 'email' => 'k013c1355@it-neec.jp', 'f_name' => '十郎', 'f_name_k' => 'ジュウロウ', 'l_name' => '笠井', 'l_name_k' => 'カサイ'),
+		);
 
+		foreach($student_lists as $student)
+		{
+			\Auth::instance('studentauth')
+			     ->create_student($student['username'],$student['pass'],$student['date'],$student['email'],0,$student['f_name'],$student['f_name_k'],
+				     $student['l_name'],$student['l_name_k'],1);
+		}
 
 		/* 授業 */
 		\DB::insert('lesson')
