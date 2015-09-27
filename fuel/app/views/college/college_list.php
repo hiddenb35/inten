@@ -74,7 +74,7 @@
 				<h3 class="box-title">カレッジ追加</h3>
 			</div><!-- /.box-header -->
 			<div class="box-body">
-				<form action="/college/college_add" method="post" role="form" class="form-horizontal">
+				<form action="/college/add" method="post" role="form" class="form-horizontal">
 					<div class="row">
 						<div class="form-group" id="form_college_add">
 							<label for="name" class="col-sm-1 control-label">カレッジ名</label>
