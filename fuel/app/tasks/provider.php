@@ -187,30 +187,31 @@ class Provider
 		}
 
 		/* 授業 */
-		\DB::insert('lesson')
-		   ->columns(array('name','term','sum_credit','created_at','updated_at','class_id'))
-		   ->values(array('資格対策講座',0,40,time(),0,1))
-		   ->execute();
+		$lesson_lists = array(
+			array('name' => '資格対策講座', 'term' => 1, 'sum_credit' => 40, 'class_id' => 1),
+			array('name' => '経営科学', 'term' => 1, 'sum_credit' => 38, 'class_id' => 1),
+			array('name' => 'ビジネススキル１', 'term' => 1, 'sum_credit' => 20, 'class_id' => 1),
+			array('name' => 'Webアプリケーション開発', 'term' => 1, 'sum_credit' => 22, 'class_id' => 1),
+			array('name' => '企業会計', 'term' => 1, 'sum_credit' => 45, 'class_id' => 1),
+			array('name' => 'キャリアデザイン', 'term' => 1, 'sum_credit' => 42, 'class_id' => 1),
+			array('name' => 'プロジェクト開発実習', 'term' => 1, 'sum_credit' => 41, 'class_id' => 1),
+			array('name' => 'Linux実習', 'term' => 1, 'sum_credit' => 19, 'class_id' => 1),
+			array('name' => 'Cプログラミング', 'term' => 1, 'sum_credit' => 24, 'class_id' => 1),
+			array('name' => 'C++言語プログラミング', 'term' => 1, 'sum_credit' => 38, 'class_id' => 1),
+			array('name' => 'Javaプログラミング', 'term' => 1, 'sum_credit' => 11, 'class_id' => 1),
+			array('name' => 'PHPプログラミング', 'term' => 1, 'sum_credit' => 27, 'class_id' => 1),
+			array('name' => 'Perlプログラミング', 'term' => 1, 'sum_credit' => 25, 'class_id' => 1),
+			array('name' => 'Rubyプログラミング', 'term' => 1, 'sum_credit' => 21, 'class_id' => 1),
+			array('name' => 'Pythonプログラミング', 'term' => 1, 'sum_credit' => 39, 'class_id' => 1),
+			array('name' => 'JavaScriptプログラミング', 'term' => 1, 'sum_credit' => 33, 'class_id' => 1),
+		);
 
-		\DB::insert('lesson')
-		   ->columns(array('name','term','sum_credit','created_at','updated_at','class_id'))
-		   ->values(array('C言語プログラミング',0,60,time(),0,1))
-		   ->execute();
-
-		\DB::insert('lesson')
-		   ->columns(array('name','term','sum_credit','created_at','updated_at','class_id'))
-		   ->values(array('経営科学',0,34,time(),0,1))
-		   ->execute();
-
-		\DB::insert('lesson')
-		   ->columns(array('name','term','sum_credit','created_at','updated_at','class_id'))
-		   ->values(array('Javaプログラミング',0,62,time(),0,1))
-		   ->execute();
-
-		\DB::insert('lesson')
-		   ->columns(array('name','term','sum_credit','created_at','updated_at','class_id'))
-		   ->values(array('Linux実習',0,55,time(),0,1))
-		   ->execute();
+		$query = \DB::insert('lesson')->columns(array('name','term','sum_credit','created_at','updated_at','class_id'));
+		foreach($lesson_lists as $lesson)
+		{
+			$query->values(array($lesson['name'], $lesson['term'], $lesson['sum_credit'], time(), 0, $lesson['class_id']));
+		}
+		$query->execute();
 
 		/* 授業割り当て */
 		\DB::insert('attachment_lesson')->columns(array('teacher_id','lesson_id'))
