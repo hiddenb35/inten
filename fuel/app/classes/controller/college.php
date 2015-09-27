@@ -20,7 +20,6 @@ class Controller_College extends Controller_Loggedin
 
 		Response::redirect('college/list');
 
-
 	}
 
 	public function action_edit()
@@ -29,13 +28,18 @@ class Controller_College extends Controller_Loggedin
 		$this->template->content = View::forge('college/college_edit');
 	}
 
-	public function action_list()
+	public function action_list($error_lists = array())
 	{
-		$colleges = Model_College::find('all');
+		$this->template->title = 'カレッジ一覧';
+		$this->template->content = View::forge('college/college_list');
+		$this->template->content->set('college_lists',$this->_get_list());
+	}
 
+	private function _get_list()
+	{
 		$college_lists = array();
 
-		foreach($colleges as $college)
+		foreach(Model_College::find('all') as $college)
 		{
 			$array = array();
 			$course_sum = count(Model_Course::find('all'));
@@ -50,8 +54,7 @@ class Controller_College extends Controller_Loggedin
 
 			$college_lists[] = $array;
 		}
-		$this->template->title = 'カレッジ一覧';
-		$this->template->content = View::forge('college/college_list');
-		$this->template->content->set('college_lists',$college_lists);
+
+		return $college_lists;
 	}
 }
