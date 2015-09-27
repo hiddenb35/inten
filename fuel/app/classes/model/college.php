@@ -35,7 +35,7 @@ class Model_College extends \Orm\Model
 	{
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
-		$val->add_field('name','カレッジ名','trim|required|max_length[64]');
+		$val->add_field('name','カレッジ名','trim|required|max_length[64]')->add_rule('unique', 'college', 'name');
 		return $val;
 	}
 }
