@@ -60,16 +60,6 @@ class Controller_Loggedin extends Controller_Template
 		return ($this->auth->get_id() === 'teacherauth') ? true : false;
 	}
 
-	public function is_charge()
-	{
-		if(!$this->is_teacher())
-		{
-			return false;
-		}
-
-		return ($this->auth->has_access('charge.ok')) ? true : false;
-	}
-
 	public function is_admin()
 	{
 		if(!$this->is_teacher())
