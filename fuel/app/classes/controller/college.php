@@ -4,8 +4,27 @@ class Controller_College extends Controller_Loggedin
 {
 	public function action_add()
 	{
-		$this->template->title = 'カレッジの追加';
-		$this->template->content = View::forge('college/college_add');
+		if(Input::method() !== 'POST')
+		{
+			throw new HttpNotFoundException;
+		}
+
+		$val = Model_College::validate();
+		if($val->run())
+		{
+			$college = Model_College::forge();
+			$college->name = $val->validated('name');
+			$college->save();
+
+			Response::redirect('college/list');
+		}
+
+		$this->template->title = 'エラー';
+		$this->template->content = View::forge('college/college_list');
+		$this->template->content->set('college_lists',$this->_get_list());
+		$this->template->content->set('errors', $val->error_message());
+		$this->template->content->set('inputs', $val->input());
+
 	}
 
 	public function action_edit()
@@ -16,11 +35,16 @@ class Controller_College extends Controller_Loggedin
 
 	public function action_list()
 	{
-		$colleges = Model_College::find('all');
+		$this->template->title = 'カレッジ一覧';
+		$this->template->content = View::forge('college/college_list');
+		$this->template->content->set('college_lists',$this->_get_list());
+	}
 
+	private function _get_list()
+	{
 		$college_lists = array();
 
-		foreach($colleges as $college)
+		foreach(Model_College::find('all') as $college)
 		{
 			$array = array();
 			$course_sum = count(Model_Course::find('all'));
@@ -35,8 +59,7 @@ class Controller_College extends Controller_Loggedin
 
 			$college_lists[] = $array;
 		}
-		$this->template->title = 'カレッジ一覧';
-		$this->template->content = View::forge('college/college_list');
-		$this->template->content->set('college_lists',$college_lists);
+
+		return $college_lists;
 	}
 }

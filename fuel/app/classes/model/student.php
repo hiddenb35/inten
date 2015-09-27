@@ -97,14 +97,14 @@ class Model_Student extends \Orm\Model
 	{
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
-		$val->add_field('username','学科番号','required|max_length[50]');
-		$val->add_field('first_name','名','required|max_length[64]');
-		$val->add_field('first_name_kana','名(カナ)','required|max_length[64]');
-		$val->add_field('last_name','姓','required|max_length[64]');
-		$val->add_field('last_name_kana','姓(カナ)','required|max_length[64]');
+		$val->add_field('username','学科番号','trim|required|max_length[50]');
+		$val->add_field('first_name','名','trim|required|max_length[64]');
+		$val->add_field('first_name_kana','名(カナ)','trim|required|max_length[64]');
+		$val->add_field('last_name','姓','trim|required|max_length[64]');
+		$val->add_field('last_name_kana','姓(カナ)','trim|required|max_length[64]');
 		$val->add_field('birthday','生年月日','required|max_length[10]');
 		$val->add_field('password','パスワード','required|max_length[255]');
-		$val->add_field('email','メールアドレス','required|max_length[255]|valid_email');
+		$val->add_field('email','メールアドレス','trim|required|max_length[255]|valid_email');
 		$val->add_field('gender','性別','required|max_length[11]');
 		$val->add_field('group','グループ','required|max_length[11]');
 		$val->add_field('last_login','最終ログイン日時','required|max_length[25]');
