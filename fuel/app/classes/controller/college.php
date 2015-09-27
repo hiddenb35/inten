@@ -9,10 +9,14 @@ class Controller_College extends Controller_Loggedin
 			throw new HttpNotFoundException;
 		}
 
-		$name = Input::post('name');
-		$college  = Model_College::forge();
-		$college->name = $name;
-		$college->save();
+		$val = Model_College::validate();
+		if($val->run())
+		{
+			$college = Model_College::forge();
+			$college->name = $val->validated('name');
+			$college->save();
+		}
+
 
 		Response::redirect('college/list');
 
