@@ -22,7 +22,7 @@ class Table_student
 			'login_hash'      => array('type' => 'varchar', 'constraint' => 255, 'comment' => 'ログインハッシュ'),
 			'profile_fields'  => array('type' => 'text', 'comment' => '備考'),
 			'created_at'      => array('type' => 'int', 'comment' => '作成日時'),
-			'updated_at'      => array('type' => 'int', 'comment' => '更新日時'),
+			'updated_at'      => array('type' => 'int', 'null' => true, 'comment' => '更新日時'),
 			'class_id'        => array('type' => 'int', 'unsigned' => true, 'comment' => 'クラスID'),
 			'major_id'        => array('type' => 'int', 'unsigned' => true, 'null' => true, 'comment' => '専攻ID'),
 		), array('id'), true, false, null, array(
