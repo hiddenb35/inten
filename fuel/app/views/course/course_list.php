@@ -17,7 +17,6 @@
 			<table class="table table-bordered table-striped table-hover">
 				<tbody>
 					<tr>
-						<th>#</th>
 						<th>学科コード</th>
 						<th>学科名</th>
 						<th>年制</th>
@@ -25,7 +24,6 @@
 					</tr>
 					<?php foreach($course_lists as $course_list): ?>
 					<tr>
-						<td>1.</td>
 						<td><?php echo $course_list['code']; ?></td>
 						<td><?php echo $course_list['name']; ?></td>
 						<td><?php echo $course_list['year_system']; ?></td>
