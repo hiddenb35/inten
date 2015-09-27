@@ -9,7 +9,7 @@
 <!-- Main content -->
 <section class="content">
 	<div id="ATTENDANCE">
-		<form action="/attendance" method="post" class="container-fluid">
+		<form action="/attendance/add" method="post" class="container-fluid">
 			<input type="hidden" name="class_id" value="<?php echo $class_info['id']; ?>">
 			<input type="hidden" name="lesson_id" value="<?php echo $lesson_info['id']; ?>">
 			<?php foreach($student_lists as $index => $student): ?>
