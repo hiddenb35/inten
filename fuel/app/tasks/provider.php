@@ -241,6 +241,63 @@ class Provider
 		}
 		$query->execute();
 
+		/* 時間割 */
+		$timetable = array(
+			array(
+				array('lesson_id' => 1, 'room_number' => '30711', 'notes' => ''),
+				array('lesson_id' => 1, 'room_number' => '30711', 'notes' => ''),
+				array('lesson_id' => 1, 'room_number' => '30711', 'notes' => ''),
+				array(),
+				array('lesson_id' => 2, 'room_number' => '30615', 'notes' => 'PC持参'),
+				array('lesson_id' => 2, 'room_number' => '30615', 'notes' => 'PC持参'),
+				array('lesson_id' => 3, 'room_number' => '30705A', 'notes' => ''),
+				array('lesson_id' => 3, 'room_number' => '30705A', 'notes' => ''),
+			),
+			array(
+				array('lesson_id' => 4, 'room_number' => '30615', 'notes' => 'PC持参'),
+				array('lesson_id' => 4, 'room_number' => '30615', 'notes' => 'PC持参'),
+				array('lesson_id' => 4, 'room_number' => '30615', 'notes' => 'PC持参'),
+				array(),
+				array(),
+				array(),
+				array(),
+				array(),
+			),
+			array(
+				array(),
+				array(),
+				array(),
+				array(),
+				array('lesson_id' => 5, 'room_number' => '30502', 'notes' => ''),
+				array('lesson_id' => 5, 'room_number' => '30503', 'notes' => ''),
+				array(),
+				array(),
+			),
+			array(
+				array('lesson_id' => 4, 'room_number' => '30615', 'notes' => 'PC持参'),
+				array('lesson_id' => 4, 'room_number' => '30615', 'notes' => 'PC持参'),
+				array('lesson_id' => 4, 'room_number' => '30615', 'notes' => 'PC持参'),
+				array(),
+				array('lesson_id' => 6, 'room_number' => '30507', 'notes' => ''),
+				array('lesson_id' => 6, 'room_number' => '30507', 'notes' => ''),
+				array('lesson_id' => 6, 'room_number' => '30507', 'notes' => ''),
+				array(),
+			),
+			array(
+				array('lesson_id' => 7, 'room_number' => '30718', 'notes' => 'PC持参'),
+				array('lesson_id' => 7, 'room_number' => '30718', 'notes' => 'PC持参'),
+				array('lesson_id' => 7, 'room_number' => '30718', 'notes' => 'PC持参'),
+				array(),
+				array('lesson_id' => 7, 'room_number' => '30718', 'notes' => 'PC持参'),
+				array('lesson_id' => 7, 'room_number' => '30718', 'notes' => 'PC持参'),
+				array('lesson_id' => 7, 'room_number' => '30718', 'notes' => 'PC持参'),
+				array(),
+			),
+		);
+		$query = \DB::insert('timetable')->columns(array('name','html','created_at','updated_at','is_active','class_id'));
+		$query->values(array('IS07-1前期時間割', json_encode($timetable), time(), 0, 1, 1));
+		$query->execute();
+
 	}
 
 	public static function delete()
