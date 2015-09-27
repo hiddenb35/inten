@@ -1,6 +1,6 @@
 <section class="content-header">
 	<h1>
-		出席
+		<?php echo $class_info['name']; ?> <?php echo $lesson_info['name'] ?>
 	</h1>
 	<ol class="breadcrumb">
 		<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -10,7 +10,8 @@
 <section class="content">
 	<div id="ATTENDANCE">
 		<form action="/attendance" method="post" class="container-fluid">
-			<input type="hidden" name="class_id" value="<?php echo $class_id; ?>">
+			<input type="hidden" name="class_id" value="<?php echo $class_info['id']; ?>">
+			<input type="hidden" name="lesson_id" value="<?php echo $lesson_info['id']; ?>">
 			<?php foreach($student_lists as $index => $student): ?>
 				<div class="form-group col-sm-4 col-md-3">
 					<input type="hidden" name="attendance[<?php echo $index; ?>][student_id]" value="<?php echo $student['id']; ?>">
