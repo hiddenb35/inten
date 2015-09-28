@@ -13,9 +13,9 @@
 			<input type="hidden" name="class_id" value="<?php echo $class_info['id']; ?>">
 			<input type="hidden" name="lesson_id" value="<?php echo $lesson_info['id']; ?>">
 			<?php foreach($student_lists as $index => $student): ?>
-				<div class="form-group col-sm-4 col-md-3">
+				<div class="form-group col-sm-6 col-md-4 col-lg-3">
 					<input type="hidden" name="attendance[<?php echo $index; ?>][student_id]" value="<?php echo $student['id']; ?>">
-					<div class="box">
+					<div class="box box-danger">
 						<div class="box-header with-border">
 							<h3 class="box-title"><span class="number"><?php echo $student['number']; ?></span><b><?php echo $student['full_name']; ?></b></h3>
 							<div class="box-tools pull-right">
@@ -27,8 +27,6 @@
 							<div data-toggle="buttons" class="text-center">
 								<label class="btn btn-default btn-lg" data-box-class="box-success" data-attendance-class="text-success"><input type="radio" name="attendance[<?php echo $index; ?>][status]" value="1">出席</label>
 								<label class="btn btn-default btn-lg" data-box-class="box-warning" data-attendance-class="text-warning"><input type="radio" name="attendance[<?php echo $index; ?>][status]" value="2">遅刻</label>
-								<label class="btn btn-default btn-lg" data-box-class="box-danger" data-attendance-class="text-danger"><input type="radio" name="attendance[<?php echo $index; ?>][status]" value="3">欠席</label>
-								<label class="btn btn-default btn-lg" data-box-class="box-info" data-attendance-class="text-info"><input type="radio" name="attendance[<?php echo $index; ?>][status]" value="4">公欠</label>
 							</div>
 						</div>
 					</div>
