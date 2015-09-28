@@ -28,7 +28,11 @@ $(function(){
 	});
 	var thisStorage ;
 	$("#TIMETABLE_ADD table td").click(function() {
-		$(this).addClass('active');
+		if($(this).hasClass("active")){
+			$(this).removeClass("active");
+		}else{
+			$(this).addClass("active");
+		}
 		if($(".active").length == 1){
 			thisStorage = $(this);
 		}
@@ -37,6 +41,14 @@ $(function(){
 		$("#teacher").val($('#subject option:selected').data('teacher'));
 	});
 	$("#TIMETABLE_ADD #selection").click(function() {
+		if($('#TIMETABLE_ADD td').hasClass('active') == false){
+			alert("項目が選択されていません");
+			return false;
+		}
+		$(".setElement").removeClass('setElement');
+		$(".active").addClass("setElement");
+		$(".active").removeClass("active");
+
 		$("#TIMETABLE_ADD #timeadd").click();
 		$('#subject').val($(thisStorage).data('lesson-id'));
 		$("#teacher").val($('#subject option:selected').data('teacher'));
@@ -44,11 +56,12 @@ $(function(){
 		$("#note").val($(thisStorage).children('.note').text());
 
 		$("#set").click(function(){
-			$(".active").data('lesson-id',$('#subject option:selected').val());
-			$(".active").children('.subject').text($('#subject option:selected').text());
-			$(".active").children('.teacher').text($('#subject option:selected').data('teacher'));
-			$(".active").children('.classroom').text($('#classroom').val());
-			$(".active").children('.note').text($('#note').val());
+			$(".setElement").data('lesson-id',$('#subject option:selected').val());
+			$(".setElement").children('.subject').text($('#subject option:selected').text());
+			$(".setElement").children('.teacher').text($('#subject option:selected').data('teacher'));
+			$(".setElement").children('.classroom').text($('#classroom').val());
+			$(".setElement").children('.note').text($('#note').val());
+			$(".setElement").removeClass("setElement");
 		});
 	});
 	var data = {"title":$('#title').text(),"params":[]};
