@@ -27,7 +27,7 @@
 							<td class="course-edit"><?php echo $course_list['code']; ?></td>
 							<td class="course-edit"><?php echo $course_list['name']; ?></td>
 							<td class="course-edit"><?php echo $course_list['year_system']; ?></td>
-							<td class="course-edit"><?php echo $course_list['college_name']; ?></td>
+							<td class="course-edit-college"><?php echo $course_list['college_name']; ?></td>
 						</tr>
 						<?php endforeach; ?>
 					</tbody>
@@ -41,7 +41,7 @@
 			<div class="box-body">
 				<form action="/course/add" method="post" role="form" class="form-horizontal">
 					<div class="row">
-						<div class="form-group" id="form_college_add">
+						<div class="form-group" id="form_course_add">
 							<label for="name" class="col-sm-1 control-label">学科名</label>
 							<div class="col-sm-3">
 								<input type="text" class="form-control" id="name" name="name">
