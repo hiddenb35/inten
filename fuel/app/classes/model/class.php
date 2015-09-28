@@ -38,13 +38,6 @@ class Model_Class extends \Orm\Model
 	);
 
 	protected static $_has_one = array(
-		'student' => array(
-			'model_to' => 'Model_Student',
-			'key_from' => 'id',
-			'key_to' => 'class_id',
-			'cascade_save' => false,
-			'cascade_delete' => false,
-		),
 		'teacher' => array(
 			'model_to' => 'Model_Teacher',
 			'key_from' => 'teacher_id',
@@ -55,6 +48,13 @@ class Model_Class extends \Orm\Model
 	);
 
 	protected static $_has_many = array(
+		'student' => array(
+			'model_to' => 'Model_Student',
+			'key_from' => 'id',
+			'key_to' => 'class_id',
+			'cascade_save' => false,
+			'cascade_delete' => false,
+		),
 		'lesson' => array(
 			'model_to' => 'Model_Lesson',
 			'key_from' => 'id',
