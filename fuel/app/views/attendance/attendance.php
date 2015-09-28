@@ -24,9 +24,9 @@
 						</div>
 						<div class="box-body">
 							<div data-toggle="buttons" class="text-center">
-								<label class="btn btn-default btn-lg" data-box-class="box-success" data-attendance-class="text-success"><input type="radio" name="attendance[<?php echo $index; ?>][status]" value="1">出席</label>
-								<label class="btn btn-default btn-lg" data-box-class="box-warning" data-attendance-class="text-warning"><input type="radio" name="attendance[<?php echo $index; ?>][status]" value="2">遅刻</label>
-								<label class="btn btn-default btn-lg" data-box-class="box-danger" data-attendance-class="text-danger"><input type="radio" name="attendance[<?php echo $index; ?>][status]" value="3">欠席</label>
+								<label class="btn btn-default" data-box-class="box-success" data-attendance-class="text-success"><input type="radio" name="attendance[<?php echo $index; ?>][status]" value="1">出席</label>
+								<label class="btn btn-default" data-box-class="box-warning" data-attendance-class="text-warning"><input type="radio" name="attendance[<?php echo $index; ?>][status]" value="2">遅刻</label>
+								<label class="btn btn-default" data-box-class="box-danger" data-attendance-class="text-danger"><input type="radio" name="attendance[<?php echo $index; ?>][status]" value="3">欠席</label>
 							</div>
 						</div>
 					</div>
