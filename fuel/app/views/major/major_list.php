@@ -23,9 +23,9 @@
 					</tr>
 					<?php foreach($major_lists as $major_list): ?>
 					<tr>
-						<td><?php echo $major_list['name']; ?></td>
-						<td><?php echo $major_list['course_name']; ?></td>
-						<td><?php echo $major_list['college_name']; ?></td>
+						<td class="major-edit"><?php echo $major_list['name']; ?></td>
+						<td class="major-edit"><?php echo $major_list['course_name']; ?></td>
+						<td class="major-edit"><?php echo $major_list['college_name']; ?></td>
 					</tr>
 					<?php endforeach; ?>
 				</tbody>

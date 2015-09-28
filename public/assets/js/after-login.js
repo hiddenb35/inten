@@ -9,4 +9,13 @@ $(function(){
         url: '#',
         title: 'Enter username'
     });
+
+    //専攻一覧
+    $('.major-edit').editable({
+        type: 'text',
+        pk: 1,
+        url: '#',
+        title: 'Enter username'
+    });
+
 });
