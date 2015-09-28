@@ -27,23 +27,28 @@ $(function(){
 		}
 	});
 	var thisStorage ;
+	$("#TIMETABLE_ADD table td").click(function() {
+		$(this).addClass('active');
+		if($(".active").length == 1){
+			thisStorage = $(this);
+		}
+	});
 	$("#TIMETABLE_ADD #subject").change(function(){
 		$("#teacher").val($('#subject option:selected').data('teacher'));
 	});
-	$("#TIMETABLE_ADD table td").click(function() {
-		thisStorage = ($(this));
+	$("#TIMETABLE_ADD #selection").click(function() {
 		$("#TIMETABLE_ADD #timeadd").click();
-		$('#subject').val($(this).data('lesson-id'));
+		$('#subject').val($(thisStorage).data('lesson-id'));
 		$("#teacher").val($('#subject option:selected').data('teacher'));
-		$('#classroom').val($(this).children('.classroom').text());
-		$("#note").val($(this).children('.note').text());
+		$('#classroom').val($(thisStorage).children('.classroom').text());
+		$("#note").val($(thisStorage).children('.note').text());
 
 		$("#set").click(function(){
-			$(thisStorage).data('lesson-id',$('#subject option:selected').val());
-			$(thisStorage).children('.subject').text($('#subject option:selected').text());
-			$(thisStorage).children('.teacher').text($('#subject option:selected').data('teacher'));
-			$(thisStorage).children('.classroom').text($('#classroom').val());
-			$(thisStorage).children('.note').text($('#note').val());
+			$(".active").data('lesson-id',$('#subject option:selected').val());
+			$(".active").children('.subject').text($('#subject option:selected').text());
+			$(".active").children('.teacher').text($('#subject option:selected').data('teacher'));
+			$(".active").children('.classroom').text($('#classroom').val());
+			$(".active").children('.note').text($('#note').val());
 		});
 	});
 	var data = {"title":$('#title').text(),"params":[]};

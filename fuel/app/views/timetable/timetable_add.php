@@ -16,7 +16,7 @@
 				<button type="button" id="selection" class="btn btn-sm btn-primary pull-right">選択した項目を編集</button>
 			</div>
 			<div class="box-body">
-				<table class="table table-bordered table-striped table-hover">
+				<table class="table table-bordered table-hover">
 					<tbody>
 						<tr>
 							<th>#</th>
@@ -95,7 +95,7 @@
 			</div>
 		</div>
 		<!-- popup -->
-		<button type="button" class="btn btn-primary btn-lg hidden" data-toggle="modal" data-target="#myModal" id="timeadd"></button>
+		<button type="button" class="btn btn-primary hidden" data-toggle="modal" data-target="#myModal" id="timeadd"></button>
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -140,7 +140,7 @@
 		</div>
 		<form class="form-horizontal">
 			<div class="form-group">
-				<button class="btn btn-primary">作成</button>
+				<button type="submit" class="btn btn-primary">作成</button>
 				<button type="reset" class="btn btn-warning" id="transmission">キャンセル</button>
 			</div>
 		</form>
