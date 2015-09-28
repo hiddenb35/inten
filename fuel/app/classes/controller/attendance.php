@@ -52,6 +52,31 @@ class Controller_Attendance extends Controller_Loggedin
 		Response::redirect('/');
 	}
 
+	public function action_lesson_list()
+	{
+
+		if(!$this->is_teacher())
+		{
+			throw new HttpNotFoundException;
+		}
+
+		$teacher = Model_Teacher::find($this->get_id());
+		$lesson_lists = array();
+		foreach($teacher->attachment as $attach)
+		{
+			$array = array();
+			$array['name'] = $attach->lesson->name;
+			$array['course_name'] = $attach->lesson->class->course->name;
+			$array['class_name'] = $attach->lesson->class->name;
+			$array['student_sum'] = count($attach->lesson->class->student);
+			$array['link_url'] = Uri::create('attendance', array(), array('class_id' => $attach->lesson->class_id, 'lesson_id' => $attach->lesson->id));
+			$lesson_lists[] = $array;
+		}
+		$this->template->title = '担当している授業一覧';
+		$this->template->content = View::forge('attendance/lesson_list');
+		$this->template->content->set('lesson_lists', $lesson_lists);
+	}
+
 	private function _get_list($class_id, $lesson_id)
 	{
 		$lists = array();
