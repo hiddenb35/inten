@@ -20,6 +20,38 @@ class Controller_Attendance extends Controller_Loggedin
 		$this->template->content->set('lesson_info', $lists['lesson']);
 	}
 
+	public function action_add()
+	{
+		if(!$this->is_teacher())
+		{
+			throw new HttpNotFoundException;
+		}
+		$teacher_id = $this->get_id();
+		$class_id = Input::post('class_id');
+		$lesson_id = Input::post('lesson_id');
+		$attendance = Input::post('attendance');
+
+		$att = Model_Attendance::forge();
+		$att->teacher_id = $teacher_id;
+		$att->lesson_id = $lesson_id;
+		$att->save();
+
+		$attendance_id = $att->id;
+
+		foreach($attendance as $a)
+		{
+			$student_id = $a['student_id'];
+			$status = (isset($a['status'])) ? $a['status'] : Model_Status::ABSENCE;
+			$at = Model_Status::forge();
+			$at->status = $status;
+			$at->student_id = $student_id;
+			$at->attendance_id = $attendance_id;
+			$at->save();
+		}
+
+		Response::redirect('/');
+	}
+
 	private function _get_list($class_id, $lesson_id)
 	{
 		$lists = array();
