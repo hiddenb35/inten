@@ -9,6 +9,23 @@ $(function(){
 		url: '#',
 		title: 'Enter username'
 	});
+
+	//ここからtimetable_add
+	$('#title').click(function() {
+		$('#title').css( 'display', 'none');
+		$('#titleEdit').val( $( '#title').text()).css( 'display', '').focus();
+	});
+	$('#titleEdit').blur(function() {
+		$('#titleEdit').css( 'display', 'none');
+		$('#title').text($('#titleEdit').val()).css( 'display', '');
+	});
+	$('#titleEdit').keypress( function(e) {
+		if ( e.which == 13) {
+			$('#titleEdit').css( 'display', 'none');
+			$('#title').text($('#titleEdit').val()).css( 'display', '');
+			return false;
+		}
+	});
 	var thisStorage ;
 	$("#TIMETABLE_ADD #subject").change(function(){
 		$("#teacher").val($('#subject option:selected').data('teacher'));
@@ -16,28 +33,27 @@ $(function(){
 	$("#TIMETABLE_ADD table td").click(function() {
 		thisStorage = ($(this));
 		$("#TIMETABLE_ADD #timeadd").click();
-		$('#subject').val($(this).children('span').text());
+		$('#subject').val($(this).data('lesson-id'));
 		$("#teacher").val($('#subject option:selected').data('teacher'));
 		$('#classroom').val($(this).children('.classroom').text());
 		$("#note").val($(this).children('.note').text());
 
 		$("#set").click(function(){
-			$(thisStorage).children('span').text($('#subject option:selected').val());
+			$(thisStorage).data('lesson-id',$('#subject option:selected').val());
 			$(thisStorage).children('.subject').text($('#subject option:selected').text());
 			$(thisStorage).children('.teacher').text($('#subject option:selected').data('teacher'));
 			$(thisStorage).children('.classroom').text($('#classroom').val());
 			$(thisStorage).children('.note').text($('#note').val());
-			// console.log();
 		});
 	});
-	var data = {"title":"aaa","params":[]};
+	var data = {"title":$('#title').text(),"params":[]};
 	var tr = $("table tr");
 	$("#TIMETABLE_ADD #transmission").click(function(){
 		for (var i = 1; i < 9; i++) {
 			var cells = tr.eq(i).children();
 			data.params[i-1] = [];
 			for (var j = 1; j < 6; j++) {
-				data.params[i-1][j-1] = {"id":cells.eq(j).children('span').text(),"classroom":cells.eq(j).children('.classroom').text(),"note":cells.eq(j).children('.note').text()};
+				data.params[i-1][j-1] = {"id":cells.eq(j).data('lesson-id'),"classroom":cells.eq(j).children('.classroom').text(),"note":cells.eq(j).children('.note').text()};
 			}
 		}
 		data = JSON.stringify(data);
