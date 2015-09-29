@@ -58,5 +58,46 @@
 				</table>
 			</div><!-- /.box-body -->
 		</div>
+		<div class="box">
+			<div class="box-header with-border">
+				<h3 class="box-title">クラス追加</h3>
+			</div><!-- /.box-header -->
+			<div class="box-body">
+				<form action="/class/add" method="post" role="form" class="form-horizontal">
+					<div class="row">
+						<div class="form-group" id="form_class_add">
+							<label for="name" class="col-sm-1 control-label">クラス名</label>
+							<div class="col-sm-2">
+								<input type="text" class="form-control" id="name" name="name">
+							</div>
+							<label for="course_id" class="col-sm-1 control-label">学科</label>
+							<div class="col-sm-2">
+								<select id="course_id" name="course_id" class="form-control">
+									<option value="1">ITスペシャリスト科</option>
+									<option value="2">情報処理科</option>
+									<option value="3">パソコン・ネットワーク科</option>
+									<option value="4">情報ビジネス科</option>
+								</select>
+							</div>
+							<label for="teacher_id" class="col-sm-1 control-label">担任</label>
+							<div class="col-sm-2">
+								<select id="teacher_id" name="teacher_id" class="form-control">
+									<option value="1">黛</option>
+									<option value="2">加藤</option>
+									<option value="3">成美</option>
+									<option value="4">笠井</option>
+									<option value="5">渡辺</option>
+									<option value="6">芦沢</option>
+								</select>
+							</div>
+							<div class="form-button col-sm-3">
+								<button type="submit" class="btn btn-primary">登録</button>
+								<button type="reset" class="btn btn-warning">キャンセル</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div><!-- /.box-body -->
+		</div>
 	</section>
 </div>
