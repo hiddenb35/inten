@@ -100,3 +100,8 @@ table th,td{
     background: #ddd;
     cursor: pointer;
 }
+/*カレッジ一覧ページ*/
+#COURSE_LIST .course-edit:hover {
+    background: #ddd;
+    cursor: pointer;
+}
