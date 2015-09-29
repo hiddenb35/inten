@@ -1,6 +1,6 @@
 <section class="content-header">
     <h1>
-        生徒情報閲覧
+        生徒一覧
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -9,23 +9,22 @@
 <!-- Main content -->
 <section class="content">
 <div id="STUDENT_LIST">
-    <div class="container">
-        <div class="table-responsive">
-            <table class="table table-borderd table-striped table-hover">
-                <thead>
-                    <tr>
-                        <th>学籍番号</th>                   <!-- 芦沢ゾーンここから -->
-                        <th>姓</th>
-                        <th>名</th>
-                        <th>セイ</th>
-                        <th>メイ</th>
-                        <th>生年月日(西暦)</th>
-                        <th>生年月日(月)</th>
-                        <th>生年月日(日)</th>
-                        <th>E-mail</th>
-                        <th>性別</th>
-                        <th>クラス</th>
-                    </tr>
+    <div class="table-responsive">
+        <table class="table table-borderd table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>学籍番号</th>                   <!-- 芦沢ゾーンここから -->
+                    <th>姓</th>
+                    <th>名</th>
+                    <th>セイ</th>
+                    <th>メイ</th>
+                    <th>生年月日(西暦)</th>
+                    <th>生年月日(月)</th>
+                    <th>生年月日(日)</th>
+                    <th>E-mail</th>
+                    <th>性別</th>
+                    <th>クラス</th>
+                </tr>
                 </thead>
                 <tbody>
                     <tr>
@@ -45,5 +44,4 @@
             </table>
         </div>
     </div>
-</div>
 </section>
