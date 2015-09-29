@@ -85,7 +85,7 @@ class Model_Class extends \Orm\Model
 	{
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
-		$val->add_field('name','クラス名','trim|required|max_length[64]');
+		$val->add_field('name','クラス名','trim|required|max_length[64]')->add_rule('unique', 'class', 'name');
 		$val->add_field('course_id','学科ID','required|max_length[10]');
 		$val->add_field('teacher_id','教員ID','required|max_length[10]');
 		return $val;
