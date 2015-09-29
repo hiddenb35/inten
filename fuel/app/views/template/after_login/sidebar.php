@@ -20,39 +20,24 @@
 		</li>
 		<li class="treeview">
 			<a href="/college/list">
-				<i class="fa ion-university"></i> <span>カレッジ一覧</span>
+				<i class="fa ion-university"></i> <span>カレッジ情報</span>
 			</a>
 
 		</li>
 		<li class="treeview">
-			<a href="/">
-				<i class="fa ion-university"></i> <span>学科</span> <i class="fa fa-angle-down pull-right"></i>
+			<a href="/course/list">
+				<i class="fa ion-university"></i> <span>学科情報</span>
 			</a>
-			<ul class="treeview-menu">
-				<li><a href="/course/list"><i class="fa fa-circle-o"></i>学科一覧</a></li>
-				<li><a href="/course/edit"><i class="fa fa-circle-o"></i>学科編集</a></li>
-				<li><a href="/course/add"><i class="fa fa-circle-o"></i>学科追加</a></li>
-			</ul>
 		</li>
 		<li class="treeview">
-			<a href="/">
-				<i class="fa ion-university"></i> <span>クラス</span> <i class="fa fa-angle-down pull-right"></i>
+			<a href="/class/list">
+				<i class="fa ion-university"></i> <span>クラス情報</span>
 			</a>
-			<ul class="treeview-menu">
-				<li><a href="/class/list"><i class="fa fa-circle-o"></i>クラス一覧</a></li>
-				<li><a href="/class/edit"><i class="fa fa-circle-o"></i>クラス編集</a></li>
-				<li><a href="/class/add"><i class="fa fa-circle-o"></i>クラス追加</a></li>
-			</ul>
 		</li>
 		<li class="treeview">
-			<a href="/">
-				<i class="fa ion-university"></i> <span>専攻</span> <i class="fa fa-angle-down pull-right"></i>
+			<a href="/major/list">
+				<i class="fa ion-university"></i> <span>専攻情報</span>
 			</a>
-			<ul class="treeview-menu">
-				<li><a href="/major/list"><i class="fa fa-circle-o"></i>専攻一覧</a></li>
-				<li><a href="/major/edit"><i class="fa fa-circle-o"></i>専攻編集</a></li>
-				<li><a href="/major/add"><i class="fa fa-circle-o"></i>専攻追加</a></li>
-			</ul>
 		</li>
 		<li class="treeview">
 			<a href="/">
