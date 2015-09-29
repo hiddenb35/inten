@@ -16,12 +16,16 @@ class Controller_Course extends Controller_Loggedin
 
 	public function action_list()
 	{
+		$this->template->title = '学科一覧';
+		$this->template->content = View::forge('course/course_list');
+		$this->template->content->set('course_lists',$this->_get_list());
+	}
 
-		$courses = Model_Course::find('all');
-
+	private function _get_list()
+	{
 		$course_lists = array();
 
-		foreach($courses as $course)
+		foreach(Model_Course::find('all') as $course)
 		{
 			$array = array();
 			$array['code'] = $course['code'];
@@ -34,8 +38,6 @@ class Controller_Course extends Controller_Loggedin
 			$course_lists[] = $array;
 		}
 
-		$this->template->title = '学科一覧';
-		$this->template->content = View::forge('course/course_list');
-		$this->template->content->set('course_lists',$course_lists);
+		return $course_lists;
 	}
 }
