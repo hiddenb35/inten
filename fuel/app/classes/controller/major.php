@@ -16,11 +16,16 @@ class Controller_Major extends Controller_Loggedin
 
 	public function action_list()
 	{
-		$majors = Model_Major::find('all');
+		$this->template->title = '専攻一覧';
+		$this->template->content = View::forge('major/major_list');
+		$this->template->content->set('major_lists',$this->_get_list());
+	}
 
+	private function _get_list()
+	{
 		$major_lists = array();
 
-		foreach($majors as $major)
+		foreach(Model_Major::find('all') as $major)
 		{
 			$array = array();
 			$array['name'] = $major['name'];
@@ -32,8 +37,6 @@ class Controller_Major extends Controller_Loggedin
 			$major_lists[] = $array;
 		}
 
-		$this->template->title = '専攻一覧';
-		$this->template->content = View::forge('major/major_list');
-		$this->template->content->set('major_lists',$major_lists);
+		return $major_lists;
 	}
 }
