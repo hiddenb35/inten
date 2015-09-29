@@ -4,8 +4,28 @@ class Controller_Major extends Controller_Loggedin
 {
 	public function action_add()
 	{
-		$this->template->title = '専攻の追加';
-		$this->template->content = View::forge('major/major_add');
+		if(Input::method() !== 'POST')
+		{
+			throw new HttpNotFoundException;
+		}
+
+		$val = Model_Major::validate();
+		if($val->run())
+		{
+			$major = Model_Major::forge();
+			$major->name = $val->validated('name');
+			$major->course_id = $val->validated('course_id');
+			$major->save();
+
+			Response::redirect('major/list');
+		}
+
+		$this->template->title = 'エラー';
+		$this->template->content = View::forge('major/major_list');
+		$this->template->content->set('major_lists', $this->_get_list());
+		$this->template->content->set('errors', $val->error_message());
+		$this->template->content->set('inputs', $val->input());
+
 	}
 
 	public function action_edit()
