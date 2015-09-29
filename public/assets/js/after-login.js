@@ -62,4 +62,22 @@ $(function(){
 			{value: '3', text: 'ミュージックカレッジ'}
 		]
 	});
+
+	//クラス一覧ページのinplace edit
+	$('.class-edit-name').editable({
+		type: 'text',
+		pk: 1,
+		url: '#',
+	});
+	$('.class-edit-college').editable({
+		type: 'select',
+		showbuttons: false,
+		pk: 1,
+		url: '#',
+		source: [ //TODO 動的に取得する。
+			{value: '1', text: 'ITスペシャリスト科'},
+			{value: '2', text: 'ゲームクリエイター科'},
+			{value: '3', text: 'コンサートイベント科'}
+		]
+	});
 });
