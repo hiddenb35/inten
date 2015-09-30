@@ -103,7 +103,7 @@ class Controller_Teacher extends Controller_Loggedin
 		$this->template->content = View::forge('teacher/attachment_lesson');
 	}
 
-	public function action_assign_list()
+	public function action_assign_list($controller, $method)
 	{
 		if(!$this->is_teacher())
 		{
@@ -112,10 +112,10 @@ class Controller_Teacher extends Controller_Loggedin
 
 		$this->template->title = 'クラス一覧';
 		$this->template->content = View::forge('teacher/assign_list');
-		$this->template->content->set('class_lists',$this->_get_list());
+		$this->template->content->set('class_lists',$this->_get_list($controller,$method));
 	}
 
-	public function _get_list()
+	public function _get_list($controller, $method)
 	{
 		$current_id = $this->get_id();
 		$classes = Model_Class::find('all',array(
@@ -140,7 +140,7 @@ class Controller_Teacher extends Controller_Loggedin
 			$array['updated_at'] = $class['updated_at'];
 			$array['course_name'] = $class->course->name;
 			$array['college_name'] = $class->course->college->name;
-			$array['link_url'] = Uri::create('hoge/hoge',array(),array('class_id' => 1));
+			$array['link_url'] = Uri::create("{$controller}/{$method}",array(),array('class_id' => 1));
 			$array['student_sum'] = $count;
 
 			$class_lists[] = $array;
