@@ -142,7 +142,7 @@ $(function(){
 			var cells = tr.eq(i).children();
 			data.params[i-1] = [];
 			for (var j = 1; j < 6; j++) {
-				data.params[i-1][j-1] = {"id":cells.eq(j).data('lesson-id'),"classroom":cells.eq(j).children('.classroom').text(),"note":cells.eq(j).children('.note').text()};
+				data.params[i-1][j-1] = {"lesson_id":cells.eq(j).data('lesson-id'),"room_number":cells.eq(j).children('.classroom').text(),"notes":cells.eq(j).children('.note').text()};
 			}
 		}
 		data = JSON.stringify(data);
