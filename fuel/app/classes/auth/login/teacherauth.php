@@ -591,7 +591,7 @@ class Auth_Login_Teacherauth extends \Auth\Auth_Login_Driver
 			'last_login'      => 0,
 			'login_hash'      => '',
 			'created_at'      => \Date::forge()->get_timestamp(),
-			'updated_at'      => 0,
+			'updated_at'      => null,
 		);
 
 		$result = \DB::insert(\Config::get('teacherauth.table_name'))

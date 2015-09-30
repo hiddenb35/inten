@@ -1,27 +1,44 @@
 <div id="LOGIN">
 <div class="container">
-    <div class="login-box">
-        <div class="login-logo" id="logo">
-            <b>Login</b>
-        </div><!-- /.login-logo -->
-        <div class="login-box-body">
-            <form id="login_form" method="post">
-                <div class="form-group has-feedback">
-                    <input type="text" name="username" class="form-control input-lg" placeholder="Username">
-                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row">
+                <!--            左               -->
+                <div class="col-md-4"></div>
+                <!--            左               -->
+
+                <!--            コンテンツ              -->
+                <div class="col-md-4">
+                    <div class="login-box">
+                        <div class="login-box-header text-center h1">
+                            <b class="hidden-xs" >Student_Login</b>
+                            <b class="visible-xs">Login</b>
+                        </div>
+                        <div class="login-box-body">
+                            <form  class="form-horizontal text-center" id="login_form" method="post">
+                                <div class="form-group input-group">
+                                    <span class="input-group-addon"><i class="ion-person"></i></span>
+                                    <input type="text" name="username" class="form-control input-lg" placeholder="Username">
+                                </div>
+                                <div class="form-group input-group">
+                                    <span class="input-group-addon"><i class="ion-locked"></i></span>
+                                    <input type="password" name="password" class="form-control input-lg" placeholder="Password">
+                                </div>
+                                <div class="form-group text-center">
+                                    <button type="submit" class="btn btn-block btn-primary btn-lg login-button">Login
+                                        <!-- <span class="glyphicon glyphicon-log-in"></span> -->
+                                        <span class="ion-power"></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group has-feedback">
-                    <input type="password" name="password" class="form-control input-lg" placeholder="Password">
-                    <span class="ion-unlocked form-control-feedback"></span>
-                </div>
-<!--                 <div class="row">
-                    <div class="col-xs-6">
- -->                        <button type="submit" class="btn btn-block btn-primary btn-flat btn-lg center-block">Login
-                            <span class="glyphicon glyphicon-log-in"></span>
-                        </button>
-<!--                     </div>
- -->                </div>
-            </form>
+                <!--            コンテンツ            -->
+                <!--            右               -->
+                <div class="col-md-4"></div>
+                <!--            右               -->
+            </div>
         </div>
     </div>
 </div>

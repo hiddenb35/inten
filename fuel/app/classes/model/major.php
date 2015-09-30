@@ -34,11 +34,31 @@ class Model_Major extends \Orm\Model
 		),
 	);
 
+	public static $_has_one = array(
+		'course' => array(
+			'model_to' => 'Model_Course',
+			'key_from' => 'course_id',
+			'key_to' => 'id',
+			'cascade_save' => false,
+			'cascade_delete' => false,
+		),
+	);
+
+	public static $_has_many = array(
+		'student' => array(
+			'model_to' => 'Model_Student',
+			'key_from' => 'id',
+			'key_to' => 'major_id',
+			'cascade_save' => false,
+			'cascade_delete' => false,
+		),
+	);
+
 	public static function validate()
 	{
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
-		$val->add_field('name','専攻名','required|max_length[64]');
+		$val->add_field('name','専攻名','trim|required|max_length[64]')->add_rule('unique', 'major', 'name');
 		$val->add_field('course_id','学科ID','required|max_length[10]');
 		return $val;
 	}

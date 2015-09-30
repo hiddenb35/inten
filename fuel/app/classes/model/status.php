@@ -1,16 +1,19 @@
 <?php
 
-class Model_Attendance extends \Orm\Model
+class Model_Status extends \Orm\Model
 {
-	protected static $_table_name = 'attendance';
+	protected static $_table_name = 'attendance_status';
 	protected static $_primary_key = array('id');
 
 	protected static $_properties = array(
 		'id',
-		'teacher_id' => array(
+		'status' => array(
 			'data_type' => 'int',
 		),
-		'lesson_id' => array(
+		'student_id' => array(
+			'data_type' => 'int',
+		),
+		'attendance_id' => array(
 			'data_type' => 'int',
 		),
 		'created_at' => array(
@@ -35,16 +38,16 @@ class Model_Attendance extends \Orm\Model
 	);
 
 	protected static $_belongs_to = array(
-		'teacher' => array(
-			'model_to' => 'Model_Teacher',
-			'key_from' => 'teacher_id',
+		'student' => array(
+			'model_to' => 'Model_Student',
+			'key_from' => 'student_id',
 			'key_to' => 'id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),
-		'lesson' => array(
-			'model_to' => 'Model_Lesson',
-			'key_from' => 'lesson_id',
+		'attendance' => array(
+			'model_to' => 'Model_Attendance',
+			'key_from' => 'attendance_id',
 			'key_to' => 'id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
@@ -55,8 +58,8 @@ class Model_Attendance extends \Orm\Model
 	{
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
-		$val->add_field('teacher_id','教員ID','required|max_length[10]');
-		$val->add_field('lesson_id','授業ID','required|max_length[10]');
+		$val->add_field('student_id','教員ID','required|max_length[10]');
+		$val->add_field('attendance_id','出席ID','required|max_length[10]');
 		return $val;
 	}
 }

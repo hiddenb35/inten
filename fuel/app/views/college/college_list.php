@@ -17,54 +17,19 @@
 				<table class="table table-bordered table-striped" id="college_list_table">
 					<tbody>
 						<tr>
-							<th>#</th>
 							<th>カレッジ名</th>
 							<th>学科数</th>
 							<th>クラス数</th>
 							<th>専攻数</th>
 						</tr>
+						<?php foreach($college_lists as $college_list): ?>
 						<tr>
-							<td>1.</td>
-							<td class="college-name">ITカレッジ</td>
-							<td>3</td>
-							<td>10</td>
-							<td>2</td>
+							<td class="college-name"><?php echo $college_list['name']?></td>
+							<td><?php echo $college_list['course_sum']; ?></td>
+							<td><?php echo $college_list['class_sum']; ?></td>
+							<td><?php echo $college_list['major_sum']; ?></td>
 						</tr>
-						<tr>
-							<td>2.</td>
-							<td class="college-name">クリエイターズカレッジ</td>
-							<td>3</td>
-							<td>10</td>
-							<td>2</td>
-						</tr>
-						<tr>
-							<td>3.</td>
-							<td class="college-name">ミュージックカレッジ</td>
-							<td>3</td>
-							<td>10</td>
-							<td>2</td>
-						</tr>
-						<tr>
-							<td>4.</td>
-							<td class="college-name">テクノロジーカレッジ</td>
-							<td>3</td>
-							<td>10</td>
-							<td>2</td>
-						</tr>
-						<tr>
-							<td>5.</td>
-							<td class="college-name">デザインカレッジ</td>
-							<td>3</td>
-							<td>10</td>
-							<td>2</td>
-						</tr>
-						<tr>
-							<td>6.</td>
-							<td class="college-name">医療カレッジ</td>
-							<td>3</td>
-							<td>10</td>
-							<td>2</td>
-						</tr>
+						<?php endforeach; ?>
 					</tbody>
 				</table>
 			</div><!-- /.box-body -->
@@ -74,7 +39,7 @@
 				<h3 class="box-title">カレッジ追加</h3>
 			</div><!-- /.box-header -->
 			<div class="box-body">
-				<form action="/college/college_add" method="post" role="form" class="form-horizontal">
+				<form action="/college/add" method="post" role="form" class="form-horizontal">
 					<div class="row">
 						<div class="form-group" id="form_college_add">
 							<label for="name" class="col-sm-1 control-label">カレッジ名</label>
