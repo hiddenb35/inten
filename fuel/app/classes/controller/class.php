@@ -41,7 +41,7 @@ class Controller_Class extends Controller_Loggedin
 		$this->template->content->set('class_lists', $this->_get_list());
 	}
 
-	private function _get_list()
+	public function _get_list()
 	{
 		$class_lists = array();
 
