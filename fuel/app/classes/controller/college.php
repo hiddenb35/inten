@@ -50,6 +50,7 @@ class Controller_College extends Controller_Loggedin
 			$course_sum = count(Model_Course::find('all'));
 			$class_sum = count(Model_Class::find('all'));
 			$major_sum = count(Model_Major::find('all'));
+			$array['id'] = $college['id'];
 			$array['name'] = $college['name'];
 			$array['course_sum'] = $course_sum;
 			$array['class_sum'] = $class_sum;
