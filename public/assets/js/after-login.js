@@ -2,17 +2,43 @@
  * Created by IT College on 2015/09/26.
  */
 $(function(){
-	//inplace editをインライン化
+	//in place editをインライン化
 	$.fn.editable.defaults.mode = 'inline';
 
-	//カレッジ一覧ページのinplace edit
+	//カレッジ一覧ページのin place edit
 	$('.college-name').editable({
 		type: 'text',
-		pk: 1,
-		url: '#',
-		title: 'Enter username'
+		url: '/college/edit'
+		//success: function(response, newValue){
+		//	console.log(response);
+		//	console.log(newValue);
+		//},
+		//error: function(response, newValue){
+        //
+		//}
+	}).on('hidden', function(e, reason){
+		if(reason === 'save') {
+			var sendCollegeEditData = {
+				id: $(this).data('college-id'),
+				name: $(this).context.textContent
+			};
+			$(this).editable('submit', {
+				ajaxOptions: {
+					dataType: 'json',
+					data: sendCollegeEditData
+				},
+				//success: function(response, newValue){
+				//	console.log(response);
+				//	console.log(newValue);
+				//},
+				//error: function(response, newValue){
+                //
+				//}
+			});
+		}
 	});
-	//学科一覧ページのinplace edit
+
+	//学科一覧ページのin place edit
 	$('.course-edit').editable({
 		type: 'text',
 		pk: 1,
@@ -32,7 +58,7 @@ $(function(){
 		]
 	});
 
-	//専攻一覧ページのinplace edit
+	//専攻一覧ページのin place edit
 	$('.major-edit').editable({
 		type: 'text',
 		pk: 1,
@@ -62,7 +88,7 @@ $(function(){
 		]
 	});
 
-	//クラス一覧ページのinplace edit
+	//クラス一覧ページのin place edit
 	$('.class-edit-name').editable({
 		type: 'text',
 		pk: 1,
@@ -79,6 +105,10 @@ $(function(){
 			{value: '3', text: 'コンサートイベント科'}
 		]
 	});
+
+	var getCollegeId = function(){
+		return $(this).data('college-id');
+	};
 
 
 	//ここからtimetable_add
