@@ -4,6 +4,9 @@
 #TIMETABLE_ADD #note{
 	width:100%;
 }
+#TIMETABLE_ADD #note{
+	resize: none;
+}
 html, body{
 	background: #222d32;
 	width: 100%;

@@ -32,7 +32,7 @@
 						<tbody>
 							<tr>
 								<th class="text-center bg-info"><span>1時限目</span><br>9:00-9:50</th>
-								<td class="text-center" data-lesson-id="1"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
 								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
 								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
 								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
