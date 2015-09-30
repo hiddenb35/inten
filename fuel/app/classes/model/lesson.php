@@ -84,6 +84,7 @@ class Model_Lesson extends \Orm\Model
 		foreach(self::find('all') as $lesson)
 		{
 			$array = array();
+			$array['id'] = $lesson['id'];
 			$array['name'] = $lesson['name'];
 			$array['term'] = $lesson['term'];
 			$array['sum_credit'] = $lesson['sum_credit'];

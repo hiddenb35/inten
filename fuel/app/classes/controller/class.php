@@ -23,6 +23,8 @@ class Controller_Class extends Controller_Loggedin
 		$this->template->title = 'エラー';
 		$this->template->content = View::forge('class/class_list');
 		$this->template->content->set('class_lists', Model_Class::get_list());
+		$this->template->content->set('course_lists', Model_Course::get_list());
+		$this->template->content->set('teacher_lists', Model_Teacher::get_list());
 		$this->template->content->set('errors', $val->error_message());
 		$this->template->content->set('inputs', $val->input());
 
@@ -39,6 +41,8 @@ class Controller_Class extends Controller_Loggedin
 		$this->template->title = 'クラス一覧';
 		$this->template->content = View::forge('class/class_list');
 		$this->template->content->set('class_lists', Model_Class::get_list());
+		$this->template->content->set('course_lists', Model_Course::get_list());
+		$this->template->content->set('teacher_lists', Model_Teacher::get_list());
 	}
 
 }
