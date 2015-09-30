@@ -21,7 +21,7 @@ class Controller_Student extends Controller_Loggedin
 		$this->template->content->set('student_lists',$this->_get_list());
 	}
 
-	private function _get_list()
+	public function _get_list()
 	{
 
 		$student_lists = array();

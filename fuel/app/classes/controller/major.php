@@ -41,7 +41,7 @@ class Controller_Major extends Controller_Loggedin
 		$this->template->content->set('major_lists',$this->_get_list());
 	}
 
-	private function _get_list()
+	public function _get_list()
 	{
 		$major_lists = array();
 

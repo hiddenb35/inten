@@ -41,7 +41,7 @@ class Controller_Course extends Controller_Loggedin
 		$this->template->content->set('course_lists', $this->_get_list());
 	}
 
-	private function _get_list()
+	public function _get_list()
 	{
 		$course_lists = array();
 

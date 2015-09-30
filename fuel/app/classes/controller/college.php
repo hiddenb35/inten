@@ -40,7 +40,7 @@ class Controller_College extends Controller_Loggedin
 		$this->template->content->set('college_lists',$this->_get_list());
 	}
 
-	private function _get_list()
+	public function _get_list()
 	{
 		$college_lists = array();
 
