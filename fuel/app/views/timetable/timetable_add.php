@@ -16,7 +16,7 @@
 				<button type="button" id="selection" class="btn btn-sm btn-primary pull-right">選択した項目を編集</button>
 			</div>
 			<div class="box-body">
-				<table class="table table-bordered table-hover">
+				<table class="table table-bordered">
 					<tbody>
 						<tr>
 							<th>#</th>
