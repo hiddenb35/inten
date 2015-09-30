@@ -74,8 +74,8 @@ class Model_Student extends \Orm\Model
 	);
 
 	protected static $_has_many = array(
-		'attendance' => array(
-			'model_to' => 'Model_Attendance',
+		'attendance_statuses' => array(
+			'model_to' => 'Model_Status',
 			'key_from' => 'id',
 			'key_to' => 'student_id',
 			'cascade_save' => false,
@@ -83,10 +83,17 @@ class Model_Student extends \Orm\Model
 		),
 	);
 
-	protected static $_has_one = array(
+	protected static $_belongs_to = array(
 		'major' => array(
 			'model_to' => 'Model_Major',
 			'key_from' => 'major_id',
+			'key_to' => 'id',
+			'cascade_save' => false,
+			'cascade_delete' => false,
+		),
+		'class' => array(
+			'model_to' => 'Model_Class',
+			'key_from' => 'class_id',
 			'key_to' => 'id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
