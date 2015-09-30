@@ -105,6 +105,27 @@ table th,td{
 }
 /*カレッジ一覧ページ*/
 #COURSE_LIST .course-edit:hover {
-	background: #ddd;
-	cursor: pointer;
+    background: #ddd;
+    cursor: pointer;
 }
+
+/***********時間割作成画面**************/
+#TIMETABLE_ADD td {
+    cursor: pointer;
+}
+#TIMETABLE_ADD .modal-body {
+    padding: 0px;
+}
+#TIMETABLE_ADD td:hover {
+    background-color: #FFFCCC;
+}
+#TIMETABLE_ADD .active {
+    background-color: #FFFCCC;
+}
+#TIMETABLE_ADD td:hover.active {
+    background-color: #FFFFAA;
+}
+#TIMETABLE_ADD thead th {
+    width: 16%;
+}
+/*************************************/
