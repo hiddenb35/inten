@@ -22,38 +22,14 @@
 							<th>所属学科名</th>
 							<th>所属カレッジ名</th>
 						</tr>
+						<?php foreach($class_lists as $class_list): ?>
 						<tr>
-							<td class="class-edit-name">IS07-1</td>
-							<td>黛さん</td>
-							<td class="class-edit-college">ITスペシャリスト科</td>
-							<td>ITカレッジ</td>
+							<td class="class-edit-name"><?php echo $class_list['name']; ?></td>
+							<td><?php echo $class_list['teacher_name']; ?></td>
+							<td class="class-edit-college"><?php echo $class_list['course_name']; ?></td>
+							<td><?php echo $class_list['college_name']; ?></td>
 						</tr>
-						<tr>
-							<td class="class-edit-name">IS07-1</td>
-							<td>黛さん</td>
-							<td class="class-edit-college">ITスペシャリスト科</td>
-							<td>ITカレッジ</td>
-						</tr><tr>
-							<td class="class-edit-name">IS07-1</td>
-							<td>黛さん</td>
-							<td class="class-edit-college">ITスペシャリスト科</td>
-							<td>ITカレッジ</td>
-						</tr><tr>
-							<td class="class-edit-name">IS07-1</td>
-							<td>黛さん</td>
-							<td class="class-edit-college">ITスペシャリスト科</td>
-							<td>ITカレッジ</td>
-						</tr><tr>
-							<td class="class-edit-name">IS07-1</td>
-							<td>黛さん</td>
-							<td class="class-edit-college">ITスペシャリスト科</td>
-							<td>ITカレッジ</td>
-						</tr><tr>
-							<td class="class-edit-name">IS07-1</td>
-							<td>黛さん</td>
-							<td class="class-edit-college">ITスペシャリスト科</td>
-							<td>ITカレッジ</td>
-						</tr>
+						<?php endforeach; ?>
 					</tbody>
 				</table>
 			</div><!-- /.box-body -->
