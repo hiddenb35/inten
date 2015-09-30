@@ -10,7 +10,7 @@
 	<!-- Main content -->
 	<section class="content">
 		<!-- PHP -->
-		<input type="hidden" name="class_id" value="1">
+		<input type="hidden" name="class_id" value="<?php echo $class_id; ?>">
 		<div class="box">
 			<div class="box-header with-border">
 				<h3 class="box-title" id="title">時間割のタイトルを入力してください。</h3>
@@ -111,10 +111,11 @@
 							<div class="controls　form-group">
 								<label for="class_id">教科名：</label>
 								<select class="form-control " name="class_id" size="1" id="subject">
+									<?php Debug::dump($lesson_lists); ?>
 									<option value="0">----教科を選択してください----</option><!-- 芦沢ゾーン -->
-									<option value="1" data-teacher="原田さん">ビジネスマナー</option><!-- 芦沢ゾーン -->
-									<option value="2" data-teacher="大野田さん">経営科学</option><!-- 芦沢ゾーン -->
-									<option value="3" data-teacher="帆げ歩げさん">ほげほげ</option><!-- 芦沢ゾーン -->
+									<?php foreach($lesson_lists as $lesson): ?>
+										<option value="<?php echo $lesson['id']; ?>" data-teacher="<?php echo $lesson['teacher_name']; ?>"><?php echo $lesson['name']; ?></option>
+									<?php endforeach; ?>
 								</select>
 							</div>
 
