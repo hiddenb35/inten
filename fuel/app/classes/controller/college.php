@@ -47,9 +47,14 @@ class Controller_College extends Controller_Loggedin
 		foreach(Model_College::find('all') as $college)
 		{
 			$array = array();
-			$course_sum = count(Model_Course::find('all'));
-			$class_sum = count(Model_Class::find('all'));
-			$major_sum = count(Model_Major::find('all'));
+			$course_sum = count($college->courses);
+			$major_sum = 0;
+			$class_sum = 0;
+			foreach($college->courses as $course)
+			{
+				$major_sum += count($course->majors);
+				$class_sum += count($course->classes);
+			}
 			$array['id'] = $college['id'];
 			$array['name'] = $college['name'];
 			$array['course_sum'] = $course_sum;
