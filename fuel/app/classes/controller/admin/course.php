@@ -1,6 +1,6 @@
 <?php
 
-class Controller_Course extends Controller_Loggedin
+class Controller_Admin_Course extends Controller_Loggedin
 {
 	public function action_add()
 	{
