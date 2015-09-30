@@ -2,6 +2,15 @@
 
 class Controller_Admin_Class extends Controller_Loggedin
 {
+	public function action_index()
+	{
+		$this->template->title = 'クラス一覧';
+		$this->template->content = View::forge('class/class_list');
+		$this->template->content->set('class_lists', Model_Class::get_list());
+		$this->template->content->set('course_lists', Model_Course::get_list());
+		$this->template->content->set('teacher_lists', Model_Teacher::get_list());
+	}
+
 	public function action_add()
 	{
 		if(Input::method() !== 'POST')
@@ -34,15 +43,6 @@ class Controller_Admin_Class extends Controller_Loggedin
 	{
 		$this->template->title = 'クラスの編集';
 		$this->template->content = View::forge('class/class_edit');
-	}
-
-	public function action_list()
-	{
-		$this->template->title = 'クラス一覧';
-		$this->template->content = View::forge('class/class_list');
-		$this->template->content->set('class_lists', Model_Class::get_list());
-		$this->template->content->set('course_lists', Model_Course::get_list());
-		$this->template->content->set('teacher_lists', Model_Teacher::get_list());
 	}
 
 }

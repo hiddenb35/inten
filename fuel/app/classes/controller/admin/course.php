@@ -2,6 +2,14 @@
 
 class Controller_Admin_Course extends Controller_Loggedin
 {
+	public function action_index()
+	{
+		$this->template->title = '学科一覧';
+		$this->template->content = View::forge('course/course_list');
+		$this->template->content->set('course_lists', Model_Course::get_list());
+		$this->template->content->set('college_lists', Model_College::get_list());
+	}
+
 	public function action_add()
 	{
 		if(Input::method() !== 'POST')
@@ -33,14 +41,6 @@ class Controller_Admin_Course extends Controller_Loggedin
 	{
 		$this->template->title = '学科の編集';
 		$this->template->content = View::forge('course/course_edit');
-	}
-
-	public function action_list()
-	{
-		$this->template->title = '学科一覧';
-		$this->template->content = View::forge('course/course_list');
-		$this->template->content->set('course_lists', Model_Course::get_list());
-		$this->template->content->set('college_lists', Model_College::get_list());
 	}
 
 }
