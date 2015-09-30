@@ -82,7 +82,7 @@ class Model_Course extends \Orm\Model
 	{
 		$lists = array();
 
-		foreach(Model_Course::find('all') as $course)
+		foreach(self::find('all') as $course)
 		{
 			$array = array();
 			$array['id'] = $course['id'];

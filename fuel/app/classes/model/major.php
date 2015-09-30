@@ -67,7 +67,7 @@ class Model_Major extends \Orm\Model
 	{
 		$lists = array();
 
-		foreach(Model_Major::find('all') as $major)
+		foreach(self::find('all') as $major)
 		{
 			$array = array();
 			$array['id'] = $major['name'];

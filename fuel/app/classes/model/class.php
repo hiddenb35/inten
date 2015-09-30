@@ -92,7 +92,7 @@ class Model_Class extends \Orm\Model
 	{
 		$lists = array();
 
-		foreach(Model_Class::find('all') as $class)
+		foreach(self::find('all') as $class)
 		{
 			$array = array();
 			$array['id'] = $class['id'];
