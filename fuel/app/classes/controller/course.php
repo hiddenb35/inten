@@ -23,7 +23,7 @@ class Controller_Course extends Controller_Loggedin
 
 		$this->template->title = 'エラー';
 		$this->template->content = View::forge('course/course_list');
-		$this->template->content->set('course_lists', $this-> _get_list());
+		$this->template->content->set('course_lists', Model_Course::get_list());
 		$this->template->content->set('errors', $val->error_message());
 		$this->template->content->set('inputs', $val->input());
 	}
@@ -38,27 +38,7 @@ class Controller_Course extends Controller_Loggedin
 	{
 		$this->template->title = '学科一覧';
 		$this->template->content = View::forge('course/course_list');
-		$this->template->content->set('course_lists', $this->_get_list());
+		$this->template->content->set('course_lists', Model_Course::get_list());
 	}
 
-	public function _get_list()
-	{
-		$course_lists = array();
-
-		foreach(Model_Course::find('all') as $course)
-		{
-			$array = array();
-			$array['id'] = $course['id'];
-			$array['code'] = $course['code'];
-			$array['name'] = $course['name'];
-			$array['year_system'] = $course['year_system'];
-			$array['created_at'] = $course['created_at'];
-			$array['updated_at'] = $course['updated_at'];
-			$array['college_name'] = $course->college->name;
-
-			$course_lists[] = $array;
-		}
-
-		return $course_lists;
-	}
 }
