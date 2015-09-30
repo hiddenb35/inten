@@ -48,6 +48,7 @@ class Controller_Major extends Controller_Loggedin
 		foreach(Model_Major::find('all') as $major)
 		{
 			$array = array();
+			$array['id'] = $major['name'];
 			$array['name'] = $major['name'];
 			$array['created_at'] = $major['created_at'];
 			$array['updated_at'] = $major['updated_at'];

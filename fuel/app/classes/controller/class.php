@@ -48,6 +48,7 @@ class Controller_Class extends Controller_Loggedin
 		foreach(Model_Class::find('all') as $class)
 		{
 			$array = array();
+			$array['id'] = $class['id'];
 			$array['name'] = $class['name'];
 			$array['teacher_name'] = $class->teacher->last_name . ' ' . $class->teacher->first_name;
 			$array['course_name'] = $class->course->name;

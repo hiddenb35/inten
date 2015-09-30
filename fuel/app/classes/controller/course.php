@@ -48,6 +48,7 @@ class Controller_Course extends Controller_Loggedin
 		foreach(Model_Course::find('all') as $course)
 		{
 			$array = array();
+			$array['id'] = $course['id'];
 			$array['code'] = $course['code'];
 			$array['name'] = $course['name'];
 			$array['year_system'] = $course['year_system'];
