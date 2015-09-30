@@ -109,7 +109,15 @@ class Controller_Teacher extends Controller_Loggedin
 		{
 			throw new HttpNotFoundException;
 		}
-		$current_id = $this->get_id();		
+
+		$this->template->title = 'クラス一覧';
+		$this->template->content = View::forge('teacher/assign_list');
+		$this->template->content->set('class_lists',$this->_get_list());
+	}
+
+	public function _get_list()
+	{
+		$current_id = $this->get_id();
 		$classes = Model_Class::find('all',array(
 			'where' => array(
 				array('teacher_id', $current_id),
@@ -122,10 +130,10 @@ class Controller_Teacher extends Controller_Loggedin
 		{
 			$array = array();
 			$count = count(Model_Student::find('all',array(
-										'where' => array(
-											array('class_id',$class['id'])
-										),
-									)));
+				'where' => array(
+					array('class_id',$class['id'])
+				),
+			)));
 			$array['id'] = $class['id'];
 			$array['name'] = $class['name'];
 			$array['created_at'] = $class['created_at'];
@@ -138,9 +146,6 @@ class Controller_Teacher extends Controller_Loggedin
 			$class_lists[] = $array;
 		}
 
-
-		$this->template->title = 'クラス一覧';
-		$this->template->content = View::forge('teacher/assign_list');
-		$this->template->content->set('class_lists',$class_lists);
+		return $class_lists;
 	}
 }
