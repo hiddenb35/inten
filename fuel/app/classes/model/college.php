@@ -48,4 +48,33 @@ class Model_College extends \Orm\Model
 		$val->add_field('name','カレッジ名','trim|required|max_length[64]')->add_rule('unique', 'college', 'name');
 		return $val;
 	}
+
+	public static function get_list()
+	{
+		$lists = array();
+
+		foreach(self::find('all') as $college)
+		{
+			$array = array();
+			$course_sum = count($college->courses);
+			$major_sum = 0;
+			$class_sum = 0;
+			foreach($college->courses as $course)
+			{
+				$major_sum += count($course->majors);
+				$class_sum += count($course->classes);
+			}
+			$array['id'] = $college['id'];
+			$array['name'] = $college['name'];
+			$array['course_sum'] = $course_sum;
+			$array['class_sum'] = $class_sum;
+			$array['major_sum'] = $major_sum;
+			$array['created_at'] = $college['created_at'];
+			$array['updated_at'] = $college['updated_at'];
+
+			$lists[] = $array;
+		}
+
+		return $lists;
+	}
 }

@@ -21,7 +21,7 @@ class Controller_College extends Controller_Loggedin
 
 		$this->template->title = 'エラー';
 		$this->template->content = View::forge('college/college_list');
-		$this->template->content->set('college_lists',$this->_get_list());
+		$this->template->content->set('college_lists', Model_College::get_list());
 		$this->template->content->set('errors', $val->error_message());
 		$this->template->content->set('inputs', $val->input());
 
@@ -37,35 +37,7 @@ class Controller_College extends Controller_Loggedin
 	{
 		$this->template->title = 'カレッジ一覧';
 		$this->template->content = View::forge('college/college_list');
-		$this->template->content->set('college_lists',$this->_get_list());
+		$this->template->content->set('college_lists', Model_College::get_list());
 	}
 
-	public function _get_list()
-	{
-		$college_lists = array();
-
-		foreach(Model_College::find('all') as $college)
-		{
-			$array = array();
-			$course_sum = count($college->courses);
-			$major_sum = 0;
-			$class_sum = 0;
-			foreach($college->courses as $course)
-			{
-				$major_sum += count($course->majors);
-				$class_sum += count($course->classes);
-			}
-			$array['id'] = $college['id'];
-			$array['name'] = $college['name'];
-			$array['course_sum'] = $course_sum;
-			$array['class_sum'] = $class_sum;
-			$array['major_sum'] = $major_sum;
-			$array['created_at'] = $college['created_at'];
-			$array['updated_at'] = $college['updated_at'];
-
-			$college_lists[] = $array;
-		}
-
-		return $college_lists;
-	}
 }
