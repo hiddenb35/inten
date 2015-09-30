@@ -135,14 +135,14 @@ $(function(){
 			$(".setElement").removeClass("setElement");
 		});
 	});
-	var data = {"title":$('#title').text(),"params":[]};
+	var data = {"name":$('#title').text(),"json":[]};
 	var tr = $("table tr");
 	$("#TIMETABLE_ADD #transmission").click(function(){
 		for (var i = 1; i < 9; i++) {
 			var cells = tr.eq(i).children();
-			data.params[i-1] = [];
+			data.json[i-1] = [];
 			for (var j = 1; j < 6; j++) {
-				data.params[i-1][j-1] = {"lesson_id":cells.eq(j).data('lesson-id'),"room_number":cells.eq(j).children('.classroom').text(),"notes":cells.eq(j).children('.note').text()};
+				data.json[i-1][j-1] = {"lesson_id":cells.eq(j).data('lesson-id'),"room_number":cells.eq(j).children('.classroom').text(),"notes":cells.eq(j).children('.note').text()};
 			}
 		}
 		data = JSON.stringify(data);
