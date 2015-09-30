@@ -62,4 +62,24 @@ class Model_Major extends \Orm\Model
 		$val->add_field('course_id','学科ID','required|max_length[10]');
 		return $val;
 	}
+
+	public static function get_list()
+	{
+		$lists = array();
+
+		foreach(Model_Major::find('all') as $major)
+		{
+			$array = array();
+			$array['id'] = $major['name'];
+			$array['name'] = $major['name'];
+			$array['created_at'] = $major['created_at'];
+			$array['updated_at'] = $major['updated_at'];
+			$array['course_name'] = $major->course->name;
+			$array['college_name'] = $major->course->college->name;
+
+			$lists[] = $array;
+		}
+
+		return $lists;
+	}
 }
