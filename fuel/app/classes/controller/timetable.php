@@ -6,7 +6,18 @@ class Controller_timetable extends Controller_Loggedin
 	{
 		if(Input::method() === 'POST')
 		{
+			// todo validation
+			$name = Input::post('name');
+			$json = Input::post('json');
+			$is_active = 1;
+			$class_id = Input::post('class_id');
+			$timetable = Model_Timetable::forge();
+			$timetable->name = $name;
+			$timetable->html = $json;
+			$timetable->class_id = $class_id;
+			$timetable->is_active = $is_active;
 
+			$timetable->save();
 			Response::redirect('/');
 		}
 
