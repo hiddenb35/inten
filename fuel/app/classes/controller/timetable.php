@@ -13,7 +13,7 @@ class Controller_timetable extends Controller_Loggedin
 		$class_id = Input::get('class_id');
 		if(is_null($class_id))
 		{
-			throw new HttpNotFoundException;
+			Response::redirect('/teacher/assign_list/timetable/add');
 		}
 
 		$this->template->title = '時間割作成';
