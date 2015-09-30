@@ -34,7 +34,7 @@ class Model_Major extends \Orm\Model
 		),
 	);
 
-	public static $_has_one = array(
+	public static $_belongs_to = array(
 		'course' => array(
 			'model_to' => 'Model_Course',
 			'key_from' => 'course_id',
@@ -45,7 +45,7 @@ class Model_Major extends \Orm\Model
 	);
 
 	public static $_has_many = array(
-		'student' => array(
+		'students' => array(
 			'model_to' => 'Model_Student',
 			'key_from' => 'id',
 			'key_to' => 'major_id',

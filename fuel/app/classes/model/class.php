@@ -37,7 +37,7 @@ class Model_Class extends \Orm\Model
 		),
 	);
 
-	protected static $_has_one = array(
+	protected static $_belongs_to = array(
 		'teacher' => array(
 			'model_to' => 'Model_Teacher',
 			'key_from' => 'teacher_id',
@@ -45,37 +45,34 @@ class Model_Class extends \Orm\Model
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),
+		'course' => array(
+			'model_to' => 'Model_Course',
+			'key_from' => 'course_id',
+			'key_to' => 'id',
+			'cascade_save' => false,
+			'cascade_delete' => false,
+		),
 	);
 
 	protected static $_has_many = array(
-		'student' => array(
+		'students' => array(
 			'model_to' => 'Model_Student',
 			'key_from' => 'id',
 			'key_to' => 'class_id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),
-		'lesson' => array(
+		'lessons' => array(
 			'model_to' => 'Model_Lesson',
 			'key_from' => 'id',
 			'key_to' => 'class_id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),
-		'timetable' => array(
+		'timetables' => array(
 			'model_to' => 'Model_Timetable',
 			'key_from' => 'id',
 			'key_to' => 'class_id',
-			'cascade_save' => false,
-			'cascade_delete' => false,
-		),
-	);
-
-	protected static $_belongs_to = array(
-		'course' => array(
-			'model_to' => 'Model_Course',
-			'key_from' => 'course_id',
-			'key_to' => 'id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),
