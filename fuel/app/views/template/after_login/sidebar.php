@@ -19,23 +19,23 @@
 			</ul>
 		</li>
 		<li class="treeview">
-			<a href="/college/list">
+			<a href="/admin/college">
 				<i class="fa ion-university"></i> <span>カレッジ情報</span>
 			</a>
 
 		</li>
 		<li class="treeview">
-			<a href="/course/list">
+			<a href="/admin/course">
 				<i class="fa ion-university"></i> <span>学科情報</span>
 			</a>
 		</li>
 		<li class="treeview">
-			<a href="/class/list">
+			<a href="/admin/class">
 				<i class="fa ion-university"></i> <span>クラス情報</span>
 			</a>
 		</li>
 		<li class="treeview">
-			<a href="/major/list">
+			<a href="/admin/major">
 				<i class="fa ion-university"></i> <span>専攻情報</span>
 			</a>
 		</li>

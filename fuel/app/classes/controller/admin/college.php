@@ -1,7 +1,14 @@
 <?php
 
-class Controller_College extends Controller_Loggedin
+class Controller_Admin_College extends Controller_Loggedin
 {
+	public function action_index()
+	{
+		$this->template->title = 'カレッジ一覧';
+		$this->template->content = View::forge('college/college_list');
+		$this->template->content->set('college_lists', Model_College::get_list());
+	}
+
 	public function action_add()
 	{
 		if(Input::method() !== 'POST')
@@ -31,13 +38,6 @@ class Controller_College extends Controller_Loggedin
 	{
 		$this->template->title = 'カレッジの編集';
 		$this->template->content = View::forge('college/college_edit');
-	}
-
-	public function action_list()
-	{
-		$this->template->title = 'カレッジ一覧';
-		$this->template->content = View::forge('college/college_list');
-		$this->template->content->set('college_lists', Model_College::get_list());
 	}
 
 }

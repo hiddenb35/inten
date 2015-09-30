@@ -1,7 +1,15 @@
 <?php
 
-class Controller_Major extends Controller_Loggedin
+class Controller_Admin_Major extends Controller_Loggedin
 {
+	public function action_index()
+	{
+		$this->template->title = '専攻一覧';
+		$this->template->content = View::forge('major/major_list');
+		$this->template->content->set('major_lists',Model_Major::get_list());
+		$this->template->content->set('course_lists',Model_Course::get_list());
+	}
+
 	public function action_add()
 	{
 		if(Input::method() !== 'POST')
@@ -33,14 +41,6 @@ class Controller_Major extends Controller_Loggedin
 	{
 		$this->template->title = '専攻の編集';
 		$this->template->content = View::forge('major/major_edit');
-	}
-
-	public function action_list()
-	{
-		$this->template->title = '専攻一覧';
-		$this->template->content = View::forge('major/major_list');
-		$this->template->content->set('major_lists',Model_Major::get_list());
-		$this->template->content->set('course_lists',Model_Course::get_list());
 	}
 
 }
