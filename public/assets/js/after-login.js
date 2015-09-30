@@ -155,7 +155,7 @@ $(function(){
 			url: '/timetable/add',
 			type: 'POST',
 			dataType: 'json',
-			data: {name: $('#title').text(), json: data, class_id: $('input[name="class_id"]').val()},
+			data: {name: $('#title').text(), json: data, class_id: $('input[name="class_id"]').val()}
 		})
 		.done(function() {
 			console.log("success");
