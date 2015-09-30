@@ -9,10 +9,12 @@
 	</section>
 	<!-- Main content -->
 	<section class="content">
+		<!-- PHP -->
+		<input type="hidden" name="class_id" value="1">
 		<div class="box">
 			<div class="box-header with-border">
 				<h3 class="box-title" id="title">時間割のタイトルを入力してください。</h3>
-				<input type="text" class="form-control" id="titleEdit" style="display:none;">
+				<input type="text" class="form-control" id="titleEdit" name="name" style="display:none;">
 				<button type="button" id="selection" class="btn btn-sm btn-primary pull-right">選択した項目を編集</button>
 			</div>
 			<div class="box-body">
@@ -28,67 +30,67 @@
 						</tr>
 						<tr>
 							<th>9:00-9:50</th>
-							<td data-lesson-id="1"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
 						</tr>
 						<tr>
 							<th>10:00-10:50</th>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
 						</tr>
 						<tr>
 							<th>11:00-11:50</th>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
 						</tr>
 						<tr>
 							<th>12:00-12:50</th>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
 						</tr>
 						<tr>
 							<th>13:00-13:50</th>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
 						</tr>
 						<tr>
 							<th>14:00-14:50</th>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
 						</tr>
 						<tr>
 							<th>15:00-15:50</th>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
 						</tr>
 						<tr>
 							<th>16:00-16:50</th>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
-							<td data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
+							<td data-lesson-id="0"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p></td>
 						</tr>
 					</tbody>
 				</table>
@@ -109,7 +111,7 @@
 							<div class="controls　form-group">
 								<label for="class_id">教科名：</label>
 								<select class="form-control " name="class_id" size="1" id="subject">
-									<option>----教科を選択してください----</option><!-- 芦沢ゾーン -->
+									<option value="0">----教科を選択してください----</option><!-- 芦沢ゾーン -->
 									<option value="1" data-teacher="原田さん">ビジネスマナー</option><!-- 芦沢ゾーン -->
 									<option value="2" data-teacher="大野田さん">経営科学</option><!-- 芦沢ゾーン -->
 									<option value="3" data-teacher="帆げ歩げさん">ほげほげ</option><!-- 芦沢ゾーン -->
