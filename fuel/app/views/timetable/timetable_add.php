@@ -9,10 +9,12 @@
 	</section>
 	<!-- Main content -->
 	<section class="content">
+		<!-- PHP -->
+		<input type="hidden" name="class_id" value="1">
 		<div class="box">
 			<div class="box-header with-border">
 				<h3 class="box-title" id="title">時間割のタイトルを入力してください。</h3>
-				<input type="text" class="form-control" id="titleEdit" style="display:none;">
+				<input type="text" class="form-control" id="titleEdit" name="name" style="display:none;">
 				<button type="button" id="selection" class="btn btn-sm btn-primary pull-right">選択した項目を編集</button>
 			</div>
 			<div class="box-body">
