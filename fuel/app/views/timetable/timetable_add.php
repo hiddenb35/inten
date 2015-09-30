@@ -14,7 +14,7 @@
 		<div class="box">
 			<div class="box-header with-border">
 				<h3 class="box-title" id="title">時間割のタイトルを入力してください。</h3>
-				<input type="text" class="form-control" id="titleEdit" name="name" style="display:none;">
+				<input type="text" class="form-control" id="titleEdit" name="name">
 				<button type="button" id="selection" class="btn btn-sm btn-primary pull-right">選択した項目を編集</button>
 			</div>
 			<div class="box-body">
@@ -109,8 +109,8 @@
 					<div class="modal-body">
 						<form class="form col-md-12 center-block">
 							<div class="controls　form-group">
-								<label for="class_id">教科名：</label>
-								<select class="form-control " name="class_id" size="1" id="subject">
+								<label for="subjectset">教科名：</label>
+								<select class="form-control " name="subjectset" size="1" id="subject">
 									<?php Debug::dump($lesson_lists); ?>
 									<option value="0">----教科を選択してください----</option><!-- 芦沢ゾーン -->
 									<?php foreach($lesson_lists as $lesson): ?>
@@ -130,7 +130,7 @@
 							</div>
 
 							<div class="form-group">
-								<textarea id="note" name="テキストエリア" rows="3" cols="50" wrap="hard" class="form-control input-lg" placeholder="備考" style="width:100%; height:200px;"></textarea>
+								<textarea id="note" name="テキストエリア" rows="3" cols="50" wrap="hard" class="form-control input-lg" placeholder="備考"></textarea>
 							</div>
 						</form>
 					</div>
@@ -143,8 +143,8 @@
 		</div>
 		<form class="form-horizontal">
 			<div class="form-group">
-				<button type="submit" class="btn btn-primary">作成</button>
-				<button type="reset" class="btn btn-warning" id="transmission">キャンセル</button>
+				<button type="submit" class="btn btn-primary" id="transmission">作成</button>
+				<button type="reset" class="btn btn-warning">キャンセル</button>
 			</div>
 		</form>
 	</section>
