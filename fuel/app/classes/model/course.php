@@ -41,17 +41,17 @@ class Model_Course extends \Orm\Model
 	);
 
 	protected static $_has_many = array(
-		'class' => array(
+		'classes' => array(
 			'model_to' => 'Model_Class',
 			'key_from' => 'id',
 			'key_to' => 'course_id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),
-		'major' => array(
+		'majors' => array(
 			'model_to' => 'Model_Major',
 			'key_from' => 'id',
-			'key_to' => 'couse_id',
+			'key_to' => 'course_id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),

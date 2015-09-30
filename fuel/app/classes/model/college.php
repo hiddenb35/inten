@@ -31,6 +31,16 @@ class Model_College extends \Orm\Model
 		),
 	);
 
+	protected static $_has_many = array(
+		'courses' => array(
+			'model_to' => 'Model_Course',
+			'key_from' => 'id',
+			'key_to' => 'college_id',
+			'cascade_save' => false,
+			'cascade_delete' => false,
+		),
+	);
+
 	public static function validate()
 	{
 		$val = Validation::forge();

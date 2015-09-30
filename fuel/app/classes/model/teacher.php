@@ -68,21 +68,29 @@ class Model_Teacher extends \Orm\Model
 	);
 
 	protected static $_has_many = array(
-		'attachment' => array(
+		'attachment_lessons' => array(
 			'model_to' => 'Model_Attachment',
 			'key_from' => 'id',
 			'key_to' => 'teacher_id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),
-		'class' => array(
+		'classes' => array(
 			'model_to' => 'Model_Class',
 			'key_from' => 'id',
 			'key_to' => 'teacher_id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),
+		'attendances' => array(
+			'model_to' => 'Model_Attendance',
+			'key_from' => 'id',
+			'key_to' => 'teacher_id',
+			'cascade_save' => false,
+			'cascade_delete' => false,
+		),
 	);
+
 
 	public static function validate()
 	{

@@ -41,14 +41,14 @@ class Model_Lesson extends \Orm\Model
 	);
 
 	protected static $_has_many = array(
-		'attendance' => array(
+		'attendances' => array(
 			'model_to' => 'Model_Attendance',
 			'key_from' => 'id',
 			'key_to' => 'lesson_id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),
-		'attachment' => array(
+		'attachment_lessons' => array(
 			'model_to' => 'Model_Attachment',
 			'key_from' => 'id',
 			'key_to' => 'lesson_id',

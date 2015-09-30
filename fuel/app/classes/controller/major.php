@@ -41,13 +41,14 @@ class Controller_Major extends Controller_Loggedin
 		$this->template->content->set('major_lists',$this->_get_list());
 	}
 
-	private function _get_list()
+	public function _get_list()
 	{
 		$major_lists = array();
 
 		foreach(Model_Major::find('all') as $major)
 		{
 			$array = array();
+			$array['id'] = $major['name'];
 			$array['name'] = $major['name'];
 			$array['created_at'] = $major['created_at'];
 			$array['updated_at'] = $major['updated_at'];

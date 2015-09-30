@@ -41,13 +41,14 @@ class Controller_Course extends Controller_Loggedin
 		$this->template->content->set('course_lists', $this->_get_list());
 	}
 
-	private function _get_list()
+	public function _get_list()
 	{
 		$course_lists = array();
 
 		foreach(Model_Course::find('all') as $course)
 		{
 			$array = array();
+			$array['id'] = $course['id'];
 			$array['code'] = $course['code'];
 			$array['name'] = $course['name'];
 			$array['year_system'] = $course['year_system'];

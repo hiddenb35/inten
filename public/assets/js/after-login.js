@@ -135,17 +135,33 @@ $(function(){
 			$(".setElement").removeClass("setElement");
 		});
 	});
-	var data = {"title":$('#title').text(),"params":[]};
+	var data = [];
 	var tr = $("table tr");
 	$("#TIMETABLE_ADD #transmission").click(function(){
 		for (var i = 1; i < 9; i++) {
 			var cells = tr.eq(i).children();
-			data.params[i-1] = [];
+			data[i-1] = [];
 			for (var j = 1; j < 6; j++) {
-				data.params[i-1][j-1] = {"id":cells.eq(j).data('lesson-id'),"classroom":cells.eq(j).children('.classroom').text(),"note":cells.eq(j).children('.note').text()};
+				if(cells.eq(j).data('lesson-id') == 0){
+					data[i-1][j-1] = {};
+				}else{
+					data[i-1][j-1] = {"lesson_id":cells.eq(j).data('lesson-id'),"room_number":cells.eq(j).children('.classroom').text(),"notes":cells.eq(j).children('.note').text()};
+				}
 			}
 		}
 		data = JSON.stringify(data);
-		console.log(data);
+
+		$.ajax({
+			url: '/timetable/add',
+			type: 'POST',
+			dataType: 'json',
+			data: {name: $('#title').text(), json: data, class_id: $('input[name="class_id"]').val()},
+		})
+		.done(function() {
+			console.log("success");
+		})
+		.fail(function() {
+			console.log("error");
+		});
 	});
 });
