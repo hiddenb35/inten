@@ -16,30 +16,9 @@ class Controller_Teacher extends Controller_Loggedin
 
 	public function action_list()
 	{
-
-		$teachers = Model_Teacher::find('all');
-
-		$teacher_lists = array();
-
-		foreach($teachers as $teacher)
-		{
-			$array = array();
-			$array['number'] = $teacher['username'];
-			$array['full_name'] = $teacher['last_name'] . ' ' . $teacher['first_name'];
-			$array['full_name_kana'] = $teacher['last_name_kana'] . ' ' . $teacher['first_name_kana'];
-			$array['birthday'] = $teacher['birthday'];
-			$array['email'] = $teacher['email'];
-			$array['gender'] = $teacher['gender'];
-			$array['last_login'] = $teacher['last_login'];
-			$array['created_at'] = $teacher['created_at'];
-			$array['updated_at'] = $teacher['updated_at'];
-
-			$teacher_lists[] = $array;
-		}
-
 		$this->template->title = '教員の一覧';
 		$this->template->content = View::forge('teacher/teacher_list');
-		$this->template->content->set('teacher_lists',$teacher_lists);
+		$this->template->content->set('teacher_lists',Model_Teacher::get_list());
 	}
 
 	public function action_hrteacher()

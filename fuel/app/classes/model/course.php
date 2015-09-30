@@ -77,4 +77,25 @@ class Model_Course extends \Orm\Model
 		$val->add_field('college_id','カレッジID','required|max_length[10]');
 		return $val;
 	}
+
+	public static function get_list()
+	{
+		$lists = array();
+
+		foreach(self::find('all') as $course)
+		{
+			$array = array();
+			$array['id'] = $course['id'];
+			$array['code'] = $course['code'];
+			$array['name'] = $course['name'];
+			$array['year_system'] = $course['year_system'];
+			$array['created_at'] = $course['created_at'];
+			$array['updated_at'] = $course['updated_at'];
+			$array['college_name'] = $course->college->name;
+
+			$lists[] = $array;
+		}
+
+		return $lists;
+	}
 }

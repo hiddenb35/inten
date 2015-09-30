@@ -111,4 +111,27 @@ class Model_Teacher extends \Orm\Model
 		$val->add_field('login_hash','ログインハッシュ','required|max_length[255]');
 		return $val;
 	}
+
+	public static function get_list()
+	{
+		$lists = array();
+
+		foreach(self::find('all') as $teacher)
+		{
+			$array = array();
+			$array['number'] = $teacher['username'];
+			$array['full_name'] = $teacher['last_name'] . ' ' . $teacher['first_name'];
+			$array['full_name_kana'] = $teacher['last_name_kana'] . ' ' . $teacher['first_name_kana'];
+			$array['birthday'] = $teacher['birthday'];
+			$array['email'] = $teacher['email'];
+			$array['gender'] = $teacher['gender'];
+			$array['last_login'] = $teacher['last_login'];
+			$array['created_at'] = $teacher['created_at'];
+			$array['updated_at'] = $teacher['updated_at'];
+
+			$lists[] = $array;
+		}
+
+		return $lists;
+	}
 }

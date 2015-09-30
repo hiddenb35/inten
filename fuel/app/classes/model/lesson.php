@@ -76,4 +76,23 @@ class Model_Lesson extends \Orm\Model
 		$val->add_field('class_id','クラスID','required|max_length[10]');
 		return $val;
 	}
+
+	public static function get_list()
+	{
+		$lists = array();
+
+		foreach(self::find('all') as $lesson)
+		{
+			$array = array();
+			$array['name'] = $lesson['name'];
+			$array['term'] = $lesson['term'];
+			$array['sum_credit'] = $lesson['sum_credit'];
+			$array['class_name'] = $lesson->class->name;
+			$array['attachment'] = $lesson->class->teacher->last_name . ' ' . $lesson->class->teacher->first_name;
+
+			$lists[] = $array;
+		}
+
+		return $lists;
+	}
 }

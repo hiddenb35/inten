@@ -22,7 +22,7 @@ class Controller_Major extends Controller_Loggedin
 
 		$this->template->title = 'エラー';
 		$this->template->content = View::forge('major/major_list');
-		$this->template->content->set('major_lists', $this->_get_list());
+		$this->template->content->set('major_lists', Model_Major::get_list());
 		$this->template->content->set('errors', $val->error_message());
 		$this->template->content->set('inputs', $val->input());
 
@@ -38,26 +38,7 @@ class Controller_Major extends Controller_Loggedin
 	{
 		$this->template->title = '専攻一覧';
 		$this->template->content = View::forge('major/major_list');
-		$this->template->content->set('major_lists',$this->_get_list());
+		$this->template->content->set('major_lists',Model_Major::get_list());
 	}
 
-	public function _get_list()
-	{
-		$major_lists = array();
-
-		foreach(Model_Major::find('all') as $major)
-		{
-			$array = array();
-			$array['id'] = $major['name'];
-			$array['name'] = $major['name'];
-			$array['created_at'] = $major['created_at'];
-			$array['updated_at'] = $major['updated_at'];
-			$array['course_name'] = $major->course->name;
-			$array['college_name'] = $major->course->college->name;
-
-			$major_lists[] = $array;
-		}
-
-		return $major_lists;
-	}
 }

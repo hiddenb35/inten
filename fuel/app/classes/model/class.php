@@ -87,4 +87,25 @@ class Model_Class extends \Orm\Model
 		$val->add_field('teacher_id','教員ID','required|max_length[10]');
 		return $val;
 	}
+
+	public static function get_list()
+	{
+		$lists = array();
+
+		foreach(self::find('all') as $class)
+		{
+			$array = array();
+			$array['id'] = $class['id'];
+			$array['name'] = $class['name'];
+			$array['teacher_name'] = $class->teacher->last_name . ' ' . $class->teacher->first_name;
+			$array['course_name'] = $class->course->name;
+			$array['college_name'] = $class->course->college->name;
+			$array['created_at'] = $class['created_at'];
+			$array['updated_at'] = $class['updated_at'];
+
+			$lists[] = $array;
+		}
+
+		return $lists;
+	}
 }
