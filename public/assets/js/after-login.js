@@ -142,7 +142,11 @@ $(function(){
 			var cells = tr.eq(i).children();
 			data[i-1] = [];
 			for (var j = 1; j < 6; j++) {
-				data[i-1][j-1] = {"lesson_id":cells.eq(j).data('lesson-id'),"room_number":cells.eq(j).children('.classroom').text(),"notes":cells.eq(j).children('.note').text()};
+				if(cells.eq(j).data('lesson-id') == 0){
+					data[i-1][j-1] = {};
+				}else{
+					data[i-1][j-1] = {"lesson_id":cells.eq(j).data('lesson-id'),"room_number":cells.eq(j).children('.classroom').text(),"notes":cells.eq(j).children('.note').text()};
+				}
 			}
 		}
 		data = JSON.stringify(data);
