@@ -8,7 +8,7 @@ class Controller_Admin_Class extends Controller_Loggedin
 		$this->template->content = View::forge('class/class_list');
 		$this->template->content->set('class_lists', Model_Class::to_list(Model_Class::find('all')));
 		$this->template->content->set('course_lists', Model_Course::to_list(Model_Course::find('all')));
-		$this->template->content->set('teacher_lists', Model_Teacher::get_list());
+		$this->template->content->set('teacher_lists', Model_Teacher::to_list(Model_Teacher::find('all')));
 	}
 
 	public function action_add()
@@ -33,7 +33,7 @@ class Controller_Admin_Class extends Controller_Loggedin
 		$this->template->content = View::forge('class/class_list');
 		$this->template->content->set('class_lists', Model_Class::to_list(Model_Class::find('all')));
 		$this->template->content->set('course_lists', Model_Course::to_list(Model_Course::find('all')));
-		$this->template->content->set('teacher_lists', Model_Teacher::get_list());
+		$this->template->content->set('teacher_lists', Model_Teacher::to_list(Model_Teacher::find('all')));
 		$this->template->content->set('errors', $val->error_message());
 		$this->template->content->set('inputs', $val->input());
 
