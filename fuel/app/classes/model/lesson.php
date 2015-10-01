@@ -77,11 +77,11 @@ class Model_Lesson extends \Orm\Model
 		return $val;
 	}
 
-	public static function get_list()
+	public static function to_list($lessons)
 	{
 		$lists = array();
 
-		foreach(self::find('all') as $lesson)
+		foreach($lessons as $lesson)
 		{
 			$array = array();
 			$array['id'] = $lesson['id'];
