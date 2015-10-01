@@ -88,11 +88,11 @@ class Model_Class extends \Orm\Model
 		return $val;
 	}
 
-	public static function get_list()
+	public static function to_list($classes)
 	{
 		$lists = array();
 
-		foreach(self::find('all') as $class)
+		foreach($classes as $class)
 		{
 			$array = array();
 			$array['id'] = $class['id'];
