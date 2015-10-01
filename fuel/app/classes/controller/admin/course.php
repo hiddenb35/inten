@@ -6,7 +6,7 @@ class Controller_Admin_Course extends Controller_Loggedin
 	{
 		$this->template->title = '学科一覧';
 		$this->template->content = View::forge('course/course_list');
-		$this->template->content->set('course_lists', Model_Course::get_list());
+		$this->template->content->set('course_lists', Model_Course::to_list(Model_Course::find('all')));
 		$this->template->content->set('college_lists', Model_College::to_list(Model_College::find('all')));
 	}
 
@@ -31,7 +31,7 @@ class Controller_Admin_Course extends Controller_Loggedin
 
 		$this->template->title = 'エラー';
 		$this->template->content = View::forge('course/course_list');
-		$this->template->content->set('course_lists', Model_Course::get_list());
+		$this->template->content->set('course_lists', Model_Course::to_list(Model_Course::find('all')));
 		$this->template->content->set('college_lists', Model_College::to_list(Model_College::find('all')));
 		$this->template->content->set('errors', $val->error_message());
 		$this->template->content->set('inputs', $val->input());

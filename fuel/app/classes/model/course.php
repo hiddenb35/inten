@@ -78,11 +78,11 @@ class Model_Course extends \Orm\Model
 		return $val;
 	}
 
-	public static function get_list()
+	public static function to_list($courses)
 	{
 		$lists = array();
 
-		foreach(self::find('all') as $course)
+		foreach($courses as $course)
 		{
 			$array = array();
 			$array['id'] = $course['id'];
