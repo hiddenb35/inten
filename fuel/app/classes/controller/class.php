@@ -2,7 +2,7 @@
 
 class Controller_Class extends Controller_Loggedin
 {
-	public function action_myclass()
+	public function action_myclass($controller_path = 'class', $method_path = 'myclass')
 	{
 		if(!$this->is_teacher())
 		{
@@ -19,7 +19,8 @@ class Controller_Class extends Controller_Loggedin
 		{
 			$this->template->title   = '自身が担任のクラス一覧';
 			$this->template->content = View::forge('teacher/assign_list');
-			$this->template->content->set('class_lists', $this->_class_list($this->get_id(), 'class/myclass'));
+			$uri = $controller_path . '/' . $method_path;
+			$this->template->content->set('class_lists', $this->_class_list($this->get_id(), $uri));
 		}
 	}
 
