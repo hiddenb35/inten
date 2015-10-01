@@ -8,10 +8,9 @@ $(function(){
 	//カレッジ一覧ページのin place edit
 	$('.college-name').editable({
 		type: 'text',
-		url: '/college/edit'
+		url: '/college/edit',
 		//success: function(response, newValue){
-		//	console.log(response);
-		//	console.log(newValue);
+        //
 		//},
 		//error: function(response, newValue){
         //
@@ -27,16 +26,34 @@ $(function(){
 					dataType: 'json',
 					data: sendCollegeEditData
 				},
-				//success: function(response, newValue){
-				//	console.log(response);
-				//	console.log(newValue);
-				//},
-				//error: function(response, newValue){
-                //
-				//}
+				success: function(response){
+					var text = "データベースに保存しました。"
+					testFunction(text);
+				},
+				error: function(response){
+					var errorText = "エラーが発生しました。";
+					testFunction(errorText);
+				}
 			});
 		}
 	});
+
+	//TODO @Author kasai リファクタリング
+	var testFunction = function(text){
+		$('#college_modal_content').append(text);
+		//画面(ウィンドウ)の幅、高さを取得
+		var w = $( window ).width();
+		var h = 80;
+		// コンテンツ(#modal-content)の幅、高さを取得
+		var cw = $( "#college_modal_content" ).outerWidth();
+		//センタリングを実行する
+		$( "#college_modal_content" ).css( {"left": ((w - cw)/2) + "px","top": h + "px"} ) ;
+		$( "#college_modal_content" ).fadeIn( "slow" );
+		setTimeout(function(){
+			$( "#college_modal_content" ).fadeOut("slow");
+		},5000);
+	};
+	//TODO ここまで
 
 	//学科一覧ページのin place edit
 	$('.course-edit').editable({

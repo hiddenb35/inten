@@ -100,8 +100,16 @@ table th,td{
     background: #ddd;
     cursor: pointer;
 }
-/*カレッジ一覧ページ*/
 #COURSE_LIST .course-edit:hover {
     background: #ddd;
     cursor: pointer;
 }
+/*TODO @Author kasai リファクタリング*/
+#COLLEGE_LIST #college_modal_content {
+    display: none;
+    z-index: 1;
+    position: fixed;
+    border: 2px solid #aaa;
+    background: #fff;
+}
+/*TODO ここまで*/
