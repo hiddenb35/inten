@@ -18,7 +18,7 @@ class Controller_Student extends Controller_Loggedin
 	{
 		$this->template->title = '生徒の一覧';
 		$this->template->content = View::forge('student/student_list');
-		$this->template->content->set('student_lists',Model_Student::get_list());
+		$this->template->content->set('student_lists',Model_Student::to_list(Model_Student::find('all')));
 	}
 
 }

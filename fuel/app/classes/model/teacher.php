@@ -112,11 +112,11 @@ class Model_Teacher extends \Orm\Model
 		return $val;
 	}
 
-	public static function get_list()
+	public static function to_list($teachers)
 	{
 		$lists = array();
 
-		foreach(self::find('all') as $teacher)
+		foreach($teachers as $teacher)
 		{
 			$array = array();
 			$array['number'] = $teacher['username'];

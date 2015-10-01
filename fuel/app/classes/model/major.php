@@ -63,11 +63,11 @@ class Model_Major extends \Orm\Model
 		return $val;
 	}
 
-	public static function get_list()
+	public static function to_list($majors)
 	{
 		$lists = array();
 
-		foreach(self::find('all') as $major)
+		foreach($majors as $major)
 		{
 			$array = array();
 			$array['id'] = $major['name'];

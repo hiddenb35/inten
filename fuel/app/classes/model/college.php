@@ -49,11 +49,11 @@ class Model_College extends \Orm\Model
 		return $val;
 	}
 
-	public static function get_list()
+	public static function to_list($colleges)
 	{
 		$lists = array();
 
-		foreach(self::find('all') as $college)
+		foreach($colleges as $college)
 		{
 			$array = array();
 			$course_sum = count($college->courses);

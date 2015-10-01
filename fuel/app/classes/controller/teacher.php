@@ -18,7 +18,7 @@ class Controller_Teacher extends Controller_Loggedin
 	{
 		$this->template->title = '教員の一覧';
 		$this->template->content = View::forge('teacher/teacher_list');
-		$this->template->content->set('teacher_lists',Model_Teacher::get_list());
+		$this->template->content->set('teacher_lists',Model_Teacher::to_list(Model_Teacher::find('all')));
 	}
 
 	public function action_attachment_lesson()
