@@ -24,7 +24,7 @@ class Controller_timetable extends Controller_Loggedin
 		$class_id = Input::get('class_id');
 		if(is_null($class_id))
 		{
-			Response::redirect('/teacher/assign_list/timetable/add');
+			Response::redirect('/class/myclass/timetable/add');
 		}
 
 		$this->template->title = '時間割作成';
