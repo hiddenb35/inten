@@ -122,11 +122,11 @@ class Model_Student extends \Orm\Model
 		return $val;
 	}
 
-	public static function get_list()
+	public static function to_list($students)
 	{
 		$lists = array();
 
-		foreach(self::find('all') as $student)
+		foreach($students as $student)
 		{
 			$array = array();
 			$array['id'] = $student['id'];
