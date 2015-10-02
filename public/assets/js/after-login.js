@@ -8,7 +8,7 @@ $(function(){
 	//カレッジ一覧ページのin place edit
 	$('.college-name').editable({
 		type: 'text',
-		url: '/college/edit',
+		url: '/admin/college/edit',
 		//success: function(response, newValue){
         //
 		//},
