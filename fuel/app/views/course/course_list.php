@@ -39,7 +39,7 @@
 				<h3 class="box-title">学科追加</h3>
 			</div><!-- /.box-header -->
 			<div class="box-body">
-				<form action="/course/add" method="post" role="form" class="form-horizontal">
+				<form action="/admin/course/add" method="post" role="form" class="form-horizontal">
 					<div class="row">
 						<div class="form-group" id="form_course_add">
 							<label for="name" class="col-sm-1 control-label">学科名</label>
