@@ -27,6 +27,11 @@ $(function(){
 					data: sendCollegeEditData
 				},
 				success: function(response){
+					if('error' in response) {
+						var errorMessage = response['error']['message'];
+						testFunction(errorMessage);
+						return;
+					}
 					var text = "データベースに保存しました。"
 					testFunction(text);
 				},
