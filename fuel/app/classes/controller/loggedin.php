@@ -1,13 +1,13 @@
 <?php
 
-class Controller_Loggedin extends Controller_Template
+class Controller_Loggedin extends Controller_Hybrid
 {
 
 	public $template = 'template/after_login/template';
 	/**
 	 * @var \Auth\Auth_Driver $auth
 	 */
-	private $auth = null;
+	protected $auth = null;
 
 	public function before()
 	{
