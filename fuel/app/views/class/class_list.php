@@ -39,7 +39,7 @@
 				<h3 class="box-title">クラス追加</h3>
 			</div><!-- /.box-header -->
 			<div class="box-body">
-				<form action="/class/add" method="post" role="form" class="form-horizontal">
+				<form action="/admin/class/add" method="post" role="form" class="form-horizontal">
 					<div class="row">
 						<div class="form-group" id="form_class_add">
 							<label for="name" class="col-sm-1 control-label">クラス名</label>

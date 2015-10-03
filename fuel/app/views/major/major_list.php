@@ -37,7 +37,7 @@
 				<h3 class="box-title">専攻追加</h3>
 			</div><!-- /.box-header -->
 			<div class="box-body">
-				<form action="/major/add" method="post" role="form" class="form-horizontal">
+				<form action="/admin/major/add" method="post" role="form" class="form-horizontal">
 					<div class="row">
 						<div class="form-group" id="form_major_add">
 							<label for="name" class="col-sm-1 control-label">専攻名</label>
