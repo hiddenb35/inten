@@ -49,12 +49,9 @@
 							<label for="college_id" class="col-sm-1 control-label">カレッジ</label>
 							<div class="col-sm-3">
 								<select id="college_id" name="college_id" class="form-control">
-									<option value="1">ITカレッジ</option>
-									<option value="2">クリエーターズカレッジ</option>
-									<option value="3">ミュージックカレッジ</option>
-									<option value="4">テクノロジーカレッジ</option>
-									<option value="5">デザインカレッジ</option>
-									<option value="6">医療カレッジ</option>
+									<?php foreach($college_lists as $college_list): ?>
+										<option value="<?php echo $college_list['id'] ?>"><?php echo $college_list['name']?></option>
+									<?php endforeach; ?>
 								</select>
 							</div>
 							<div class="form-button col-sm-4">
