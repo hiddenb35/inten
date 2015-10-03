@@ -25,7 +25,7 @@ class Controller_Admin_Major extends Controller_Loggedin
 			$major->course_id = $val->validated('course_id');
 			$major->save();
 
-			Response::redirect('major/list');
+			Response::redirect('admin/major');
 		}
 
 		$this->template->title = 'エラー';
