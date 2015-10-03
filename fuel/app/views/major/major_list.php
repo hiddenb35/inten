@@ -41,30 +41,18 @@
 					<div class="row">
 						<div class="form-group" id="form_major_add">
 							<label for="name" class="col-sm-1 control-label">専攻名</label>
-							<div class="col-sm-2">
+							<div class="col-sm-3">
 								<input type="text" class="form-control" id="name" name="name">
 							</div>
 							<label for="course_id" class="col-sm-1 control-label">学科</label>
-							<div class="col-sm-2">
+							<div class="col-sm-3">
 								<select id="course_id" name="course_id" class="form-control">
-									<option value="1">ITスペシャリスト科</option>
-									<option value="2">情報処理科</option>
-									<option value="3">パソコン・ネットワーク科</option>
-									<option value="4">情報ビジネス科</option>
+									<?php foreach($course_lists as $course_list): ?>
+										<option value="<?php echo $course_list['id']; ?>"><?php echo $course_list['name']; ?></option>
+									<?php endforeach; ?>
 								</select>
 							</div>
-							<label for="college_id" class="col-sm-1 control-label">カレッジ</label>
-							<div class="col-sm-2">
-								<select id="college_id" name="college_id" class="form-control">
-									<option value="1">ITカレッジ</option>
-									<option value="2">クリエーターズカレッジ</option>
-									<option value="3">ミュージックカレッジ</option>
-									<option value="4">テクノロジーカレッジ</option>
-									<option value="5">デザインカレッジ</option>
-									<option value="6">医療カレッジ</option>
-								</select>
-							</div>
-							<div class="form-button col-sm-3">
+							<div class="form-button col-sm-4">
 								<button type="submit" class="btn btn-primary">登録</button>
 								<button type="reset" class="btn btn-warning">キャンセル</button>
 							</div>
