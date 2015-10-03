@@ -119,6 +119,7 @@ class Model_Teacher extends \Orm\Model
 		foreach($teachers as $teacher)
 		{
 			$array = array();
+			$array['id'] = $teacher['id'];
 			$array['number'] = $teacher['username'];
 			$array['full_name'] = $teacher['last_name'] . ' ' . $teacher['first_name'];
 			$array['full_name_kana'] = $teacher['last_name_kana'] . ' ' . $teacher['first_name_kana'];
