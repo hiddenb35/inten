@@ -23,7 +23,7 @@ class Controller_Admin_College extends Controller_Loggedin
 			$college->name = $val->validated('name');
 			$college->save();
 
-			Response::redirect('college/list');
+			Response::redirect('admin/college');
 		}
 
 		$this->template->title = 'エラー';

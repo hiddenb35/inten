@@ -26,7 +26,7 @@ class Controller_Admin_Course extends Controller_Loggedin
 			$course->college_id = $val->validated('college_id');
 			$course->save();
 
-			Response::redirect('course/list');
+			Response::redirect('admin/course');
 		}
 
 		$this->template->title = 'エラー';
