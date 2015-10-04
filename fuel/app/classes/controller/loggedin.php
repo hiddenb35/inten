@@ -13,41 +13,50 @@ class Controller_Loggedin extends Controller_Hybrid
 	{
 		parent::before();
 
-		if (!Auth::check())
+		if(Input::is_ajax())
 		{
-			Response::redirect('auth/slogin');
+			if(!Auth::check())
+			{
+				throw new HttpNotFoundException;
+			}
 		}
-
-		list($this->authentication) = array_values(Auth::verified());
-
-		$user_info = array(
-			'user_number' => $this->get_user_number(),
-			'full_name' => $this->get_full_name(),
-			'full_name_kana' => $this->get_full_name_kana(),
-			'email' => $this->get_email(),
-			'body_skin' => 'skin-blue',
-		);
-
-		if($this->is_admin())
+		else
 		{
-			$this->template->header  = View::forge('template/after_login/header_admin');
-			$user_info['body_skin'] = 'skin-yellow';
+			if ( ! Auth::check())
+			{
+				Response::redirect('auth/slogin');
+			}
 
-		}
-		elseif($this->is_teacher())
-		{
-			$this->template->header  = View::forge('template/after_login/header_teacher');
-			$user_info['body_skin'] = 'skin-red';
-		}
-		elseif($this->is_student())
-		{
-			$this->template->header  = View::forge('template/after_login/header_student');
-		}
+			list($this->authentication) = array_values(Auth::verified());
 
-		$this->template->sidebar = View::forge('template/after_login/sidebar');
-		$this->template->footer  = View::forge('template/after_login/footer');
-		$this->template->set_global('user_info', $user_info);
+			$user_info = array(
+				'user_number'    => $this->get_user_number(),
+				'full_name'      => $this->get_full_name(),
+				'full_name_kana' => $this->get_full_name_kana(),
+				'email'          => $this->get_email(),
+				'body_skin'      => 'skin-blue',
+			);
 
+			if ($this->is_admin())
+			{
+				$this->template->header = View::forge('template/after_login/header_admin');
+				$user_info['body_skin'] = 'skin-yellow';
+
+			}
+			elseif ($this->is_teacher())
+			{
+				$this->template->header = View::forge('template/after_login/header_teacher');
+				$user_info['body_skin'] = 'skin-red';
+			}
+			elseif ($this->is_student())
+			{
+				$this->template->header = View::forge('template/after_login/header_student');
+			}
+
+			$this->template->sidebar = View::forge('template/after_login/sidebar');
+			$this->template->footer  = View::forge('template/after_login/footer');
+			$this->template->set_global('user_info', $user_info);
+		}
 	}
 
 	public function is_student()
