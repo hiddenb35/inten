@@ -58,8 +58,8 @@ class Model_Status extends \Orm\Model
 	{
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
-		$val->add_field('student_id','教員ID','required|max_length[10]');
-		$val->add_field('attendance_id','出席ID','required|max_length[10]');
+		$val->add_field('student_id','教員ID','required|max_length[10]')->add_rule('exist_id', 'student');
+		$val->add_field('attendance_id','出席ID','required|max_length[10]')->add_rule('exist_id', 'attendance');
 		return $val;
 	}
 }
