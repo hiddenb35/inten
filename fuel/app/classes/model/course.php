@@ -74,7 +74,7 @@ class Model_Course extends \Orm\Model
 		$val->add_field('code','学科コード','required|max_length[2]')->add_rule('unique', 'course', 'code');
 		$val->add_field('name','学科名','trim|required|max_length[64]');
 		$val->add_field('year_system','年制','trim|required|max_length[10]');
-		$val->add_field('college_id','カレッジID','required|max_length[10]');
+		$val->add_field('college_id','カレッジID','required|max_length[10]')->add_rule('exist_id', 'college');
 		return $val;
 	}
 
