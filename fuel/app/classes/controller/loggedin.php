@@ -5,9 +5,9 @@ class Controller_Loggedin extends Controller_Hybrid
 
 	public $template = 'template/after_login/template';
 	/**
-	 * @var \Auth\Auth_Driver $auth
+	 * @var \Auth\Auth_Driver $authentication
 	 */
-	protected $auth = null;
+	private $authentication = null;
 
 	public function before()
 	{
@@ -18,7 +18,7 @@ class Controller_Loggedin extends Controller_Hybrid
 			Response::redirect('auth/slogin');
 		}
 
-		list($this->auth) = array_values(Auth::verified());
+		list($this->authentication) = array_values(Auth::verified());
 
 		$user_info = array(
 			'user_number' => $this->get_user_number(),
@@ -52,12 +52,12 @@ class Controller_Loggedin extends Controller_Hybrid
 
 	public function is_student()
 	{
-		return ($this->auth->get_id() === 'studentauth') ? true : false;
+		return ($this->authentication->get_id() === 'studentauth') ? true : false;
 	}
 
 	public function is_teacher()
 	{
-		return ($this->auth->get_id() === 'teacherauth') ? true : false;
+		return ($this->authentication->get_id() === 'teacherauth') ? true : false;
 	}
 
 	public function is_admin()
@@ -67,32 +67,32 @@ class Controller_Loggedin extends Controller_Hybrid
 			return false;
 		}
 
-		return ($this->auth->has_access('admin.ok')) ? true : false;
+		return ($this->authentication->has_access('admin.ok')) ? true : false;
 	}
 
 	public function get_id()
 	{
-		return $this->auth->get('id');
+		return $this->authentication->get('id');
 	}
 
 	public function get_user_number()
 	{
-		return $this->auth->get('username');
+		return $this->authentication->get('username');
 	}
 
 	public function get_full_name()
 	{
-		return $this->auth->get('last_name') . ' ' .$this->auth->get('first_name');
+		return $this->authentication->get('last_name') . ' ' .$this->authentication->get('first_name');
 	}
 
 	public function get_full_name_kana()
 	{
-		return $this->auth->get('last_name_kana') . ' ' . $this->auth->get('first_name_kana');
+		return $this->authentication->get('last_name_kana') . ' ' . $this->authentication->get('first_name_kana');
 	}
 
 	public function get_email()
 	{
-		return $this->auth->get('email');
+		return $this->authentication->get('email');
 	}
 
 }
