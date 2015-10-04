@@ -36,8 +36,8 @@ class Model_Attachment extends \Orm\Model
 	{
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
-		$val->add_field('teacher_id','教員ID','required|max_length[10]');
-		$val->add_field('lesson_id','授業ID','required|max_length[10]');
+		$val->add_field('teacher_id','教員ID','required|max_length[10]')->add_rule('exist_id', 'teacher');
+		$val->add_field('lesson_id','授業ID','required|max_length[10]')->add_rule('exist_id', 'lesson');
 		return $val;
 	}
 
