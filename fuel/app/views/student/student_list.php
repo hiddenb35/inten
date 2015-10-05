@@ -15,57 +15,45 @@
                 <thead>
                     <tr class="info">
                         <th>学籍番号</th>                   <!-- 芦沢ゾーンここから -->
-                        <th>姓</th>
-                        <th>名</th>
-                        <th>セイ</th>
-                        <th>メイ</th>
-                        <th>生年月日(西暦)</th>
-                        <th>生年月日(月)</th>
-                        <th>生年月日(日)</th>
-                        <th>E-mail</th>
+                        <th>フルネーム</th>
+                        <th>フルネーム(カナ)</th>
+                        <th>生年月日</th>
+                        <th>E-Mail</th>
                         <th>性別</th>
-                        <th>クラス</th>
+                        <th>クラス名</th>
+                        <th>専攻名</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>k013c1140</td>
-                        <td>加藤</td>
-                        <td>拓磨</td>
-                        <td>カトウ</td>
-                        <td>タクマ</td>
-                        <td>1994</td>
-                        <td>10</td>
-                        <td>12</td>
+                        <td>加藤 拓磨</td>
+                        <td>カトウ タクマ</td>
+                        <td>1994/10/12</td>
                         <td>k013c1140@it-neec.jp</td>
                         <td>女</td>
-                        <td>1</td>                          <!-- 芦沢ゾーンここまで -->
+                        <td>IS07-1</td>
+                        <td>システム専攻</td>                      <!-- 芦沢ゾーンここまで -->
                     </tr>
                     <tr>
                         <td>k013c1141</td>
-                        <td>田中</td>
-                        <td>太郎</td>
-                        <td>タナカ</td>
-                        <td>タロウ</td>
-                        <td>1994</td>
-                        <td>1</td>
-                        <td>1</td>
+                        <td>田中 太郎</td>
+                        <td>タナカ タロウ</td>
+                        <td>1994/1/2</td>
                         <td>k013c1141@it-neec.jp</td>
-                        <td>男</td>
-                        <td>1</td>                          <!-- 芦沢ゾーンここまで -->
+                        <td>女</td>
+                        <td>IS07-1</td>
+                        <td>システム専攻</td>                      <!-- 芦沢ゾーンここまで -->
                     </tr>
                     <tr>
                         <td>k013c1142</td>
-                        <td>蒲田</td>
-                        <td>太郎</td>
-                        <td>カマタ</td>
-                        <td>タロウ</td>
-                        <td>1994</td>
-                        <td>11</td>
-                        <td>11</td>
+                        <td>蒲田 太郎</td>
+                        <td>カマタ タロウ</td>
+                        <td>1994/3/4</td>
                         <td>k013c1142@it-neec.jp</td>
-                        <td>男</td>
-                        <td>1</td>                          <!-- 芦沢ゾーンここまで -->
+                        <td>女</td>
+                        <td>IS07-1</td>
+                        <td>ウェブ専攻</td>                      <!-- 芦沢ゾーンここまで -->
                     </tr>
                 </tbody>
             </table>
