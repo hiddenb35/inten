@@ -128,23 +128,29 @@ class Model_Student extends \Orm\Model
 
 		foreach($students as $student)
 		{
-			$array = array();
-			$array['id'] = $student['id'];
-			$array['number'] = $student['username'];
-			$array['full_name'] = $student['last_name'] . ' ' . $student['first_name'];
-			$array['full_name_kana'] = $student['last_name_kana'] . ' ' . $student['first_name_kana'];
-			$array['birthday'] = $student['birthday'];
-			$array['email'] = $student['email'];
-			$array['gender'] = $student['gender'];
-			$array['last_login'] = $student['last_login'];
-			$array['created_at'] = $student['created_at'];
-			$array['updated_at'] = $student['updated_at'];
-			$array['class_name'] = $student->class->name;
-			$array['major_name'] = (isset($student->major->name)) ? $student->major->name : '';
-
-			$lists[] = $array;
+			$lists[] = self::to_list($student);
 		}
 
 		return $lists;
+	}
+
+	public static function to_list($student)
+	{
+		$list = array();
+
+		$list['id'] = $student['id'];
+		$list['number'] = $student['username'];
+		$list['full_name'] = $student['last_name'] . ' ' . $student['first_name'];
+		$list['full_name_kana'] = $student['last_name_kana'] . ' ' . $student['first_name_kana'];
+		$list['birthday'] = $student['birthday'];
+		$list['email'] = $student['email'];
+		$list['gender'] = $student['gender'];
+		$list['last_login'] = $student['last_login'];
+		$list['created_at'] = $student['created_at'];
+		$list['updated_at'] = $student['updated_at'];
+		$list['class_name'] = $student->class->name;
+		$list['major_name'] = (isset($student->major->name)) ? $student->major->name : '';
+
+		return $list;
 	}
 }
