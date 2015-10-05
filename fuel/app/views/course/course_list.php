@@ -39,7 +39,7 @@
 				<h3 class="box-title">学科追加</h3>
 			</div><!-- /.box-header -->
 			<div class="box-body">
-				<form action="/course/add" method="post" role="form" class="form-horizontal">
+				<form action="/admin/course/add" method="post" role="form" class="form-horizontal">
 					<div class="row">
 						<div class="form-group" id="form_course_add">
 							<label for="name" class="col-sm-1 control-label">学科名</label>
@@ -49,12 +49,9 @@
 							<label for="college_id" class="col-sm-1 control-label">カレッジ</label>
 							<div class="col-sm-3">
 								<select id="college_id" name="college_id" class="form-control">
-									<option value="1">ITカレッジ</option>
-									<option value="2">クリエーターズカレッジ</option>
-									<option value="3">ミュージックカレッジ</option>
-									<option value="4">テクノロジーカレッジ</option>
-									<option value="5">デザインカレッジ</option>
-									<option value="6">医療カレッジ</option>
+									<?php foreach($college_lists as $college_list): ?>
+										<option value="<?php echo $college_list['id'] ?>"><?php echo $college_list['name']?></option>
+									<?php endforeach; ?>
 								</select>
 							</div>
 							<div class="form-button col-sm-4">

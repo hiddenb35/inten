@@ -135,17 +135,21 @@ $(function(){
 
 	//ここからtimetable_add
 	$('#title').click(function() {
-		$('#title').css( 'display', 'none');
-		$('#titleEdit').val( $( '#title').text()).css( 'display', '').focus();
+		$('#title').hide();
+		$('#titleEdit').val( $( '#title').text()).show().focus().select();
 	});
 	$('#titleEdit').blur(function() {
-		$('#titleEdit').css( 'display', 'none');
-		$('#title').text($('#titleEdit').val()).css( 'display', '');
+		$('#titleEdit').hide();
+		if($('#titleEdit').val() !== "")
+			$('#title').text($('#titleEdit').val());
+		$('#title').show();
 	});
 	$('#titleEdit').keypress( function(e) {
 		if ( e.which == 13) {
-			$('#titleEdit').css( 'display', 'none');
-			$('#title').text($('#titleEdit').val()).css( 'display', '');
+			$('#titleEdit').hide();
+			if($('#titleEdit').val() !== "")
+				$('#title').text($('#titleEdit').val());
+			$('#title').show();
 			return false;
 		}
 	});
@@ -187,17 +191,33 @@ $(function(){
 			$(".setElement").removeClass("setElement");
 		});
 	});
-	var data = {"name":$('#title').text(),"json":[]};
+	var data = [];
 	var tr = $("table tr");
 	$("#TIMETABLE_ADD #transmission").click(function(){
 		for (var i = 1; i < 9; i++) {
 			var cells = tr.eq(i).children();
-			data.json[i-1] = [];
+			data[i-1] = [];
 			for (var j = 1; j < 6; j++) {
-				data.json[i-1][j-1] = {"lesson_id":cells.eq(j).data('lesson-id'),"room_number":cells.eq(j).children('.classroom').text(),"notes":cells.eq(j).children('.note').text()};
+				if(cells.eq(j).data('lesson-id') == 0){
+					data[i-1][j-1] = {};
+				}else{
+					data[i-1][j-1] = {"lesson_id":cells.eq(j).data('lesson-id'),"room_number":cells.eq(j).children('.classroom').text(),"notes":cells.eq(j).children('.note').text()};
+				}
 			}
 		}
 		data = JSON.stringify(data);
-		console.log(data);
+
+		$.ajax({
+			url: '/timetable/add',
+			type: 'POST',
+			dataType: 'json',
+			data: {name: $('#title').text(), json: data, class_id: $('input[name="class_id"]').val()}
+		})
+		.done(function() {
+			console.log("success");
+		})
+		.fail(function() {
+			console.log("error");
+		});
 	});
 });

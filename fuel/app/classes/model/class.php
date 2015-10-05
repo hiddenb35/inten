@@ -35,9 +35,12 @@ class Model_Class extends \Orm\Model
 			'mysql_timestamp' => false,
 			'property' => 'updated_at',
 		),
+		'Orm\Observer_Typing' => array(
+			'events' => array('before_save', 'after_save', 'after_load')
+		),
 	);
 
-	protected static $_has_one = array(
+	protected static $_belongs_to = array(
 		'teacher' => array(
 			'model_to' => 'Model_Teacher',
 			'key_from' => 'teacher_id',
@@ -45,37 +48,34 @@ class Model_Class extends \Orm\Model
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),
+		'course' => array(
+			'model_to' => 'Model_Course',
+			'key_from' => 'course_id',
+			'key_to' => 'id',
+			'cascade_save' => false,
+			'cascade_delete' => false,
+		),
 	);
 
 	protected static $_has_many = array(
-		'student' => array(
+		'students' => array(
 			'model_to' => 'Model_Student',
 			'key_from' => 'id',
 			'key_to' => 'class_id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),
-		'lesson' => array(
+		'lessons' => array(
 			'model_to' => 'Model_Lesson',
 			'key_from' => 'id',
 			'key_to' => 'class_id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),
-		'timetable' => array(
+		'timetables' => array(
 			'model_to' => 'Model_Timetable',
 			'key_from' => 'id',
 			'key_to' => 'class_id',
-			'cascade_save' => false,
-			'cascade_delete' => false,
-		),
-	);
-
-	protected static $_belongs_to = array(
-		'course' => array(
-			'model_to' => 'Model_Course',
-			'key_from' => 'course_id',
-			'key_to' => 'id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),
@@ -86,8 +86,35 @@ class Model_Class extends \Orm\Model
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
 		$val->add_field('name','クラス名','trim|required|max_length[64]')->add_rule('unique', 'class', 'name');
-		$val->add_field('course_id','学科ID','required|max_length[10]');
-		$val->add_field('teacher_id','教員ID','required|max_length[10]');
+		$val->add_field('course_id','学科ID','required|max_length[10]')->add_rule('exist_id', 'course');
+		$val->add_field('teacher_id','教員ID','required|max_length[10]')->add_rule('exist_id', 'teacher');
 		return $val;
+	}
+
+	public static function to_lists($classes)
+	{
+		$lists = array();
+
+		foreach($classes as $class)
+		{
+			$lists[] = self::to_list($class);
+		}
+
+		return $lists;
+	}
+
+	public static function to_list($class)
+	{
+		$list = array();
+
+		$list['id'] = $class['id'];
+		$list['name'] = $class['name'];
+		$list['teacher_name'] = $class->teacher->last_name . ' ' . $class->teacher->first_name;
+		$list['course_name'] = $class->course->name;
+		$list['college_name'] = $class->course->college->name;
+		$list['created_at'] = $class['created_at'];
+		$list['updated_at'] = $class['updated_at'];
+
+		return $list;
 	}
 }

@@ -1,6 +1,6 @@
 <section class="content-header">
     <h1>
-        生徒情報閲覧(教員用)
+        教員一覧
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -9,37 +9,51 @@
 <!-- Main content -->
 <section class="content">
 <div id="TEACHER_LIST">
-    <div class="container">
+    <div class="container-fluid">
         <div class="table-responsive">
-            <table class="table table-borderd table-striped table-hover">
+            <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
-                    <tr>
-                        <th>学籍番号</th>                   <!-- 芦沢ゾーンここから -->
-                        <th>姓</th>
-                        <th>名</th>
-                        <th>セイ</th>
-                        <th>メイ</th>
-                        <th>生年月日(西暦)</th>
-                        <th>生年月日(月)</th>
-                        <th>生年月日(日)</th>
-                        <th>E-mail</th>
+                    <tr class="info">
+                        <th>教員番号</th>                   <!-- 芦沢ゾーンここから -->
+                        <th>フルネーム</th>
+                        <th>フルネーム(カナ)</th>
+                        <th>生年月日</th>
+                        <th>E-Mail</th>
                         <th>性別</th>
-                        <th>クラス</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>k013c1140</td>
-                        <td>加藤</td>
-                        <td>拓磨</td>
-                        <td>カトウ</td>
-                        <td>タクマ</td>
-                        <td>1994</td>
-                        <td>10</td>
-                        <td>12</td>
-                        <td>k013c1140@it-neec.jp</td>
+                        <td>######</td>
+                        <td>加藤 拓磨</td>
+                        <td>カトウ タクマ</td>
+                        <td>1994/10/12</td>
+                        <td>kato@it-neec.jp</td>
                         <td>女</td>
-                        <td>1</td>                          <!-- 芦沢ゾーンここまで -->
+                    </tr>
+                    <tr>
+                        <td>######</td>
+                        <td>田中 太郎</td>
+                        <td>タナカ タロウ</td>
+                        <td>1994/1/2</td>
+                        <td>tanaka@it-neec.jp</td>
+                        <td>男</td>
+                    </tr>
+                    <tr>
+                        <td>######</td>
+                        <td>蒲田 太郎</td>
+                        <td>カマタ タロウ</td>
+                        <td>1994/3/4</td>
+                        <td>kamata@it-neec.jp</td>
+                        <td>男</td>
+                    </tr>
+                    <tr>
+                        <td>######</td>
+                        <td>山田 花子</td>
+                        <td>ヤマダ ハナコ</td>
+                        <td>1994/4/5</td>
+                        <td>yamada@it-neec.jp</td>
+                        <td>女</td>
                     </tr>
                 </tbody>
             </table>

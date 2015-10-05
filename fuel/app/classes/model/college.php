@@ -29,6 +29,19 @@ class Model_College extends \Orm\Model
 			'mysql_timestamp' => false,
 			'property' => 'updated_at',
 		),
+		'Orm\Observer_Typing' => array(
+			'events' => array('before_save', 'after_save', 'after_load')
+		),
+	);
+
+	protected static $_has_many = array(
+		'courses' => array(
+			'model_to' => 'Model_Course',
+			'key_from' => 'id',
+			'key_to' => 'college_id',
+			'cascade_save' => false,
+			'cascade_delete' => false,
+		),
 	);
 
 	public static function validate()
@@ -37,5 +50,41 @@ class Model_College extends \Orm\Model
 		$val->add_callable('exvalidation');
 		$val->add_field('name','カレッジ名','trim|required|max_length[64]')->add_rule('unique', 'college', 'name');
 		return $val;
+	}
+
+	public static function to_lists($colleges)
+	{
+		$lists = array();
+
+		foreach($colleges as $college)
+		{
+			$lists[] = self::to_list($college);
+		}
+
+		return $lists;
+	}
+
+	public static function to_list($college)
+	{
+		$list = array();
+
+		$course_sum = count($college->courses);
+		$major_sum = 0;
+		$class_sum = 0;
+		foreach($college->courses as $course)
+		{
+			$major_sum += count($course->majors);
+			$class_sum += count($course->classes);
+		}
+
+		$list['id'] = $college['id'];
+		$list['name'] = $college['name'];
+		$list['course_sum'] = $course_sum;
+		$list['class_sum'] = $class_sum;
+		$list['major_sum'] = $major_sum;
+		$list['created_at'] = $college['created_at'];
+		$list['updated_at'] = $college['updated_at'];
+
+		return $list;
 	}
 }

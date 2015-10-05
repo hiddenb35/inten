@@ -38,17 +38,20 @@ class Model_Lesson extends \Orm\Model
 			'mysql_timestamp' => false,
 			'property' => 'updated_at',
 		),
+		'Orm\Observer_Typing' => array(
+			'events' => array('before_save', 'after_save', 'after_load')
+		),
 	);
 
 	protected static $_has_many = array(
-		'attendance' => array(
+		'attendances' => array(
 			'model_to' => 'Model_Attendance',
 			'key_from' => 'id',
 			'key_to' => 'lesson_id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),
-		'attachment' => array(
+		'attachment_lessons' => array(
 			'model_to' => 'Model_Attachment',
 			'key_from' => 'id',
 			'key_to' => 'lesson_id',
@@ -75,5 +78,31 @@ class Model_Lesson extends \Orm\Model
 		$val->add_field('sum_credit','総単位数','trim|required|max_length[10]');
 		$val->add_field('class_id','クラスID','required|max_length[10]');
 		return $val;
+	}
+
+	public static function to_lists($lessons)
+	{
+		$lists = array();
+
+		foreach($lessons as $lesson)
+		{
+			$lists[] = self::to_list($lesson);
+		}
+
+		return $lists;
+	}
+
+	public static function to_list($lesson)
+	{
+		$list = array();
+
+		$list['id'] = $lesson['id'];
+		$list['name'] = $lesson['name'];
+		$list['term'] = $lesson['term'];
+		$list['sum_credit'] = $lesson['sum_credit'];
+		$list['class_name'] = $lesson->class->name;
+		$list['attachment'] = $lesson->class->teacher->last_name . ' ' . $lesson->class->teacher->first_name;
+
+		return $list;
 	}
 }

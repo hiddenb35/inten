@@ -32,9 +32,12 @@ class Model_Major extends \Orm\Model
 			'mysql_timestamp' => false,
 			'property' => 'updated_at',
 		),
+		'Orm\Observer_Typing' => array(
+			'events' => array('before_save', 'after_save', 'after_load')
+		),
 	);
 
-	public static $_has_one = array(
+	public static $_belongs_to = array(
 		'course' => array(
 			'model_to' => 'Model_Course',
 			'key_from' => 'course_id',
@@ -45,7 +48,7 @@ class Model_Major extends \Orm\Model
 	);
 
 	public static $_has_many = array(
-		'student' => array(
+		'students' => array(
 			'model_to' => 'Model_Student',
 			'key_from' => 'id',
 			'key_to' => 'major_id',
@@ -59,7 +62,33 @@ class Model_Major extends \Orm\Model
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
 		$val->add_field('name','専攻名','trim|required|max_length[64]')->add_rule('unique', 'major', 'name');
-		$val->add_field('course_id','学科ID','required|max_length[10]');
+		$val->add_field('course_id','学科ID','required|max_length[10]')->add_rule('exist_id', 'course');
 		return $val;
+	}
+
+	public static function to_lists($majors)
+	{
+		$lists = array();
+
+		foreach($majors as $major)
+		{
+			$lists[] = self::to_list($major);
+		}
+
+		return $lists;
+	}
+
+	public static function to_list($major)
+	{
+		$list = array();
+
+		$list['id'] = $major['name'];
+		$list['name'] = $major['name'];
+		$list['created_at'] = $major['created_at'];
+		$list['updated_at'] = $major['updated_at'];
+		$list['course_name'] = $major->course->name;
+		$list['college_name'] = $major->course->college->name;
+
+		return $list;
 	}
 }

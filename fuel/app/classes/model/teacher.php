@@ -65,24 +65,35 @@ class Model_Teacher extends \Orm\Model
 			'mysql_timestamp' => false,
 			'property' => 'updated_at',
 		),
+		'Orm\Observer_Typing' => array(
+			'events' => array('before_save', 'after_save', 'after_load')
+		),
 	);
 
 	protected static $_has_many = array(
-		'attachment' => array(
+		'attachment_lessons' => array(
 			'model_to' => 'Model_Attachment',
 			'key_from' => 'id',
 			'key_to' => 'teacher_id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),
-		'class' => array(
+		'classes' => array(
 			'model_to' => 'Model_Class',
 			'key_from' => 'id',
 			'key_to' => 'teacher_id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),
+		'attendances' => array(
+			'model_to' => 'Model_Attendance',
+			'key_from' => 'id',
+			'key_to' => 'teacher_id',
+			'cascade_save' => false,
+			'cascade_delete' => false,
+		),
 	);
+
 
 	public static function validate()
 	{
@@ -102,5 +113,36 @@ class Model_Teacher extends \Orm\Model
 		$val->add_field('profile_fields','備考','required');
 		$val->add_field('login_hash','ログインハッシュ','required|max_length[255]');
 		return $val;
+	}
+
+	public static function to_lists($teachers)
+	{
+		$lists = array();
+
+		foreach($teachers as $teacher)
+		{
+			$lists[] = self::to_list($teacher);
+		}
+
+		return $lists;
+	}
+
+	public static function to_list($teacher)
+	{
+		$list = array();
+
+		$list['id'] = $teacher['id'];
+		$list['number'] = $teacher['username'];
+		$list['full_name'] = $teacher['last_name'] . ' ' . $teacher['first_name'];
+		$list['full_name_kana'] = $teacher['last_name_kana'] . ' ' . $teacher['first_name_kana'];
+		$list['birthday'] = $teacher['birthday'];
+		$list['email'] = $teacher['email'];
+		$list['gender'] = $teacher['gender'];
+		$list['last_login'] = $teacher['last_login'];
+		$list['created_at'] = $teacher['created_at'];
+		$list['updated_at'] = $teacher['updated_at'];
+
+		return $list;
+
 	}
 }

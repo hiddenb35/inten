@@ -71,11 +71,14 @@ class Model_Student extends \Orm\Model
 			'mysql_timestamp' => false,
 			'property' => 'updated_at',
 		),
+		'Orm\Observer_Typing' => array(
+			'events' => array('before_save', 'after_save', 'after_load')
+		),
 	);
 
 	protected static $_has_many = array(
-		'attendance' => array(
-			'model_to' => 'Model_Attendance',
+		'attendance_statuses' => array(
+			'model_to' => 'Model_Status',
 			'key_from' => 'id',
 			'key_to' => 'student_id',
 			'cascade_save' => false,
@@ -83,10 +86,17 @@ class Model_Student extends \Orm\Model
 		),
 	);
 
-	protected static $_has_one = array(
+	protected static $_belongs_to = array(
 		'major' => array(
 			'model_to' => 'Model_Major',
 			'key_from' => 'major_id',
+			'key_to' => 'id',
+			'cascade_save' => false,
+			'cascade_delete' => false,
+		),
+		'class' => array(
+			'model_to' => 'Model_Class',
+			'key_from' => 'class_id',
 			'key_to' => 'id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
@@ -97,21 +107,53 @@ class Model_Student extends \Orm\Model
 	{
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
-		$val->add_field('username','学科番号','trim|required|max_length[50]');
+		$val->add_field('username','学籍番号','trim|required|max_length[50]')->add_rule('unique', 'student', 'username');
 		$val->add_field('first_name','名','trim|required|max_length[64]');
 		$val->add_field('first_name_kana','名(カナ)','trim|required|max_length[64]');
 		$val->add_field('last_name','姓','trim|required|max_length[64]');
 		$val->add_field('last_name_kana','姓(カナ)','trim|required|max_length[64]');
 		$val->add_field('birthday','生年月日','required|max_length[10]');
 		$val->add_field('password','パスワード','required|max_length[255]');
-		$val->add_field('email','メールアドレス','trim|required|max_length[255]|valid_email');
+		$val->add_field('email','メールアドレス','trim|required|max_length[255]|valid_email')->add_rule('unique', 'student', 'email');
 		$val->add_field('gender','性別','required|max_length[11]');
 		$val->add_field('group','グループ','required|max_length[11]');
 		$val->add_field('last_login','最終ログイン日時','required|max_length[25]');
 		$val->add_field('profile_fields','備考','required|max_length[255]');
 		$val->add_field('login_hash','ログインハッシュ','required|max_length[255]');
-		$val->add_field('class_id','クラスID','required|max_length[10]');
-		$val->add_field('major_id','専攻ID','required|max_length[10]');
+		$val->add_field('class_id','クラスID','required|max_length[10]')->add_rule('exist_id', 'class');
+		$val->add_field('major_id','専攻ID','max_length[10]');
 		return $val;
+	}
+
+	public static function to_lists($students)
+	{
+		$lists = array();
+
+		foreach($students as $student)
+		{
+			$lists[] = self::to_list($student);
+		}
+
+		return $lists;
+	}
+
+	public static function to_list($student)
+	{
+		$list = array();
+
+		$list['id'] = $student['id'];
+		$list['number'] = $student['username'];
+		$list['full_name'] = $student['last_name'] . ' ' . $student['first_name'];
+		$list['full_name_kana'] = $student['last_name_kana'] . ' ' . $student['first_name_kana'];
+		$list['birthday'] = $student['birthday'];
+		$list['email'] = $student['email'];
+		$list['gender'] = $student['gender'];
+		$list['last_login'] = $student['last_login'];
+		$list['created_at'] = $student['created_at'];
+		$list['updated_at'] = $student['updated_at'];
+		$list['class_name'] = $student->class->name;
+		$list['major_name'] = (isset($student->major->name)) ? $student->major->name : '';
+
+		return $list;
 	}
 }
