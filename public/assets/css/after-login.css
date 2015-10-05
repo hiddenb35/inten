@@ -1,4 +1,4 @@
-#TIMETABLE_ADD .note,#TIMETABLE_ADD #titleEdit.titleEdit{
+.note,#TIMETABLE_ADD #titleEdit{
 	display: none;
 }
 #TIMETABLE_ADD #note{
@@ -131,3 +131,4 @@ table th,td{
 #TIMETABLE_ADD thead th {
     width: 16%;
 }
+/*************************************/
