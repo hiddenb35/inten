@@ -17,7 +17,7 @@ class Model_Timetable extends \Orm\Model
 			'data_type' => 'int',
 		),
 		'is_active' => array(
-			'data_type' => 'int',
+			'data_type' => 'bool',
 		),
 		'created_at' => array(
 			'data_type' => 'int',
@@ -37,6 +37,9 @@ class Model_Timetable extends \Orm\Model
 			'events' => array('before_update'),
 			'mysql_timestamp' => false,
 			'property' => 'updated_at',
+		),
+		'Orm\Observer_Typing' => array(
+			'events' => array('before_save', 'after_save', 'after_load')
 		),
 	);
 
