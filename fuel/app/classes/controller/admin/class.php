@@ -39,10 +39,28 @@ class Controller_Admin_Class extends Controller_Loggedin
 
 	}
 
-	public function action_edit()
+	public function post_edit()
 	{
-		$this->template->title = 'クラスの編集';
-		$this->template->content = View::forge('class/class_edit');
+		$val = Model_Class::validate();
+		$val->add_field('id', 'クラスID', 'trim|required')->add_rule('exist_id', 'class');
+		$response = array();
+
+		if($val->run())
+		{
+			$class = Model_Class::find($val->validated('id'));
+			$class->name = $val->validated('name');
+			$class->course_id = $val->validated('course_id');
+			$class->teacher_id = $val->validated('teacher_id');
+			$class->save();
+
+			$response['success'] = Model_Class::to_list($class);
+		}
+		else
+		{
+			$response['errors'] = $val->error_message();
+		}
+
+		return $this->response($response);
 	}
 
 }

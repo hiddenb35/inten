@@ -37,10 +37,27 @@ class Controller_Admin_Major extends Controller_Loggedin
 
 	}
 
-	public function action_edit()
+	public function post_edit()
 	{
-		$this->template->title = '専攻の編集';
-		$this->template->content = View::forge('major/major_edit');
+		$val = Model_Major::validate();
+		$val->add_field('id', '専攻ID', 'trim|required')->add_rule('exist_id', 'major');
+		$response = array();
+
+		if($val->run())
+		{
+			$major = Model_Major::find($val->validated('id'));
+			$major->name = $val->validated('name');
+			$major->course_id = $val->validated('course_id');
+			$major->save();
+
+			$response['success'] = Model_Major::to_list($major);
+		}
+		else
+		{
+			$response['errors'] = $val->error_message();
+		}
+
+		return $this->response($response);
 	}
 
 }

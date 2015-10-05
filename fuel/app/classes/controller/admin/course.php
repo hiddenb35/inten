@@ -37,10 +37,29 @@ class Controller_Admin_Course extends Controller_Loggedin
 		$this->template->content->set('inputs', $val->input());
 	}
 
-	public function action_edit()
+	public function post_edit()
 	{
-		$this->template->title = '学科の編集';
-		$this->template->content = View::forge('course/course_edit');
+		$val = Model_Course::validate();
+		$val->add_field('id', '学科ID', 'trim|required')->add_rule('exist_id', 'course');
+		$response = array();
+
+		if($val->run())
+		{
+			$course = Model_Course::find($val->validated('id'));
+			$course->code = $val->validated('code');
+			$course->name = $val->validated('name');
+			$course->year_system = $val->validated('year_system');
+			$course->college_id = $val->validated('college_id');
+			$course->save();
+
+			$response['success'] = Model_Course::to_list($course);
+		}
+		else
+		{
+			$response['errors'] = $val->error_message();
+		}
+
+		return $this->response($response);
 	}
 
 }
