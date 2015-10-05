@@ -49,32 +49,39 @@ class Model_College extends \Orm\Model
 		return $val;
 	}
 
-	public static function to_list($colleges)
+	public static function to_lists($colleges)
 	{
 		$lists = array();
 
 		foreach($colleges as $college)
 		{
-			$array = array();
-			$course_sum = count($college->courses);
-			$major_sum = 0;
-			$class_sum = 0;
-			foreach($college->courses as $course)
-			{
-				$major_sum += count($course->majors);
-				$class_sum += count($course->classes);
-			}
-			$array['id'] = $college['id'];
-			$array['name'] = $college['name'];
-			$array['course_sum'] = $course_sum;
-			$array['class_sum'] = $class_sum;
-			$array['major_sum'] = $major_sum;
-			$array['created_at'] = $college['created_at'];
-			$array['updated_at'] = $college['updated_at'];
-
-			$lists[] = $array;
+			$lists[] = self::to_list($college);
 		}
 
 		return $lists;
+	}
+
+	public static function to_list($college)
+	{
+		$list = array();
+
+		$course_sum = count($college->courses);
+		$major_sum = 0;
+		$class_sum = 0;
+		foreach($college->courses as $course)
+		{
+			$major_sum += count($course->majors);
+			$class_sum += count($course->classes);
+		}
+
+		$list['id'] = $college['id'];
+		$list['name'] = $college['name'];
+		$list['course_sum'] = $course_sum;
+		$list['class_sum'] = $class_sum;
+		$list['major_sum'] = $major_sum;
+		$list['created_at'] = $college['created_at'];
+		$list['updated_at'] = $college['updated_at'];
+
+		return $list;
 	}
 }

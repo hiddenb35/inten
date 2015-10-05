@@ -88,24 +88,30 @@ class Model_Class extends \Orm\Model
 		return $val;
 	}
 
-	public static function to_list($classes)
+	public static function to_lists($classes)
 	{
 		$lists = array();
 
 		foreach($classes as $class)
 		{
-			$array = array();
-			$array['id'] = $class['id'];
-			$array['name'] = $class['name'];
-			$array['teacher_name'] = $class->teacher->last_name . ' ' . $class->teacher->first_name;
-			$array['course_name'] = $class->course->name;
-			$array['college_name'] = $class->course->college->name;
-			$array['created_at'] = $class['created_at'];
-			$array['updated_at'] = $class['updated_at'];
-
-			$lists[] = $array;
+			$lists[] = self::to_list($class);
 		}
 
 		return $lists;
+	}
+
+	public static function to_list($class)
+	{
+		$list = array();
+
+		$list['id'] = $class['id'];
+		$list['name'] = $class['name'];
+		$list['teacher_name'] = $class->teacher->last_name . ' ' . $class->teacher->first_name;
+		$list['course_name'] = $class->course->name;
+		$list['college_name'] = $class->course->college->name;
+		$list['created_at'] = $class['created_at'];
+		$list['updated_at'] = $class['updated_at'];
+
+		return $list;
 	}
 }

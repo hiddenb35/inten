@@ -78,24 +78,30 @@ class Model_Course extends \Orm\Model
 		return $val;
 	}
 
-	public static function to_list($courses)
+	public static function to_lists($courses)
 	{
 		$lists = array();
 
 		foreach($courses as $course)
 		{
-			$array = array();
-			$array['id'] = $course['id'];
-			$array['code'] = $course['code'];
-			$array['name'] = $course['name'];
-			$array['year_system'] = $course['year_system'];
-			$array['created_at'] = $course['created_at'];
-			$array['updated_at'] = $course['updated_at'];
-			$array['college_name'] = $course->college->name;
-
-			$lists[] = $array;
+			$lists[] = self::to_list($course);
 		}
 
 		return $lists;
+	}
+
+	public static function to_list($course)
+	{
+		$list = array();
+
+		$list['id'] = $course['id'];
+		$list['code'] = $course['code'];
+		$list['name'] = $course['name'];
+		$list['year_system'] = $course['year_system'];
+		$list['created_at'] = $course['created_at'];
+		$list['updated_at'] = $course['updated_at'];
+		$list['college_name'] = $course->college->name;
+
+		return $list;
 	}
 }

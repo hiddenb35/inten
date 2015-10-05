@@ -63,23 +63,29 @@ class Model_Major extends \Orm\Model
 		return $val;
 	}
 
-	public static function to_list($majors)
+	public static function to_lists($majors)
 	{
 		$lists = array();
 
 		foreach($majors as $major)
 		{
-			$array = array();
-			$array['id'] = $major['name'];
-			$array['name'] = $major['name'];
-			$array['created_at'] = $major['created_at'];
-			$array['updated_at'] = $major['updated_at'];
-			$array['course_name'] = $major->course->name;
-			$array['college_name'] = $major->course->college->name;
-
-			$lists[] = $array;
+			$lists[] = self::to_list($major);
 		}
 
 		return $lists;
+	}
+
+	public static function to_list($major)
+	{
+		$list = array();
+
+		$list['id'] = $major['name'];
+		$list['name'] = $major['name'];
+		$list['created_at'] = $major['created_at'];
+		$list['updated_at'] = $major['updated_at'];
+		$list['course_name'] = $major->course->name;
+		$list['college_name'] = $major->course->college->name;
+
+		return $list;
 	}
 }

@@ -112,27 +112,34 @@ class Model_Teacher extends \Orm\Model
 		return $val;
 	}
 
-	public static function to_list($teachers)
+	public static function to_lists($teachers)
 	{
 		$lists = array();
 
 		foreach($teachers as $teacher)
 		{
-			$array = array();
-			$array['id'] = $teacher['id'];
-			$array['number'] = $teacher['username'];
-			$array['full_name'] = $teacher['last_name'] . ' ' . $teacher['first_name'];
-			$array['full_name_kana'] = $teacher['last_name_kana'] . ' ' . $teacher['first_name_kana'];
-			$array['birthday'] = $teacher['birthday'];
-			$array['email'] = $teacher['email'];
-			$array['gender'] = $teacher['gender'];
-			$array['last_login'] = $teacher['last_login'];
-			$array['created_at'] = $teacher['created_at'];
-			$array['updated_at'] = $teacher['updated_at'];
-
-			$lists[] = $array;
+			$lists[] = self::to_list($teacher);
 		}
 
 		return $lists;
+	}
+
+	public static function to_list($teacher)
+	{
+		$list = array();
+
+		$list['id'] = $teacher['id'];
+		$list['number'] = $teacher['username'];
+		$list['full_name'] = $teacher['last_name'] . ' ' . $teacher['first_name'];
+		$list['full_name_kana'] = $teacher['last_name_kana'] . ' ' . $teacher['first_name_kana'];
+		$list['birthday'] = $teacher['birthday'];
+		$list['email'] = $teacher['email'];
+		$list['gender'] = $teacher['gender'];
+		$list['last_login'] = $teacher['last_login'];
+		$list['created_at'] = $teacher['created_at'];
+		$list['updated_at'] = $teacher['updated_at'];
+
+		return $list;
+
 	}
 }
