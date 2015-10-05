@@ -6,7 +6,7 @@ return array(
 	'max_length'      => ':label は :param:1 文字以下で入力して下さい。',
 	'exact_length'    => ':label は :param:1 文字で入力して下さい。',
 	'match_value'     => ':label は使用できない文字が含まれています。使用可能な文字 [:param:1] ',
-	'match_pattern'   => ':label は :param:2 で入力して下さい。',
+	'match_pattern'   => ':label は :param:1 の形式で入力して下さい。',
 	'match_field'     => ':label は :param:1 と異なっています。',
 	'valid_email'     => ':label は正しいメールアドレスではありません。',
 	'valid_emails'    => ':label に不正なメールアドレスが含まれています。',
