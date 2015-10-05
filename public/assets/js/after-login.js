@@ -83,17 +83,26 @@ $(function(){
 
 	//ここからtimetable_add
 	$('#title').click(function() {
-		$('#title').css( 'display', 'none');
-		$('#titleEdit').val( $( '#title').text()).css( 'display', '').focus();
+		if($('#titleEdit').hasClass('titleEdit') == true){
+			$('#titleEdit').removeClass('titleEdit');
+		}
+		$('#title').css('display', 'none');
+		$('#titleEdit').val($('#title').text()).css('display', '').focus();
 	});
 	$('#titleEdit').blur(function() {
-		$('#titleEdit').css( 'display', 'none');
-		$('#title').text($('#titleEdit').val()).css( 'display', '');
+		$('#titleEdit').css('display', 'none');
+		$('#title').text($('#titleEdit').val()).css('display', '');
+		if($('#title').text() == false){
+			$('#title').text("時間割のタイトルを入力してください。");
+		}
 	});
 	$('#titleEdit').keypress( function(e) {
 		if ( e.which == 13) {
-			$('#titleEdit').css( 'display', 'none');
-			$('#title').text($('#titleEdit').val()).css( 'display', '');
+			$('#titleEdit').css('display', 'none');
+			$('#title').text($('#titleEdit').val()).css('display', '');
+			if($('#title').text() == false){
+				$('#title').text("時間割のタイトルを入力してください。");
+			}
 			return false;
 		}
 	});
