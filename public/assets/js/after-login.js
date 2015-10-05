@@ -83,17 +83,21 @@ $(function(){
 
 	//ここからtimetable_add
 	$('#title').click(function() {
-		$('#title').css( 'display', 'none');
-		$('#titleEdit').val( $( '#title').text()).css( 'display', '').focus();
+		$('#title').hide();
+		$('#titleEdit').val( $( '#title').text()).show().focus().select();
 	});
 	$('#titleEdit').blur(function() {
-		$('#titleEdit').css( 'display', 'none');
-		$('#title').text($('#titleEdit').val()).css( 'display', '');
+		$('#titleEdit').hide();
+		if($('#titleEdit').val() !== "")
+			$('#title').text($('#titleEdit').val());
+		$('#title').show();
 	});
 	$('#titleEdit').keypress( function(e) {
 		if ( e.which == 13) {
-			$('#titleEdit').css( 'display', 'none');
-			$('#title').text($('#titleEdit').val()).css( 'display', '');
+			$('#titleEdit').hide();
+			if($('#titleEdit').val() !== "")
+				$('#title').text($('#titleEdit').val());
+			$('#title').show();
 			return false;
 		}
 	});
