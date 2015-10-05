@@ -34,10 +34,26 @@ class Controller_Admin_College extends Controller_Loggedin
 
 	}
 
-	public function action_edit()
+	public function post_edit()
 	{
-		$this->template->title = 'カレッジの編集';
-		$this->template->content = View::forge('college/college_edit');
+		$val = Model_College::validate();
+		$val->add_field('id', 'カレッジID', 'trim|required')->add_rule('exist_id', 'college');
+		$response = array();
+
+		if($val->run())
+		{
+			$college = Model_College::find($val->validated('id'));
+			$college->name = $val->validated('name');
+			$college->save();
+
+			$response['success'] = Model_College::to_list($college);
+		}
+		else
+		{
+			$response['errors'] = $val->error_message();
+		}
+
+		return $this->response($response);
 	}
 
 }
