@@ -88,7 +88,7 @@ class Model_Class extends \Orm\Model
 		return $val;
 	}
 
-	public static function to_list($classes)
+	public static function to_lists($classes)
 	{
 		$lists = array();
 

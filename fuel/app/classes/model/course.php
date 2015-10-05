@@ -78,7 +78,7 @@ class Model_Course extends \Orm\Model
 		return $val;
 	}
 
-	public static function to_list($courses)
+	public static function to_lists($courses)
 	{
 		$lists = array();
 

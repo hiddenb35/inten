@@ -63,7 +63,7 @@ class Model_Major extends \Orm\Model
 		return $val;
 	}
 
-	public static function to_list($majors)
+	public static function to_lists($majors)
 	{
 		$lists = array();
 

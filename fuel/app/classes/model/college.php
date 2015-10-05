@@ -49,7 +49,7 @@ class Model_College extends \Orm\Model
 		return $val;
 	}
 
-	public static function to_list($colleges)
+	public static function to_lists($colleges)
 	{
 		$lists = array();
 

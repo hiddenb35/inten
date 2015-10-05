@@ -77,7 +77,7 @@ class Model_Lesson extends \Orm\Model
 		return $val;
 	}
 
-	public static function to_list($lessons)
+	public static function to_lists($lessons)
 	{
 		$lists = array();
 

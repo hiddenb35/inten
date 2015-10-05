@@ -122,7 +122,7 @@ class Model_Student extends \Orm\Model
 		return $val;
 	}
 
-	public static function to_list($students)
+	public static function to_lists($students)
 	{
 		$lists = array();
 
