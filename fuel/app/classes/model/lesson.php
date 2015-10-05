@@ -83,17 +83,23 @@ class Model_Lesson extends \Orm\Model
 
 		foreach($lessons as $lesson)
 		{
-			$array = array();
-			$array['id'] = $lesson['id'];
-			$array['name'] = $lesson['name'];
-			$array['term'] = $lesson['term'];
-			$array['sum_credit'] = $lesson['sum_credit'];
-			$array['class_name'] = $lesson->class->name;
-			$array['attachment'] = $lesson->class->teacher->last_name . ' ' . $lesson->class->teacher->first_name;
-
-			$lists[] = $array;
+			$lists[] = self::to_list($lesson);
 		}
 
 		return $lists;
+	}
+
+	public static function to_list($lesson)
+	{
+		$list = array();
+
+		$list['id'] = $lesson['id'];
+		$list['name'] = $lesson['name'];
+		$list['term'] = $lesson['term'];
+		$list['sum_credit'] = $lesson['sum_credit'];
+		$list['class_name'] = $lesson->class->name;
+		$list['attachment'] = $lesson->class->teacher->last_name . ' ' . $lesson->class->teacher->first_name;
+
+		return $list;
 	}
 }
