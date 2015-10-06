@@ -55,7 +55,6 @@
 				</form>
 			</div><!-- /.box-body -->
 		</div>
-		<button type="button" id="button">aaaa</button>
 	</section>
 	<div id="college_modal_content">
 	</div>
