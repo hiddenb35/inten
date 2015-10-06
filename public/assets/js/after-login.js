@@ -7,42 +7,39 @@ $(function(){
 
 	//カレッジ一覧ページのin place edit
 	$('.college-name').editable({
+		pk: 1,
 		type: 'text',
 		url: '/admin/college/edit',
-		//success: function(response, newValue){
-        //
-		//},
-		//error: function(response, newValue){
-        //
-		//}
-	}).on('hidden', function(e, reason){
-		if(reason === 'save') {
-			var sendCollegeEditData = {
-				id: $(this).data('college-id'),
-				name: $(this).context.textContent
-			};
-			$(this).editable('submit', {
-				ajaxOptions: {
-					dataType: 'json',
-					data: sendCollegeEditData
-				},
-				success: function(response){
-					if('error' in response) {
-						var errorMessage = response['error']['message'];
-						testFunction(errorMessage);
-						return;
-					}
-					var text = "データベースに保存しました。"
-					testFunction(text);
-				},
-				error: function(response){
-					var errorText = "エラーが発生しました。";
-					testFunction(errorText);
-				}
-			});
+		params: function(params) {
+			params.id = $(this).data('college-id');
+			params.name = params.value;
+			return params;
+		},
+		success: function(response){
+			createAjaxResponseMessage(response);
+		},
+		error: function(response){
+			var ajaxErrorMessage = "エラーが発生しました。";
+			testFunction(ajaxErrorMessage);
 		}
 	});
 
+	//ajax通信成功時に画面に出すメッセージの生成
+	//TODO 今後、成功した時のほうが処理が長くなる場合、if文の条件式を逆転させます。
+	var createAjaxResponseMessage = function(response) {
+		var responseMessage = '';
+		if(!('error' in response)){
+			responseMessage = "データベースに保存しました。";
+			testFunction(responseMessage);
+			return;
+		}
+		//ここからエラーのメッセージ作成
+		var error = response['error'];
+		$.each(error, function(errorMessage){
+			responseMessage += "<p>" + errorMessage + "</p>"
+		});
+		testFunction(responseMessage);
+	};
 	//TODO @Author kasai リファクタリング
 	var testFunction = function(text){
 		$('#college_modal_content').append(text);
@@ -56,6 +53,7 @@ $(function(){
 		$( "#college_modal_content" ).fadeIn( "slow" );
 		setTimeout(function(){
 			$( "#college_modal_content" ).fadeOut("slow");
+			$('#college_modal_content').empty();
 		},5000);
 	};
 	//TODO ここまで
