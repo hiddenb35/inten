@@ -23,38 +23,16 @@
 					</tr>
 					</thead>
 					<tbody>
+					<?php foreach($teacher_lists as $teacher_list): ?>
 					<tr>
-						<td>######</td>
-						<td>加藤 拓磨</td>
-						<td>カトウ タクマ</td>
-						<td>1994/10/12</td>
-						<td>kato@it-neec.jp</td>
-						<td>女</td>
+						<td><?php echo $teacher_list['number']; ?></td>
+						<td><?php echo $teacher_list['full_name']; ?></td>
+						<td><?php echo $teacher_list['full_name_kana']; ?></td>
+						<td><?php echo $teacher_list['birthday']; ?></td>
+						<td><?php echo $teacher_list['email']; ?></td>
+						<td><?php echo $teacher_list['gender']; ?></td>
 					</tr>
-					<tr>
-						<td>######</td>
-						<td>田中 太郎</td>
-						<td>タナカ タロウ</td>
-						<td>1994/1/2</td>
-						<td>tanaka@it-neec.jp</td>
-						<td>男</td>
-					</tr>
-					<tr>
-						<td>######</td>
-						<td>蒲田 太郎</td>
-						<td>カマタ タロウ</td>
-						<td>1994/3/4</td>
-						<td>kamata@it-neec.jp</td>
-						<td>男</td>
-					</tr>
-					<tr>
-						<td>######</td>
-						<td>山田 花子</td>
-						<td>ヤマダ ハナコ</td>
-						<td>1994/4/5</td>
-						<td>yamada@it-neec.jp</td>
-						<td>女</td>
-					</tr>
+					<?php endforeach; ?>
 					</tbody>
 				</table>
 			</div>
