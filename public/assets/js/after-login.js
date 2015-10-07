@@ -10,6 +10,9 @@ $(function(){
 		pk: 1,
 		type: 'text',
 		url: '/admin/college/edit',
+		ajaxOptions: {
+			dataType: 'json'
+		},
 		params: function(params) {
 			params.id = $(this).data('college-id');
 			params.name = params.value;
@@ -28,14 +31,14 @@ $(function(){
 	//TODO 今後、成功した時のほうが処理が長くなる場合、if文の条件式を逆転させます。
 	var createAjaxResponseMessage = function(response) {
 		var responseMessage = '';
-		if(!('error' in response)){
+		if(!('errors' in response)){
 			responseMessage = "データベースに保存しました。";
 			testFunction(responseMessage);
 			return;
 		}
 		//ここからエラーのメッセージ作成
-		var error = response['error'];
-		$.each(error, function(errorMessage){
+		var errors = response['errors'];
+		$.each(errors, function(key, errorMessage){
 			responseMessage += "<p>" + errorMessage + "</p>"
 		});
 		testFunction(responseMessage);
