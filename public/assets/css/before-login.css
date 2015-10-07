@@ -28,3 +28,16 @@ body {
 	}
 }
 /**************************************/
+/*************404画面*******************/
+#NOT_FOUND #not_found {
+	font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+	color: #FFF;
+}
+#NOT_FOUND h1 {
+	font-size: 4em;
+}
+#NOT_FOUND .back {
+	font-size: 2em;
+	color: #FFF;
+}
+/**************************************/
