@@ -2,17 +2,66 @@
  * Created by IT College on 2015/09/26.
  */
 $(function(){
-	//inplace editをインライン化
+	//in place editをインライン化
 	$.fn.editable.defaults.mode = 'inline';
 
-	//カレッジ一覧ページのinplace edit
+	//カレッジ一覧ページのin place edit
 	$('.college-name').editable({
-		type: 'text',
 		pk: 1,
-		url: '#',
-		title: 'Enter username'
+		type: 'text',
+		url: '/admin/college/edit',
+		ajaxOptions: {
+			dataType: 'json'
+		},
+		params: function(params) {
+			params.id = $(this).data('college-id');
+			params.name = params.value;
+			return params;
+		},
+		success: function(response){
+			createAjaxResponseMessage(response);
+		},
+		error: function(response){
+			var ajaxErrorMessage = "エラーが発生しました。";
+			testFunction(ajaxErrorMessage);
+		}
 	});
-	//学科一覧ページのinplace edit
+
+	//ajax通信成功時に画面に出すメッセージの生成
+	//TODO 今後、成功した時のほうが処理が長くなる場合、if文の条件式を逆転させます。
+	var createAjaxResponseMessage = function(response) {
+		var responseMessage = '';
+		if(!('errors' in response)){
+			responseMessage = "データベースに保存しました。";
+			testFunction(responseMessage);
+			return;
+		}
+		//ここからエラーのメッセージ作成
+		var errors = response['errors'];
+		$.each(errors, function(key, errorMessage){
+			responseMessage += "<p>" + errorMessage + "</p>"
+		});
+		testFunction(responseMessage);
+	};
+	//TODO @Author kasai リファクタリング
+	var testFunction = function(text){
+		$('#college_modal_content').append(text);
+		//画面(ウィンドウ)の幅、高さを取得
+		var w = $( window ).width();
+		var h = 80;
+		// コンテンツ(#modal-content)の幅、高さを取得
+		var cw = $( "#college_modal_content" ).outerWidth();
+		//センタリングを実行する
+		$( "#college_modal_content" ).css( {"left": ((w - cw)/2) + "px","top": h + "px"} ) ;
+		$( "#college_modal_content" ).fadeIn( "slow" );
+		setTimeout(function(){
+			$( "#college_modal_content" ).fadeOut("slow");
+			$('#college_modal_content').empty();
+		},5000);
+	};
+	//TODO ここまで
+
+	//学科一覧ページのin place edit
 	$('.course-edit').editable({
 		type: 'text',
 		pk: 1,
@@ -32,7 +81,7 @@ $(function(){
 		]
 	});
 
-	//専攻一覧ページのinplace edit
+	//専攻一覧ページのin place edit
 	$('.major-edit').editable({
 		type: 'text',
 		pk: 1,
@@ -62,7 +111,7 @@ $(function(){
 		]
 	});
 
-	//クラス一覧ページのinplace edit
+	//クラス一覧ページのin place edit
 	$('.class-edit-name').editable({
 		type: 'text',
 		pk: 1,
@@ -79,6 +128,10 @@ $(function(){
 			{value: '3', text: 'コンサートイベント科'}
 		]
 	});
+
+	var getCollegeId = function(){
+		return $(this).data('college-id');
+	};
 
 
 	//ここからtimetable_add
