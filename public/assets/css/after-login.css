@@ -1,9 +1,15 @@
-.note{
+.note,#TIMETABLE_ADD #titleEdit{
 	display: none;
 }
+#TIMETABLE_ADD #note{
+	width:100%;
+}
+#TIMETABLE_ADD #note{
+	resize: none;
+}
 html, body{
-    background: #222d32;
-    width: 100%;
+	background: #222d32;
+	width: 100%;
 }
 table th,td{
 	border: 1px #000 solid;
@@ -18,85 +24,120 @@ table th,td{
 	height:30px;
 }
 #timetable-table {
-    table-layout: fixed;
-    width: 100%;
+	table-layout: fixed;
+	width: 100%;
 }
 #timetable-table th {
-    text-align: center;
-    border:1px solid #84b2e0;
+	text-align: center;
+	border:1px solid #84b2e0;
 }
 #timetable-table .table-header th {
-    color: #fff;
-    padding: 8px 15px;
-    background: #258;
-    background:-moz-linear-gradient(rgba(34,85,136,0.7), rgba(34,85,136,0.9) 50%);
-    background:-webkit-gradient(linear, 100% 0%, 100% 50%, from(rgba(34,85,136,0.7)), to(rgba(34,85,136,0.9)));
-    font-weight: bold;
-    border-left:1px solid #258;
-    border-top:1px solid #258;
-    border-bottom:1px solid #258;
-    line-height: 120%;
-    text-align: center;
-    text-shadow:0 -1px 0 rgba(34,85,136,0.9);
-    box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+	color: #fff;
+	padding: 8px 15px;
+	background: #258;
+	background:-moz-linear-gradient(rgba(34,85,136,0.7), rgba(34,85,136,0.9) 50%);
+	background:-webkit-gradient(linear, 100% 0%, 100% 50%, from(rgba(34,85,136,0.7)), to(rgba(34,85,136,0.9)));
+	font-weight: bold;
+	border-left:1px solid #258;
+	border-top:1px solid #258;
+	border-bottom:1px solid #258;
+	line-height: 120%;
+	text-align: center;
+	text-shadow:0 -1px 0 rgba(34,85,136,0.9);
+	box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
 }
 #timetable-table th:first-child {
-    border-radius: 5px 0 0 0;
+	border-radius: 5px 0 0 0;
 }
 #timetable-table th:last-child {
-    border-radius:0 5px 0 0;
-    border-right:1px solid #258;
-    box-shadow: 2px 2px 1px rgba(0,0,0,0.1),0px 1px 1px rgba(255,255,255,0.3) inset;
+	border-radius:0 5px 0 0;
+	border-right:1px solid #258;
+	box-shadow: 2px 2px 1px rgba(0,0,0,0.1),0px 1px 1px rgba(255,255,255,0.3) inset;
 }
 #timetable-table tr {
-    height: 90px;
+	height: 90px;
 }
 #timetable-table tr:first-child {
-    height: auto;
+	height: auto;
 }
 #timetable-table tr td {
-    border-bottom: 1px solid #84b2e0;
-    border-left: 1px solid #84b2e0;
-    text-align: center;
+	border-bottom: 1px solid #84b2e0;
+	border-left: 1px solid #84b2e0;
+	text-align: center;
 }
 #timetable-table tr td:last-child {
-    border-right: 1px solid #84b2e0;
-    box-shadow: 2px 2px 1px rgba(0,0,0,0.1);
+	border-right: 1px solid #84b2e0;
+	box-shadow: 2px 2px 1px rgba(0,0,0,0.1);
 }
 #timetable-table tr {
-    background: #fff;
+	background: #fff;
 }
 #timetable-table tr:nth-child(2n+1) {
-    background: #f1f6fc;
+	background: #f1f6fc;
 }
 #timetable-table tr:last-child td {
-    box-shadow: 2px 2px 1px rgba(0,0,0,0.1);
+	box-shadow: 2px 2px 1px rgba(0,0,0,0.1);
 }
 #timetable-table tr:last-child td:first-child {
-    border-radius: 0 0 0 5px;
+	border-radius: 0 0 0 5px;
 }
 #timetable-table tr:last-child td:last-child {
-    border-radius: 0 0 5px 0;
+	border-radius: 0 0 5px 0;
 }
 .active-row th, .active-td{
-    background: #bbd4ee !important;
+	background: #bbd4ee !important;
 }
 #timetable-table .now {
-    background: #bbd4ee !important;
+	background: #bbd4ee !important;
 }
 /*担任割り当てページ*/
 #HRTEACHER .form-button {
-    margin-top: 24px;
+	margin-top: 24px;
 }
 /*授業割り当てページ*/
 #ATTACHMENT_LESSON .form-button {
-    margin-top: 24px;
+	margin-top: 24px;
 }
 /*カレッジ一覧ページ*/
 #COLLEGE_LIST #form_college_add {
-    margin-left: 10px;
+	margin-left: 10px;
 }
 #COLLEGE_LIST .college-name:hover {
-    background: #ddd;
-    cursor: pointer;
+	background: #ddd;
+	cursor: pointer;
 }
+#COURSE_LIST .course-edit:hover {
+	background: #ddd;
+	cursor: pointer;
+}
+
+/***********時間割作成画面**************/
+#TIMETABLE_ADD td {
+	cursor: pointer;
+}
+#TIMETABLE_ADD .modal-body {
+	padding: 0px;
+}
+#TIMETABLE_ADD td:hover {
+	background-color: #FFFCCC;
+}
+#TIMETABLE_ADD .active {
+	background-color: #FFFCCC;
+}
+#TIMETABLE_ADD td:hover.active {
+	background-color: #FFFFAA;
+}
+#TIMETABLE_ADD thead th {
+	width: 16%;
+}
+/*************************************/
+
+/*TODO @Author kasai リファクタリング*/
+#COLLEGE_LIST #college_modal_content {
+	display: none;
+	z-index: 1;
+	position: fixed;
+	border: 2px solid #aaa;
+	background: #fff;
+}
+/*TODO ここまで*/

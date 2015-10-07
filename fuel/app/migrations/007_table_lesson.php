@@ -12,7 +12,7 @@ class Table_lesson
 			'term'       => array('type' => 'int', 'comment' => '前期or後期'),
 			'sum_credit' => array('type' => 'int', 'unsigned' => true, 'comment' => '総単位数'),
 			'created_at' => array('type' => 'int', 'comment' => '作成日時'),
-			'updated_at' => array('type' => 'int', 'comment' => '更新日時'),
+			'updated_at' => array('type' => 'int', 'null' => true, 'comment' => '更新日時'),
 			'class_id'   => array('type' => 'int', 'unsigned' => true, 'comment' => 'クラスID'),
 		), array('id'), true, false, null, array(
 			array(

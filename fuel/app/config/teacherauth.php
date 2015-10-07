@@ -17,10 +17,6 @@ return array(
 			'name'  => 'teacher',
 			'roles' => array('teacher'),
 		),
-		5  => array(
-			'name'  => 'charge',
-			'roles' => array('charge'),
-		),
 		10 => array(
 			'name'  => 'admin',
 			'roles' => array('admin'),
@@ -30,13 +26,8 @@ return array(
 		'teacher' => array(
 			'teacher' => array('ok'),
 		),
-		'charge'  => array(
-			'teacher' => array('ok'),
-			'charge'  => array('ok'),
-		),
 		'admin'   => array(
 			'teacher' => array('ok'),
-			'charge'  => array('ok'),
 			'admin'   => array('ok'),
 		),
 	),

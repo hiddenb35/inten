@@ -1,23 +1,20 @@
 <?php
 
-class Model_Timetable extends \Orm\Model
+class Model_Status extends \Orm\Model
 {
-	protected static $_table_name = 'timetable';
+	protected static $_table_name = 'attendance_status';
 	protected static $_primary_key = array('id');
 
 	protected static $_properties = array(
 		'id',
-		'name' => array(
-			'data_type' => 'varchar',
-		),
-		'html' => array(
-			'data_type' => 'html',
-		),
-		'class_id' => array(
+		'status' => array(
 			'data_type' => 'int',
 		),
-		'is_active' => array(
-			'data_type' => 'bool',
+		'student_id' => array(
+			'data_type' => 'int',
+		),
+		'attendance_id' => array(
+			'data_type' => 'int',
 		),
 		'created_at' => array(
 			'data_type' => 'int',
@@ -44,9 +41,16 @@ class Model_Timetable extends \Orm\Model
 	);
 
 	protected static $_belongs_to = array(
-		'class' => array(
-			'model_to' => 'Model_Class',
-			'key_from' => 'class_id',
+		'student' => array(
+			'model_to' => 'Model_Student',
+			'key_from' => 'student_id',
+			'key_to' => 'id',
+			'cascade_save' => false,
+			'cascade_delete' => false,
+		),
+		'attendance' => array(
+			'model_to' => 'Model_Attendance',
+			'key_from' => 'attendance_id',
 			'key_to' => 'id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
@@ -57,10 +61,8 @@ class Model_Timetable extends \Orm\Model
 	{
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
-		$val->add_field('name','時間割','trim|required|max_length[64]');
-		$val->add_field('html','html','required');
-		$val->add_field('class_id','クラスID','required|max_length[10]')->add_rule('exist_id', 'class');
-		$val->add_field('is_active','アクティブ情報','required|max_length[11]');
+		$val->add_field('student_id','教員ID','required|max_length[10]')->add_rule('exist_id', 'student');
+		$val->add_field('attendance_id','出席ID','required|max_length[10]')->add_rule('exist_id', 'attendance');
 		return $val;
 	}
 }
