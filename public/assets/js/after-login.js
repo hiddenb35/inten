@@ -1,9 +1,19 @@
 /**
  * Created by IT College on 2015/09/26.
  */
-$(function(){
+$(function () {
 	//in place editをインライン化
 	$.fn.editable.defaults.mode = 'inline';
+
+	//プルダウンメニューの動的取得
+	var getPullDownMenuContent = function(pullDownMenuElements){
+		var selectOptionObject = [];
+		$.each(pullDownMenuElements, function (key, selectOption) {
+			var selectOptionArray = {value: selectOption.value, text: selectOption.text};
+			selectOptionObject.push(selectOptionArray);
+		});
+		return selectOptionObject;
+	};
 
 	//カレッジ一覧ページのin place edit
 	$('.college-name').editable({
@@ -13,53 +23,19 @@ $(function(){
 		ajaxOptions: {
 			dataType: 'json'
 		},
-		params: function(params) {
+		params: function (params) {
 			params.id = $(this).data('college-id');
 			params.name = params.value;
 			return params;
 		},
-		success: function(response){
+		success: function (response) {
 			createAjaxResponseMessage(response);
 		},
-		error: function(response){
+		error: function (response) {
 			var ajaxErrorMessage = "エラーが発生しました。";
 			testFunction(ajaxErrorMessage);
 		}
 	});
-
-	//ajax通信成功時に画面に出すメッセージの生成
-	//TODO 今後、成功した時のほうが処理が長くなる場合、if文の条件式を逆転させます。
-	var createAjaxResponseMessage = function(response) {
-		var responseMessage = '';
-		if(!('errors' in response)){
-			responseMessage = "データベースに保存しました。";
-			testFunction(responseMessage);
-			return;
-		}
-		//ここからエラーのメッセージ作成
-		var errors = response['errors'];
-		$.each(errors, function(key, errorMessage){
-			responseMessage += "<p>" + errorMessage + "</p>"
-		});
-		testFunction(responseMessage);
-	};
-	//TODO @Author kasai リファクタリング
-	var testFunction = function(text){
-		$('#college_modal_content').append(text);
-		//画面(ウィンドウ)の幅、高さを取得
-		var w = $( window ).width();
-		var h = 80;
-		// コンテンツ(#modal-content)の幅、高さを取得
-		var cw = $( "#college_modal_content" ).outerWidth();
-		//センタリングを実行する
-		$( "#college_modal_content" ).css( {"left": ((w - cw)/2) + "px","top": h + "px"} ) ;
-		$( "#college_modal_content" ).fadeIn( "slow" );
-		setTimeout(function(){
-			$( "#college_modal_content" ).fadeOut("slow");
-			$('#college_modal_content').empty();
-		},5000);
-	};
-	//TODO ここまで
 
 	//学科一覧ページのin place edit
 	$('.course-edit').editable({
@@ -71,15 +47,44 @@ $(function(){
 	$('.course-edit-college').editable({
 		type: 'select',
 		showbuttons: false,
-		pk: 1,
+		pk: 2,
 		url: '#',
-		source     : [ //TODO 動的に取得する。
-			{value: '1', text: 'ITカレッジ'},
-			{value: '2', text: 'クリエーターズカレッジ'},
-			{value: '3', text: 'ミュージックカレッジ'},
-			{value: '4' , text: 'ミュージックカレッジ'}
-		]
+		source: getPullDownMenuContent($('#college_id').children())
 	});
+
+	//ajax通信成功時に画面に出すメッセージの生成
+	//TODO 今後、成功した時のほうが処理が長くなる場合、if文の条件式を逆転させます。
+	var createAjaxResponseMessage = function (response) {
+		var responseMessage = '';
+		if (!('errors' in response)) {
+			responseMessage = "データベースに保存しました。";
+			testFunction(responseMessage);
+			return;
+		}
+		//ここからエラーのメッセージ作成
+		var errors = response['errors'];
+		$.each(errors, function (key, errorMessage) {
+			responseMessage += "<p>" + errorMessage + "</p>"
+		});
+		testFunction(responseMessage);
+	};
+	//TODO @Author kasai リファクタリング
+	var testFunction = function (text) {
+		$('#college_modal_content').append(text);
+		//画面(ウィンドウ)の幅、高さを取得
+		var w = $(window).width();
+		var h = 80;
+		// コンテンツ(#modal-content)の幅、高さを取得
+		var cw = $("#college_modal_content").outerWidth();
+		//センタリングを実行する
+		$("#college_modal_content").css({"left": ((w - cw) / 2) + "px", "top": h + "px"});
+		$("#college_modal_content").fadeIn("slow");
+		setTimeout(function () {
+			$("#college_modal_content").fadeOut("slow");
+			$('#college_modal_content').empty();
+		}, 5000);
+	};
+	//TODO ここまで
 
 	//専攻一覧ページのin place edit
 	$('.major-edit').editable({
@@ -129,47 +134,47 @@ $(function(){
 		]
 	});
 
-	var getCollegeId = function(){
+	var getCollegeId = function () {
 		return $(this).data('college-id');
 	};
 
 
 	//ここからtimetable_add
-	$('#title').click(function() {
+	$('#title').click(function () {
 		$('#title').hide();
-		$('#titleEdit').val( $( '#title').text()).show().focus().select();
+		$('#titleEdit').val($('#title').text()).show().focus().select();
 	});
-	$('#titleEdit').blur(function() {
+	$('#titleEdit').blur(function () {
 		$('#titleEdit').hide();
-		if($('#titleEdit').val() !== "")
+		if ($('#titleEdit').val() !== "")
 			$('#title').text($('#titleEdit').val());
 		$('#title').show();
 	});
-	$('#titleEdit').keypress( function(e) {
-		if ( e.which == 13) {
+	$('#titleEdit').keypress(function (e) {
+		if (e.which == 13) {
 			$('#titleEdit').hide();
-			if($('#titleEdit').val() !== "")
+			if ($('#titleEdit').val() !== "")
 				$('#title').text($('#titleEdit').val());
 			$('#title').show();
 			return false;
 		}
 	});
-	var thisStorage ;
-	$("#TIMETABLE_ADD table td").click(function() {
-		if($(this).hasClass("active")){
+	var thisStorage;
+	$("#TIMETABLE_ADD table td").click(function () {
+		if ($(this).hasClass("active")) {
 			$(this).removeClass("active");
-		}else{
+		} else {
 			$(this).addClass("active");
 		}
-		if($(".active").length == 1){
+		if ($(".active").length == 1) {
 			thisStorage = $(this);
 		}
 	});
-	$("#TIMETABLE_ADD #subject").change(function(){
+	$("#TIMETABLE_ADD #subject").change(function () {
 		$("#teacher").val($('#subject option:selected').data('teacher'));
 	});
-	$("#TIMETABLE_ADD #selection").click(function() {
-		if($('#TIMETABLE_ADD td').hasClass('active') == false){
+	$("#TIMETABLE_ADD #selection").click(function () {
+		if ($('#TIMETABLE_ADD td').hasClass('active') == false) {
 			alert("項目が選択されていません");
 			return false;
 		}
@@ -183,8 +188,8 @@ $(function(){
 		$('#classroom').val($(thisStorage).children('.classroom').text());
 		$("#note").val($(thisStorage).children('.note').text());
 
-		$("#set").click(function(){
-			$(".setElement").data('lesson-id',$('#subject option:selected').val());
+		$("#set").click(function () {
+			$(".setElement").data('lesson-id', $('#subject option:selected').val());
 			$(".setElement").children('.subject').text($('#subject option:selected').text());
 			$(".setElement").children('.teacher').text($('#subject option:selected').data('teacher'));
 			$(".setElement").children('.classroom').text($('#classroom').val());
@@ -194,15 +199,19 @@ $(function(){
 	});
 	var data = [];
 	var tr = $("table tr");
-	$("#TIMETABLE_ADD #transmission").click(function(){
+	$("#TIMETABLE_ADD #transmission").click(function () {
 		for (var i = 1; i < 9; i++) {
 			var cells = tr.eq(i).children();
-			data[i-1] = [];
+			data[i - 1] = [];
 			for (var j = 1; j < 6; j++) {
-				if(cells.eq(j).data('lesson-id') == 0){
-					data[i-1][j-1] = {};
-				}else{
-					data[i-1][j-1] = {"lesson_id":cells.eq(j).data('lesson-id'),"room_number":cells.eq(j).children('.classroom').text(),"notes":cells.eq(j).children('.note').text()};
+				if (cells.eq(j).data('lesson-id') == 0) {
+					data[i - 1][j - 1] = {};
+				} else {
+					data[i - 1][j - 1] = {
+						"lesson_id": cells.eq(j).data('lesson-id'),
+						"room_number": cells.eq(j).children('.classroom').text(),
+						"notes": cells.eq(j).children('.note').text()
+					};
 				}
 			}
 		}
@@ -214,11 +223,11 @@ $(function(){
 			dataType: 'json',
 			data: {name: $('#title').text(), json: data, class_id: $('input[name="class_id"]').val()}
 		})
-		.done(function() {
-			console.log("success");
-		})
-		.fail(function() {
-			console.log("error");
-		});
+			.done(function () {
+				console.log("success");
+			})
+			.fail(function () {
+				console.log("error");
+			});
 	});
 });
