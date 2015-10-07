@@ -135,6 +135,9 @@ table th,td{
 	background-color: #808080;
 	border-color: #808080;
 }
+#TIMETABLE_ADD table span{
+	display: none;
+}
 /*************************************/
 
 /*TODO @Author kasai リファクタリング*/
