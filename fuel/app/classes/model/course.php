@@ -103,6 +103,7 @@ class Model_Course extends \Orm\Model
 		$list['year_system'] = $course['year_system'];
 		$list['created_at'] = $course['created_at'];
 		$list['updated_at'] = $course['updated_at'];
+		$list['college_id'] = $course->college->id;
 		$list['college_name'] = $course->college->name;
 
 		return $list;
