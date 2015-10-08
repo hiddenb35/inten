@@ -156,20 +156,21 @@ $(function(){
 	});
 	var thisStorage ;
 	$("#TIMETABLE_ADD table td").click(function() {
-		if($(this).hasClass("active")){
-			$(this).removeClass("active");
-		}else{
-			$(this).addClass("active");
-		}
+		$(this).toggleClass("active");
 		if($(".active").length == 1){
 			thisStorage = $(this);
+		}
+		if($("#TIMETABLE_ADD table td").hasClass("active") === false){
+			$("#selection").addClass('inactive');
+		}else{
+			$("#selection").removeClass('inactive');
 		}
 	});
 	$("#TIMETABLE_ADD #subject").change(function(){
 		$("#teacher").val($('#subject option:selected').data('teacher'));
 	});
 	$("#TIMETABLE_ADD #selection").click(function() {
-		if($('#TIMETABLE_ADD td').hasClass('active') == false){
+		if($('#TIMETABLE_ADD td').hasClass('active') === false){
 			alert("項目が選択されていません");
 			return false;
 		}
