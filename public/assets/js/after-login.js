@@ -38,13 +38,32 @@ $(function () {
 	});
 
 	//学科一覧ページのin place edit
-	$('.course-edit').editable({
+	$('.text-course-code').editable({
 		type: 'text',
 		pk: 1,
-		url: '#',
-		title: 'Enter username'
+		url: '/admin/course/edit',
+		ajaxOptions: {
+			dataType: 'json'
+		},
+		params: function (params) {
+			params.id = $(this).data('course-id');
+			params.code = params.value;
+			params.name = $(this).siblings('.text-course-name').text();
+			params.year_system = $(this).siblings('.text-course-year-system').text();
+			//params.college_id = $(this).siblings('.pull-down-college-name').text();
+			params.college_id = $(this).data('college-id');
+			return params;
+		},
+		success: function (response) {
+			console.log(response['errors']);
+			createAjaxResponseMessage(response);
+		},
+		error: function (response) {
+			var ajaxErrorMessage = "エラーが発生しました。";
+			testFunction(ajaxErrorMessage);
+		}
 	});
-	$('.course-edit-college').editable({
+	$('.pull-down-college-name').editable({
 		type: 'select',
 		showbuttons: false,
 		pk: 2,

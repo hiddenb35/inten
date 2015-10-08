@@ -24,10 +24,10 @@
 						</tr>
 						<?php foreach($course_lists as $course_list): ?>
 						<tr>
-							<td class="text-course-code"><?php echo $course_list['code']; ?></td>
+							<td class="text-course-code" data-course-id="<?php echo $course_list['id']?>"><?php echo $course_list['code']; ?></td>
 							<td class="text-course-name"><?php echo $course_list['name']; ?></td>
 							<td class="text-course-year-system"><?php echo $course_list['year_system']; ?></td>
-							<td class="pull-down-college-name"><?php echo $course_list['college_name']; ?></td>
+							<td class="pull-down-college-name" data-college-id="<?php echo $course_list['college_id']; ?>"><?php echo $course_list['college_name']; ?></td>
 						</tr>
 						<?php endforeach; ?>
 					</tbody>
