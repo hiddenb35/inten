@@ -135,6 +135,12 @@ $(function(){
 
 
 	//ここからtimetable_add
+	var tdlg = $("#TIMETABLE_ADD table td").length;
+	for(i = 0; i < tdlg; i++){
+		if($("#TIMETABLE_ADD table td").eq(i).children('.note').text() !== ""){
+			$("#TIMETABLE_ADD table td").eq(i).children('span').show();
+		}
+	}
 	$('#title').click(function() {
 		$('#title').hide();
 		$('#titleEdit').val( $( '#title').text()).show().focus().select();
@@ -190,6 +196,11 @@ $(function(){
 			$(".setElement").children('.teacher').text($('#subject option:selected').data('teacher'));
 			$(".setElement").children('.classroom').text($('#classroom').val());
 			$(".setElement").children('.note').text($('#note').val());
+			if($(".setElement .note").text() !== ""){
+				$(".setElement span").show();
+			}else{
+				$(".setElement span").hide();
+			}
 			$(".setElement").removeClass("setElement");
 		});
 	});
