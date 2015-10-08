@@ -123,16 +123,17 @@
 
 							<div id="test">
 								<label for="teachername">教員名：</label>
-								<input type="text" name="teachername" class="form-control input-lg" readonly placeholder="教員名" id="teacher">
+								<input type="text" name="teachername" class="form-control input-lg" readonly placeholder="教員名は教科名から自動的に取得されます" id="teacher">
 							</div>
 
 							<div class="form-group">
 								<label for="classroom">教室番号：</label>
-								<input type="text" name="classroom" class="form-control input-lg" placeholder="教室番号" id="classroom">
+								<input type="text" name="classroom" class="form-control input-lg" placeholder="例）　30715" id="classroom">
 							</div>
 
 							<div class="form-group">
-								<textarea id="note" name="テキストエリア" rows="3" cols="50" wrap="hard" class="form-control input-lg" placeholder="備考"></textarea>
+								<label for="textarea">備考：</label>
+								<textarea id="note" name="textarea" rows="3" cols="50" wrap="hard" class="form-control input-lg" placeholder="例）　PC持参"></textarea>
 							</div>
 						</form>
 					</div>
