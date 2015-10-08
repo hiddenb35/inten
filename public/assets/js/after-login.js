@@ -159,7 +159,13 @@ $(function () {
 
 
 	//ここからtimetable_add
-	$('#title').click(function () {
+	var tdlg = $("#TIMETABLE_ADD table td").length;
+	for(i = 0; i < tdlg; i++){
+		if($("#TIMETABLE_ADD table td").eq(i).children('.note').text() !== ""){
+			$("#TIMETABLE_ADD table td").eq(i).children('span').show();
+		}
+	}
+	$('#title').click(function() {
 		$('#title').hide();
 		$('#titleEdit').val($('#title').text()).show().focus().select();
 	});
@@ -178,22 +184,23 @@ $(function () {
 			return false;
 		}
 	});
-	var thisStorage;
-	$("#TIMETABLE_ADD table td").click(function () {
-		if ($(this).hasClass("active")) {
-			$(this).removeClass("active");
-		} else {
-			$(this).addClass("active");
-		}
-		if ($(".active").length == 1) {
+	var thisStorage ;
+	$("#TIMETABLE_ADD table td").click(function() {
+		$(this).toggleClass("active");
+		if($(".active").length == 1){
 			thisStorage = $(this);
+		}
+		if($("#TIMETABLE_ADD table td").hasClass("active") === false){
+			$("#selection").addClass('inactive');
+		}else{
+			$("#selection").removeClass('inactive');
 		}
 	});
 	$("#TIMETABLE_ADD #subject").change(function () {
 		$("#teacher").val($('#subject option:selected').data('teacher'));
 	});
-	$("#TIMETABLE_ADD #selection").click(function () {
-		if ($('#TIMETABLE_ADD td').hasClass('active') == false) {
+	$("#TIMETABLE_ADD #selection").click(function() {
+		if($('#TIMETABLE_ADD td').hasClass('active') === false){
 			alert("項目が選択されていません");
 			return false;
 		}
@@ -213,6 +220,11 @@ $(function () {
 			$(".setElement").children('.teacher').text($('#subject option:selected').data('teacher'));
 			$(".setElement").children('.classroom').text($('#classroom').val());
 			$(".setElement").children('.note').text($('#note').val());
+			if($(".setElement .note").text() !== ""){
+				$(".setElement span").show();
+			}else{
+				$(".setElement span").hide();
+			}
 			$(".setElement").removeClass("setElement");
 		});
 	});

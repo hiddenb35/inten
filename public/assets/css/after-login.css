@@ -130,6 +130,14 @@ table th,td{
 #TIMETABLE_ADD thead th {
 	width: 16%;
 }
+
+#TIMETABLE_ADD #selection.inactive {
+	background-color: #808080;
+	border-color: #808080;
+}
+#TIMETABLE_ADD table span{
+	display: none;
+}
 /*************************************/
 
 /*TODO @Author kasai リファクタリング*/

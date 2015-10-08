@@ -110,7 +110,9 @@ class Model_Class extends \Orm\Model
 		$list['id'] = $class['id'];
 		$list['name'] = $class['name'];
 		$list['teacher_name'] = $class->teacher->last_name . ' ' . $class->teacher->first_name;
+		$list['course_id'] = $class->course->id;
 		$list['course_name'] = $class->course->name;
+		$list['college_id'] = $class->course->college->id;
 		$list['college_name'] = $class->course->college->name;
 		$list['created_at'] = $class['created_at'];
 		$list['updated_at'] = $class['updated_at'];

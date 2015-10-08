@@ -86,7 +86,9 @@ class Model_Major extends \Orm\Model
 		$list['name'] = $major['name'];
 		$list['created_at'] = $major['created_at'];
 		$list['updated_at'] = $major['updated_at'];
+		$list['course_id'] = $major->course->id;
 		$list['course_name'] = $major->course->name;
+		$list['college_id'] = $major->course->college->id;
 		$list['college_name'] = $major->course->college->name;
 
 		return $list;
