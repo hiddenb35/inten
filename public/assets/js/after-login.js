@@ -85,6 +85,29 @@ $(function () {
 			testFunction(ajaxErrorMessage);
 		}
 	});
+	$('.text-course-year-system').editable({
+		type: 'text',
+		pk: 3,
+		url: '/admin/course/edit',
+		ajaxOptions: {
+			dataType: 'json'
+		},
+		params: function (params) {
+			params.id = $(this).siblings('.text-course-code').data('course-id');
+			params.code = $(this).siblings('.text-course-code').text();
+			params.name = $(this).siblings('.text-course-name').text();
+			params.year_system = params.value;
+			params.college_id = $(this).siblings('.pull-down-college-name').data('college-id');
+			return params;
+		},
+		success: function (response) {
+			createAjaxResponseMessage(response);
+		},
+		error: function (response) {
+			var ajaxErrorMessage = "エラーが発生しました。";
+			testFunction(ajaxErrorMessage);
+		}
+	});
 	$('.pull-down-college-name').editable({
 		type: 'select',
 		showbuttons: false,
