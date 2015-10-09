@@ -111,9 +111,27 @@ $(function () {
 	$('.pull-down-college-name').editable({
 		type: 'select',
 		showbuttons: false,
-		pk: 2,
-		url: '#',
-		source: getPullDownMenuContent($('#college_id').children())
+		pk: 4,
+		source: getPullDownMenuContent($('#college_id').children()),
+		url: '/admin/course/edit',
+		ajaxOptions: {
+			dataType: 'json'
+		},
+		params: function (params) {
+			params.id = $(this).siblings('.text-course-code').data('course-id');
+			params.code = $(this).siblings('.text-course-code').text();
+			params.name = $(this).siblings('.text-course-name').text();
+			params.year_system = $(this).siblings('.text-course-year-system').text();
+			params.college_id= params.value;
+			return params;
+		},
+		success: function (response) {
+			createAjaxResponseMessage(response);
+		},
+		error: function (response) {
+			var ajaxErrorMessage = "エラーが発生しました。";
+			testFunction(ajaxErrorMessage);
+		}
 	});
 
 	//ajax通信成功時に画面に出すメッセージの生成
