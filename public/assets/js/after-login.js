@@ -135,10 +135,10 @@ $(function(){
 
 
 	//ここからtimetable_add
-	var tdlg = $("#TIMETABLE_ADD table td").length;
+	var tdlg = $("#TIMETABLE_VIEW table td,#TIMETABLE_ADD table td").length;
 	for(i = 0; i < tdlg; i++){
-		if($("#TIMETABLE_ADD table td").eq(i).children('.note').text() !== ""){
-			$("#TIMETABLE_ADD table td").eq(i).children('span').show();
+		if($("#TIMETABLE_VIEW table td,#TIMETABLE_ADD table td").eq(i).children('.note').text() !== ""){
+			$("#TIMETABLE_VIEW table td,#TIMETABLE_ADD table td").eq(i).children('span').show();
 		}
 	}
 	$('#title').click(function() {
@@ -232,5 +232,34 @@ $(function(){
 		.fail(function() {
 			console.log("error");
 		});
+	});
+	//ここから時間割表示画面
+	var todayWeek = new Date().getDay();
+	$(window).on('load resize', function(){
+		if($(document).width() <= 760){
+			$("#TIMETABLE_VIEW table tr td,#TIMETABLE_VIEW table tr th").hide();
+			for(i=0; i<$("#TIMETABLE_VIEW table tr th").length; i++){
+				if(i==0||i==todayWeek||i>=6){
+					$("#TIMETABLE_VIEW table tr th").eq(i).show();
+				}
+			}
+			for(i=todayWeek; i <= $("#TIMETABLE_VIEW table tr td").length; i+=5){
+				$("#TIMETABLE_VIEW table tr td").eq(i-1).show();
+			}
+		}else{
+			$("#TIMETABLE_VIEW table tr td,#TIMETABLE_VIEW table tr th").show();
+		}
+	});
+	$("#week-select button").click(function(event) {
+	var weekSelect = $("#week-select button").index(this);
+		$("#TIMETABLE_VIEW table tr td,#TIMETABLE_VIEW table tr th").hide();
+		for(i=0; i<$("#TIMETABLE_VIEW table tr th").length; i++){
+			if(i==0||i==weekSelect+1||i>=6){
+				$("#TIMETABLE_VIEW table tr th").eq(i).show();
+			}
+		}
+		for(i=weekSelect+1; i <= $("#TIMETABLE_VIEW table tr td").length; i+=5){
+			$("#TIMETABLE_VIEW table tr td").eq(i-1).show();
+		}
 	});
 });
