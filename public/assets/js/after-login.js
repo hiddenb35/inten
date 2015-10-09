@@ -51,11 +51,33 @@ $(function () {
 			params.name = $(this).siblings('.text-course-name').text();
 			params.year_system = $(this).siblings('.text-course-year-system').text();
 			//params.college_id = $(this).siblings('.pull-down-college-name').text();
-			params.college_id = $(this).data('college-id');
+			params.college_id = $(this).siblings('.pull-down-college-name').data('college-id');
 			return params;
 		},
 		success: function (response) {
-			console.log(response['errors']);
+			createAjaxResponseMessage(response);
+		},
+		error: function (response) {
+			var ajaxErrorMessage = "エラーが発生しました。";
+			testFunction(ajaxErrorMessage);
+		}
+	});
+	$('.text-course-name').editable({
+		type: 'text',
+		pk: 2,
+		url: '/admin/course/edit',
+		ajaxOptions: {
+			dataType: 'json'
+		},
+		params: function (params) {
+			params.id = $(this).siblings('.text-course-code').data('course-id');
+			params.code = $(this).siblings('.text-course-code').text();
+			params.name = params.value;
+			params.year_system = $(this).siblings('.text-course-year-system').text();
+			params.college_id = $(this).siblings('.pull-down-college-name').data('college-id');
+			return params;
+		},
+		success: function (response) {
 			createAjaxResponseMessage(response);
 		},
 		error: function (response) {
@@ -89,18 +111,18 @@ $(function () {
 	};
 	//TODO @Author kasai リファクタリング
 	var testFunction = function (text) {
-		$('#college_modal_content').append(text);
+		$('#edit_modal_content').append(text);
 		//画面(ウィンドウ)の幅、高さを取得
 		var w = $(window).width();
 		var h = 80;
 		// コンテンツ(#modal-content)の幅、高さを取得
-		var cw = $("#college_modal_content").outerWidth();
+		var cw = $("#edit_modal_content").outerWidth();
 		//センタリングを実行する
-		$("#college_modal_content").css({"left": ((w - cw) / 2) + "px", "top": h + "px"});
-		$("#college_modal_content").fadeIn("slow");
+		$("#edit_modal_content").css({"left": ((w - cw) / 2) + "px", "top": h + "px"});
+		$("#edit_modal_content").fadeIn("slow");
 		setTimeout(function () {
-			$("#college_modal_content").fadeOut("slow");
-			$('#college_modal_content').empty();
+			$("#edit_modal_content").fadeOut("slow");
+			$('#edit_modal_content').empty();
 		}, 5000);
 	};
 	//TODO ここまで

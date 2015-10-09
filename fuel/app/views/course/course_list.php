@@ -63,5 +63,7 @@
 				</form>
 			</div><!-- /.box-body -->
 		</div>
+		<div id="edit_modal_content">
+		</div>
 	</section>
 </div>

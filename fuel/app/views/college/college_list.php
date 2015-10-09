@@ -56,6 +56,6 @@
 			</div><!-- /.box-body -->
 		</div>
 	</section>
-	<div id="college_modal_content">
+	<div id="edit_modal_content">
 	</div>
 </div>
