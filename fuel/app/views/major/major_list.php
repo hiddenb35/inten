@@ -24,7 +24,7 @@
 						<?php foreach($major_lists as $major_list): ?>
 						<tr>
 							<td class="text-major-name" data-major-id="<?php echo $major_list['id']; ?>"><?php echo $major_list['name']; ?></td>
-							<td class="pull-down-course-name"><?php echo $major_list['course_name']; ?></td>
+							<td class="pull-down-course-name" data-course-id="<?php echo $major_list['course_id']; ?>"><?php echo $major_list['course_name']; ?></td>
 							<td class=""><?php echo $major_list['college_name']; ?></td>
 						</tr>
 						<?php endforeach; ?>

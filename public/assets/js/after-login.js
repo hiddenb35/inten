@@ -135,11 +135,26 @@ $(function () {
 	});
 
 	//専攻一覧ページのin place edit
-	$('.major-edit').editable({
+	$('.text-major-name').editable({
 		type: 'text',
 		pk: 1,
-		url: '#',
-		title: 'Enter username'
+		url: '/admin/major/edit',
+		ajaxOptions: {
+			dataType: 'json'
+		},
+		params: function (params){
+			params.id = $(this).data('major-id');
+			params.name = params.value;
+			params.course_id = $(this).siblings('.pull-down-course-name').data('course-id');
+			return params;
+		},
+		success: function (response) {
+			createAjaxResponseMessage(response);
+		},
+		error: function (response) {
+			var ajaxErrorMessage = "エラーが発生しました。";
+			testFunction(ajaxErrorMessage);
+		}
 	});
 	$('.pull-down-course-name').editable({
 		type: 'select',
