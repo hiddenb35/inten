@@ -146,7 +146,7 @@ $(function () {
 			params.id = $(this).data('class-id');
 			params.name = params.value;
 			params.teacher_id = $(this).siblings('.pull-down-teacher-name').data('teacher-id');
-			params.course_id = $(this).siblings('.pull-down-course-name').data('course-id');
+			params.course_id = $(this).siblings('.class-pull-down-course-name').data('course-id');
 			return params;
 		},
 		success: function (response) {
@@ -170,7 +170,7 @@ $(function () {
 			params.id = $(this).siblings('.text-class-name').data('class-id');
 			params.name = $(this).siblings('.text-class-name').text();
 			params.teacher_id = params.value;
-			params.course_id = $(this).siblings('.pull-down-course-name').data('course-id');
+			params.course_id = $(this).siblings('.class-pull-down-course-name').data('course-id');
 			return params;
 		},
 		success: function (response) {
@@ -193,7 +193,7 @@ $(function () {
 		params: function (params){
 			params.id = $(this).siblings('.text-class-name').data('class-id');
 			params.name = $(this).siblings('.text-class-name').text();
-			params.teacher_id = $(this).siblings('.pull-down-teacher-name').text();
+			params.teacher_id = $(this).siblings('.pull-down-teacher-name').data('teacher-id');
 			params.course_id = params.value;
 			return params;
 		},
