@@ -179,17 +179,6 @@ $(function () {
 			testFunction(ajaxErrorMessage);
 		}
 	});
-	$('.major-edit-college').editable({
-		type: 'select',
-		showbuttons: false,
-		pk: 1,
-		url: '#',
-		source: [ //TODO 動的に取得する。
-			{value: '1', text: 'ITカレッジ'},
-			{value: '2', text: 'クリエイターズカレッジ'},
-			{value: '3', text: 'ミュージックカレッジ'}
-		]
-	});
 
 	//ajax通信成功時に画面に出すメッセージの生成
 	//TODO 今後、成功した時のほうが処理が長くなる場合、if文の条件式を逆転させます。
