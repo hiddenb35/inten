@@ -135,7 +135,7 @@ table th,td{
 	background-color: #808080;
 	border-color: #808080;
 }
-#TIMETABLE_ADD table span{
+#TIMETABLE_ADD table td span,#TIMETABLE_VIEW table td span{
 	display: none;
 }
 /*************************************/
