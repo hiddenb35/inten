@@ -238,6 +238,7 @@ $(function(){
 	$(window).on('load resize', function(){
 		if($(document).width() <= 760){
 			$("#TIMETABLE_VIEW table tr td,#TIMETABLE_VIEW table tr th").hide();
+			if(todayWeek==0||todayWeek==6){todayWeek=1;}
 			for(i=0; i<$("#TIMETABLE_VIEW table tr th").length; i++){
 				if(i==0||i==todayWeek||i>=6){
 					$("#TIMETABLE_VIEW table tr th").eq(i).show();
@@ -251,7 +252,7 @@ $(function(){
 		}
 	});
 	$("#week-select button").click(function(event) {
-	var weekSelect = $("#week-select button").index(this);
+		var weekSelect = $("#week-select button").index(this);
 		$("#TIMETABLE_VIEW table tr td,#TIMETABLE_VIEW table tr th").hide();
 		for(i=0; i<$("#TIMETABLE_VIEW table tr th").length; i++){
 			if(i==0||i==weekSelect+1||i>=6){
