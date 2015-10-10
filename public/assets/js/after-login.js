@@ -38,7 +38,7 @@ $(function () {
 	});
 
 	//学科一覧ページのin place edit
-	$('.text-course-code').editable({
+	$('.course-text-course-code').editable({
 		type: 'text',
 		pk: 1,
 		url: '/admin/course/edit',
@@ -48,10 +48,10 @@ $(function () {
 		params: function (params) {
 			params.id = $(this).data('course-id');
 			params.code = params.value;
-			params.name = $(this).siblings('.text-course-name').text();
-			params.year_system = $(this).siblings('.text-course-year-system').text();
-			//params.college_id = $(this).siblings('.pull-down-college-name').text();
-			params.college_id = $(this).siblings('.pull-down-college-name').data('college-id');
+			params.name = $(this).siblings('.course-text-course-name').text();
+			params.year_system = $(this).siblings('.course-text-course-year-system').text();
+			//params.college_id = $(this).siblings('.course-pull-down-college-name').text();
+			params.college_id = $(this).siblings('.course-pull-down-college-name').data('college-id');
 			return params;
 		},
 		success: function (response) {
@@ -62,7 +62,7 @@ $(function () {
 			testFunction(ajaxErrorMessage);
 		}
 	});
-	$('.text-course-name').editable({
+	$('.course-text-course-name').editable({
 		type: 'text',
 		pk: 2,
 		url: '/admin/course/edit',
@@ -70,11 +70,11 @@ $(function () {
 			dataType: 'json'
 		},
 		params: function (params) {
-			params.id = $(this).siblings('.text-course-code').data('course-id');
-			params.code = $(this).siblings('.text-course-code').text();
+			params.id = $(this).siblings('.course-text-course-code').data('course-id');
+			params.code = $(this).siblings('.course-text-course-code').text();
 			params.name = params.value;
-			params.year_system = $(this).siblings('.text-course-year-system').text();
-			params.college_id = $(this).siblings('.pull-down-college-name').data('college-id');
+			params.year_system = $(this).siblings('.course-text-course-year-system').text();
+			params.college_id = $(this).siblings('.course-pull-down-college-name').data('college-id');
 			return params;
 		},
 		success: function (response) {
@@ -85,7 +85,7 @@ $(function () {
 			testFunction(ajaxErrorMessage);
 		}
 	});
-	$('.text-course-year-system').editable({
+	$('.course-text-course-year-system').editable({
 		type: 'text',
 		pk: 3,
 		url: '/admin/course/edit',
@@ -93,11 +93,11 @@ $(function () {
 			dataType: 'json'
 		},
 		params: function (params) {
-			params.id = $(this).siblings('.text-course-code').data('course-id');
-			params.code = $(this).siblings('.text-course-code').text();
-			params.name = $(this).siblings('.text-course-name').text();
+			params.id = $(this).siblings('.course-text-course-code').data('course-id');
+			params.code = $(this).siblings('.course-text-course-code').text();
+			params.name = $(this).siblings('.course-text-course-name').text();
 			params.year_system = params.value;
-			params.college_id = $(this).siblings('.pull-down-college-name').data('college-id');
+			params.college_id = $(this).siblings('.course-pull-down-college-name').data('college-id');
 			return params;
 		},
 		success: function (response) {
@@ -108,7 +108,7 @@ $(function () {
 			testFunction(ajaxErrorMessage);
 		}
 	});
-	$('.pull-down-college-name').editable({
+	$('.course-pull-down-college-name').editable({
 		type: 'select',
 		showbuttons: false,
 		pk: 4,
@@ -118,10 +118,10 @@ $(function () {
 			dataType: 'json'
 		},
 		params: function (params) {
-			params.id = $(this).siblings('.text-course-code').data('course-id');
-			params.code = $(this).siblings('.text-course-code').text();
-			params.name = $(this).siblings('.text-course-name').text();
-			params.year_system = $(this).siblings('.text-course-year-system').text();
+			params.id = $(this).siblings('.course-text-course-code').data('course-id');
+			params.code = $(this).siblings('.course-text-course-code').text();
+			params.name = $(this).siblings('.course-text-course-name').text();
+			params.year_system = $(this).siblings('.course-text-course-year-system').text();
 			params.college_id= params.value;
 			return params;
 		},
