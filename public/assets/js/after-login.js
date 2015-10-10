@@ -16,7 +16,7 @@ $(function () {
 	};
 
 	//カレッジ一覧ページのin place edit
-	$('.college-name').editable({
+	$('.college-text-college-name').editable({
 		pk: 1,
 		type: 'text',
 		url: '/admin/college/edit',

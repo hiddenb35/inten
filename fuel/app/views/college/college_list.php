@@ -24,7 +24,7 @@
 						</tr>
 						<?php foreach($college_lists as $college_list): ?>
 						<tr>
-							<td class="college-name" data-college-id="<?php echo $college_list['id']?>"><?php echo $college_list['name']?></td>
+							<td class="college-text-college-name" data-college-id="<?php echo $college_list['id']?>"><?php echo $college_list['name']?></td>
 							<td><?php echo $college_list['course_sum']; ?></td>
 							<td><?php echo $college_list['class_sum']; ?></td>
 							<td><?php echo $college_list['major_sum']; ?></td>
