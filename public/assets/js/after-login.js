@@ -135,10 +135,27 @@ $(function () {
 	});
 
 	//クラス一覧ページのin place edit
-	$('.class-edit-name').editable({
+	$('.text-class-name').editable({
 		type: 'text',
 		pk: 1,
 		url: '/admin/class/edit',
+		ajaxOptions: {
+			dataType: 'json'
+		},
+		params: function (params) {
+			params.id = $(this).data('class-id');
+			params.name = params.value;
+			params.teacher_id = $(this).siblings('.pull-down-teacher-name').data('teacher-id');
+			params.course_id = $(this).siblings('.pull-down-course-name').data('course-id');
+			return params;
+		},
+		success: function (response) {
+			createAjaxResponseMessage(response);
+		},
+		error: function (response) {
+			var ajaxErrorMessage = "エラーが発生しました。";
+			testFunction(ajaxErrorMessage);
+		}
 	});
 	$('.pull-down-teacher-name').editable({
 		type: 'select',

@@ -25,7 +25,7 @@
 						<?php foreach($class_lists as $class_list): ?>
 						<tr>
 							<td class="text-class-name" data-class-id="<?php echo $class_list['id']; ?>"><?php echo $class_list['name']; ?></td>
-<!--							<td class="pull-down-teacher-name" data-class-id="--><?php //echo $class_list['teacher_id']; ?><!--">--><?php //echo $class_list['teacher_name']; ?><!--</td>-->
+<!--							<td class="pull-down-teacher-name" data-teacher-id="--><?php //echo $class_list['teacher_id']; ?><!--">--><?php //echo $class_list['teacher_name']; ?><!--</td>-->
 							<td class="pull-down-teacher-name" ><?php echo $class_list['teacher_name']; ?></td>
 							<td class="pull-down-course-name" data-course-id="<?php echo $class_list['course_id']; ?>"><?php echo $class_list['course_name']; ?></td>
 							<td><?php echo $class_list['college_name']; ?></td>
