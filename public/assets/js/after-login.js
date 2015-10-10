@@ -134,6 +134,20 @@ $(function () {
 		}
 	});
 
+	//クラス一覧ページのin place edit
+	$('.class-edit-name').editable({
+		type: 'text',
+		pk: 1,
+		url: '/admin/class/edit',
+	});
+	$('.pull-down-teacher-name').editable({
+		type: 'select',
+		showbuttons: false,
+		pk: 1,
+		source: getPullDownMenuContent($('#teacher_id').children()),
+		url: '#',
+	});
+
 	//専攻一覧ページのin place edit
 	$('.text-major-name').editable({
 		type: 'text',
@@ -213,24 +227,6 @@ $(function () {
 		}, 5000);
 	};
 	//TODO ここまで
-
-	//クラス一覧ページのin place edit
-	$('.class-edit-name').editable({
-		type: 'text',
-		pk: 1,
-		url: '#',
-	});
-	$('.class-edit-college').editable({
-		type: 'select',
-		showbuttons: false,
-		pk: 1,
-		url: '#',
-		source: [ //TODO 動的に取得する。
-			{value: '1', text: 'ITスペシャリスト科'},
-			{value: '2', text: 'ゲームクリエイター科'},
-			{value: '3', text: 'コンサートイベント科'}
-		]
-	});
 
 	var getCollegeId = function () {
 		return $(this).data('college-id');
