@@ -135,7 +135,7 @@ $(function () {
 	});
 
 	//クラス一覧ページのin place edit
-	$('.text-class-name').editable({
+	$('.class-text-class-name').editable({
 		type: 'text',
 		pk: 1,
 		url: '/admin/class/edit',
@@ -145,7 +145,7 @@ $(function () {
 		params: function (params) {
 			params.id = $(this).data('class-id');
 			params.name = params.value;
-			params.teacher_id = $(this).siblings('.pull-down-teacher-name').data('teacher-id');
+			params.teacher_id = $(this).siblings('.class-pull-down-teacher-name').data('teacher-id');
 			params.course_id = $(this).siblings('.class-pull-down-course-name').data('course-id');
 			return params;
 		},
@@ -157,7 +157,7 @@ $(function () {
 			testFunction(ajaxErrorMessage);
 		}
 	});
-	$('.pull-down-teacher-name').editable({
+	$('.class-pull-down-teacher-name').editable({
 		type: 'select',
 		showbuttons: false,
 		pk: 2,
@@ -167,8 +167,8 @@ $(function () {
 			dataType: 'json'
 		},
 		params: function (params){
-			params.id = $(this).siblings('.text-class-name').data('class-id');
-			params.name = $(this).siblings('.text-class-name').text();
+			params.id = $(this).siblings('.class-text-class-name').data('class-id');
+			params.name = $(this).siblings('.class-text-class-name').text();
 			params.teacher_id = params.value;
 			params.course_id = $(this).siblings('.class-pull-down-course-name').data('course-id');
 			return params;
@@ -191,9 +191,9 @@ $(function () {
 			dataType: 'json'
 		},
 		params: function (params){
-			params.id = $(this).siblings('.text-class-name').data('class-id');
-			params.name = $(this).siblings('.text-class-name').text();
-			params.teacher_id = $(this).siblings('.pull-down-teacher-name').data('teacher-id');
+			params.id = $(this).siblings('.class-text-class-name').data('class-id');
+			params.name = $(this).siblings('.class-text-class-name').text();
+			params.teacher_id = $(this).siblings('.class-pull-down-teacher-name').data('teacher-id');
 			params.course_id = params.value;
 			return params;
 		},
