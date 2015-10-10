@@ -160,9 +160,26 @@ $(function () {
 	$('.pull-down-teacher-name').editable({
 		type: 'select',
 		showbuttons: false,
-		pk: 1,
+		pk: 2,
 		source: getPullDownMenuContent($('#teacher_id').children()),
-		url: '#',
+		url: '/admin/class/edit',
+		ajaxOptions: {
+			dataType: 'json'
+		},
+		params: function (params){
+			params.id = $(this).siblings('.text-class-name').data('class-id');
+			params.name = $(this).siblings('.text-class-name').text();
+			params.teacher_id = params.value;
+			params.course_id = $(this).siblings('.pull-down-course-name').data('course-id');
+			return params;
+		},
+		success: function (response) {
+			createAjaxResponseMessage(response);
+		},
+		error: function (response) {
+			var ajaxErrorMessage = "エラーが発生しました。";
+			testFunction(ajaxErrorMessage);
+		}
 	});
 
 	//専攻一覧ページのin place edit
