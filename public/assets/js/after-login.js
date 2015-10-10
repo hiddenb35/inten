@@ -181,6 +181,30 @@ $(function () {
 			testFunction(ajaxErrorMessage);
 		}
 	});
+	$('.class-pull-down-course-name').editable({
+		type: 'select',
+		showbuttons: false,
+		pk: 3,
+		source: getPullDownMenuContent($('#course_id').children()),
+		url: '/admin/major/edit',
+		ajaxOptions: {
+			dataType: 'json'
+		},
+		params: function (params){
+			params.id = $(this).siblings('.text-class-name').data('class-id');
+			params.name = $(this).siblings('.text-class-name').text();
+			params.teacher_id = $(this).siblings('.pull-down-teacher-name').text();
+			params.course_id = params.value;
+			return params;
+		},
+		success: function (response) {
+			createAjaxResponseMessage(response);
+		},
+		error: function (response) {
+			var ajaxErrorMessage = "エラーが発生しました。";
+			testFunction(ajaxErrorMessage);
+		}
+	});
 
 	//専攻一覧ページのin place edit
 	$('.text-major-name').editable({
