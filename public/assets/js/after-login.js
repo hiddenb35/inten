@@ -207,7 +207,7 @@ $(function () {
 	});
 
 	//専攻一覧ページのin place edit
-	$('.text-major-name').editable({
+	$('.major-text-major-name').editable({
 		type: 'text',
 		pk: 1,
 		url: '/admin/major/edit',
@@ -217,7 +217,7 @@ $(function () {
 		params: function (params){
 			params.id = $(this).data('major-id');
 			params.name = params.value;
-			params.course_id = $(this).siblings('.pull-down-course-name').data('course-id');
+			params.course_id = $(this).siblings('.major-pull-down-course-name').data('course-id');
 			return params;
 		},
 		success: function (response) {
@@ -228,7 +228,7 @@ $(function () {
 			testFunction(ajaxErrorMessage);
 		}
 	});
-	$('.pull-down-course-name').editable({
+	$('.major-pull-down-course-name').editable({
 		type: 'select',
 		showbuttons: false,
 		pk: 2,
@@ -238,8 +238,8 @@ $(function () {
 			dataType: 'json'
 		},
 		params: function (params){
-			params.id = $(this).siblings('.text-major-name').data('major-id');
-			params.name = $(this).siblings('.text-major-name').text();
+			params.id = $(this).siblings('.major-text-major-name').data('major-id');
+			params.name = $(this).siblings('.major-text-major-name').text();
 			params.course_id = params.value;
 			return params;
 		},
