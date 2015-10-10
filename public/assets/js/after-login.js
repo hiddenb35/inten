@@ -134,6 +134,32 @@ $(function () {
 		}
 	});
 
+	//専攻一覧ページのin place edit
+	$('.major-edit').editable({
+		type: 'text',
+		pk: 1,
+		url: '#',
+		title: 'Enter username'
+	});
+	$('.pull-down-course-name').editable({
+		type: 'select',
+		showbuttons: false,
+		pk: 1,
+		url: '#',
+		source: getPullDownMenuContent($('#course_id').children()),
+	});
+	$('.major-edit-college').editable({
+		type: 'select',
+		showbuttons: false,
+		pk: 1,
+		url: '#',
+		source: [ //TODO 動的に取得する。
+			{value: '1', text: 'ITカレッジ'},
+			{value: '2', text: 'クリエイターズカレッジ'},
+			{value: '3', text: 'ミュージックカレッジ'}
+		]
+	});
+
 	//ajax通信成功時に画面に出すメッセージの生成
 	//TODO 今後、成功した時のほうが処理が長くなる場合、if文の条件式を逆転させます。
 	var createAjaxResponseMessage = function (response) {
@@ -167,36 +193,6 @@ $(function () {
 		}, 5000);
 	};
 	//TODO ここまで
-
-	//専攻一覧ページのin place edit
-	$('.major-edit').editable({
-		type: 'text',
-		pk: 1,
-		url: '#',
-		title: 'Enter username'
-	});
-	$('.major-edit-course').editable({
-		type: 'select',
-		showbuttons: false,
-		pk: 1,
-		url: '#',
-		source: [ //TODO 動的に取得する。
-			{value: '1', text: 'ITスペシャリスト科'},
-			{value: '2', text: 'ゲームクリエイター科'},
-			{value: '3', text: 'コンサートイベント科'}
-		]
-	});
-	$('.major-edit-college').editable({
-		type: 'select',
-		showbuttons: false,
-		pk: 1,
-		url: '#',
-		source: [ //TODO 動的に取得する。
-			{value: '1', text: 'ITカレッジ'},
-			{value: '2', text: 'クリエイターズカレッジ'},
-			{value: '3', text: 'ミュージックカレッジ'}
-		]
-	});
 
 	//クラス一覧ページのin place edit
 	$('.class-edit-name').editable({
