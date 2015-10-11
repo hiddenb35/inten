@@ -57,11 +57,11 @@ class Model_Major extends \Orm\Model
 		),
 	);
 
-	public static function validate()
+	public static function validate($id = null)
 	{
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
-		$val->add_field('name','専攻名','trim|required|max_length[64]')->add_rule('unique', 'major', 'name');
+		$val->add_field('name','専攻名','trim|required|max_length[64]')->add_rule('unique', 'major', 'name', $id);
 		$val->add_field('course_id','学科ID','required|max_length[10]')->add_rule('exist_id', 'course');
 		return $val;
 	}
