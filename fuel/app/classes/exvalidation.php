@@ -2,11 +2,17 @@
 
 class Exvalidation
 {
-	public static function _validation_unique($val, $table, $field)
+	public static function _validation_unique($val, $table, $field, $id = null)
 	{
-		$result = DB::select("'$field'")
-			->where($field, '=', $val)
-			->from($table)->execute();
+		if(isset($id))
+		{
+			$result = DB::select("'$field'")->where($field, '=' , $val)
+				->and_where('id' , '<>', $id)->from($table)->execute();
+		}
+		else
+		{
+			$result = DB::select("'$field'")->where($field, '=', $val)->from($table)->execute();
+		}
 
 		return ($result->count() > 0) ? false : true;
 	}
