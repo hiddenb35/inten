@@ -180,6 +180,8 @@ $(function(){
 			alert("項目が選択されていません");
 			return false;
 		}
+		$("#selection").addClass('inactive');
+
 		$(".setElement").removeClass('setElement');
 		$(".active").addClass("setElement");
 		$(".active").removeClass("active");
