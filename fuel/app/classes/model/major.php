@@ -82,7 +82,7 @@ class Model_Major extends \Orm\Model
 	{
 		$list = array();
 
-		$list['id'] = $major['name'];
+		$list['id'] = $major['id'];
 		$list['name'] = $major['name'];
 		$list['created_at'] = $major['created_at'];
 		$list['updated_at'] = $major['updated_at'];
