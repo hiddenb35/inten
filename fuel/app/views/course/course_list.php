@@ -24,10 +24,10 @@
 						</tr>
 						<?php foreach($course_lists as $course_list): ?>
 						<tr>
-							<td class="course-edit"><?php echo $course_list['code']; ?></td>
-							<td class="course-edit"><?php echo $course_list['name']; ?></td>
-							<td class="course-edit"><?php echo $course_list['year_system']; ?></td>
-							<td class="course-edit-college"><?php echo $course_list['college_name']; ?></td>
+							<td class="course-text-course-code" data-course-id="<?php echo $course_list['id']?>"><?php echo $course_list['code']; ?></td>
+							<td class="course-text-course-name"><?php echo $course_list['name']; ?></td>
+							<td class="course-text-course-year-system"><?php echo $course_list['year_system']; ?></td>
+							<td class="course-pull-down-college-name" data-college-id="<?php echo $course_list['college_id']; ?>"><?php echo $course_list['college_name']; ?></td>
 						</tr>
 						<?php endforeach; ?>
 					</tbody>
@@ -62,6 +62,8 @@
 					</div>
 				</form>
 			</div><!-- /.box-body -->
+		</div>
+		<div id="edit_modal_content">
 		</div>
 	</section>
 </div>
