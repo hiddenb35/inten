@@ -109,6 +109,7 @@ class Model_Class extends \Orm\Model
 
 		$list['id'] = $class['id'];
 		$list['name'] = $class['name'];
+		$list['teacher_id'] = $class->teacher->id;
 		$list['teacher_name'] = $class->teacher->last_name . ' ' . $class->teacher->first_name;
 		$list['course_id'] = $class->course->id;
 		$list['course_name'] = $class->course->name;
