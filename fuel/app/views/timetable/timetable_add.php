@@ -107,39 +107,44 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-						<!-- <h3 class="modal-title" id="myModalLabel">月曜日 9:00-10:00</h3> -->
+						 <h3 class="modal-title" id="myModalLabel">時間割入力</h3>
 					</div>
 					<div class="modal-body">
-						<form class="form col-md-12 center-block">
-							<div class="controls form-group">
-								<label for="subjectset">教科名：</label>
-								<select class="form-control " name="subjectset" size="1" id="subject">
-									<option value="0">----教科を選択してください----</option><!-- 芦沢ゾーン -->
-									<?php foreach($lesson_lists as $lesson): ?>
-										<option value="<?php echo $lesson['id']; ?>" data-teacher="<?php echo $lesson['teacher_name']; ?>"><?php echo $lesson['name']; ?></option>
-									<?php endforeach; ?>
-								</select>
-							</div>
-
-							<div id="test">
-								<label for="teachername">教員名：</label>
-								<input type="text" name="teachername" class="form-control input-lg" readonly placeholder="教員名は教科名から自動的に取得されます" id="teacher">
-							</div>
-
+						<div class="form-horizontal">
 							<div class="form-group">
-								<label for="classroom">教室番号：</label>
-								<input type="text" name="classroom" class="form-control input-lg" placeholder="例）　30715" id="classroom">
+								<label class="col-sm-2 control-label">授業名</label>
+								<div class="col-sm-10">
+									<select name="subjectset" class="form-control" id="subject">
+										<option value="0">----教科を選択してください----</option>
+										<?php foreach($lesson_lists as $lesson): ?>
+											<option value="<?php echo $lesson['id']; ?>" data-teacher="<?php echo $lesson['teacher_name']; ?>"><?php echo $lesson['name']; ?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
 							</div>
-
 							<div class="form-group">
-								<label for="textarea">備考：</label>
-								<textarea id="note" name="textarea" rows="3" cols="50" wrap="hard" class="form-control input-lg" placeholder="例）　PC持参"></textarea>
+								<label for="input-mail" class="col-sm-2 control-label">教員名</label>
+								<div class="col-sm-10">
+									<input name="teachername" type="text" class="form-control" id="teacher" placeholder="教員名は授業名から自動的に取得されます" readonly>
+								</div>
 							</div>
-						</form>
+							<div class="form-group">
+								<label for="input-mail" class="col-sm-2 control-label">教室番号</label>
+								<div class="col-sm-10">
+									<input name="classroom" type="text" class="form-control" id="classroom" placeholder="例) 30715">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">備考</label>
+								<div class="col-sm-10">
+									<textarea id="note" name="textarea" class="form-control" placeholder="例) PC持参" rows="3"></textarea>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal" id="set">Set</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal" id="set">設定</button>
 					</div>
 				</div>
 			</div>

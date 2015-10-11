@@ -115,9 +115,6 @@ table th,td{
 #TIMETABLE_ADD td {
 	cursor: pointer;
 }
-#TIMETABLE_ADD .modal-body {
-	padding: 0px;
-}
 #TIMETABLE_ADD td:hover {
 	background-color: #FFFCCC;
 }
@@ -138,6 +135,22 @@ table th,td{
 #TIMETABLE_ADD table td span,#TIMETABLE_VIEW table td span{
 	display: none;
 }
+
+#TIMETABLE_ADD input[readonly] {
+	background-color: #f8f8f8;
+	border: 0 !important;
+	border-bottom: 1px solid #eee !important;
+}
+#TIMETABLE_ADD .modal-content {
+	-webkit-border-radius: 22px;
+	-moz-border-radius: 22px;
+	border-radius: 22px;
+	background-color: #f8f8f8;
+}
+#TIMETABLE_ADD .modal-content .form-group {
+	padding: 10px 0;
+}
+
 /*************************************/
 
 /*TODO @Author kasai リファクタリング*/
