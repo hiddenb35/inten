@@ -286,11 +286,6 @@ $(function () {
 	};
 	//TODO ここまで
 
-	var getCollegeId = function () {
-		return $(this).data('college-id');
-	};
-
-
 	//ここからtimetable_add
 	var tdlg = $("#TIMETABLE_VIEW table td,#TIMETABLE_ADD table td").length;
 	for(i = 0; i < tdlg; i++){
