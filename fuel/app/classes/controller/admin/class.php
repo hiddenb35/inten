@@ -41,7 +41,7 @@ class Controller_Admin_Class extends Controller_Loggedin
 
 	public function post_edit()
 	{
-		$val = Model_Class::validate();
+		$val = Model_Class::validate(Input::post('id'));
 		$val->add_field('id', 'クラスID', 'trim|required')->add_rule('exist_id', 'class');
 		$response = array();
 

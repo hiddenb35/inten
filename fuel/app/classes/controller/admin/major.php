@@ -39,7 +39,7 @@ class Controller_Admin_Major extends Controller_Loggedin
 
 	public function post_edit()
 	{
-		$val = Model_Major::validate();
+		$val = Model_Major::validate(Input::post('id'));
 		$val->add_field('id', '専攻ID', 'trim|required')->add_rule('exist_id', 'major');
 		$response = array();
 
