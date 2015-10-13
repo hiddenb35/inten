@@ -132,7 +132,7 @@ table th,td{
 	background-color: #808080;
 	border-color: #808080;
 }
-#TIMETABLE_ADD table td span,#TIMETABLE_VIEW table td span{
+#TIMETABLE_ADD table td span {
 	display: none;
 }
 
@@ -149,6 +149,34 @@ table th,td{
 }
 #TIMETABLE_ADD .modal-content .form-group {
 	padding: 10px 0;
+}
+
+/*************************************/
+
+/***********時間割表示画面************/
+#TIMETABLE_VIEW td {
+	cursor: pointer;
+}
+#TIMETABLE_VIEW td:hover {
+	background-color: #FFFCCC;
+}
+#TIMETABLE_VIEW .active {
+	background-color: #FFFCCC;
+}
+#TIMETABLE_VIEW td:hover.active {
+	background-color: #FFFFAA;
+}
+#TIMETABLE_VIEW thead th {
+	width: 16%;
+}
+
+#TIMETABLE_VIEW #selection.inactive {
+	background-color: #808080;
+	border-color: #808080;
+}
+
+#TIMETABLE_VIEW table td span {
+	display: none;
 }
 
 /*************************************/
