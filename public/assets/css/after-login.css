@@ -197,3 +197,14 @@ table th,td{
 	background: #fff;
 }
 /*TODO ここまで*/
+#ddd{
+	display: none;
+	position: absolute;
+	border: solid 2px ;
+	background-color: #fff;
+	padding: 5px 10px;
+
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}

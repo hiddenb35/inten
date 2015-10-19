@@ -421,4 +421,17 @@ $(function () {
 			$("#TIMETABLE_VIEW table tr td").eq(i-1).show();
 		}
 	});
+	//備考ラベルhover時の処理
+	$("#TIMETABLE_VIEW table td span").hover(
+		function (e) {
+			$("#ddd").text($(this).siblings('.note').text());
+			$("#ddd").css("left", e.clientX + 15);
+			$("#ddd").css("top", e.clientY + 15);
+			$("#ddd").show();
+		},
+		function () {
+			console.log("out");
+			$("#ddd").hide();
+		}
+	);
 });
