@@ -197,7 +197,7 @@ table th,td{
 	background: #fff;
 }
 /*TODO ここまで*/
-#ddd{
+#noteView{
 	display: none;
 	position: absolute;
 	border: solid 2px ;

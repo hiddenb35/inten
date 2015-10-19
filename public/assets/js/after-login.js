@@ -424,14 +424,13 @@ $(function () {
 	//備考ラベルhover時の処理
 	$("#TIMETABLE_VIEW table td span").hover(
 		function (e) {
-			$("#ddd").text($(this).siblings('.note').text());
-			$("#ddd").css("left", e.clientX + 15);
-			$("#ddd").css("top", e.clientY + 15);
-			$("#ddd").show();
+			$("#noteView").text($(this).siblings('.note').text());
+			$("#noteView").css("left", e.pageX + 15);
+			$("#noteView").css("top", e.pageY + 15);
+			$("#noteView").show();
 		},
 		function () {
-			console.log("out");
-			$("#ddd").hide();
+			$("#noteView").hide();
 		}
 	);
 });
