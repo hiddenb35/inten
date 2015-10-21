@@ -23,6 +23,14 @@ $(function () {
 		ajaxOptions: {
 			dataType: 'json'
 		},
+		display: function (value, response) {
+			if (!response) {
+				return;
+			}
+			if (!('errors' in response)) {
+				$(this).text(value);
+			}
+		},
 		params: function (params) {
 			params.id = $(this).data('college-id');
 			params.name = params.value;
@@ -44,6 +52,14 @@ $(function () {
 		url: '/admin/course/edit',
 		ajaxOptions: {
 			dataType: 'json'
+		},
+		display: function (value, response) {
+			if (!response) {
+				return;
+			}
+			if (!('errors' in response)) {
+				$(this).text(value);
+			}
 		},
 		params: function (params) {
 			params.id = $(this).data('course-id');
@@ -69,6 +85,14 @@ $(function () {
 		ajaxOptions: {
 			dataType: 'json'
 		},
+		display: function (value, response) {
+			if (!response) {
+				return;
+			}
+			if (!('errors' in response)) {
+				$(this).text(value);
+			}
+		},
 		params: function (params) {
 			params.id = $(this).siblings('.course-text-course-code').data('course-id');
 			params.code = $(this).siblings('.course-text-course-code').text();
@@ -91,6 +115,14 @@ $(function () {
 		url: '/admin/course/edit',
 		ajaxOptions: {
 			dataType: 'json'
+		},
+		display: function (value, response) {
+			if (!response) {
+				return;
+			}
+			if (!('errors' in response)) {
+				$(this).text(value);
+			}
 		},
 		params: function (params) {
 			params.id = $(this).siblings('.course-text-course-code').data('course-id');
@@ -117,6 +149,15 @@ $(function () {
 		ajaxOptions: {
 			dataType: 'json'
 		},
+		display: function (value, sources, response) {
+			if (!response) {
+				return;
+			}
+			if (!('errors' in response)) {
+				var selector = "#college_id option[value=" + value + "]";
+				$(this).text($(selector).text());
+			}
+		},
 		params: function (params) {
 			params.id = $(this).siblings('.course-text-course-code').data('course-id');
 			params.code = $(this).siblings('.course-text-course-code').text();
@@ -142,6 +183,14 @@ $(function () {
 		ajaxOptions: {
 			dataType: 'json'
 		},
+		display: function (value, response) {
+			if (!response) {
+				return;
+			}
+			if (!('errors' in response)) {
+				$(this).text(value);
+			}
+		},
 		params: function (params) {
 			params.id = $(this).data('class-id');
 			params.name = params.value;
@@ -165,6 +214,15 @@ $(function () {
 		url: '/admin/class/edit',
 		ajaxOptions: {
 			dataType: 'json'
+		},
+		display: function (value, sources, response) {
+			if (!response) {
+				return;
+			}
+			if (!('errors' in response)) {
+				var selector = "#teacher_id option[value=" + value + "]";
+				$(this).text($(selector).text());
+			}
 		},
 		params: function (params){
 			params.id = $(this).siblings('.class-text-class-name').data('class-id');
@@ -190,6 +248,15 @@ $(function () {
 		ajaxOptions: {
 			dataType: 'json'
 		},
+		display: function (value, sources, response) {
+			if (!response) {
+				return;
+			}
+			if (!('errors' in response)) {
+				var selector = "#course_id option[value=" + value + "]";
+				$(this).text($(selector).text());
+			}
+		},
 		params: function (params){
 			params.id = $(this).siblings('.class-text-class-name').data('class-id');
 			params.name = $(this).siblings('.class-text-class-name').text();
@@ -214,6 +281,14 @@ $(function () {
 		ajaxOptions: {
 			dataType: 'json'
 		},
+		display: function (value, response) {
+			if (!response) {
+				return;
+			}
+			if (!('errors' in response)) {
+				$(this).text(value);
+			}
+		},
 		params: function (params){
 			params.id = $(this).data('major-id');
 			params.name = params.value;
@@ -236,6 +311,15 @@ $(function () {
 		url: '/admin/major/edit',
 		ajaxOptions: {
 			dataType: 'json'
+		},
+		display: function (value, sources, response) {
+			if (!response) {
+				return;
+			}
+			if (!('errors' in response)) {
+				var selector = "#course_id option[value=" + value + "]";
+				$(this).text($(selector).text());
+			}
 		},
 		params: function (params){
 			params.id = $(this).siblings('.major-text-major-name').data('major-id');
