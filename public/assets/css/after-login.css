@@ -204,7 +204,7 @@ table th,td{
 	background-image: url("../img/success.png");
 	background-repeat: no-repeat;
 	background-position: 10px 50%;
-	background-size: auto 50%;
+	background-size: auto 30px;
 	border-color: #3c763d;
 	box-shadow:0px 0px 50px;
 }

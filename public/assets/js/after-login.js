@@ -159,7 +159,7 @@ $(function () {
 			}
 		},
 		params: function (params) {
-			//params.id = $(this).siblings('.course-text-course-code').data('course-id');
+			params.id = $(this).siblings('.course-text-course-code').data('course-id');
 			params.code = $(this).siblings('.course-text-course-code').text();
 			params.name = $(this).siblings('.course-text-course-name').text();
 			params.year_system = $(this).siblings('.course-text-course-year-system').text();
