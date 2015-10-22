@@ -182,18 +182,26 @@ table th,td{
 /*************************************/
 
 /*TODO @Author kasai リファクタリング*/
-#COLLEGE_LIST #edit_modal_content {
-	display: none;
-	z-index: 1;
-	position: fixed;
-	border: 2px solid #aaa;
-	background: #fff;
-}
+/*#COLLEGE_LIST #edit_modal_content {*/
+	/*display: none;*/
+	/*z-index: 1;*/
+	/*position: fixed;*/
+	/*border: 2px solid #aaa;*/
+	/*background: #fff;*/
+/*}*/
 #edit_modal_content {
 	display: none;
 	z-index: 1;
 	position: fixed;
-	border: 2px solid #aaa;
-	background: #fff;
+	width: 350px;
+	text-align: center;
+	/*border: 2px solid #aaa;*/
+	/*background: #fff;*/
+}
+.custom-alert-success {
+	color: #3c763d;
+	background-color: #e9ffd9;
+	border-color: #3c763d;
+	box-shadow:0px 0px 50px;
 }
 /*TODO ここまで*/

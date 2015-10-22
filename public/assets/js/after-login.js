@@ -340,9 +340,11 @@ $(function () {
 	//TODO 今後、成功した時のほうが処理が長くなる場合、if文の条件式を逆転させます。
 	var createAjaxResponseMessage = function (response) {
 		var responseMessage = '';
+		var addClassName = "";
 		if (!('errors' in response)) {
 			responseMessage = "データベースに保存しました。";
-			testFunction(responseMessage);
+			addClassName = "custom-alert-success";
+			testFunction(responseMessage, addClassName);
 			return;
 		}
 		//ここからエラーのメッセージ作成
@@ -350,10 +352,15 @@ $(function () {
 		$.each(errors, function (key, errorMessage) {
 			responseMessage += "<p>" + errorMessage + "</p>"
 		});
-		testFunction(responseMessage);
+		addClassName = "custom-alert-danger";
+		testFunction(responseMessage, addClassName);
 	};
 	//TODO @Author kasai リファクタリング
-	var testFunction = function (text) {
+	var testFunction = function (text, addClass) {
+		$('#edit_modal_content').empty();
+		$('#edit_modal_content').removeClass('alert-success');
+		$('#edit_modal_content').removeClass('alert-danger');
+		$('#edit_modal_content').addClass(addClass);
 		$('#edit_modal_content').append(text);
 		//画面(ウィンドウ)の幅、高さを取得
 		var w = $(window).width();
@@ -365,7 +372,7 @@ $(function () {
 		$("#edit_modal_content").fadeIn("slow");
 		setTimeout(function () {
 			$("#edit_modal_content").fadeOut("slow");
-			$('#edit_modal_content').empty();
+			//$('#edit_modal_content').empty();
 		}, 5000);
 	};
 	//TODO ここまで
