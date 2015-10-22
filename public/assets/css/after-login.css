@@ -201,6 +201,10 @@ table th,td{
 .custom-alert-success {
 	color: #3c763d;
 	background-color: #e9ffd9;
+	background-image: url("../img/success.png");
+	background-repeat: no-repeat;
+	background-position: 10px 50%;
+	background-size: auto 50%;
 	border-color: #3c763d;
 	box-shadow:0px 0px 50px;
 }
