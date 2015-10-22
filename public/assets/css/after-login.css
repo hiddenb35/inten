@@ -204,4 +204,10 @@ table th,td{
 	border-color: #3c763d;
 	box-shadow:0px 0px 50px;
 }
+.custom-alert-danger {
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #a94442;
+	box-shadow:0px 0px 30px;
+}
 /*TODO ここまで*/
