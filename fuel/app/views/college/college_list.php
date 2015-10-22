@@ -55,7 +55,7 @@
 				</form>
 			</div><!-- /.box-body -->
 		</div>
+		<div id="edit_modal_content" class="alert">
+		</div>
 	</section>
-	<div id="edit_modal_content">
-	</div>
 </div>

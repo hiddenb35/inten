@@ -23,6 +23,14 @@ $(function () {
 		ajaxOptions: {
 			dataType: 'json'
 		},
+		display: function (value, response) {
+			if (!response) {
+				return;
+			}
+			if (!('errors' in response)) {
+				$(this).text(value);
+			}
+		},
 		params: function (params) {
 			params.id = $(this).data('college-id');
 			params.name = params.value;
@@ -44,6 +52,14 @@ $(function () {
 		url: '/admin/course/edit',
 		ajaxOptions: {
 			dataType: 'json'
+		},
+		display: function (value, response) {
+			if (!response) {
+				return;
+			}
+			if (!('errors' in response)) {
+				$(this).text(value);
+			}
 		},
 		params: function (params) {
 			params.id = $(this).data('course-id');
@@ -69,6 +85,14 @@ $(function () {
 		ajaxOptions: {
 			dataType: 'json'
 		},
+		display: function (value, response) {
+			if (!response) {
+				return;
+			}
+			if (!('errors' in response)) {
+				$(this).text(value);
+			}
+		},
 		params: function (params) {
 			params.id = $(this).siblings('.course-text-course-code').data('course-id');
 			params.code = $(this).siblings('.course-text-course-code').text();
@@ -91,6 +115,14 @@ $(function () {
 		url: '/admin/course/edit',
 		ajaxOptions: {
 			dataType: 'json'
+		},
+		display: function (value, response) {
+			if (!response) {
+				return;
+			}
+			if (!('errors' in response)) {
+				$(this).text(value);
+			}
 		},
 		params: function (params) {
 			params.id = $(this).siblings('.course-text-course-code').data('course-id');
@@ -117,6 +149,15 @@ $(function () {
 		ajaxOptions: {
 			dataType: 'json'
 		},
+		display: function (value, sources, response) {
+			if (!response) {
+				return;
+			}
+			if (!('errors' in response)) {
+				var selector = "#college_id option[value=" + value + "]";
+				$(this).text($(selector).text());
+			}
+		},
 		params: function (params) {
 			params.id = $(this).siblings('.course-text-course-code').data('course-id');
 			params.code = $(this).siblings('.course-text-course-code').text();
@@ -142,6 +183,14 @@ $(function () {
 		ajaxOptions: {
 			dataType: 'json'
 		},
+		display: function (value, response) {
+			if (!response) {
+				return;
+			}
+			if (!('errors' in response)) {
+				$(this).text(value);
+			}
+		},
 		params: function (params) {
 			params.id = $(this).data('class-id');
 			params.name = params.value;
@@ -165,6 +214,15 @@ $(function () {
 		url: '/admin/class/edit',
 		ajaxOptions: {
 			dataType: 'json'
+		},
+		display: function (value, sources, response) {
+			if (!response) {
+				return;
+			}
+			if (!('errors' in response)) {
+				var selector = "#teacher_id option[value=" + value + "]";
+				$(this).text($(selector).text());
+			}
 		},
 		params: function (params){
 			params.id = $(this).siblings('.class-text-class-name').data('class-id');
@@ -190,6 +248,15 @@ $(function () {
 		ajaxOptions: {
 			dataType: 'json'
 		},
+		display: function (value, sources, response) {
+			if (!response) {
+				return;
+			}
+			if (!('errors' in response)) {
+				var selector = "#course_id option[value=" + value + "]";
+				$(this).text($(selector).text());
+			}
+		},
 		params: function (params){
 			params.id = $(this).siblings('.class-text-class-name').data('class-id');
 			params.name = $(this).siblings('.class-text-class-name').text();
@@ -214,6 +281,14 @@ $(function () {
 		ajaxOptions: {
 			dataType: 'json'
 		},
+		display: function (value, response) {
+			if (!response) {
+				return;
+			}
+			if (!('errors' in response)) {
+				$(this).text(value);
+			}
+		},
 		params: function (params){
 			params.id = $(this).data('major-id');
 			params.name = params.value;
@@ -237,6 +312,15 @@ $(function () {
 		ajaxOptions: {
 			dataType: 'json'
 		},
+		display: function (value, sources, response) {
+			if (!response) {
+				return;
+			}
+			if (!('errors' in response)) {
+				var selector = "#course_id option[value=" + value + "]";
+				$(this).text($(selector).text());
+			}
+		},
 		params: function (params){
 			params.id = $(this).siblings('.major-text-major-name').data('major-id');
 			params.name = $(this).siblings('.major-text-major-name').text();
@@ -256,9 +340,11 @@ $(function () {
 	//TODO 今後、成功した時のほうが処理が長くなる場合、if文の条件式を逆転させます。
 	var createAjaxResponseMessage = function (response) {
 		var responseMessage = '';
+		var addClassName = "";
 		if (!('errors' in response)) {
 			responseMessage = "データベースに保存しました。";
-			testFunction(responseMessage);
+			addClassName = "custom-alert-success";
+			testFunction(responseMessage, addClassName);
 			return;
 		}
 		//ここからエラーのメッセージ作成
@@ -266,10 +352,15 @@ $(function () {
 		$.each(errors, function (key, errorMessage) {
 			responseMessage += "<p>" + errorMessage + "</p>"
 		});
-		testFunction(responseMessage);
+		addClassName = "custom-alert-danger";
+		testFunction(responseMessage, addClassName);
 	};
 	//TODO @Author kasai リファクタリング
-	var testFunction = function (text) {
+	var testFunction = function (text, addClass) {
+		$('#edit_modal_content').empty();
+		$('#edit_modal_content').removeClass('alert-success');
+		$('#edit_modal_content').removeClass('alert-danger');
+		$('#edit_modal_content').addClass(addClass);
 		$('#edit_modal_content').append(text);
 		//画面(ウィンドウ)の幅、高さを取得
 		var w = $(window).width();
@@ -281,7 +372,7 @@ $(function () {
 		$("#edit_modal_content").fadeIn("slow");
 		setTimeout(function () {
 			$("#edit_modal_content").fadeOut("slow");
-			$('#edit_modal_content').empty();
+			//$('#edit_modal_content').empty();
 		}, 5000);
 	};
 	//TODO ここまで
