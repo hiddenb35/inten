@@ -427,11 +427,11 @@ $(function () {
 			$("#noteView").text($(this).siblings('.note').text());
 
 			//マウスの位置版
-			$("#noteView").css("left", e.pageX + 15);
-			$("#noteView").css("top", e.pageY + 15);
+			// $("#noteView").css("left", e.pageX + 15);
+			// $("#noteView").css("top", e.pageY + 15);
 			//要素からの位置版
-			//$("#noteView").css("left", $(this).offset().left + 10);
-			//$("#noteView").css("top", $(this).offset().top + 35);
+			$("#noteView").css("left", $(this).offset().left + 10);
+			$("#noteView").css("top", $(this).offset().top + 30);
 
 			$("#noteView").show();
 		},
