@@ -11,13 +11,13 @@ class Controller_Attendance extends Controller_Loggedin
 		}
 
 		$lesson_lists = array();
-		foreach(Model_Teacher::find($this->get_id())->attachment as $attach)
+		foreach(Model_Teacher::find($this->get_id())->attachment_lessons as $attach)
 		{
 			$array = array();
 			$array['name'] = $attach->lesson->name;
 			$array['class_name'] = $attach->lesson->class->name;
 			$array['course_name'] = $attach->lesson->class->course->name;
-			$array['student_sum'] = count($attach->lesson->class->student);
+			$array['student_sum'] = count($attach->lesson->class->students);
 			$lesson_id = $attach->lesson->id;
 			$array['link_url'] = Uri::create('attendance/student_list', array(), array('lesson_id' => $lesson_id));
 			$lesson_lists[] = $array;
@@ -81,7 +81,7 @@ class Controller_Attendance extends Controller_Loggedin
 		$lists = array();
 		$lesson = Model_Lesson::find($lesson_id);
 
-		foreach($lesson->class->student as $student)
+		foreach($lesson->class->students as $student)
 		{
 			$array = array();
 			$array['id'] = $student['id'];
