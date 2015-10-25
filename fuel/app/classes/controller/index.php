@@ -18,7 +18,7 @@ class Controller_Index extends Controller_Loggedin
 				'order_by' => array('updated_at' => 'desc', 'created_at' => 'desc'),
 			));
 			$name = (is_null($timetable)) ? '' : $timetable->name;
-			$html = (is_null($timetable)) ? '' : json_decode($timetable->html, true);
+			$html = (is_null($timetable)) ? array() : json_decode($timetable->html, true);
 			$this->template->content->set('name', $name);
 			$this->template->content->set('html', $html);
 		}
