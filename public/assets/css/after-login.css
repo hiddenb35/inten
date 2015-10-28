@@ -101,6 +101,11 @@ table th,td{
 /*カレッジ一覧ページ*/
 #COLLEGE_LIST #form_college_add {
 	margin-left: 10px;
+	margin-right: 20px;
+}
+#COLLEGE_LIST #form_college_add .form-control{
+	margin-left: 10px;
+	width: 300px;
 }
 #COLLEGE_LIST .college-name:hover {
 	background: #ddd;
@@ -182,19 +187,41 @@ table th,td{
 /*************************************/
 
 /*TODO @Author kasai リファクタリング*/
-#COLLEGE_LIST #edit_modal_content {
-	display: none;
-	z-index: 1;
-	position: fixed;
-	border: 2px solid #aaa;
-	background: #fff;
-}
+/*#COLLEGE_LIST #edit_modal_content {*/
+	/*display: none;*/
+	/*z-index: 1;*/
+	/*position: fixed;*/
+	/*border: 2px solid #aaa;*/
+	/*background: #fff;*/
+/*}*/
 #edit_modal_content {
 	display: none;
 	z-index: 1;
 	position: fixed;
-	border: 2px solid #aaa;
-	background: #fff;
+	width: 350px;
+	text-align: center;
+	/*border: 2px solid #aaa;*/
+	/*background: #fff;*/
+}
+.custom-alert-success {
+	color: #3c763d;
+	background-color: #e9ffd9;
+	background-image: url("../img/success.png");
+	background-repeat: no-repeat;
+	background-position: 10px 50%;
+	background-size: auto 30px;
+	border-color: #3c763d;
+	box-shadow:0px 0px 50px;
+}
+.custom-alert-danger {
+	color: #a94442;
+	background-color: #f2dede;
+	background-image: url("../img/error.png");
+	background-repeat: no-repeat;
+	background-position: 10px 50%;
+	background-size: auto 30px;
+	border-color: #a94442;
+	box-shadow:0px 0px 30px;
 }
 /*TODO ここまで*/
 #noteView{
