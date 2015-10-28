@@ -37,7 +37,7 @@
 						<tbody>
 							<tr>
 								<th class="text-center bg-info"><span>1時限目</span><br>9:00-9:50</th>
-								<td class="text-center"><p class="subject">経営科学</p><p class="teacher">大野田先生</p><p class="classroom">30716</p><p class="note">ノートPC持参</p><span class="badge bg-green">備考あり</span></td>
+								<td class="text-center"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>
 								<td class="text-center"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>
 								<td class="text-center"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>
 								<td class="text-center"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>
@@ -45,7 +45,7 @@
 							</tr>
 							<tr>
 								<th class="text-center bg-info"><span>2時限目</span><br>10:00-10:50</th>
-								<td class="text-center"><p class="subject">経営科学</p><p class="teacher">大野田先生</p><p class="classroom">30716</p><p class="note">ノートPC持参</p><span class="badge bg-green">備考あり</span></td>
+								<td class="text-center"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>
 								<td class="text-center"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>
 								<td class="text-center"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>
 								<td class="text-center"><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>
