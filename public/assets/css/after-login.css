@@ -101,6 +101,11 @@ table th,td{
 /*カレッジ一覧ページ*/
 #COLLEGE_LIST #form_college_add {
 	margin-left: 10px;
+	margin-right: 20px;
+}
+#COLLEGE_LIST #form_college_add .form-control{
+	margin-left: 10px;
+	width: 300px;
 }
 #COLLEGE_LIST .college-name:hover {
 	background: #ddd;

@@ -39,20 +39,28 @@
 				<h3 class="box-title">カレッジ追加</h3>
 			</div><!-- /.box-header -->
 			<div class="box-body">
-				<form action="/admin/college/add" method="post" role="form" class="form-horizontal">
-					<div class="row">
-						<div class="form-group" id="form_college_add">
-							<label for="name" class="col-sm-1 control-label">カレッジ名</label>
-							<div class="col-sm-3">
-								<input type="text" class="form-control" id="name" name="name">
-							</div>
-							<div class="form-button col-sm-8">
-								<button type="submit" class="btn btn-primary">登録</button>
-								<button type="reset" class="btn btn-warning">キャンセル</button>
-							</div>
-						</div>
+				<form action="/admin/college/add" method="post" role="form" class="form-inline">
+					<div class="form-group" id="form_college_add">
+						<label for="name" class="control-label">カレッジ名</label>
+						<input type="text" class="form-control" id="name" name="name">
 					</div>
+					<button type="submit" class="btn btn-primary">登録</button>
+					<button type="reset" class="btn btn-warning">キャンセル</button>
 				</form>
+<!--				<form action="/admin/college/add" method="post" role="form" class="form-horizontal">-->
+<!--					<div class="row">-->
+<!--						<div class="form-group" id="form_college_add">-->
+<!--							<div class="col-sm-5">-->
+<!--								<label for="name" class="control-label">カレッジ名</label>-->
+<!--								<input type="text" class="form-control" id="name" name="name">-->
+<!--							</div>-->
+<!--							<div class="form-button col-sm-7">-->
+<!--								<button type="submit" class="btn btn-primary">登録</button>-->
+<!--								<button type="reset" class="btn btn-warning">キャンセル</button>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</form>-->
 			</div><!-- /.box-body -->
 		</div>
 		<div id="edit_modal_content" class="alert">
