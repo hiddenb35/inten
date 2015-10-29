@@ -512,4 +512,22 @@ $(function () {
 			$("#TIMETABLE_VIEW table tr td").eq(i-1).show();
 		}
 	});
+	//備考ラベルhover時の処理
+	$("#TIMETABLE_VIEW table td span").hover(
+		function (e) {
+			$("#noteView").text($(this).siblings('.note').text());
+
+			//マウスの位置版
+			// $("#noteView").css("left", e.pageX + 15);
+			// $("#noteView").css("top", e.pageY + 15);
+			//要素からの位置版
+			$("#noteView").css("left", $(this).offset().left + 10);
+			$("#noteView").css("top", $(this).offset().top + 30);
+
+			$("#noteView").show();
+		},
+		function () {
+			$("#noteView").hide();
+		}
+	);
 });
