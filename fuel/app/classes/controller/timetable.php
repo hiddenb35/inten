@@ -43,6 +43,10 @@ class Controller_timetable extends Controller_Loggedin
 	public function action_list()
 	{
 		$class_id = Input::get('class_id');
+		if(is_null($class_id))
+		{
+			Response::redirect('/class/myclass/timetable/list');
+		}
 		$timetables = Model_Timetable::find('all', array(
 			'where' => array(
 				array('class_id', '=', $class_id),
