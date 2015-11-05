@@ -58,7 +58,7 @@ class Controller_timetable extends Controller_Loggedin
 		foreach($timetables as $timetable) {
 			$array = array();
 			$array['name'] = $timetable['name'];
-			$array['created_at'] = $timetable['created_at'];
+			$array['created_at'] = date('Y/m/d H:i:s', $timetable['created_at']);
 			$array['updated_at'] = $timetable['updated_at'];
 			$array['status'] = ($timetable['is_active']) ? '有効' : '無効';
 			$array['edit_link'] = Uri::create('timetable/edit', array(), array('timetable_id' => $timetable['id']));
