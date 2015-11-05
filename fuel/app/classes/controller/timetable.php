@@ -42,8 +42,29 @@ class Controller_timetable extends Controller_Loggedin
 
 	public function action_list()
 	{
+		$class_id = Input::get('class_id');
+		$timetables = Model_Timetable::find('all', array(
+			'where' => array(
+				array('class_id', '=', $class_id),
+			),
+			'order_by' => array('updated_at' => 'desc', 'created_at' => 'desc'),
+		));
+
+		$timetable_lists = array();
+		foreach($timetables as $timetable) {
+			$array = array();
+			$array['name'] = $timetable['name'];
+			$array['created_at'] = $timetable['created_at'];
+			$array['updated_at'] = $timetable['updated_at'];
+			$array['status'] = ($timetable['is_active']) ? '有効' : '無効';
+			$array['edit_link'] = 'http://hoge';
+			$array['delete_link'] = 'http://hoge';
+			$timetable_lists[] = $array;
+		}
+
 		$this->template->title = '時間割一覧';
 		$this->template->content = View::forge('timetable/timetable_list');
+		$this->template->content->set('timetable_lists', $timetable_lists);
 	}
 
 	public function _get_list($class_id)
