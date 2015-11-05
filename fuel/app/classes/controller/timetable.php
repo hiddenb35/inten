@@ -36,8 +36,36 @@ class Controller_timetable extends Controller_Loggedin
 
 	public function action_edit()
 	{
+		if(Input::method() === 'POST')
+		{
+			// todo validation & save
+//			$name = Input::post('name');
+//			$json = Input::post('json');
+//			$is_active = 1;
+//			$class_id = Input::post('class_id');
+//			$timetable = Model_Timetable::forge();
+//			$timetable->name = $name;
+//			$timetable->html = $json;
+//			$timetable->class_id = $class_id;
+//			$timetable->is_active = $is_active;
+//
+//			$timetable->save();
+//			Response::redirect('/');
+		}
+		$timetable_id = Input::get('timetable_id');
+		if(is_null($timetable_id)) {
+			Response::redirect('/timetable/list');
+		}
+
+		// todo validation
+		$timetable = Model_Timetable::find($timetable_id);
+		$array = array();
+		$array['name'] = $timetable['name'];
+		$array['html'] = json_decode($timetable['html'], true);
+
 		$this->template->title = '時間割編集';
 		$this->template->content = View::forge('timetable/timetable_edit');
+		$this->template->content->set('timetable', $array);
 	}
 
 	public function action_list()
