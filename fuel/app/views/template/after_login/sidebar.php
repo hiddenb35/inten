@@ -14,7 +14,6 @@
 			</a>
 			<ul class="treeview-menu">
 				<li><a href="/timetable/list"><i class="fa fa-circle-o"></i>時間割一覧</a></li>
-				<li><a href="/timetable/edit"><i class="fa fa-circle-o"></i>時間割編集</a></li>
 				<li><a href="/timetable/add"><i class="fa fa-circle-o"></i>時間割作成</a></li>
 			</ul>
 		</li>
