@@ -36,7 +36,8 @@
 				</table>
 			</div><!-- /.box-body -->
 		</div>
-		<div id="edit_modal_content" class="alert">
-		</div>
+		<a href="<?php echo Uri::create('timetable/add', array(), array('class_id' => $class_id)); ?>" class="btn btn-primary">時間割を作成</a>
+
+
 	</section>
 </div>
