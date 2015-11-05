@@ -18,7 +18,8 @@ class Controller_timetable extends Controller_Loggedin
 			$timetable->is_active = $is_active;
 
 			$timetable->save();
-			Response::redirect('/');
+			// todo ajaxリクエストから通常のリクエストへ
+			Response::redirect(Uri::create('timetable/list', array(), array('class_id' => $class_id)));
 		}
 
 		$class_id = Input::get('class_id');
