@@ -378,12 +378,14 @@ $(function () {
 	//TODO ここまで
 
 	//ここからtimetable_add
-	var tdlg = $("#TIMETABLE_VIEW table td,#TIMETABLE_ADD table td").length;
+	//読み込み時に備考ラベルを隠す処理
+	var tdlg = $("#TIMETABLE_VIEW table td,#TIMETABLE_ADD table td,#TIMETABLE_EDIT table td").length;
 	for(i = 0; i < tdlg; i++){
-		if($("#TIMETABLE_VIEW table td,#TIMETABLE_ADD table td").eq(i).children('.note').text() !== ""){
-			$("#TIMETABLE_VIEW table td,#TIMETABLE_ADD table td").eq(i).children('span').show();
+		if($("#TIMETABLE_VIEW table td,#TIMETABLE_ADD table td, #TIMETABLE_EDIT table td").eq(i).children('.note').text() !== ""){
+			$("#TIMETABLE_VIEW table td,#TIMETABLE_ADD table td, #TIMETABLE_EDIT table td").eq(i).children('span').show();
 		}
 	}
+	//タイトル編集
 	$('#title').click(function() {
 		$('#title').hide();
 		$('#titleEdit').val($('#title').text()).show().focus().select();
@@ -403,23 +405,25 @@ $(function () {
 			return false;
 		}
 	});
+	//項目を押したときの処理（ｔｄ）
 	var thisStorage ;
-	$("#TIMETABLE_ADD table td").click(function() {
+	$("#TIMETABLE_ADD table td, #TIMETABLE_EDIT table td").click(function() {
 		$(this).toggleClass("active");
 		if($(".active").length == 1){
 			thisStorage = $(this);
 		}
-		if($("#TIMETABLE_ADD table td").hasClass("active") === false){
+		if($("#TIMETABLE_ADD table td, #TIMETABLE_EDIT table td").hasClass("active") === false){
 			$("#selection").addClass('inactive');
 		}else{
 			$("#selection").removeClass('inactive');
 		}
 	});
-	$("#TIMETABLE_ADD #subject").change(function () {
+	$("#TIMETABLE_ADD #subject, #TIMETABLE_EDIT #subject").change(function () {
 		$("#teacher").val($('#subject option:selected').data('teacher'));
 	});
-	$("#TIMETABLE_ADD #selection").click(function() {
-		if($('#TIMETABLE_ADD td').hasClass('active') === false){
+	//編集処理
+	$("#TIMETABLE_ADD #selection,#TIMETABLE_EDIT #selection").click(function() {
+		if($('#TIMETABLE_ADD td, #TIMETABLE_EDIT td').hasClass('active') === false){
 			alert("項目が選択されていません");
 			return false;
 		}
@@ -429,7 +433,7 @@ $(function () {
 		$(".active").addClass("setElement");
 		$(".active").removeClass("active");
 
-		$("#TIMETABLE_ADD #timeadd").click();
+		$("#TIMETABLE_ADD #timeadd, #TIMETABLE_EDIT #timeadd").click();
 		$('#subject').val($(thisStorage).data('lesson-id'));
 		$("#teacher").val($('#subject option:selected').data('teacher'));
 		$('#classroom').val($(thisStorage).children('.classroom').text());
@@ -449,9 +453,10 @@ $(function () {
 			$(".setElement").removeClass("setElement");
 		});
 	});
+	//送るデータ
 	var data = [];
 	var tr = $("table tr");
-	$("#TIMETABLE_ADD #transmission").click(function () {
+	$("#TIMETABLE_ADD #transmission, #TIMETABLE_EDIT #transmission").click(function () {
 		for (var i = 1; i < 9; i++) {
 			var cells = tr.eq(i).children();
 			data[i - 1] = [];
@@ -482,7 +487,7 @@ $(function () {
 				console.log("error");
 			});
 	});
-	//ここから時間割表示画面
+	//ここから時間割表示画面のレスポンシブ処理
 	var todayWeek = new Date().getDay();
 	$(window).on('load resize', function(){
 		if($(document).width() <= 760){

@@ -1,10 +1,10 @@
-.note,#TIMETABLE_ADD #titleEdit{
+.note,#titleEdit{
 	display: none;
 }
-#TIMETABLE_ADD #note{
+#note{
 	width:100%;
 }
-#TIMETABLE_ADD #note{
+#note{
 	resize: none;
 }
 html, body{
@@ -158,6 +158,48 @@ table th,td{
 
 /*************************************/
 
+/***********時間割編集画面**************/
+#TIMETABLE_EDIT td {
+	cursor: pointer;
+}
+#TIMETABLE_EDIT td:hover {
+	background-color: #FFFCCC;
+}
+#TIMETABLE_EDIT .active {
+	background-color: #FFFCCC;
+}
+#TIMETABLE_EDIT td:hover.active {
+	background-color: #FFFFAA;
+}
+#TIMETABLE_EDIT thead th {
+	width: 16%;
+}
+
+#TIMETABLE_EDIT #selection.inactive {
+	background-color: #808080;
+	border-color: #808080;
+}
+#TIMETABLE_EDIT table td span {
+	display: none;
+}
+
+#TIMETABLE_EDIT input[readonly] {
+	background-color: #f8f8f8;
+	border: 0 !important;
+	border-bottom: 1px solid #eee !important;
+}
+#TIMETABLE_EDIT .modal-content {
+	-webkit-border-radius: 22px;
+	-moz-border-radius: 22px;
+	border-radius: 22px;
+	background-color: #f8f8f8;
+}
+#TIMETABLE_EDIT .modal-content .form-group {
+	padding: 10px 0;
+}
+
+/*************************************/
+
 /***********時間割表示画面************/
 #TIMETABLE_VIEW td {
 	cursor: pointer;
@@ -180,7 +222,7 @@ table th,td{
 	border-color: #808080;
 }
 
-#TIMETABLE_VIEW table td span {
+#TIMETABLE_VIEW table td span,#TIMETABLE_EDIT table td span{
 	display: none;
 }
 
