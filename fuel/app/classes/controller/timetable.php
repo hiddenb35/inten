@@ -96,6 +96,7 @@ class Controller_timetable extends Controller_Loggedin
 
 		$this->template->title = '時間割一覧';
 		$this->template->content = View::forge('timetable/timetable_list');
+		$this->template->content->set('class_name', Model_Class::find($class_id)->name);
 		$this->template->content->set('timetable_lists', $timetable_lists);
 	}
 
