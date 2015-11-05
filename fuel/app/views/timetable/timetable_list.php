@@ -20,16 +20,18 @@
 						<th>ステータス</th>
 						<th></th>
 					</tr>
-					<tr>
-						<td>hoeg</td>
-						<td>hoge</td>
-						<td>hoge</td>
-						<td>hoge</td>
-						<td>
-							<a href="#" class="btn btn-primary btn-sm">編集</a>
-							<a href="#" class="btn btn-danger btn-sm">削除</a>
-						</td>
-					</tr>
+					<?php foreach($timetable_lists as $timetable): ?>
+						<tr>
+							<td><?php echo $timetable['name']; ?></td>
+							<td><?php echo $timetable['created_at']; ?></td>
+							<td><?php echo $timetable['updated_at']; ?></td>
+							<td><?php echo $timetable['status']; ?></td>
+							<td>
+								<a href="<?php echo $timetable['edit_link']; ?>" class="btn btn-primary btn-sm">編集</a>
+								<a href="<?php echo $timetable['delete_link']; ?>" class="btn btn-danger btn-sm">削除</a>
+							</td>
+						</tr>
+					<?php endforeach; ?>
 					</tbody>
 				</table>
 			</div><!-- /.box-body -->
