@@ -6,20 +6,27 @@ class Controller_timetable extends Controller_Loggedin
 	{
 		if(Input::method() === 'POST')
 		{
-			// todo validation
-			$name = Input::post('name');
-			$json = Input::post('json');
-			$is_active = 1;
-			$class_id = Input::post('class_id');
-			$timetable = Model_Timetable::forge();
-			$timetable->name = $name;
-			$timetable->html = $json;
-			$timetable->class_id = $class_id;
-			$timetable->is_active = $is_active;
+			$val = Model_Timetable::validate();
+			if($val->run())
+			{
+				$name = Input::post('name');
+				$json = Input::post('json');
+				$is_active = 1;
+				$class_id = Input::post('class_id');
+				$timetable = Model_Timetable::forge();
+				$timetable->name = $name;
+				$timetable->html = $json;
+				$timetable->class_id = $class_id;
+				$timetable->is_active = $is_active;
 
-			$timetable->save();
-			// todo ajaxリクエストから通常のリクエストへ
-			Response::redirect(Uri::create('timetable/list', array(), array('class_id' => $class_id)));
+				$timetable->save();
+				Response::redirect(Uri::create('timetable/list', array(), array('class_id' => $class_id)));
+			}
+			else
+			{
+				// todo 適切なエラー処理をすること
+				throw new HttpServerErrorException();
+			}
 		}
 
 		$class_id = Input::get('class_id');
