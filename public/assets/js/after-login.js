@@ -474,18 +474,23 @@ $(function () {
 		}
 		data = JSON.stringify(data);
 
-		$.ajax({
-			url: '/timetable/add',
-			type: 'POST',
-			dataType: 'json',
-			data: {name: $('#title').text(), json: data, class_id: $('input[name="class_id"]').val()}
-		})
-			.done(function () {
-				console.log("success");
-			})
-			.fail(function () {
-				console.log("error");
-			});
+		$("#finalname").val($("#title").text());
+		$("#finaljson").val(data);
+		$("#finalid").val($('input[name="class_id"]').val());
+
+		// ここに送るデータの処理
+
+		// $.ajax({
+		// 	url: '/timetable/add',
+		// 	type: 'POST',
+		// 	dataType: 'json',
+		// 	data: {name: $('#title').text(), json: data, class_id: $('input[name="class_id"]').val()}
+		// }).done(function () {
+		// 	console.log("success");
+		// })
+		// .fail(function () {
+		// 	console.log("error");
+		// });
 	});
 	//ここから時間割表示画面のレスポンシブ処理
 	var todayWeek = new Date().getDay();
