@@ -53,8 +53,9 @@ class Controller_timetable extends Controller_Loggedin
 //			$timetable->save();
 //			Response::redirect('/');
 		}
+		$class_id = Input::get('class_id');
 		$timetable_id = Input::get('timetable_id');
-		if(is_null($timetable_id)) {
+		if(is_null($timetable_id) || is_null($class_id)) {
 			Response::redirect('/timetable/list');
 		}
 
@@ -66,6 +67,9 @@ class Controller_timetable extends Controller_Loggedin
 
 		$this->template->title = '時間割編集';
 		$this->template->content = View::forge('timetable/timetable_edit');
+		$lists = $this->_get_list($class_id);
+		$this->template->content->set('class_id', $class_id);
+		$this->template->content->set('lesson_lists', $lists['lesson_lists']);
 		$this->template->content->set('timetable', $array);
 	}
 
@@ -90,7 +94,7 @@ class Controller_timetable extends Controller_Loggedin
 			$array['created_at'] = date('Y/m/d H:i:s', $timetable['created_at']);
 			$array['updated_at'] = $timetable['updated_at'];
 			$array['status'] = ($timetable['is_active']) ? '有効' : '無効';
-			$array['edit_link'] = Uri::create('timetable/edit', array(), array('timetable_id' => $timetable['id']));
+			$array['edit_link'] = Uri::create('timetable/edit', array(), array('class_id' => $class_id, 'timetable_id' => $timetable['id']));
 			$array['delete_link'] = Uri::create('timetable/delete', array(), array('timetable_id' => $timetable['id']));
 			$timetable_lists[] = $array;
 		}
