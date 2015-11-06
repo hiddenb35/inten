@@ -35,9 +35,8 @@ class Controller_timetable extends Controller_Loggedin
 
 		$this->template->title = '時間割作成';
 		$this->template->content = View::forge('timetable/timetable_add');
-		$lists = $this->_get_list($class_id);
 		$this->template->content->set('class_id', $class_id);
-		$this->template->content->set('lesson_lists', $lists['lesson_lists']);
+		$this->template->content->set('lesson_lists', $this->_get_list($class_id));
 	}
 
 	public function action_edit()
@@ -80,10 +79,9 @@ class Controller_timetable extends Controller_Loggedin
 
 		$this->template->title = '時間割編集';
 		$this->template->content = View::forge('timetable/timetable_edit');
-		$lists = $this->_get_list($class_id);
 		$this->template->content->set('class_id', $class_id);
 		$this->template->content->set('id', $timetable_id);
-		$this->template->content->set('lesson_lists', $lists['lesson_lists']);
+		$this->template->content->set('lesson_lists', $this->_get_list($class_id));
 		$this->template->content->set('timetable', $array);
 	}
 
@@ -137,7 +135,7 @@ class Controller_timetable extends Controller_Loggedin
 			}
 
 			$array['teacher_name'] = implode(',', $teachers);
-			$lists['lesson_lists'][] = $array;
+			$lists[] = $array;
 		}
 
 		return $lists;
