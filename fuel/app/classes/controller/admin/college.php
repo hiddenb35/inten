@@ -2,10 +2,12 @@
 
 class Controller_Admin_College extends Controller_Loggedin
 {
+	protected $view = 'admin/college';
+
 	public function action_index()
 	{
 		$this->template->title = 'カレッジ一覧';
-		$this->template->content = View::forge('college/college_list');
+		$this->template->content = View::forge($this->view);
 		$this->template->content->set('college_lists', Model_College::to_lists(Model_College::find('all')));
 	}
 
@@ -27,7 +29,7 @@ class Controller_Admin_College extends Controller_Loggedin
 		}
 
 		$this->template->title = 'エラー';
-		$this->template->content = View::forge('college/college_list');
+		$this->template->content = View::forge($this->view);
 		$this->template->content->set('college_lists', Model_College::to_lists(Model_College::find('all')));
 		$this->template->content->set('errors', $val->error_message());
 		$this->template->content->set('inputs', $val->input());

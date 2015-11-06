@@ -2,10 +2,12 @@
 
 class Controller_Admin_Major extends Controller_Loggedin
 {
+	protected $view = 'admin/major';
+
 	public function action_index()
 	{
 		$this->template->title = '専攻一覧';
-		$this->template->content = View::forge('major/major_list');
+		$this->template->content = View::forge($this->view);
 		$this->template->content->set('major_lists',Model_Major::to_lists(Model_Major::find('all')));
 		$this->template->content->set('course_lists',Model_Course::to_lists(Model_Course::find('all')));
 	}
@@ -29,7 +31,7 @@ class Controller_Admin_Major extends Controller_Loggedin
 		}
 
 		$this->template->title = 'エラー';
-		$this->template->content = View::forge('major/major_list');
+		$this->template->content = View::forge($this->view);
 		$this->template->content->set('major_lists', Model_Major::to_lists(Model_Major::find('all')));
 		$this->template->content->set('course_lists',Model_Course::to_lists(Model_Course::find('all')));
 		$this->template->content->set('errors', $val->error_message());
