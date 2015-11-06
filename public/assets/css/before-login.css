@@ -4,28 +4,44 @@ html, body {
 	background-image: url("../img/login-bg.jpg");
 	background-size: cover;
 	background-position: top center;
+
 }
 body {
-	padding-top: 10%;
 }
 
 .content-wrapper {
     background-color: #fff;
+
 }
 /**************ログイン画面****************/
-#LOGIN .login-box-header b {
+#LOGIN {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+#LOGIN #login_body {
+	padding-top: 10%;
+}
+#LOGIN #login_body .login-box-header b {
 	color: #FFFAFA;
 	font-family: fantasy;
 	font-size: 50px;
 }
-#LOGIN .login-button {
+#LOGIN #login_body .login-button {
 	font-family: fantasy;
 	font-size: 35px;
 }
+#LOGIN #login_body .bg-white {
+	background: #ffffff !important;
+}
 @media screen and (max-width: 767px) {
-	#LOGIN .login-box {
+	#LOGIN #login_body .login-box {
 		padding: 50px;
 	}
+}
+#LOGIN #login_body .text-right > a {
+	color: #fff;
+	text-decoration: underline;
 }
 /**************************************/
 /*************404画面*******************/
@@ -41,3 +57,4 @@ body {
 	color: #FFF;
 }
 /**************************************/
+
