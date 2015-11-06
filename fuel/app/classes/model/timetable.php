@@ -63,4 +63,11 @@ class Model_Timetable extends \Orm\Model
 		$val->add_field('is_active','アクティブ情報','max_length[11]');
 		return $val;
 	}
+
+	public static function validate_edit()
+	{
+		$val = self::validate();
+		$val->add_field('id', '時間割ID', 'trim|required')->add_rule('exists_id', 'timetable');
+		return $val;
+	}
 }
