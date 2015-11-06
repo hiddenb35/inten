@@ -69,6 +69,7 @@ class Controller_timetable extends Controller_Loggedin
 		$this->template->content = View::forge('timetable/timetable_edit');
 		$lists = $this->_get_list($class_id);
 		$this->template->content->set('class_id', $class_id);
+		$this->template->content->set('timetable_id', $timetable_id);
 		$this->template->content->set('lesson_lists', $lists['lesson_lists']);
 		$this->template->content->set('timetable', $array);
 	}
