@@ -70,4 +70,29 @@ class Model_Timetable extends \Orm\Model
 		$val->add_field('id', '時間割ID', 'trim|required')->add_rule('exists_id', 'timetable');
 		return $val;
 	}
+
+	public static function to_lists($timetables)
+	{
+		$lists = array();
+		foreach($timetables as $timetable)
+		{
+			$lists[] = self::to_list($timetable);
+		}
+
+		return $lists;
+	}
+
+	public static function to_list($timetable)
+	{
+		$list = array();
+
+		$list['name'] = $timetable['name'];
+		$list['created_at'] = date('Y/m/d H:i:s', $timetable['created_at']);
+		$list['updated_at'] = (is_null($timetable['updated_at'])) ? '' : date('Y/m/d H:i:s', $timetable['updated_at']);
+		$list['status'] = ($timetable['is_active']) ? '有効' : '無効';
+		$list['edit_link'] = Uri::create('timetable/edit', array(), array('class_id' => $timetable['class_id'], 'id' => $timetable['id']));
+		$list['delete_link'] = Uri::create('timetable/delete', array(), array('id' => $timetable['id']));
+
+		return $list;
+	}
 }
