@@ -23,7 +23,7 @@
 					<?php foreach($lesson_lists as $lesson_list): ?>
 					<tr>
 						<td><?php echo $lesson_list['name']?></td>
-						<td><?php echo $lesson_list['attachment']?></td>
+						<td><?php echo $lesson_list['teacher_name']?></td>
 						<td><?php echo $lesson_list['class_name']?></td>
 						<td><?php echo $lesson_list['term']?></td>
 						<td><?php echo $lesson_list['sum_credit']?></td>

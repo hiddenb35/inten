@@ -11,13 +11,13 @@ class Controller_timetable extends Controller_Loggedin
 			{
 				$name = $val->validated('name');
 				$json = $val->validated('json');
-				$is_active = 1;
 				$class_id = $val->validated('class_id');
+
 				$timetable = Model_Timetable::forge();
 				$timetable->name = $name;
 				$timetable->html = $json;
 				$timetable->class_id = $class_id;
-				$timetable->is_active = $is_active;
+				$timetable->is_active = 1;
 
 				$timetable->save();
 				Response::redirect(Uri::create('timetable/list', array(), array('class_id' => $class_id)));
@@ -35,9 +35,8 @@ class Controller_timetable extends Controller_Loggedin
 
 		$this->template->title = '時間割作成';
 		$this->template->content = View::forge('timetable/timetable_add');
-		$lists = $this->_get_list($class_id);
-		$this->template->content->set('class_id', $lists['class_id']);
-		$this->template->content->set('lesson_lists', $lists['lesson_lists']);
+		$this->template->content->set('class_id', $class_id);
+		$this->template->content->set('lesson_lists', Model_Lesson::to_lists(Model_Class::find($class_id)->lessons));
 	}
 
 	public function action_edit()
@@ -80,10 +79,9 @@ class Controller_timetable extends Controller_Loggedin
 
 		$this->template->title = '時間割編集';
 		$this->template->content = View::forge('timetable/timetable_edit');
-		$lists = $this->_get_list($class_id);
 		$this->template->content->set('class_id', $class_id);
 		$this->template->content->set('id', $timetable_id);
-		$this->template->content->set('lesson_lists', $lists['lesson_lists']);
+		$this->template->content->set('lesson_lists', Model_Lesson::to_lists(Model_Class::find($class_id)->lessons));
 		$this->template->content->set('timetable', $array);
 	}
 
@@ -101,45 +99,10 @@ class Controller_timetable extends Controller_Loggedin
 			'order_by' => array('updated_at' => 'desc', 'created_at' => 'desc'),
 		));
 
-		$timetable_lists = array();
-		foreach($timetables as $timetable) {
-			$array = array();
-			$array['name'] = $timetable['name'];
-			$array['created_at'] = date('Y/m/d H:i:s', $timetable['created_at']);
-			$array['updated_at'] = (is_null($timetable['updated_at'])) ? '' : date('Y/m/d H:i:s', $timetable['updated_at']);
-			$array['status'] = ($timetable['is_active']) ? '有効' : '無効';
-			$array['edit_link'] = Uri::create('timetable/edit', array(), array('class_id' => $class_id, 'id' => $timetable['id']));
-			$array['delete_link'] = Uri::create('timetable/delete', array(), array('id' => $timetable['id']));
-			$timetable_lists[] = $array;
-		}
-
 		$this->template->title = '時間割一覧';
 		$this->template->content = View::forge('timetable/timetable_list');
 		$this->template->content->set('class_id', $class_id);
 		$this->template->content->set('class_name', Model_Class::find($class_id)->name);
-		$this->template->content->set('timetable_lists', $timetable_lists);
-	}
-
-	public function _get_list($class_id)
-	{
-		$lists = array();
-		$lists['class_id'] = $class_id;
-		$class = Model_Class::find($class_id);
-		foreach($class->lessons as $lesson)
-		{
-			$array = array();
-			$array['id'] = $lesson['id'];
-			$array['name'] = $lesson['name'];
-			$teachers = array();
-			foreach($lesson->attachment_lessons as $attach)
-			{
-				$teachers[] = $attach->teacher->last_name . ' ' . $attach->teacher->first_name;
-			}
-
-			$array['teacher_name'] = implode(',', $teachers);
-			$lists['lesson_lists'][] = $array;
-		}
-
-		return $lists;
+		$this->template->content->set('timetable_lists', Model_Timetable::to_lists($timetables));
 	}
 }
