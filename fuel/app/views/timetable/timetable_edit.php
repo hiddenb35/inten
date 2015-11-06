@@ -20,86 +20,7 @@
 			</div>
 			<div class="box-body">
 				<div class="container-fluid">
-				<!-- ここに時間割表示画面とほぼ同じのテーブルを表示　ｐｓ　ボタンはいりません -->
 					<?php echo Timetable::generate($timetable['html']); ?>
-<!--					<table class="table table-bordered table-responsive table-striped">-->
-<!--						<thead>-->
-<!--							<tr class="bg-primary">-->
-<!--								<th class="text-center">#</th>-->
-<!--								<th class="text-center">月曜日</th>-->
-<!--								<th class="text-center">火曜日</th>-->
-<!--								<th class="text-center">水曜日</th>-->
-<!--								<th class="text-center">木曜日</th>-->
-<!--								<th class="text-center">金曜日</th>-->
-<!--							</tr>-->
-<!--						</thead>-->
-<!--						<tbody>-->
-<!--							<tr>-->
-<!--								<th class="text-center bg-info"><span>1時限目</span><br>9:00-9:50</th>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--							</tr>-->
-<!--							<tr>-->
-<!--								<th class="text-center bg-info"><span>2時限目</span><br>10:00-10:50</th>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--							</tr>-->
-<!--							<tr>-->
-<!--								<th class="text-center bg-info"><span>3時限目</span><br>11:00-11:50</th>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--							</tr>-->
-<!--							<tr>-->
-<!--								<th class="text-center bg-info"><span>4時限目</span><br>12:00-12:50</th>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--							</tr>-->
-<!--							<tr>-->
-<!--								<th class="text-center bg-info"><span>5時限目</span><br>13:00-13:50</th>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--							</tr>-->
-<!--							<tr>-->
-<!--								<th class="text-center bg-info"><span>6時限目</span><br>14:00-14:50</th>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--							</tr>-->
-<!--							<tr>-->
-<!--								<th class="text-center bg-info"><span>7時限目</span><br>15:00-15:50</th>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--							</tr>-->
-<!--							<tr>-->
-<!--								<th class="text-center bg-info"><span>8時限目</span><br>16:00-16:50</th>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--								<td class="text-center" data-lesson-id=""><p class="subject"></p><p class="teacher"></p><p class="classroom"></p><p class="note"></p><span class="badge bg-green">備考あり</span></td>-->
-<!--							</tr>-->
-<!--						</tbody>-->
-<!--					</table>-->
 				</div>
 			</div>
 		</div>
@@ -120,7 +41,6 @@
 								<div class="col-sm-10">
 									<select name="subjectset" class="form-control" id="subject">
 										<option value="0">----教科を選択してください----</option>
-										<!-- ここに教科選択プルダウンのデータを配置 -->
 										<?php foreach($lesson_lists as $lesson): ?>
 											<option value="<?php echo $lesson['id']; ?>" data-teacher="<?php echo $lesson['teacher_name']; ?>"><?php echo $lesson['name']; ?></option>
 										<?php endforeach; ?>
