@@ -101,7 +101,13 @@ class Model_Lesson extends \Orm\Model
 		$list['term'] = $lesson['term'];
 		$list['sum_credit'] = $lesson['sum_credit'];
 		$list['class_name'] = $lesson->class->name;
-		$list['attachment'] = $lesson->class->teacher->last_name . ' ' . $lesson->class->teacher->first_name;
+		$teachers = array();
+		foreach($lesson->attachment_lessons as $attach)
+		{
+			$teachers[] = $attach->teacher->last_name . ' ' . $attach->teacher->first_name;
+		}
+
+		$list['teacher_name'] = implode(',', $teachers);
 
 		return $list;
 	}
