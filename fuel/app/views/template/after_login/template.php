@@ -102,7 +102,8 @@
 			<?php echo Asset::js('bootstrap-editable.min.js'); ?>
 
 			<!--  -->
-			<?php echo Asset::js('after-login.js'); ?>
+			<?php echo Asset::js('kasai.js'); ?>
+			<?php echo Asset::js('kato.js'); ?>
 		</div>
 	</body>
 </html>
