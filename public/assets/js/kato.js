@@ -83,7 +83,7 @@ $(function(){
 			var cells = tr.eq(i).children();
 			data[i - 1] = [];
 			for (var j = 1; j < 6; j++) {
-				if (cells.eq(j).data('lesson-id') === 0) {
+				if (cells.eq(j).data('lesson-id') == 0) {
 					data[i - 1][j - 1] = {};
 				} else {
 					data[i - 1][j - 1] = {
@@ -95,6 +95,8 @@ $(function(){
 			}
 		}
 		data = JSON.stringify(data);
+
+		console.log(data);
 
 		$("#finalname").val($("#title").text());
 		$("#finaljson").val(data);
