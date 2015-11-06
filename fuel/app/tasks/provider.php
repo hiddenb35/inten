@@ -537,6 +537,14 @@ class Provider
 			array('name' => 'Rubyプログラミング', 'term' => 1, 'sum_credit' => 21, 'class_id' => 1),
 			array('name' => 'Pythonプログラミング', 'term' => 1, 'sum_credit' => 39, 'class_id' => 1),
 			array('name' => 'JavaScriptプログラミング', 'term' => 1, 'sum_credit' => 33, 'class_id' => 1),
+			array('name' => '合同資格対策講座', 'term' => 2, 'sum_credit' => 27, 'class_id' => 1),
+			array('name' => 'マーケティング', 'term' => 2, 'sum_credit' => 18, 'class_id' => 1),
+			array('name' => 'プロジェクトマネジメント', 'term' => 2, 'sum_credit' => 18, 'class_id' => 1),
+			array('name' => 'キャリアデザイン2', 'term' => 2, 'sum_credit' => 27, 'class_id' => 1),
+			array('name' => 'ビジネススキル4', 'term' => 2, 'sum_credit' => 18, 'class_id' => 1),
+			array('name' => 'モバイルプログラミング', 'term' => 2, 'sum_credit' => 54, 'class_id' => 1),
+			array('name' => 'システム開発グループ演習1', 'term' => 2, 'sum_credit' => 54, 'class_id' => 1),
+			array('name' => '資格対策講座6', 'term' => 2, 'sum_credit' => 9, 'class_id' => 1),
 		);
 
 		$query = \DB::insert('lesson')->columns(array('name','term','sum_credit','created_at','updated_at','class_id'));
@@ -567,6 +575,18 @@ class Provider
 			array('teacher_id' => 6, 'lesson_id' => 15),
 			array('teacher_id' => 7, 'lesson_id' => 15),
 			array('teacher_id' => 8, 'lesson_id' => 16),
+
+			array('teacher_id' => 1, 'lesson_id' => 17),
+			array('teacher_id' => 2, 'lesson_id' => 17),
+			array('teacher_id' => 3, 'lesson_id' => 17),
+			array('teacher_id' => 4, 'lesson_id' => 17),
+			array('teacher_id' => 5, 'lesson_id' => 18),
+			array('teacher_id' => 6, 'lesson_id' => 19),
+			array('teacher_id' => 7, 'lesson_id' => 20),
+			array('teacher_id' => 8, 'lesson_id' => 21),
+			array('teacher_id' => 9, 'lesson_id' => 22),
+			array('teacher_id' => 10, 'lesson_id' => 23),
+			array('teacher_id' => 11, 'lesson_id' => 24),
 
 		);
 		$query = \DB::insert('attachment_lesson')->columns(array('teacher_id','lesson_id'));
@@ -599,13 +619,7 @@ class Provider
 				array('lesson_id' => 4, 'room_number' => '30615', 'notes' => 'PC持参'),
 				array('lesson_id' => 7, 'room_number' => '30718', 'notes' => 'PC持参'),
 			),
-			array(
-				array(),
-				array(),
-				array(),
-				array(),
-				array(),
-			),
+			array( array(), array(), array(), array(), array(),),
 			array(
 				array('lesson_id' => 2, 'room_number' => '30615', 'notes' => 'PC持参'),
 				array(),
@@ -634,10 +648,63 @@ class Provider
 				array(),
 				array(),
 			),
-
 		);
+		$timetable2 = array(
+			array(
+				array('lesson_id' => 17, 'room_number' => 'それぞれ', 'notes' => ''),
+				array('lesson_id' => 20, 'room_number' => '30605', 'notes' => 'PC持参'),
+				array('lesson_id' => 21, 'room_number' => '30707', 'notes' => ''),
+				array(),
+				array('lesson_id' => 23, 'room_number' => '30715', 'notes' => ''),
+			),
+			array(
+				array('lesson_id' => 17, 'room_number' => 'それぞれ', 'notes' => ''),
+				array('lesson_id' => 20, 'room_number' => '30605', 'notes' => 'PC持参'),
+				array('lesson_id' => 21, 'room_number' => '30707', 'notes' => ''),
+				array(),
+				array('lesson_id' => 23, 'room_number' => '30715', 'notes' => ''),
+			),
+			array(
+				array('lesson_id' => 17, 'room_number' => 'それぞれ', 'notes' => ''),
+				array('lesson_id' => 20, 'room_number' => '30605', 'notes' => 'PC持参'),
+				array(),
+				array(),
+				array('lesson_id' => 23, 'room_number' => '30715', 'notes' => ''),
+			),
+			array( array(), array(), array(), array(), array(),),
+			array(
+				array('lesson_id' => 18, 'room_number' => '30714', 'notes' => 'PC持参'),
+				array(),
+				array('lesson_id' => 22, 'room_number' => '30717', 'notes' => ''),
+				array('lesson_id' => 22, 'room_number' => '30714', 'notes' => ''),
+				array('lesson_id' => 23, 'room_number' => '30715', 'notes' => ''),
+			),
+			array(
+				array('lesson_id' => 18, 'room_number' => '30714', 'notes' => 'PC持参'),
+				array(),
+				array('lesson_id' => 22, 'room_number' => '30717', 'notes' => ''),
+				array('lesson_id' => 22, 'room_number' => '30714', 'notes' => ''),
+				array('lesson_id' => 23, 'room_number' => '30715', 'notes' => ''),
+			),
+			array(
+				array('lesson_id' => 19, 'room_number' => '30714', 'notes' => ''),
+				array(),
+				array('lesson_id' => 22, 'room_number' => '30717', 'notes' => ''),
+				array('lesson_id' => 22, 'room_number' => '30714', 'notes' => ''),
+				array('lesson_id' => 23, 'room_number' => '30715', 'notes' => ''),
+			),
+			array(
+				array('lesson_id' => 19, 'room_number' => '30714', 'notes' => ''),
+				array(),
+				array(),
+				array(),
+				array('lesson_id' => 24, 'room_number' => '30715', 'notes' => ''),
+			),
+		);
+
 		$query = \DB::insert('timetable')->columns(array('name','html','created_at','updated_at','is_active','class_id'));
 		$query->values(array('IS07-1前期時間割', json_encode($timetable), time(), null, 1, 1));
+		$query->values(array('IS07-1後期時間割', json_encode($timetable2), time() + 1, null, 1, 1));
 		$query->execute();
 
 	}
