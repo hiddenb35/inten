@@ -40,18 +40,20 @@ class Controller_timetable extends Controller_Loggedin
 		if(Input::method() === 'POST')
 		{
 			// todo validation & save
-//			$name = Input::post('name');
-//			$json = Input::post('json');
-//			$is_active = 1;
-//			$class_id = Input::post('class_id');
-//			$timetable = Model_Timetable::forge();
-//			$timetable->name = $name;
-//			$timetable->html = $json;
-//			$timetable->class_id = $class_id;
-//			$timetable->is_active = $is_active;
-//
-//			$timetable->save();
-//			Response::redirect('/');
+			$name = Input::post('name');
+			$json = Input::post('json');
+			$is_active = 1;
+			$class_id = Input::post('class_id');
+			$timetable_id = Input::post('timetable_id');
+
+			$timetable = Model_Timetable::find($timetable_id);
+			$timetable->name = $name;
+			$timetable->html = $json;
+			$timetable->class_id = $class_id;
+			$timetable->is_active = $is_active;
+
+			$timetable->save();
+			Response::redirect(Uri::create('timetable/list', array(), array('class_id' => $class_id)));
 		}
 		$class_id = Input::get('class_id');
 		$timetable_id = Input::get('timetable_id');
