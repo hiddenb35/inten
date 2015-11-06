@@ -36,7 +36,7 @@ class Controller_timetable extends Controller_Loggedin
 		$this->template->title = '時間割作成';
 		$this->template->content = View::forge('timetable/timetable_add');
 		$this->template->content->set('class_id', $class_id);
-		$this->template->content->set('lesson_lists', $this->_get_list($class_id));
+		$this->template->content->set('lesson_lists', Model_Lesson::to_lists(Model_Class::find($class_id)->lessons));
 	}
 
 	public function action_edit()
@@ -81,7 +81,7 @@ class Controller_timetable extends Controller_Loggedin
 		$this->template->content = View::forge('timetable/timetable_edit');
 		$this->template->content->set('class_id', $class_id);
 		$this->template->content->set('id', $timetable_id);
-		$this->template->content->set('lesson_lists', $this->_get_list($class_id));
+		$this->template->content->set('lesson_lists', Model_Lesson::to_lists(Model_Class::find($class_id)->lessons));
 		$this->template->content->set('timetable', $array);
 	}
 
@@ -116,28 +116,5 @@ class Controller_timetable extends Controller_Loggedin
 		$this->template->content->set('class_id', $class_id);
 		$this->template->content->set('class_name', Model_Class::find($class_id)->name);
 		$this->template->content->set('timetable_lists', $timetable_lists);
-	}
-
-	public function _get_list($class_id)
-	{
-		$lists = array();
-		$class = Model_Class::find($class_id);
-
-		foreach($class->lessons as $lesson)
-		{
-			$array = array();
-			$array['id'] = $lesson['id'];
-			$array['name'] = $lesson['name'];
-			$teachers = array();
-			foreach($lesson->attachment_lessons as $attach)
-			{
-				$teachers[] = $attach->teacher->last_name . ' ' . $attach->teacher->first_name;
-			}
-
-			$array['teacher_name'] = implode(',', $teachers);
-			$lists[] = $array;
-		}
-
-		return $lists;
 	}
 }
