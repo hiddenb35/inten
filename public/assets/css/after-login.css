@@ -216,14 +216,32 @@ table th,td{
 #TIMETABLE_VIEW thead th {
 	width: 16%;
 }
+#TIMETABLE_VIEW #week-select {
+	margin-bottom: 10px;
+}
+#TIMETABLE_VIEW p.subject {
+	font-size: 14px;
+	font-weight: 900;
+}
+#TIMETABLE_VIEW p.teacher {
+	font-size: 13px;
+}
+#TIMETABLE_VIEW p.classroom {
+	font-size: 16px;
+}
 
 #TIMETABLE_VIEW #selection.inactive {
 	background-color: #808080;
 	border-color: #808080;
 }
-
 #TIMETABLE_VIEW table td span,#TIMETABLE_EDIT table td span{
 	display: none;
+}
+#TIMETABLE_VIEW table td {
+	height: 127px;
+}
+#TIMETABLE_VIEW table tbody th{
+	vertical-align: middle;
 }
 
 /*************************************/
