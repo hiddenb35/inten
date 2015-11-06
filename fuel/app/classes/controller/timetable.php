@@ -11,13 +11,13 @@ class Controller_timetable extends Controller_Loggedin
 			{
 				$name = $val->validated('name');
 				$json = $val->validated('json');
-				$is_active = 1;
 				$class_id = $val->validated('class_id');
+
 				$timetable = Model_Timetable::forge();
 				$timetable->name = $name;
 				$timetable->html = $json;
 				$timetable->class_id = $class_id;
-				$timetable->is_active = $is_active;
+				$timetable->is_active = 1;
 
 				$timetable->save();
 				Response::redirect(Uri::create('timetable/list', array(), array('class_id' => $class_id)));
@@ -36,7 +36,7 @@ class Controller_timetable extends Controller_Loggedin
 		$this->template->title = '時間割作成';
 		$this->template->content = View::forge('timetable/timetable_add');
 		$lists = $this->_get_list($class_id);
-		$this->template->content->set('class_id', $lists['class_id']);
+		$this->template->content->set('class_id', $class_id);
 		$this->template->content->set('lesson_lists', $lists['lesson_lists']);
 	}
 
@@ -123,8 +123,8 @@ class Controller_timetable extends Controller_Loggedin
 	public function _get_list($class_id)
 	{
 		$lists = array();
-		$lists['class_id'] = $class_id;
 		$class = Model_Class::find($class_id);
+
 		foreach($class->lessons as $lesson)
 		{
 			$array = array();
