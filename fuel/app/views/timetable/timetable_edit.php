@@ -10,7 +10,7 @@
 	<!-- Main content -->
 	<section class="content">
 		<!-- ここにクラスID -->
-		<input type="hidden" name="class_id" value="">
+		<input type="hidden" name="class_id" value="<?php echo $class_id; ?>">
 		<div class="box box-info">
 			<div class="box-header with-border">
 				<!-- ここにタイトルを表示 -->
@@ -121,7 +121,9 @@
 									<select name="subjectset" class="form-control" id="subject">
 										<option value="0">----教科を選択してください----</option>
 										<!-- ここに教科選択プルダウンのデータを配置 -->
-										<option value="1" data-teacher="大野田先生">経営科学</option>
+										<?php foreach($lesson_lists as $lesson): ?>
+											<option value="<?php echo $lesson['id']; ?>" data-teacher="<?php echo $lesson['teacher_name']; ?>"><?php echo $lesson['name']; ?></option>
+										<?php endforeach; ?>
 									</select>
 								</div>
 							</div>
