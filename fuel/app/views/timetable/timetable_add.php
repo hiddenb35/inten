@@ -149,11 +149,14 @@
 				</div>
 			</div>
 		</div>
-		<form>
-		<div class="form-group text-right">
-			<button type="submit" class="btn btn-primary" id="transmission">作成</button>
-			<button type="reset" class="btn btn-warning">キャンセル</button>
-		</div>
+		<form action="/timetable/add" method="post">
+			<input type="hidden" name="name" id="finalname">
+			<input type="hidden" name="json" id="finaljson">
+			<input type="hidden" name="class_id" id="finalid">
+			<div class="form-group text-right">
+				<button type="submit" class="btn btn-primary" id="transmission">作成</button>
+				<button type="reset" class="btn btn-warning">キャンセル</button>
+			</div>
 		</form>
 	</section>
 </div>
