@@ -9,10 +9,10 @@ class Controller_timetable extends Controller_Loggedin
 			$val = Model_Timetable::validate();
 			if($val->run())
 			{
-				$name = Input::post('name');
-				$json = Input::post('json');
+				$name = $val->validated('name');
+				$json = $val->validated('json');
 				$is_active = 1;
-				$class_id = Input::post('class_id');
+				$class_id = $val->validated('class_id');
 				$timetable = Model_Timetable::forge();
 				$timetable->name = $name;
 				$timetable->html = $json;
@@ -47,11 +47,11 @@ class Controller_timetable extends Controller_Loggedin
 			$val = Model_Timetable::validate_edit();
 			if($val->run())
 			{
-				$name = Input::post('name');
-				$json = Input::post('json');
+				$name = $val->validated('name');
+				$json = $val->validated('json');
 				$is_active = 1;
-				$class_id = Input::post('class_id');
-				$timetable_id = Input::post('id');
+				$class_id = $val->validated('class_id');
+				$timetable_id = $val->validated('id');
 
 				$timetable = Model_Timetable::find($timetable_id);
 				$timetable->name = $name;
