@@ -161,7 +161,7 @@ class Provider
 			array('username' => 'k013c1137', 'pass' => 'pass', 'date' => '1994/9/3', 'email' => 'k013c1137@gmail.com', 'f_name' => '八郎', 'f_name_k' => 'ハチロウ', 'l_name' => '渡辺', 'l_name_k' => 'ワタナベ', 'class_id' => 1),
 			array('username' => 'k013c1138', 'pass' => 'pass', 'date' => '1994/9/3', 'email' => 'k013c1138@gmail.com', 'f_name' => '九郎', 'f_name_k' => 'クロウ', 'l_name' => '渡辺', 'l_name_k' => 'ワタナベ', 'class_id' => 1),
 			array('username' => 'k013c1139', 'pass' => 'pass', 'date' => '1994/9/3', 'email' => 'k013c1139@gmail.com', 'f_name' => '十郎', 'f_name_k' => 'ジュウロウ', 'l_name' => '渡辺', 'l_name_k' => 'ワタナベ', 'class_id' => 1),
-			array('username' => 'k013c1140', 'pass' => 'kato', 'date' => '1994/10/12', 'email' => 'k013c1140@it-neec.jp', 'f_name' => '一郎', 'f_name_k' => 'イチロウ', 'l_name' => '加藤', 'l_name_k' => 'カトウ', 'class_id' => 1),
+			array('username' => 'k013c1140', 'pass' => 'kato', 'date' => '1994/10/12', 'email' => 'k013c1140@it-neec.jp', 'f_name' => '拓磨', 'f_name_k' => 'タクマ', 'l_name' => '加藤', 'l_name_k' => 'カトウ', 'class_id' => 1),
 			array('username' => 'k013c1141', 'pass' => 'pass', 'date' => '1994/10/12', 'email' => 'k013c1141@it-neec.jp', 'f_name' => '次郎', 'f_name_k' => 'ジロウ', 'l_name' => '加藤', 'l_name_k' => 'カトウ', 'class_id' => 1),
 			array('username' => 'k013c1142', 'pass' => 'pass', 'date' => '1994/10/12', 'email' => 'k013c1142@it-neec.jp', 'f_name' => '三郎', 'f_name_k' => 'サブロウ', 'l_name' => '加藤', 'l_name_k' => 'カトウ', 'class_id' => 1),
 			array('username' => 'k013c1143', 'pass' => 'pass', 'date' => '1994/10/12', 'email' => 'k013c1143@it-neec.jp', 'f_name' => '四郎', 'f_name_k' => 'シロウ', 'l_name' => '加藤', 'l_name_k' => 'カトウ', 'class_id' => 1),
