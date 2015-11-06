@@ -51,7 +51,7 @@ class Controller_timetable extends Controller_Loggedin
 			$json = Input::post('json');
 			$is_active = 1;
 			$class_id = Input::post('class_id');
-			$timetable_id = Input::post('timetable_id');
+			$timetable_id = Input::post('id');
 
 			$timetable = Model_Timetable::find($timetable_id);
 			$timetable->name = $name;
@@ -63,7 +63,7 @@ class Controller_timetable extends Controller_Loggedin
 			Response::redirect(Uri::create('timetable/list', array(), array('class_id' => $class_id)));
 		}
 		$class_id = Input::get('class_id');
-		$timetable_id = Input::get('timetable_id');
+		$timetable_id = Input::get('id');
 		if(is_null($timetable_id) || is_null($class_id)) {
 			Response::redirect('/timetable/list');
 		}
@@ -78,7 +78,7 @@ class Controller_timetable extends Controller_Loggedin
 		$this->template->content = View::forge('timetable/timetable_edit');
 		$lists = $this->_get_list($class_id);
 		$this->template->content->set('class_id', $class_id);
-		$this->template->content->set('timetable_id', $timetable_id);
+		$this->template->content->set('id', $timetable_id);
 		$this->template->content->set('lesson_lists', $lists['lesson_lists']);
 		$this->template->content->set('timetable', $array);
 	}
@@ -104,8 +104,8 @@ class Controller_timetable extends Controller_Loggedin
 			$array['created_at'] = date('Y/m/d H:i:s', $timetable['created_at']);
 			$array['updated_at'] = (is_null($timetable['updated_at'])) ? '' : date('Y/m/d H:i:s', $timetable['updated_at']);
 			$array['status'] = ($timetable['is_active']) ? '有効' : '無効';
-			$array['edit_link'] = Uri::create('timetable/edit', array(), array('class_id' => $class_id, 'timetable_id' => $timetable['id']));
-			$array['delete_link'] = Uri::create('timetable/delete', array(), array('timetable_id' => $timetable['id']));
+			$array['edit_link'] = Uri::create('timetable/edit', array(), array('class_id' => $class_id, 'id' => $timetable['id']));
+			$array['delete_link'] = Uri::create('timetable/delete', array(), array('id' => $timetable['id']));
 			$timetable_lists[] = $array;
 		}
 
