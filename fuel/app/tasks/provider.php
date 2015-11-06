@@ -74,7 +74,7 @@ class Provider
 		);
 
 		\Auth::instance('teacherauth')->create_teacher('admin', 'pass', '1999/12/12', 'admin@admin.jp', 0,
-			'admin', 'admin', 'admin', 'admin', 10);
+			'太郎', 'タロウ', '蒲田', 'カマタ', 10);
 		foreach($student_lists as $student)
 		{
 			\Auth::instance('teacherauth')->create_teacher($student['username'], 'pass', '1999/12/12', $student['email'], $student['gender'],
@@ -161,11 +161,12 @@ class Provider
 			array('username' => 'k013c1137', 'pass' => 'pass', 'date' => '1994/9/3', 'email' => 'k013c1137@gmail.com', 'f_name' => '八郎', 'f_name_k' => 'ハチロウ', 'l_name' => '渡辺', 'l_name_k' => 'ワタナベ', 'class_id' => 1),
 			array('username' => 'k013c1138', 'pass' => 'pass', 'date' => '1994/9/3', 'email' => 'k013c1138@gmail.com', 'f_name' => '九郎', 'f_name_k' => 'クロウ', 'l_name' => '渡辺', 'l_name_k' => 'ワタナベ', 'class_id' => 1),
 			array('username' => 'k013c1139', 'pass' => 'pass', 'date' => '1994/9/3', 'email' => 'k013c1139@gmail.com', 'f_name' => '十郎', 'f_name_k' => 'ジュウロウ', 'l_name' => '渡辺', 'l_name_k' => 'ワタナベ', 'class_id' => 1),
-			array('username' => 'k013c1140', 'pass' => 'kato', 'date' => '1994/10/12', 'email' => 'k013c1140@it-neec.jp', 'f_name' => '一郎', 'f_name_k' => 'イチロウ', 'l_name' => '加藤', 'l_name_k' => 'カトウ', 'class_id' => 1),
+			array('username' => 'k013c1140', 'pass' => 'kato', 'date' => '1994/10/12', 'email' => 'k013c1140@it-neec.jp', 'f_name' => '拓磨', 'f_name_k' => 'タクマ', 'l_name' => '加藤', 'l_name_k' => 'カトウ', 'class_id' => 1),
 			array('username' => 'k013c1141', 'pass' => 'pass', 'date' => '1994/10/12', 'email' => 'k013c1141@it-neec.jp', 'f_name' => '次郎', 'f_name_k' => 'ジロウ', 'l_name' => '加藤', 'l_name_k' => 'カトウ', 'class_id' => 1),
 			array('username' => 'k013c1142', 'pass' => 'pass', 'date' => '1994/10/12', 'email' => 'k013c1142@it-neec.jp', 'f_name' => '三郎', 'f_name_k' => 'サブロウ', 'l_name' => '加藤', 'l_name_k' => 'カトウ', 'class_id' => 1),
 			array('username' => 'k013c1143', 'pass' => 'pass', 'date' => '1994/10/12', 'email' => 'k013c1143@it-neec.jp', 'f_name' => '四郎', 'f_name_k' => 'シロウ', 'l_name' => '加藤', 'l_name_k' => 'カトウ', 'class_id' => 1),
 			array('username' => 'k013c1144', 'pass' => 'pass', 'date' => '1994/10/12', 'email' => 'k013c1144@it-neec.jp', 'f_name' => '五郎', 'f_name_k' => 'ゴロウ', 'l_name' => '加藤', 'l_name_k' => 'カトウ', 'class_id' => 1),
+			array('username' => 'k013c1296', 'pass' => 'sasaki', 'date' => '1994/4/30', 'email' => 'k013c1296@it-neec.jp', 'f_name' => '祐梨', 'f_name_k' => 'ユリ', 'l_name' => '佐々木', 'l_name_k' => 'ササキ', 'class_id' => 1),
 			array('username' => 'k013c1345', 'pass' => 'kasai', 'date' => '1994/12/30', 'email' => 'k013c1345@it-neec.jp', 'f_name' => '啓太', 'f_name_k' => 'ケイタ', 'l_name' => '笠井', 'l_name_k' => 'カサイ', 'class_id' => 1),
 			array('username' => 'k013c1346', 'pass' => 'pass', 'date' => '1994/12/30', 'email' => 'k013c1346@it-neec.jp', 'f_name' => '一郎', 'f_name_k' => 'イチロウ', 'l_name' => '笠井', 'l_name_k' => 'カサイ', 'class_id' => 1),
 			array('username' => 'k013c1347', 'pass' => 'pass', 'date' => '1994/12/30', 'email' => 'k013c1347@it-neec.jp', 'f_name' => '次郎', 'f_name_k' => 'ジロウ', 'l_name' => '笠井', 'l_name_k' => 'カサイ', 'class_id' => 1),
@@ -536,6 +537,14 @@ class Provider
 			array('name' => 'Rubyプログラミング', 'term' => 1, 'sum_credit' => 21, 'class_id' => 1),
 			array('name' => 'Pythonプログラミング', 'term' => 1, 'sum_credit' => 39, 'class_id' => 1),
 			array('name' => 'JavaScriptプログラミング', 'term' => 1, 'sum_credit' => 33, 'class_id' => 1),
+			array('name' => '合同資格対策講座', 'term' => 2, 'sum_credit' => 27, 'class_id' => 1),
+			array('name' => 'マーケティング', 'term' => 2, 'sum_credit' => 18, 'class_id' => 1),
+			array('name' => 'プロジェクトマネジメント', 'term' => 2, 'sum_credit' => 18, 'class_id' => 1),
+			array('name' => 'キャリアデザイン2', 'term' => 2, 'sum_credit' => 27, 'class_id' => 1),
+			array('name' => 'ビジネススキル4', 'term' => 2, 'sum_credit' => 18, 'class_id' => 1),
+			array('name' => 'モバイルプログラミング', 'term' => 2, 'sum_credit' => 54, 'class_id' => 1),
+			array('name' => 'システム開発グループ演習1', 'term' => 2, 'sum_credit' => 54, 'class_id' => 1),
+			array('name' => '資格対策講座6', 'term' => 2, 'sum_credit' => 9, 'class_id' => 1),
 		);
 
 		$query = \DB::insert('lesson')->columns(array('name','term','sum_credit','created_at','updated_at','class_id'));
@@ -566,6 +575,18 @@ class Provider
 			array('teacher_id' => 6, 'lesson_id' => 15),
 			array('teacher_id' => 7, 'lesson_id' => 15),
 			array('teacher_id' => 8, 'lesson_id' => 16),
+
+			array('teacher_id' => 1, 'lesson_id' => 17),
+			array('teacher_id' => 2, 'lesson_id' => 17),
+			array('teacher_id' => 3, 'lesson_id' => 17),
+			array('teacher_id' => 4, 'lesson_id' => 17),
+			array('teacher_id' => 5, 'lesson_id' => 18),
+			array('teacher_id' => 6, 'lesson_id' => 19),
+			array('teacher_id' => 7, 'lesson_id' => 20),
+			array('teacher_id' => 8, 'lesson_id' => 21),
+			array('teacher_id' => 9, 'lesson_id' => 22),
+			array('teacher_id' => 10, 'lesson_id' => 23),
+			array('teacher_id' => 11, 'lesson_id' => 24),
 
 		);
 		$query = \DB::insert('attachment_lesson')->columns(array('teacher_id','lesson_id'));
@@ -598,13 +619,7 @@ class Provider
 				array('lesson_id' => 4, 'room_number' => '30615', 'notes' => 'PC持参'),
 				array('lesson_id' => 7, 'room_number' => '30718', 'notes' => 'PC持参'),
 			),
-			array(
-				array(),
-				array(),
-				array(),
-				array(),
-				array(),
-			),
+			array( array(), array(), array(), array(), array(),),
 			array(
 				array('lesson_id' => 2, 'room_number' => '30615', 'notes' => 'PC持参'),
 				array(),
@@ -633,10 +648,63 @@ class Provider
 				array(),
 				array(),
 			),
-
 		);
+		$timetable2 = array(
+			array(
+				array('lesson_id' => 17, 'room_number' => 'それぞれ', 'notes' => ''),
+				array('lesson_id' => 20, 'room_number' => '30605', 'notes' => 'PC持参'),
+				array('lesson_id' => 21, 'room_number' => '30707', 'notes' => ''),
+				array(),
+				array('lesson_id' => 23, 'room_number' => '30715', 'notes' => ''),
+			),
+			array(
+				array('lesson_id' => 17, 'room_number' => 'それぞれ', 'notes' => ''),
+				array('lesson_id' => 20, 'room_number' => '30605', 'notes' => 'PC持参'),
+				array('lesson_id' => 21, 'room_number' => '30707', 'notes' => ''),
+				array(),
+				array('lesson_id' => 23, 'room_number' => '30715', 'notes' => ''),
+			),
+			array(
+				array('lesson_id' => 17, 'room_number' => 'それぞれ', 'notes' => ''),
+				array('lesson_id' => 20, 'room_number' => '30605', 'notes' => 'PC持参'),
+				array(),
+				array(),
+				array('lesson_id' => 23, 'room_number' => '30715', 'notes' => ''),
+			),
+			array( array(), array(), array(), array(), array(),),
+			array(
+				array('lesson_id' => 18, 'room_number' => '30714', 'notes' => 'PC持参'),
+				array(),
+				array('lesson_id' => 22, 'room_number' => '30717', 'notes' => ''),
+				array('lesson_id' => 22, 'room_number' => '30714', 'notes' => ''),
+				array('lesson_id' => 23, 'room_number' => '30715', 'notes' => ''),
+			),
+			array(
+				array('lesson_id' => 18, 'room_number' => '30714', 'notes' => 'PC持参'),
+				array(),
+				array('lesson_id' => 22, 'room_number' => '30717', 'notes' => ''),
+				array('lesson_id' => 22, 'room_number' => '30714', 'notes' => ''),
+				array('lesson_id' => 23, 'room_number' => '30715', 'notes' => ''),
+			),
+			array(
+				array('lesson_id' => 19, 'room_number' => '30714', 'notes' => ''),
+				array(),
+				array('lesson_id' => 22, 'room_number' => '30717', 'notes' => ''),
+				array('lesson_id' => 22, 'room_number' => '30714', 'notes' => ''),
+				array('lesson_id' => 23, 'room_number' => '30715', 'notes' => ''),
+			),
+			array(
+				array('lesson_id' => 19, 'room_number' => '30714', 'notes' => ''),
+				array(),
+				array(),
+				array(),
+				array('lesson_id' => 24, 'room_number' => '30715', 'notes' => ''),
+			),
+		);
+
 		$query = \DB::insert('timetable')->columns(array('name','html','created_at','updated_at','is_active','class_id'));
 		$query->values(array('IS07-1前期時間割', json_encode($timetable), time(), null, 1, 1));
+		$query->values(array('IS07-1後期時間割', json_encode($timetable2), time() + 1, null, 1, 1));
 		$query->execute();
 
 	}
