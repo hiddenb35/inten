@@ -19,5 +19,6 @@ return array(
 	'required_with'   => ':label は :param:1 を1つ以上選択する必要があります。',
 	'valid_date'      => ':label は 日付として正しくありません。',
 	'unique'          => '既に登録されている:labelです。',
-	'exist_id'        => '存在しない:labelです。'
+	'exist_id'        => '存在しない:labelです。',
+	'timetable_json'  => '時間割データが正しくありません。',
 );

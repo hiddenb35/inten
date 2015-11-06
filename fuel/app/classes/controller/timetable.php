@@ -6,20 +6,25 @@ class Controller_timetable extends Controller_Loggedin
 	{
 		if(Input::method() === 'POST')
 		{
-			// todo validation
-			$name = Input::post('name');
-			$json = Input::post('json');
-			$is_active = 1;
-			$class_id = Input::post('class_id');
-			$timetable = Model_Timetable::forge();
-			$timetable->name = $name;
-			$timetable->html = $json;
-			$timetable->class_id = $class_id;
-			$timetable->is_active = $is_active;
+			$val = Model_Timetable::validate();
+			if($val->run())
+			{
+				$name = $val->validated('name');
+				$json = $val->validated('json');
+				$is_active = 1;
+				$class_id = $val->validated('class_id');
+				$timetable = Model_Timetable::forge();
+				$timetable->name = $name;
+				$timetable->html = $json;
+				$timetable->class_id = $class_id;
+				$timetable->is_active = $is_active;
 
-			$timetable->save();
-			// todo ajaxリクエストから通常のリクエストへ
-			Response::redirect(Uri::create('timetable/list', array(), array('class_id' => $class_id)));
+				$timetable->save();
+				Response::redirect(Uri::create('timetable/list', array(), array('class_id' => $class_id)));
+			}
+
+			// todo 適切なエラー処理をすること
+			throw new HttpServerErrorException();
 		}
 
 		$class_id = Input::get('class_id');
@@ -39,22 +44,31 @@ class Controller_timetable extends Controller_Loggedin
 	{
 		if(Input::method() === 'POST')
 		{
-			// todo validation & save
-//			$name = Input::post('name');
-//			$json = Input::post('json');
-//			$is_active = 1;
-//			$class_id = Input::post('class_id');
-//			$timetable = Model_Timetable::forge();
-//			$timetable->name = $name;
-//			$timetable->html = $json;
-//			$timetable->class_id = $class_id;
-//			$timetable->is_active = $is_active;
-//
-//			$timetable->save();
-//			Response::redirect('/');
+			$val = Model_Timetable::validate_edit();
+			if($val->run())
+			{
+				$name = $val->validated('name');
+				$json = $val->validated('json');
+				$is_active = 1;
+				$class_id = $val->validated('class_id');
+				$timetable_id = $val->validated('id');
+
+				$timetable = Model_Timetable::find($timetable_id);
+				$timetable->name = $name;
+				$timetable->html = $json;
+				$timetable->class_id = $class_id;
+				$timetable->is_active = $is_active;
+
+				$timetable->save();
+				Response::redirect(Uri::create('timetable/list', array(), array('class_id' => $class_id)));
+			}
+
+			// todo 適切なエラー処理をすること
+			throw new HttpServerErrorException();
 		}
-		$timetable_id = Input::get('timetable_id');
-		if(is_null($timetable_id)) {
+		$class_id = Input::get('class_id');
+		$timetable_id = Input::get('id');
+		if(is_null($timetable_id) || is_null($class_id)) {
 			Response::redirect('/timetable/list');
 		}
 
@@ -66,6 +80,10 @@ class Controller_timetable extends Controller_Loggedin
 
 		$this->template->title = '時間割編集';
 		$this->template->content = View::forge('timetable/timetable_edit');
+		$lists = $this->_get_list($class_id);
+		$this->template->content->set('class_id', $class_id);
+		$this->template->content->set('id', $timetable_id);
+		$this->template->content->set('lesson_lists', $lists['lesson_lists']);
 		$this->template->content->set('timetable', $array);
 	}
 
@@ -88,10 +106,10 @@ class Controller_timetable extends Controller_Loggedin
 			$array = array();
 			$array['name'] = $timetable['name'];
 			$array['created_at'] = date('Y/m/d H:i:s', $timetable['created_at']);
-			$array['updated_at'] = $timetable['updated_at'];
+			$array['updated_at'] = (is_null($timetable['updated_at'])) ? '' : date('Y/m/d H:i:s', $timetable['updated_at']);
 			$array['status'] = ($timetable['is_active']) ? '有効' : '無効';
-			$array['edit_link'] = Uri::create('timetable/edit', array(), array('timetable_id' => $timetable['id']));
-			$array['delete_link'] = Uri::create('timetable/delete', array(), array('timetable_id' => $timetable['id']));
+			$array['edit_link'] = Uri::create('timetable/edit', array(), array('class_id' => $class_id, 'id' => $timetable['id']));
+			$array['delete_link'] = Uri::create('timetable/delete', array(), array('id' => $timetable['id']));
 			$timetable_lists[] = $array;
 		}
 

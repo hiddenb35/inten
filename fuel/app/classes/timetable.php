@@ -50,18 +50,19 @@ class Timetable
 						$teachers[] = $attach->teacher->last_name . ' ' . $attach->teacher->first_name;
 					}
 				}
+				$lesson_id = (isset($cell['lesson_id'])) ? $cell['lesson_id'] : '';
 				$teacher = (isset($cell['lesson_id'])) ? implode(',', $teachers) : '';
 				$room_number = (isset($cell['room_number'])) ? $cell['room_number'] : '';
 				$notes = (isset($cell['notes'])) ? $cell['notes'] : '';
 
 				$body .= sprintf('
-				<td class="text-center">
+				<td class="text-center" data-lesson-id="%s">
 					<p class="subject">%s</p>
 					<p class="teacher">%s</p>
 					<p class="classroom">%s</p>
 					<p class="note">%s</p><span class="badge bg-green">備考あり</span>
 				</td>
-				', $subject, $teacher, $room_number, $notes);
+				', $lesson_id, $subject, $teacher, $room_number, $notes);
 			}
 			$body .= '</tr>';
 		}

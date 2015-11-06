@@ -58,9 +58,16 @@ class Model_Timetable extends \Orm\Model
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
 		$val->add_field('name','時間割','trim|required|max_length[64]');
-		$val->add_field('html','html','required');
+		$val->add_field('json','html','required|timetable_json');
 		$val->add_field('class_id','クラスID','required|max_length[10]')->add_rule('exist_id', 'class');
-		$val->add_field('is_active','アクティブ情報','required|max_length[11]');
+		$val->add_field('is_active','アクティブ情報','max_length[11]');
+		return $val;
+	}
+
+	public static function validate_edit()
+	{
+		$val = self::validate();
+		$val->add_field('id', '時間割ID', 'trim|required')->add_rule('exists_id', 'timetable');
 		return $val;
 	}
 }
