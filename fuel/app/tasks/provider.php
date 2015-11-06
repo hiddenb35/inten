@@ -74,7 +74,7 @@ class Provider
 		);
 
 		\Auth::instance('teacherauth')->create_teacher('admin', 'pass', '1999/12/12', 'admin@admin.jp', 0,
-			'admin', 'admin', 'admin', 'admin', 10);
+			'太郎', 'タロウ', '蒲田', 'カマタ', 10);
 		foreach($student_lists as $student)
 		{
 			\Auth::instance('teacherauth')->create_teacher($student['username'], 'pass', '1999/12/12', $student['email'], $student['gender'],
