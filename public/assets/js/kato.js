@@ -96,8 +96,6 @@ $(function(){
 		}
 		data = JSON.stringify(data);
 
-		console.log(data);
-
 		$("#finalname").val($("#title").text());
 		$("#finaljson").val(data);
 		$("#finalid").val($('input[name="class_id"]').val());
