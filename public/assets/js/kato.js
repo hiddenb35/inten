@@ -83,7 +83,7 @@ $(function(){
 			var cells = tr.eq(i).children();
 			data[i - 1] = [];
 			for (var j = 1; j < 6; j++) {
-				if (cells.eq(j).data('lesson-id') == 0) {
+				if (cells.eq(j).data('lesson-id') === 0) {
 					data[i - 1][j - 1] = {};
 				} else {
 					data[i - 1][j - 1] = {
@@ -116,34 +116,30 @@ $(function(){
 	});
 	//ここから時間割表示画面のレスポンシブ処理
 	var todayWeek = new Date().getDay();
-	$(window).on('load resize', function(){
-		if($(document).width() <= 760){
-			$("#TIMETABLE_VIEW table tr td,#TIMETABLE_VIEW table tr th").hide();
-			if(todayWeek==0||todayWeek==6){todayWeek=1;}
-			for(i=0; i<$("#TIMETABLE_VIEW table tr th").length; i++){
-				if(i==0||i==todayWeek||i>=6){
-					$("#TIMETABLE_VIEW table tr th").eq(i).show();
-				}
-			}
-			for(i=todayWeek; i <= $("#TIMETABLE_VIEW table tr td").length; i+=5){
-				$("#TIMETABLE_VIEW table tr td").eq(i-1).show();
-			}
-		}else{
-			$("#TIMETABLE_VIEW table tr td,#TIMETABLE_VIEW table tr th").show();
+	$("#TIMETABLE_VIEW table tr td,#TIMETABLE_VIEW table tr th").addClass('hidden-xs');
+	if(todayWeek===0||todayWeek===6){todayWeek=1;}
+	for(i=0; i<$("#TIMETABLE_VIEW table tr th").length; i++){
+		if(i===0||i===todayWeek||i>=6){
+			$("#TIMETABLE_VIEW table tr th").eq(i).removeClass('hidden-xs');
 		}
-	});
+	}
+	for(i=todayWeek; i <= $("#TIMETABLE_VIEW table tr td").length; i+=5){
+		$("#TIMETABLE_VIEW table tr td").eq(i-1).removeClass('hidden-xs');
+	}
+
 	$("#week-select button").click(function(event) {
 		var weekSelect = $("#week-select button").index(this);
-		$("#TIMETABLE_VIEW table tr td,#TIMETABLE_VIEW table tr th").hide();
+		$("#TIMETABLE_VIEW table tr td,#TIMETABLE_VIEW table tr th").addClass('hidden-xs');
 		for(i=0; i<$("#TIMETABLE_VIEW table tr th").length; i++){
-			if(i==0||i==weekSelect+1||i>=6){
-				$("#TIMETABLE_VIEW table tr th").eq(i).show();
+			if(i===0||i===weekSelect+1||i>=6){
+				$("#TIMETABLE_VIEW table tr th").eq(i).removeClass('hidden-xs');
 			}
 		}
 		for(i=weekSelect+1; i <= $("#TIMETABLE_VIEW table tr td").length; i+=5){
-			$("#TIMETABLE_VIEW table tr td").eq(i-1).show();
+			$("#TIMETABLE_VIEW table tr td").eq(i-1).removeClass('hidden-xs');
 		}
 	});
+
 	//備考ラベルhover時の処理
 	$("#TIMETABLE_VIEW table td span").hover(
 		function (e) {
