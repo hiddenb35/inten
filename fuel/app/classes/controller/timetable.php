@@ -95,7 +95,7 @@ class Controller_timetable extends Controller_Loggedin
 			$array = array();
 			$array['name'] = $timetable['name'];
 			$array['created_at'] = date('Y/m/d H:i:s', $timetable['created_at']);
-			$array['updated_at'] = $timetable['updated_at'];
+			$array['updated_at'] = (is_null($timetable['updated_at'])) ? '' : date('Y/m/d H:i:s', $timetable['updated_at']);
 			$array['status'] = ($timetable['is_active']) ? '有効' : '無効';
 			$array['edit_link'] = Uri::create('timetable/edit', array(), array('class_id' => $class_id, 'timetable_id' => $timetable['id']));
 			$array['delete_link'] = Uri::create('timetable/delete', array(), array('timetable_id' => $timetable['id']));
