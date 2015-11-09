@@ -36,6 +36,7 @@
 										</div>
 									</form>
 								</div>
+								<div class="text-right" id="change_login"><a href="/auth/slogin">学生の方はこちら</a></div>
 							</div>
 						</div>
 						<!--            コンテンツ            -->
