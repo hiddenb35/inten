@@ -189,6 +189,17 @@ table th,td{
 #TIMETABLE_EDIT thead th {
 	width: 16%;
 }
+#TIMETABLE_EDIT p.subject {
+	font-size: 14px;
+	font-weight: 900;
+}
+#TIMETABLE_EDIT p.teacher {
+	font-size: 13px;
+}
+#TIMETABLE_EDIT p.classroom {
+	font-size: 16px;
+}
+
 
 #TIMETABLE_EDIT #selection.inactive {
 	background-color: #808080;
@@ -196,6 +207,12 @@ table th,td{
 }
 #TIMETABLE_EDIT table td span {
 	display: none;
+}
+#TIMETABLE_EDIT table td {
+	height: 127px;
+}
+#TIMETABLE_EDIT table tbody th{
+	vertical-align: middle;
 }
 
 #TIMETABLE_EDIT input[readonly] {
