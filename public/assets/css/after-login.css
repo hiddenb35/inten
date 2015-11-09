@@ -132,13 +132,28 @@ table th,td{
 #TIMETABLE_ADD thead th {
 	width: 16%;
 }
-
+#TIMETABLE_ADD p.subject {
+	font-size: 14px;
+	font-weight: 900;
+}
+#TIMETABLE_ADD p.teacher {
+	font-size: 13px;
+}
+#TIMETABLE_ADD p.classroom {
+	font-size: 16px;
+}
 #TIMETABLE_ADD #selection.inactive {
 	background-color: #808080;
 	border-color: #808080;
 }
 #TIMETABLE_ADD table td span {
 	display: none;
+}
+#TIMETABLE_ADD table td {
+	height: 127px;
+}
+#TIMETABLE_ADD table tbody th{
+	vertical-align: middle;
 }
 
 #TIMETABLE_ADD input[readonly] {
