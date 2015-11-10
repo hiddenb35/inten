@@ -1,12 +1,3 @@
-.note,#titleEdit{
-	display: none;
-}
-#note{
-	width:100%;
-}
-#note{
-	resize: none;
-}
 html, body{
 	background: #222d32;
 	width: 100%;
@@ -89,6 +80,13 @@ table th,td{
 }
 #timetable-table .now {
 	background: #bbd4ee !important;
+}
+.note,input[name="titleedit"]{
+	display: none;
+}
+textarea[name="note"]{
+	width:100%;
+	resize: none;
 }
 /*担任割り当てページ*/
 #HRTEACHER .form-button {
