@@ -12,8 +12,8 @@
 		<input type="hidden" name="class_id" value="<?php echo $class_id; ?>">
 		<div class="box box-info">
 			<div class="box-header with-border">
-				<h3 class="box-title" id="title">時間割のタイトルを入力してください。</h3>
-				<input type="text" class="form-control" id="titleEdit" name="name">
+				<h3 class="box-title">時間割のタイトルを入力してください。</h3>
+				<input type="text" class="form-control" name="titleedit">
 				<button type="button" id="selection" class="btn btn-sm btn-primary pull-right inactive">選択した項目を編集</button>
 			</div>
 			<div class="box-body">
@@ -114,8 +114,8 @@
 							<div class="form-group">
 								<label class="col-sm-2 control-label">授業名</label>
 								<div class="col-sm-10">
-									<select name="subjectset" class="form-control" id="subject">
-										<option value="0">----教科を選択してください----</option>
+									<select name="subjectset" class="form-control">
+										<option value="">----教科を選択してください----</option>
 										<?php foreach($lesson_lists as $lesson): ?>
 											<option value="<?php echo $lesson['id']; ?>" data-teacher="<?php echo $lesson['teacher_name']; ?>"><?php echo $lesson['name']; ?></option>
 										<?php endforeach; ?>
@@ -125,19 +125,19 @@
 							<div class="form-group">
 								<label for="input-mail" class="col-sm-2 control-label">教員名</label>
 								<div class="col-sm-10">
-									<input name="teachername" type="text" class="form-control" id="teacher" placeholder="教員名は授業名から自動的に取得されます" readonly>
+									<input name="teachername" type="text" class="form-control" placeholder="教員名は授業名から自動的に取得されます" readonly>
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="input-mail" class="col-sm-2 control-label">教室番号</label>
 								<div class="col-sm-10">
-									<input name="classroom" type="text" class="form-control" id="classroom" placeholder="例) 30715">
+									<input name="classroom" type="text" class="form-control" placeholder="例) 30715">
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-2 control-label">備考</label>
 								<div class="col-sm-10">
-									<textarea id="note" name="textarea" class="form-control" placeholder="例) PC持参" rows="3"></textarea>
+									<textarea name="textarea" class="form-control" placeholder="例) PC持参" rows="3"></textarea>
 								</div>
 							</div>
 						</div>
@@ -150,9 +150,9 @@
 			</div>
 		</div>
 		<form action="/timetable/add" method="post">
-			<input type="hidden" name="name" id="finalname">
-			<input type="hidden" name="json" id="finaljson">
-			<input type="hidden" name="class_id" id="finalid">
+			<input type="hidden" name="name">
+			<input type="hidden" name="json">
+			<input type="hidden" name="class_id">
 			<div class="form-group text-right">
 				<button type="submit" class="btn btn-primary" id="transmission">作成</button>
 				<button type="reset" class="btn btn-warning">キャンセル</button>
