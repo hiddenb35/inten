@@ -147,7 +147,7 @@ $(function(){
 	});
 
 	//備考ラベルhover時の処理
-	var noteView = $("#noteView");
+	var noteView = $("#note_view");
 	$("#TIMETABLE_VIEW span").hover(
 		function (e){
 			noteView.text($(this).siblings('.note').text());
