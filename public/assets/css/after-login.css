@@ -234,9 +234,9 @@ textarea[name="note"]{
 #TIMETABLE_VIEW td {
 	cursor: pointer;
 }
-#TIMETABLE_VIEW td:hover {
-	background-color: #FFFCCC;
-}
+/*#TIMETABLE_VIEW td:hover {*/
+	/*background-color: #FFFCCC;*/
+/*}*/
 #TIMETABLE_VIEW .active {
 	background-color: #FFFCCC;
 }
@@ -272,6 +272,16 @@ textarea[name="note"]{
 }
 #TIMETABLE_VIEW table tbody th{
 	vertical-align: middle;
+}
+
+#TIMETABLE_VIEW .today {
+	background-color: #FFFCDB;
+}
+#TIMETABLE_VIEW th.today {
+	background: rgba(255,252,219,0.5);
+}
+#TIMETABLE_VIEW .now {
+	background-color: #FFFAB5;
 }
 
 /*************************************/

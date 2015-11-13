@@ -27,7 +27,6 @@ class Timetable
 			8 => array('start' => '16:00', 'end' => '16:50'),
 		);
 
-		return 8;
 		$now = date('H:i');
 
 		foreach($dates as $key => $span)
