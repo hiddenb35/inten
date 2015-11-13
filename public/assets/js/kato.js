@@ -120,19 +120,19 @@ $(function(){
 	});
 
 	//ここから時間割表示画面のレスポンシブ処理
-	var todayWeek = new Date().getDay();
 	var viewTh = $("#TIMETABLE_VIEW th");
 	var viewTd = $("#TIMETABLE_VIEW td");
 	//その日の時間割を表示
 	$("#TIMETABLE_VIEW td,#TIMETABLE_VIEW th").addClass('hidden-xs');
-	if(todayWeek===0||todayWeek===6){todayWeek=1;}
 	for(i=0; i<viewTh.length; i++){
-		if(i===0||i===todayWeek||i>=6)
+		if(i===0||viewTh.eq(i).hasClass('today')||i>=6)
 			viewTh.eq(i).removeClass('hidden-xs');
 	}
-	for(i=todayWeek; i <= viewTd.length; i+=5){
-		viewTd.eq(i-1).removeClass('hidden-xs');
+	for(i=0; i<viewTd.length; i++){
+		if(viewTd.eq(i-1).hasClass('today'))
+			viewTd.eq(i-1).removeClass('hidden-xs');
 	}
+
 	//押した曜日の時間割を表示
 	$("#week-select button").click(function(event) {
 		var weekSelect = $("#week-select button").index(this);
