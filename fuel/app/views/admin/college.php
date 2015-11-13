@@ -48,7 +48,7 @@
 <!--					<button type="submit" class="btn btn-primary">登録</button>-->
 <!--					<button type="reset" class="btn btn-warning">キャンセル</button>-->
 <!--				</form>-->
-				<form action="/admin/college/add" method="post" role="form" class="form-horizontal">
+				<form action="/admin/college/add#college_form" method="post" role="form" class="form-horizontal" id="college_form">
 					<div class="row">
 						<div class="form-group" id="form_college_add">
 							<label for="name" class="control-label col-sm-2">カレッジ名</label>
