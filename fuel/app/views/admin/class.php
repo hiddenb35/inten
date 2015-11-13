@@ -44,7 +44,8 @@
 						<div class="form-group" id="form_class_add">
 							<label for="name" class="col-sm-1 control-label">クラス名</label>
 							<div class="col-sm-2">
-								<input type="text" class="form-control" id="name" name="name">
+								<input type="text" class="form-control" id="name" name="name" value="<?php if(isset($inputs['name'])) { echo $inputs['name']; }; ?>">
+								<div class="text-danger"><?php if(isset($errors['name'])) { echo $errors['name']; }; ?></div>
 							</div>
 							<label for="course_id" class="col-sm-1 control-label">学科</label>
 							<div class="col-sm-2">
@@ -53,6 +54,7 @@
 										<option value="<?php echo $course_list['id']?>"><?php echo $course_list['name']?></option>
 									<?php endforeach; ?>
 								</select>
+								<div class="text-danger"><?php if(isset($errors['course_id'])) { echo $errors['course_id']; }; ?></div>
 							</div>
 							<label for="teacher_id" class="col-sm-1 control-label">担任</label>
 							<div class="col-sm-2">
@@ -61,6 +63,7 @@
 										<option value="<?php echo $teacher_list['id']; ?>"><?php echo $teacher_list['full_name']?></option>
 									<?php endforeach; ?>
 								</select>
+								<div class="text-danger"><?php if(isset($errors['teacher_id'])) { echo $errors['teacher_id']; }; ?></div>
 							</div>
 							<div class="form-button col-sm-3">
 								<button type="submit" class="btn btn-primary">登録</button>
