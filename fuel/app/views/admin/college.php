@@ -53,7 +53,7 @@
 						<div class="form-group" id="form_college_add">
 							<label for="name" class="control-label col-sm-2">カレッジ名</label>
 							<div class="col-sm-5">
-								<input type="text" class="form-control" id="name" name="name" value="<?php if(isset($errors)){ echo $inputs['name']; }; ?>">
+								<input type="text" class="form-control" id="name" name="name" value="<?php if(isset($inputs)){ echo $inputs['name']; }; ?>">
 								<div class="text-danger"><?php if(isset($errors)){ echo $errors['name']; }; ?></div>
 							</div>
 							<div class="form-button col-sm-5">
