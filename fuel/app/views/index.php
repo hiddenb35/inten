@@ -32,6 +32,6 @@
 			</div>
 		<?php endif; ?>
 	</section>
-	<div id="noteView"></div>
+	<div id="note_view"></div>
 </div>
 
