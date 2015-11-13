@@ -45,7 +45,7 @@
 							<label for="name" class="col-sm-1 control-label">学科名</label>
 							<div class="col-sm-2">
 								<input type="text" class="form-control" id="name" name="name" value="<?php if(isset($inputs['name'])) { echo $inputs['name']; }; ?>">
-								<div class="text-danger"><?php if(isset($errors['name'])) { echo $errors['name']; }; ?></div>
+<!--								<div class="text-danger">--><?php //if(isset($errors['name'])) { echo $errors['name']; }; ?><!--</div>-->
 							</div>
 							<label for="college_id" class="col-sm-1 control-label">カレッジ</label>
 							<div class="col-sm-2">
@@ -59,7 +59,7 @@
 							<label for="code" class="col-sm-1 control-label">学科コード</label>
 							<div class="col-sm-1">
 								<input type="text" id="code" name="code" class="form-control" value="<?php if(isset($inputs['code'])) { echo $inputs['code']; }; ?>">
-								<div class="text-danger"><?php if(isset($errors['code'])) { echo $errors['code']; }; ?></div>
+<!--								<div class="text-danger">--><?php //if(isset($errors['code'])) { echo $errors['code']; }; ?><!--</div>-->
 							</div>
 							<label for="year_system" class="col-sm-1 control-label">年制</label>
 							<div class="col-sm-1">
@@ -75,6 +75,12 @@
 								<button type="reset" class="btn btn-warning">キャンセル</button>
 							</div>
 						</div>
+						<div class="row">
+							<div class="text-danger col-sm-3 col-sm-offset-1"><?php if(isset($errors['name'])) { echo $errors['name']; }; ?></div>
+							<div class="text-danger col-sm-3"><?php if(isset($errors['college_id'])) { echo $errors['college_id']; }; ?></div>
+							<div class="text-danger col-sm-4 "><?php if(isset($errors['code'])) { echo $errors['code']; }; ?></div>
+						</div>
+
 					</div>
 				</form>
 			</div><!-- /.box-body -->
