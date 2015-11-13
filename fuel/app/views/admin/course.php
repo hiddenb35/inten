@@ -43,18 +43,31 @@
 					<div class="row">
 						<div class="form-group" id="form_course_add">
 							<label for="name" class="col-sm-1 control-label">学科名</label>
-							<div class="col-sm-3">
+							<div class="col-sm-2">
 								<input type="text" class="form-control" id="name" name="name">
 							</div>
 							<label for="college_id" class="col-sm-1 control-label">カレッジ</label>
-							<div class="col-sm-3">
+							<div class="col-sm-2">
 								<select id="college_id" name="college_id" class="form-control">
 									<?php foreach($college_lists as $college_list): ?>
 										<option value="<?php echo $college_list['id'] ?>"><?php echo $college_list['name']?></option>
 									<?php endforeach; ?>
 								</select>
 							</div>
-							<div class="form-button col-sm-4">
+							<label for="code" class="col-sm-1 control-label">学科コード</label>
+							<div class="col-sm-1">
+								<input type="text" id="code" name="code" class="form-control">
+							</div>
+							<label for="year_system" class="col-sm-1 control-label">年制</label>
+							<div class="col-sm-1">
+								<select id="year_system" name="year_system" class="form-control">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+								</select>
+							</div>
+							<div class="form-button col-sm-2">
 								<button type="submit" class="btn btn-primary">登録</button>
 								<button type="reset" class="btn btn-warning">キャンセル</button>
 							</div>
