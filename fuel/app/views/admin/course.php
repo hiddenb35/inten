@@ -44,7 +44,8 @@
 						<div class="form-group" id="form_course_add">
 							<label for="name" class="col-sm-1 control-label">学科名</label>
 							<div class="col-sm-2">
-								<input type="text" class="form-control" id="name" name="name">
+								<input type="text" class="form-control" id="name" name="name" value="<?php if(isset($inputs['name'])) { echo $inputs['name']; }; ?>">
+								<div class="text-danger"><?php if(isset($errors['name'])) { echo $errors['name']; }; ?></div>
 							</div>
 							<label for="college_id" class="col-sm-1 control-label">カレッジ</label>
 							<div class="col-sm-2">
@@ -53,10 +54,12 @@
 										<option value="<?php echo $college_list['id'] ?>"><?php echo $college_list['name']?></option>
 									<?php endforeach; ?>
 								</select>
+								<div><?php if(isset($error['college_id'])) { echo $error['college_id']; }; ?></div>
 							</div>
 							<label for="code" class="col-sm-1 control-label">学科コード</label>
 							<div class="col-sm-1">
-								<input type="text" id="code" name="code" class="form-control">
+								<input type="text" id="code" name="code" class="form-control" value="<?php if(isset($inputs['code'])) { echo $inputs['code']; }; ?>">
+								<div class="text-danger"><?php if(isset($errors['code'])) { echo $errors['code']; }; ?></div>
 							</div>
 							<label for="year_system" class="col-sm-1 control-label">年制</label>
 							<div class="col-sm-1">

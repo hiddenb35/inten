@@ -42,7 +42,8 @@
 						<div class="form-group" id="form_major_add">
 							<label for="name" class="col-sm-1 control-label">専攻名</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="name" name="name">
+								<input type="text" class="form-control" id="name" name="name" value="<?php if(isset($inputs['name'])) { echo $inputs['name']; }; ?>">
+								<div class="text-danger"><?php if(isset($errors['name'])) { echo $errors['name']; }; ?></div>
 							</div>
 							<label for="course_id" class="col-sm-1 control-label">学科</label>
 							<div class="col-sm-3">
@@ -51,6 +52,7 @@
 										<option value="<?php echo $course_list['id']; ?>"><?php echo $course_list['name']; ?></option>
 									<?php endforeach; ?>
 								</select>
+								<div class="text-danger"><?php if(isset($errors['course_id'])) { echo $errors['course_id']; }; ?></div>
 							</div>
 							<div class="form-button col-sm-4">
 								<button type="submit" class="btn btn-primary">登録</button>
