@@ -68,23 +68,29 @@ $(function(){
 		$("input[name='teachername']").val($("select[name='subjectset'] option:selected").data('teacher'));
 		$("input[name='classroom']").val($(thisStorage).children('.classroom').text());
 		$("textarea[name='textarea']").val($(thisStorage).children('.note').text());
-
-		//変更を適応
-		$("#set").click(function () {
-			var setElement = $(".setElement");
-			if($("select[name='subjectset'] option:selected").val() !== "")
-				setElement.children('.subject').text($("select[name='subjectset'] option:selected").text());
+	});
+	//変更を適応
+	$("#set").click(function () {
+		var setElement = $(".setElement");
+		if($("select[name='subjectset'] option:selected").val() !== ""){
+			setElement.children('.subject').text($("select[name='subjectset'] option:selected").text());
 			setElement.data('lesson-id', $("select[name='subjectset'] option:selected").val());
 			setElement.children('.teacher').text($("select[name='subjectset'] option:selected").data('teacher'));
-			setElement.children('.classroom').text($("input[name='classroom']").val());
-			setElement.children('.note').text($("textarea[name='textarea']").val());
-			if($(".setElement .note").text() !== ""){
-				$(".setElement span").show();
-			}else{
-				$(".setElement span").hide();
-			}
-			setElement.removeClass("setElement");
-		});
+		}else{
+			//resetボタンの為の処理
+			setElement.children('.subject').text("");
+			console.log(setElement);
+			setElement.data('lesson-id', '');
+			setElement.children('.teacher').text("");
+		}
+		setElement.children('.classroom').text($("input[name='classroom']").val());
+		setElement.children('.note').text($("textarea[name='textarea']").val());
+		if($(".setElement .note").text() !== ""){
+			$(".setElement span").show();
+		}else{
+			$(".setElement span").hide();
+		}
+		setElement.removeClass("setElement");
 	});
 
 	//送信データ加工処理
@@ -153,6 +159,14 @@ $(function(){
 			noteView.hide();
 		}
 	);
+
+	//popup内のリセットボタン処理
+	$("#reset").click(function(){
+		$("select[name='subjectset']").val("");
+		$("input[name='teachername']").val("");
+		$("input[name='classroom']").val("");
+		$("textarea[name='textarea']").val("");
+	});
 
 	//*********************出席管理画面*********************
 });
