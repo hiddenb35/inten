@@ -325,13 +325,37 @@ textarea[name="note"]{
 }
 /*TODO ここまで*/
 #noteView{
+	color: #fff;
 	display: none;
 	position: absolute;
-	border: solid 2px ;
-	background-color: #fff;
+	border: solid 1px ;
+	background-color: #5c4d4a;
 	padding: 5px 10px;
 
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
+}
+#noteView:after, #noteView:before {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+#noteView:after {
+	border-color: rgba(92, 77, 74, 0);
+	border-bottom-color: #5c4d4a;
+	border-width: 5px;
+	margin-left: -5px;
+}
+#noteView:before {
+	border-color: rgba(92, 77, 74, 0);
+	border-bottom-color: #5c4d4a;
+	border-width: 11px;
+	margin-left: -11px;
 }
