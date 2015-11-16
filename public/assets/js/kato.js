@@ -142,7 +142,7 @@ $(function(){
 
 	//備考ラベルhover時の処理
 	var noteView = $("#note_view");
-	$("#TIMETABLE_VIEW span").hover(
+	$("#TIMETABLE_VIEW td span").hover(
 		function (e){
 			noteView.text($(this).siblings('.note').text());
 			noteView.css("left", $(this).offset().left + 10);
