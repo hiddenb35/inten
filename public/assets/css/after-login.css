@@ -359,3 +359,16 @@ textarea[name="note"]{
 	border-width: 11px;
 	margin-left: -11px;
 }
+/***********出席率一覧画面***********/
+#ATTENDANCE_RATE_LIST thead tr {
+	background-color: #CB422C;
+	color: #fff;
+}
+#ATTENDANCE_RATE_LIST .badge {
+	width:43.2969px;
+}
+@media screen and (max-width: 480px) {
+	#ATTENDANCE_RATE_LIST tbody td:nth-child(4) {
+		text-align: center;
+	}
+}
