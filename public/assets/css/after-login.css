@@ -361,22 +361,22 @@ textarea[name="note"]{
 }
 /*************出席取るクラス一覧画面******************/
 
-#LESSON_LIST .box {
+#RESPONSIBLE_LIST .box {
 	position: relative;
 	border: 3px solid #D73925;
 }
-#LESSON_LIST .box-body {
+#RESPONSIBLE_LIST .box-body {
 	margin: 8px;
 	padding: 10px;
 	border: 1px solid;
 	border-color: #D73925;
 }
-#LESSON_LIST .class_name {
+#RESPONSIBLE_LIST .class_name {
 	padding-top: 18px;
 	text-align: right;
 	color: #000;
 }
-#LESSON_LIST .lesson_name {
+#RESPONSIBLE_LIST .lesson_name {
 	position: absolute;
 	background-color: #D73925;
 	left: 0;

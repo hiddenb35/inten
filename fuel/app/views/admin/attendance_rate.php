@@ -1,4 +1,4 @@
-<div id="LESSON_LIST">
+<div id="RESPONSIBLE_LIST">
 	<section class="content-header">
 		<h1>
 			クラス一覧
