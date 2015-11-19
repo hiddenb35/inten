@@ -359,3 +359,27 @@ textarea[name="note"]{
 	border-width: 11px;
 	margin-left: -11px;
 }
+/*************出席取るクラス一覧画面******************/
+
+#LESSON_LIST .box {
+	position: relative;
+	border: 3px solid #D73925;
+}
+#LESSON_LIST .box-body {
+	margin: 8px;
+	padding: 10px;
+	border: 1px solid;
+	border-color: #D73925;
+}
+#LESSON_LIST .class_name {
+	padding-top: 18px;
+	text-align: right;
+	color: #000;
+}
+#LESSON_LIST .lesson_name {
+	position: absolute;
+	background-color: #D73925;
+	left: 0;
+	padding: 5px;
+	color: #fff;
+}
