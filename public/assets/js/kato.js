@@ -123,15 +123,9 @@ $(function(){
 	var viewTh = $("#TIMETABLE_VIEW th");
 	var viewTd = $("#TIMETABLE_VIEW td");
 	//その日の時間割を表示
-	$("#TIMETABLE_VIEW td,#TIMETABLE_VIEW th").addClass('hidden-xs');
-	for(i=0; i<viewTh.length; i++){
-		if(i===0||viewTh.eq(i).hasClass('today')||i>=6)
-			viewTh.eq(i).removeClass('hidden-xs');
-	}
-	for(i=0; i<viewTd.length; i++){
-		if(viewTd.eq(i-1).hasClass('today'))
-			viewTd.eq(i-1).removeClass('hidden-xs');
-	}
+	$('td:not(.today), th:not(.today)','#TIMETABLE_VIEW').addClass('hidden-xs');
+	$('#TIMETABLE_VIEW tbody th').removeClass('hidden-xs');
+	$('#TIMETABLE_VIEW thead th:eq(0)').removeClass('hidden-xs');
 
 	//押した曜日の時間割を表示
 	$("#week-select button").click(function(event) {
@@ -147,8 +141,8 @@ $(function(){
 	});
 
 	//備考ラベルhover時の処理
-	var noteView = $("#noteView");
-	$("#TIMETABLE_VIEW span").hover(
+	var noteView = $("#note_view");
+	$("#TIMETABLE_VIEW td span").hover(
 		function (e){
 			noteView.text($(this).siblings('.note').text());
 			noteView.css("left", $(this).offset().left + 10);
