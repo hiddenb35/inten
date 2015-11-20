@@ -1,7 +1,7 @@
 <div id="ATTENDANCE_RATE_LIST">
 	<section class="content-header">
 		<h1>
-			担当する授業の出席率一覧画面
+			<?php echo $class_info['name']; ?>　<?php echo $lesson_info['name']; ?>
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
