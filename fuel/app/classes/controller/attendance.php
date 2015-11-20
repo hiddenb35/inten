@@ -89,6 +89,8 @@ class Controller_Attendance extends Controller_Loggedin
 		$this->template->content = View::forge('attendance/attendance_rate_list');
 		$lists = $this->_get_list($lesson_id);
 		$this->template->content->set('student_lists', $lists['student']);
+		$this->template->content->set('class_name', $lists['class']['name']);
+		$this->template->content->set('lesson_name', $lists['lesson']['name']);
 	}
 
 	public function action_attendance_list() {
