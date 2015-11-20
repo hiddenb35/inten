@@ -77,8 +77,17 @@ class Controller_Attendance extends Controller_Loggedin
 	}
 
 	public function action_attendance_rate_list() {
+		$lesson_id = Input::get('lesson_id');
+
+		if(is_null($lesson_id))
+		{
+			throw new HttpNotFoundException();
+		}
+
 		$this->template->title = '出席率一覧画面';
 		$this->template->content = View::forge('attendance/attendance_rate_list');
+		$lists = $this->_get_list($lesson_id);
+		$this->template->content->set('student_lists', $lists['student']);
 	}
 
 	public function action_attendance_list() {
@@ -116,6 +125,9 @@ class Controller_Attendance extends Controller_Loggedin
 			$array['id'] = $student['id'];
 			$array['number'] = $student['username'];
 			$array['full_name'] = $student['last_name'] . ' ' . $student['first_name'];
+			$array['full_name_kana'] = $student['last_name_kana'] . ' ' . $student['first_name_kana'];
+			// todo 実際の出席率を取得し設定すること
+			$array['rate'] = rand(1, 100) . '%';
 			$lists['student'][] = $array;
 		}
 
