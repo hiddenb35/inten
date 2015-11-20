@@ -48,7 +48,6 @@
 		</script>
 	</head>
 	<body class="sidebar-mini <?php echo $user_info['body_skin']; ?>">
-		<div id="ERR_NOSCRIPT">JavaScriptを有効にしてください。</div>
 		<div class="wrapper">
 
 			<header class="main-header">
@@ -67,6 +66,8 @@
 			<footer class="main-footer">
 				<?php echo $footer; ?>
 			</footer>
+
+			<div id="ERR_NOSCRIPT">JavaScriptを有効にしてください。</div>
 
 			<!-- jQuery UI 1.11.4 -->
 			<?php echo Asset::js('jquery-ui.min.js'); ?>
