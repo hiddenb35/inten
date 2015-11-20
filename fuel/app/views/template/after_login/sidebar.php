@@ -71,6 +71,11 @@
 			</a>
 		</li>
 		<li>
+			<a href="/attendance/attendance_list">
+				<i class="fa ion-university"></i> <span>出席状況を見る</span>
+			</a>
+		</li>
+		<li>
 			<a href="/setting/pass_update">
 				<i class="fa ion-settings"></i> <span>パスワード変更</span>
 			</a>
