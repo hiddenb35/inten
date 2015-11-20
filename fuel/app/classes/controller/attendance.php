@@ -2,6 +2,7 @@
 
 class Controller_Attendance extends Controller_Loggedin
 {
+	const RATE_DANGER_SEPARATOR = 75;
 	public function action_lesson_list()
 	{
 
@@ -127,7 +128,10 @@ class Controller_Attendance extends Controller_Loggedin
 			$array['full_name'] = $student['last_name'] . ' ' . $student['first_name'];
 			$array['full_name_kana'] = $student['last_name_kana'] . ' ' . $student['first_name_kana'];
 			// todo 実際の出席率を取得し設定すること
-			$array['rate'] = rand(1, 100) . '%';
+			$rate = rand(1, 100);
+			$array['rate'] = $rate . '%';
+			$array['rate_bar_class'] = ($rate < self::RATE_DANGER_SEPARATOR) ? 'progress-bar-danger' : 'progress-bar-primary';
+			$array['rate_bg_class'] = ($rate < self::RATE_DANGER_SEPARATOR) ? 'bg-red' : 'bg-aqua';
 			$lists['student'][] = $array;
 		}
 
