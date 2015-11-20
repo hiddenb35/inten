@@ -40,20 +40,22 @@ class Controller_Loggedin extends Controller_Hybrid
 			if ($this->is_admin())
 			{
 				$this->template->header = View::forge('template/after_login/header_admin');
+				$this->template->sidebar = View::forge('template/after_login/sidebar_admin');
 				$user_info['body_skin'] = 'skin-yellow';
 
 			}
 			elseif ($this->is_teacher())
 			{
 				$this->template->header = View::forge('template/after_login/header_teacher');
+				$this->template->sidebar = View::forge('template/after_login/sidebar_teacher');
 				$user_info['body_skin'] = 'skin-red';
 			}
 			elseif ($this->is_student())
 			{
 				$this->template->header = View::forge('template/after_login/header_student');
+				$this->template->sidebar = View::forge('template/after_login/sidebar_student');
 			}
 
-			$this->template->sidebar = View::forge('template/after_login/sidebar');
 			$this->template->footer  = View::forge('template/after_login/footer');
 			$this->template->set_global('user_info', $user_info);
 		}
