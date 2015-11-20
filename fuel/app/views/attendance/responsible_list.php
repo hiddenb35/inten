@@ -11,56 +11,18 @@
 	<section class="content">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-sm-6 col-md-4 col-lg-3">
-					<div class="box text-center">
-						<a href="http://192.168.33.10/attendance/################">
-							<div class="box-body">
-								<div class="lesson_name">モバイルアプリケーション開発</div>
-								<div class="class_name h2">IS07-1</div>
-							</div>
-						</a>
+				<?php foreach($lesson_lists as $lesson): ?>
+					<div class="col-sm-6 col-md-4 col-lg-3">
+						<div class="box text-center">
+							<a href=<?php echo $lesson['link_url']; ?>>
+								<div class="box-body">
+									<div class="lesson_name"><?php echo $lesson['name']; ?></div>
+									<div class="class_name h2"><?php echo $lesson['class_name']; ?></div>
+								</div>
+							</a>
+						</div>
 					</div>
-				</div>
-				<div class="col-sm-6 col-md-4 col-lg-3">
-					<div class="box text-center">
-						<a href="http://192.168.33.10/attendance/################">
-							<div class="box-body">
-								<div class="lesson_name">モバイルアプリケーション開発</div>
-								<div class="class_name h2">IS07-1</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-4 col-lg-3">
-					<div class="box text-center">
-						<a href="http://192.168.33.10/attendance/################">
-							<div class="box-body">
-								<div class="lesson_name">モバイルアプリケーション開発</div>
-								<div class="class_name h2">IS07-1</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-4 col-lg-3">
-					<div class="box text-center">
-						<a href="http://192.168.33.10/attendance/################">
-							<div class="box-body">
-								<div class="lesson_name">モバイルアプリケーション開発</div>
-								<div class="class_name h2">IS07-1</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-4 col-lg-3">
-					<div class="box text-center">
-						<a href="http://192.168.33.10/attendance/################">
-							<div class="box-body">
-								<div class="lesson_name">モバイルアプリケーション開発</div>
-								<div class="class_name h2">IS07-1</div>
-							</div>
-						</a>
-					</div>
-				</div>
+				<?php endforeach; ?>
 			</div>
 		</div>
 	</section>
