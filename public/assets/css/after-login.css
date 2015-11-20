@@ -359,7 +359,8 @@ textarea[name="note"]{
 	border-width: 11px;
 	margin-left: -11px;
 }
-/***********出席率一覧画面***********/
+
+/*****************出席率一覧画面**********************/
 #ATTENDANCE_RATE_LIST thead tr {
 	background-color: #CB422C;
 	color: #fff;
@@ -372,3 +373,30 @@ textarea[name="note"]{
 		text-align: center;
 	}
 }
+/*****************************************************/
+
+/*************出席取るクラス一覧画面******************/
+
+#RESPONSIBLE_LIST .box {
+	position: relative;
+	border: 3px solid #D73925;
+}
+#RESPONSIBLE_LIST .box-body {
+	margin: 8px;
+	padding: 10px;
+	border: 1px solid;
+	border-color: #D73925;
+}
+#RESPONSIBLE_LIST .class_name {
+	padding-top: 18px;
+	text-align: right;
+	color: #000;
+}
+#RESPONSIBLE_LIST .lesson_name {
+	position: absolute;
+	background-color: #D73925;
+	left: 0;
+	padding: 5px;
+	color: #fff;
+}
+/*********************************************************/
