@@ -23,7 +23,7 @@ class Controller_Attendance extends Controller_Loggedin
 			$lesson_lists[] = $array;
 		}
 		$this->template->title = '担当している授業一覧';
-		$this->template->content = View::forge('attendance/lesson_list');
+		$this->template->content = View::forge('attendance/responsible_list');
 		$this->template->content->set('lesson_lists', $lesson_lists);
 	}
 
@@ -74,11 +74,6 @@ class Controller_Attendance extends Controller_Loggedin
 		}
 
 		Response::redirect('/');
-	}
-
-	public function action_responsible_list() {
-		$this->template->title = '出席を取る';
-		$this->template->content = View::forge('attendance/responsible_list');
 	}
 
 	public function action_attendance_rate_list() {
