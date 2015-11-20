@@ -11,7 +11,7 @@
 	<section class="content">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-sm-6 col-md-3">
+				<div class="col-sm-6 col-md-4 col-lg-3">
 					<div class="box text-center">
 						<a href="http://192.168.33.10/attendance/################">
 							<div class="box-body">
@@ -21,7 +21,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-3">
+				<div class="col-sm-6 col-md-4 col-lg-3">
 					<div class="box text-center">
 						<a href="http://192.168.33.10/attendance/################">
 							<div class="box-body">
@@ -31,7 +31,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-3">
+				<div class="col-sm-6 col-md-4 col-lg-3">
 					<div class="box text-center">
 						<a href="http://192.168.33.10/attendance/################">
 							<div class="box-body">
@@ -41,7 +41,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-3">
+				<div class="col-sm-6 col-md-4 col-lg-3">
 					<div class="box text-center">
 						<a href="http://192.168.33.10/attendance/################">
 							<div class="box-body">
@@ -51,7 +51,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-3">
+				<div class="col-sm-6 col-md-4 col-lg-3">
 					<div class="box text-center">
 						<a href="http://192.168.33.10/attendance/################">
 							<div class="box-body">
