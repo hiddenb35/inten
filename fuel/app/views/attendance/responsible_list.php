@@ -1,7 +1,7 @@
 <div id="RESPONSIBLE_LIST">
 	<section class="content-header">
 		<h1>
-			クラス一覧
+			担当するクラスの授業一覧
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
