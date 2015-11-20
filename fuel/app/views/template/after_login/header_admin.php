@@ -1,3 +1,14 @@
+<noscript>
+    <style>
+        .wrapper {
+        display: none;
+        background-color: #FFFFFF;
+        }
+        html,body{
+        background-color: #FFFFFF;
+        }
+    </style>
+</noscript>
 <!-- Logo -->
 <a href="/" class="logo">
     <span><b>管理者</b></span>
