@@ -76,6 +76,16 @@ class Controller_Attendance extends Controller_Loggedin
 		Response::redirect('/');
 	}
 
+	public function action_responsible_list() {
+		$this->template->title = '出席を取る';
+		$this->template->content = View::forge('attendance/responsible_list');
+	}
+
+	public function action_attendance_rate_list() {
+		$this->template->title = '出席率一覧画面';
+		$this->template->content = View::forge('attendance/attendance_rate_list');
+	}
+
 	private function _get_list($lesson_id)
 	{
 		$lists = array();
