@@ -369,7 +369,7 @@ textarea[name="note"]{
 	width:43.2969px;
 }
 @media screen and (max-width: 480px) {
-	#ATTENDANCE_RATE_LIST tbody td:nth-child(4) {
+	#ATTENDANCE_RATE_LIST tbody td:nth-child(5) {
 		text-align: center;
 	}
 }
