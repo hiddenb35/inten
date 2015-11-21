@@ -375,6 +375,17 @@ textarea[name="note"]{
 }
 /*****************************************************/
 
+/*****************総合出席率一覧画面**********************/
+#TOTAL_ATTENDANCE_RATE_LIST thead tr {
+	background-color: #CB422C;
+	color: #fff;
+}
+#TOTAL_ATTENDANCE_RATE_LIST .badge {
+	width:43.2969px;
+}
+/*****************************************************/
+
+
 /*************出席取るクラス一覧画面******************/
 
 #RESPONSIBLE_LIST .box {
