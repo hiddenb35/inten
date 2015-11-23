@@ -58,9 +58,9 @@ class Timetable
 		$table ='<table class="table table-bordered table-responsive table-striped">';
 		$table .= '<thead>';
 		$table .= '<tr class="bg-primary">';
-		$table .= '<th class="text-center' . $array[self::MONDAY] . '">#</th>';
-		$table .= '<th class="text-center' . $array[self::TUESDAY] . '">月曜日</th>';
-		$table .= '<th class="text-center' . $array[self::WEDNESDAY] . '">火曜日</th>';
+		$table .= '<th class="text-center">#</th>';
+		$table .= '<th class="text-center' . $array[self::MONDAY] . '">月曜日</th>';
+		$table .= '<th class="text-center' . $array[self::TUESDAY] . '">火曜日</th>';
 		$table .= '<th class="text-center' . $array[self::THURSDAY] . '">水曜日</th>';
 		$table .= '<th class="text-center' . $array[self::WEDNESDAY] . '">木曜日</th>';
 		$table .= '<th class="text-center' . $array[self::FRIDAY] . '">金曜日</th>';
