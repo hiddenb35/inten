@@ -400,3 +400,46 @@ textarea[name="note"]{
 	color: #fff;
 }
 /*********************************************************/
+
+/****************出席を取る画面***************************/
+#TAKE_ATTENDANCE .box {
+	border: 2px solid;
+	-moz-border-radius: 22px 22px 22px 22px;
+	-webkit-border-radius: 22px 22px 22px 22px;
+	border-radius: 22px 22px 22px 22px;
+}
+#TAKE_ATTENDANCE .box-header:nth-child(1) {
+	border-bottom: 10px solid #D73925;
+}
+#TAKE_ATTENDANCE .box-footer{
+	border-top: none;
+	-moz-border-radius: 0 0 22px 22px;
+	-webkit-border-radius: 0 0 22px 22px;
+	border-radius: 0 0 22px 22px;
+}
+#TAKE_ATTENDANCE .box-footer > .btn-primary{
+	background-color: #fff;
+	color: #3c8dbc;
+	border: 2px solid;
+}
+#TAKE_ATTENDANCE .box-footer > .btn-warning{
+	background-color: #fff;
+	color: #f39c12;
+	border: 2px solid;
+}
+#TAKE_ATTENDANCE .box-footer > .btn-danger{
+	background-color: #fff;
+	color: #dd4b39;
+	border: 2px solid;
+}
+#TAKE_ATTENDANCE .box-footer > button {
+	outline: none;
+	border-radius: 155px 155px 155px 155px;
+	-moz-border-radius: 155px 155px 155px 155px;
+	-webkit-border-radius: 155px 155px 155px 155px;
+}
+
+@media only screen and (max-width: 767px){
+
+}
+/*********************************************************/
