@@ -136,8 +136,8 @@
 									<h2 class="text-center">佐々木 佑梨</h2>
 								</div>
 								<div class="modal-body">
-									<input type="image" src="/public/assets/img/attendance.png">
-									<input type="image" src="/public/assets/img/absence.png">
+									<input type="image" src="/assets/img/attendance.png">
+									<input type="image" src="/assets/img/absence.png">
 								</div>
 								<div class="modal-footer">
 									<div class="text-center">
