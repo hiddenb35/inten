@@ -516,6 +516,10 @@ textarea[name="note"]{
 #TAKE_ATTENDANCE .cell {
 	display: table-cell;
 }
+#TAKE_ATTENDANCE h3.text-center {
+	margin-top: 25px;
+	margin-bottom: -12px;
+}
 @media only screen and (max-width: 767px){
 	#TAKE_ATTENDANCE .sp-size {
 		display: block;
@@ -540,8 +544,13 @@ textarea[name="note"]{
 	}
 }
 
-#myModal {
+#TAKE_ATTENDANCE #myModal {
 	display: block;
 	padding-right: 17px;
 }
+#TAKE_ATTENDANCE input[type="image"] {
+	width: 99px;
+	margin-top: -5px;
+}
+
 /*********************************************************/
