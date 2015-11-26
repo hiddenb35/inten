@@ -103,6 +103,11 @@ class Model_Student extends \Orm\Model
 		),
 	);
 
+	/**
+	 * 出席率の表示が危険色になる％のしきい値
+	 */
+	const RATE_DANGER_THRESHOLD = 75;
+
 	public static function validate()
 	{
 		$val = Validation::forge();
@@ -132,6 +137,24 @@ class Model_Student extends \Orm\Model
 		foreach($students as $student)
 		{
 			$lists[] = self::to_list($student);
+		}
+
+		return $lists;
+	}
+
+	public static function to_lists_with_attendance($students)
+	{
+		$lists = array();
+
+		foreach($students as $student)
+		{
+			$array = self::to_list($student);
+			// todo 実際の出席率を取得し設定すること
+			$virtual_rate = rand(1,100);
+			$array['rate'] = $virtual_rate . '%';
+			$array['rate_bar_class'] = ($virtual_rate < self::RATE_DANGER_THRESHOLD) ? 'progress-bar-danger' : 'progress-bar-primary';
+			$array['rate_bg_class'] = ($virtual_rate < self::RATE_DANGER_THRESHOLD) ? 'bg-red' : 'bg-aqua';
+			$lists[] = $array;
 		}
 
 		return $lists;

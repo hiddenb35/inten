@@ -2,7 +2,6 @@
 
 class Controller_Attendance extends Controller_Loggedin
 {
-	const RATE_DANGER_SEPARATOR = 75;
 	public function action_lesson_list()
 	{
 
@@ -39,10 +38,11 @@ class Controller_Attendance extends Controller_Loggedin
 
 		$this->template->title = '出席';
 		$this->template->content = View::forge('attendance/attendance.php');
-		$lists = $this->_get_list($lesson_id);
-		$this->template->content->set('student_lists', $lists['student']);
-		$this->template->content->set('class_info', $lists['class']);
-		$this->template->content->set('lesson_info', $lists['lesson']);
+
+		$lesson = Model_Lesson::find($lesson_id);
+		$this->template->content->set('student_lists', Model_Student::to_lists($lesson->class->students));
+		$this->template->content->set('class_info', $lesson->class);
+		$this->template->content->set('lesson_info', Model_Lesson::to_list($lesson));
 	}
 
 	public function action_add()
@@ -87,10 +87,10 @@ class Controller_Attendance extends Controller_Loggedin
 
 		$this->template->title = '出席率一覧画面';
 		$this->template->content = View::forge('attendance/attendance_rate_list');
-		$lists = $this->_get_list($lesson_id);
-		$this->template->content->set('student_lists', $lists['student']);
-		$this->template->content->set('class_info', $lists['class']);
-		$this->template->content->set('lesson_info', $lists['lesson']);
+		$lesson = Model_Lesson::find($lesson_id);
+		$this->template->content->set('student_lists', Model_Student::to_lists_with_attendance($lesson->class->students));
+		$this->template->content->set('class_info', $lesson->class);
+		$this->template->content->set('lesson_info', Model_Lesson::to_list($lesson));
 	}
 
 	public function action_attendance_list() {
@@ -115,33 +115,6 @@ class Controller_Attendance extends Controller_Loggedin
 		$this->template->title = '担当している授業一覧';
 		$this->template->content = View::forge('attendance/responsible_list');
 		$this->template->content->set('lesson_lists', $lesson_lists);
-	}
-
-	private function _get_list($lesson_id)
-	{
-		$lists = array();
-		$lesson = Model_Lesson::find($lesson_id);
-
-		foreach($lesson->class->students as $student)
-		{
-			$array = array();
-			$array['id'] = $student['id'];
-			$array['number'] = $student['username'];
-			$array['full_name'] = $student['last_name'] . ' ' . $student['first_name'];
-			$array['full_name_kana'] = $student['last_name_kana'] . ' ' . $student['first_name_kana'];
-			// todo 実際の出席率を取得し設定すること
-			$rate = rand(1, 100);
-			$array['rate'] = $rate . '%';
-			$array['rate_bar_class'] = ($rate < self::RATE_DANGER_SEPARATOR) ? 'progress-bar-danger' : 'progress-bar-primary';
-			$array['rate_bg_class'] = ($rate < self::RATE_DANGER_SEPARATOR) ? 'bg-red' : 'bg-aqua';
-			$lists['student'][] = $array;
-		}
-
-		$lists['class']['name'] = $lesson->class->name;
-		$lists['lesson']['id'] = $lesson->id;
-		$lists['lesson']['name'] = $lesson->name;
-
-		return $lists;
 	}
 
 }

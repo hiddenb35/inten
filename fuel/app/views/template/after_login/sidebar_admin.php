@@ -66,12 +66,12 @@
 			</ul>
 		</li>
 		<li>
-			<a href="/attendance/lesson_list">
+			<a href="/lesson/links/get">
 				<i class="fa ion-university"></i> <span>出席を取る</span>
 			</a>
 		</li>
 		<li>
-			<a href="/attendance/attendance_list">
+			<a href="/lesson/links/list">
 				<i class="fa ion-university"></i> <span>出席状況を見る</span>
 			</a>
 		</li>
