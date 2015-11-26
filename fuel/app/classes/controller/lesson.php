@@ -35,7 +35,8 @@ class Controller_Lesson extends Controller_Loggedin
 	private function get_attendance_link($type)
 	{
 		static $links = array(
-			'get' => 'attendance/student_list',
+			'get' => 'attendance/take_attendance',
+			'old_get' => 'attendance/student_list',
 			'list' => 'attendance/attendance_rate_list',
 		);
 

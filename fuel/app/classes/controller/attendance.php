@@ -45,6 +45,24 @@ class Controller_Attendance extends Controller_Loggedin
 		$this->template->content->set('lesson_info', Model_Lesson::to_list($lesson));
 	}
 
+	public function action_take_attendance()
+	{
+		$lesson_id = Input::get('lesson_id');
+
+		if(is_null($lesson_id))
+		{
+			throw new HttpNotFoundException;
+		}
+
+		$this->template->title = '出席';
+		$this->template->content = View::forge('attendance/take_attendance.php');
+
+		$lesson = Model_Lesson::find($lesson_id);
+		$this->template->content->set('student_lists', Model_Student::to_lists($lesson->class->students));
+		$this->template->content->set('class_info', $lesson->class);
+		$this->template->content->set('lesson_info', Model_Lesson::to_list($lesson));
+	}
+
 	public function action_add()
 	{
 		if(!$this->is_teacher())
