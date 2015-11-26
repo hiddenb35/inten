@@ -47,4 +47,30 @@ class Model_Attachment extends \Orm\Model
 		return $val;
 	}
 
+	public static function to_lists($attachment_lessons, $link = null)
+	{
+		$lists = array();
+		foreach($attachment_lessons as $attachment)
+		{
+			$array = self::to_list($attachment);
+			if(!is_null($link))
+			{
+				$array['link_url'] = Uri::create($link, array(), array('lesson_id' => $attachment->lesson->id));
+			}
+			$lists[] = $array;
+		}
+		return $lists;
+	}
+
+
+	public static function to_list($attachment)
+	{
+		$list = array();
+
+		$list['name'] = $attachment->lesson->name;
+		$list['class_name'] = $attachment->lesson->class->name;
+
+		return $list;
+	}
+
 }
