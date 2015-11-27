@@ -1,7 +1,7 @@
 <div id="TAKE_ATTENDANCE">
 	<section class="content-header">
 		<h1>
-			担当する授業の出席を取る画面
+			<?php echo $class_info['name']; ?> <?php echo $lesson_info['name'] ?>
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -9,21 +9,23 @@
 	</section>
 	<!-- Main content -->
 	<section class="content">
-		<div class="container-fluid">
+		<form action="/attendance/add" method="post" class="container-fluid">
+			<input type="hidden" name="lesson_id" value="<?php echo $lesson_info['id']; ?>">
 			<div class="row pc-size">
+				<?php foreach($student_lists as $index => $student): ?>
 				<div class="col-sm-6 col-md-4 col-lg-3">
 					<div class="box">
 						<div class="box-header">
-							<h3 class="box-title">K013C1296</h3>
-							<div>ササキ ユリ</div>
+							<input type="hidden" name="attendance[<?php echo $index; ?>][student_id]" value="<?php echo $student['id']; ?>">
+							<h3 class="box-title"><?php echo $student['number']; ?></h3>
+							<div><?php echo $student['full_name_kana']; ?></div>
 							<div class="box-tools pull-right">
-								<button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-											class="fa fa-minus"></i>
+								<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
 								</button>
 							</div>
 						</div>
 						<div class="box-header">
-							<div class="h3 text-right">佐々木 佑梨</div>
+							<div class="h3 text-right"><?php echo $student['full_name']; ?></div>
 						</div>
 						<div class="box-footer text-center">
 							<button type="button" class="btn btn-primary">出席</button>
@@ -32,97 +34,13 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-6 col-md-4 col-lg-3">
-					<div class="box">
-						<div class="box-header">
-							<h3 class="box-title">K013C1296</h3>
-							<div>ササキ ユリ</div>
-							<div class="box-tools pull-right">
-								<button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-											class="fa fa-minus"></i>
-								</button>
-							</div>
-						</div>
-						<div class="box-header">
-							<div class="h3 text-right">佐々木 佑梨</div>
-						</div>
-						<div class="box-footer text-center">
-							<button type="button" class="btn btn-primary">出席</button>
-							<button type="button" class="btn btn-warning">遅刻</button>
-							<button type="button" class="btn btn-danger">欠席</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-4 col-lg-3">
-					<div class="box">
-						<div class="box-header">
-							<h3 class="box-title">K013C1296</h3>
-							<div>ササキ ユリ</div>
-							<div class="box-tools pull-right">
-								<button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-											class="fa fa-minus"></i>
-								</button>
-							</div>
-						</div>
-						<div class="box-header">
-							<div class="h3 text-right">佐々木 佑梨</div>
-						</div>
-						<div class="box-footer text-center">
-							<button type="button" class="btn btn-primary">出席</button>
-							<button type="button" class="btn btn-warning">遅刻</button>
-							<button type="button" class="btn btn-danger">欠席</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-4 col-lg-3">
-					<div class="box">
-						<div class="box-header">
-							<h3 class="box-title">K013C1296</h3>
-							<div>ササキ ユリ</div>
-							<div class="box-tools pull-right">
-								<button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-											class="fa fa-minus"></i>
-								</button>
-							</div>
-						</div>
-						<div class="box-header">
-							<div class="h3 text-right">佐々木 佑梨</div>
-						</div>
-						<div class="box-footer text-center">
-							<button type="button" class="btn btn-primary">出席</button>
-							<button type="button" class="btn btn-warning">遅刻</button>
-							<button type="button" class="btn btn-danger">欠席</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-4 col-lg-3">
-					<div class="box">
-						<div class="box-header">
-							<h3 class="box-title">K013C1296</h3>
-							<div>ササキ ユリ</div>
-							<div class="box-tools pull-right">
-								<button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-											class="fa fa-minus"></i>
-								</button>
-							</div>
-						</div>
-						<div class="box-header">
-							<div class="h3 text-right">佐々木 佑梨</div>
-						</div>
-						<div class="box-footer text-center">
-							<button type="button" class="btn btn-primary">出席</button>
-							<button type="button" class="btn btn-warning">遅刻</button>
-							<button type="button" class="btn btn-danger">欠席</button>
-						</div>
-					</div>
-				</div>
+				<?php endforeach; ?>
 			</div>
 
 			<!------------------------スマホ・タブレットサイズ-------------------------------->
 			<div class="sp-size">
 				<div class="text-center row">
-					<button type="button" class="btn col-xs-offset-1 col-xs-10" data-toggle="modal" data-target="#myModal
-					">出席を取る</button>
+					<button type="button" class="btn col-xs-offset-1 col-xs-10" data-toggle="modal" data-target="#myModal">出席を取る</button>
 				</div>
 				<!-------------------------modalここから---------------------------->
 				<div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
@@ -150,21 +68,22 @@
 				</div>
 				<!----------------------ここまで---------------------------->
 				<div class="panel-group" id="accordion">
+					<?php foreach($student_lists as $index => $student): ?>
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<div class="panel-title h4">
 								<!--------------学生の数だけstudentの数値が増加する---------------->
-								<div class="text-center" data-toggle="collapse" data-parent="#accordion" href="#student1">
+								<div class="text-center" data-toggle="collapse" data-parent="#accordion" href="#student<?php echo $index; ?>">
 									<div class="cell create-circle"></div>
-									<div class="cell">K013C1296 佐々木 佑梨</div>
+									<div class="cell"><?php echo $student['number']; ?> <?php echo $student['full_name']; ?></div>
 									<ul class="cell">
-										<li>K013C1296</li>
-										<li>佐々木 佑梨</li>
+										<li><?php echo $student['number']; ?></li>
+										<li><?php echo $student['full_name']; ?></li>
 									</ul>
 								</div>
 							</div>
 						</div>
-						<div id="student1" class="panel-collapse collapse">
+						<div id="student<?php echo $index; ?>" class="panel-collapse collapse">
 							<div class="panel-body text-center">
 								<button type="button" class="btn btn-primary">出席</button>
 								<button type="button" class="btn btn-warning">遅刻</button>
@@ -172,54 +91,13 @@
 							</div>
 						</div>
 					</div>
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<div class="panel-title h4">
-								<div data-toggle="collapse" data-parent="#accordion" href="#student2">
-									<div class="cell create-circle"></div>
-									<div class="cell">K013C1296 佐々木 佑梨</div>
-									<ul class="cell">
-										<li>K013C1296</li>
-										<li>佐々木 佑梨</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div id="student2" class="panel-collapse collapse">
-							<div class="panel-body text-center">
-								<button type="button" class="btn btn-primary">出席</button>
-								<button type="button" class="btn btn-warning">遅刻</button>
-								<button type="button" class="btn btn-danger">欠席</button>
-							</div>
-						</div>
-					</div>
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<div class="panel-title h4">
-								<div data-toggle="collapse" data-parent="#accordion" href="#student3">
-									<div class="cell create-circle"></div>
-									<div class="cell">K013C1296 佐々木 佑梨</div>
-									<ul class="cell">
-										<li>K013C1296</li>
-										<li>佐々木 佑梨</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div id="student3" class="panel-collapse collapse">
-							<div class="panel-body text-center">
-								<button type="button" class="btn btn-primary">出席</button>
-								<button type="button" class="btn btn-warning">遅刻</button>
-								<button type="button" class="btn btn-danger">欠席</button>
-							</div>
-						</div>
-					</div>
+					<?php endforeach; ?>
 				</div>
 			</div>
 			<div class="text-center">
 				<button type="submit" class="btn btn-primary">送信</button>
 				<button type="reset" class="btn btn-danger">リセット</button>
 			</div>
-		</div>
+		</form>
 	</section>
 </div>
