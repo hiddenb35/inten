@@ -554,3 +554,23 @@ textarea[name="note"]{
 }
 
 /*********************************************************/
+
+/*****************学内説明会登録**************************/
+#ON_CAMPUS_REGISTRATION #on_campus_registration_form {
+	margin: 0 auto;
+}
+#ON_CAMPUS_REGISTRATION .inside_box {
+	margin: 30px 30px 30px 10px;
+}
+#ON_CAMPUS_REGISTRATION #on_campus_registration_box {
+	border: solid 1px #d2d6de;
+	border-left-width: 15px;
+	border-left-color: #dd4b39;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+}
+#ON_CAMPUS_REGISTRATION #on_campus_registration_form_button {
+	text-align: center;
+}
+/*********************************************************/
