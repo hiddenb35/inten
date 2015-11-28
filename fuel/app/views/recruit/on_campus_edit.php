@@ -102,14 +102,17 @@
 								<div class="form-group">
 									<label for="recruitment" class="col-md-2 control-label">
 										募集職種
-										<button class="btn btn-primary" id="">追加</button>
+										<button class="btn btn-primary">追加</button>
 									</label>
 									<div class="col-md-10">
 										<input type="text" id="recruitment" name="recruitment[]" class="form-control" value="プログラマ">
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="file" class="col-md-2 control-label">添付ファイル</label>
+									<label for="file" class="col-md-2 control-label">
+										添付ファイル
+										<button class="btn btn-primary">追加</button>
+									</label>
 									<div class="col-md-10">
 										<input type="file" id="file" name="files[]">
 									</div>
