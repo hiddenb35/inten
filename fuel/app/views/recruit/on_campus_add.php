@@ -1,4 +1,4 @@
-<div id="ON_CAMPUS_REGISTRATION">
+<div id="ON_CAMPUS_ADD">
 	<section class="content-header">
 		<h1>
 			学内説明会登録
@@ -12,8 +12,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<form action="/jobhunting/on_campus_confirm" method="post" class="form-horizontal" role="form" id="on_campus_registration_form">
-						<div class="info-box" id="on_campus_registration_box">
+					<form action="/recruit/oncampus/confirm" method="post" class="form-horizontal" role="form" id="on_campus_add_form">
+						<div class="info-box" id="on_campus_add_box">
 							<div class="inside_box">
 								<div class="form-group">
 									<label for="name" class="col-md-2 control-label">企業名</label>
@@ -121,7 +121,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-group" id="on_campus_registration_form_button">
+						<div class="form-group" id="on_campus_add_form_button">
 							<button type="submit" class="btn btn-danger btn-lg">新規登録</button>
 						</div>
 					</form>

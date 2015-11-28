@@ -12,7 +12,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<form action="/jobhunting/on_campus_confirm" method="post" class="form-horizontal" role="form" id="on_campus_edit_form">
+					<form action="/recruit/oncampus/confirm" method="post" class="form-horizontal" role="form" id="on_campus_edit_form">
 						<input type="hidden" name="" id="" value="">
 						<div class="info-box" id="on_campus_edit_box">
 							<div class="inside_box">
