@@ -49,6 +49,18 @@
 				<li><a href="/recruit/oncumpus/detail"><i class="fa fa-circle-o"></i>学内説明会詳細</a></li>
 			</ul>
 		</li>
+		<li class="treeview">
+			<a href="/">
+				<i class="fa ion-university"></i> <span>学外説明会</span> <i class="fa fa-angle-down pull-right"></i>
+			</a>
+			<ul class="treeview-menu">
+				<li><a href="/recruit/offcumpus/list"><i class="fa fa-circle-o"></i>学外説明会一覧</a></li>
+				<li><a href="/recruit/offcumpus/add"><i class="fa fa-circle-o"></i>学外説明会追加</a></li>
+				<li><a href="/recruit/offcumpus/edit"><i class="fa fa-circle-o"></i>学外説明会編集</a></li>
+				<li><a href="/recruit/offcumpus/confirm"><i class="fa fa-circle-o"></i>学外説明会確認</a></li>
+				<li><a href="/recruit/offcumpus/detail"><i class="fa fa-circle-o"></i>学外説明会詳細</a></li>
+			</ul>
+		</li>
 		<li>
 			<a href="/setting/pass_update">
 				<i class="fa ion-settings"></i> <span>パスワード変更</span>
