@@ -12,7 +12,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<form action="/viewtest/confirm" method="post" class="form-horizontal" role="form" id="on_campus_registration_form">
+					<form action="/jobhunting/on_campus_confirm" method="post" class="form-horizontal" role="form" id="on_campus_registration_form">
 						<div class="info-box" id="on_campus_registration_box">
 							<div class="inside_box">
 								<div class="form-group">
@@ -89,9 +89,7 @@
 							</div>
 						</div>
 						<div class="form-group" id="on_campus_registration_form_button">
-							<div class="">
-								<button class="btn btn-danger btn-lg">新規登録</button>
-							</div>
+							<button type="submit" class="btn btn-danger btn-lg">新規登録</button>
 						</div>
 					</form>
 				</div>
