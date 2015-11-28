@@ -57,7 +57,7 @@
                                             <div class="col-md-1 col-xs-1">
                                                 <span class="help-block"><b>～</b></span>
                                             </div>
-                                            <div class="col-md-5 col-xs-11 col-xs-offset-1">
+                                            <div class="col-md-5 col-xs-11 col-xs-offset-1 col-sm-offset-0">
                                                 <input type="date" name="end_date" class="form-control" value="2015-11-28">
                                             </div>
                                         </div>
