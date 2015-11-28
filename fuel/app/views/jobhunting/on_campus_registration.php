@@ -31,10 +31,16 @@
 									<label for="date_time" class="col-md-2 control-label">日時</label>
 									<div class="col-md-10">
 										<div class="row">
-											<div class="col-md-5">
+											<div class="col-md-4">
 												<input type="date" name="date" id="date_time" class="form-control" value="2015-11-28">
 											</div>
-											<div class="col-md-5">
+											<div class="col-md-3 col-xs-10">
+												<input type="time" name="time" class="form-control" value="14:00">
+											</div>
+											<div class="col-md-1 col-xs-1">
+												<span class="help-block"><b>～</b></span>
+											</div>
+											<div class="col-md-3 col-xs-11 col-xs-offset-1 col-sm-offset-0">
 												<input type="time" name="time" class="form-control" value="14:00">
 											</div>
 										</div>
