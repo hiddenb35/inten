@@ -100,7 +100,7 @@
 								</div>
 								<div class="form-group">
 									<label for="recruitment" class="col-md-2 control-label">
-										希望職種
+										募集職種
 										<button class="btn btn-primary" id="">追加</button>
 									</label>
 									<div class="col-md-10">
