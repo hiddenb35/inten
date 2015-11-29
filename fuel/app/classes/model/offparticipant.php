@@ -43,4 +43,13 @@ class Model_Offparticipant extends \Orm\Model
 			'cascade_delete' => false,
 		),
 	);
+
+	public static function validate()
+	{
+		$val = Validation::forge();
+		$val->add_callable('exvalidation');
+		$val->add_field('offcampus_id', '学外説明会ID', 'required|max_length[10]')->add_rule('exist_id', 'offcampus');
+		$val->add_field('student_id', '生徒ID', 'required|max_length[10]')->add_rule('exist_id', 'student');
+		return $val;
+	}
 }
