@@ -123,6 +123,13 @@ class Model_Oncampus extends \Orm\Model
 		return $val;
 	}
 
+	public static function validate_edit()
+	{
+		$val = self::validate();
+		$val->add_field('id', '学内説明会ID', 'trim|required')->add_rule('exist_id', 'oncampus');
+		return $val;
+	}
+
 	public static function to_lists($campuses)
 	{
 		$lists = array();

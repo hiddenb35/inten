@@ -135,6 +135,13 @@ class Model_Offcampus extends \Orm\Model
 		return $val;
 	}
 
+	public static function validate_edit()
+	{
+		$val = self::validate();
+		$val->add_field('id', '学外説明会ID', 'trim|required')->add_rule('exist_id', 'offcampus');
+		return $val;
+	}
+
 	public static function to_lists($campuses)
 	{
 		$lists = array();
