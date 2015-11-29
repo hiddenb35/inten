@@ -726,7 +726,8 @@ class Provider
 				'url'          => 'http://kato.com',
 				'recruitment'  => '["システムエンジニア","プログラマ"]',
 				'files'        => '[]',
-				'note'         => '道路交通法は守りましょう'
+				'note'         => '道路交通法は守りましょう',
+				'teacher_id'   => 1,
 			),
 			array(
 				'company_name' => '株式会社黄金りんご',
@@ -744,7 +745,8 @@ class Provider
 				'url'          => 'http://narumi.com',
 				'recruitment'  => '["農業","畜産業"]',
 				'files'        => '[]',
-				'note'         => '神'
+				'note'         => '神',
+				'teacher_id'   => 1,
 			),
 			array(
 				'company_name' => '老人ホームSASAKI',
@@ -762,14 +764,15 @@ class Provider
 				'url'          => 'http://sasaki.com',
 				'recruitment'  => '["介護"]',
 				'files'        => '[]',
-				'note'         => ''
+				'note'         => '',
+				'teacher_id'   => 1,
 			),
 
 		);
 		$query = \DB::insert('oncampus')->columns(
 			array('company_name', 'company_code', 'start_date', 'start_time',
 			'end_time', 'entry_start', 'entry_end', 'target', 'location', 'content', 'explainer', 'bring',
-			'url', 'recruitment', 'files', 'note', 'created_at', 'updated_at')
+			'url', 'recruitment', 'files', 'note', 'created_at', 'updated_at', 'teacher_id')
 		);
 
 		foreach($oncampus_lists as $oncampus)
@@ -779,7 +782,8 @@ class Provider
 					$oncampus['start_time'], $oncampus['end_time'], $oncampus['entry_start'],
 					$oncampus['entry_end'], $oncampus['target'], $oncampus['location'],
 					$oncampus['content'], $oncampus['explainer'], $oncampus['bring'],
-					$oncampus['url'], $oncampus['recruitment'], $oncampus['files'], $oncampus['note'], time(), null)
+					$oncampus['url'], $oncampus['recruitment'], $oncampus['files'],
+					$oncampus['note'], time(), null, $oncampus['teacher_id'])
 			);
 		}
 		$query->execute();

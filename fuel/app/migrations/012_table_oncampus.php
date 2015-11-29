@@ -26,7 +26,16 @@ class Table_oncampus
 			'note'         => array('type' => 'text', 'comment' => '備考'),
 			'created_at'   => array('type' => 'int', 'comment' => '作成日時'),
 			'updated_at'   => array('type' => 'int', 'null' => true, 'comment' => '更新日時'),
-		), array('id'));
+			'teacher_id'   => array('type' => 'int', 'unsigned' => true, 'comment' => '作成した教員ID'),
+		), array('id'), true, false, null, array(
+			array(
+				'key' => 'teacher_id',
+				'reference' => array(
+					'table' => 'teacher',
+					'column' => 'id',
+				),
+			)
+		));
 
 		\DBUtil::create_index('oncampus', 'company_code', '', 'unique');
 	}
