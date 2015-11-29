@@ -21,4 +21,5 @@ return array(
 	'unique'          => '既に登録されている:labelです。',
 	'exist_id'        => '存在しない:labelです。',
 	'timetable_json'  => '時間割データが正しくありません。',
+	'valid_array'     => ':labelの送信に失敗しました。'
 );
