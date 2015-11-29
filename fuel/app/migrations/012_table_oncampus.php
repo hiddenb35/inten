@@ -27,6 +27,8 @@ class Table_oncampus
 			'created_at'   => array('type' => 'int', 'comment' => '作成日時'),
 			'updated_at'   => array('type' => 'int', 'null' => true, 'comment' => '更新日時'),
 		), array('id'));
+
+		\DBUtil::create_index('oncampus', 'company_code', '', 'unique');
 	}
 
 	public function down()
