@@ -16,6 +16,7 @@ class Controller_Recruit_Offcampus extends Controller_Loggedin
 		elseif(!is_null($offcampus_id))
 		{
 			$this->template->content->set('inputs', Model_Offcampus::to_list(Model_Offcampus::find($offcampus_id)));
+			$this->template->content->set('offcampus_id', $offcampus_id);
 		}
 	}
 
