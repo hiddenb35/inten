@@ -122,4 +122,41 @@ class Model_Oncampus extends \Orm\Model
 		$val->add_field('note', '備考', 'trim');
 		return $val;
 	}
+
+	public static function to_lists($campuses)
+	{
+		$lists = array();
+
+		foreach($campuses as $campus)
+		{
+			$lists[] = self::to_list($campus);
+		}
+
+		return $lists;
+	}
+
+	public static function to_list($campus)
+	{
+		$list = array();
+
+		$list['id'] = $campus['id'];
+		$list['company_name'] = $campus['company_name'];
+		$list['company_code'] = $campus['company_code'];
+		$list['start_date'] = $campus['start_date'];
+		$list['start_time'] = $campus['start_time'];
+		$list['end_time'] = $campus['end_time'];
+		$list['entry_start'] = $campus['entry_start'];
+		$list['entry_end'] = $campus['entry_end'];
+		$list['target'] = $campus['target'];
+		$list['location'] = $campus['location'];
+		$list['content'] = $campus['content'];
+		$list['explainer'] = $campus['explainer'];
+		$list['bring'] = $campus['bring'];
+		$list['url'] = $campus['url'];
+		$list['recruitment'] = json_decode($campus['recruitment'], true);
+		$list['files'] = json_decode($campus['files'], true);
+		$list['note'] = $campus['note'];
+
+		return $list;
+	}
 }
