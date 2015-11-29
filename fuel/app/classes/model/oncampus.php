@@ -106,11 +106,11 @@ class Model_Oncampus extends \Orm\Model
 		$val->add_callable('exvalidation');
 		$val->add_field('company_name', '企業名', 'trim|required|max_length[128]');
 		$val->add_field('company_code', '企業コード', 'trim|required|max_length[64]');
-		$val->add_field('start_date', '開催日', 'trim|required')->add_rule('valid_date', 'Y/m/d');
-		$val->add_field('start_time', '開始時間', 'trim|required')->add_rule('valid_date', 'H:i:s');
-		$val->add_field('end_time', '終了時間', 'trim|required')->add_rule('valid_date', 'H:i:s');
-		$val->add_field('entry_start', '申込期限(開始)', 'trim|required')->add_rule('valid_data', 'Y/m/d');
-		$val->add_field('entry_end', '申込期限(終了)', 'trim|required')->add_rule('valid_date', 'Y/m/d');
+		$val->add_field('start_date', '開催日', 'trim|required')->add_rule('valid_date', 'Y-m-d');
+		$val->add_field('start_time', '開始時間', 'trim|required')->add_rule('valid_date', 'H:i');
+		$val->add_field('end_time', '終了時間', 'trim|required')->add_rule('valid_date', 'H:i');
+		$val->add_field('entry_start', '申込期限(開始)', 'trim|required')->add_rule('valid_data', 'Y-m-d');
+		$val->add_field('entry_end', '申込期限(終了)', 'trim|required')->add_rule('valid_date', 'Y-m-d');
 		$val->add_field('target', '対象者', 'trim');
 		$val->add_field('location', '開催場所', 'trim|required');
 		$val->add_field('content', '内容', 'trim');
@@ -118,8 +118,14 @@ class Model_Oncampus extends \Orm\Model
 		$val->add_field('bring', '持ち物', 'trim');
 		$val->add_field('url', 'URL', 'trim|valid_url');
 		$val->add_field('recruitment','募集職種', 'valid_array');
-		$val->add_field('files', '添付ファイル', 'valid_array');
 		$val->add_field('note', '備考', 'trim');
+		return $val;
+	}
+
+	public static function validate_edit()
+	{
+		$val = self::validate();
+		$val->add_field('id', '学内説明会ID', 'trim|required')->add_rule('exist_id', 'oncampus');
 		return $val;
 	}
 

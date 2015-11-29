@@ -1,7 +1,7 @@
-<div id="ON_CAMPUS_ADD">
+<div id="ON_CAMPUS_EDIT">
 	<section class="content-header">
 		<h1>
-			学内説明会登録
+			学内説明会編集
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -12,19 +12,20 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<form action="/recruit/oncampus/confirm" method="post" class="form-horizontal" role="form" id="on_campus_add_form">
-						<div class="info-box" id="on_campus_add_box">
+					<form action="/recruit/oncampus/confirm" method="post" class="form-horizontal" role="form" id="on_campus_edit_form" enctype="multipart/form-data">
+						<input type="hidden" name="" id="" value="">
+						<div class="info-box" id="on_campus_edit_box">
 							<div class="inside_box">
 								<div class="form-group">
-									<label for="name" class="col-md-2 control-label">企業名</label>
+									<label for="company_name" class="col-md-2 control-label">企業名</label>
 									<div class="col-md-10">
-										<input type="text" id="name" name="name" class="form-control" value="" required>
+										<input type="text" id="company_name" name="company_name" class="form-control" value="第一商事" required>
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="code" class="col-md-2 control-label">企業コード</label>
+									<label for="company_code" class="col-md-2 control-label">企業コード</label>
 									<div class="col-md-10">
-										<input type="text" id="code" name="code" class="form-control" value="" required>
+										<input type="text" id="company_code" name="company_code" class="form-control" value="29132468" required>
 									</div>
 								</div>
 								<div class="form-group">
@@ -65,37 +66,37 @@
 								<div class="form-group">
 									<label for="target" class="col-md-2 control-label">対象者</label>
 									<div class="col-md-10">
-										<textarea id="target" name="target" class="form-control" rows="3"></textarea>
+										<textarea id="target" name="target" class="form-control" rows="3">なるみ</textarea>
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="location" class="col-md-2 control-label">場所</label>
 									<div class="col-md-10">
-										<input type="text" id="location" name="location" class="form-control" value="" required>
+										<input type="text" id="location" name="location" class="form-control" value="30715教室" required>
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="content" class="col-md-2 control-label">内容</label>
 									<div class="col-md-10">
-										<textarea id="briefing_session_content" name="content" class="form-control" rows="3"></textarea>
+										<textarea id="briefing_session_content" name="content" class="form-control" rows="3">会社説明会</textarea>
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="explainer" class="col-md-2 control-label">説明者</label>
 									<div class="col-md-10">
-										<input type="text" id="explainer" name="explainer" class="form-control" value="">
+										<input type="text" id="explainer" name="explainer" class="form-control" value="鳴海">
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="bring" class="col-md-2 control-label">当日の持ち物</label>
 									<div class="col-md-10">
-										<textarea id="bring" name="bring" class="form-control" rows="3"></textarea>
+										<textarea id="bring" name="bring" class="form-control" rows="3">なるみ</textarea>
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="company_url" class="col-md-2 control-label">URL</label>
 									<div class="col-md-10">
-										<input type="text" id="company_url" name="company_url" class="form-control" value="">
+										<input type="text" id="company_url" name="company_url" class="form-control" value="http://www.co.jp">
 									</div>
 								</div>
 								<div class="form-group">
@@ -104,7 +105,7 @@
 										<button class="btn btn-primary">追加</button>
 									</label>
 									<div class="col-md-10">
-										<input type="text" id="recruitment" name="recruitment[]" class="form-control" value="">
+										<input type="text" id="recruitment" name="recruitment[]" class="form-control" value="プログラマ">
 									</div>
 								</div>
 								<div class="form-group">
@@ -119,13 +120,13 @@
 								<div class="form-group">
 									<label for="note" class="col-md-2 control-label">備考</label>
 									<div class="col-md-10">
-										<textarea id="note" name="note" class="form-control" rows="3"></textarea>
+										<textarea id="note" name="note" class="form-control" rows="3">なるみ</textarea>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="form-group" id="on_campus_add_form_button">
-							<button type="submit" class="btn btn-danger btn-lg">新規登録</button>
+						<div class="form-group" id="on_campus_edit_form_button">
+							<button type="submit" class="btn btn-danger btn-lg">変更</button>
 						</div>
 					</form>
 				</div>
