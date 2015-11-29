@@ -50,7 +50,14 @@ class Exvalidation
 		}
 
 		return true;
+	}
 
+	/*
+	 * $valが配列として正しいか
+	 */
+	public static function _validation_valid_array($val)
+	{
+		return (is_array($val));
 	}
 
 
