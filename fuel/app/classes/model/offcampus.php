@@ -115,11 +115,11 @@ class Model_Offcampus extends \Orm\Model
 		$val->add_callable('exvalidation');
 		$val->add_field('company_name', '企業名', 'trim|required|max_length[128]');
 		$val->add_field('company_code', '企業コード', 'trim|required|max_length[64]');
-		$val->add_field('start_date', '開催日', 'trim|required')->add_rule('valid_date', 'Y/m/d');
+		$val->add_field('start_date', '開催日', 'trim|required')->add_rule('valid_date', 'Y-m-d');
 		$val->add_field('start_time', '開始時間', 'trim|required')->add_rule('valid_date', 'H:i:s');
 		$val->add_field('end_time', '終了時間', 'trim|required')->add_rule('valid_date', 'H:i:s');
-		$val->add_field('entry_start', '申込期限(開始)', 'trim|required')->add_rule('valid_data', 'Y/m/d');
-		$val->add_field('entry_end', '申込期限(終了)', 'trim|required')->add_rule('valid_date', 'Y/m/d');
+		$val->add_field('entry_start', '申込期限(開始)', 'trim|required')->add_rule('valid_data', 'Y-m-d');
+		$val->add_field('entry_end', '申込期限(終了)', 'trim|required')->add_rule('valid_date', 'Y-m-d');
 		$val->add_field('target', '対象者', 'trim');
 		$val->add_field('location', '開催場所', 'trim|required');
 		$val->add_field('content', '内容', 'trim');
