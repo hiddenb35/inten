@@ -40,6 +40,12 @@
 									</div>
 								</div>
 								<div class="form-group put-bottom-line">
+									<label for="" class="col-md-3 control-label">対象者</label>
+									<div class="col-md-9">
+										<p class="form-control-static">なるみ</p>
+									</div>
+								</div>
+								<div class="form-group put-bottom-line">
 									<label for="place" class="col-md-3 control-label">場所</label>
 									<div class="col-md-9">
 										<p class="form-control-static">30715教室</p>
@@ -57,10 +63,34 @@
 										<p class="form-control-static">鳴海</p>
 									</div>
 								</div>
-								<div class="form-group">
+								<div class="form-group put-bottom-line">
+									<label for="" class="col-md-3 control-label">当日の持ち物</label>
+									<div class="col-md-9">
+										<p class="form-control-static">なるみ</p>
+									</div>
+								</div>
+								<div class="form-group put-bottom-line">
 									<label for="company_url" class="col-md-3 control-label">URL</label>
 									<div class="col-md-9">
 										<p class="form-control-static">http;//www.co.jp</p>
+									</div>
+								</div>
+								<div class="form-group put-bottom-line">
+									<label for="place" class="col-md-3 control-label">募集職種</label>
+									<div class="col-md-9">
+										<p class="form-control-static">30715教室</p>
+									</div>
+								</div>
+								<div class="form-group put-bottom-line">
+									<label for="place" class="col-md-3 control-label">添付ファイル</label>
+									<div class="col-md-9">
+										<p class="form-control-static">なるみ.mp4(327.0MB)</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="place" class="col-md-3 control-label">備考</label>
+									<div class="col-md-9">
+										<p class="form-control-static">なるみ</p>
 									</div>
 								</div>
 							</div>
