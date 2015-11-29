@@ -820,6 +820,98 @@ class Provider
 		}
 		$query->execute();
 
+
+		/* 学外説明会 */
+		$offcampus_lists = array(
+			array(
+				'company_name' => 'KATO Holdings Inc.',
+				'company_code' => '2315235',
+				'start_date'   => '2016/2/12',
+				'start_time'   => '13:00:00',
+				'end_time'     => '17:00:00',
+				'entry_start'  => '2016/1/15/',
+				'entry_end'    => '2016/2/6',
+				'target'       => '2017年度卒業見込み者',
+				'location'     => '30715教室',
+				'content'      => '会社説明会',
+				'explainer'    => 'Takuma K',
+				'bring'        => 'Bike',
+				'url'          => 'http://kato.com',
+				'entry_method' => 'Webから',
+				'tel'          => '000-0000-0000',
+				'email'        => 'email@email.com',
+				'recruitment'  => '["システムエンジニア","プログラマ"]',
+				'files'        => '[]',
+				'note'         => '道路交通法は守りましょう',
+				'teacher_id'   => 1,
+			),
+			array(
+				'company_name' => 'Ringo Holdings Inc.',
+				'company_code' => '123132',
+				'start_date'   => '2016/2/12',
+				'start_time'   => '13:00:00',
+				'end_time'     => '17:00:00',
+				'entry_start'  => '2016/1/16/',
+				'entry_end'    => '2016/2/6',
+				'target'       => '2017年度卒業見込み者',
+				'location'     => '30617教室',
+				'content'      => 'Apple説明会',
+				'explainer'    => 'Syota N',
+				'bring'        => 'Apple',
+				'url'          => 'http://narumi.com',
+				'entry_method' => 'Webから',
+				'tel'          => '00-0000-0000',
+				'email'        => 'email@email.com',
+				'recruitment'  => '["農業","畜産業"]',
+				'files'        => '[]',
+				'note'         => '神',
+				'teacher_id'   => 1,
+			),
+			array(
+				'company_name' => 'SASAKI Holdings Inc.',
+				'company_code' => '54315235',
+				'start_date'   => '2016/2/12',
+				'start_time'   => '13:00:00',
+				'end_time'     => '17:00:00',
+				'entry_start'  => '2016/1/20/',
+				'entry_end'    => '2016/2/6',
+				'target'       => '2017年度卒業見込み者',
+				'location'     => '30715教室',
+				'content'      => '会社説明会',
+				'explainer'    => 'Yuri S',
+				'bring'        => '貢物',
+				'url'          => 'http://sasaki.com',
+				'entry_method' => '電話申し込み',
+				'tel'          => '00-0000-0000',
+				'email'        => 'email@email.com',
+				'recruitment'  => '["介護"]',
+				'files'        => '[]',
+				'note'         => '',
+				'teacher_id'   => 1,
+			),
+
+		);
+		$query = \DB::insert('offcampus')->columns(
+			array('company_name', 'company_code', 'start_date', 'start_time',
+				'end_time', 'entry_start', 'entry_end', 'target', 'location', 'content',
+				'explainer', 'bring', 'url', 'entry_method', 'tel', 'email', 'recruitment',
+				'files', 'note', 'created_at', 'updated_at', 'teacher_id')
+		);
+
+		foreach($offcampus_lists as $offcampus)
+		{
+			$query->values(
+				array($offcampus['company_name'], $offcampus['company_code'], $offcampus['start_date'],
+					$offcampus['start_time'], $offcampus['end_time'], $offcampus['entry_start'],
+					$offcampus['entry_end'], $offcampus['target'], $offcampus['location'],
+					$offcampus['content'], $offcampus['explainer'], $offcampus['bring'],
+					$offcampus['url'], $offcampus['entry_method'], $offcampus['tel'],
+					$offcampus['email'], $offcampus['recruitment'], $offcampus['files'],
+					$offcampus['note'], time(), null, $offcampus['teacher_id'])
+			);
+		}
+		$query->execute();
+
 	}
 
 	public static function delete()
