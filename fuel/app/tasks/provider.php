@@ -784,6 +784,38 @@ class Provider
 		}
 		$query->execute();
 
+
+		/* 学内説明会参加者 */
+		$onparticipant_lists = array(
+			// 渡辺
+			array('oncampus_id' => 1, 'student_id' => 18, 'entry_at' => '2016/1/2 13:00:00'),
+			array('oncampus_id' => 2, 'student_id' => 18, 'entry_at' => '2016/1/2 13:30:00'),
+			array('oncampus_id' => 3, 'student_id' => 18, 'entry_at' => '2016/1/3 14:00:00'),
+			// 加藤
+			array('oncampus_id' => 2, 'student_id' => 29, 'entry_at' => '2016/1/2 15:30:00'),
+			array('oncampus_id' => 3, 'student_id' => 29, 'entry_at' => '2016/1/3 16:00:00'),
+			// 笠井
+			array('oncampus_id' => 1, 'student_id' => 35, 'entry_at' => '2016/1/1 9:00:00'),
+			array('oncampus_id' => 2, 'student_id' => 35, 'entry_at' => '2016/1/1 9:30:00'),
+			array('oncampus_id' => 3, 'student_id' => 35, 'entry_at' => '2016/1/1 9:55:00'),
+			// 鳴海
+			array('oncampus_id' => 1, 'student_id' => 1, 'entry_at' => '2016/1/3 19:00:00'),
+			array('oncampus_id' => 3, 'student_id' => 1, 'entry_at' => '2016/1/3 19:55:00'),
+			// 佐々木
+			array('oncampus_id' => 1, 'student_id' => 34, 'entry_at' => '2016/1/3 21:00:00'),
+			array('oncampus_id' => 2, 'student_id' => 34, 'entry_at' => '2016/1/3 23:55:00'),
+			// 芦沢
+			array('oncampus_id' => 2, 'student_id' => 7, 'entry_at' => '2016/1/4 1:00:00'),
+		);
+
+		$query = \DB::insert('onparticipant')->columns(array('oncampus_id', 'student_id', 'entry_at'));
+		foreach($onparticipant_lists as $onparticipant)
+		{
+			$query->values(array($onparticipant['oncampus_id'], $onparticipant['student_id'],
+				strtotime($onparticipant['entry_at'])));
+		}
+		$query->execute();
+
 	}
 
 	public static function delete()
