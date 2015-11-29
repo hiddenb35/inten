@@ -707,6 +707,83 @@ class Provider
 		$query->values(array('IS07-1後期時間割', json_encode($timetable2), time() + 1, null, 1, 1));
 		$query->execute();
 
+
+		/* 学内説明会 */
+		$oncampus_lists = array(
+			array(
+				'company_name' => '株式会社KATO',
+				'company_code' => '2315235',
+				'start_date'   => '2016/1/12',
+				'start_time'   => '13:00:00',
+				'end_time'     => '17:00:00',
+				'entry_start'  => '2015/12/31/',
+				'entry_end'    => '2016/1/6',
+				'target'       => '2017年度卒業見込み者',
+				'location'     => '30715教室',
+				'content'      => '会社説明会',
+				'explainer'    => '加藤拓磨',
+				'bring'        => 'バイク',
+				'url'          => 'http://kato.com',
+				'recruitment'  => '["システムエンジニア","プログラマ"]',
+				'files'        => '[]',
+				'note'         => '道路交通法は守りましょう'
+			),
+			array(
+				'company_name' => '株式会社黄金りんご',
+				'company_code' => '123132',
+				'start_date'   => '2016/1/12',
+				'start_time'   => '13:00:00',
+				'end_time'     => '17:00:00',
+				'entry_start'  => '2015/12/31/',
+				'entry_end'    => '2016/1/6',
+				'target'       => '2017年度卒業見込み者',
+				'location'     => '30617教室',
+				'content'      => 'りんご説明会',
+				'explainer'    => '鳴海翔太',
+				'bring'        => 'りんご',
+				'url'          => 'http://narumi.com',
+				'recruitment'  => '["農業","畜産業"]',
+				'files'        => '[]',
+				'note'         => '神'
+			),
+			array(
+				'company_name' => '老人ホームSASAKI',
+				'company_code' => '54315235',
+				'start_date'   => '2016/1/12',
+				'start_time'   => '13:00:00',
+				'end_time'     => '17:00:00',
+				'entry_start'  => '2015/12/31/',
+				'entry_end'    => '2016/1/6',
+				'target'       => '2017年度卒業見込み者',
+				'location'     => '30715教室',
+				'content'      => '会社説明会',
+				'explainer'    => '佐々木佑梨',
+				'bring'        => 'お土産',
+				'url'          => 'http://sasaki.com',
+				'recruitment'  => '["介護"]',
+				'files'        => '[]',
+				'note'         => ''
+			),
+
+		);
+		$query = \DB::insert('oncampus')->columns(
+			array('company_name', 'company_code', 'start_date', 'start_time',
+			'end_time', 'entry_start', 'entry_end', 'target', 'location', 'content', 'explainer', 'bring',
+			'url', 'recruitment', 'files', 'note', 'created_at', 'updated_at')
+		);
+
+		foreach($oncampus_lists as $oncampus)
+		{
+			$query->values(
+				array($oncampus['company_name'], $oncampus['company_code'], $oncampus['start_date'],
+					$oncampus['start_time'], $oncampus['end_time'], $oncampus['entry_start'],
+					$oncampus['entry_end'], $oncampus['target'], $oncampus['location'],
+					$oncampus['content'], $oncampus['explainer'], $oncampus['bring'],
+					$oncampus['url'], $oncampus['recruitment'], $oncampus['files'], $oncampus['note'], time(), null)
+			);
+		}
+		$query->execute();
+
 	}
 
 	public static function delete()
