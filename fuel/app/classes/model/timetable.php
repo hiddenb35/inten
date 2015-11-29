@@ -67,7 +67,7 @@ class Model_Timetable extends \Orm\Model
 	public static function validate_edit()
 	{
 		$val = self::validate();
-		$val->add_field('id', '時間割ID', 'trim|required')->add_rule('exists_id', 'timetable');
+		$val->add_field('id', '時間割ID', 'trim|required')->add_rule('exist_id', 'timetable');
 		return $val;
 	}
 
