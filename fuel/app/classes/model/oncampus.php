@@ -118,7 +118,6 @@ class Model_Oncampus extends \Orm\Model
 		$val->add_field('bring', '持ち物', 'trim');
 		$val->add_field('url', 'URL', 'trim|valid_url');
 		$val->add_field('recruitment','募集職種', 'valid_array');
-		$val->add_field('files', '添付ファイル', 'valid_array');
 		$val->add_field('note', '備考', 'trim');
 		return $val;
 	}

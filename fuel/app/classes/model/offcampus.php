@@ -130,7 +130,6 @@ class Model_Offcampus extends \Orm\Model
 		$val->add_field('tel', '電話番号', 'trim');
 		$val->add_field('email', 'メールアドレス', 'trim|valid_email');
 		$val->add_field('recruitment','募集職種', 'valid_array');
-		$val->add_field('files', '添付ファイル', 'valid_array');
 		$val->add_field('note', '備考', 'trim');
 		return $val;
 	}
