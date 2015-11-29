@@ -912,6 +912,37 @@ class Provider
 		}
 		$query->execute();
 
+
+		/* 学外説明会参加者 */
+		$offparticipant_lists = array(
+			// 渡辺
+			array('offcampus_id' => 1, 'student_id' => 18, 'entry_at' => '2016/2/2 13:00:00'),
+			array('offcampus_id' => 2, 'student_id' => 18, 'entry_at' => '2016/2/2 13:30:00'),
+			array('offcampus_id' => 3, 'student_id' => 18, 'entry_at' => '2016/2/3 14:00:00'),
+			// 加藤
+			array('offcampus_id' => 2, 'student_id' => 29, 'entry_at' => '2016/2/2 15:30:00'),
+			array('offcampus_id' => 3, 'student_id' => 29, 'entry_at' => '2016/2/3 16:00:00'),
+			// 笠井
+			array('offcampus_id' => 1, 'student_id' => 35, 'entry_at' => '2016/2/1 9:00:00'),
+			array('offcampus_id' => 2, 'student_id' => 35, 'entry_at' => '2016/2/1 9:30:00'),
+			array('offcampus_id' => 3, 'student_id' => 35, 'entry_at' => '2016/2/1 9:55:00'),
+			// 鳴海
+			array('offcampus_id' => 1, 'student_id' => 1, 'entry_at' => '2016/2/3 19:00:00'),
+			array('offcampus_id' => 3, 'student_id' => 1, 'entry_at' => '2016/2/3 19:55:00'),
+			// 佐々木
+			array('offcampus_id' => 1, 'student_id' => 34, 'entry_at' => '2016/2/3 21:00:00'),
+			array('offcampus_id' => 2, 'student_id' => 34, 'entry_at' => '2016/2/3 23:55:00'),
+			// 芦沢
+			array('offcampus_id' => 2, 'student_id' => 7, 'entry_at' => '2016/2/4 1:00:00'),
+		);
+
+		$query = \DB::insert('offparticipant')->columns(array('offcampus_id', 'student_id', 'entry_at'));
+		foreach($offparticipant_lists as $offparticipant)
+		{
+			$query->values(array($offparticipant['offcampus_id'], $offparticipant['student_id'],
+				strtotime($offparticipant['entry_at'])));
+		}
+		$query->execute();
 	}
 
 	public static function delete()
