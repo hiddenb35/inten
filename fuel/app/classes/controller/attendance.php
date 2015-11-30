@@ -63,7 +63,7 @@ class Controller_Attendance extends Controller_Loggedin
 		$att->lesson_id = $lesson_id;
 		$att->save();
 
-		$attendance_id = $att->id;
+		$attendance_id = $att->get('id');
 
 		foreach($attendance_data as $attendance)
 		{
