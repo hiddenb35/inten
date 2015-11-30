@@ -2,6 +2,9 @@
 
 class Controller_Attendance extends Controller_Loggedin
 {
+	const FORM_VIEW = 'attendance/take_attendance';
+	const LIST_VIEW = 'attendance/attendance_rate_list';
+
 	/**
 	 * 旧出席を取る画面用のメソッド
 	 * @deprecated
@@ -35,7 +38,7 @@ class Controller_Attendance extends Controller_Loggedin
 		}
 
 		$this->template->title = '出席';
-		$this->template->content = View::forge('attendance/take_attendance.php');
+		$this->template->content = View::forge(self::FORM_VIEW);
 
 		$lesson = Model_Lesson::find($lesson_id);
 		$this->template->content->set('student_lists', Model_Student::to_lists($lesson->class->students));
@@ -84,7 +87,7 @@ class Controller_Attendance extends Controller_Loggedin
 		}
 
 		$this->template->title = '出席率一覧画面';
-		$this->template->content = View::forge('attendance/attendance_rate_list');
+		$this->template->content = View::forge(self::LIST_VIEW);
 		$lesson = Model_Lesson::find($lesson_id);
 		$this->template->content->set('student_lists', Model_Student::to_lists_with_attendance($lesson->class->students));
 		$this->template->content->set('class_info', $lesson->class);
