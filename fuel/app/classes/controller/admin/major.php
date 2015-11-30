@@ -6,10 +6,12 @@ class Controller_Admin_Major extends Controller_Loggedin
 
 	public function action_index()
 	{
+		$view = View::forge($this->view);
+		$view->set('major_lists',Model_Major::to_lists(Model_Major::find('all')));
+		$view->set('course_lists',Model_Course::to_lists(Model_Course::find('all')));
+
 		$this->template->title = '専攻一覧';
-		$this->template->content = View::forge($this->view);
-		$this->template->content->set('major_lists',Model_Major::to_lists(Model_Major::find('all')));
-		$this->template->content->set('course_lists',Model_Course::to_lists(Model_Course::find('all')));
+		$this->template->content = $view;
 	}
 
 	public function action_add()
@@ -30,13 +32,14 @@ class Controller_Admin_Major extends Controller_Loggedin
 			Response::redirect('admin/major');
 		}
 
-		$this->template->title = 'エラー';
-		$this->template->content = View::forge($this->view);
-		$this->template->content->set('major_lists', Model_Major::to_lists(Model_Major::find('all')));
-		$this->template->content->set('course_lists',Model_Course::to_lists(Model_Course::find('all')));
-		$this->template->content->set('errors', $val->error_message());
-		$this->template->content->set('inputs', $val->input());
+		$view = View::forge($this->view);
+		$view->set('major_lists', Model_Major::to_lists(Model_Major::find('all')));
+		$view->set('course_lists',Model_Course::to_lists(Model_Course::find('all')));
+		$view->set('errors', $val->error_message());
+		$view->set('inputs', $val->input());
 
+		$this->template->title = 'エラー';
+		$this->template->content = $view;
 	}
 
 	public function post_edit()
