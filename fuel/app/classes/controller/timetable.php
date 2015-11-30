@@ -40,25 +40,20 @@ class Controller_timetable extends Controller_Loggedin
 			$val = Model_Timetable::validate_edit();
 			if($val->run())
 			{
-				$name = $val->validated('name');
-				$json = $val->validated('json');
-				$is_active = 1;
-				$class_id = $val->validated('class_id');
-				$timetable_id = $val->validated('id');
-
-				$timetable = Model_Timetable::find($timetable_id);
-				$timetable->name = $name;
-				$timetable->html = $json;
-				$timetable->class_id = $class_id;
-				$timetable->is_active = $is_active;
+				$timetable = Model_Timetable::find($val->validated('id'));
+				$timetable->name = $val->validated('name');
+				$timetable->html = $val->validated('json');
+				$timetable->class_id = $val->validated('class_id');
+				$timetable->is_active = 1;
 
 				$timetable->save();
-				Response::redirect(Uri::create('timetable/list', array(), array('class_id' => $class_id)));
+				Response::redirect(Uri::create('timetable/list', array(), array('class_id' => $val->validated('class_id'))));
 			}
 
 			// todo 適切なエラー処理をすること
 			throw new HttpServerErrorException();
 		}
+
 		$class_id = Input::get('class_id');
 		$timetable_id = Input::get('id');
 		if(is_null($timetable_id) || is_null($class_id))
