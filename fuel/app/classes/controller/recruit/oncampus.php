@@ -27,12 +27,7 @@ class Controller_Recruit_Oncampus extends Controller_Loggedin
 			throw new HttpNotFoundException;
 		}
 
-		$val = Model_Oncampus::validate();
-
-		if(Input::post('oncampus_id'))
-		{
-			$val = Model_Oncampus::validate_edit();
-		}
+		$val = (Input::post('oncampus_id')) ? Model_Oncampus::validate_edit() : Model_Oncampus::validate();
 
 		if($val->run())
 		{
@@ -56,12 +51,7 @@ class Controller_Recruit_Oncampus extends Controller_Loggedin
 			throw new HttpNotFoundException;
 		}
 
-		$val = Model_Oncampus::validate();
-
-		if(Input::post('oncampus_id'))
-		{
-			$val = Model_Oncampus::validate_edit();
-		}
+		$val = (Input::post('oncampus_id')) ? Model_Oncampus::validate_edit() : Model_Oncampus::validate();
 
 		if($val->run())
 		{

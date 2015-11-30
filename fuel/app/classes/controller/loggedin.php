@@ -22,10 +22,7 @@ class Controller_Loggedin extends Controller_Hybrid
 		}
 		else
 		{
-			if ( ! Auth::check())
-			{
-				Response::redirect('auth/slogin');
-			}
+			(Auth::check()) or Response::redirect('auth/slogin');
 
 			list($this->authentication) = array_values(Auth::verified());
 

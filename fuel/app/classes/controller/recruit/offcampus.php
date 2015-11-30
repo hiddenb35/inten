@@ -26,12 +26,9 @@ class Controller_Recruit_Offcampus extends Controller_Loggedin
 		{
 			throw new HttpNotFoundException;
 		}
-		$val = Model_Offcampus::validate();
 
-		if(Input::post('offcampus_id'))
-		{
-			$val = Model_Offcampus::validate_edit();
-		}
+		$val = (Input::post('offcampus_id')) ? Model_Offcampus::validate_edit() : Model_Offcampus::validate();
+
 		if($val->run())
 		{
 			$this->template->title = '確認画面';
@@ -54,12 +51,7 @@ class Controller_Recruit_Offcampus extends Controller_Loggedin
 			throw new HttpNotFoundException;
 		}
 
-		$val = Model_Offcampus::validate();
-
-		if(Input::post('offcampus_id'))
-		{
-			$val = Model_Offcampus::validate_edit();
-		}
+		$val = (Input::post('offcampus_id')) ? Model_Offcampus::validate_edit() : Model_Offcampus::validate();
 
 		if($val->run())
 		{

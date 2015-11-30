@@ -28,10 +28,7 @@ class Controller_timetable extends Controller_Loggedin
 		}
 
 		$class_id = Input::get('class_id');
-		if(is_null($class_id))
-		{
-			Response::redirect('/class/myclass/timetable/add');
-		}
+		(is_null($class_id)) and Response::redirect('/class/myclass/timetable/add');
 
 		$this->template->title = '時間割作成';
 		$this->template->content = View::forge('timetable/timetable_add');
@@ -67,7 +64,8 @@ class Controller_timetable extends Controller_Loggedin
 		}
 		$class_id = Input::get('class_id');
 		$timetable_id = Input::get('id');
-		if(is_null($timetable_id) || is_null($class_id)) {
+		if(is_null($timetable_id) || is_null($class_id))
+		{
 			Response::redirect('/timetable/list');
 		}
 
@@ -88,10 +86,8 @@ class Controller_timetable extends Controller_Loggedin
 	public function action_list()
 	{
 		$class_id = Input::get('class_id');
-		if(is_null($class_id))
-		{
-			Response::redirect('/class/myclass/timetable/list');
-		}
+		(is_null($class_id)) and Response::redirect('/class/myclass/timetable/list');
+
 		$timetables = Model_Timetable::find('all', array(
 			'where' => array(
 				array('class_id', '=', $class_id),

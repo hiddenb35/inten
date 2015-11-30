@@ -12,19 +12,9 @@ class Controller_Auth extends Controller_Template
 			$password = Input::post('password');
 			$auth = Auth::instance('studentauth');
 
-			if(Auth::instance('teacherauth')->check())
-			{
-				Auth::logout();
-			}
+			(Auth::instance('teacherauth')->check()) and Auth::logout();
 
-			if($auth->login($username, $password))
-			{
-				Response::redirect('/');
-			}
-			else
-			{
-				Response::redirect('auth/slogin');
-			}
+			($auth->login($username, $password)) ? Response::redirect('/') : Response::redirect('auth/slogin');
 		}
 
 		$this->template->title = '生徒用ログインページ';
@@ -40,19 +30,9 @@ class Controller_Auth extends Controller_Template
 
 			$auth = Auth::instance('teacherauth');
 
-			if(Auth::instance('studentauth')->check())
-			{
-				Auth::logout();
-			}
+			(Auth::instance('studentauth')->check()) and Auth::logout();
 
-			if($auth->login($username, $password))
-			{
-				Response::redirect('/');
-			}
-			else
-			{
-				Response::redirect('auth/tlogin');
-			}
+			($auth->login($username, $password)) ? Response::redirect('/') : Response::redirect('auth/tlogin');
 		}
 
 		$this->template->title = '教員用ログインページ';
