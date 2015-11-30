@@ -2,6 +2,10 @@
 
 class Controller_timetable extends Controller_Loggedin
 {
+	const FORM_VIEW = 'timetable/timetable_add';
+	const LIST_VIEW = 'timetable/timetable_list';
+	const EDIT_VIEW = 'timetable/timetable_edit';
+
 	public function action_add()
 	{
 		if(Input::is_post())
@@ -25,10 +29,13 @@ class Controller_timetable extends Controller_Loggedin
 		}
 
 		$class_id = Input::get('class_id');
-		(is_null($class_id)) and Response::redirect('/class/myclass/timetable/add');
+		if(is_null($class_id))
+		{
+			throw new HttpNOtFoundException;
+		}
 
 		$this->template->title = '時間割作成';
-		$this->template->content = View::forge('timetable/timetable_add');
+		$this->template->content = View::forge(self::FORM_VIEW);
 		$this->template->content->set('class_id', $class_id);
 		$this->template->content->set('lesson_lists', Model_Lesson::to_lists(Model_Class::find($class_id)->lessons));
 	}
@@ -68,7 +75,7 @@ class Controller_timetable extends Controller_Loggedin
 		$array['html'] = json_decode($timetable['html'], true);
 
 		$this->template->title = '時間割編集';
-		$this->template->content = View::forge('timetable/timetable_edit');
+		$this->template->content = View::forge(self::EDIT_VIEW);
 		$this->template->content->set('class_id', $class_id);
 		$this->template->content->set('id', $timetable_id);
 		$this->template->content->set('lesson_lists', Model_Lesson::to_lists(Model_Class::find($class_id)->lessons));
@@ -91,7 +98,7 @@ class Controller_timetable extends Controller_Loggedin
 		));
 
 		$this->template->title = '時間割一覧';
-		$this->template->content = View::forge('timetable/timetable_list');
+		$this->template->content = View::forge(self::LIST_VIEW);
 		$this->template->content->set('class_id', $class_id);
 		$this->template->content->set('class_name', Model_Class::find($class_id)->name);
 		$this->template->content->set('timetable_lists', Model_Timetable::to_lists($timetables));
