@@ -10,19 +10,20 @@ class Controller_Recruit_Oncampus extends Controller_Loggedin
 	public function action_form()
 	{
 		$oncampus_id = Input::get('oncampus_id');
-
-		$this->template->title = '学内説明会追加';
-		$this->template->content = View::forge(self::FORM_VIEW);
+		$view = View::forge(self::FORM_VIEW);
 
 		if(Input::is_post())
 		{
-			$this->template->content->set('inputs', Input::post());
+			$view->set('inputs', Input::post());
 		}
 		elseif(!is_null($oncampus_id))
 		{
-			$this->template->content->set('inputs', Model_Oncampus::to_list(Model_Oncampus::find($oncampus_id)));
-			$this->template->content->set('oncampus_id', $oncampus_id);
+			$view->set('inputs', Model_Oncampus::to_list(Model_Oncampus::find($oncampus_id)));
+			$view->set('oncampus_id', $oncampus_id);
 		}
+
+		$this->template->title = '学内説明会追加';
+		$this->template->content = $view;
 	}
 
 	public function action_confirm()
@@ -36,16 +37,20 @@ class Controller_Recruit_Oncampus extends Controller_Loggedin
 
 		if($val->run())
 		{
+			$view = View::forge(self::CONFIRM_VIEW);
+			$view->set('inputs', $val->validated());
+
 			$this->template->title = '確認画面';
-			$this->template->content = View::forge(self::CONFIRM_VIEW);
-			$this->template->content->set('inputs', $val->validated());
+			$this->template->content = $view;
 		}
 		else
 		{
+			$view = View::forge(self::FORM_VIEW);
+			$view->set('errors', $val->error_message());
+			$view->set('inputs', $val->input());
+
 			$this->template->title = 'エラー';
-			$this->template->content = View::forge(self::FORM_VIEW);
-			$this->template->content->set('errors', $val->error_message());
-			$this->template->content->set('inputs', $val->input());
+			$this->template->content = $view;
 		}
 	}
 
@@ -83,7 +88,7 @@ class Controller_Recruit_Oncampus extends Controller_Loggedin
 
 			$oncampus->save();
 
-			Response::redirect(self::LIST_VIEW);
+			Response::redirect('/recruit/oncampus/list');
 
 		}
 
@@ -94,13 +99,17 @@ class Controller_Recruit_Oncampus extends Controller_Loggedin
 
 	public function action_list()
 	{
+		$view = View::forge(self::LIST_VIEW);
+
 		$this->template->title = '学内説明会一覧';
-		$this->template->content = View::forge(self::LIST_VIEW);
+		$this->template->content = $view;
 	}
 
 	public function action_detail()
 	{
+		$view = View::forge(self::DETAIL_VIEW);
+
 		$this->template->title = '学内説明会詳細';
-		$this->template->content = View::forge(self::DETAIL_VIEW);
+		$this->template->content = $view;
 	}
 }
