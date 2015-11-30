@@ -36,14 +36,15 @@ class Controller_Attendance extends Controller_Loggedin
 		{
 			throw new HttpNotFoundException;
 		}
+		$lesson = Model_Lesson::find($lesson_id);
+
+		$view = View::forge(self::FORM_VIEW);
+		$view->set('student_lists', Model_Student::to_lists($lesson->class->students));
+		$view->set('class_info', $lesson->class);
+		$view->set('lesson_info', Model_Lesson::to_list($lesson));
 
 		$this->template->title = '出席';
-		$this->template->content = View::forge(self::FORM_VIEW);
-
-		$lesson = Model_Lesson::find($lesson_id);
-		$this->template->content->set('student_lists', Model_Student::to_lists($lesson->class->students));
-		$this->template->content->set('class_info', $lesson->class);
-		$this->template->content->set('lesson_info', Model_Lesson::to_list($lesson));
+		$this->template->content = $view;
 	}
 
 	public function action_add()
@@ -85,13 +86,15 @@ class Controller_Attendance extends Controller_Loggedin
 		{
 			throw new HttpNotFoundException();
 		}
+		$lesson = Model_Lesson::find($lesson_id);
+
+		$view = View::forge(self::LIST_VIEW);
+		$view->set('student_lists', Model_Student::to_lists_with_attendance($lesson->class->students));
+		$view->set('class_info', $lesson->class);
+		$view->set('lesson_info', Model_Lesson::to_list($lesson));
 
 		$this->template->title = '出席率一覧画面';
-		$this->template->content = View::forge(self::LIST_VIEW);
-		$lesson = Model_Lesson::find($lesson_id);
-		$this->template->content->set('student_lists', Model_Student::to_lists_with_attendance($lesson->class->students));
-		$this->template->content->set('class_info', $lesson->class);
-		$this->template->content->set('lesson_info', Model_Lesson::to_list($lesson));
+		$this->template->content = $view;
 	}
 
 }
