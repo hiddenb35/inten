@@ -34,10 +34,12 @@ class Controller_timetable extends Controller_Loggedin
 			throw new HttpNOtFoundException;
 		}
 
+		$view = View::forge(self::FORM_VIEW);
+		$view->set('class_id', $class_id);
+		$view->set('lesson_lists', Model_Lesson::to_lists(Model_Class::find($class_id)->lessons));
+
 		$this->template->title = '時間割作成';
-		$this->template->content = View::forge(self::FORM_VIEW);
-		$this->template->content->set('class_id', $class_id);
-		$this->template->content->set('lesson_lists', Model_Lesson::to_lists(Model_Class::find($class_id)->lessons));
+		$this->template->content = $view;
 	}
 
 	public function action_edit()
@@ -74,12 +76,14 @@ class Controller_timetable extends Controller_Loggedin
 		$array['name'] = $timetable['name'];
 		$array['html'] = json_decode($timetable['html'], true);
 
+		$view = View::forge(self::EDIT_VIEW);
+		$view->set('class_id', $class_id);
+		$view->set('id', $timetable_id);
+		$view->set('lesson_lists', Model_Lesson::to_lists(Model_Class::find($class_id)->lessons));
+		$view->set('timetable', $array);
+
 		$this->template->title = '時間割編集';
-		$this->template->content = View::forge(self::EDIT_VIEW);
-		$this->template->content->set('class_id', $class_id);
-		$this->template->content->set('id', $timetable_id);
-		$this->template->content->set('lesson_lists', Model_Lesson::to_lists(Model_Class::find($class_id)->lessons));
-		$this->template->content->set('timetable', $array);
+		$this->template->content = $view;
 	}
 
 	public function action_list()
@@ -97,10 +101,12 @@ class Controller_timetable extends Controller_Loggedin
 			'order_by' => array('updated_at' => 'desc', 'created_at' => 'desc'),
 		));
 
+		$view = View::forge(self::LIST_VIEW);
+		$view->set('class_id', $class_id);
+		$view->set('class_name', Model_Class::find($class_id)->name);
+		$view->set('timetable_lists', Model_Timetable::to_lists($timetables));
+
 		$this->template->title = '時間割一覧';
-		$this->template->content = View::forge(self::LIST_VIEW);
-		$this->template->content->set('class_id', $class_id);
-		$this->template->content->set('class_name', Model_Class::find($class_id)->name);
-		$this->template->content->set('timetable_lists', Model_Timetable::to_lists($timetables));
+		$this->template->content = $view;
 	}
 }
