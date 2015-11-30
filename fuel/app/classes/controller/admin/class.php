@@ -15,7 +15,7 @@ class Controller_Admin_Class extends Controller_Loggedin
 
 	public function action_add()
 	{
-		if(Input::method() !== 'POST')
+		if(!Input::is_post())
 		{
 			throw new HttpNotFoundException;
 		}

@@ -4,7 +4,7 @@ class Controller_timetable extends Controller_Loggedin
 {
 	public function action_add()
 	{
-		if(Input::method() === 'POST')
+		if(Input::is_post())
 		{
 			$val = Model_Timetable::validate();
 			if($val->run())
@@ -38,7 +38,7 @@ class Controller_timetable extends Controller_Loggedin
 
 	public function action_edit()
 	{
-		if(Input::method() === 'POST')
+		if(Input::is_post())
 		{
 			$val = Model_Timetable::validate_edit();
 			if($val->run())

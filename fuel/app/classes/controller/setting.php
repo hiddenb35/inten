@@ -7,7 +7,7 @@ class Controller_Setting extends Controller_Loggedin
 	{
 		$title = 'パスワード変更';
 
-		if(Input::method() === 'POST')
+		if(Input::is_post())
 		{
 			list($auth) = array_values(Auth::verified());
 

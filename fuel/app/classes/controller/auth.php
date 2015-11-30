@@ -6,7 +6,7 @@ class Controller_Auth extends Controller_Template
 
 	public function action_slogin()
 	{
-		if(Input::method() === 'POST')
+		if(Input::is_post())
 		{
 			$username = Input::post('username');
 			$password = Input::post('password');
@@ -23,7 +23,7 @@ class Controller_Auth extends Controller_Template
 
 	public function action_tlogin()
 	{
-		if(Input::method() === 'POST')
+		if(Input::is_post())
 		{
 			$username = Input::post('username');
 			$password = Input::post('password');

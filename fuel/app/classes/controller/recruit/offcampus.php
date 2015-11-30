@@ -9,7 +9,7 @@ class Controller_Recruit_Offcampus extends Controller_Loggedin
 		$this->template->title = '学外説明会追加';
 		$this->template->content = View::forge('recruit/off_campus_form');
 
-		if(Input::method() === 'POST')
+		if(Input::is_post())
 		{
 			$this->template->content->set('inputs', Input::post());
 		}
@@ -22,7 +22,7 @@ class Controller_Recruit_Offcampus extends Controller_Loggedin
 
 	public function action_confirm()
 	{
-		if(Input::method() !== 'POST')
+		if(!Input::is_post())
 		{
 			throw new HttpNotFoundException;
 		}
@@ -46,7 +46,7 @@ class Controller_Recruit_Offcampus extends Controller_Loggedin
 
 	public function action_register()
 	{
-		if(Input::method() !== 'POST')
+		if(!Input::is_post())
 		{
 			throw new HttpNotFoundException;
 		}
