@@ -98,13 +98,14 @@ class Model_Class extends \Orm\Model
 		return $val;
 	}
 
-	public static function to_lists($classes)
+	public static function to_lists($classes, $link = null)
 	{
 		$lists = array();
-
 		foreach($classes as $class)
 		{
-			$lists[] = self::to_list($class);
+			$array = self::to_list($class);
+			(is_null($link)) or $array['link_url'] = Uri::create($link, array(), array('class_id' => $class->id));
+			$lists[] = $array;
 		}
 
 		return $lists;
@@ -124,6 +125,7 @@ class Model_Class extends \Orm\Model
 		$list['college_name'] = $class->course->college->name;
 		$list['created_at'] = $class['created_at'];
 		$list['updated_at'] = $class['updated_at'];
+		$list['student_sum'] = count($class->students);
 
 		return $list;
 	}
