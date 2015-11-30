@@ -2,6 +2,8 @@
 
 class Controller_Auth extends Controller_Template
 {
+	const STUDENT_AUTHENTICATION_NAME = 'studentauth';
+	const TEACHER_AUTHENTICATION_NAME = 'teacherauth';
 	public $template = 'template/before_login/template';
 
 	public function action_slogin()
@@ -10,9 +12,9 @@ class Controller_Auth extends Controller_Template
 		{
 			$username = Input::post('username');
 			$password = Input::post('password');
-			$auth = Auth::instance('studentauth');
+			$auth = Auth::instance(self::STUDENT_AUTHENTICATION_NAME);
 
-			(Auth::instance('teacherauth')->check()) and Auth::logout();
+			(Auth::instance(self::TEACHER_AUTHENTICATION_NAME)->check()) and Auth::logout();
 
 			($auth->login($username, $password)) ? Response::redirect('/') : Response::redirect('auth/slogin');
 		}
@@ -28,9 +30,9 @@ class Controller_Auth extends Controller_Template
 			$username = Input::post('username');
 			$password = Input::post('password');
 
-			$auth = Auth::instance('teacherauth');
+			$auth = Auth::instance(self::TEACHER_AUTHENTICATION_NAME);
 
-			(Auth::instance('studentauth')->check()) and Auth::logout();
+			(Auth::instance(self::STUDENT_AUTHENTICATION_NAME)->check()) and Auth::logout();
 
 			($auth->login($username, $password)) ? Response::redirect('/') : Response::redirect('auth/tlogin');
 		}
@@ -43,12 +45,12 @@ class Controller_Auth extends Controller_Template
 	{
 		if(Auth::check())
 		{
-			if(Auth::instance('studentauth')->check())
+			if(Auth::instance(self::STUDENT_AUTHENTICATION_NAME)->check())
 			{
 				Auth::logout();
 				Response::redirect('auth/slogin');
 			}
-			elseif(Auth::instance('teacherauth')->check())
+			elseif(Auth::instance(self::TEACHER_AUTHENTICATION_NAME)->check())
 			{
 				Auth::logout();
 				Response::redirect('auth/tlogin');
