@@ -2,12 +2,17 @@
 
 class Controller_Recruit_Oncampus extends Controller_Loggedin
 {
+	const FORM_VIEW = 'recruit/on_campus_form';
+	const CONFIRM_VIEW = 'recruit/on_campus_confirm';
+	const LIST_VIEW = 'recruit/on_campus_list';
+	const DETAIL_VIEW = 'recruit/on_campus_detail';
+
 	public function action_form()
 	{
 		$oncampus_id = Input::get('oncampus_id');
 
 		$this->template->title = '学内説明会追加';
-		$this->template->content = View::forge('recruit/on_campus_form');
+		$this->template->content = View::forge(self::FORM_VIEW);
 
 		if(Input::is_post())
 		{
@@ -32,13 +37,13 @@ class Controller_Recruit_Oncampus extends Controller_Loggedin
 		if($val->run())
 		{
 			$this->template->title = '確認画面';
-			$this->template->content = View::forge('recruit/on_campus_confirm');
+			$this->template->content = View::forge(self::CONFIRM_VIEW);
 			$this->template->content->set('inputs', $val->validated());
 		}
 		else
 		{
 			$this->template->title = 'エラー';
-			$this->template->content = View::forge('recruit/on_campus_form');
+			$this->template->content = View::forge(self::FORM_VIEW);
 			$this->template->content->set('errors', $val->error_message());
 			$this->template->content->set('inputs', $val->input());
 		}
@@ -78,7 +83,7 @@ class Controller_Recruit_Oncampus extends Controller_Loggedin
 
 			$oncampus->save();
 
-			Response::redirect('recruit/on_campus_list');
+			Response::redirect(self::LIST_VIEW);
 
 		}
 
@@ -90,12 +95,12 @@ class Controller_Recruit_Oncampus extends Controller_Loggedin
 	public function action_list()
 	{
 		$this->template->title = '学内説明会一覧';
-		$this->template->content = View::forge('recruit/on_campus_list');
+		$this->template->content = View::forge(self::LIST_VIEW);
 	}
 
 	public function action_detail()
 	{
 		$this->template->title = '学内説明会詳細';
-		$this->template->content = View::forge('recruit/on_campus_detail');
+		$this->template->content = View::forge(self::DETAIL_VIEW);
 	}
 }
