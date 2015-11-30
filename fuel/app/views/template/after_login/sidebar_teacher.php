@@ -19,7 +19,7 @@
 			</a>
 			<ul class="treeview-menu">
 				<li><a href="/teacher/attachment_lesson"><i class="fa fa-circle-o"></i>授業割り当て</a></li>
-				<li><a href="/class/myclass"><i class="fa fa-circle-o"></i>担当するクラス一覧</a></li>
+				<li><a href="/class/links/student"><i class="fa fa-circle-o"></i>担当するクラス一覧</a></li>
 			</ul>
 		</li>
 		<li>
