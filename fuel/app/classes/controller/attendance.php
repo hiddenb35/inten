@@ -2,31 +2,11 @@
 
 class Controller_Attendance extends Controller_Loggedin
 {
-	public function action_lesson_list()
-	{
-
-		if(!$this->is_teacher())
-		{
-			throw new HttpNotFoundException;
-		}
-
-		$lesson_lists = array();
-		foreach(Model_Teacher::find($this->get_id())->attachment_lessons as $attach)
-		{
-			$array = array();
-			$array['name'] = $attach->lesson->name;
-			$array['class_name'] = $attach->lesson->class->name;
-			$array['course_name'] = $attach->lesson->class->course->name;
-			$array['student_sum'] = count($attach->lesson->class->students);
-			$lesson_id = $attach->lesson->id;
-			$array['link_url'] = Uri::create('attendance/student_list', array(), array('lesson_id' => $lesson_id));
-			$lesson_lists[] = $array;
-		}
-		$this->template->title = '担当している授業一覧';
-		$this->template->content = View::forge('attendance/responsible_list');
-		$this->template->content->set('lesson_lists', $lesson_lists);
-	}
-
+	/**
+	 * 旧出席を取る画面用のメソッド
+	 * @deprecated
+	 * todo 新出席を取る画面が完成し次第削除
+	 */
 	public function action_student_list()
 	{
 		$lesson_id = Input::get('lesson_id');
@@ -109,30 +89,6 @@ class Controller_Attendance extends Controller_Loggedin
 		$this->template->content->set('student_lists', Model_Student::to_lists_with_attendance($lesson->class->students));
 		$this->template->content->set('class_info', $lesson->class);
 		$this->template->content->set('lesson_info', Model_Lesson::to_list($lesson));
-	}
-
-	public function action_attendance_list() {
-
-		if(!$this->is_teacher())
-		{
-			throw new HttpNotFoundException;
-		}
-
-		$lesson_lists = array();
-		foreach(Model_Teacher::find($this->get_id())->attachment_lessons as $attach)
-		{
-			$array = array();
-			$array['name'] = $attach->lesson->name;
-			$array['class_name'] = $attach->lesson->class->name;
-			$array['course_name'] = $attach->lesson->class->course->name;
-			$array['student_sum'] = count($attach->lesson->class->students);
-			$lesson_id = $attach->lesson->id;
-			$array['link_url'] = Uri::create('attendance/attendance_rate_list', array(), array('lesson_id' => $lesson_id));
-			$lesson_lists[] = $array;
-		}
-		$this->template->title = '担当している授業一覧';
-		$this->template->content = View::forge('attendance/responsible_list');
-		$this->template->content->set('lesson_lists', $lesson_lists);
 	}
 
 }
