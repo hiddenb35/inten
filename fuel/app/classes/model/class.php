@@ -85,7 +85,7 @@ class Model_Class extends \Orm\Model
 	{
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
-		$val->add_field('name','クラス名','trim|required|max_length[64]')->add_rule('unique', 'class', 'name', $id);
+		$val->add_field('name','クラス名','trim|required|max_length[64]')->add_rule('unique', self::$_table_name, 'name', $id);
 		$val->add_field('course_id','学科ID','required|max_length[10]')->add_rule('exist_id', 'course');
 		$val->add_field('teacher_id','教員ID','required|max_length[10]')->add_rule('exist_id', 'teacher');
 		return $val;
@@ -94,7 +94,7 @@ class Model_Class extends \Orm\Model
 	public static function validate_edit($id = null)
 	{
 		$val = self::validate($id);
-		$val->add_field('id', 'クラスID', 'trim|required')->add_rule('exist_id', 'class');
+		$val->add_field('id', 'クラスID', 'trim|required')->add_rule('exist_id', self::$_table_name);
 		return $val;
 	}
 

@@ -74,7 +74,7 @@ class Model_Course extends \Orm\Model
 	{
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
-		$val->add_field('code','学科コード','required|max_length[2]|match_pattern[/[A-Z0-9]{2}/]')->add_rule('unique', 'course', 'code', $id);
+		$val->add_field('code','学科コード','required|max_length[2]|match_pattern[/[A-Z0-9]{2}/]')->add_rule('unique', self::$_table_name, 'code', $id);
 		$val->add_field('name','学科名','trim|required|max_length[64]');
 		$val->add_field('year_system','年制','trim|required|max_length[10]');
 		$val->add_field('college_id','カレッジID','required|max_length[10]')->add_rule('exist_id', 'college');
@@ -84,7 +84,7 @@ class Model_Course extends \Orm\Model
 	public static function validate_edit($id = null)
 	{
 		$val = self::validate($id);
-		$val->add_field('id', '学科ID', 'trim|required')->add_rule('exist_id', 'course');
+		$val->add_field('id', '学科ID', 'trim|required')->add_rule('exist_id', self::$_table_name);
 		return $val;
 	}
 

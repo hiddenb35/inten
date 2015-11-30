@@ -61,7 +61,7 @@ class Model_Major extends \Orm\Model
 	{
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
-		$val->add_field('name','専攻名','trim|required|max_length[64]')->add_rule('unique', 'major', 'name', $id);
+		$val->add_field('name','専攻名','trim|required|max_length[64]')->add_rule('unique', self::$_table_name, 'name', $id);
 		$val->add_field('course_id','学科ID','required|max_length[10]')->add_rule('exist_id', 'course');
 		return $val;
 	}
@@ -69,7 +69,7 @@ class Model_Major extends \Orm\Model
 	public static function validate_edit($id = null)
 	{
 		$val = self::validate($id);
-		$val->add_field('id', '専攻ID', 'trim|required')->add_rule('exist_id', 'major');
+		$val->add_field('id', '専攻ID', 'trim|required')->add_rule('exist_id', self::$_table_name);
 		return $val;
 	}
 
