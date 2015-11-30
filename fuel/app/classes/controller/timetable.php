@@ -86,7 +86,10 @@ class Controller_timetable extends Controller_Loggedin
 	public function action_list()
 	{
 		$class_id = Input::get('class_id');
-		(is_null($class_id)) and Response::redirect('/class/myclass/timetable/list');
+		if(is_null($class_id))
+		{
+			throw new HttpNotFOundException;
+		}
 
 		$timetables = Model_Timetable::find('all', array(
 			'where' => array(

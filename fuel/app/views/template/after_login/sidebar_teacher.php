@@ -9,7 +9,7 @@
 			</a>
 		</li>
 		<li class="treeview">
-			<a href="/timetable/list">
+			<a href="/class/links/timetable">
 				<i class="fa ion-university"></i> <span>時間割</span></i>
 			</a>
 		</li>
