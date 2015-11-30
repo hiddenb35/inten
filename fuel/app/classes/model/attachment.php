@@ -53,10 +53,7 @@ class Model_Attachment extends \Orm\Model
 		foreach($attachment_lessons as $attachment)
 		{
 			$array = self::to_list($attachment);
-			if(!is_null($link))
-			{
-				$array['link_url'] = Uri::create($link, array(), array('lesson_id' => $attachment->lesson->id));
-			}
+			(is_null($link)) or $array['link_url'] = Uri::create($link, array(), array('lesson_id' => $attachment->lesson->id));
 			$lists[] = $array;
 		}
 		return $lists;
