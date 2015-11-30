@@ -66,6 +66,13 @@ class Model_Major extends \Orm\Model
 		return $val;
 	}
 
+	public static function validate_edit($id = null)
+	{
+		$val = self::validate($id);
+		$val->add_field('id', '専攻ID', 'trim|required')->add_rule('exist_id', 'major');
+		return $val;
+	}
+
 	public static function to_lists($majors)
 	{
 		$lists = array();

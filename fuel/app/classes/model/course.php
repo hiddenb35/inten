@@ -81,6 +81,13 @@ class Model_Course extends \Orm\Model
 		return $val;
 	}
 
+	public static function validate_edit($id = null)
+	{
+		$val = self::validate($id);
+		$val->add_field('id', '学科ID', 'trim|required')->add_rule('exist_id', 'course');
+		return $val;
+	}
+
 	public static function to_lists($courses)
 	{
 		$lists = array();

@@ -52,6 +52,13 @@ class Model_College extends \Orm\Model
 		return $val;
 	}
 
+	public static function validate_edit($id = null)
+	{
+		$val = self::validate($id);
+		$val->add_field('id', 'カレッジID', 'trim|required')->add_rule('exist_id', 'college');
+		return $val;
+	}
+
 	public static function to_lists($colleges)
 	{
 		$lists = array();

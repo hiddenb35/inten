@@ -91,6 +91,13 @@ class Model_Class extends \Orm\Model
 		return $val;
 	}
 
+	public static function validate_edit($id = null)
+	{
+		$val = self::validate($id);
+		$val->add_field('id', 'クラスID', 'trim|required')->add_rule('exist_id', 'class');
+		return $val;
+	}
+
 	public static function to_lists($classes)
 	{
 		$lists = array();

@@ -45,8 +45,7 @@ class Controller_Admin_Course extends Controller_Loggedin
 
 	public function post_edit()
 	{
-		$val = Model_Course::validate(Input::post('id'));
-		$val->add_field('id', '学科ID', 'trim|required')->add_rule('exist_id', 'course');
+		$val = Model_Course::validate_edit(Input::post('id'));
 		$response = array();
 
 		if($val->run())

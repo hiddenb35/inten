@@ -42,8 +42,7 @@ class Controller_Admin_College extends Controller_Loggedin
 
 	public function post_edit()
 	{
-		$val = Model_College::validate(Input::post('id'));
-		$val->add_field('id', 'カレッジID', 'trim|required')->add_rule('exist_id', 'college');
+		$val = Model_College::validate_edit(Input::post('id'));
 		$response = array();
 
 		if($val->run())
