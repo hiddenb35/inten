@@ -2,11 +2,11 @@
 
 class Controller_Admin_Class extends Controller_Loggedin
 {
-	protected $view = 'admin/class';
+	const VIEW_FILE = 'admin/class';
 
 	public function action_index()
 	{
-		$view = View::forge($this->view);
+		$view = View::forge(self::VIEW_FILE);
 		$view->set('class_lists', Model_Class::to_lists(Model_Class::find('all')));
 		$view->set('course_lists', Model_Course::to_lists(Model_Course::find('all')));
 		$view->set('teacher_lists', Model_Teacher::to_lists(Model_Teacher::find('all')));
@@ -34,7 +34,7 @@ class Controller_Admin_Class extends Controller_Loggedin
 			Response::redirect('admin/class');
 		}
 
-		$view = View::forge($this->view);
+		$view = View::forge(self::VIEW_FILE);
 		$view->set('class_lists', Model_Class::to_lists(Model_Class::find('all')));
 		$view->set('course_lists', Model_Course::to_lists(Model_Course::find('all')));
 		$view->set('teacher_lists', Model_Teacher::to_lists(Model_Teacher::find('all')));
