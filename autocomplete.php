@@ -103,7 +103,6 @@ class HttpNotFoundException extends Fuel\Core\HttpNotFoundException {}
 class HttpServerErrorException extends Fuel\Core\HttpServerErrorException {}
 class Image extends Fuel\Core\Image {}
 class Inflector extends Fuel\Core\Inflector {}
-class Input extends Fuel\Core\Input {}
 class LangException extends Fuel\Core\LangException {}
 class Lang extends Fuel\Core\Lang {}
 class Log extends Fuel\Core\Log {}
