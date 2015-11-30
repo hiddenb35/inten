@@ -85,19 +85,27 @@ class Model_Class extends \Orm\Model
 	{
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
-		$val->add_field('name','クラス名','trim|required|max_length[64]')->add_rule('unique', 'class', 'name', $id);
+		$val->add_field('name','クラス名','trim|required|max_length[64]')->add_rule('unique', self::$_table_name, 'name', $id);
 		$val->add_field('course_id','学科ID','required|max_length[10]')->add_rule('exist_id', 'course');
 		$val->add_field('teacher_id','教員ID','required|max_length[10]')->add_rule('exist_id', 'teacher');
 		return $val;
 	}
 
-	public static function to_lists($classes)
+	public static function validate_edit($id = null)
+	{
+		$val = self::validate($id);
+		$val->add_field('id', 'クラスID', 'trim|required')->add_rule('exist_id', self::$_table_name);
+		return $val;
+	}
+
+	public static function to_lists($classes, $link = null)
 	{
 		$lists = array();
-
 		foreach($classes as $class)
 		{
-			$lists[] = self::to_list($class);
+			$array = self::to_list($class);
+			(is_null($link)) or $array['link_url'] = Uri::create($link, array(), array('class_id' => $class->id));
+			$lists[] = $array;
 		}
 
 		return $lists;
@@ -117,6 +125,7 @@ class Model_Class extends \Orm\Model
 		$list['college_name'] = $class->course->college->name;
 		$list['created_at'] = $class['created_at'];
 		$list['updated_at'] = $class['updated_at'];
+		$list['student_sum'] = count($class->students);
 
 		return $list;
 	}

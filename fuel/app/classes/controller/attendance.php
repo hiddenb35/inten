@@ -2,31 +2,14 @@
 
 class Controller_Attendance extends Controller_Loggedin
 {
-	public function action_lesson_list()
-	{
+	const FORM_VIEW = 'attendance/take_attendance';
+	const LIST_VIEW = 'attendance/attendance_rate_list';
 
-		if(!$this->is_teacher())
-		{
-			throw new HttpNotFoundException;
-		}
-
-		$lesson_lists = array();
-		foreach(Model_Teacher::find($this->get_id())->attachment_lessons as $attach)
-		{
-			$array = array();
-			$array['name'] = $attach->lesson->name;
-			$array['class_name'] = $attach->lesson->class->name;
-			$array['course_name'] = $attach->lesson->class->course->name;
-			$array['student_sum'] = count($attach->lesson->class->students);
-			$lesson_id = $attach->lesson->id;
-			$array['link_url'] = Uri::create('attendance/student_list', array(), array('lesson_id' => $lesson_id));
-			$lesson_lists[] = $array;
-		}
-		$this->template->title = '担当している授業一覧';
-		$this->template->content = View::forge('attendance/responsible_list');
-		$this->template->content->set('lesson_lists', $lesson_lists);
-	}
-
+	/**
+	 * 旧出席を取る画面用のメソッド
+	 * @deprecated
+	 * todo 新出席を取る画面が完成し次第削除
+	 */
 	public function action_student_list()
 	{
 		$lesson_id = Input::get('lesson_id');
@@ -53,14 +36,15 @@ class Controller_Attendance extends Controller_Loggedin
 		{
 			throw new HttpNotFoundException;
 		}
+		$lesson = Model_Lesson::find($lesson_id);
+
+		$view = View::forge(self::FORM_VIEW);
+		$view->set('student_lists', Model_Student::to_lists($lesson->class->students));
+		$view->set('class_info', $lesson->class);
+		$view->set('lesson_info', Model_Lesson::to_list($lesson));
 
 		$this->template->title = '出席';
-		$this->template->content = View::forge('attendance/take_attendance.php');
-
-		$lesson = Model_Lesson::find($lesson_id);
-		$this->template->content->set('student_lists', Model_Student::to_lists($lesson->class->students));
-		$this->template->content->set('class_info', $lesson->class);
-		$this->template->content->set('lesson_info', Model_Lesson::to_list($lesson));
+		$this->template->content = $view;
 	}
 
 	public function action_add()
@@ -79,7 +63,7 @@ class Controller_Attendance extends Controller_Loggedin
 		$att->lesson_id = $lesson_id;
 		$att->save();
 
-		$attendance_id = $att->id;
+		$attendance_id = $att->get('id');
 
 		foreach($attendance_data as $attendance)
 		{
@@ -102,37 +86,15 @@ class Controller_Attendance extends Controller_Loggedin
 		{
 			throw new HttpNotFoundException();
 		}
+		$lesson = Model_Lesson::find($lesson_id);
+
+		$view = View::forge(self::LIST_VIEW);
+		$view->set('student_lists', Model_Student::to_lists_with_attendance($lesson->class->students));
+		$view->set('class_info', $lesson->class);
+		$view->set('lesson_info', Model_Lesson::to_list($lesson));
 
 		$this->template->title = '出席率一覧画面';
-		$this->template->content = View::forge('attendance/attendance_rate_list');
-		$lesson = Model_Lesson::find($lesson_id);
-		$this->template->content->set('student_lists', Model_Student::to_lists_with_attendance($lesson->class->students));
-		$this->template->content->set('class_info', $lesson->class);
-		$this->template->content->set('lesson_info', Model_Lesson::to_list($lesson));
-	}
-
-	public function action_attendance_list() {
-
-		if(!$this->is_teacher())
-		{
-			throw new HttpNotFoundException;
-		}
-
-		$lesson_lists = array();
-		foreach(Model_Teacher::find($this->get_id())->attachment_lessons as $attach)
-		{
-			$array = array();
-			$array['name'] = $attach->lesson->name;
-			$array['class_name'] = $attach->lesson->class->name;
-			$array['course_name'] = $attach->lesson->class->course->name;
-			$array['student_sum'] = count($attach->lesson->class->students);
-			$lesson_id = $attach->lesson->id;
-			$array['link_url'] = Uri::create('attendance/attendance_rate_list', array(), array('lesson_id' => $lesson_id));
-			$lesson_lists[] = $array;
-		}
-		$this->template->title = '担当している授業一覧';
-		$this->template->content = View::forge('attendance/responsible_list');
-		$this->template->content->set('lesson_lists', $lesson_lists);
+		$this->template->content = $view;
 	}
 
 }

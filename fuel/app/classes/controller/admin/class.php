@@ -2,20 +2,22 @@
 
 class Controller_Admin_Class extends Controller_Loggedin
 {
-	protected $view = 'admin/class';
+	const VIEW_FILE = 'admin/class';
 
 	public function action_index()
 	{
+		$view = View::forge(self::VIEW_FILE);
+		$view->set('class_lists', Model_Class::to_lists(Model_Class::find('all')));
+		$view->set('course_lists', Model_Course::to_lists(Model_Course::find('all')));
+		$view->set('teacher_lists', Model_Teacher::to_lists(Model_Teacher::find('all')));
+
 		$this->template->title = 'クラス一覧';
-		$this->template->content = View::forge($this->view);
-		$this->template->content->set('class_lists', Model_Class::to_lists(Model_Class::find('all')));
-		$this->template->content->set('course_lists', Model_Course::to_lists(Model_Course::find('all')));
-		$this->template->content->set('teacher_lists', Model_Teacher::to_lists(Model_Teacher::find('all')));
+		$this->template->content = $view;
 	}
 
 	public function action_add()
 	{
-		if(Input::method() !== 'POST')
+		if(!Input::is_post())
 		{
 			throw new HttpNotFoundException;
 		}
@@ -32,20 +34,21 @@ class Controller_Admin_Class extends Controller_Loggedin
 			Response::redirect('admin/class');
 		}
 
+		$view = View::forge(self::VIEW_FILE);
+		$view->set('class_lists', Model_Class::to_lists(Model_Class::find('all')));
+		$view->set('course_lists', Model_Course::to_lists(Model_Course::find('all')));
+		$view->set('teacher_lists', Model_Teacher::to_lists(Model_Teacher::find('all')));
+		$view->set('errors', $val->error_message());
+		$view->set('inputs', $val->input());
+
 		$this->template->title = 'エラー';
-		$this->template->content = View::forge($this->view);
-		$this->template->content->set('class_lists', Model_Class::to_lists(Model_Class::find('all')));
-		$this->template->content->set('course_lists', Model_Course::to_lists(Model_Course::find('all')));
-		$this->template->content->set('teacher_lists', Model_Teacher::to_lists(Model_Teacher::find('all')));
-		$this->template->content->set('errors', $val->error_message());
-		$this->template->content->set('inputs', $val->input());
+		$this->template->content = $view;
 
 	}
 
 	public function post_edit()
 	{
-		$val = Model_Class::validate(Input::post('id'));
-		$val->add_field('id', 'クラスID', 'trim|required')->add_rule('exist_id', 'class');
+		$val = Model_Class::validate_edit(Input::post('id'));
 		$response = array();
 
 		if($val->run())

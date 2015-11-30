@@ -2,18 +2,20 @@
 
 class Controller_Admin_College extends Controller_Loggedin
 {
-	protected $view = 'admin/college';
+	const VIEW_FILE = 'admin/college';
 
 	public function action_index()
 	{
+		$view = View::forge(self::VIEW_FILE);
+		$view->set('college_lists', Model_College::to_lists(Model_College::find('all')));
+
 		$this->template->title = 'カレッジ一覧';
-		$this->template->content = View::forge($this->view);
-		$this->template->content->set('college_lists', Model_College::to_lists(Model_College::find('all')));
+		$this->template->content = $view;
 	}
 
 	public function action_add()
 	{
-		if(Input::method() !== 'POST')
+		if(!Input::is_post())
 		{
 			throw new HttpNotFoundException;
 		}
@@ -28,18 +30,19 @@ class Controller_Admin_College extends Controller_Loggedin
 			Response::redirect('admin/college');
 		}
 
+		$view = View::forge(self::VIEW_FILE);
+		$view->set('college_lists', Model_College::to_lists(Model_College::find('all')));
+		$view->set('errors', $val->error_message());
+		$view->set('inputs', $val->input());
+
 		$this->template->title = 'エラー';
-		$this->template->content = View::forge($this->view);
-		$this->template->content->set('college_lists', Model_College::to_lists(Model_College::find('all')));
-		$this->template->content->set('errors', $val->error_message());
-		$this->template->content->set('inputs', $val->input());
+		$this->template->content = $view;
 
 	}
 
 	public function post_edit()
 	{
-		$val = Model_College::validate(Input::post('id'));
-		$val->add_field('id', 'カレッジID', 'trim|required')->add_rule('exist_id', 'college');
+		$val = Model_College::validate_edit(Input::post('id'));
 		$response = array();
 
 		if($val->run())

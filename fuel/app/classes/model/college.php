@@ -48,7 +48,14 @@ class Model_College extends \Orm\Model
 	{
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
-		$val->add_field('name','カレッジ名','trim|required|max_length[64]')->add_rule('unique', 'college', 'name', $id);
+		$val->add_field('name','カレッジ名','trim|required|max_length[64]')->add_rule('unique', self::$_table_name, 'name', $id);
+		return $val;
+	}
+
+	public static function validate_edit($id = null)
+	{
+		$val = self::validate($id);
+		$val->add_field('id', 'カレッジID', 'trim|required')->add_rule('exist_id', self::$_table_name);
 		return $val;
 	}
 
