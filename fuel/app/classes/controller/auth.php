@@ -10,13 +10,11 @@ class Controller_Auth extends Controller_Template
 	{
 		if(Input::is_post())
 		{
-			$username = Input::post('username');
-			$password = Input::post('password');
 			$auth = Auth::instance(self::STUDENT_AUTHENTICATION_NAME);
 
 			(Auth::instance(self::TEACHER_AUTHENTICATION_NAME)->check()) and Auth::logout();
 
-			($auth->login($username, $password)) ? Response::redirect('/') : Response::redirect('auth/slogin');
+			($auth->login()) ? Response::redirect('/') : Response::redirect('auth/slogin');
 		}
 
 		$this->template->title = '生徒用ログインページ';
@@ -27,14 +25,11 @@ class Controller_Auth extends Controller_Template
 	{
 		if(Input::is_post())
 		{
-			$username = Input::post('username');
-			$password = Input::post('password');
-
 			$auth = Auth::instance(self::TEACHER_AUTHENTICATION_NAME);
 
 			(Auth::instance(self::STUDENT_AUTHENTICATION_NAME)->check()) and Auth::logout();
 
-			($auth->login($username, $password)) ? Response::redirect('/') : Response::redirect('auth/tlogin');
+			($auth->login()) ? Response::redirect('/') : Response::redirect('auth/tlogin');
 		}
 
 		$this->template->title = '教員用ログインページ';
