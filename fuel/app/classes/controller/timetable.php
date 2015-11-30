@@ -9,18 +9,15 @@ class Controller_timetable extends Controller_Loggedin
 			$val = Model_Timetable::validate();
 			if($val->run())
 			{
-				$name = $val->validated('name');
-				$json = $val->validated('json');
-				$class_id = $val->validated('class_id');
-
 				$timetable = Model_Timetable::forge();
-				$timetable->name = $name;
-				$timetable->html = $json;
-				$timetable->class_id = $class_id;
+				$timetable->name = $val->validated('name');
+				$timetable->html = $val->validated('json');
+				$timetable->class_id = $val->validated('class_id');
 				$timetable->is_active = 1;
 
 				$timetable->save();
-				Response::redirect(Uri::create('timetable/list', array(), array('class_id' => $class_id)));
+
+				Response::redirect(Uri::create('timetable/list', array(), array('class_id' => $val->validated('class_id'))));
 			}
 
 			// todo 適切なエラー処理をすること
