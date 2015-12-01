@@ -166,4 +166,64 @@ $(function(){
 	});
 
 	//*********************出席管理画面*********************
+	var setcolor = ["#00f","#ff0","#f00"];
+	$("#TAKE_ATTENDANCE #attendance").click(function(event) {
+		var i = 0;
+		function setName(){
+			if(i === $("#accordion").children().length){
+				$(".close").click();
+				$("#attendance").text("出席を取り直す").css("background-color","#555");
+			}
+			$(".modal-title").text($(".pc-size").children().eq(i).find('.box-header').children().eq(1).text());
+			$(".modal-title").next().text($(".pc-size").children().eq(i).find('.box-header').children().eq(2).text());
+			$(".modal-header h2").text($(".pc-size").children().eq(i).find('.box-content').children().text());
+		}
+		setName();
+		// $(".modal-body input:eq(0)").click(function(event){
+		// 	event.preventDefault();
+		// 	$(".panel").eq(i).find('.create-circle').css('background-color','#00f');
+		// 	i++;
+		// 	setName();
+		// });
+		// $(".modal-body input:eq(1)").click(function(event){
+		// 	event.preventDefault();
+		// 	$(".panel").eq(i).find('.create-circle').css('background-color','#f00');
+		// 	i++;
+		// 	setName();
+		// });
+		$(".modal-body input").click(function(event) {
+			event.preventDefault();
+			var index = $('.modal-body input').index(this);
+			if(index === 1)index = 2;
+			$(".panel").eq(i).find('.create-circle').css('background-color', setcolor[index]);
+			i++;
+			setName();
+		});
+
+		$(".modal-footer button").click(function(event) {
+			event.preventDefault();
+			i--;
+			setName();
+		});
+	});
+	// $("#TAKE_ATTENDANCE .panel button").eq(0).click(function(event) {
+	// 	$(this).parents(".panel").find('.create-circle').css('background-color','#00f');
+	// });
+	// $("#TAKE_ATTENDANCE .panel button").eq(1).click(function(event) {
+	// 	$(this).parents(".panel").find('.create-circle').css('background-color','#ff0');
+	// });
+	// $("#TAKE_ATTENDANCE .panel button").eq(2).click(function(event) {
+	// 	$(this).parents(".panel").find('.create-circle').css('background-color','#f00');
+	// });
+
+	$("#TAKE_ATTENDANCE .panel button").click(function(event) {
+		var index = $('.panel button').index(this);
+		$(this).parents(".panel").find('.create-circle').css('background-color',setcolor[index]);
+	});
+
+	$("#TAKE_ATTENDANCE .box-footer button").click(function(event) {
+		var index = $('.box-footer button').index(this);
+		$(this).parents('.box').children('.box-header').css('border-bottom-color',setcolor[index]);
+		$(this).parent('.box-footer').hide();
+	});
 });

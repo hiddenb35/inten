@@ -552,6 +552,12 @@ textarea[name="note"]{
 	width: 99px;
 	margin-top: -5px;
 }
+#TAKE_ATTENDANCE .panel-default{
+	margin-top: 0;
+}
+#TAKE_ATTENDANCE{
+	cursor: pointer;
+}
 
 /*********************************************************/
 
