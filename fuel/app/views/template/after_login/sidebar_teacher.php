@@ -33,6 +33,11 @@
 			</a>
 		</li>
 		<li>
+			<a href="/class/new_links/timetable">
+				<i class="fa ion-university"></i> <span>クラス一覧画面(新デザイン)</span>
+			</a>
+		</li>
+		<li>
 			<a href="/lesson/links/list">
 				<i class="fa ion-university"></i> <span>出席状況を見る</span>
 			</a>
