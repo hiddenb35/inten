@@ -222,7 +222,7 @@ $(function(){
 	});
 
 	$("#TAKE_ATTENDANCE .box-footer button").click(function(event) {
-		var index = $('.box-footer button').index(this);
+		var index = $(this).closest('.box-footer').children('button').index(this);
 		$(this).parents('.box').children('.box-header').css('border-bottom-color',setcolor[index]);
 		$(this).parent('.box-footer').hide();
 	});
