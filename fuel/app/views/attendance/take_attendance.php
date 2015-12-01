@@ -39,7 +39,7 @@
 			<!------------------------スマホ・タブレットサイズ-------------------------------->
 			<div class="sp-size">
 				<div class="text-center row">
-					<button type="button" class="btn" data-toggle="modal" data-target="#myModal2" id="attendance">出席を取る</button>
+					<button type="button" class="btn col-xs-offset-1 col-xs-10" data-toggle="modal" data-target="#myModal2" id="attendance">出席を取る</button>
 				</div>
 				<div class="panel-group" id="accordion">
 					<?php foreach($student_lists as $index => $student): ?>
@@ -79,9 +79,9 @@
 						<div class="modal-inner">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">閉じる</span><span class="sr-only">Close</span></button>
-								<h3 class="modal-title" id="myModalLabel">K013C1296</h3>
-								<h3>ササキユリ</h3>
-								<h2 class="text-center">佐々木 佑梨</h2>
+								<h3 class="modal-title" id="myModalLabel"></h3>
+								<h3></h3>
+								<h2 class="text-center"></h2>
 							</div>
 							<div class="modal-body text-center">
 								<input type="image" src="/assets/img/attendance.png">
