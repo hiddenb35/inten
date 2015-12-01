@@ -166,4 +166,46 @@ $(function(){
 	});
 
 	//*********************出席管理画面*********************
+	var setcolor = ["#00f","#ff0","#f00"];
+	$("#TAKE_ATTENDANCE #attendance").click(function(event) {
+		var i = 0;
+		function setName(){
+			if(i === $("#accordion").children().length){
+				$(".close").click();
+				$("#attendance").text("出席を取り直す").css("background-color","#555");
+			}
+			$(".modal-title").text($(".pc-size").children().eq(i).find('.box-header').children().eq(1).text());
+			$(".modal-title").next().text($(".pc-size").children().eq(i).find('.box-header').children().eq(2).text());
+			$(".modal-header h2").text($(".pc-size").children().eq(i).find('.box-content').children().text());
+		}
+		setName();
+
+		$(".modal-body input").click(function(event) {
+			event.preventDefault();
+			var index = $('.modal-body input').index(this);
+			if(index === 1)index = 2;
+			$(".panel").eq(i).find('.create-circle').css('background-color', setcolor[index]);
+			i++;
+			setName();
+		});
+
+		$(".modal-footer button").click(function(event) {
+			event.preventDefault();
+			i--;
+			setName();
+		});
+	});
+
+	$("#TAKE_ATTENDANCE .panel button").click(function(event) {
+		var index = $(this).closest('.panel').find('button').index(this);
+		console.log(index);
+		$(this).closest(".panel").find('.create-circle').css('background-color',setcolor[index]);
+	});
+
+	$("#TAKE_ATTENDANCE .box-footer button").click(function(event) {
+		var index = $(this).closest('.box-footer').children('button').index(this);
+		$(this).closest('.box').children('.box-header').css('border-bottom-color',setcolor[index]);
+		$(this).closest('.box').find('.box-header button').click();
+		console.log($(this).closest('.box').find('box-header button'));
+	});
 });

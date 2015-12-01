@@ -24,7 +24,7 @@
 								</button>
 							</div>
 						</div>
-						<div class="box-header">
+						<div class="box-content">
 							<div class="h3 text-right"><?php echo $student['full_name']; ?></div>
 						</div>
 						<div class="box-footer text-center">
@@ -36,37 +36,11 @@
 				</div>
 				<?php endforeach; ?>
 			</div>
-
 			<!------------------------スマホ・タブレットサイズ-------------------------------->
 			<div class="sp-size">
 				<div class="text-center row">
-					<button type="button" class="btn col-xs-offset-1 col-xs-10" data-toggle="modal" data-target="#myModal">出席を取る</button>
+					<button type="button" class="btn col-xs-offset-1 col-xs-10" data-toggle="modal" data-target="#myModal2" id="attendance">出席を取る</button>
 				</div>
-				<!-------------------------modalここから---------------------------->
-				<div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-inner">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">閉じる</span><span class="sr-only">Close</span></button>
-									<h3 class="modal-title" id="myModalLabel">K013C1296</h3>
-									<h3>ササキユリ</h3>
-									<h2 class="text-center">佐々木 佑梨</h2>
-								</div>
-								<div class="modal-body">
-									<input type="image" src="/assets/img/attendance.png">
-									<input type="image" src="/assets/img/absence.png">
-								</div>
-								<div class="modal-footer">
-									<div class="text-center">
-										<button type="button" class="btn btn-lg">戻る</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!----------------------ここまで---------------------------->
 				<div class="panel-group" id="accordion">
 					<?php foreach($student_lists as $index => $student): ?>
 					<div class="panel panel-default">
@@ -98,6 +72,31 @@
 				<button type="submit" class="btn btn-primary">送信</button>
 				<button type="reset" class="btn btn-danger">リセット</button>
 			</div>
+			<!-- popup -->
+			<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-inner">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">閉じる</span><span class="sr-only">Close</span></button>
+								<h3 class="modal-title" id="myModalLabel"></h3>
+								<h3></h3>
+								<h2 class="text-center"></h2>
+							</div>
+							<div class="modal-body text-center">
+								<input type="image" src="/assets/img/attendance.png">
+								<input type="image" src="/assets/img/absence.png">
+							</div>
+							<div class="modal-footer">
+								<div class="text-center">
+									<button type="button" class="btn btn-lg">戻る</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- popup end -->
 		</form>
 	</section>
 </div>
