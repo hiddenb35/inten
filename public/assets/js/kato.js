@@ -217,13 +217,14 @@ $(function(){
 	// });
 
 	$("#TAKE_ATTENDANCE .panel button").click(function(event) {
-		var index = $('.panel button').index(this);
-		$(this).parents(".panel").find('.create-circle').css('background-color',setcolor[index]);
+		var index = $(this).closest('.panel').find('button').index(this);
+		console.log(index);
+		$(this).closest(".panel").find('.create-circle').css('background-color',setcolor[index]);
 	});
 
 	$("#TAKE_ATTENDANCE .box-footer button").click(function(event) {
 		var index = $(this).closest('.box-footer').children('button').index(this);
-		$(this).parents('.box').children('.box-header').css('border-bottom-color',setcolor[index]);
+		$(this).closest('.box').children('.box-header').css('border-bottom-color',setcolor[index]);
 		$(this).parent('.box-footer').hide();
 	});
 });
