@@ -414,17 +414,17 @@ textarea[name="note"]{
 
 /*************新・出席取るクラス一覧画面******************/
 
-#RESPONSIBLE_LIST .box {
+#NEW_RESPONSIBLE_LIST .box {
 	position: relative;
 	border: 3px solid #D73925;
 }
-#RESPONSIBLE_LIST .box-body {
+#NEW_RESPONSIBLE_LIST .box-body {
 	margin: 8px;
 	padding: 10px;
 	border: 1px solid;
 	border-color: #D73925;
 }
-#RESPONSIBLE_LIST .class_name {
+#NEW_RESPONSIBLE_LIST .class_name {
 	position: absolute;
 	background-color: #D73925;
 	left: 0;
