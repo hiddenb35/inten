@@ -3,6 +3,7 @@
 class Controller_Class extends Controller_Loggedin
 {
 	const LIST_VIEW = 'teacher/assign_list';
+	const NEW_LIST_VIEW = 'attendance/new_responsible_list';
 
 	public function action_links($type = null)
 	{
@@ -10,6 +11,19 @@ class Controller_Class extends Controller_Loggedin
 		$class_lists = Model_Class::to_lists(Model_Teacher::find($this->get_id())->classes, $link);
 
 		$view = View::forge(self::LIST_VIEW);
+		$view->set('class_lists', $class_lists);
+
+		$this->template->title = '自分の担当するクラス一覧';
+		$this->template->content = $view;
+
+	}
+
+	public function action_new_links($type = null)
+	{
+		$link = $this->get_link($type);
+		$class_lists = Model_Class::to_lists(Model_Teacher::find($this->get_id())->classes, $link);
+
+		$view = View::forge(self::NEW_LIST_VIEW);
 		$view->set('class_lists', $class_lists);
 
 		$this->template->title = '自分の担当するクラス一覧';
