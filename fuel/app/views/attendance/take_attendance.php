@@ -84,8 +84,8 @@
 								<h2 class="text-center"></h2>
 							</div>
 							<div class="modal-body text-center">
-								<input type="image" align="left" src="/assets/img/attendance.png" class="img-responsive"/>
-								<input type="image" align="right" src="/assets/img/absence.png" class="img-responsive"/>
+								<input type="image" src="/assets/img/attendance.png" class="pull-left img-responsive">
+								<input type="image" src="/assets/img/absence.png" class="pull-right img-responsive">
 							</div>
 							<div class="modal-footer">
 								<div class="text-center">

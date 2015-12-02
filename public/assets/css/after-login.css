@@ -546,6 +546,9 @@ textarea[name="note"]{
 #TAKE_ATTENDANCE .close > span {
 	margin: 5px;
 }
+#TAKE_ATTENDANCE .modal-footer {
+	clear: both;
+}
 #TAKE_ATTENDANCE .modal-footer > div > .btn {
 	width: 80px;
 	color: #fff;
