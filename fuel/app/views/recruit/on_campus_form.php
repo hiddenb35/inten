@@ -1,4 +1,4 @@
-<div id="ON_CAMPUS_form">
+<div id="ON_CAMPUS_FORM">
 	<section class="content-header">
 		<h1>
 			学内説明会編集
