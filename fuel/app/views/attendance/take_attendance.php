@@ -18,7 +18,7 @@
 						<div class="box-header">
 							<input type="hidden" name="attendance[<?php echo $index; ?>][student_id]" value="<?php echo $student['id']; ?>">
 							<h3 class="box-title"><?php echo $student['number']; ?></h3>
-							<div><?php echo $student['full_name_kana']; ?></div>
+							<div class="kana"><?php echo $student['full_name_kana']; ?></div>
 							<div class="box-tools pull-right">
 								<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
 								</button>
@@ -84,12 +84,12 @@
 								<h2 class="text-center"></h2>
 							</div>
 							<div class="modal-body text-center">
-								<input type="image" src="/assets/img/attendance.png">
-								<input type="image" src="/assets/img/absence.png">
+								<input type="image" src="/assets/img/attendance.png" class="pull-left img-responsive">
+								<input type="image" src="/assets/img/absence.png" class="pull-right img-responsive">
 							</div>
 							<div class="modal-footer">
 								<div class="text-center">
-									<button type="button" class="btn btn-lg">戻る</button>
+									<button type="button" class="btn btn-lg text-center">戻る</button>
 								</div>
 							</div>
 						</div>

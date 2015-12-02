@@ -546,6 +546,9 @@ textarea[name="note"]{
 #TAKE_ATTENDANCE .close > span {
 	margin: 5px;
 }
+#TAKE_ATTENDANCE .modal-footer {
+	clear: both;
+}
 #TAKE_ATTENDANCE .modal-footer > div > .btn {
 	width: 80px;
 	color: #fff;
@@ -591,14 +594,18 @@ textarea[name="note"]{
 	padding-right: 17px;
 }
 #TAKE_ATTENDANCE input[type="image"] {
-	width: 99px;
+	width: 49%;
 	margin-top: -5px;
 }
 #TAKE_ATTENDANCE .panel-default{
 	margin-top: 0;
 }
-
-
+#TAKE_ATTENDANCE .panel-body {
+	border-top: none !important;
+}
+#TAKE_ATTENDANCE .collapsed-box > div > .kana {
+	display: none;
+}
 /*********************************************************/
 
 /*****************学内説明会登録**************************/
