@@ -1,4 +1,4 @@
-<div id="ON_CAMPUS_EDIT">
+<div id="ON_CAMPUS_form">
 	<section class="content-header">
 		<h1>
 			学内説明会編集
@@ -12,9 +12,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<form action="/recruit/oncampus/confirm" method="post" class="form-horizontal" role="form" id="on_campus_edit_form" enctype="multipart/form-data">
+					<form action="/recruit/oncampus/confirm" method="post" class="form-horizontal" role="form" id="on_campus_form_form" enctype="multipart/form-data">
 						<input type="hidden" name="" id="" value="">
-						<div class="info-box" id="on_campus_edit_box">
+						<div class="info-box" id="on_campus_form_box">
 							<div class="inside_box">
 								<div class="form-group">
 									<label for="company_name" class="col-md-2 control-label">企業名</label>
@@ -125,7 +125,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-group" id="on_campus_edit_form_button">
+						<div class="form-group" id="on_campus_form_form_button">
 							<button type="submit" class="btn btn-danger btn-lg">変更</button>
 						</div>
 					</form>
