@@ -505,7 +505,7 @@ textarea[name="note"]{
 #TAKE_ATTENDANCE .create-circle {
 	width: 38px;
 	height: 30px;
-	background-color: #dd4b39;
+	background-color: #999;
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	border-radius: 50%;

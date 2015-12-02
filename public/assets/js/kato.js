@@ -166,7 +166,7 @@ $(function(){
 	});
 
 	//*********************出席管理画面*********************
-	var setcolor = ["#00f","#ff0","#f00"];
+	var setcolor = ["#3c8dbc","#f39c12","#dd4b39"];
 	$("#TAKE_ATTENDANCE #attendance").click(function(event) {
 		var i = 0;
 		function setName(){
@@ -198,7 +198,6 @@ $(function(){
 
 	$("#TAKE_ATTENDANCE .panel button").click(function(event) {
 		var index = $(this).closest('.panel').find('button').index(this);
-		console.log(index);
 		$(this).closest(".panel").find('.create-circle').css('background-color',setcolor[index]);
 	});
 
@@ -206,6 +205,5 @@ $(function(){
 		var index = $(this).closest('.box-footer').children('button').index(this);
 		$(this).closest('.box').children('.box-header').css('border-bottom-color',setcolor[index]);
 		$(this).closest('.box').find('.box-header button').click();
-		console.log($(this).closest('.box').find('box-header button'));
 	});
 });
