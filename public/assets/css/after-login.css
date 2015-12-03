@@ -386,33 +386,33 @@ textarea[name="note"]{
 /*****************************************************/
 
 
-/*************旧・出席取るクラス一覧画面******************/
+/*************出席取るクラス一覧画面******************/
 
-/*#RESPONSIBLE_LIST .box {*/
-	/*position: relative;*/
-	/*border: 3px solid #D73925;*/
-/*}*/
-/*#RESPONSIBLE_LIST .box-body {*/
-	/*margin: 8px;*/
-	/*padding: 10px;*/
-	/*border: 1px solid;*/
-	/*border-color: #D73925;*/
-/*}*/
-/*#RESPONSIBLE_LIST .class_name {*/
-	/*padding-top: 18px;*/
-	/*text-align: right;*/
-	/*color: #000;*/
-/*}*/
-/*#RESPONSIBLE_LIST .lesson_name {*/
-	/*position: absolute;*/
-	/*background-color: #D73925;*/
-	/*left: 0;*/
-	/*padding: 5px;*/
-	/*color: #fff;*/
-/*}*/
+#RESPONSIBLE_LIST .box {
+	position: relative;
+	border: 3px solid #D73925;
+}
+#RESPONSIBLE_LIST .box-body {
+	margin: 8px;
+	padding: 10px;
+	border: 1px solid;
+	border-color: #D73925;
+}
+#RESPONSIBLE_LIST .class_name {
+	padding-top: 18px;
+	text-align: right;
+	color: #000;
+}
+#RESPONSIBLE_LIST .lesson_name {
+	position: absolute;
+	background-color: #D73925;
+	left: 0;
+	padding: 5px;
+	color: #fff;
+}
 /*********************************************************/
 
-/*************新・出席取るクラス一覧画面******************/
+/*************担当するクラスの授業一覧******************/
 
 #NEW_RESPONSIBLE_LIST .box {
 	position: relative;
