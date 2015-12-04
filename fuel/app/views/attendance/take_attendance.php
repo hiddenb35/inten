@@ -17,6 +17,7 @@
 					<div class="box">
 						<div class="box-header">
 							<input type="hidden" name="attendance[<?php echo $index; ?>][student_id]" value="<?php echo $student['id']; ?>">
+							<input type="hidden" name="attendance[<?php echo $index; ?>][status]">
 							<h3 class="box-title"><?php echo $student['number']; ?></h3>
 							<div class="kana"><?php echo $student['full_name_kana']; ?></div>
 							<div class="box-tools pull-right">
@@ -28,9 +29,9 @@
 							<div class="h3 text-right"><?php echo $student['full_name']; ?></div>
 						</div>
 						<div class="box-footer text-center">
-							<button type="button" class="btn btn-primary">出席</button>
-							<button type="button" class="btn btn-warning">遅刻</button>
-							<button type="button" class="btn btn-danger">欠席</button>
+							<button type="button" class="btn btn-primary" data-status-code="1">出席</button>
+							<button type="button" class="btn btn-warning" data-status-code="2">遅刻</button>
+							<button type="button" class="btn btn-danger" data-status-code="3">欠席</button>
 						</div>
 					</div>
 				</div>
@@ -59,9 +60,9 @@
 						</div>
 						<div id="student<?php echo $index; ?>" class="panel-collapse collapse">
 							<div class="panel-body text-center">
-								<button type="button" class="btn btn-primary">出席</button>
-								<button type="button" class="btn btn-warning">遅刻</button>
-								<button type="button" class="btn btn-danger">欠席</button>
+								<button type="button" class="btn btn-primary" data-status-code="1">出席</button>
+								<button type="button" class="btn btn-warning" data-status-code="2">遅刻</button>
+								<button type="button" class="btn btn-danger" data-status-code="3">欠席</button>
 							</div>
 						</div>
 					</div>
