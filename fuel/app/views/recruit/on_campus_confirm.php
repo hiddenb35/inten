@@ -100,7 +100,7 @@
 								<button type="submit" class="btn btn-primary btn-lg">送信</button>
 							</div>
 							<div class="col-xs-6">
-								<button type="submit" name="back" class="btn btn-danger btn-lg">修正</button>
+								<button type="button" name="back" class="btn btn-danger btn-lg" onclick="history.back()">修正</button>
 							</div>
 						</div>
 						<input type="hidden" name="id" value="<?php if(isset($inputs["company_id"])) { echo $inputs["id"]; }?>">
