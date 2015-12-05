@@ -110,10 +110,14 @@
 								<div class="form-group">
 									<label for="recruitment" class="col-md-2 control-label">
 										募集職種
-										<button class="btn btn-primary">追加</button>
 									</label>
-									<div class="col-md-10">
-										<input type="text" id="recruitment" name="recruitment[]" class="form-control" value="<?php if(isset($inputs["recruitment"])) {}; ?>">
+									<div class="col-md-10 row">
+										<div class="col-md-11">
+											<input type="text" id="recruitment" name="recruitment[]" class="form-control" value="<?php if(isset($inputs["recruitment"])) {}; ?>">
+										</div>
+										<div class="col-md-1">
+											<button type="button" class="btn btn-primary" id="wook_add">追加</button>
+										</div>
 									</div>
 								</div>
 								<div class="form-group">

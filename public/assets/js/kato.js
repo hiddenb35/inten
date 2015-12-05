@@ -206,4 +206,17 @@ $(function(){
 		$(this).closest('.box').children('.box-header').css('border-bottom-color',setcolor[index]);
 		$(this).closest('.box').find('.box-header button').click();
 	});
+
+	//*********************学内説明会登録画面*********************
+
+	$("#ON_CAMPUS_FORM #wook_add").click(function(event) {
+		$(this).closest('.form-group').children('div').append('<div class="col-md-11 append-box"><input type="text" id="recruitment" name="recruitment[]" class="form-control"></div><div class="col-md-1"><span class="help-block input-hide"><i class="fa fa-lg fa-close"></i></span></div>');
+	});
+
+	$("#ON_CAMPUS_FORM").on("click",".input-hide",function(event) {
+		console.log('run');
+		$(this).closest('div').prev().remove();
+		$(this).closest('div').remove();
+
+	});
 });
