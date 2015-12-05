@@ -659,3 +659,76 @@ textarea[name="note"]{
 	border-bottom: solid 1px #d2d6de;
 }
 /*********************************************************/
+
+/******************学内説明会一覧画面*********************/
+#ON_CAMPUS_LIST .box {
+	border-top: none;
+	box-shadow: none;
+}
+#ON_CAMPUS_LIST .outer-box-header {
+	background: #ECF0F5;
+}
+/*#ON_CAMPUS_LIST .outer-box-header .pull-left {*/
+	/*margin-top: 1px;*/
+/*}*/
+#ON_CAMPUS_LIST .tab {
+	background: #fff;
+	border: 1px solid #9BBFD3;
+}
+#ON_CAMPUS_LIST .outer-box-body {
+	padding: 2%;
+	border: 2px solid #98B8CC;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+#ON_CAMPUS_LIST .inner-box-header {
+	font-size: 30px;
+	background-color: #ECEFF3;
+	border-bottom: 2px solid #C1C1C1;
+	border-radius: 25px 25px 0 0;
+	-moz-border-radius: 25px 25px 0 0;
+	-webkit-border-radius: 25px 25px 0 0;
+}
+#ON_CAMPUS_LIST .inner-box {
+	border: 2px solid #C1C1C1;
+	-moz-border-radius: 25px 25px 25px 25px;
+	-webkit-border-radius: 25px 25px 25px 25px;
+	border-radius: 25px 25px 25px 25px;
+}
+#ON_CAMPUS_LIST .left-in-box {
+	font-size: 16px;
+}
+#ON_CAMPUS_LIST .right-in-box > .btn {
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+#ON_CAMPUS_LIST .right-in-box > .btn-primary {
+	background: #7A9AC5;
+}
+#ON_CAMPUS_LIST .box-header > .row {
+	margin: -10px;
+	margin-top: 1px;
+}
+#ON_CAMPUS_LIST .outer-box-header.clearfix > .pull-right {
+	width: 20%;
+}
+#ON_CAMPUS_LIST .outer-box-header.clearfix > .pull-left {
+	width: 80%;
+}
+#ON_CAMPUS_LIST .hd-btn {
+	display: none;
+}
+@media only screen and (max-width: 549px) {
+	#ON_CAMPUS_LIST .hd-btn {
+		display: block;
+	}
+	#ON_CAMPUS_LIST .outer-box-header > a {
+		display: none;
+	}
+	#ON_CAMPUS_LIST .outer-box-header.clearfix > .pull-left {
+		width: 100%;
+	}
+}
+
+/*********************************************************/
+
