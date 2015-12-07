@@ -1,0 +1,145 @@
+html, body{
+	background: #222d32;
+	width: 100%;
+}
+
+h3 {
+	margin-left: 120px;
+}
+
+table{
+	margin-top: 10px;
+	table-layout: fixed;
+	text-align: center;
+}
+
+th{
+	height: 50px;
+	text-align: center;
+}
+
+td{
+	height: 50px;
+}
+
+thead {
+	background-color: #3c8dbc;
+	color: #ffffff;
+}
+
+.mainitem,.mainsubject {
+	margin-right: 22px;
+	text-align: center;
+}
+
+
+.student-number {
+	margin-top: 50px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+
+.student-number > .name{
+	margin-right: 40px;
+}
+
+.maintable {
+	background-color: #f9f9f9;
+	border-top: 1px #fff solid;
+	border-left: 1px #fff solid;
+}
+
+
+.row {
+	color: #333333;
+	font-size: 30px;
+}
+
+.row > .item,.row > .total {
+	padding: 5px;
+	height: 50px;
+	line-height: 38px;
+	text-align:center;
+	border-collapse:collapse;
+	border-right:1px #fff solid;
+	border-bottom:1px #fff solid;
+	}
+
+.row > .item {
+	color: #ffffff;
+	background-color: #3c8dbc;
+	font-size: 30px;
+}
+
+.button {
+	margin-bottom: 20px;
+}
+
+@media screen and (min-width: 1200px){
+
+	th,td {
+		font-size: 30px;
+	}
+
+	.container-fluid {
+		width: 80%;
+	}
+
+	.name > span {
+	margin-right: 60px;
+	margin-left: -10px;
+	}
+
+	.row > .item {
+	font-size: 30px;
+	font-weight: bold;
+	}
+
+	.menu > .year > .control-label {
+	margin-right: 10px;
+	margin-left: 10px;
+	}
+
+
+	.menu {
+	margin-top:40px;
+	margin-bottom: -10px;
+	text-align: center;
+	}
+
+
+
+}
+
+@media screen and (max-width: 1200px){
+		th,td {
+		font-size: 23px;
+	}
+
+	.number > span {
+		margin-left: -10px;
+	}
+
+	.name > span {
+		margin-right: 60px;
+		margin-left: -20px;
+	}
+
+	.row > .item {
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	.menu {
+		text-align:right;
+	}
+
+	.form-group {
+		margin-top: 15px;
+	}
+
+}
+
+
+
