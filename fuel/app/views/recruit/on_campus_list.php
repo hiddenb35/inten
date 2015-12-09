@@ -16,11 +16,19 @@
 			<div class="box">
 				<div class="box-header text-center outer-box-header clearfix">
 					<a href="#" class="btn btn-primary pull-right">締め切りログ</a>
-					<div class="row pull-left">
-						<div class="tab col-xs-3">新着(昇順)</div>
-						<div class="tab col-xs-3">新着(降順)</div>
-						<div class="tab col-xs-3">締め切り(昇順)</div>
-						<div class="tab col-xs-3">締め切り(降順)</div>
+					<div class="row pull-left button-box">
+						<a href="#" class="btn btn-default tab col-xs-12 col-sm-3">新着
+							<i class="fa fa-fw fa-arrow-up"></i>
+						</a>
+						<a href="#" class="btn btn-default tab col-xs-12 col-sm-3">新着
+							<i class="fa fa-fw fa-arrow-down"></i>
+						</a>
+						<a href="#" class="btn btn-default tab col-xs-12 col-sm-3">締め切り
+							<i class="fa fa-fw fa-arrow-up"></i>
+						</a>
+						<a href="#" class="btn btn-default tab col-xs-12 col-sm-3">締め切り
+							<i class="fa fa-fw fa-arrow-down"></i>
+						</a>
 					</div>
 				</div>
 				<div class="outer-box-body">
@@ -30,8 +38,8 @@
 								<div class="box-header inner-box-header">第一商事</div>
 								<div class="box-body inner-box-body clearfix">
 									<div class="left-in-box pull-left">
-										<div>業種 システムエンジニア</div>
-										<div>締め切り 2016/11/30</div>
+										<div><span class="inner-title">業種 </span><span class="inner-content">システムエンジニア</span></div>
+										<div><span class="inner-title">締め切り </span><span class="inner-content">2016/11/30</span></div>
 									</div>
 									<div class="right-in-box pull-right">
 										<a href="#" class="btn btn-primary">詳細</a>
@@ -44,8 +52,8 @@
 								<div class="box-header inner-box-header">ABC商事</div>
 								<div class="box-body inner-box-body clearfix">
 									<div class="left-in-box pull-left">
-										<div>業種 システムエンジニア</div>
-										<div>締め切り 2016/11/30</div>
+										<div><span class="inner-title">業種 </span><span class="inner-content">システムエンジニア</span></div>
+										<div><span class="inner-title">締め切り </span><span class="inner-content">2016/11/30</span></div>
 									</div>
 									<div class="right-in-box pull-right">
 										<a href="#" class="btn btn-primary">詳細</a>
@@ -58,8 +66,8 @@
 								<div class="box-header inner-box-header">XX株式会社</div>
 								<div class="box-body inner-box-body clearfix">
 									<div class="left-in-box pull-left">
-										<div>業種 システムエンジニア</div>
-										<div>締め切り 2016/11/30</div>
+										<div><span class="inner-title">業種 </span><span class="inner-content">システムエンジニア</span></div>
+										<div><span class="inner-title">締め切り </span><span class="inner-content">2016/11/30</span></div>
 									</div>
 									<div class="right-in-box pull-right">
 										<a href="#" class="btn btn-primary">詳細</a>

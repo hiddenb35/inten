@@ -235,7 +235,7 @@ textarea[name="note"]{
 	cursor: pointer;
 }
 /*#TIMETABLE_VIEW td:hover {*/
-	/*background-color: #FFFCCC;*/
+/*background-color: #FFFCCC;*/
 /*}*/
 #TIMETABLE_VIEW .active {
 	background-color: #FFFCCC;
@@ -288,11 +288,11 @@ textarea[name="note"]{
 
 /*TODO @Author kasai リファクタリング*/
 /*#COLLEGE_LIST #edit_modal_content {*/
-	/*display: none;*/
-	/*z-index: 1;*/
-	/*position: fixed;*/
-	/*border: 2px solid #aaa;*/
-	/*background: #fff;*/
+/*display: none;*/
+/*z-index: 1;*/
+/*position: fixed;*/
+/*border: 2px solid #aaa;*/
+/*background: #fff;*/
 /*}*/
 #edit_modal_content {
 	display: none;
@@ -669,7 +669,7 @@ textarea[name="note"]{
 	background: #ECF0F5;
 }
 /*#ON_CAMPUS_LIST .outer-box-header .pull-left {*/
-	/*margin-top: 1px;*/
+/*margin-top: 1px;*/
 /*}*/
 #ON_CAMPUS_LIST .tab {
 	background: #fff;
@@ -681,7 +681,8 @@ textarea[name="note"]{
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 #ON_CAMPUS_LIST .inner-box-header {
-	font-size: 30px;
+	font-size: 20px;
+	font-weight: bold;
 	background-color: #ECEFF3;
 	border-bottom: 2px solid #C1C1C1;
 	border-radius: 25px 25px 0 0;
@@ -696,6 +697,9 @@ textarea[name="note"]{
 }
 #ON_CAMPUS_LIST .left-in-box {
 	font-size: 16px;
+}
+#ON_CAMPUS_LIST .inner-title {
+	font-weight: bold;
 }
 #ON_CAMPUS_LIST .right-in-box > .btn {
 	-moz-border-radius: 0;
@@ -719,14 +723,23 @@ textarea[name="note"]{
 	display: none;
 }
 @media only screen and (max-width: 549px) {
+	#ON_CAMPUS_LIST .outer-box-header.clearfix > .pull-left {
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 767px) {
+	#ON_CAMPUS_LIST .button-box {
+		width: 100% !important;
+	}
 	#ON_CAMPUS_LIST .hd-btn {
 		display: block;
 	}
 	#ON_CAMPUS_LIST .outer-box-header > a {
 		display: none;
 	}
-	#ON_CAMPUS_LIST .outer-box-header.clearfix > .pull-left {
-		width: 100%;
+	#ON_CAMPUS_LIST .tab {
+		padding: 16px;
+		margin: 7px;
 	}
 }
 
