@@ -745,7 +745,102 @@ textarea[name="note"]{
 
 /*********************************************************/
 
-/******************学内説明会一覧画面*********************/
+/******************学内説明会一覧画面(教員用)*********************/
+#TEACHER_ON_CAMPUS_LIST .box {
+	border-top: none;
+	box-shadow: none;
+}
+#TEACHER_ON_CAMPUS_LIST .outer-box-header {
+	background: #ECF0F5;
+}
+/*#TEACHER_ON_CAMPUS_LIST .outer-box-header .pull-left {*/
+/*margin-top: 1px;*/
+/*}*/
+#TEACHER_ON_CAMPUS_LIST .tab {
+	background: #fff;
+	border: 1px solid #E59B91;
+}
+#TEACHER_ON_CAMPUS_LIST .outer-box-body {
+	padding: 2%;
+	border: 2px solid #E59B91;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+#TEACHER_ON_CAMPUS_LIST .inner-box-header {
+	font-size: 20px;
+	font-weight: bold;
+	background-color: #F9DCDC;
+	border-bottom: 2px solid #DDD8D8;
+	border-radius: 22px 22px 0 0;
+	-moz-border-radius: 22px 22px 0 0;
+	-webkit-border-radius: 22px 22px 0 0;
+}
+#TEACHER_ON_CAMPUS_LIST .inner-box {
+	border: 2px solid #DDD8D8;
+	border-radius: 25px 25px 25px 25px;
+	-moz-border-radius: 25px 25px 25px 25px;
+	-webkit-border-radius: 25px 25px 25px 25px;
+}
+#TEACHER_ON_CAMPUS_LIST .left-in-box {
+	font-size: 16px;
+}
+#TEACHER_ON_CAMPUS_LIST .inner-title {
+	font-weight: bold;
+}
+#TEACHER_ON_CAMPUS_LIST .right-in-box > .btn {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+#TEACHER_ON_CAMPUS_LIST .btn-danger {
+	background: #CF5440;
+}
+#TEACHER_ON_CAMPUS_LIST .box-edit > .btn-danger {
+	background-color: #F9DCDC;
+	color: #CF5440;
+	border: 2px solid;
+	border-radius: 13px 13px 13px 13px;
+	-moz-border-radius: 13px 13px 13px 13px;
+	-webkit-border-radius: 13px 13px 13px 13px;
+
+}
+#TEACHER_ON_CAMPUS_LIST .box-header > .row {
+	margin: -10px;
+	margin-top: 1px;
+}
+#TEACHER_ON_CAMPUS_LIST .outer-box-header.clearfix > .pull-right {
+	width: 20%;
+}
+#TEACHER_ON_CAMPUS_LIST .outer-box-header.clearfix > .pull-left {
+	width: 80%;
+}
+#TEACHER_ON_CAMPUS_LIST .hd-btn {
+	display: none;
+}
+@media only screen and (max-width: 549px) {
+	#TEACHER_ON_CAMPUS_LIST .outer-box-header.clearfix > .pull-left {
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 767px) {
+	#TEACHER_ON_CAMPUS_LIST .button-box {
+		width: 100% !important;
+		margin: 0 !important;
+	}
+	#TEACHER_ON_CAMPUS_LIST .hd-btn {
+		display: block;
+	}
+	#TEACHER_ON_CAMPUS_LIST .outer-box-header > a {
+		display: none;
+	}
+	#TEACHER_ON_CAMPUS_LIST .tab {
+		padding: 16px;
+	}
+}
+
+/*********************************************************/
+
+
+/******************学内説明会一覧画面締め切りログ*********************/
 #ON_CAMPUS_DEADLINE .inner-page-title {
 	font-size:24px;
 	margin-bottom: 13px;
