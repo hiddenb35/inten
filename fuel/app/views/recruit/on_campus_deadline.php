@@ -1,4 +1,4 @@
-<div id="ON_CAMPUS_LIST">
+<div id="ON_CAMPUS_DEADLINE">
 	<section class="content-header">
 		<h1>
 			学内説明会一覧画面
@@ -10,68 +10,71 @@
 	<!-- Main content -->
 	<section class="content">
 		<div class="container-fluid">
-			<div class="hd-btn text-right">
-				<a href="#" class="btn btn-primary">締め切りログ</a>
+			<div class="header-title clearfix">
+				<span class="inner-page-title pull-left">締め切りログ</span>
+				<span class="page-count pull-right">76件中 1-5件</span>
 			</div>
-			<div class="box">
-				<div class="box-header text-center outer-box-header clearfix">
-					<a href="#" class="btn btn-primary pull-right">締め切りログ</a>
-					<div class="row pull-left button-box">
-						<a href="#" class="btn btn-default tab col-xs-6 col-sm-3">新着
-							<i class="fa fa-fw fa-arrow-up"></i>
-						</a>
-						<a href="#" class="btn btn-default tab col-xs-6 col-sm-3">新着
-							<i class="fa fa-fw fa-arrow-down"></i>
-						</a>
-						<a href="#" class="btn btn-default tab col-xs-6 col-sm-3">締め切り
-							<i class="fa fa-fw fa-arrow-up"></i>
-						</a>
-						<a href="#" class="btn btn-default tab col-xs-6 col-sm-3">締め切り
-							<i class="fa fa-fw fa-arrow-down"></i>
-						</a>
+			<div class="outer-box-body">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="box inner-box">
+							<div class="box-header inner-box-header clearfix">
+								<span class="pull-left">第一商事</span>
+								<span class="pull-right button-disabled">
+									<button type="button" class="btn btn-primary" disabled="disabled">参加</button>
+								</span>
+							</div>
+							<div class="box-body inner-box-body clearfix">
+								<div class="left-in-box pull-left">
+									<div><span class="inner-title">業種 </span><span
+											class="inner-content">システムエンジニア</span></div>
+									<div><span class="inner-title">締め切り </span><span
+											class="inner-content">2016/11/30</span></div>
+								</div>
+								<div class="right-in-box pull-right">
+									<a href="#" class="btn btn-primary">詳細</a>
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class="outer-box-body">
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="box inner-box">
-								<div class="box-header inner-box-header">第一商事</div>
-								<div class="box-body inner-box-body clearfix">
-									<div class="left-in-box pull-left">
-										<div><span class="inner-title">業種 </span><span class="inner-content">システムエンジニア</span></div>
-										<div><span class="inner-title">締め切り </span><span class="inner-content">2016/11/30</span></div>
-									</div>
-									<div class="right-in-box pull-right">
-										<a href="#" class="btn btn-primary">詳細</a>
-									</div>
+					<div class="col-sm-6">
+						<div class="box inner-box">
+							<div class="box-header inner-box-header clearfix">
+								<span class="pull-left">ABC商事</span>
+								<span class="pull-right button-disabled">
+									<button type="button" class="btn btn-danger" disabled="disabled">不参加</button>
+								</span>
+							</div>
+							<div class="box-body inner-box-body clearfix">
+								<div class="left-in-box pull-left">
+									<div><span class="inner-title">業種 </span><span
+											class="inner-content">システムエンジニア</span></div>
+									<div><span class="inner-title">締め切り </span><span
+											class="inner-content">2016/11/30</span></div>
+								</div>
+								<div class="right-in-box pull-right">
+									<a href="#" class="btn btn-primary">詳細</a>
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-6">
-							<div class="box inner-box">
-								<div class="box-header inner-box-header">ABC商事</div>
-								<div class="box-body inner-box-body clearfix">
-									<div class="left-in-box pull-left">
-										<div><span class="inner-title">業種 </span><span class="inner-content">システムエンジニア</span></div>
-										<div><span class="inner-title">締め切り </span><span class="inner-content">2016/11/30</span></div>
-									</div>
-									<div class="right-in-box pull-right">
-										<a href="#" class="btn btn-primary">詳細</a>
-									</div>
-								</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="box inner-box">
+							<div class="box-header inner-box-header clearfix">
+								<span class="pull-left">XX株式会社</span>
+								<span class="pull-right button-disabled">
+									<button type="button" class="btn btn-danger" disabled="disabled">不参加</button>
+								</span>
 							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="box inner-box">
-								<div class="box-header inner-box-header">XX株式会社</div>
-								<div class="box-body inner-box-body clearfix">
-									<div class="left-in-box pull-left">
-										<div><span class="inner-title">業種 </span><span class="inner-content">システムエンジニア</span></div>
-										<div><span class="inner-title">締め切り </span><span class="inner-content">2016/11/30</span></div>
-									</div>
-									<div class="right-in-box pull-right">
-										<a href="#" class="btn btn-primary">詳細</a>
-									</div>
+							<div class="box-body inner-box-body clearfix">
+								<div class="left-in-box pull-left">
+									<div><span class="inner-title">業種 </span><span
+											class="inner-content">システムエンジニア</span></div>
+									<div><span class="inner-title">締め切り </span><span
+											class="inner-content">2016/11/30</span></div>
+								</div>
+								<div class="right-in-box pull-right">
+									<a href="#" class="btn btn-primary">詳細</a>
 								</div>
 							</div>
 						</div>
