@@ -235,7 +235,7 @@ textarea[name="note"]{
 	cursor: pointer;
 }
 /*#TIMETABLE_VIEW td:hover {*/
-	/*background-color: #FFFCCC;*/
+/*background-color: #FFFCCC;*/
 /*}*/
 #TIMETABLE_VIEW .active {
 	background-color: #FFFCCC;
@@ -288,11 +288,11 @@ textarea[name="note"]{
 
 /*TODO @Author kasai リファクタリング*/
 /*#COLLEGE_LIST #edit_modal_content {*/
-	/*display: none;*/
-	/*z-index: 1;*/
-	/*position: fixed;*/
-	/*border: 2px solid #aaa;*/
-	/*background: #fff;*/
+/*display: none;*/
+/*z-index: 1;*/
+/*position: fixed;*/
+/*border: 2px solid #aaa;*/
+/*background: #fff;*/
 /*}*/
 #edit_modal_content {
 	display: none;
@@ -669,7 +669,7 @@ textarea[name="note"]{
 	background: #ECF0F5;
 }
 /*#ON_CAMPUS_LIST .outer-box-header .pull-left {*/
-	/*margin-top: 1px;*/
+/*margin-top: 1px;*/
 /*}*/
 #ON_CAMPUS_LIST .tab {
 	background: #fff;
