@@ -681,7 +681,8 @@ textarea[name="note"]{
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 #ON_CAMPUS_LIST .inner-box-header {
-	font-size: 30px;
+	font-size: 20px;
+	font-weight: bold;
 	background-color: #ECEFF3;
 	border-bottom: 2px solid #C1C1C1;
 	border-radius: 25px 25px 0 0;
@@ -696,6 +697,9 @@ textarea[name="note"]{
 }
 #ON_CAMPUS_LIST .left-in-box {
 	font-size: 16px;
+}
+#ON_CAMPUS_LIST .inner-title {
+	font-weight: bold;
 }
 #ON_CAMPUS_LIST .right-in-box > .btn {
 	-moz-border-radius: 0;
@@ -719,14 +723,23 @@ textarea[name="note"]{
 	display: none;
 }
 @media only screen and (max-width: 549px) {
+	#ON_CAMPUS_LIST .outer-box-header.clearfix > .pull-left {
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 767px) {
+	#ON_CAMPUS_LIST .button-box {
+		width: 100% !important;
+		margin: 0 !important;
+	}
 	#ON_CAMPUS_LIST .hd-btn {
 		display: block;
 	}
 	#ON_CAMPUS_LIST .outer-box-header > a {
 		display: none;
 	}
-	#ON_CAMPUS_LIST .outer-box-header.clearfix > .pull-left {
-		width: 100%;
+	#ON_CAMPUS_LIST .tab {
+		padding: 16px;
 	}
 }
 
