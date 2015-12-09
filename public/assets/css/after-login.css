@@ -750,6 +750,9 @@ textarea[name="note"]{
 	border-top: none;
 	box-shadow: none;
 }
+#TEACHER_ON_CAMPUS_LIST .box a > div > span.inner-title {
+	color: #000;
+}
 #TEACHER_ON_CAMPUS_LIST .outer-box-header {
 	background: #ECF0F5;
 }
@@ -782,6 +785,9 @@ textarea[name="note"]{
 }
 #TEACHER_ON_CAMPUS_LIST .left-in-box {
 	font-size: 16px;
+}
+#TEACHER_ON_CAMPUS_LIST .left-box-color {
+	color: #444444;
 }
 #TEACHER_ON_CAMPUS_LIST .inner-title {
 	font-weight: bold;

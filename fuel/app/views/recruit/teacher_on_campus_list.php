@@ -34,61 +34,73 @@
 				<div class="outer-box-body">
 					<div class="row">
 						<div class="col-sm-6">
-							<div class="box inner-box">
-								<div class="box-header inner-box-header clearfix">
-									<span class="pull-left">ABC商事</span>
+							<a href="#">
+								<div class="box inner-box">
+									<div class="box-header inner-box-header clearfix">
+										<span class="pull-left">ABC商事</span>
 									<span class="pull-right box-edit">
 										<button type="button" class="btn btn-danger">編集</button>
 									</span>
-								</div>
-								<div class="box-body inner-box-body clearfix">
-									<div class="left-in-box pull-left">
-										<div><span class="inner-title">業種 </span><span class="inner-content">システムエンジニア</span></div>
-										<div><span class="inner-title">締め切り </span><span class="inner-content">2016/11/30</span></div>
 									</div>
-									<div class="right-in-box pull-right">
-										<a href="#" class="btn btn-danger">詳細</a>
+									<div class="box-body inner-box-body clearfix">
+										<div class="left-in-box pull-left left-box-color">
+											<div><span class="inner-title">業種 </span><span class="inner-content">システムエンジニア</span>
+											</div>
+											<div><span class="inner-title">締め切り </span><span class="inner-content">2016/11/30</span>
+											</div>
+										</div>
+										<div class="right-in-box pull-right">
+											<a href="#" class="btn btn-danger">詳細</a>
+										</div>
 									</div>
 								</div>
-							</div>
+							</a>
 						</div>
 						<div class="col-sm-6">
-							<div class="box inner-box">
-								<div class="box-header inner-box-header clearfix">
-									<span class="pull-left">ABC商事</span>
+							<a href="#">
+								<div class="box inner-box">
+									<div class="box-header inner-box-header clearfix">
+										<span class="pull-left">ABC商事</span>
 									<span class="pull-right box-edit">
 										<button type="button" class="btn btn-danger">編集</button>
 									</span>
-								</div>
-								<div class="box-body inner-box-body clearfix">
-									<div class="left-in-box pull-left">
-										<div><span class="inner-title">業種 </span><span class="inner-content">システムエンジニア</span></div>
-										<div><span class="inner-title">締め切り </span><span class="inner-content">2016/11/30</span></div>
 									</div>
-									<div class="right-in-box pull-right">
-										<a href="#" class="btn btn-danger">詳細</a>
+									<div class="box-body inner-box-body clearfix">
+										<div class="left-in-box pull-left left-box-color">
+											<div><span class="inner-title">業種 </span><span class="inner-content">システムエンジニア</span>
+											</div>
+											<div><span class="inner-title">締め切り </span><span class="inner-content">2016/11/30</span>
+											</div>
+										</div>
+										<div class="right-in-box pull-right">
+											<a href="#" class="btn btn-danger">詳細</a>
+										</div>
 									</div>
 								</div>
-							</div>
+							</a>
 						</div>
 						<div class="col-sm-6">
-							<div class="box inner-box">
-								<div class="box-header inner-box-header clearfix">
-									<span class="pull-left">ABC商事</span>
+							<a href="#">
+								<div class="box inner-box">
+									<div class="box-header inner-box-header clearfix">
+										<span class="pull-left">ABC商事</span>
 									<span class="pull-right box-edit">
 										<button type="button" class="btn btn-danger">編集</button>
 									</span>
-								</div>
-								<div class="box-body inner-box-body clearfix">
-									<div class="left-in-box pull-left">
-										<div><span class="inner-title">業種 </span><span class="inner-content">システムエンジニア</span></div>
-										<div><span class="inner-title">締め切り </span><span class="inner-content">2016/11/30</span></div>
 									</div>
-									<div class="right-in-box pull-right">
-										<a href="#" class="btn btn-danger">詳細</a>
+									<div class="box-body inner-box-body clearfix">
+										<div class="left-in-box pull-left left-box-color left-box-color">
+											<div><span class="inner-title">業種 </span><span class="inner-content">システムエンジニア</span>
+											</div>
+											<div><span class="inner-title">締め切り </span><span class="inner-content">2016/11/30</span>
+											</div>
+										</div>
+										<div class="right-in-box pull-right">
+											<a href="#" class="btn btn-danger">詳細</a>
+										</div>
 									</div>
 								</div>
-							</div>
+							</a>
 						</div>
 					</div>
 				</div>
