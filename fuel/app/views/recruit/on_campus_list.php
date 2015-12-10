@@ -17,16 +17,16 @@
 				<div class="box-header text-center outer-box-header clearfix">
 					<a href="#" class="btn btn-primary pull-right">締め切りログ</a>
 					<div class="row pull-left button-box">
-						<a href="#" class="btn btn-default tab col-xs-12 col-sm-3">新着
+						<a href="#" class="btn btn-default tab col-xs-6 col-sm-3">新着
 							<i class="fa fa-fw fa-arrow-up"></i>
 						</a>
-						<a href="#" class="btn btn-default tab col-xs-12 col-sm-3">新着
+						<a href="#" class="btn btn-default tab col-xs-6 col-sm-3">新着
 							<i class="fa fa-fw fa-arrow-down"></i>
 						</a>
-						<a href="#" class="btn btn-default tab col-xs-12 col-sm-3">締め切り
+						<a href="#" class="btn btn-default tab col-xs-6 col-sm-3">締め切り
 							<i class="fa fa-fw fa-arrow-up"></i>
 						</a>
-						<a href="#" class="btn btn-default tab col-xs-12 col-sm-3">締め切り
+						<a href="#" class="btn btn-default tab col-xs-6 col-sm-3">締め切り
 							<i class="fa fa-fw fa-arrow-down"></i>
 						</a>
 					</div>
@@ -78,7 +78,18 @@
 					</div>
 				</div>
 			</div>
+			<nav>
+				<ul class="pagination">
+					<li><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+					</li>
+					<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+					<li><a href="#">2<span aria-hidden="true"></span></a></li>
+					<li><a href="#">3<span aria-hidden="true"></span></a></li>
+					<li><a href="#">4<span aria-hidden="true"></span></a></li>
+					<li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+					</li>
+				</ul>
+			</nav>
 		</div>
-</div>
-</section>
+	</section>
 </div>

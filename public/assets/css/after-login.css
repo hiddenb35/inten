@@ -730,6 +730,7 @@ textarea[name="note"]{
 @media only screen and (max-width: 767px) {
 	#ON_CAMPUS_LIST .button-box {
 		width: 100% !important;
+		margin: 0 !important;
 	}
 	#ON_CAMPUS_LIST .hd-btn {
 		display: block;
@@ -739,9 +740,299 @@ textarea[name="note"]{
 	}
 	#ON_CAMPUS_LIST .tab {
 		padding: 16px;
-		margin: 7px;
 	}
 }
 
 /*********************************************************/
 
+/******************学内説明会一覧画面(教員用)*********************/
+#TEACHER_ON_CAMPUS_LIST .box {
+	border-top: none;
+	box-shadow: none;
+}
+/*#TEACHER_ON_CAMPUS_LIST .box a > div > span.inner-title {*/
+	/*color: #000;*/
+/*}*/
+#TEACHER_ON_CAMPUS_LIST .outer-box-header {
+	background: #ECF0F5;
+}
+/*#TEACHER_ON_CAMPUS_LIST .outer-box-header .pull-left {*/
+/*margin-top: 1px;*/
+/*}*/
+#TEACHER_ON_CAMPUS_LIST .tab {
+	background: #fff;
+	border: 1px solid #E59B91;
+}
+#TEACHER_ON_CAMPUS_LIST .outer-box-body {
+	padding: 2%;
+	border: 2px solid #E59B91;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+#TEACHER_ON_CAMPUS_LIST .inner-box-header {
+	font-size: 20px;
+	font-weight: bold;
+	background-color: #F9DCDC;
+	border-bottom: 2px solid #DDD8D8;
+	border-radius: 22px 22px 0 0;
+	-moz-border-radius: 22px 22px 0 0;
+	-webkit-border-radius: 22px 22px 0 0;
+}
+#TEACHER_ON_CAMPUS_LIST .inner-box {
+	border: 2px solid #DDD8D8;
+	border-radius: 25px 25px 25px 25px;
+	-moz-border-radius: 25px 25px 25px 25px;
+	-webkit-border-radius: 25px 25px 25px 25px;
+}
+#TEACHER_ON_CAMPUS_LIST .left-in-box {
+	font-size: 16px;
+}
+#TEACHER_ON_CAMPUS_LIST .left-box-color {
+	color: #444;
+}
+#TEACHER_ON_CAMPUS_LIST .inner-title {
+	font-weight: bold;
+}
+#TEACHER_ON_CAMPUS_LIST .right-in-box > .btn {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+#TEACHER_ON_CAMPUS_LIST .btn-danger {
+	background: #CF5440;
+}
+#TEACHER_ON_CAMPUS_LIST .box-edit > .btn-danger {
+	background-color: #F9DCDC;
+	color: #CF5440;
+	border: 2px solid;
+	border-radius: 13px 13px 13px 13px;
+	-moz-border-radius: 13px 13px 13px 13px;
+	-webkit-border-radius: 13px 13px 13px 13px;
+
+}
+#TEACHER_ON_CAMPUS_LIST .box-header > .row {
+	margin: -10px;
+	margin-top: 1px;
+}
+#TEACHER_ON_CAMPUS_LIST .outer-box-header.clearfix > .pull-right {
+	width: 20%;
+}
+#TEACHER_ON_CAMPUS_LIST .outer-box-header.clearfix > .pull-left {
+	width: 80%;
+}
+#TEACHER_ON_CAMPUS_LIST .hd-btn {
+	display: none;
+}
+@media only screen and (max-width: 549px) {
+	#TEACHER_ON_CAMPUS_LIST .outer-box-header.clearfix > .pull-left {
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 767px) {
+	#TEACHER_ON_CAMPUS_LIST .button-box {
+		width: 100% !important;
+		margin: 0 !important;
+	}
+	#TEACHER_ON_CAMPUS_LIST .hd-btn {
+		display: block;
+	}
+	#TEACHER_ON_CAMPUS_LIST .outer-box-header > a {
+		display: none;
+	}
+	#TEACHER_ON_CAMPUS_LIST .tab {
+		padding: 16px;
+	}
+}
+
+/*********************************************************/
+
+
+/******************学内説明会一覧画面締め切りログ*********************/
+#ON_CAMPUS_DEADLINE .inner-page-title {
+	font-size:24px;
+	margin-bottom: 13px;
+}
+#ON_CAMPUS_DEADLINE .page-count {
+	margin-top: 9px;
+}
+#ON_CAMPUS_DEADLINE .box {
+	border-top: none;
+	box-shadow: none;
+}
+#ON_CAMPUS_DEADLINE .outer-box-header {
+	background: #ECF0F5;
+}
+#ON_CAMPUS_DEADLINE .tab {
+	background: #fff;
+	border: 1px solid #9BBFD3;
+}
+#ON_CAMPUS_DEADLINE .inner-box-header {
+	font-size: 20px;
+	font-weight: bold;
+	background-color: #ECEFF3;
+	border-bottom: 2px solid #C1C1C1;
+	border-radius: 25px 25px 0 0;
+	-moz-border-radius: 25px 25px 0 0;
+	-webkit-border-radius: 25px 25px 0 0;
+}
+#ON_CAMPUS_DEADLINE .inner-box {
+	border: 2px solid #C1C1C1;
+	-moz-border-radius: 25px 25px 25px 25px;
+	-webkit-border-radius: 25px 25px 25px 25px;
+	border-radius: 25px 25px 25px 25px;
+}
+#ON_CAMPUS_DEADLINE .left-in-box {
+	font-size: 16px;
+}
+#ON_CAMPUS_DEADLINE .inner-title {
+	font-weight: bold;
+}
+#ON_CAMPUS_DEADLINE .right-in-box > .btn {
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+#ON_CAMPUS_DEADLINE .button-disabled .btn-primary {
+	background-color: #fff;
+	color: #3c8dbc;
+	border: 2px solid;
+}
+#ON_CAMPUS_DEADLINE .button-disabled .btn-danger {
+	background-color: #fff;
+	color: #dd4b39;
+	border: 2px solid;
+}
+#ON_CAMPUS_DEADLINE .right-in-box > .btn-primary {
+	background: #7A9AC5;
+}
+#ON_CAMPUS_DEADLINE .box-header > .row {
+	margin: -10px;
+	margin-top: 1px;
+}
+#ON_CAMPUS_DEADLINE .outer-box-header.clearfix > .pull-right {
+	width: 20%;
+}
+#ON_CAMPUS_DEADLINE .outer-box-header.clearfix > .pull-left {
+	width: 80%;
+}
+#ON_CAMPUS_DEADLINE .hd-btn {
+	display: none;
+}
+@media only screen and (max-width: 549px) {
+	#ON_CAMPUS_DEADLINE .outer-box-header.clearfix > .pull-left {
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 767px) {
+	#ON_CAMPUS_DEADLINE .button-box {
+		width: 100% !important;
+		margin: 0 !important;
+	}
+	#ON_CAMPUS_DEADLINE .hd-btn {
+		display: block;
+	}
+	#ON_CAMPUS_DEADLINE .outer-box-header > a {
+		display: none;
+	}
+	#ON_CAMPUS_DEADLINE .tab {
+		padding: 16px;
+	}
+}
+
+/*********************************************************/
+
+/******************学内説明会一覧画面締め切りログ(教員用)*********************/
+#TEACHER_ON_CAMPUS_DEADLINE .inner-page-title {
+	font-size:24px;
+	margin-bottom: 13px;
+}
+#TEACHER_ON_CAMPUS_DEADLINE .page-count {
+	margin-top: 9px;
+}
+#TEACHER_ON_CAMPUS_DEADLINE .box {
+	border-top: none;
+	box-shadow: none;
+}
+#TEACHER_ON_CAMPUS_DEADLINE .outer-box-header {
+	background: #ECF0F5;
+}
+#TEACHER_ON_CAMPUS_DEADLINE .tab {
+	background: #fff;
+	border: 1px solid #9BBFD3;
+}
+#TEACHER_ON_CAMPUS_DEADLINE .inner-box-header {
+	font-size: 20px;
+	font-weight: bold;
+	background-color: #F9DCDC;
+	border-bottom: 2px solid #DDD8D8;
+	border-radius: 22px 22px 0 0;
+	-moz-border-radius: 22px 22px 0 0;
+	-webkit-border-radius: 22px 22px 0 0;
+}
+#TEACHER_ON_CAMPUS_DEADLINE .inner-box {
+	border: 2px solid #C1C1C1;
+	-moz-border-radius: 25px 25px 25px 25px;
+	-webkit-border-radius: 25px 25px 25px 25px;
+	border-radius: 25px 25px 25px 25px;
+}
+#TEACHER_ON_CAMPUS_DEADLINE .left-in-box {
+	font-size: 16px;
+}
+#TEACHER_ON_CAMPUS_DEADLINE .left-box-color {
+	color: #444;
+}
+#TEACHER_ON_CAMPUS_DEADLINE .inner-title {
+	font-weight: bold;
+}
+#TEACHER_ON_CAMPUS_DEADLINE .right-in-box > .btn {
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+#TEACHER_ON_CAMPUS_DEADLINE .button-disabled .btn-primary {
+	background-color: #fff;
+	color: #3c8dbc;
+	border: 2px solid;
+}
+#TEACHER_ON_CAMPUS_DEADLINE .button-disabled .btn-danger {
+	background-color: #fff;
+	color: #dd4b39;
+	border: 2px solid;
+}
+#TEACHER_ON_CAMPUS_DEADLINE .right-in-box > .btn-primary {
+	background: #7A9AC5;
+}
+#TEACHER_ON_CAMPUS_DEADLINE .box-header > .row {
+	margin: -10px;
+	margin-top: 1px;
+}
+#TEACHER_ON_CAMPUS_DEADLINE .outer-box-header.clearfix > .pull-right {
+	width: 20%;
+}
+#TEACHER_ON_CAMPUS_DEADLINE .outer-box-header.clearfix > .pull-left {
+	width: 80%;
+}
+#TEACHER_ON_CAMPUS_DEADLINE .hd-btn {
+	display: none;
+}
+@media only screen and (max-width: 549px) {
+	#TEACHER_ON_CAMPUS_DEADLINE .outer-box-header.clearfix > .pull-left {
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 767px) {
+	#TEACHER_ON_CAMPUS_DEADLINE .button-box {
+		width: 100% !important;
+		margin: 0 !important;
+	}
+	#TEACHER_ON_CAMPUS_DEADLINE .hd-btn {
+		display: block;
+	}
+	#TEACHER_ON_CAMPUS_DEADLINE .outer-box-header > a {
+		display: none;
+	}
+	#TEACHER_ON_CAMPUS_DEADLINE .tab {
+		padding: 16px;
+	}
+}
+
+/*********************************************************/
