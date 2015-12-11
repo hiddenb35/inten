@@ -148,11 +148,11 @@ class Model_Oncampus extends \Orm\Model
 		$list['id'] = $campus['id'];
 		$list['company_name'] = $campus['company_name'];
 		$list['company_code'] = $campus['company_code'];
-		$list['start_date'] = $campus['start_date'];
+		$list['start_date'] = date('Y/m/d', strtotime($campus['start_date']));
 		$list['start_time'] = $campus['start_time'];
 		$list['end_time'] = $campus['end_time'];
-		$list['entry_start'] = $campus['entry_start'];
-		$list['entry_end'] = $campus['entry_end'];
+		$list['entry_start'] = date('Y/m/d', strtotime($campus['entry_start']));
+		$list['entry_end'] = date('Y/m/d', strtotime($campus['entry_end']));
 		$list['target'] = $campus['target'];
 		$list['location'] = $campus['location'];
 		$list['content'] = $campus['content'];
@@ -162,6 +162,9 @@ class Model_Oncampus extends \Orm\Model
 		$list['recruitment'] = json_decode($campus['recruitment'], true);
 		$list['files'] = json_decode($campus['files'], true);
 		$list['note'] = $campus['note'];
+		$list['detail_link'] = Uri::create('recruit/oncampus/detail', array(), array('id' => $campus['id']));
+		$list['edit_link'] = Uri::create('recruit/oncampus/edit', array(), array('id' => $campus['id']));
+		$list['delete_link'] = Uri::create('recruit/oncampus/delete', array(), array('id' => $campus['id']));
 
 		return $list;
 	}
