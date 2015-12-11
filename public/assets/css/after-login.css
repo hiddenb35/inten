@@ -1050,59 +1050,59 @@ textarea[name="note"]{
 /*********************************************************/
 
 /******************出席情報一覧画面*********************/
-#ASSIGNMENT_LIST .subject {
+#ATTENDANCE_INFO_LIST .subject {
 	margin-left: 120px;
 }
 
-#ASSIGNMENT_LIST .table{
+#ATTENDANCE_INFO_LIST .table{
 	margin-top: 10px;
 	table-layout: fixed;
 	text-align: center;
 }
 
-#ASSIGNMENT_LIST th{
+#ATTENDANCE_INFO_LIST th{
 	height: 50px;
 	text-align: center;
 }
 
-#ASSIGNMENT_LIST td{
+#ATTENDANCE_INFO_LIST td{
 	height: 50px;
 }
 
-#ASSIGNMENT_LIST thead {
+#ATTENDANCE_INFO_LIST thead {
 	background-color: #3c8dbc;
 	color: #ffffff;
 }
 
-#ASSIGNMENT_LIST .student-number {
+#ATTENDANCE_INFO_LIST .student-number {
 	margin-top: 50px;
 	margin-bottom: 20px;
 	text-align: center;
 }
 
-#ASSIGNMENT_LIST .mainitem{
+#ATTENDANCE_INFO_LIST .mainitem{
 	margin-right: 22px;
 	text-align: center;
 }
 
 
-#ASSIGNMENT_LIST .student-number > .name{
+#ATTENDANCE_INFO_LIST .student-number > .name{
 	margin-right: 40px;
 }
 
-#ASSIGNMENT_LIST .maintable {
+#ATTENDANCE_INFO_LIST .maintable {
 	background-color: #f9f9f9;
 	border-top: 1px #fff solid;
 	border-left: 1px #fff solid;
 }
 
 
-#ASSIGNMENT_LIST .row {
+#ATTENDANCE_INFO_LIST .row {
 	color: #333333;
 	font-size: 30px;
 }
 
-#ASSIGNMENT_LIST .row > .item,.row > .total {
+#ATTENDANCE_INFO_LIST .row > .item,#ATTENDANCE_INFO_LIST .row > .total {
 	padding: 5px;
 	height: 50px;
 	line-height: 38px;
@@ -1112,38 +1112,38 @@ textarea[name="note"]{
 	border-bottom:1px #fff solid;
 }
 
-#ASSIGNMENT_LIST .row > .item {
+#ATTENDANCE_INFO_LIST .row > .item {
 	color: #ffffff;
 	background-color: #3c8dbc;
 	font-size: 30px;
 }
 
-#ASSIGNMENT_LIST .button {
+#ATTENDANCE_INFO_LIST .button {
 	margin-bottom: 20px;
 }
 
 @media screen and (min-width: 1300px){
 
-	#ASSIGNMENT_LIST th,td {
+	#ATTENDANCE_INFO_LIST th,#ATTENDANCE_INFO_LIST td {
 		font-size: 30px;
 	}
 
-	#ASSIGNMENT_LIST .container-fluid {
+	#ATTENDANCE_INFO_LIST .container-fluid {
 		width: 80%;
 	}
 
-	#ASSIGNMENT_LIST .name > span {
+	#ATTENDANCE_INFO_LIST .name > span {
 	margin-right: 60px;
 	margin-left: -10px;
 	}
 
-	#ASSIGNMENT_LIST .row > .item {
+	#ATTENDANCE_INFO_LIST .row > .item {
 	font-size: 30px;
 	font-weight: bold;
 	}
 
 
-	#ASSIGNMENT_LIST .menu {
+	#ATTENDANCE_INFO_LIST .menu {
 	margin-top:40px;
 	margin-bottom: -10px;
 	text-align: center;
@@ -1154,29 +1154,29 @@ textarea[name="note"]{
 }
 
 @media screen and (max-width: 1300px){
-	#ASSIGNMENT_LIST th,td {
+	#ATTENDANCE_INFO_LIST th,#ATTENDANCE_INFO_LIST td {
 		font-size: 23px;
 	}
 
-	#ASSIGNMENT_LIST .number > span {
+	#ATTENDANCE_INFO_LIST .number > span {
 		margin-left: -10px;
 	}
 
-	#ASSIGNMENT_LIST .name > span {
+	#ATTENDANCE_INFO_LIST .name > span {
 		margin-right: 60px;
 		margin-left: -20px;
 	}
 
-	#ASSIGNMENT_LIST .row > .item {
+	#ATTENDANCE_INFO_LIST .row > .item {
 		font-size: 20px;
 		font-weight: bold;
 	}
 
-	#ASSIGNMENT_LIST .menu {
+	#ATTENDANCE_INFO_LIST .menu {
 		text-align:right;
 	}
 
-	#ASSIGNMENT_LIST .form-group {
+	#ATTENDANCE_INFO_LIST .form-group {
 		margin-top: 15px;
 	}
 
@@ -1233,7 +1233,7 @@ textarea[name="note"]{
 
 @media screen and (min-width: 1300px){
 
-	#ATTENDANCE_RATE_DETAIL th,td {
+	#ATTENDANCE_RATE_DETAIL th,#ATTENDANCE_RATE_DETAIL td {
 		font-size: 30px;
 	}
 
@@ -1257,7 +1257,7 @@ textarea[name="note"]{
 }
 
 @media screen and (max-width: 1300px){
-	#ATTENDANCE_RATE_DETAIL th,td {
+	#ATTENDANCE_RATE_DETAIL th,#ATTENDANCE_RATE_DETAIL td {
 		font-size: 23px;
 	}
 
@@ -1273,5 +1273,6 @@ textarea[name="note"]{
 	#ATTENDANCE_RATE_DETAIL .menu {
 		text-align:right;
 	}
+}
 
 /*********************************************************/
