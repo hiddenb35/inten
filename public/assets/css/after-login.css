@@ -1036,3 +1036,230 @@ textarea[name="note"]{
 }
 
 /*********************************************************/
+
+/******************出席情報一覧画面*********************/
+#ASSIGNMENT_LIST .subject {
+	margin-left: 120px;
+}
+
+#ASSIGNMENT_LIST .table{
+	margin-top: 10px;
+	table-layout: fixed;
+	text-align: center;
+}
+
+#ASSIGNMENT_LIST th{
+	height: 50px;
+	text-align: center;
+}
+
+#ASSIGNMENT_LIST td{
+	height: 50px;
+}
+
+#ASSIGNMENT_LIST thead {
+	background-color: #3c8dbc;
+	color: #ffffff;
+}
+
+#ASSIGNMENT_LIST .student-number {
+	margin-top: 50px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+#ASSIGNMENT_LIST .mainitem{
+	margin-right: 22px;
+	text-align: center;
+}
+
+
+#ASSIGNMENT_LIST .student-number > .name{
+	margin-right: 40px;
+}
+
+#ASSIGNMENT_LIST .maintable {
+	background-color: #f9f9f9;
+	border-top: 1px #fff solid;
+	border-left: 1px #fff solid;
+}
+
+
+#ASSIGNMENT_LIST .row {
+	color: #333333;
+	font-size: 30px;
+}
+
+#ASSIGNMENT_LIST .row > .item,.row > .total {
+	padding: 5px;
+	height: 50px;
+	line-height: 38px;
+	text-align:center;
+	border-collapse:collapse;
+	border-right:1px #fff solid;
+	border-bottom:1px #fff solid;
+}
+
+#ASSIGNMENT_LIST .row > .item {
+	color: #ffffff;
+	background-color: #3c8dbc;
+	font-size: 30px;
+}
+
+#ASSIGNMENT_LIST .button {
+	margin-bottom: 20px;
+}
+
+@media screen and (min-width: 1300px){
+
+	#ASSIGNMENT_LIST th,td {
+		font-size: 30px;
+	}
+
+	#ASSIGNMENT_LIST .container-fluid {
+		width: 80%;
+	}
+
+	#ASSIGNMENT_LIST .name > span {
+	margin-right: 60px;
+	margin-left: -10px;
+	}
+
+	#ASSIGNMENT_LIST .row > .item {
+	font-size: 30px;
+	font-weight: bold;
+	}
+
+
+	#ASSIGNMENT_LIST .menu {
+	margin-top:40px;
+	margin-bottom: -10px;
+	text-align: center;
+	}
+
+
+
+}
+
+@media screen and (max-width: 1300px){
+	#ASSIGNMENT_LIST th,td {
+		font-size: 23px;
+	}
+
+	#ASSIGNMENT_LIST .number > span {
+		margin-left: -10px;
+	}
+
+	#ASSIGNMENT_LIST .name > span {
+		margin-right: 60px;
+		margin-left: -20px;
+	}
+
+	#ASSIGNMENT_LIST .row > .item {
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	#ASSIGNMENT_LIST .menu {
+		text-align:right;
+	}
+
+	#ASSIGNMENT_LIST .form-group {
+		margin-top: 15px;
+	}
+
+}
+
+/*********************************************************/
+
+/******************出席率詳細画面*********************/
+#ATTENDANCE_RATE_DETAIL .table{
+	margin-top: 10px;
+	table-layout: fixed;
+	text-align: center;
+}
+
+#ATTENDANCE_RATE_DETAIL th{
+	height: 50px;
+	text-align: center;
+}
+
+#ATTENDANCE_RATE_DETAIL td{
+	height: 50px;
+}
+
+#ATTENDANCE_RATE_DETAIL thead {
+	background-color: #3c8dbc;
+	color: #ffffff;
+}
+
+#ATTENDANCE_RATE_DETAIL .mainsubject {
+	margin-right: 22px;
+	text-align: center;
+}
+
+
+#ATTENDANCE_RATE_DETAIL .student-number {
+	margin-top: 50px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+
+#ATTENDANCE_RATE_DETAIL .student-number > .name{
+	margin-right: 40px;
+}
+
+#ATTENDANCE_RATE_DETAIL .row {
+	color: #333333;
+	font-size: 30px;
+}
+
+#ATTENDANCE_RATE_DETAIL .button {
+	margin-bottom: 20px;
+}
+
+@media screen and (min-width: 1300px){
+
+	#ATTENDANCE_RATE_DETAIL th,td {
+		font-size: 30px;
+	}
+
+	#ATTENDANCE_RATE_DETAIL .container-fluid {
+		width: 80%;
+	}
+
+	#ATTENDANCE_RATE_DETAIL .name > span {
+	margin-right: 60px;
+	margin-left: -10px;
+	}
+
+	#ATTENDANCE_RATE_DETAIL .menu {
+	margin-top:40px;
+	margin-bottom: -10px;
+	text-align: center;
+	}
+
+
+
+}
+
+@media screen and (max-width: 1300px){
+	#ATTENDANCE_RATE_DETAIL th,td {
+		font-size: 23px;
+	}
+
+	#ATTENDANCE_RATE_DETAIL .number > span {
+		margin-left: -10px;
+	}
+
+	#ATTENDANCE_RATE_DETAIL .name > span {
+		margin-right: 60px;
+		margin-left: -20px;
+	}
+
+	#ATTENDANCE_RATE_DETAIL .menu {
+		text-align:right;
+	}
+
+/*********************************************************/
