@@ -160,9 +160,9 @@ class Model_Offcampus extends \Orm\Model
 		$list['id'] = $campus['id'];
 		$list['company_name'] = $campus['company_name'];
 		$list['company_code'] = $campus['company_code'];
-		$list['start_date'] = date('Y/m/d', strtotime($campus['start_date']));
-		$list['start_time'] = $campus['start_time'];
-		$list['end_time'] = $campus['end_time'];
+		$list['start_date'] = date('Y年m月d日', strtotime($campus['start_date']));
+		$list['start_time'] = date('H:i', strtotime($campus['start_time']));
+		$list['end_time'] = date('H:i', strtotime($campus['end_time']));
 		$list['entry_start'] = date('Y/m/d', strtotime($campus['entry_start']));
 		$list['entry_end'] = date('Y/m/d', strtotime($campus['entry_end']));
 		$list['target'] = $campus['target'];
