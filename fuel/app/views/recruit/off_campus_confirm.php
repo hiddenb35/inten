@@ -113,7 +113,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-group" id="on_campus_confirm_form_button">
+						<div class="form-group" id="off_campus_confirm_form_button">
 							<div class="col-xs-6">
 								<button type="submit" class="btn btn-primary btn-lg">送信</button>
 							</div>
@@ -136,8 +136,8 @@
 <!--						<input type="hidden" name="bring" value="--><?php //echo $inputs["bring"]; ?><!--">-->
 <!--						<input type="hidden" name="url" value="--><?php //echo $inputs["url"]; ?><!--">-->
 <!--						--><?php //foreach($inputs["recruitment"] as $recruitment) { echo "<input type=\"hidden\" name=\"recruitment[]\" value=\"" . $recruitment . "\">"; } ?>
-<!--						<!--						TODO filesがかえってきてないので保留-->-->
-<!--						<!--						-->--><?php ////foreach($inputs["files"] as $files) { echo "<input type=\"hidden\" name=\"files[]\" value=\"" . $files . "\">"; } ?>
+<!--						<!--						TODO filesがかえってきてないので保留-->
+<!--						<!--						--><?php ////foreach($inputs["files"] as $files) { echo "<input type=\"hidden\" name=\"files[]\" value=\"" . $files . "\">"; } ?>
 <!--						<input type="hidden" name="note" value="--><?php //echo $inputs["note"]; ?><!--">-->
 					</form>
 				</div>
