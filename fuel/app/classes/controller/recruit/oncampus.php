@@ -4,7 +4,8 @@ class Controller_Recruit_Oncampus extends Controller_Loggedin
 {
 	const FORM_VIEW = 'recruit/on_campus_form';
 	const CONFIRM_VIEW = 'recruit/on_campus_confirm';
-	const LIST_VIEW = 'recruit/on_campus_list';
+	const LIST_VIEW_FOR_STUDENT = 'recruit/on_campus_list';
+	const LIST_VIEW_FOR_TEACHER = 'recruit/teacher_on_campus_list';
 	const DETAIL_VIEW = 'recruit/on_campus_detail';
 	const PER_PAGE = 10;
 
@@ -112,7 +113,7 @@ class Controller_Recruit_Oncampus extends Controller_Loggedin
 			'offset' => $pagination->offset,
 		));
 
-		$view = View::forge(self::LIST_VIEW);
+		$view = ($this->is_student()) ? View::forge(self::LIST_VIEW_FOR_STUDENT) : View::forge(self::LIST_VIEW_FOR_TEACHER);
 		$view->set('oncampus_lists', Model_Oncampus::to_lists($oncampuses));
 
 		$this->template->title = '学内説明会一覧';
