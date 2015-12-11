@@ -716,7 +716,7 @@ class Provider
 				'start_date'   => '2016/1/12',
 				'start_time'   => '13:00:00',
 				'end_time'     => '17:00:00',
-				'entry_start'  => '2015/12/31/',
+				'entry_start'  => '2015/12/31',
 				'entry_end'    => '2016/1/6',
 				'target'       => '2017年度卒業見込み者',
 				'location'     => '30715教室',
@@ -735,7 +735,7 @@ class Provider
 				'start_date'   => '2016/1/12',
 				'start_time'   => '13:00:00',
 				'end_time'     => '17:00:00',
-				'entry_start'  => '2015/12/31/',
+				'entry_start'  => '2015/12/31',
 				'entry_end'    => '2016/1/6',
 				'target'       => '2017年度卒業見込み者',
 				'location'     => '30617教室',
@@ -754,7 +754,7 @@ class Provider
 				'start_date'   => '2016/1/12',
 				'start_time'   => '13:00:00',
 				'end_time'     => '17:00:00',
-				'entry_start'  => '2015/12/31/',
+				'entry_start'  => '2015/12/31',
 				'entry_end'    => '2016/1/6',
 				'target'       => '2017年度卒業見込み者',
 				'location'     => '30715教室',
@@ -769,6 +769,37 @@ class Provider
 			),
 
 		);
+
+		for($i = 0; $i < 500; $i++)
+		{
+			$entry_start = self::random_date();
+			$entry_end = self::random_date($entry_start);
+
+			$start_date = self::random_date($entry_end);
+			$start_time = self::random_time();
+			$end_time = self::random_time($start_time);
+
+			$oncampus_lists[] = array(
+				'company_name' => self::random_company_name(),
+				'company_code' => mt_rand(100000, 999999),
+				'start_date'   => $start_date,
+				'start_time'   => $start_time,
+				'end_time'     => $end_time,
+				'entry_start'  => $entry_start,
+				'entry_end'    => $entry_end,
+				'target'       => '2017年度卒業見込み者',
+				'location'     => '30715教室',
+				'content'      => '会社説明会',
+				'explainer'    => '未定',
+				'bring'        => self::random_bring(),
+				'url'          => 'http://' . self::random_string() . '.com',
+				'recruitment'  => self::random_recruitment(),
+				'files'        => '[]',
+				'note'         => self::random_text(),
+				'teacher_id'   => 1,
+			);
+		}
+
 		$query = \DB::insert('oncampus')->columns(
 			array('company_name', 'company_code', 'start_date', 'start_time',
 			'end_time', 'entry_start', 'entry_end', 'target', 'location', 'content', 'explainer', 'bring',
@@ -891,6 +922,39 @@ class Provider
 			),
 
 		);
+
+		for($i = 0; $i < 500; $i++)
+		{
+			$entry_start = self::random_date();
+			$entry_end = self::random_date($entry_start);
+
+			$start_date = self::random_date($entry_end);
+			$start_time = self::random_time();
+			$end_time = self::random_time($start_time);
+
+			$offcampus_lists[] = array(
+				'company_name' => self::random_company_name(),
+				'company_code' => mt_rand(100000, 999999),
+				'start_date'   => $start_date,
+				'start_time'   => $start_time,
+				'end_time'     => $end_time,
+				'entry_start'  => $entry_start,
+				'entry_end'    => $entry_end,
+				'target'       => '2017年度卒業見込み者',
+				'location'     => '30715教室',
+				'content'      => '会社説明会',
+				'explainer'    => '未定',
+				'bring'        => self::random_bring(),
+				'url'          => 'http://' . self::random_string() . '.com',
+				'entry_method' => '電話申し込み',
+				'tel'          => '00-0000-0000',
+				'email'        => self::random_string() . '@' . self::random_string() . '.com',
+				'recruitment'  => self::random_recruitment(),
+				'files'        => '[]',
+				'note'         => self::random_text(),
+				'teacher_id'   => 1,
+			);
+		}
 		$query = \DB::insert('offcampus')->columns(
 			array('company_name', 'company_code', 'start_date', 'start_time',
 				'end_time', 'entry_start', 'entry_end', 'target', 'location', 'content',
