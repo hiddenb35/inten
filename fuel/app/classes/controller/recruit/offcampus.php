@@ -7,6 +7,7 @@ class Controller_Recruit_Offcampus extends Controller_Loggedin
 	const LIST_VIEW_FOR_STUDENT = 'recruit/off_campus_list';
 	const LIST_VIEW_FOR_TEACHER = 'recruit/off_campus_list';
 	const DETAIL_VIEW = 'recruit/off_campus_detail';
+	const FINISHED_VIEW = 'recruit/teacher_off_campus_deadline';
 	const PER_PAGE = 10;
 
 	public function action_form()
@@ -114,6 +115,31 @@ class Controller_Recruit_Offcampus extends Controller_Loggedin
 		));
 
 		$view = ($this->is_student()) ? View::forge(self::LIST_VIEW_FOR_STUDENT) : View::forge(self::LIST_VIEW_FOR_TEACHER);
+		$view->set('offcampus_lists', Model_Offcampus::to_lists($offcampus));
+
+		$this->template->title = '学外説明会一覧';
+		$this->template->content = $view;
+	}
+
+	public function action_finished()
+	{
+		$pagination = Pagination::forge('pagination', array(
+			'name' => 'bootstrap3',
+			'pagination_url' => Uri::create('recruit/offcampus/finished'),
+			'total_items' => Model_Offcampus::count(array('where' => array(array('entry_end', '<=', date('Y/m/d'))))),
+			'per_page' => self::PER_PAGE,
+			'uri_segment' => 'page',
+		));
+
+		$offcampus = Model_Offcampus::find('all', array(
+			'where' => array(
+				array('entry_end', '<=', date('Y/m/d')),
+			),
+			'limit' => $pagination->per_page,
+			'offset' => $pagination->offset,
+		));
+
+		$view = View::forge(self::FINISHED_VIEW);
 		$view->set('offcampus_lists', Model_Offcampus::to_lists($offcampus));
 
 		$this->template->title = '学外説明会一覧';
