@@ -608,14 +608,17 @@ textarea[name="note"]{
 }
 /*********************************************************/
 
-/**************学内説明会登録・編集**************************/
-#ON_CAMPUS_FORM #on_campus_form_form {
+/*****************説明会登録・編集**************************/
+#ON_CAMPUS_FORM #on_campus_form_form,
+#OFF_CAMPUS_FORM #off_campus_form_form {
 	margin: 0 auto;
 }
-#ON_CAMPUS_FORM .inside_box {
+#ON_CAMPUS_FORM .inside_box,
+#OFF_CAMPUS_FORM .inside_box {
 	margin: 30px 30px 30px 25px;
 }
-#ON_CAMPUS_FORM #on_campus_form_box {
+#ON_CAMPUS_FORM #on_campus_form_box,
+#OFF_CAMPUS_FORM #off_campus_form_box {
 	border: solid 1px #d2d6de;
 	border-left-width: 15px;
 	border-left-color: #dd4b39;
@@ -623,28 +626,35 @@ textarea[name="note"]{
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
 }
-#ON_CAMPUS_FORM #on_campus_form_form_button {
+#ON_CAMPUS_FORM #on_campus_form_form_button,
+#OFF_CAMPUS_FORM #off_campus_form_form_button {
 	text-align: center;
 }
-#ON_CAMPUS_FORM .append-box{
+#ON_CAMPUS_FORM .append-box,
+#OFF_CAMPUS_FORM .append-box {
 	margin-top:8px;
 }
-#ON_CAMPUS_FORM span {
+#ON_CAMPUS_FORM span,
+#OFF_CAMPUS_FORM span {
 	margin-top:12px;
 }
-#ON_CAMPUS_FORM #wook_add{
+#ON_CAMPUS_FORM #wook_add,
+#OFF_CAMPUS_FORM #wook_add {
 	margin-left:-20px;
 }
 /*********************************************************/
 
-/*****************学内説明会登録確認**********************/
-#ON_CAMPUS_CONFIRM #on_campus_confirm_form {
+/**********************説明会登録確認**********************/
+#ON_CAMPUS_CONFIRM #on_campus_confirm_form,
+#OFF_CAMPUS_CONFIRM #off_campus_confirm_form {
 	margin: 0 auto;
 }
-#ON_CAMPUS_CONFIRM .inside_box {
+#ON_CAMPUS_CONFIRM .inside_box,
+#OFF_CAMPUS_CONFIRM .inside_box {
 	margin: 30px 30px 30px 25px;
 }
-#ON_CAMPUS_CONFIRM #on_campus_confirm_box {
+#ON_CAMPUS_CONFIRM #on_campus_confirm_box,
+#OFF_CAMPUS_CONFIRM #off_campus_confirm_box {
 	border: solid 1px #d2d6de;
 	border-left-width: 15px;
 	border-left-color: #dd4b39;
@@ -652,10 +662,12 @@ textarea[name="note"]{
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
 }
-#ON_CAMPUS_CONFIRM #on_campus_confirm_form_button {
+#ON_CAMPUS_CONFIRM #on_campus_confirm_form_button,
+#OFF_CAMPUS_CONFIRM #off_campus_confirm_form_button {
 	text-align: center;
 }
-#ON_CAMPUS_CONFIRM .put-bottom-line {
+#ON_CAMPUS_CONFIRM .put-bottom-line,
+#OFF_CAMPUS_CONFIRM .put-bottom-line {
 	border-bottom: solid 1px #d2d6de;
 }
 /*********************************************************/
