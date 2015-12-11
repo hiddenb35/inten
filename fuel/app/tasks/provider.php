@@ -973,4 +973,100 @@ class Provider
 			\DB::query($sql)->execute();
 		}
 	}
+
+	private static function random_string()
+	{
+		static $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJLKMNOPQRSTUVWXYZ';
+		$length = mt_rand(8, 20);
+		$result = '';
+		for($i = 0; $i < $length; $i++)
+		{
+			$result .= $chars[mt_rand(0, strlen($chars) - 1)];
+		}
+
+		return $result;
+	}
+	private static function random_company_name()
+	{
+		$result = self::random_string();
+		$result = (mt_rand(0,1)) ? ('株式会社' . $result) : ($result . ' Inc.');
+		return $result;
+	}
+
+	private static function random_date($from = null)
+	{
+		$start_year = 2015;
+		$start_month = 1;
+		$start_day = 1;
+
+		(is_null($from)) or list($start_year, $start_month, $start_day) = explode('/', $from);
+
+		return sprintf('%02d/%02d/%02d', mt_rand($start_year, $start_year + 1), mt_rand($start_month, 12), mt_rand($start_day, 29));
+	}
+
+	private static function random_time($from = null)
+	{
+		$start_hour = 0;
+		$start_minute = 0;
+		$start_second = 0;
+
+		(is_null($from)) or list($start_hour, $start_minute, $start_second) = explode(':', $from);
+
+		return sprintf('%02d:%02d:%02d', mt_rand($start_hour, 23), mt_rand($start_minute, 59), mt_rand($start_second, 59));
+	}
+
+	private static function random_bring()
+	{
+		static $brings = array('筆記用具', 'メモ', 'ノート', '貢物', 'りんご', 'Apple', 'apple', 'APPLE', 'PC', 'スマホ',
+			'LANケーブル', '財布', '受験票', 'パンフレット', '申込書', '電卓', 'やる気', '手提げ', 'バッグ');
+		$quantity = mt_rand(1, 3);
+		$used = array();
+		$result = '';
+
+		for($i = 0; $i < $quantity; $i++)
+		{
+			$index = mt_rand(0, count($brings) - 1);
+			if(in_array($index, $used))
+			{
+				$i--;
+			}
+			else
+			{
+				$result .= $brings[$index] . ' ';
+				$used[] = $index;
+			}
+		}
+
+		return $result;
+	}
+
+	private static function random_recruitment()
+	{
+		static $recruitments = array('システムエンジニア', 'プログラマ', 'ITコンサルタント', 'システムコンサルト',
+			'アプリケーションエンジニア', '通信インフラエンジニア', 'ヘルプデスク', 'ネットワークエンジニア',
+			'サーバエンジニア', 'データベースエンジニア', 'セキュリティエンジニア', 'Webプログラマ',
+			'フロントエンドプログラマ', 'バックエンドプログラマ', 'Webディレクター', '経理アシスタント', '財務アシスタント',
+			'総務アシスタント', '法務アシスタント', '公報アシスタント', 'マーケティングアシスタント', '秘書', '受付',
+			'CADオペレータ', 'サービスエンジニア', 'プロジェクトマネージャ', 'メディカルドクター', 'ファンドマネージャ',
+			'サウンドクリエイター', 'イラストレイター', 'シナリオライター', 'プロダクトデザイナ', 'アナリスト');
+		$quantity = mt_rand(1, 5);
+		$used = array();
+		$result = array();
+
+		for($i = 0; $i < $quantity; $i++)
+		{
+			$index = mt_rand(0, count($recruitments) - 1);
+			if(in_array($index, $used))
+			{
+				$i--;
+			}
+			else
+			{
+				$result[] = $recruitments[$index];
+				$used[] = $index;
+			}
+		}
+
+		return json_encode($result);
+	}
 }
