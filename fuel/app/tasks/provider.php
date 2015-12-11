@@ -1079,7 +1079,7 @@ class Provider
 
 		(is_null($from)) or list($start_year, $start_month, $start_day) = explode('/', $from);
 
-		return sprintf('%02d/%02d/%02d', mt_rand($start_year, $start_year + 1), mt_rand($start_month, 12), mt_rand($start_day, 29));
+		return sprintf('%02d/%02d/%02d', mt_rand($start_year, $start_year + 1), mt_rand($start_month, 12), mt_rand($start_day, 28));
 	}
 
 	private static function random_time($from = null)
