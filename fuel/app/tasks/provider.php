@@ -986,6 +986,20 @@ class Provider
 
 		return $result;
 	}
+	private static function random_text()
+	{
+		$line = mt_rand(2, 15);
+		$result = '';
+
+		for($i = 0; $i < $line; $i++)
+		{
+			$result .= self::random_string() . ' ';
+			(mt_rand(0, 2)) or $result .= "\n";
+		}
+
+		return $result;
+	}
+
 	private static function random_company_name()
 	{
 		$result = self::random_string();
