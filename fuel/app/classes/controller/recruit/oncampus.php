@@ -99,7 +99,10 @@ class Controller_Recruit_Oncampus extends Controller_Loggedin
 
 	public function action_list()
 	{
+		$oncampuses = Model_Oncampus::find('all');
+
 		$view = View::forge(self::LIST_VIEW);
+		$view->set('oncampus_lists', Model_Oncampus::to_lists($oncampuses));
 
 		$this->template->title = '学内説明会一覧';
 		$this->template->content = $view;
@@ -107,7 +110,15 @@ class Controller_Recruit_Oncampus extends Controller_Loggedin
 
 	public function action_detail()
 	{
+		$oncampus_id = Input::get('id');
+		if(is_null($oncampus_id))
+		{
+			throw new HttpNotFoundException;
+		}
+
+		$oncampus = Model_Oncampus::find($oncampus_id);
 		$view = View::forge(self::DETAIL_VIEW);
+		$view->set('oncampus', Model_Oncampus::to_list($oncampus));
 
 		$this->template->title = '学内説明会詳細';
 		$this->template->content = $view;

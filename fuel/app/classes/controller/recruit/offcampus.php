@@ -98,7 +98,10 @@ class Controller_Recruit_Offcampus extends Controller_Loggedin
 
 	public function action_list()
 	{
+		$offcampus = Model_Offcampus::find('all');
+
 		$view = View::forge(self::LIST_VIEW);
+		$view->set('offcampus_lists', Model_Offcampus::to_lists($offcampus));
 
 		$this->template->title = '学外説明会一覧';
 		$this->template->content = $view;
@@ -106,7 +109,15 @@ class Controller_Recruit_Offcampus extends Controller_Loggedin
 
 	public function action_detail()
 	{
+		$offcampus_id = Input::get('id');
+		if(is_null($offcampus_id))
+		{
+			throw new HttpNotFoundException;
+		}
+
+		$offcampus = Model_Offcampus::find($offcampus_id);
 		$view = View::forge(self::DETAIL_VIEW);
+		$view->set('offcampus', Model_Offcampus::to_list($offcampus));
 
 		$this->template->title = '学外説明会詳細';
 		$this->template->content = $view;
