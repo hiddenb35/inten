@@ -716,7 +716,7 @@ class Provider
 				'start_date'   => '2016/1/12',
 				'start_time'   => '13:00:00',
 				'end_time'     => '17:00:00',
-				'entry_start'  => '2015/12/31/',
+				'entry_start'  => '2015/12/31',
 				'entry_end'    => '2016/1/6',
 				'target'       => '2017年度卒業見込み者',
 				'location'     => '30715教室',
@@ -724,7 +724,7 @@ class Provider
 				'explainer'    => '加藤拓磨',
 				'bring'        => 'バイク',
 				'url'          => 'http://kato.com',
-				'recruitment'  => '["システムエンジニア","プログラマ"]',
+				'recruitment'  => json_encode(array('システムエンジニア', 'プログラマ')),
 				'files'        => '[]',
 				'note'         => '道路交通法は守りましょう',
 				'teacher_id'   => 1,
@@ -735,7 +735,7 @@ class Provider
 				'start_date'   => '2016/1/12',
 				'start_time'   => '13:00:00',
 				'end_time'     => '17:00:00',
-				'entry_start'  => '2015/12/31/',
+				'entry_start'  => '2015/12/31',
 				'entry_end'    => '2016/1/6',
 				'target'       => '2017年度卒業見込み者',
 				'location'     => '30617教室',
@@ -743,7 +743,7 @@ class Provider
 				'explainer'    => '鳴海翔太',
 				'bring'        => 'りんご',
 				'url'          => 'http://narumi.com',
-				'recruitment'  => '["農業","畜産業"]',
+				'recruitment'  => json_encode(array('農業', '畜産業')),
 				'files'        => '[]',
 				'note'         => '神',
 				'teacher_id'   => 1,
@@ -754,7 +754,7 @@ class Provider
 				'start_date'   => '2016/1/12',
 				'start_time'   => '13:00:00',
 				'end_time'     => '17:00:00',
-				'entry_start'  => '2015/12/31/',
+				'entry_start'  => '2015/12/31',
 				'entry_end'    => '2016/1/6',
 				'target'       => '2017年度卒業見込み者',
 				'location'     => '30715教室',
@@ -762,13 +762,44 @@ class Provider
 				'explainer'    => '佐々木佑梨',
 				'bring'        => 'お土産',
 				'url'          => 'http://sasaki.com',
-				'recruitment'  => '["介護"]',
+				'recruitment'  => json_encode(array('介護', '福祉')),
 				'files'        => '[]',
 				'note'         => '',
 				'teacher_id'   => 1,
 			),
 
 		);
+
+		for($i = 0; $i < 500; $i++)
+		{
+			$entry_start = self::random_date();
+			$entry_end = self::random_date($entry_start);
+
+			$start_date = self::random_date($entry_end);
+			$start_time = self::random_time();
+			$end_time = self::random_time($start_time);
+
+			$oncampus_lists[] = array(
+				'company_name' => self::random_company_name(),
+				'company_code' => mt_rand(100000, 999999),
+				'start_date'   => $start_date,
+				'start_time'   => $start_time,
+				'end_time'     => $end_time,
+				'entry_start'  => $entry_start,
+				'entry_end'    => $entry_end,
+				'target'       => '2017年度卒業見込み者',
+				'location'     => '30715教室',
+				'content'      => '会社説明会',
+				'explainer'    => '未定',
+				'bring'        => self::random_bring(),
+				'url'          => 'http://' . self::random_string() . '.com',
+				'recruitment'  => self::random_recruitment(),
+				'files'        => '[]',
+				'note'         => self::random_text(),
+				'teacher_id'   => 1,
+			);
+		}
+
 		$query = \DB::insert('oncampus')->columns(
 			array('company_name', 'company_code', 'start_date', 'start_time',
 			'end_time', 'entry_start', 'entry_end', 'target', 'location', 'content', 'explainer', 'bring',
@@ -840,7 +871,7 @@ class Provider
 				'entry_method' => 'Webから',
 				'tel'          => '000-0000-0000',
 				'email'        => 'email@email.com',
-				'recruitment'  => '["システムエンジニア","プログラマ"]',
+				'recruitment'  => json_encode(array('システムエンジニア', 'プログラマ')),
 				'files'        => '[]',
 				'note'         => '道路交通法は守りましょう',
 				'teacher_id'   => 1,
@@ -862,7 +893,7 @@ class Provider
 				'entry_method' => 'Webから',
 				'tel'          => '00-0000-0000',
 				'email'        => 'email@email.com',
-				'recruitment'  => '["農業","畜産業"]',
+				'recruitment'  => json_encode(array('農業', '畜産業')),
 				'files'        => '[]',
 				'note'         => '神',
 				'teacher_id'   => 1,
@@ -884,13 +915,46 @@ class Provider
 				'entry_method' => '電話申し込み',
 				'tel'          => '00-0000-0000',
 				'email'        => 'email@email.com',
-				'recruitment'  => '["介護"]',
+				'recruitment'  => json_encode(array('介護', '福祉')),
 				'files'        => '[]',
 				'note'         => '',
 				'teacher_id'   => 1,
 			),
 
 		);
+
+		for($i = 0; $i < 500; $i++)
+		{
+			$entry_start = self::random_date();
+			$entry_end = self::random_date($entry_start);
+
+			$start_date = self::random_date($entry_end);
+			$start_time = self::random_time();
+			$end_time = self::random_time($start_time);
+
+			$offcampus_lists[] = array(
+				'company_name' => self::random_company_name(),
+				'company_code' => mt_rand(100000, 999999),
+				'start_date'   => $start_date,
+				'start_time'   => $start_time,
+				'end_time'     => $end_time,
+				'entry_start'  => $entry_start,
+				'entry_end'    => $entry_end,
+				'target'       => '2017年度卒業見込み者',
+				'location'     => '30715教室',
+				'content'      => '会社説明会',
+				'explainer'    => '未定',
+				'bring'        => self::random_bring(),
+				'url'          => 'http://' . self::random_string() . '.com',
+				'entry_method' => '電話申し込み',
+				'tel'          => '00-0000-0000',
+				'email'        => self::random_string() . '@' . self::random_string() . '.com',
+				'recruitment'  => self::random_recruitment(),
+				'files'        => '[]',
+				'note'         => self::random_text(),
+				'teacher_id'   => 1,
+			);
+		}
 		$query = \DB::insert('offcampus')->columns(
 			array('company_name', 'company_code', 'start_date', 'start_time',
 				'end_time', 'entry_start', 'entry_end', 'target', 'location', 'content',
@@ -972,5 +1036,115 @@ class Provider
 			$sql = "ALTER TABLE {$table} AUTO_INCREMENT = 1";
 			\DB::query($sql)->execute();
 		}
+	}
+
+	private static function random_string()
+	{
+		static $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJLKMNOPQRSTUVWXYZ';
+		$length = mt_rand(8, 20);
+		$result = '';
+		for($i = 0; $i < $length; $i++)
+		{
+			$result .= $chars[mt_rand(0, strlen($chars) - 1)];
+		}
+
+		return $result;
+	}
+	private static function random_text()
+	{
+		$line = mt_rand(2, 15);
+		$result = '';
+
+		for($i = 0; $i < $line; $i++)
+		{
+			$result .= self::random_string() . ' ';
+			(mt_rand(0, 2)) or $result .= "\n";
+		}
+
+		return $result;
+	}
+
+	private static function random_company_name()
+	{
+		$result = self::random_string();
+		$result = (mt_rand(0,1)) ? ('株式会社' . $result) : ($result . ' Inc.');
+		return $result;
+	}
+
+	private static function random_date($from = null)
+	{
+		$start_year = 2015;
+		$start_month = 1;
+		$start_day = 1;
+
+		(is_null($from)) or list($start_year, $start_month, $start_day) = explode('/', $from);
+
+		return sprintf('%02d/%02d/%02d', mt_rand($start_year, $start_year + 1), mt_rand($start_month, 12), mt_rand($start_day, 28));
+	}
+
+	private static function random_time($from = null)
+	{
+		$start_hour = 0;
+		$start_minute = 0;
+		$start_second = 0;
+
+		(is_null($from)) or list($start_hour, $start_minute, $start_second) = explode(':', $from);
+
+		return sprintf('%02d:%02d:%02d', mt_rand($start_hour, 23), mt_rand($start_minute, 59), mt_rand($start_second, 59));
+	}
+
+	private static function random_bring()
+	{
+		static $brings = array('筆記用具', 'メモ', 'ノート', '貢物', 'りんご', 'Apple', 'apple', 'APPLE', 'PC', 'スマホ',
+			'LANケーブル', '財布', '受験票', 'パンフレット', '申込書', '電卓', 'やる気', '手提げ', 'バッグ');
+		$quantity = mt_rand(1, 3);
+		$used = array();
+		$result = '';
+
+		for($i = 0; $i < $quantity; $i++)
+		{
+			$index = mt_rand(0, count($brings) - 1);
+			if(in_array($index, $used))
+			{
+				$i--;
+			}
+			else
+			{
+				$result .= $brings[$index] . ' ';
+				$used[] = $index;
+			}
+		}
+
+		return $result;
+	}
+
+	private static function random_recruitment()
+	{
+		static $recruitments = array('システムエンジニア', 'プログラマ', 'ITコンサルタント', 'システムコンサルト',
+			'アプリケーションエンジニア', '通信インフラエンジニア', 'ヘルプデスク', 'ネットワークエンジニア',
+			'サーバエンジニア', 'データベースエンジニア', 'セキュリティエンジニア', 'Webプログラマ',
+			'フロントエンドプログラマ', 'バックエンドプログラマ', 'Webディレクター', '経理アシスタント', '財務アシスタント',
+			'総務アシスタント', '法務アシスタント', '公報アシスタント', 'マーケティングアシスタント', '秘書', '受付',
+			'CADオペレータ', 'サービスエンジニア', 'プロジェクトマネージャ', 'メディカルドクター', 'ファンドマネージャ',
+			'サウンドクリエイター', 'イラストレイター', 'シナリオライター', 'プロダクトデザイナ', 'アナリスト');
+		$quantity = mt_rand(1, 5);
+		$used = array();
+		$result = array();
+
+		for($i = 0; $i < $quantity; $i++)
+		{
+			$index = mt_rand(0, count($recruitments) - 1);
+			if(in_array($index, $used))
+			{
+				$i--;
+			}
+			else
+			{
+				$result[] = $recruitments[$index];
+				$used[] = $index;
+			}
+		}
+
+		return json_encode($result);
 	}
 }

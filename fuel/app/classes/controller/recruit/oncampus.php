@@ -4,8 +4,11 @@ class Controller_Recruit_Oncampus extends Controller_Loggedin
 {
 	const FORM_VIEW = 'recruit/on_campus_form';
 	const CONFIRM_VIEW = 'recruit/on_campus_confirm';
-	const LIST_VIEW = 'recruit/on_campus_list';
+	const LIST_VIEW_FOR_STUDENT = 'recruit/on_campus_list';
+	const LIST_VIEW_FOR_TEACHER = 'recruit/teacher_on_campus_list';
 	const DETAIL_VIEW = 'recruit/on_campus_detail';
+	const FINISHED_VIEW = 'recruit/teacher_on_campus_deadline';
+	const PER_PAGE = 10;
 
 	public function action_form()
 	{
@@ -94,12 +97,50 @@ class Controller_Recruit_Oncampus extends Controller_Loggedin
 
 		// ここまで実行された場合はエラー
 		throw new HttpServerErrorException;
-
 	}
 
 	public function action_list()
 	{
-		$view = View::forge(self::LIST_VIEW);
+		$pagination = Pagination::forge('pagination', array(
+			'name' => 'bootstrap3',
+			'pagination_url' => Uri::create('recruit/oncampus/list'),
+			'total_items' => Model_Oncampus::count(),
+			'per_page' => self::PER_PAGE,
+			'uri_segment' => 'page',
+		));
+
+		$oncampuses = Model_Oncampus::find('all', array(
+			'limit' => $pagination->per_page,
+			'offset' => $pagination->offset,
+		));
+
+		$view = ($this->is_student()) ? View::forge(self::LIST_VIEW_FOR_STUDENT) : View::forge(self::LIST_VIEW_FOR_TEACHER);
+		$view->set('oncampus_lists', Model_Oncampus::to_lists($oncampuses));
+
+		$this->template->title = '学内説明会一覧';
+		$this->template->content = $view;
+	}
+
+	public function action_finished()
+	{
+		$pagination = Pagination::forge('pagination', array(
+			'name' => 'bootstrap3',
+			'pagination_url' => Uri::create('recruit/oncampus/finished'),
+			'total_items' => Model_Oncampus::count(array('where' => array(array('entry_end', '<=', date('Y/m/d'))))),
+			'per_page' => self::PER_PAGE,
+			'uri_segment' => 'page',
+		));
+
+		$oncampuses = Model_Oncampus::find('all', array(
+			'where' => array(
+				array('entry_end', '<=' , date('Y/m/d')),
+			),
+			'limit' => $pagination->per_page,
+			'offset' => $pagination->offset,
+		));
+
+		$view = View::forge(self::FINISHED_VIEW);
+		$view->set('oncampus_lists', Model_Oncampus::to_lists($oncampuses));
 
 		$this->template->title = '学内説明会一覧';
 		$this->template->content = $view;
@@ -107,7 +148,15 @@ class Controller_Recruit_Oncampus extends Controller_Loggedin
 
 	public function action_detail()
 	{
+		$oncampus_id = Input::get('id');
+		if(is_null($oncampus_id))
+		{
+			throw new HttpNotFoundException;
+		}
+
+		$oncampus = Model_Oncampus::find($oncampus_id);
 		$view = View::forge(self::DETAIL_VIEW);
+		$view->set('oncampus', Model_Oncampus::to_list($oncampus));
 
 		$this->template->title = '学内説明会詳細';
 		$this->template->content = $view;
