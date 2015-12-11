@@ -6,6 +6,7 @@ class Controller_Recruit_Oncampus extends Controller_Loggedin
 	const CONFIRM_VIEW = 'recruit/on_campus_confirm';
 	const LIST_VIEW = 'recruit/on_campus_list';
 	const DETAIL_VIEW = 'recruit/on_campus_detail';
+	const PER_PAGE = 10;
 
 	public function action_form()
 	{
@@ -94,12 +95,22 @@ class Controller_Recruit_Oncampus extends Controller_Loggedin
 
 		// ここまで実行された場合はエラー
 		throw new HttpServerErrorException;
-
 	}
 
 	public function action_list()
 	{
-		$oncampuses = Model_Oncampus::find('all');
+		$pagination = Pagination::forge('pagination', array(
+			'name' => 'bootstrap3',
+			'pagination_url' => Uri::create('recruit/oncampus/list'),
+			'total_items' => Model_Oncampus::count(),
+			'per_page' => self::PER_PAGE,
+			'uri_segment' => 'page',
+		));
+
+		$oncampuses = Model_Oncampus::find('all', array(
+			'limit' => $pagination->per_page,
+			'offset' => $pagination->offset,
+		));
 
 		$view = View::forge(self::LIST_VIEW);
 		$view->set('oncampus_lists', Model_Oncampus::to_lists($oncampuses));
