@@ -57,7 +57,11 @@ class Breadcrumb
 	public function render()
 	{
 		$last_index = count($this->items) - 1;
-
+		if($last_index < 0)
+		{
+			return;
+		}
+		echo '<ol class="breadcrumb">';
 		foreach($this->items as $idx => $item)
 		{
 			$icon = (isset($item['icon'])) ? sprintf('<i class="fa %s"></i>%s ', $item['icon'], $item['name']) : $item['name'];
@@ -65,5 +69,6 @@ class Breadcrumb
 			$li = ($last_index === $idx) ? '<li class="active">' . $url . '</li>' : '<li>' . $url . '</li>';
 			echo $li, "\n";
 		}
+		echo '</ol>';
 	}
 }
