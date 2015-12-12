@@ -716,8 +716,8 @@ class Provider
 				'start_date'   => '2016/1/12',
 				'start_time'   => '13:00:00',
 				'end_time'     => '17:00:00',
-				'entry_start'  => '2015/12/31',
-				'entry_end'    => '2016/1/6',
+				'entry_start'  => '2015/12/31 7:00:00',
+				'entry_end'    => '2016/1/6 17:00:00',
 				'target'       => '2017年度卒業見込み者',
 				'location'     => '30715教室',
 				'content'      => '会社説明会',
@@ -735,8 +735,8 @@ class Provider
 				'start_date'   => '2016/1/12',
 				'start_time'   => '13:00:00',
 				'end_time'     => '17:00:00',
-				'entry_start'  => '2015/12/31',
-				'entry_end'    => '2016/1/6',
+				'entry_start'  => '2015/12/31 13:00:00',
+				'entry_end'    => '2016/1/6 17:00:00',
 				'target'       => '2017年度卒業見込み者',
 				'location'     => '30617教室',
 				'content'      => 'りんご説明会',
@@ -754,8 +754,8 @@ class Provider
 				'start_date'   => '2016/1/12',
 				'start_time'   => '13:00:00',
 				'end_time'     => '17:00:00',
-				'entry_start'  => '2015/12/31',
-				'entry_end'    => '2016/1/6',
+				'entry_start'  => '2015/12/31 12:00:00',
+				'entry_end'    => '2016/1/6 12:00:00',
 				'target'       => '2017年度卒業見込み者',
 				'location'     => '30715教室',
 				'content'      => '会社説明会',
@@ -772,10 +772,10 @@ class Provider
 
 		for($i = 0; $i < 500; $i++)
 		{
-			$entry_start = self::random_date();
-			$entry_end = self::random_date($entry_start);
+			$entry_start = self::random_timestamp();
+			$entry_end = self::random_timestamp($entry_start);
 
-			$start_date = self::random_date($entry_end);
+			$start_date = self::random_date(date('Y/m/d', $entry_end));
 			$start_time = self::random_time();
 			$end_time = self::random_time($start_time);
 
@@ -860,8 +860,8 @@ class Provider
 				'start_date'   => '2016/2/12',
 				'start_time'   => '13:00:00',
 				'end_time'     => '17:00:00',
-				'entry_start'  => '2016/1/15/',
-				'entry_end'    => '2016/2/6',
+				'entry_start'  => '2016/1/15 12:30:00',
+				'entry_end'    => '2016/2/6 18:00:00',
 				'target'       => '2017年度卒業見込み者',
 				'location'     => '30715教室',
 				'content'      => '会社説明会',
@@ -882,8 +882,8 @@ class Provider
 				'start_date'   => '2016/2/12',
 				'start_time'   => '13:00:00',
 				'end_time'     => '17:00:00',
-				'entry_start'  => '2016/1/16/',
-				'entry_end'    => '2016/2/6',
+				'entry_start'  => '2016/1/16 16:00:00',
+				'entry_end'    => '2016/2/6 20:00:00',
 				'target'       => '2017年度卒業見込み者',
 				'location'     => '30617教室',
 				'content'      => 'Apple説明会',
@@ -904,8 +904,8 @@ class Provider
 				'start_date'   => '2016/2/12',
 				'start_time'   => '13:00:00',
 				'end_time'     => '17:00:00',
-				'entry_start'  => '2016/1/20/',
-				'entry_end'    => '2016/2/6',
+				'entry_start'  => '2016/1/20 12:00:00',
+				'entry_end'    => '2016/2/6 12:00:00',
 				'target'       => '2017年度卒業見込み者',
 				'location'     => '30715教室',
 				'content'      => '会社説明会',
@@ -925,10 +925,10 @@ class Provider
 
 		for($i = 0; $i < 500; $i++)
 		{
-			$entry_start = self::random_date();
-			$entry_end = self::random_date($entry_start);
+			$entry_start = self::random_timestamp();
+			$entry_end = self::random_timestamp($entry_start);
 
-			$start_date = self::random_date($entry_end);
+			$start_date = self::random_date(date('Y/m/d', $entry_end));
 			$start_time = self::random_time();
 			$end_time = self::random_time($start_time);
 
@@ -1091,6 +1091,19 @@ class Provider
 		(is_null($from)) or list($start_hour, $start_minute, $start_second) = explode(':', $from);
 
 		return sprintf('%02d:%02d:%02d', mt_rand($start_hour, 23), mt_rand($start_minute, 59), mt_rand($start_second, 59));
+	}
+
+	private static function random_timestamp($from = null)
+	{
+		$datetime = self::random_date() . ' ' . self::random_time();
+
+		if(!is_null($from))
+		{
+			$from = explode(' ', date('Y/m/d H:i:s', $from));
+			$datetime = self::random_date($from[0]) . ' ' . self::random_time($from[1]);
+		}
+
+		return strtotime($datetime);
 	}
 
 	private static function random_bring()

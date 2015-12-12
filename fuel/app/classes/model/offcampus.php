@@ -23,10 +23,10 @@ class Model_Offcampus extends \Orm\Model
 			'data_type' => 'time',
 		),
 		'entry_start' => array(
-			'data_type' => 'date',
+			'data_type' => 'int',
 		),
 		'entry_end' => array(
-			'data_type' => 'date',
+			'data_type' => 'int',
 		),
 		'target' => array(
 			'data_type' => 'text',
@@ -118,8 +118,8 @@ class Model_Offcampus extends \Orm\Model
 		$val->add_field('start_date', '開催日', 'trim|required')->add_rule('valid_date', 'Y-m-d');
 		$val->add_field('start_time', '開始時間', 'trim|required')->add_rule('valid_date', 'H:i');
 		$val->add_field('end_time', '終了時間', 'trim|required')->add_rule('valid_date', 'H:i');
-		$val->add_field('entry_start', '申込期限(開始)', 'trim|required')->add_rule('valid_data', 'Y-m-d');
-		$val->add_field('entry_end', '申込期限(終了)', 'trim|required')->add_rule('valid_date', 'Y-m-d');
+		$val->add_field('entry_start', '申込期限(開始)', 'trim|required')->add_rule('valid_date', 'Y-m-d H:i');
+		$val->add_field('entry_end', '申込期限(終了)', 'trim|required')->add_rule('valid_date', 'Y-m-d H:i');
 		$val->add_field('target', '対象者', 'trim');
 		$val->add_field('location', '開催場所', 'trim|required');
 		$val->add_field('content', '内容', 'trim');
@@ -163,8 +163,8 @@ class Model_Offcampus extends \Orm\Model
 		$list['start_date'] = date('Y年m月d日', strtotime($campus['start_date']));
 		$list['start_time'] = date('H:i', strtotime($campus['start_time']));
 		$list['end_time'] = date('H:i', strtotime($campus['end_time']));
-		$list['entry_start'] = date('Y/m/d', strtotime($campus['entry_start']));
-		$list['entry_end'] = date('Y/m/d', strtotime($campus['entry_end']));
+		$list['entry_start'] = date('Y/m/d H:i', $campus['entry_start']);
+		$list['entry_end'] = date('Y/m/d H:i', $campus['entry_end']);
 		$list['target'] = $campus['target'];
 		$list['location'] = $campus['location'];
 		$list['content'] = $campus['content'];
