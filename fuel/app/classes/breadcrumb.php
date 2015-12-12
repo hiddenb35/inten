@@ -11,6 +11,16 @@ class Breadcrumb
 	 */
 	private $items = array();
 
+	/**
+	 * コンストラクタ
+	 * @param $name
+	 * @param null $url
+	 * @param null $icon
+	 */
+	public function __construct($name, $url = null, $icon = null)
+	{
+		$this->add_item($name, $url, $icon);
+	}
 
 	/**
 	 * パンくずを追加
