@@ -12,8 +12,8 @@
 				<div class="box deadline text-red">
 					<div class="box-header h5"><strong>申込期限</strong></div>
 					<div class="box-body text-center">
-						<div class="h2">2016/11/1</div>
-						<div class="h2">17:00</div>
+						<div class="h2"><?php echo date('Y/m/d', strtotime($oncampus['entry_end'])); ?></div>
+						<div class="h2"><?php echo date('H:i', strtotime($oncampus['entry_end'])); ?></div>
 					</div>
 				</div>
 			</div>
