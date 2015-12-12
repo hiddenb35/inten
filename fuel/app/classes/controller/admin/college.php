@@ -4,12 +4,18 @@ class Controller_Admin_College extends Controller_Loggedin
 {
 	const VIEW_FILE = 'admin/college';
 
+	public function before()
+	{
+		parent::before();
+		$this->template->title = 'カレッジ情報';
+		$this->template->breadcrumb->add_item('カレッジ情報');
+	}
+
 	public function action_index()
 	{
 		$view = View::forge(self::VIEW_FILE);
 		$view->set('college_lists', Model_College::to_lists(Model_College::find('all')));
 
-		$this->template->title = 'カレッジ一覧';
 		$this->template->content = $view;
 	}
 
@@ -35,7 +41,6 @@ class Controller_Admin_College extends Controller_Loggedin
 		$view->set('errors', $val->error_message());
 		$view->set('inputs', $val->input());
 
-		$this->template->title = 'エラー';
 		$this->template->content = $view;
 
 	}

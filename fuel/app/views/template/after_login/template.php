@@ -60,6 +60,10 @@
 
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper">
+				<section class="content-header">
+					<h1><?php echo $title; ?></h1>
+					<?php $breadcrumb->render(); ?>
+				</section>
 				<?php echo $content; ?>
 			</div>
 

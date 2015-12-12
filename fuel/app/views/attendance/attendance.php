@@ -1,14 +1,6 @@
-<section class="content-header">
-	<h1>
-		<?php echo $class_info['name']; ?> <?php echo $lesson_info['name'] ?>
-	</h1>
-	<ol class="breadcrumb">
-		<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-	</ol>
-</section>
 <!-- Main content -->
-<section class="content">
-	<div id="ATTENDANCE">
+<section id="ATTENDANCE" class="content">
+	<div>
 		<form action="/attendance/add" method="post" class="container-fluid">
 			<input type="hidden" name="lesson_id" value="<?php echo $lesson_info['id']; ?>">
 			<?php foreach($student_lists as $index => $student): ?>

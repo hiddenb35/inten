@@ -1,11 +1,5 @@
-<div id="ATTENDANCE_INFO_LIST">
-<section class="content-header">
-    <h1>
-        出席情報一覧
-    </h1>
-</section>
 <!-- Main content -->
-<section class="content clearfix">
+<section id="ATTENDANCE_INFO_LIST" class="content clearfix">
     <div class="container-fluid">
         
         <div class="student-number">
@@ -180,4 +174,3 @@
     </div>
 
 </section>
-</div>

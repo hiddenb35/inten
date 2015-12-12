@@ -1,14 +1,6 @@
-<section class="content-header">
-    <h1>
-        教員登録
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    </ol>
-</section>
 <!-- Main content -->
-<section class="content">
-<div id="TEACHER_ADD" class="container">
+<section id="TEACHER_ADD" class="content">
+<div class="container">
     <form class="form-horizontal" method="post">
         <div class="form-group form-group-lg">
             <label for="username" class="control-label col-sm-2">教員番号</label>

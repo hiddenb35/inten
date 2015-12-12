@@ -1,14 +1,5 @@
-<div id="PASS_UPDATE">
-<section class="content-header">
-    <h1>
-        パスワード変更
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="#">Home > パスワード変更</a></li>
-    </ol>
-</section>
 <!-- Main content -->
-<section class="content">
+<section id="PASS_UPDATE"class="content">
     <div class="container">
         <form class="form-horizontal" method="post">
 
@@ -61,4 +52,3 @@
         </form>
     </div>
 </section>
-</div>

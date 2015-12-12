@@ -4,13 +4,19 @@ class Controller_Admin_Major extends Controller_Loggedin
 {
 	const VIEW_FILE = 'admin/major';
 
+	public function before()
+	{
+		parent::before();
+		$this->template->title = '専攻情報';
+		$this->template->breadcrumb->add_item('専攻情報');
+	}
+
 	public function action_index()
 	{
 		$view = View::forge(self::VIEW_FILE);
 		$view->set('major_lists',Model_Major::to_lists(Model_Major::find('all')));
 		$view->set('course_lists',Model_Course::to_lists(Model_Course::find('all')));
 
-		$this->template->title = '専攻一覧';
 		$this->template->content = $view;
 	}
 
@@ -38,7 +44,6 @@ class Controller_Admin_Major extends Controller_Loggedin
 		$view->set('errors', $val->error_message());
 		$view->set('inputs', $val->input());
 
-		$this->template->title = 'エラー';
 		$this->template->content = $view;
 	}
 
