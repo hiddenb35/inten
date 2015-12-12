@@ -1093,6 +1093,19 @@ class Provider
 		return sprintf('%02d:%02d:%02d', mt_rand($start_hour, 23), mt_rand($start_minute, 59), mt_rand($start_second, 59));
 	}
 
+	private static function random_timestamp($from = null)
+	{
+		$datetime = self::random_date() . ' ' . self::random_time();
+
+		if(!is_null($from))
+		{
+			$from = explode(' ', date('Y/m/d H:i:s', $from));
+			$datetime = self::random_date($from[0]) . ' ' . self::random_time($from[1]);
+		}
+
+		return strtotime($datetime);
+	}
+
 	private static function random_bring()
 	{
 		static $brings = array('筆記用具', 'メモ', 'ノート', '貢物', 'りんご', 'Apple', 'apple', 'APPLE', 'PC', 'スマホ',
