@@ -1,5 +1,5 @@
 <!-- Main content -->
-<section class="content">
+<section id="ON_CAMPUS_DETAIL" class="content">
 	<div class="container-fluid">
 		<div class="row">
 			<button type="button"
