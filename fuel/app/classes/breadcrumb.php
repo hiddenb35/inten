@@ -44,7 +44,10 @@ class Breadcrumb
 	{
 		foreach(func_get_args() as $arg)
 		{
-			$this->add_item($arg[0], $arg[1], $arg[2]);
+			$name = $arg[0];
+			$url = (isset($arg[1]))?: null;
+			$icon = (isset($arg[2]))?: null;
+			$this->add_item($name, $url, $icon);
 		}
 	}
 
