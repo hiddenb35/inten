@@ -1,14 +1,6 @@
-<section class="content-header">
-    <h1>
-        教員情報編集
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    </ol>
-</section>
 <!-- Main content -->
-<section class="content">
-<div id="TEACHER_EDIT">
+<section id="TEACHER_EDIT" class="content">
+<div>
     <form class="form-horizontal" method="post">
         <div class="form-group">
             <label class="control-label" for="username">ユーザ名</label>
