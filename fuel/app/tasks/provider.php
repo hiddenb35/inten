@@ -772,10 +772,10 @@ class Provider
 
 		for($i = 0; $i < 500; $i++)
 		{
-			$entry_start = self::random_date();
-			$entry_end = self::random_date($entry_start);
+			$entry_start = self::random_timestamp();
+			$entry_end = self::random_timestamp($entry_start);
 
-			$start_date = self::random_date($entry_end);
+			$start_date = self::random_date(date('Y/m/d', $entry_end));
 			$start_time = self::random_time();
 			$end_time = self::random_time($start_time);
 
@@ -925,10 +925,10 @@ class Provider
 
 		for($i = 0; $i < 500; $i++)
 		{
-			$entry_start = self::random_date();
-			$entry_end = self::random_date($entry_start);
+			$entry_start = self::random_timestamp();
+			$entry_end = self::random_timestamp($entry_start);
 
-			$start_date = self::random_date($entry_end);
+			$start_date = self::random_date(date('Y/m/d', $entry_end));
 			$start_time = self::random_time();
 			$end_time = self::random_time($start_time);
 
