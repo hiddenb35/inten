@@ -66,6 +66,7 @@ class Controller_Loggedin extends Controller_Hybrid
 
 			$this->template->footer  = View::forge(self::FOOTER_COMMON_VIEW);
 			$this->template->set_global('user_info', $user_info);
+			$this->template->set_global('breadcrumb', new Breadcrumb('Home', '/', 'fa-dashboard'));
 		}
 	}
 
