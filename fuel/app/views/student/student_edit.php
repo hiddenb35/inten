@@ -1,14 +1,5 @@
-<div id="STUDENT_EDIT">
-<section class="content-header">
-    <h1>
-        生徒情報編集
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    </ol>
-</section>
 <!-- Main content -->
-<section class="content">
+<section id="STUDENT_EDIT" class="content">
     <div class="container">
         <form class="form-horizontal" method="post">
             <div class="form-group form-group-lg">
@@ -215,4 +206,3 @@
         </form>
     </div>
 </section>
-</div>
