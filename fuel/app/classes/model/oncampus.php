@@ -23,10 +23,10 @@ class Model_Oncampus extends \Orm\Model
 			'data_type' => 'time',
 		),
 		'entry_start' => array(
-			'data_type' => 'date',
+			'data_type' => 'int',
 		),
 		'entry_end' => array(
-			'data_type' => 'date',
+			'data_type' => 'int',
 		),
 		'target' => array(
 			'data_type' => 'text',
@@ -151,8 +151,8 @@ class Model_Oncampus extends \Orm\Model
 		$list['start_date'] = date('Y年m月d日', strtotime($campus['start_date']));
 		$list['start_time'] = date('H:i', strtotime($campus['start_time']));
 		$list['end_time'] = date('H:i', strtotime($campus['end_time']));
-		$list['entry_start'] = date('Y/m/d', strtotime($campus['entry_start']));
-		$list['entry_end'] = date('Y/m/d', strtotime($campus['entry_end']));
+		$list['entry_start'] = date('Y/m/d H:i', $campus['entry_start']);
+		$list['entry_end'] = date('Y/m/d H:i', $campus['entry_end']);
 		$list['target'] = $campus['target'];
 		$list['location'] = $campus['location'];
 		$list['content'] = $campus['content'];
