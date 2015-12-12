@@ -5,7 +5,7 @@ class Controller_Recruit_Offcampus extends Controller_Loggedin
 	const FORM_VIEW = 'recruit/off_campus_form';
 	const CONFIRM_VIEW = 'recruit/off_campus_confirm';
 	const LIST_VIEW_FOR_STUDENT = 'recruit/off_campus_list';
-	const LIST_VIEW_FOR_TEACHER = 'recruit/off_campus_list';
+	const LIST_VIEW_FOR_TEACHER = 'recruit/teacher_off_campus_list';
 	const DETAIL_VIEW = 'recruit/off_campus_detail';
 	const FINISHED_VIEW = 'recruit/teacher_off_campus_deadline';
 	const PER_PAGE = 10;
