@@ -4,6 +4,12 @@ class Controller_Admin_Class extends Controller_Loggedin
 {
 	const VIEW_FILE = 'admin/class';
 
+	public function before()
+	{
+		parent::before();
+		$this->template->title = 'クラス情報';
+	}
+
 	public function action_index()
 	{
 		$view = View::forge(self::VIEW_FILE);
@@ -11,7 +17,6 @@ class Controller_Admin_Class extends Controller_Loggedin
 		$view->set('course_lists', Model_Course::to_lists(Model_Course::find('all')));
 		$view->set('teacher_lists', Model_Teacher::to_lists(Model_Teacher::find('all')));
 
-		$this->template->title = 'クラス一覧';
 		$this->template->content = $view;
 	}
 
@@ -41,7 +46,6 @@ class Controller_Admin_Class extends Controller_Loggedin
 		$view->set('errors', $val->error_message());
 		$view->set('inputs', $val->input());
 
-		$this->template->title = 'エラー';
 		$this->template->content = $view;
 
 	}
