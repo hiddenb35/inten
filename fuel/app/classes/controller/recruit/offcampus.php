@@ -5,7 +5,7 @@ class Controller_Recruit_Offcampus extends Controller_Loggedin
 	const FORM_VIEW = 'recruit/off_campus_form';
 	const CONFIRM_VIEW = 'recruit/off_campus_confirm';
 	const LIST_VIEW_FOR_STUDENT = 'recruit/off_campus_list';
-	const LIST_VIEW_FOR_TEACHER = 'recruit/off_campus_list';
+	const LIST_VIEW_FOR_TEACHER = 'recruit/teacher_off_campus_list';
 	const DETAIL_VIEW = 'recruit/off_campus_detail';
 	const FINISHED_VIEW = 'recruit/teacher_off_campus_deadline';
 	const PER_PAGE = 10;
@@ -126,14 +126,14 @@ class Controller_Recruit_Offcampus extends Controller_Loggedin
 		$pagination = Pagination::forge('pagination', array(
 			'name' => 'bootstrap3',
 			'pagination_url' => Uri::create('recruit/offcampus/finished'),
-			'total_items' => Model_Offcampus::count(array('where' => array(array('entry_end', '<=', date('Y/m/d'))))),
+			'total_items' => Model_Offcampus::count(array('where' => array(array('entry_end', '<', time())))),
 			'per_page' => self::PER_PAGE,
 			'uri_segment' => 'page',
 		));
 
 		$offcampus = Model_Offcampus::find('all', array(
 			'where' => array(
-				array('entry_end', '<=', date('Y/m/d')),
+				array('entry_end', '<', time()),
 			),
 			'limit' => $pagination->per_page,
 			'offset' => $pagination->offset,

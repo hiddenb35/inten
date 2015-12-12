@@ -1,4 +1,4 @@
-<div id="ON_CAMPUS_LIST">
+<div id="TEACHER_ON_CAMPUS_LIST">
 	<section class="content-header">
 		<h1>
 			学外説明会一覧画面
@@ -15,8 +15,7 @@
 			</div>
 			<div class="box">
 				<div class="box-header text-center outer-box-header clearfix">
-					<a href="/recruit/offcampus/finished" class="btn btn-primary pull-right">締め切りログ</a>
-
+					<a href="/recruit/offcampus/finished" class="btn btn-danger pull-right">締め切りログ</a>
 					<div class="row pull-left button-box">
 						<a href="#" class="btn btn-default tab col-xs-6 col-sm-3">新着
 							<i class="fa fa-fw fa-arrow-up"></i>
@@ -36,27 +35,30 @@
 					<div class="row">
 						<?php foreach($offcampus_lists as $offcampus): ?>
 							<div class="col-sm-6">
-								<div class="box inner-box">
-									<div class="box-header inner-box-header"><?php echo $offcampus['company_name']; ?></div>
-									<div class="box-body inner-box-body clearfix">
-										<div class="left-in-box pull-left">
-											<div>
-												<span class="inner-title">業種 </span>
-											<span class="inner-content">
-												<?php foreach($offcampus['recruitment'] as $recruit) echo $recruit . ' '; ?>
-											</span>
-											</div>
-											<div><span class="inner-title">締め切り </span><span class="inner-content"><?php echo $offcampus['entry_end']; ?></span>
-											</div>
+								<a href="#">
+									<div class="box inner-box">
+										<div class="box-header inner-box-header clearfix">
+											<span class="pull-left"><?php echo $offcampus['company_name']; ?></span>
+									<span class="pull-right box-edit">
+										<button type="button" class="btn btn-danger">編集</button>
+									</span>
 										</div>
-										<div class="right-in-box pull-right">
-											<a href="<?php echo $offcampus['detail_link']; ?>" class="btn btn-primary">詳細</a>
+										<div class="box-body inner-box-body clearfix">
+											<div class="left-in-box pull-left left-box-color">
+												<div><span class="inner-title">業種 </span>
+													<?php foreach($offcampus['recruitment'] as $recruit) echo $recruit . ' '; ?>
+												</div>
+												<div><span class="inner-title">締め切り </span><span class="inner-content"><?php echo $offcampus['entry_end']; ?></span>
+												</div>
+											</div>
+											<div class="right-in-box pull-right">
+												<a href="<?php echo $offcampus['detail_link']; ?>" class="btn btn-danger">詳細</a>
+											</div>
 										</div>
 									</div>
-								</div>
+								</a>
 							</div>
 						<?php endforeach; ?>
-
 					</div>
 				</div>
 			</div>
