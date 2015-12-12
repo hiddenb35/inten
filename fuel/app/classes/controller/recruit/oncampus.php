@@ -126,14 +126,14 @@ class Controller_Recruit_Oncampus extends Controller_Loggedin
 		$pagination = Pagination::forge('pagination', array(
 			'name' => 'bootstrap3',
 			'pagination_url' => Uri::create('recruit/oncampus/finished'),
-			'total_items' => Model_Oncampus::count(array('where' => array(array('entry_end', '<=', date('Y/m/d'))))),
+			'total_items' => Model_Oncampus::count(array('where' => array(array('entry_end', '<', time())))),
 			'per_page' => self::PER_PAGE,
 			'uri_segment' => 'page',
 		));
 
 		$oncampuses = Model_Oncampus::find('all', array(
 			'where' => array(
-				array('entry_end', '<=' , date('Y/m/d')),
+				array('entry_end', '<' , time()),
 			),
 			'limit' => $pagination->per_page,
 			'offset' => $pagination->offset,
