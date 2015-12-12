@@ -8,6 +8,7 @@ class Controller_Admin_Major extends Controller_Loggedin
 	{
 		parent::before();
 		$this->template->title = '専攻情報';
+		$this->template->breadcrumb->add_item('専攻情報');
 	}
 
 	public function action_index()

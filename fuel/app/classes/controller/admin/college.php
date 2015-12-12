@@ -8,6 +8,7 @@ class Controller_Admin_College extends Controller_Loggedin
 	{
 		parent::before();
 		$this->template->title = 'カレッジ情報';
+		$this->template->breadcrumb->add_item('カレッジ情報');
 	}
 
 	public function action_index()
