@@ -378,6 +378,8 @@ $(function(){
 	// format指定
 	var dateFormat = "YYYY-MM-DD hh:mm";
 	var timeFormat = "hh:mm";
+	// moment.jsによる日本語化
+	moment.locale('ja');
 
 	// 申込期限の項目
 	$("#deadline").daterangepicker({
