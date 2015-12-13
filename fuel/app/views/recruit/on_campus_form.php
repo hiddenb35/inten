@@ -39,8 +39,8 @@
 									<input type="text" class="form-control" id="deadline" value="<?php if(isset($inputs["entry_start"]) && isset($inputs["entry_end"])) { echo $inputs["entry_start"] . " - " . $inputs["entry_end"]; }; ?>">
 									<span class="help-block text-red"><?php if(isset($errors["entry_start"])) { echo $errors["entry_start"]; }; ?></span>
 									<span class="help-block text-red"><?php if(isset($errors["entry_end"])) { echo $errors["entry_end"]; }; ?></span>
-									<input type="hidden" id="entry_start" name="entry_start">
-									<input type="hidden" id="entry_end" name="entry_end">
+									<input type="hidden" id="entry_start" name="entry_start" value="<?php if(isset($inputs["entry_start"])) { echo $inputs["entry_start"]; }; ?>">
+									<input type="hidden" id="entry_end" name="entry_end" value="<?php if(isset($inputs["entry_end"])) { echo $inputs["entry_end"]; }; ?>">
 								</div>
 							</div>
 							<div class="form-group">
