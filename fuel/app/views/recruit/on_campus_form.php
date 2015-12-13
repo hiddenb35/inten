@@ -26,18 +26,18 @@
 								<div class="col-md-10">
 									<div class="row">
 										<div class="col-md-4">
-											<input type="date" name="start_date" id="start_date" class="form-control daterangepicker-date" value="<?php if(isset($inputs["start_date"])) { echo $inputs["start_date"]; }; ?>">
+											<input type="text" name="start_date" id="start_date" class="form-control daterangepicker-date" value="<?php if(isset($inputs["start_date"])) { echo $inputs["start_date"]; }; ?>">
 											<span class="help-block text-red"><?php if(isset($errors["start_date"])) { echo $errors["start_date"]; }; ?></span>
 										</div>
 										<div class="col-md-3 col-xs-10">
-											<input type="time" name="start_time" class="form-control daterangepicker-time" value="<?php if(isset($inputs["start_time"])) { echo $inputs["start_time"]; }; ?>">
+											<input type="text" name="start_time" class="form-control daterangepicker-time" value="<?php if(isset($inputs["start_time"])) { echo $inputs["start_time"]; }; ?>">
 											<span class="help-block text-red"><?php if(isset($errors["start_time"])) { echo $errors["start_time"]; }; ?></span>
 										</div>
 										<div class="col-md-1 col-xs-1">
 											<span class="help-block"><b>～</b></span>
 										</div>
 										<div class="col-md-3 col-xs-11 col-xs-offset-1 col-sm-offset-0">
-											<input type="time" name="end_time" class="form-control daterangepicker-date" value="<?php if(isset($inputs["end_time"])) { echo $inputs["end_time"]; }; ?>">
+											<input type="text" name="end_time" class="form-control daterangepicker-time" value="<?php if(isset($inputs["end_time"])) { echo $inputs["end_time"]; }; ?>">
 											<span class="help-block text-red"><?php if(isset($errors["end_time"])) { echo $errors["end_time"]; }; ?></span>
 										</div>
 									</div>
