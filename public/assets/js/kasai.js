@@ -381,6 +381,26 @@ $(function(){
 	// moment.jsによる日本語化
 	moment.locale('ja');
 
+	// 日時の項目
+	$('#start-date_time').daterangepicker({
+		timePicker: true,
+		timePicker24Hour: true,
+		dateLimit: {
+			days: 1
+		},
+		locale: {
+			format: dateTimeFormat
+		}
+	}, function(start, end, label){
+		var startDate = start.format(dateTimeFormat);
+		var startTime = start.format(timeFormat);
+		var endTime = end.format(timeFormat);
+
+		$('#start_date').attr('value', startDate);
+		$('#start_time').attr('value', startTime);
+		$('#end_end').attr('value', endTime);
+	});
+
 	// 申込期限の項目
 	$("#deadline").daterangepicker({
 		timePicker: true,
