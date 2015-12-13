@@ -382,7 +382,7 @@ $(function(){
 	moment.locale('ja');
 
 	// 日時の項目
-	$('#start-date_time').daterangepicker({
+	$('#start_date_time').daterangepicker({
 		timePicker: true,
 		timePicker24Hour: true,
 		dateLimit: {
@@ -398,7 +398,7 @@ $(function(){
 
 		$('#start_date').attr('value', startDate);
 		$('#start_time').attr('value', startTime);
-		$('#end_end').attr('value', endTime);
+		$('#end_time').attr('value', endTime);
 	});
 
 	// 申込期限の項目
