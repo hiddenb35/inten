@@ -377,6 +377,7 @@ $(function(){
 	// 説明会登録画面のdate range picker
 	// format指定
 	var dateTimeFormat = "YYYY-MM-DD hh:mm";
+	var dateFormat = "YYYY-MM-DD";
 	var timeFormat = "hh:mm";
 	// moment.jsによる日本語化
 	moment.locale('ja');
@@ -392,7 +393,7 @@ $(function(){
 			format: dateTimeFormat
 		}
 	}, function(start, end, label){
-		var startDate = start.format(dateTimeFormat);
+		var startDate = start.format(dateFormat);
 		var startTime = start.format(timeFormat);
 		var endTime = end.format(timeFormat);
 
