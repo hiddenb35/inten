@@ -379,6 +379,9 @@ $(function(){
 	var dateTimeFormat = "YYYY-MM-DD hh:mm";
 	var dateFormat = "YYYY-MM-DD";
 	var timeFormat = "hh:mm";
+	// applyラベルとcancelラベルの変更
+	var applyLabel = "確定";
+	var cancelLabel = "キャンセル";
 	// moment.jsによる日本語化
 	moment.locale('ja');
 
@@ -395,7 +398,9 @@ $(function(){
 		timePicker24Hour: true,
 		timePickerIncrement: 5,
 		locale: {
-			format: timeFormat
+			format: timeFormat,
+			applyLabel: applyLabel,
+			cancelLabel: cancelLabel
 		}
 	});
 	$('.daterangepicker-time').on('show.daterangepicker', function(ev, picker){
@@ -408,7 +413,9 @@ $(function(){
 		timePicker24Hour: true,
 		timePickerIncrement: 5,
 		locale: {
-			format: dateTimeFormat
+			format: dateTimeFormat,
+			applyLabel: applyLabel,
+			cancelLabel: cancelLabel
 		}
 	}, function(start, end, label){
 		var startDate = start.format(dateTimeFormat);
