@@ -373,4 +373,24 @@ $(function(){
 		}, 5000);
 	};
 	//TODO ここまで
+
+	// 説明会登録画面のdate range picker
+	// format指定
+	var dateFormat = "YYYY-MM-DD hh:mm";
+	var timeFormat = "hh:mm";
+
+	// 申込期限の項目
+	$("#deadline").daterangepicker({
+		timePicker: true,
+		timePicker24Hour: true,
+		locale: {
+			format: dateFormat
+		}
+	}, function(start, end, label){
+		var startDate = start.format(dateFormat);
+		var endDate = end.format(dateFormat);
+
+		$('#entry_start').attr('value', startDate);
+		$('#entry_end').attr('value', endDate);
+	});
 });
