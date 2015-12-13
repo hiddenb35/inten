@@ -386,7 +386,8 @@ $(function(){
 	$('#start_date_time').daterangepicker({
 		timePicker: true,
 		timePicker24Hour: true,
-		dateLimit: {
+		timePickerIncrement: 5,
+			dateLimit: {
 			days: 1
 		},
 		locale: {
@@ -406,6 +407,7 @@ $(function(){
 	$("#deadline").daterangepicker({
 		timePicker: true,
 		timePicker24Hour: true,
+		timePickerIncrement: 5,
 		locale: {
 			format: dateTimeFormat
 		}
