@@ -398,6 +398,9 @@ $(function(){
 			format: timeFormat
 		}
 	});
+	$('.daterangepicker-time').on('show.daterangepicker', function(ev, picker){
+		picker.container.find('.calendar-table').hide();
+	});
 
 	// 申込期限の項目
 	$("#deadline").daterangepicker({
