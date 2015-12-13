@@ -376,9 +376,9 @@ $(function(){
 
 	// 説明会登録画面のdate range picker
 	// format指定
-	var dateTimeFormat = "YYYY-MM-DD hh:mm";
+	var dateTimeFormat = "YYYY-MM-DD HH:mm";
 	var dateFormat = "YYYY-MM-DD";
-	var timeFormat = "hh:mm";
+	var timeFormat = "HH:mm";
 	// applyラベルとcancelラベルの変更
 	var applyLabel = "確定";
 	var cancelLabel = "キャンセル";
