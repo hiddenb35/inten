@@ -383,24 +383,20 @@ $(function(){
 	moment.locale('ja');
 
 	// 日時の項目
-	$('#start_date_time').daterangepicker({
+	$('.daterangepicker-date').daterangepicker({
+		singleDatePicker: true,
+		locale: {
+			format: dateFormat
+		}
+	});
+	$('.daterangepicker-time').daterangepicker({
+		singleDatePicker: true,
 		timePicker: true,
 		timePicker24Hour: true,
 		timePickerIncrement: 5,
-			dateLimit: {
-			days: 1
-		},
 		locale: {
-			format: dateTimeFormat
+			format: timeFormat
 		}
-	}, function(start, end, label){
-		var startDate = start.format(dateFormat);
-		var startTime = start.format(timeFormat);
-		var endTime = end.format(timeFormat);
-
-		$('#start_date').attr('value', startDate);
-		$('#start_time').attr('value', startTime);
-		$('#end_time').attr('value', endTime);
 	});
 
 	// 申込期限の項目
