@@ -1316,3 +1316,34 @@ textarea[name="note"]{
 #ON_CAMPUS_DETAIL .files span {
 	margin-left: 4px;
 }
+/*****************************************************/
+
+/******************学内説明会詳細画面(教員用)*********************/
+#TEACHER_ON_CAMPUS_DETAIL .company-button {
+	margin-bottom: 2%;
+}
+#TEACHER_ON_CAMPUS_DETAIL .box {
+	border-top: none;
+	-moz-border-radius: 15px 15px 15px 15px;
+	-webkit-border-radius: 15px 15px 15px 15px;
+	border-radius: 15px 15px 15px 15px;
+	/* box-shadow */
+	box-shadow:rgba(113, 135, 164, 0.3) 0 0 6px 3px;
+	-webkit-box-shadow:rgba(113, 135, 164, 0.3) 0 0 6px 3px;
+	-moz-box-shadow:rgba(113, 135, 164, 0.3) 0 0 6px 3px;
+}
+#TEACHER_ON_CAMPUS_DETAIL .box-body > div {
+	margin: 3%;
+}
+#TEACHER_ON_CAMPUS_DETAIL .box-header {
+	background-color: #F9DCDC;
+	-moz-border-radius: 15px 15px 0 0;
+	-webkit-border-radius: 15px 15px 0 0;
+	border-radius: 15px 15px 0 0;
+}
+#TEACHER_ON_CAMPUS_DETAIL .inner-title {
+	font-weight: bold;
+}
+#TEACHER_ON_CAMPUS_DETAIL .files span {
+	margin-left: 4px;
+}
