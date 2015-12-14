@@ -28,11 +28,6 @@
 			</a>
 		</li>
 		<li>
-			<a href="/lesson/links/old_get">
-				<i class="fa ion-university"></i> <span>出席を取る(旧デザイン)</span>
-			</a>
-		</li>
-		<li>
 			<a href="/lesson/links/list">
 				<i class="fa ion-university"></i> <span>出席状況を見る</span>
 			</a>

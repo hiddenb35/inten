@@ -781,7 +781,7 @@ class Provider
 
 			$oncampus_lists[] = array(
 				'company_name' => self::random_company_name(),
-				'company_code' => mt_rand(100000, 999999),
+				'company_code' => mt_rand(100, 999999),
 				'start_date'   => $start_date,
 				'start_time'   => $start_time,
 				'end_time'     => $end_time,
@@ -934,7 +934,7 @@ class Provider
 
 			$offcampus_lists[] = array(
 				'company_name' => self::random_company_name(),
-				'company_code' => mt_rand(100000, 999999),
+				'company_code' => mt_rand(100, 999999),
 				'start_date'   => $start_date,
 				'start_time'   => $start_time,
 				'end_time'     => $end_time,

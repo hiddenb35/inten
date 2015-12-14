@@ -45,7 +45,6 @@ class Controller_Lesson extends Controller_Loggedin
 	{
 		static $links = array(
 			'get' => 'attendance/take_attendance',
-			'old_get' => 'attendance/student_list',
 			'list' => 'attendance/attendance_rate_list',
 		);
 
