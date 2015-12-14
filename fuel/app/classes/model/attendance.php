@@ -7,6 +7,12 @@ class Model_Attendance extends \Orm\Model
 
 	protected static $_properties = array(
 		'id',
+		'date' => array(
+			'data_type' => 'date',
+		),
+		'time_period' => array(
+			'data_type' => 'int',
+		),
 		'teacher_id' => array(
 			'data_type' => 'int',
 		),
@@ -68,6 +74,8 @@ class Model_Attendance extends \Orm\Model
 	{
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
+		$val->add_field('date', '出席日時', 'required')->add_rule('valid_date', 'Y-m-d');
+		$val->add_field('time_period', '時限', 'required|numeric_min[1]|numeric_max[8]');
 		$val->add_field('teacher_id','教員ID','required|max_length[10]')->add_rule('exist_id', 'teacher');
 		$val->add_field('lesson_id','授業ID','required|max_length[10]')->add_rule('exist_id', 'lesson');
 		return $val;
