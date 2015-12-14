@@ -93,7 +93,7 @@ class Exvalidation
 
 		foreach($val as $v)
 		{
-			if($v['status'] < 1 || $v['status'] > 4)
+			if((!empty($v['status'])) && ($v['status'] < 1 || $v['status'] > 4))
 			{
 				return false;
 			}
