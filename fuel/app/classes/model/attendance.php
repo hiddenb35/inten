@@ -75,9 +75,35 @@ class Model_Attendance extends \Orm\Model
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
 		$val->add_field('date', '出席日時', 'required')->add_rule('valid_date', 'Y-m-d');
-		$val->add_field('time_periods', '時限', 'required|time_periods');
-		$val->add_field('attendance', '出席情報', 'required|attendance');
+		$val->add_field('time_periods', '時限', 'required|time_periods')->set_error_message('required', ':label を選択してください。');
+		// 複数項目を元にバリデーションのためクロージャを使用
+		$date = Input::post('date');
+		$time_periods = Input::post('time_periods');
+		$lesson_id = Input::post('lesson_id');
+		$val->add_field('attendance', '出席情報', 'required|attendance')->add_rule(function () use ($date, $time_periods, $lesson_id)
+		{
+			if(is_null($date) || is_null($time_periods) || is_null($lesson_id))
+			{
+				// この項目が存在しない場合は他のバリデーションでエラーするためここではtrueを返却
+				return true;
+			}
+
+			$result = Exvalidation::_validation_unique_set(array(
+				'date' => $date,
+				'time_period' => $time_periods,
+				'lesson_id' => $lesson_id
+			), 'attendance');
+
+			if(!$result)
+			{
+				Validation::active()->set_message('closure', '既に登録されている出席情報です。');
+				return false;
+			}
+
+			return true;
+		});
 		$val->add_field('lesson_id','授業ID','required|max_length[10]')->add_rule('exist_id', 'lesson');
+
 		return $val;
 	}
 }

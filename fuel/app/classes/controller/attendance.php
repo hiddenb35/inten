@@ -31,7 +31,6 @@ class Controller_Attendance extends Controller_Loggedin
 			throw new HttpNotFoundException;
 		}
 
-		// todo validation
 		$teacher_id = $this->get_id();
 		$val = Model_Attendance::validate();
 		if($val->run())
@@ -63,15 +62,24 @@ class Controller_Attendance extends Controller_Loggedin
 					$at->save();
 				}
 			}
+
+			Response::redirect('/');
 		}
 		else
 		{
-			Debug::dump($val->error_message());
-			throw new HttpServerErrorException;
+			$lesson = Model_Lesson::find(Input::post('lesson_id'));
+
+			$view = View::forge(self::FORM_VIEW);
+			$view->set('errors', $val->error_message());
+			$view->set('inputs', $val->input());
+			$view->set('student_lists', Model_Student::to_lists($lesson->class->students));
+			$view->set('class_info', $lesson->class);
+			$view->set('lesson_info', Model_Lesson::to_list($lesson));
+
+			$this->template->title = 'エラー';
+			$this->template->content = $view;
 		}
 
-
-		Response::redirect('/');
 	}
 
 	public function action_attendance_rate_list() {
