@@ -220,9 +220,11 @@ $(function(){
 	});
 
 	//添付ファイル周辺のjs
+	//ダミーボタン
 	$("#ON_CAMPUS_FORM #file_add").click(function(event) {
 		$(this).closest('.form-group').children('div').last().children('input').last().click();
 	});
+	//ファイル選択時
 	$("#ON_CAMPUS_FORM #file_fild").on("change","input",function(){
 		$(this).closest('.form-group').find('.form-control').eq($(this).index()).val($(this).val());
 		$(this).closest('.form-group').children('div').eq(0).children('.hidden').removeClass('hidden');
