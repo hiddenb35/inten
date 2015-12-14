@@ -5,29 +5,6 @@ class Controller_Attendance extends Controller_Loggedin
 	const FORM_VIEW = 'attendance/take_attendance';
 	const LIST_VIEW = 'attendance/attendance_rate_list';
 
-	/**
-	 * 旧出席を取る画面用のメソッド
-	 * @deprecated
-	 * todo 新出席を取る画面が完成し次第削除
-	 */
-	public function action_student_list()
-	{
-		$lesson_id = Input::get('lesson_id');
-
-		if(is_null($lesson_id))
-		{
-			throw new HttpNotFoundException;
-		}
-
-		$this->template->title = '出席';
-		$this->template->content = View::forge('attendance/attendance.php');
-
-		$lesson = Model_Lesson::find($lesson_id);
-		$this->template->content->set('student_lists', Model_Student::to_lists($lesson->class->students));
-		$this->template->content->set('class_info', $lesson->class);
-		$this->template->content->set('lesson_info', Model_Lesson::to_list($lesson));
-	}
-
 	public function action_take_attendance()
 	{
 		$lesson_id = Input::get('lesson_id');
