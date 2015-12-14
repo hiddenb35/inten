@@ -81,5 +81,31 @@ class Exvalidation
 		return true;
 	}
 
+	/*
+	 * $valが出席情報の配列として正しいか
+	 */
+	public static function _validation_attendance($val)
+	{
+		if(!is_array($val))
+		{
+			return false;
+		}
+
+		foreach($val as $v)
+		{
+			if($v['status'] < 1 || $v['status'] > 4)
+			{
+				return false;
+			}
+
+			if(!self::_validation_exist_id($v['student_id'], 'student'))
+			{
+				return false;
+			}
+		}
+
+		return true;
+	}
+
 
 }
