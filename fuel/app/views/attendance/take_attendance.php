@@ -1,5 +1,8 @@
 <!-- Main content -->
 <section id="TAKE_ATTENDANCE" class="content">
+	<!-- todo 実際のエラー表示に変えること -->
+	<?php if(isset($errors)): ?><pre><?php Debug::dump($errors); ?></pre><?php endif; ?>
+	<?php if(isset($inputs)): ?><pre><?php Debug::dump($inputs); ?></pre><?php endif; ?>
 	<form action="/attendance/add" method="post" class="container-fluid">
 		<div class="row">
 			<div class="col-xs-12 col-sm-7" data-toggle="buttons">
