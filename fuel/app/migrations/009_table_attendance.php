@@ -8,6 +8,8 @@ class Table_attendance
 	{
 		\DBUtil::create_table('attendance', array(
 			'id'                => array('type' => 'int', 'auto_increment' => true, 'unsigned' => true, 'comment' => '出席ID'),
+			'date'              => array('type' => 'date', 'comment' => '出席日時'),
+			'time_period'       => array('type' => 'int', 'comment' => '時限'),
 			'created_at'        => array('type' => 'int', 'comment' => '作成日時'),
 			'updated_at'        => array('type' => 'int', 'null' => true, 'comment' => '更新日時'),
 			'teacher_id'        => array('type' => 'int', 'unsigned' => true, 'comment' => '教員ID'),
