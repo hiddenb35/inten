@@ -46,19 +46,11 @@
 							<div class="form-group">
 								<label for="deadline" class="col-md-2 control-label">申込期限</label>
 								<div class="col-md-10">
-									<div class="row">
-										<div class="col-md-5 col-xs-10">
-											<input type="date" name="entry_start" id="deadline" class="form-control" value="<?php if(isset($inputs["entry_start"])) { echo $inputs["entry_start"]; }; ?>">
-											<span class="help-block text-red"><?php if(isset($errors["entry_start"])) { echo $errors["entry_start"]; }; ?></span>
-										</div>
-										<div class="col-md-1 col-xs-1">
-											<span class="help-block"><b>～</b></span>
-										</div>
-										<div class="col-md-5 col-xs-11 col-xs-offset-1 col-sm-offset-0">
-											<input type="date" name="entry_end" class="form-control" value="<?php if(isset($inputs["entry_end"])) { echo $inputs["entry_end"]; }; ?>">
-											<span class="help-block text-red"><?php if(isset($errors["entry_end"])) { echo $errors["entry_end"]; }; ?></span>
-										</div>
-									</div>
+									<input type="text" class="form-control" id="deadline" value="<?php if(isset($inputs["entry_start"]) && isset($inputs["entry_end"])) { echo $inputs["entry_start"] . " - " . $inputs["entry_end"]; }; ?>">
+									<span class="help-block text-red"><?php if(isset($errors["entry_start"])) { echo $errors["entry_start"]; }; ?></span>
+									<span class="help-block text-red"><?php if(isset($errors["entry_end"])) { echo $errors["entry_end"]; }; ?></span>
+									<input type="hidden" id="entry_start" name="entry_start" value="<?php if(isset($inputs["entry_start"])) { echo $inputs["entry_start"]; }; ?>">
+									<input type="hidden" id="entry_end" name="entry_end" value="<?php if(isset($inputs["entry_end"])) { echo $inputs["entry_end"]; }; ?>">
 								</div>
 							</div>
 							<div class="form-group">
