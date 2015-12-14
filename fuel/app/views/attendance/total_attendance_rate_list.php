@@ -6,40 +6,53 @@
 				<table class="table table-bordered table-striped table-hover table-condensed">
 					<thead>
 					<tr>
-						<th class="col-lg-3 col-md-3 col-sm-3">学籍番号</th>
-						<th class="col-lg-3 col-md-3 col-sm-3">名前</th>
-						<th class="col-lg-3 col-md-3 col-sm-3 hidden-xs">フリガナ</th>
-						<th colspan="2" class="col-lg-2 col-md-2 col-sm-2">出席率</th>
+						<th class="col-sm-3 col-xs-5">学籍番号</th>
+						<th class="col-sm-3 col-xs-5">名前</th>
+						<th class="col-sm-3 hidden-xs">フリガナ</th>
+						<th class="col-xs-2 visible-xs">出席率</th>
+						<th colspan="2" class="col-sm-3 hidden-xs">出席率</th>
 					</tr>
 					</thead>
-					<tbody class="row">
+					<tbody>
 					<tr>
 						<td>K013C1296</td>
 						<td>加藤拓磨</td>
 						<td class="hidden-xs">カトウタクマ</td>
-						<td class="hidden-xs col-md-11 col-sm-11 hidden-xs progress progress-xs progress-striped active"><div class="progress-bar progress-bar-primary" style="width: 100%;"></div></td>
-						<td class="badge bg-aqua">100%</td>
+						<td class="visible-xs text-center"><span class="badge bg-aqua">100%</span></td>
+						<td class="hidden-xs progress">
+							<div class="progress-bar progress-bar-aqua" style="width: 100%;"></div>
+						</td>
+						<td class="hidden-xs"><span class="badge bg-aqua">100%</span></td>
 					</tr>
 					<tr>
 						<td>K013C1296</td>
 						<td>加藤拓磨</td>
 						<td class="hidden-xs">カトウタクマ</td>
-						<td class="hidden-xs progress progress-xs progress-striped active"><div class="progress-bar progress-bar-primary" style="width: 75%;"></div></td>
-						<td class="badge bg-aqua">75%</td>
+						<td class="visible-xs text-center"><span class="badge bg-aqua">75%</span></td>
+						<td class="hidden-xs progress">
+							<div class="progress-bar progress-bar-aqua" style="width: 75%;"></div>
+						</td>
+						<td class="hidden-xs"><span class="badge bg-aqua">75%</span></td>
 					</tr>
 					<tr>
 						<td>K013C1296</td>
 						<td>加藤拓磨</td>
 						<td class="hidden-xs">カトウタクマ</td>
-						<td class="hidden-xs progress progress-xs progress-striped active"><div class="progress-bar progress-bar-danger" style="width: 74%;"></div></td>
-						<td class="badge bg-red">74%</td>
+						<td class="visible-xs text-center"><span class="badge bg-red">74%</span></td>
+						<td class="hidden-xs progress">
+							<div class="progress-bar progress-bar-danger" style="width: 74%;"></div>
+						</td>
+						<td class="hidden-xs"><span class="badge bg-red">74%</span></td>
 					</tr>
 					<tr>
 						<td>K013C1296</td>
 						<td>加藤拓磨</td>
 						<td class="hidden-xs">カトウタクマ</td>
-						<td class="hidden-xs progress progress-xs progress-striped active"><div class="progress-bar progress-bar-danger" style="width: 5%;"></div></td>
-						<td class="badge bg-red">5%</td>
+						<td class="visible-xs text-center"><span class="badge bg-red">5%</span></td>
+						<td class="hidden-xs progress">
+							<span class="progress-bar progress-bar-danger" style="width: 5%;"></span>
+						</td>
+						<td class="hidden-xs"><span class="badge bg-red">5%</span></td>
 					</tr>
 					</tbody>
 				</table>
