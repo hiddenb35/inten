@@ -79,7 +79,8 @@ class Controller_Attendance extends Controller_Loggedin
 		Response::redirect('/');
 	}
 
-	public function action_attendance_rate_list() {
+	public function action_attendance_rate_list()
+	{
 		$lesson_id = Input::get('lesson_id');
 
 		if(is_null($lesson_id))
@@ -94,6 +95,22 @@ class Controller_Attendance extends Controller_Loggedin
 		$view->set('lesson_info', Model_Lesson::to_list($lesson));
 
 		$this->template->title = '出席率一覧画面';
+		$this->template->content = $view;
+	}
+
+	public function action_attendance_info_list()
+	{
+		$view = View::forge('attendance/attendance_info_list');
+
+		$this->template->title = '自分の出席率一覧';
+		$this->template->content = $view;
+	}
+
+	public function action_attendance_rate_detail()
+	{
+		$view = View::forge('attendance/attendance_rate_detail');
+
+		$this->template->title = '出席率詳細';
 		$this->template->content = $view;
 	}
 
