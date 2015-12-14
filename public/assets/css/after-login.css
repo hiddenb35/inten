@@ -381,7 +381,18 @@ textarea[name="note"]{
 	color: #fff;
 }
 #TOTAL_ATTENDANCE_RATE_LIST .badge {
-	width:43.2969px;
+	width:43px;
+}
+#TOTAL_ATTENDANCE_RATE_LIST .progress {
+	width: 90%;
+	background: none;
+	vertical-align: middle;
+}
+#TOTAL_ATTENDANCE_RATE_LIST .progress-bar {
+	height: 50%;
+	border-radius: 15px 15px 15px 15px;
+	-moz-border-radius: 15px 15px 15px 15px;
+	-webkit-border-radius: 15px 15px 15px 15px;
 }
 /*****************************************************/
 
