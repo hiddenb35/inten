@@ -54,26 +54,34 @@ class Controller_Attendance extends Controller_Loggedin
 			throw new HttpNotFoundException;
 		}
 
+		// todo validation
 		$teacher_id = $this->get_id();
+		$date = Input::post('date');
+		$time_periods = Input::post('time_periods');
 		$lesson_id = Input::post('lesson_id');
 		$attendance_data = Input::post('attendance');
 
-		$att = Model_Attendance::forge();
-		$att->teacher_id = $teacher_id;
-		$att->lesson_id = $lesson_id;
-		$att->save();
-
-		$attendance_id = $att->get('id');
-
-		foreach($attendance_data as $attendance)
+		foreach($time_periods as $time_period)
 		{
-			$student_id = $attendance['student_id'];
-			$status = (isset($attendance['status'])) ? $attendance['status'] : Model_Status::ABSENCE;
-			$at = Model_Status::forge();
-			$at->status = $status;
-			$at->student_id = $student_id;
-			$at->attendance_id = $attendance_id;
-			$at->save();
+			$att = Model_Attendance::forge();
+			$att->date = $date;
+			$att->time_period = $time_period;
+			$att->teacher_id = $teacher_id;
+			$att->lesson_id = $lesson_id;
+			$att->save();
+
+			$attendance_id = $att->get('id');
+
+			foreach($attendance_data as $attendance)
+			{
+				$student_id = $attendance['student_id'];
+				$status = (isset($attendance['status'])) ? $attendance['status'] : Model_Status::ABSENCE;
+				$at = Model_Status::forge();
+				$at->status = $status;
+				$at->student_id = $student_id;
+				$at->attendance_id = $attendance_id;
+				$at->save();
+			}
 		}
 
 		Response::redirect('/');
