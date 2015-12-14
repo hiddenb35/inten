@@ -92,7 +92,11 @@
 						<div><a href="#"><i class="fa fa-paperclip"></i><span>2017年_求人票.pdf(ハードコード)</span></a></div>
 					</div>
 				</div>
-
+			</div>
+			<div class="row">
+				<!--よろ-->
+				<a href="#" class="col-xs-offset-4 col-xs-4 col-sm-offset-5 col-sm-2 btn btn-primary">申し込み</a>
 			</div>
 		</div>
+	</div>
 </section>
