@@ -18,6 +18,16 @@
 				<i class="fa ion-clock"></i> <span>学外説明会情報</span>
 			</a>
 		</li>
+		<li class="treeview">
+			<a href="/attendance/attendance_info_list">
+				<i class="fa ion-clock"></i> <span>出席一覧</span>
+			</a>
+		</li>
+		<li class="treeview">
+			<a href="/attendance/attendance_rate_detail">
+				<i class="fa ion-clock"></i> <span>出席詳細</span>
+			</a>
+		</li>
 		<li>
 			<a href="/setting/pass_update">
 				<i class="fa ion-settings"></i> <span>パスワード変更</span>
