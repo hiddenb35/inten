@@ -62,7 +62,14 @@
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper">
 				<section class="content-header">
-					<h1><?php echo $title; ?></h1>
+					<h1><?php echo $title; ?>
+						<div class="inline" style="color: #f00; font-size: 90%;">
+							<span class="visible-xs-inline">スマホ(xs)</span>
+							<span class="visible-sm-inline">タブレット(sm)</span>
+							<span class="visible-md-inline">小型PC(md)</span>
+							<span class="visible-lg-inline">大型PC(lg)</span>
+						</div>
+					</h1>
 					<?php $breadcrumb->render(); ?>
 				</section>
 				<?php echo $content; ?>
