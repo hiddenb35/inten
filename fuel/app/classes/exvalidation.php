@@ -60,5 +60,26 @@ class Exvalidation
 		return (is_array($val));
 	}
 
+	/*
+	 * $valが時限の配列として正しいか
+	 */
+	public static function _validation_time_periods($val)
+	{
+		if(!is_array($val))
+		{
+			return false;
+		}
+
+		foreach($val as $v)
+		{
+			if(!is_numeric($v) || $v < 1 || $v > 8)
+			{
+				return false;
+			}
+		}
+
+		return true;
+	}
+
 
 }
