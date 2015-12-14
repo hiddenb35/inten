@@ -209,24 +209,29 @@ $(function(){
 
 	//*********************学内説明会登録画面*********************
 
-	$("#ON_CAMPUS_FORM #wook_add").click(function(event) {
-		$(this).closest('.form-group').children('div').append('<div class="col-md-11 append-box"><input type="text" id="recruitment" name="recruitment[]" class="form-control"></div><div class="col-md-1"><span class="help-block input-hide"><i class="fa fa-lg fa-close"></i></span></div>');
+	//募集職種周辺のjs
+	$("#ON_CAMPUS_FORM #work_add").click(function(event) {
+		$(this).closest('.form-group').children('div').append('<div class="col-md-10 col-md-offset-2 input-group append-box"><input type="text" name="recruitment[]" class="form-control"><span class="input-group-btn"><button type="button" class="btn"><i class="fa fa-lg fa-close"></i></button></span></div>');
 	});
-
-	$("#ON_CAMPUS_FORM").on("click",".input-hide",function(event) {
-		$(this).closest('div').prev().remove();
+	$("#ON_CAMPUS_FORM #recruitment_area").on("click","span",function(event) {
+		var index = $(this).closest('#recruitment_area').find('span').index(this);
+		if(index === 0) $(this).closest('div').next().removeClass('append-box');
 		$(this).closest('div').remove();
-		//console.log($(this).closest('div').closest('div').index('span'));
 	});
 
+	//添付ファイル周辺のjs
 	$("#ON_CAMPUS_FORM #file_add").click(function(event) {
 		$(this).closest('.form-group').children('div').last().children('input').last().click();
 	});
-
 	$("#ON_CAMPUS_FORM #file_fild").on("change","input",function(){
 		$(this).closest('.form-group').find('.form-control').eq($(this).index()).val($(this).val());
 		$(this).closest('.form-group').children('div').eq(0).children('.hidden').removeClass('hidden');
-		$(this).closest('.form-group').children('div').eq(0).append('<div class="col-md-9 col-md-offset-2 hidden"><input type="text" class="form-control"></div><div class="col-md-1 hidden"><span class="help-block input-hide"><i class="fa fa-lg fa-close"></i></span></div>');
+		$(this).closest('.form-group').children('div').eq(0).append('<div class="col-md-10 col-md-offset-2 hidden input-group append-box"><input type="text" class="form-control"><span class="input-group-btn"><button type="button" class="btn"><i class="fa fa-lg fa-close"></i></button></span></div>');
 		$("#file_fild").append('<input type="file" name="file[]">');
+	});
+	$("#ON_CAMPUS_FORM #file_area").on("click","span",function(event) {
+		var index = $(this).closest('#file_area').find('span').index(this);
+		$("#file_fild").children('input').eq(index).remove();
+		$(this).closest('div').remove();
 	});
 });

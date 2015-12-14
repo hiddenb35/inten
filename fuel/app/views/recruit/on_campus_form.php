@@ -94,12 +94,15 @@
 								<label for="recruitment" class="col-md-2 control-label">
 									募集職種
 								</label>
-								<div class="col-md-10 row">
-									<div class="col-md-11">
-										<input type="text" id="recruitment" name="recruitment[]" class="form-control" value="<?php if(isset($inputs["recruitment"])) {}; ?>">
+								<div class="col-md-10 row" id="recruitment_area">
+									<div class="col-md-2">
+										<button type="button" class="btn btn-primary" id="work_add">追加</button>
 									</div>
-									<div class="col-md-1">
-										<button type="button" class="btn btn-primary" id="wook_add">追加</button>
+									<div class="col-md-10 input-group">
+										<input type="text" id="recruitment" name="recruitment[]" class="form-control" value="<?php if(isset($inputs["recruitment"])) {}; ?>">
+										<span class="input-group-btn">
+											<button type="button" class="btn"><i class="fa fa-lg fa-close"></i></button>
+										</span>
 									</div>
 								</div>
 							</div>
@@ -113,15 +116,15 @@
 								<label for="file" class="col-md-2 control-label">
 									添付ファイル
 								</label>
-								<div class="col-md-10 row">
+								<div class="col-md-10 row" id="file_area">
 									<div class="col-md-2">
 										<button type="button" class="btn btn-primary" id="file_add">添付</button>
 									</div>
-									<div class="col-md-9 hidden">
-										<input type="text" class="form-control">
-									</div>
-									<div class="col-md-1 hidden">
-										<span class="help-block input-hide"><i class="fa fa-lg fa-close"></i></span>
+									<div class="col-md-10 hidden input-group">
+										<input type="text" id="file" class="form-control">
+										<span class="input-group-btn">
+											<button type="button" class="btn"><i class="fa fa-lg fa-close"></i></button>
+										</span>
 									</div>
 								</div>
 								<div id="file_fild" class="hidden">
