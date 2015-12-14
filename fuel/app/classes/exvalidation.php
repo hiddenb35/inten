@@ -107,5 +107,32 @@ class Exvalidation
 		return true;
 	}
 
+	public static function _validation_unique_set(array $fields, $table)
+	{
+		$select = '';
+		foreach($fields as $field => $value)
+		{
+			$select .= "'$field',";
+		}
+		$sql = DB::select()->where_open();
+
+		foreach($fields as $field => $value)
+		{
+			if(is_array($value))
+			{
+				$sql->and_where($field, 'in', $value);
+			}
+			else
+			{
+				$sql->and_where($field, '=', $value);
+			}
+		}
+		$sql->where_close();
+
+		$result = $sql->from($table)->execute();
+		Log::error('count: ' . $result->count());
+		return ($result->count() > 0) ? false : true;
+	}
+
 
 }
