@@ -373,4 +373,55 @@ $(function(){
 		}, 5000);
 	};
 	//TODO ここまで
+
+	// 説明会登録画面のdate range picker
+	// format指定
+	var dateTimeFormat = "YYYY-MM-DD HH:mm";
+	var dateFormat = "YYYY-MM-DD";
+	var timeFormat = "HH:mm";
+	// applyラベルとcancelラベルの変更
+	var applyLabel = "確定";
+	var cancelLabel = "キャンセル";
+	// moment.jsによる日本語化
+	moment.locale('ja');
+
+	// 日時の項目
+	$('.daterangepicker-date').daterangepicker({
+		singleDatePicker: true,
+		locale: {
+			format: dateFormat
+		}
+	});
+	$('.daterangepicker-time').daterangepicker({
+		singleDatePicker: true,
+		timePicker: true,
+		timePicker24Hour: true,
+		timePickerIncrement: 5,
+		locale: {
+			format: timeFormat,
+			applyLabel: applyLabel,
+			cancelLabel: cancelLabel
+		}
+	});
+	$('.daterangepicker-time').on('show.daterangepicker', function(ev, picker){
+		picker.container.find('.calendar-table').hide();
+	});
+
+	// 申込期限の項目
+	$("#deadline").daterangepicker({
+		timePicker: true,
+		timePicker24Hour: true,
+		timePickerIncrement: 5,
+		locale: {
+			format: dateTimeFormat,
+			applyLabel: applyLabel,
+			cancelLabel: cancelLabel
+		}
+	}, function(start, end, label){
+		var startDate = start.format(dateTimeFormat);
+		var endDate = end.format(dateTimeFormat);
+
+		$('#entry_start').attr('value', startDate);
+		$('#entry_end').attr('value', endDate);
+	});
 });

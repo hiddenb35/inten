@@ -28,7 +28,8 @@
 		<!-- Date Picker -->
 		<?php echo Asset::css('datepicker3.css'); ?>
 		<!-- Daterange picker -->
-		<?php echo Asset::css('daterangepicker-bs3.css'); ?>
+<!--		--><?php //echo Asset::css('daterangepicker-bs3.css'); ?>
+		<?php echo Asset::css('daterangepicker.css'); ?>
 		<!-- bootstrap wysihtml5 - text editor -->
 		<?php echo Asset::css('bootstrap3-wysihtml5.min.css'); ?>
 		<!-- bootstrap3-editable-1.5.1 -->
@@ -92,7 +93,8 @@
 			<!-- jQuery Knob Chart -->
 			<?php echo Asset::js('jquery.knob.js'); ?>
 			<!-- daterangepicker -->
-			<?php echo Asset::js('moment.min.js'); ?>
+<!--			--><?php //echo Asset::js('moment.min.js'); ?>
+			<?php echo Asset::js('moment-with-locales.min.js'); ?>
 			<?php echo Asset::js('daterangepicker.js'); ?>
 			<!-- datepicker -->
 			<?php echo Asset::js('bootstrap-datepicker.js'); ?>
