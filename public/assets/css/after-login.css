@@ -359,36 +359,22 @@ textarea[name="note"]{
 	border-width: 11px;
 	margin-left: -11px;
 }
+/*********************************************************/
 
-/*****************出席率一覧画面**********************/
+/*****************総合出席率一覧画面**********************/
 #ATTENDANCE_RATE_LIST thead tr {
 	background-color: #CB422C;
 	color: #fff;
 }
 #ATTENDANCE_RATE_LIST .badge {
-	width:43.2969px;
-}
-@media screen and (max-width: 480px) {
-	#ATTENDANCE_RATE_LIST tbody td:nth-child(5) {
-		text-align: center;
-	}
-}
-/*****************************************************/
-
-/*****************総合出席率一覧画面**********************/
-#TOTAL_ATTENDANCE_RATE_LIST thead tr {
-	background-color: #CB422C;
-	color: #fff;
-}
-#TOTAL_ATTENDANCE_RATE_LIST .badge {
 	width:43px;
 }
-#TOTAL_ATTENDANCE_RATE_LIST .progress {
+#ATTENDANCE_RATE_LIST .progress {
 	width: 90%;
 	background: none;
 	vertical-align: middle;
 }
-#TOTAL_ATTENDANCE_RATE_LIST .progress-bar {
+#ATTENDANCE_RATE_LIST .progress-bar {
 	height: 50%;
 	border-radius: 15px 15px 15px 15px;
 	-moz-border-radius: 15px 15px 15px 15px;

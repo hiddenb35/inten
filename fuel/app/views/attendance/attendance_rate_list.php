@@ -6,20 +6,24 @@
 				<table class="table table-bordered table-striped table-hover table-condensed">
 					<thead>
 					<tr>
-						<th>学籍番号</th>
-						<th>名前</th>
-						<th class="hidden-xs">フリガナ</th>
-						<th colspan="2">出席率</th>
+						<th class="col-sm-3 col-xs-5">学籍番号</th>
+						<th class="col-sm-3 col-xs-5">名前</th>
+						<th class="col-sm-3 hidden-xs">フリガナ</th>
+						<th class="col-xs-2 visible-xs">出席率</th>
+						<th colspan="2" class="col-sm-3 hidden-xs">出席率</th>
 					</tr>
 					</thead>
-					<tbody class="row">
+					<tbody>
 					<?php foreach($student_lists as $student_list): ?>
 						<tr>
 							<td><?php echo $student_list['number']; ?></td>
 							<td><?php echo $student_list['full_name']; ?></td>
 							<td class="hidden-xs"><?php echo $student_list['full_name_kana']; ?></td>
-							<td class="col-md-2 hidden-xs progress progress-xs progress-striped active"><div class="progress-bar <?php echo $student_list['rate_bar_class']; ?>" style="width: <?php echo $student_list['rate']; ?>;"></div></td>
-							<td class="col-md-1 badge <?php echo $student_list['rate_bg_class']; ?>"><?php echo $student_list['rate']; ?></td>
+							<td class="visible-xs text-center"><span class="badge <?php echo $student_list['rate_bg_class']; ?>"><?php echo $student_list['rate']; ?>></span></td>
+							<td class="hidden-xs progress">
+								<div class="progress-bar <?php echo $student_list['rate_bar_class']; ?>" style="width: <?php echo $student_list['rate']; ?>;"></div>
+							</td>
+							<td class="hidden-xs"><span class="badge <?php echo $student_list['rate_bg_class']; ?>"><?php echo $student_list['rate']; ?></span></td>
 						</tr>
 					<?php endforeach; ?>
 					</tbody>
