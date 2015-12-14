@@ -104,18 +104,28 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="file" class="col-md-2 control-label">
-									添付ファイル
-									<button class="btn btn-primary">追加</button>
-								</label>
-								<div class="col-md-10">
-									<input type="file" id="file" name="files[]">
-								</div>
-							</div>
-							<div class="form-group">
 								<label for="note" class="col-md-2 control-label">備考</label>
 								<div class="col-md-10">
 									<textarea id="note" name="note" class="form-control" rows="3"><?php if(isset($inputs["note"])) { echo $inputs["note"]; }; ?></textarea>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="file" class="col-md-2 control-label">
+									添付ファイル
+								</label>
+								<div class="col-md-10 row">
+									<div class="col-md-2">
+										<button type="button" class="btn btn-primary" id="file_add">添付</button>
+									</div>
+									<div class="col-md-9 hidden">
+										<input type="text" class="form-control">
+									</div>
+									<div class="col-md-1 hidden">
+										<span class="help-block input-hide"><i class="fa fa-lg fa-close"></i></span>
+									</div>
+								</div>
+								<div id="file_fild" class="hidden">
+									<input type="file" name="file[]">
 								</div>
 							</div>
 						</div>

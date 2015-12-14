@@ -214,9 +214,19 @@ $(function(){
 	});
 
 	$("#ON_CAMPUS_FORM").on("click",".input-hide",function(event) {
-		console.log('run');
 		$(this).closest('div').prev().remove();
 		$(this).closest('div').remove();
+		//console.log($(this).closest('div').closest('div').index('span'));
+	});
 
+	$("#ON_CAMPUS_FORM #file_add").click(function(event) {
+		$(this).closest('.form-group').children('div').last().children('input').last().click();
+	});
+
+	$("#ON_CAMPUS_FORM #file_fild").on("change","input",function(){
+		$(this).closest('.form-group').find('.form-control').eq($(this).index()).val($(this).val());
+		$(this).closest('.form-group').children('div').eq(0).children('.hidden').removeClass('hidden');
+		$(this).closest('.form-group').children('div').eq(0).append('<div class="col-md-9 col-md-offset-2 hidden"><input type="text" class="form-control"></div><div class="col-md-1 hidden"><span class="help-block input-hide"><i class="fa fa-lg fa-close"></i></span></div>');
+		$("#file_fild").append('<input type="file" name="file[]">');
 	});
 });
