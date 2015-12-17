@@ -631,14 +631,14 @@ textarea[name="note"]{
 #OFF_CAMPUS_FORM .append-box {
 	margin-top:8px;
 }
-#ON_CAMPUS_FORM span,
+/*#ON_CAMPUS_FORM span,
 #OFF_CAMPUS_FORM span {
 	margin-top:12px;
 }
 #ON_CAMPUS_FORM #wook_add,
 #OFF_CAMPUS_FORM #wook_add {
 	margin-left:-20px;
-}
+}*/
 /*********************************************************/
 
 /**********************説明会登録確認**********************/
