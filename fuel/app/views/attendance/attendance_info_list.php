@@ -3,8 +3,8 @@
     <div class="container-fluid">
         
         <div class="student-number">
-            <h2 class="number"><span>学籍番号</span>:K013C1296</h2>
-            <h2 class="name"><span>名前</span>:佐々木</h2>
+            <h3 class="number"><span>学籍番号</span>:K013C1296</h3>
+            <h3 class="name"><span>名前</span>:佐々木</h3>
         </div>
         
 
@@ -33,7 +33,7 @@
 
         
         <div>
-             <h2 class="mainitem"><span class="glyphicon glyphicon-star" aria-hidden="true">全体</span></h2>
+             <h3 class="mainitem"><span class="glyphicon glyphicon-star" aria-hidden="true">全体</span></h3>
         </div>
         
         <div class="row maintable">
@@ -76,7 +76,7 @@
         </div>
         
         <div>
-             <h2 class="mainitem"><span class="mainitem glyphicon glyphicon-star" aria-hidden="true">講義別</span></h2>
+             <h3 class="mainitem"><span class="mainitem glyphicon glyphicon-star" aria-hidden="true">講義別</span></h3>
         </div>
 
         <div class="row menu form-group">
@@ -88,7 +88,7 @@
             </div>
         </div>
         
-        <div class ="subject visible-md visible-lg"><h3><u>ビジネスマナー</u></h3></div>
+        <div class ="subject visible-md visible-lg"><h3><a href="#">ビジネスマナー</a></h3></div>
         
         <div class="row">
             <div class="pie col-lg-offset-1 col-md-offset-1 col-lg-5 col-md-5">
@@ -127,9 +127,9 @@
         </div>
 
         <div class="row">
-            <button type="button" class="button col-md-offset-7 col-md-3 col-xs-offset-8 col-xs-3 btn btn-primary btn-lg">詳細</button>
+            <button type="button" class="button col-md-offset-7 col-md-3 col-xs-offset-8 col-xs-3 btn btn-primary">詳細</button>
         </div>
-        <div class="subject visible-md visible-lg"><h3><u>経営科学</u></h3></div>
+        <div class="subject visible-md visible-lg"><h3><a href="#">経営科学</a></h3></div>
 
         <div class="row">
             <div class="pie col-md-offset-1 col-md-5">
@@ -168,7 +168,7 @@
         </div>
 
     <div class="row">
-        <button type="button" class="button col-md-offset-7 col-md-3 col-xs-offset-8 col-xs-3 btn btn-primary btn-lg">詳細</button>
+        <button type="button" class="button col-md-offset-7 col-md-3 col-xs-offset-8 col-xs-3 btn btn-primary">詳細</button>
     </div>
 
     </div>
