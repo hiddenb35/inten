@@ -2,16 +2,6 @@ html, body{
 	background: #222d32;
 	width: 100%;
 }
-.active-row th, .active-td{
-	background: #bbd4ee !important;
-}
-.note,input[name="titleedit"]{
-	display: none;
-}
-textarea[name="note"]{
-	width:100%;
-	resize: none;
-}
 /*担任割り当てページ*/
 #HRTEACHER .form-button {
 	margin-top: 24px;
@@ -39,6 +29,10 @@ textarea[name="note"]{
 }
 
 /***********時間割作成画面**************/
+#TIMETABLE_ADD textarea[name="note"]{
+	width:100%;
+	resize: none;
+}
 #TIMETABLE_ADD td {
 	cursor: pointer;
 }
@@ -96,6 +90,10 @@ textarea[name="note"]{
 /*************************************/
 
 /***********時間割編集画面**************/
+#TIMETABLE_EDIT textarea[name="note"]{
+	width:100%;
+	resize: none;
+}
 #TIMETABLE_EDIT td {
 	cursor: pointer;
 }

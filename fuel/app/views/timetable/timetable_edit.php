@@ -6,7 +6,7 @@
 		<div class="box-header with-border">
 			<!-- ここにタイトルを表示 -->
 			<h3 class="box-title"><?php echo $timetable['name']; ?></h3>
-			<input type="text" class="form-control" name="titleedit">
+			<input type="text" class="form-control hidden" name="titleedit">
 			<button type="button" id="selection" class="btn btn-sm btn-primary pull-right inactive">選択した項目を編集</button>
 		</div>
 		<div class="box-body">
