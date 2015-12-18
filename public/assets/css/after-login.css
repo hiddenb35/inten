@@ -1058,12 +1058,12 @@ textarea[name="note"]{
 }
 
 #ATTENDANCE_INFO_LIST th{
-	height: 50px;
+	/*height: 50px;*/
 	text-align: center;
 }
 
 #ATTENDANCE_INFO_LIST td{
-	height: 50px;
+	/*height: 50px;*/
 }
 
 #ATTENDANCE_INFO_LIST thead {
@@ -1072,8 +1072,8 @@ textarea[name="note"]{
 }
 
 #ATTENDANCE_INFO_LIST .student-number {
-	margin-top: 50px;
-	margin-bottom: 20px;
+	/*margin-top: 50px;*/
+	/*margin-bottom: 20px;*/
 	text-align: center;
 }
 
@@ -1084,7 +1084,7 @@ textarea[name="note"]{
 
 
 #ATTENDANCE_INFO_LIST .student-number > .name{
-	margin-right: 40px;
+	/*margin-right: 40px;*/
 }
 
 #ATTENDANCE_INFO_LIST .maintable {
@@ -1096,13 +1096,13 @@ textarea[name="note"]{
 
 #ATTENDANCE_INFO_LIST .row {
 	color: #333333;
-	font-size: 30px;
+	font-size: 20px;
 }
 
 #ATTENDANCE_INFO_LIST .row > .item,#ATTENDANCE_INFO_LIST .row > .total {
 	padding: 5px;
-	height: 50px;
-	line-height: 38px;
+	/*height: 50px;*/
+	/*line-height: 38px;*/
 	text-align:center;
 	border-collapse:collapse;
 	border-right:1px #fff solid;
@@ -1112,7 +1112,7 @@ textarea[name="note"]{
 #ATTENDANCE_INFO_LIST .row > .item {
 	color: #ffffff;
 	background-color: #3c8dbc;
-	font-size: 30px;
+	font-size: 20px;
 }
 
 #ATTENDANCE_INFO_LIST .button {
@@ -1122,7 +1122,7 @@ textarea[name="note"]{
 @media screen and (min-width: 1300px){
 
 	#ATTENDANCE_INFO_LIST th,#ATTENDANCE_INFO_LIST td {
-		font-size: 30px;
+		font-size: 20px;
 	}
 
 	#ATTENDANCE_INFO_LIST .container-fluid {
@@ -1130,12 +1130,12 @@ textarea[name="note"]{
 	}
 
 	#ATTENDANCE_INFO_LIST .name > span {
-	margin-right: 60px;
-	margin-left: -10px;
+	/*margin-right: 60px;*/
+	/*margin-left: -10px;*/
 	}
 
 	#ATTENDANCE_INFO_LIST .row > .item {
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: bold;
 	}
 
@@ -1152,16 +1152,16 @@ textarea[name="note"]{
 
 @media screen and (max-width: 1300px){
 	#ATTENDANCE_INFO_LIST th,#ATTENDANCE_INFO_LIST td {
-		font-size: 23px;
+		font-size: 20px;
 	}
 
 	#ATTENDANCE_INFO_LIST .number > span {
-		margin-left: -10px;
+		/*margin-left: -10px;*/
 	}
 
 	#ATTENDANCE_INFO_LIST .name > span {
-		margin-right: 60px;
-		margin-left: -20px;
+		/*margin-right: 60px;*/
+		/*margin-left: -20px;*/
 	}
 
 	#ATTENDANCE_INFO_LIST .row > .item {
