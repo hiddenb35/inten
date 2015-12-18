@@ -122,7 +122,7 @@ class Timetable
 					<p class="subject">%s</p>
 					<p class="teacher">%s</p>
 					<p class="classroom">%s</p>
-					<p class="note">%s</p><span class="badge bg-green">備考あり</span>
+					<p class="note hidden">%s</p><span class="badge bg-green">備考あり</span>
 				</td>
 				', $td_class, $lesson_id, $subject, $teacher, $room_number, $notes);
 			}
