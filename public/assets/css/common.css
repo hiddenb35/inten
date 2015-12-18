@@ -1,0 +1,5 @@
+/*全画面で共通*/
+html, body{
+	background: #222d32;
+	width: 100%;
+}
