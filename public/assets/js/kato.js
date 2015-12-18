@@ -211,11 +211,17 @@ $(function(){
 
 	//募集職種周辺のjs
 	$("#ON_CAMPUS_FORM #work_add").click(function(event) {
-		$(this).closest('.form-group').children('div').append('<div class="col-md-10 col-md-offset-2 input-group append-box"><input type="text" name="recruitment[]" class="form-control"><span class="input-group-btn"><button type="button" class="btn"><i class="fa fa-lg fa-close"></i></button></span></div>');
+		var keepThis = $(this).closest('.form-group').children('div');
+		keepThis.append('<div class="col-md-10 col-md-offset-2 input-group append-box"><input type="text" name="recruitment[]" class="form-control"><span class="input-group-btn"><button type="button" class="btn"><i class="fa fa-lg fa-close"></i></button></span></div>');
+		if(keepThis.children('div').length === 2){
+			keepThis.children('div').eq(1).removeClass('append-box');
+		}
 	});
 	$("#ON_CAMPUS_FORM #recruitment_area").on("click","span",function(event) {
 		var index = $(this).closest('#recruitment_area').find('span').index(this);
-		if(index === 0) $(this).closest('div').next().removeClass('append-box');
+		if(index === 0){
+			$(this).closest('div').next().removeClass('append-box');
+		}
 		$(this).closest('div').remove();
 	});
 
