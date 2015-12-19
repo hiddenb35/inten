@@ -1092,96 +1092,18 @@
 /*********************************************************/
 
 /******************出席率詳細画面*********************/
-#ATTENDANCE_RATE_DETAIL .table{
-	margin-top: 10px;
-	table-layout: fixed;
-	text-align: center;
+#ATTENDANCE_RATE_DETAIL .student-table {
+	display: table;
 }
-
-#ATTENDANCE_RATE_DETAIL th{
-	height: 50px;
-	text-align: center;
+#ATTENDANCE_RATE_DETAIL .student-table-row {
+	display: table-row;
 }
-
-#ATTENDANCE_RATE_DETAIL td{
-	height: 50px;
+#ATTENDANCE_RATE_DETAIL .student-table-cell {
+	display: table-cell;
 }
-
-#ATTENDANCE_RATE_DETAIL thead {
-	background-color: #3c8dbc;
-	color: #ffffff;
+#ATTENDANCE_RATE_DETAIL .attendance-log {
+	margin: 0 3%;
 }
-
-#ATTENDANCE_RATE_DETAIL .mainsubject {
-	margin-right: 22px;
-	text-align: center;
-}
-
-
-#ATTENDANCE_RATE_DETAIL .student-number {
-	margin-top: 50px;
-	margin-bottom: 20px;
-	text-align: center;
-}
-
-
-#ATTENDANCE_RATE_DETAIL .student-number > .name{
-	margin-right: 40px;
-}
-
-#ATTENDANCE_RATE_DETAIL .row {
-	color: #333333;
-	font-size: 30px;
-}
-
-#ATTENDANCE_RATE_DETAIL .button {
-	margin-bottom: 20px;
-}
-
-@media screen and (min-width: 1300px){
-
-	#ATTENDANCE_RATE_DETAIL th,#ATTENDANCE_RATE_DETAIL td {
-		font-size: 30px;
-	}
-
-	#ATTENDANCE_RATE_DETAIL .container-fluid {
-		width: 80%;
-	}
-
-	#ATTENDANCE_RATE_DETAIL .name > span {
-	margin-right: 60px;
-	margin-left: -10px;
-	}
-
-	#ATTENDANCE_RATE_DETAIL .menu {
-	margin-top:40px;
-	margin-bottom: -10px;
-	text-align: center;
-	}
-
-
-
-}
-
-@media screen and (max-width: 1300px){
-	#ATTENDANCE_RATE_DETAIL th,#ATTENDANCE_RATE_DETAIL td {
-		font-size: 23px;
-	}
-
-	#ATTENDANCE_RATE_DETAIL .number > span {
-		margin-left: -10px;
-	}
-
-	#ATTENDANCE_RATE_DETAIL .name > span {
-		margin-right: 60px;
-		margin-left: -20px;
-	}
-
-	#ATTENDANCE_RATE_DETAIL .menu {
-		text-align:right;
-	}
-}
-
 /*********************************************************/
 
 /******************学内説明会詳細画面*********************/
