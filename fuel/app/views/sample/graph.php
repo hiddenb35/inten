@@ -50,10 +50,10 @@
 	<div class="row">
 		<div class="col-md-4"><span class="title-span">1</span><div id="morris1" style="width: 100%; height: 100%"></div></div>
 		<div class="col-md-4 text-center"><span class="title-span">2</span>
-			<div id="easypie1" class="easy-pie" data-percent="72">
+			<div id="easypie1" class="easy-pie" data-percent="80">
 				<div class="easy-pie-inner">
 					<span class="labeler">出席率</span>
-					<span class="percent">72</span>
+					<span class="percent">80</span>
 				</div>
 			</div>
 		</div>
