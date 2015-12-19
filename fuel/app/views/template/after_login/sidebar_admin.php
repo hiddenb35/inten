@@ -3,6 +3,11 @@
 	<!-- sidebar menu: : style can be found in sidebar.less -->
 	<ul class="sidebar-menu">
 		<li class="header">MAIN NAVIGATION</li>
+		<li>
+			<a href="/sample">
+				<i class="fa ion-university"></i> <span>サンプル</span>
+			</a>
+		</li>
 		<li class="treeview">
 			<a href="/">
 				<i class="fa ion-clock"></i> <span>時間割表示</span>
