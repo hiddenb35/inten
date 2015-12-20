@@ -6,6 +6,7 @@ class Controller_Sample extends Controller_Loggedin
 	{
 		static $samples = array(
 			'グラフ' => 'graph',
+			'グラフ2' => 'graph2',
 		);
 		$this->template->title = 'サンプル一覧';
 		$this->template->content = View::forge('sample/index');
@@ -16,5 +17,11 @@ class Controller_Sample extends Controller_Loggedin
 	{
 		$this->template->title = 'グラフサンプル';
 		$this->template->content = View::forge('sample/graph');
+	}
+
+	public function action_graph2()
+	{
+		$this->template->title = 'グラフサンプル2';
+		$this->template->content = View::forge('sample/graph2');
 	}
 }
