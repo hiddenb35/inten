@@ -1,20 +1,19 @@
 <!-- Main content -->
 <section id="ATTENDANCE_RATE_DETAIL" class="content clearfix">
 <div class="container-fluid">
-
     <div class="student-number">
         <h2 class="number"><span>学籍番号</span>:K013C1296</h2>
         <h2 class="name"><span>名前</span>:佐々木</h2>
     </div>
-
     <div>
-        <h2 class="mainsubject"><span class="glyphicon glyphicon-star" aria-hidden="true">ビジネスマナー(１年前期)</span></h2>
+        <h2 class="mainsubject">
+            <span class="glyphicon glyphicon-star" aria-hidden="true">ビジネスマナー(１年前期)</span>
+        </h2>
     </div>
-
     <div class="row detail">
-        <div class="pie col-lg-offset-1 col-md-offset-1 col-lg-5 col-md-5">
+        <div class="pie col-md-offset-1 col-md-5">
         </div>
-        <div class="col-lg-5 col-md-5">
+        <div class="col-md-5">
             <table class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                     <tr>
@@ -47,7 +46,6 @@
             </table>
         </div>
     </div>
-
     <div class="row">
         <table class="table table-bordered table-striped table-hover table-condensed">
             <thead>
