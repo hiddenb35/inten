@@ -373,7 +373,7 @@
 #TAKE_ATTENDANCE .modal-body {
 	height: 100px;
 }
-#TAKE_ATTENDANCE .panel-heading > div > div > div:nth-child(2) {
+#TAKE_ATTENDANCE .panel-heading .student-info {
 	padding: 10px;
 }
 #TAKE_ATTENDANCE .box {
@@ -382,7 +382,7 @@
 	-webkit-border-radius: 22px 22px 22px 22px;
 	border-radius: 22px 22px 22px 22px;
 }
-#TAKE_ATTENDANCE .box-header:nth-child(1) {
+#TAKE_ATTENDANCE .box-header {
 	border-bottom: 10px solid #D73925;
 }
 #TAKE_ATTENDANCE .box-footer{
@@ -434,7 +434,7 @@
 #TAKE_ATTENDANCE .sp-size > div {
 	margin-bottom: 10px;
 }
-#TAKE_ATTENDANCE .sp-size > div > .btn:nth-child(1) {
+#TAKE_ATTENDANCE .take-attendance {
 	background-color: #dd4b39;
 	color: #fff;
 }

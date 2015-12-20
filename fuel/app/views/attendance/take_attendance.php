@@ -47,7 +47,7 @@
 		<!------------------------スマホ・タブレットサイズ-------------------------------->
 		<div class="sp-size">
 			<div class="text-center row">
-				<button type="button" class="btn col-xs-offset-1 col-xs-10" data-toggle="modal" data-target="#myModal2" id="attendance">出席を取る</button>
+				<button type="button" class="btn col-xs-offset-1 col-xs-10 take-attendance" data-toggle="modal" data-target="#myModal2" id="attendance">出席を取る</button>
 			</div>
 			<div class="panel-group" id="accordion">
 				<?php foreach($student_lists as $index => $student): ?>
@@ -57,7 +57,7 @@
 							<!--------------学生の数だけstudentの数値が増加する---------------->
 							<div class="text-center" data-toggle="collapse" data-parent="#accordion" href="#student<?php echo $index; ?>">
 								<div class="cell create-circle"></div>
-								<div class="cell"><?php echo $student['number']; ?> <?php echo $student['full_name']; ?></div>
+								<div class="cell student-info"><?php echo $student['number']; ?> <?php echo $student['full_name']; ?></div>
 								<ul class="cell">
 									<li><?php echo $student['number']; ?></li>
 									<li><?php echo $student['full_name']; ?></li>
