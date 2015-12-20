@@ -959,6 +959,7 @@
 /******************出席情報一覧画面*********************/
 #ATTENDANCE_INFO_LIST .subject {
 	margin-left: 120px;
+	text-decoration: underline;
 }
 
 #ATTENDANCE_INFO_LIST .table{
@@ -967,15 +968,10 @@
 	text-align: center;
 }
 
-#ATTENDANCE_INFO_LIST th{
+#ATTENDANCE_INFO_LIST th,td{
 	height: 50px;
 	text-align: center;
 }
-
-#ATTENDANCE_INFO_LIST td{
-	height: 50px;
-}
-
 #ATTENDANCE_INFO_LIST thead {
 	background-color: #3c8dbc;
 	color: #ffffff;
@@ -1009,7 +1005,8 @@
 	font-size: 30px;
 }
 
-#ATTENDANCE_INFO_LIST .row > .item,#ATTENDANCE_INFO_LIST .row > .total {
+#ATTENDANCE_INFO_LIST .row > .item,
+#ATTENDANCE_INFO_LIST .row > .total {
 	padding: 5px;
 	height: 50px;
 	line-height: 38px;
@@ -1031,7 +1028,8 @@
 
 @media screen and (min-width: 1300px){
 
-	#ATTENDANCE_INFO_LIST th,#ATTENDANCE_INFO_LIST td {
+	#ATTENDANCE_INFO_LIST th,
+	#ATTENDANCE_INFO_LIST td {
 		font-size: 30px;
 	}
 
@@ -1055,13 +1053,11 @@
 	margin-bottom: -10px;
 	text-align: center;
 	}
-
-
-
 }
 
 @media screen and (max-width: 1300px){
-	#ATTENDANCE_INFO_LIST th,#ATTENDANCE_INFO_LIST td {
+	#ATTENDANCE_INFO_LIST th,
+	#ATTENDANCE_INFO_LIST td {
 		font-size: 23px;
 	}
 
@@ -1078,7 +1074,6 @@
 		font-size: 20px;
 		font-weight: bold;
 	}
-
 	#ATTENDANCE_INFO_LIST .menu {
 		text-align:right;
 	}
@@ -1086,9 +1081,7 @@
 	#ATTENDANCE_INFO_LIST .form-group {
 		margin-top: 15px;
 	}
-
 }
-
 /*********************************************************/
 
 /******************出席率詳細画面*********************/
