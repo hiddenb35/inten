@@ -65,16 +65,20 @@
 						</select>
 					</div>
 					<div class="lesson-attendance">
-						<div class="row">
-							<div>
+
+						<div class="">
+							<div class="row">
 								<div class="col-sm-6">
-									<div class="col-xs-8">
+									<div class="col-sm-8">
 										<h3><a href="#">ビジネスマナー</a></h3>
 									</div>
-									<div class="col-xs-4">
-										<button type="button" class="btn btn-primary">詳細</button>
+									<div class="col-sm-4">
+										<button type="button" class="btn btn-primary" style="margin-top:10%;">詳細</button>
 									</div>
 								</div>
+							</div>
+							<div class="row">
+								<div class="hidden-xs col-sm-6" id="highcharts"></div>
 								<div class="col-sm-6">
 									<table class="table">
 										<tr class="bg-primary"><th>授業数</th><th>不足</th><th>出席率</th></tr>
@@ -84,12 +88,18 @@
 									</table>
 								</div>
 							</div>
-							<div class="">
+						</div>
+
+						<div class="lesson-attendance-box">
+							<div class="row">
 								<div class="col-sm-6">
 									<h3><a href="#">経営科学</a></h3>
 								</div>
+							</div>
+							<div class="row">
+								<div class="hidden-xs col-sm-6" id="highcharts3d"></div>
 								<div class="col-sm-6">
-									<button type="button" class="btn btn-primary">詳細</button>
+									<button type="button" class="btn btn-primary" style="margin-bottom:5%;">詳細</button>
 									<table class="table">
 										<tr class="bg-primary"><th>学籍番号</th><th>学籍番号</th><th>学籍番号</th></tr>
 										<tr><td>名前</td><td>名前</td><td>名前</td></tr>
@@ -99,9 +109,85 @@
 								</div>
 							</div>
 						</div>
+
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
+
+<!------------------------------------------------------------------------------------------------>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/4.2.0/highcharts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/4.2.0/highcharts-3d.js"></script>
+<script>
+	/**********Highcharts.js**********/
+	var h_data = [
+		{name: "出席", y: 80, sliced: true, selected: true},
+		{name: "遅刻", y: 9},
+		{name: "欠席", y: 6},
+		{name: "公欠", y: 3},
+		{name: "休校", y: 2}
+	];
+	$('#highcharts').highcharts({
+		title: {text: ''},
+		colors: ['#0f0','#ff0', '#f00', '#00f', '#0ff'],
+		plotOptions: {
+			pie: {
+				allowPointSelect: true,
+				cursor: 'pointer',
+				dataLabels: {
+					formatter: function() {
+						return '<b>'+ this.point.name +'</b>:'+ this.percentage + '%';
+					}
+				}
+			}
+		},
+		series: [{ type: 'pie', name: '', data: h_data}],
+		tooltip: {
+			formatter: function() { return this.y +'%';},
+			enabled:true
+		},
+		chart: { backgroundColor: 'transparent', height: 300},
+		credits: {enabled: false}
+	});
+	/************ Hifhcharts-3d.js ***********/
+	$('#highcharts3d').highcharts({
+		title: {text: ''},
+		colors: ['#0f0','#ff0', '#f00', '#00f', '#0ff'],
+		plotOptions: {
+			pie: {
+				allowPointSelect: true,
+				cursor: 'pointer',
+				depth: 35,
+				dataLabels: {
+					formatter: function() {
+						return '<b>'+ this.point.name +'</b>:'+ this.percentage + '%';
+					}
+				}
+			}
+		},
+		series: [{
+			type: 'pie',
+			name: '',
+			data: h_data
+		}],
+		tooltip: {
+			formatter: function() {
+				return this.y +'%';},
+			enabled:true
+		},
+		chart: {
+			type: 'pie',
+			options3d: {
+				enabled: true,
+				alpha: 45,
+				beta: 0
+			},
+			backgroundColor: 'transparent',
+			height: 300
+		},
+		credits: {enabled: false}
+	});
+</script>

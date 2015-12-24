@@ -978,6 +978,9 @@
 #ATTENDANCE_INFO_LIST .lesson-attendance {
 	margin: 0 3%;
 }
+#ATTENDANCE_INFO_LIST .lesson-attendance-box {
+	border-top: solid 2px #b8c7ce;
+}
 /*********************************************************/
 
 /******************出席率詳細画面*********************/
