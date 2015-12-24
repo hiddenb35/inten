@@ -5,7 +5,7 @@
 	<?php if(isset($inputs)): ?><pre><?php Debug::dump($inputs); ?></pre><?php endif; ?>
 	<form action="/attendance/add" method="post" class="container-fluid">
 		<div class="row">
-			<div class="col-xs-12 col-sm-7" data-toggle="buttons">
+			<div class="col-xs-12 col-md-offset-2 col-md-8" data-toggle="buttons">
 				<input type="text" name="date" class="form-control daterangepicker-date col-xs-12">
 				<label class="btn btn-default col-xs-3"><input type="checkbox" name="time_periods[]" value="1">１限目</label>
 				<label class="btn btn-default col-xs-3"><input type="checkbox" name="time_periods[]" value="2">２限目</label>
@@ -46,8 +46,8 @@
 		</div>
 		<!------------------------スマホ・タブレットサイズ-------------------------------->
 		<div class="sp-size">
-			<div class="text-center row">
-				<button type="button" class="btn col-xs-offset-1 col-xs-10" data-toggle="modal" data-target="#myModal2" id="attendance">出席を取る</button>
+			<div class="text-center mtop"><!--mtop margin-top取ってます-->
+				<button type="button" class="btn take-attendance" data-toggle="modal" data-target="#myModal2" id="attendance">出席を取る</button>
 			</div>
 			<div class="panel-group" id="accordion">
 				<?php foreach($student_lists as $index => $student): ?>
@@ -57,8 +57,8 @@
 							<!--------------学生の数だけstudentの数値が増加する---------------->
 							<div class="text-center" data-toggle="collapse" data-parent="#accordion" href="#student<?php echo $index; ?>">
 								<div class="cell create-circle"></div>
-								<div class="cell"><?php echo $student['number']; ?> <?php echo $student['full_name']; ?></div>
-								<ul class="cell">
+								<div class="cell student-info"><?php echo $student['number']; ?> <?php echo $student['full_name']; ?></div>
+								<ul class="cell hidden-student-info">
 									<li><?php echo $student['number']; ?></li>
 									<li><?php echo $student['full_name']; ?></li>
 								</ul>

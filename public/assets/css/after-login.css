@@ -1,93 +1,3 @@
-html, body{
-	background: #222d32;
-	width: 100%;
-}
-/*table th,td{*/
-	/*border: 1px #000 solid;*/
-/*}*/
-#edit-table > tbody > tr{
-	width:135px;
-	height:100px;
-}
-
-#edit-table > tbody > tr:nth-child(1){
-	width:135px;
-	height:30px;
-}
-#timetable-table {
-	table-layout: fixed;
-	width: 100%;
-}
-#timetable-table th {
-	text-align: center;
-	border:1px solid #84b2e0;
-}
-#timetable-table .table-header th {
-	color: #fff;
-	padding: 8px 15px;
-	background: #258;
-	background:-moz-linear-gradient(rgba(34,85,136,0.7), rgba(34,85,136,0.9) 50%);
-	background:-webkit-gradient(linear, 100% 0%, 100% 50%, from(rgba(34,85,136,0.7)), to(rgba(34,85,136,0.9)));
-	font-weight: bold;
-	border-left:1px solid #258;
-	border-top:1px solid #258;
-	border-bottom:1px solid #258;
-	line-height: 120%;
-	text-align: center;
-	text-shadow:0 -1px 0 rgba(34,85,136,0.9);
-	box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
-}
-#timetable-table th:first-child {
-	border-radius: 5px 0 0 0;
-}
-#timetable-table th:last-child {
-	border-radius:0 5px 0 0;
-	border-right:1px solid #258;
-	box-shadow: 2px 2px 1px rgba(0,0,0,0.1),0px 1px 1px rgba(255,255,255,0.3) inset;
-}
-#timetable-table tr {
-	height: 90px;
-}
-#timetable-table tr:first-child {
-	height: auto;
-}
-#timetable-table tr td {
-	border-bottom: 1px solid #84b2e0;
-	border-left: 1px solid #84b2e0;
-	text-align: center;
-}
-#timetable-table tr td:last-child {
-	border-right: 1px solid #84b2e0;
-	box-shadow: 2px 2px 1px rgba(0,0,0,0.1);
-}
-#timetable-table tr {
-	background: #fff;
-}
-#timetable-table tr:nth-child(2n+1) {
-	background: #f1f6fc;
-}
-#timetable-table tr:last-child td {
-	box-shadow: 2px 2px 1px rgba(0,0,0,0.1);
-}
-#timetable-table tr:last-child td:first-child {
-	border-radius: 0 0 0 5px;
-}
-#timetable-table tr:last-child td:last-child {
-	border-radius: 0 0 5px 0;
-}
-.active-row th, .active-td{
-	background: #bbd4ee !important;
-}
-#timetable-table .now {
-	background: #bbd4ee !important;
-}
-.note,input[name="titleedit"]{
-	display: none;
-}
-textarea[name="note"]{
-	width:100%;
-	resize: none;
-}
 /*担任割り当てページ*/
 #HRTEACHER .form-button {
 	margin-top: 24px;
@@ -115,6 +25,10 @@ textarea[name="note"]{
 }
 
 /***********時間割作成画面**************/
+#TIMETABLE_ADD textarea[name="note"]{
+	width:100%;
+	resize: none;
+}
 #TIMETABLE_ADD td {
 	cursor: pointer;
 }
@@ -172,6 +86,10 @@ textarea[name="note"]{
 /*************************************/
 
 /***********時間割編集画面**************/
+#TIMETABLE_EDIT textarea[name="note"]{
+	width:100%;
+	resize: none;
+}
 #TIMETABLE_EDIT td {
 	cursor: pointer;
 }
@@ -311,7 +229,7 @@ textarea[name="note"]{
 	background-position: 10px 50%;
 	background-size: auto 30px;
 	border-color: #3c763d;
-	box-shadow:0px 0px 50px;
+	box-shadow:0 0 50px;
 }
 .custom-alert-danger {
 	color: #a94442;
@@ -321,7 +239,7 @@ textarea[name="note"]{
 	background-position: 10px 50%;
 	background-size: auto 30px;
 	border-color: #a94442;
-	box-shadow:0px 0px 30px;
+	box-shadow:0 0 30px;
 }
 /*TODO ここまで*/
 #note_view{
@@ -344,7 +262,6 @@ textarea[name="note"]{
 	height: 0;
 	width: 0;
 	position: absolute;
-	pointer-events: none;
 }
 
 #note_view:after {
@@ -455,8 +372,14 @@ textarea[name="note"]{
 #TAKE_ATTENDANCE .modal-body {
 	height: 100px;
 }
-#TAKE_ATTENDANCE .panel-heading > div > div > div:nth-child(2) {
+#TAKE_ATTENDANCE .panel-heading .student-info {
 	padding: 10px;
+}
+#TAKE_ATTENDANCE .pc-size {
+	margin-top: 2%;
+}
+#TAKE_ATTENDANCE .mtop {
+	margin-top: 3%;
 }
 #TAKE_ATTENDANCE .box {
 	border: 2px solid;
@@ -464,7 +387,7 @@ textarea[name="note"]{
 	-webkit-border-radius: 22px 22px 22px 22px;
 	border-radius: 22px 22px 22px 22px;
 }
-#TAKE_ATTENDANCE .box-header:nth-child(1) {
+#TAKE_ATTENDANCE .box-header {
 	border-bottom: 10px solid #D73925;
 }
 #TAKE_ATTENDANCE .box-footer{
@@ -516,7 +439,8 @@ textarea[name="note"]{
 #TAKE_ATTENDANCE .sp-size > div {
 	margin-bottom: 10px;
 }
-#TAKE_ATTENDANCE .sp-size > div > .btn:nth-child(1) {
+#TAKE_ATTENDANCE .take-attendance {
+	width: 100%;
 	background-color: #dd4b39;
 	color: #fff;
 }
@@ -570,18 +494,15 @@ textarea[name="note"]{
 		display: none;
 	}
 }
-#TAKE_ATTENDANCE .panel-heading > div > div > ul {
+#TAKE_ATTENDANCE .panel-heading .hidden-student-info {
 	display: none;
 	list-style: none;
 }
 @media only screen and (max-width: 450px) {
-	#TAKE_ATTENDANCE .panel-heading > div > div > div:nth-child(2) {
+	#TAKE_ATTENDANCE .panel-heading .student-info {
 		display: none;
 	}
-	#TAKE_ATTENDANCE .panel-heading > div > div > div:nth-child(4) {
-		padding: 10px;
-	}
-	#TAKE_ATTENDANCE .panel-heading > div > div >ul {
+	#TAKE_ATTENDANCE .panel-heading .hidden-student-info {
 		display: table-cell;
 	}
 }
@@ -631,14 +552,6 @@ textarea[name="note"]{
 #OFF_CAMPUS_FORM .append-box {
 	margin-top:8px;
 }
-/*#ON_CAMPUS_FORM span,
-#OFF_CAMPUS_FORM span {
-	margin-top:12px;
-}
-#ON_CAMPUS_FORM #wook_add,
-#OFF_CAMPUS_FORM #wook_add {
-	margin-left:-20px;
-}*/
 /*********************************************************/
 
 /**********************説明会登録確認**********************/
@@ -1074,15 +987,10 @@ textarea[name="note"]{
 	text-align: center;
 }
 
-#ATTENDANCE_RATE_DETAIL th{
+#ATTENDANCE_RATE_DETAIL th,td{
 	height: 50px;
 	text-align: center;
 }
-
-#ATTENDANCE_RATE_DETAIL td{
-	height: 50px;
-}
-
 #ATTENDANCE_RATE_DETAIL thead {
 	background-color: #3c8dbc;
 	color: #ffffff;
@@ -1116,7 +1024,8 @@ textarea[name="note"]{
 
 @media screen and (min-width: 1300px){
 
-	#ATTENDANCE_RATE_DETAIL th,#ATTENDANCE_RATE_DETAIL td {
+	#ATTENDANCE_RATE_DETAIL th,
+	#ATTENDANCE_RATE_DETAIL td {
 		font-size: 30px;
 	}
 
@@ -1140,7 +1049,8 @@ textarea[name="note"]{
 }
 
 @media screen and (max-width: 1300px){
-	#ATTENDANCE_RATE_DETAIL th,#ATTENDANCE_RATE_DETAIL td {
+	#ATTENDANCE_RATE_DETAIL th,
+	#ATTENDANCE_RATE_DETAIL td {
 		font-size: 23px;
 	}
 
