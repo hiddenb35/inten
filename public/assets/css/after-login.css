@@ -1068,3 +1068,23 @@
 #TEACHER_ON_CAMPUS_DETAIL .files span {
 	margin-left: 4px;
 }
+
+/*************** 教員登録フォーム ********************/
+#TEACHER_ADD #teacher_add_form {
+	margin: 0 auto;
+}
+#TEACHER_ADD .inside_box {
+	margin: 30px 30px 30px 25px;
+}
+#TEACHER_ADD #teacher_add_box {
+	border: solid 1px #d2d6de;
+	border-left-width: 15px;
+	border-left-color: #f39c12;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+}
+#TEACHER_ADD .append-box {
+	margin-top:8px;
+}
+/*********************************************************/
