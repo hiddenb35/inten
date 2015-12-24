@@ -1070,13 +1070,16 @@
 }
 
 /*************** 教員登録フォーム ********************/
-#TEACHER_ADD #teacher_add_form {
+#TEACHER_ADD #teacher_add_form,
+#STUDENT_ADD #student_add_form {
 	margin: 0 auto;
 }
-#TEACHER_ADD .inside_box {
+#TEACHER_ADD .inside_box,
+#STUDENT_ADD .inside_box {
 	margin: 30px 30px 30px 25px;
 }
-#TEACHER_ADD #teacher_add_box {
+#TEACHER_ADD #teacher_add_box,
+#STUDENT_ADD #student_add_box {
 	border: solid 1px #d2d6de;
 	border-left-width: 15px;
 	border-left-color: #f39c12;
@@ -1084,7 +1087,8 @@
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
 }
-#TEACHER_ADD .append-box {
+#TEACHER_ADD .append-box,
+#STUDENT_ADD .append-box {
 	margin-top:8px;
 }
 /*********************************************************/
