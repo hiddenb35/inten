@@ -95,10 +95,10 @@
 									募集職種
 								</label>
 								<div class="col-md-10 row" id="recruitment_area">
-									<div class="col-md-2">
+									<div class="col-xs-2 col-sm-2">
 										<button type="button" class="btn btn-primary" id="work_add">追加</button>
 									</div>
-									<div class="col-md-10 input-group">
+									<div class="col-xs-10 col-sm-10 input-group">
 										<input type="text" id="recruitment" name="recruitment[]" class="form-control" value="<?php if(isset($inputs["recruitment"])) {}; ?>">
 										<span class="input-group-btn">
 											<button type="button" class="btn"><i class="fa fa-lg fa-close"></i></button>
@@ -117,10 +117,10 @@
 									添付ファイル
 								</label>
 								<div class="col-md-10 row" id="file_area">
-									<div class="col-md-2">
+									<div class="col-xs-2 col-sm-2">
 										<button type="button" class="btn btn-primary" id="file_add">添付</button>
 									</div>
-									<div class="col-md-10 hidden input-group">
+									<div class="col-xs-10 col-sm-10 hidden input-group">
 										<input type="text" id="file" class="form-control">
 										<span class="input-group-btn">
 											<button type="button" class="btn"><i class="fa fa-lg fa-close"></i></button>

@@ -229,7 +229,7 @@
 	background-position: 10px 50%;
 	background-size: auto 30px;
 	border-color: #3c763d;
-	box-shadow:0px 0px 50px;
+	box-shadow:0 0 50px;
 }
 .custom-alert-danger {
 	color: #a94442;
@@ -239,7 +239,7 @@
 	background-position: 10px 50%;
 	background-size: auto 30px;
 	border-color: #a94442;
-	box-shadow:0px 0px 30px;
+	box-shadow:0 0 30px;
 }
 /*TODO ここまで*/
 #note_view{
@@ -262,7 +262,6 @@
 	height: 0;
 	width: 0;
 	position: absolute;
-	pointer-events: none;
 }
 
 #note_view:after {
@@ -373,8 +372,14 @@
 #TAKE_ATTENDANCE .modal-body {
 	height: 100px;
 }
-#TAKE_ATTENDANCE .panel-heading > div > div > div:nth-child(2) {
+#TAKE_ATTENDANCE .panel-heading .student-info {
 	padding: 10px;
+}
+#TAKE_ATTENDANCE .pc-size {
+	margin-top: 2%;
+}
+#TAKE_ATTENDANCE .mtop {
+	margin-top: 3%;
 }
 #TAKE_ATTENDANCE .box {
 	border: 2px solid;
@@ -382,7 +387,7 @@
 	-webkit-border-radius: 22px 22px 22px 22px;
 	border-radius: 22px 22px 22px 22px;
 }
-#TAKE_ATTENDANCE .box-header:nth-child(1) {
+#TAKE_ATTENDANCE .box-header {
 	border-bottom: 10px solid #D73925;
 }
 #TAKE_ATTENDANCE .box-footer{
@@ -434,7 +439,8 @@
 #TAKE_ATTENDANCE .sp-size > div {
 	margin-bottom: 10px;
 }
-#TAKE_ATTENDANCE .sp-size > div > .btn:nth-child(1) {
+#TAKE_ATTENDANCE .take-attendance {
+	width: 100%;
 	background-color: #dd4b39;
 	color: #fff;
 }
@@ -488,18 +494,15 @@
 		display: none;
 	}
 }
-#TAKE_ATTENDANCE .panel-heading > div > div > ul {
+#TAKE_ATTENDANCE .panel-heading .hidden-student-info {
 	display: none;
 	list-style: none;
 }
 @media only screen and (max-width: 450px) {
-	#TAKE_ATTENDANCE .panel-heading > div > div > div:nth-child(2) {
+	#TAKE_ATTENDANCE .panel-heading .student-info {
 		display: none;
 	}
-	#TAKE_ATTENDANCE .panel-heading > div > div > div:nth-child(4) {
-		padding: 10px;
-	}
-	#TAKE_ATTENDANCE .panel-heading > div > div >ul {
+	#TAKE_ATTENDANCE .panel-heading .hidden-student-info {
 		display: table-cell;
 	}
 }
@@ -957,138 +960,27 @@
 /*********************************************************/
 
 /******************出席情報一覧画面*********************/
-#ATTENDANCE_INFO_LIST .subject {
-	margin-left: 120px;
+#ATTENDANCE_INFO_LIST .student-table {
+	display: table;
 }
-
-#ATTENDANCE_INFO_LIST .table{
-	margin-top: 10px;
-	table-layout: fixed;
-	text-align: center;
+#ATTENDANCE_INFO_LIST .student-table-row {
+	display: table-row;
 }
-
-#ATTENDANCE_INFO_LIST th{
-	height: 50px;
-	text-align: center;
+#ATTENDANCE_INFO_LIST .student-table-cell {
+	display: table-cell;
 }
-
-#ATTENDANCE_INFO_LIST td{
-	height: 50px;
+#ATTENDANCE_INFO_LIST .all-attendance-rate {
+	margin: 0 3%;
 }
-
-#ATTENDANCE_INFO_LIST thead {
-	background-color: #3c8dbc;
-	color: #ffffff;
+#ATTENDANCE_INFO_LIST .all-attendance-rate-col {
+	padding: 0;
 }
-
-#ATTENDANCE_INFO_LIST .student-number {
-	margin-top: 50px;
-	margin-bottom: 20px;
-	text-align: center;
+#ATTENDANCE_INFO_LIST .lesson-attendance {
+	margin: 0 3%;
 }
-
-#ATTENDANCE_INFO_LIST .mainitem{
-	margin-right: 22px;
-	text-align: center;
+#ATTENDANCE_INFO_LIST .lesson-attendance-box {
+	border-top: solid 2px #b8c7ce;
 }
-
-
-#ATTENDANCE_INFO_LIST .student-number > .name{
-	margin-right: 40px;
-}
-
-#ATTENDANCE_INFO_LIST .maintable {
-	background-color: #f9f9f9;
-	border-top: 1px #fff solid;
-	border-left: 1px #fff solid;
-}
-
-
-#ATTENDANCE_INFO_LIST .row {
-	color: #333333;
-	font-size: 30px;
-}
-
-#ATTENDANCE_INFO_LIST .row > .item,#ATTENDANCE_INFO_LIST .row > .total {
-	padding: 5px;
-	height: 50px;
-	line-height: 38px;
-	text-align:center;
-	border-collapse:collapse;
-	border-right:1px #fff solid;
-	border-bottom:1px #fff solid;
-}
-
-#ATTENDANCE_INFO_LIST .row > .item {
-	color: #ffffff;
-	background-color: #3c8dbc;
-	font-size: 30px;
-}
-
-#ATTENDANCE_INFO_LIST .button {
-	margin-bottom: 20px;
-}
-
-@media screen and (min-width: 1300px){
-
-	#ATTENDANCE_INFO_LIST th,#ATTENDANCE_INFO_LIST td {
-		font-size: 30px;
-	}
-
-	#ATTENDANCE_INFO_LIST .container-fluid {
-		width: 80%;
-	}
-
-	#ATTENDANCE_INFO_LIST .name > span {
-	margin-right: 60px;
-	margin-left: -10px;
-	}
-
-	#ATTENDANCE_INFO_LIST .row > .item {
-	font-size: 30px;
-	font-weight: bold;
-	}
-
-
-	#ATTENDANCE_INFO_LIST .menu {
-	margin-top:40px;
-	margin-bottom: -10px;
-	text-align: center;
-	}
-
-
-
-}
-
-@media screen and (max-width: 1300px){
-	#ATTENDANCE_INFO_LIST th,#ATTENDANCE_INFO_LIST td {
-		font-size: 23px;
-	}
-
-	#ATTENDANCE_INFO_LIST .number > span {
-		margin-left: -10px;
-	}
-
-	#ATTENDANCE_INFO_LIST .name > span {
-		margin-right: 60px;
-		margin-left: -20px;
-	}
-
-	#ATTENDANCE_INFO_LIST .row > .item {
-		font-size: 20px;
-		font-weight: bold;
-	}
-
-	#ATTENDANCE_INFO_LIST .menu {
-		text-align:right;
-	}
-
-	#ATTENDANCE_INFO_LIST .form-group {
-		margin-top: 15px;
-	}
-
-}
-
 /*********************************************************/
 
 /******************出席率詳細画面*********************/
