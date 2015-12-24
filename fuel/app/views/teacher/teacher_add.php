@@ -111,7 +111,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="form-group text-center" id="on_campus_confirm_form_button">
+					<div class="form-group text-center">
 						<div class="col-xs-6">
 							<button type="submit" class="btn btn-primary btn-lg">送信</button>
 						</div>
