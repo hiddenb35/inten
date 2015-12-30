@@ -61,8 +61,8 @@ class Timetable
 		$table .= '<th class="text-center">#</th>';
 		$table .= '<th class="text-center' . $array[self::MONDAY] . '">月曜日</th>';
 		$table .= '<th class="text-center' . $array[self::TUESDAY] . '">火曜日</th>';
-		$table .= '<th class="text-center' . $array[self::THURSDAY] . '">水曜日</th>';
-		$table .= '<th class="text-center' . $array[self::WEDNESDAY] . '">木曜日</th>';
+		$table .= '<th class="text-center' . $array[self::WEDNESDAY] . '">水曜日</th>';
+		$table .= '<th class="text-center' . $array[self::THURSDAY] . '">木曜日</th>';
 		$table .= '<th class="text-center' . $array[self::FRIDAY] . '">金曜日</th>';
 		$table .= '</tr>';
 		$table .= '</thead>';
