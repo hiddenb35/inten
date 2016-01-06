@@ -1,5 +1,8 @@
 $(function(){
 
+	//ロード画面
+	$('#loader-bg ,#loader').height($(window).height()).css('display','block');
+
 	//Javascript無効時の処理
 	$("#ERR_NOSCRIPT").hide();
 
@@ -242,4 +245,9 @@ $(function(){
 			$(this).closest('div').next().removeClass('append-box');
 		$(this).closest('div').remove();
 	});
+});
+//全ての読み込みが完了したら実行
+$(window).load(function(){
+	$('#loader-bg').delay(900).fadeOut(800);
+	$('#loader').delay(600).fadeOut(300);
 });
