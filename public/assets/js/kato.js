@@ -1,8 +1,5 @@
 $(function(){
 
-	//ロード画面
-	$('#loader-bg ,#loader').height($(window).height()).css('display','block');
-
 	//Javascript無効時の処理
 	$("#ERR_NOSCRIPT").hide();
 
