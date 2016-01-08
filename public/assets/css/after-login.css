@@ -154,6 +154,9 @@
 #TIMETABLE_VIEW p.subject {
 	font-weight: 900;
 }
+#TIMETABLE_VIEW p.classroom {
+	font-weight: bold;
+}
 #TIMETABLE_VIEW #selection.inactive {
 	background-color: #808080;
 	border-color: #808080;
@@ -170,20 +173,17 @@
 }
 
 #TIMETABLE_VIEW .today {
-	/*background-color: #FFFCDB;*/
 	border: 3px solid #337AB7 !important;
 	border-top: none !important;
 	border-bottom: none !important;
 }
 #TIMETABLE_VIEW th.today {
-	/*background: rgba(255,252,219,0.5);*/
 	border-top: 3px solid #337AB7 !important;
 }
 #TIMETABLE_VIEW .last .today {
 	border-bottom: 3px solid #337AB7 !important;
 }
 #TIMETABLE_VIEW .now {
-	/*background-color: #FFFAB5;*/
 	border-top: 3px dashed #337AB7 !important;
 	border-bottom: 3px dashed #337AB7 !important;
 }
