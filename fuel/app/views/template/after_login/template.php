@@ -7,7 +7,7 @@
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
 		<!-- jQuery 1.11.3 -->
-		<?php echo Asset::js('jQuery-1.11.3.min.js'); ?>
+		<?php echo Asset::js('jquery-1.11.3.min.js'); ?>
 		<!-- Bootstrap 3.3.5 -->
 		<?php echo Asset::css('bootstrap.min.css'); ?>
 		<!-- FontAwesome 4.4.0 -->
