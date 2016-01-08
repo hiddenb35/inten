@@ -22,6 +22,9 @@
 	background: #ddd;
 	cursor: pointer;
 }
+#COLLEGE_LIST #college_list_table {
+	font-weight: bold;
+}
 /***********時間割作成画面**************/
 #TIMETABLE_ADD textarea[name="note"]{
 	width:100%;
