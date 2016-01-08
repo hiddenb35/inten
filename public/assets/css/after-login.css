@@ -1,4 +1,4 @@
-/*担任割り当てページ*/
+bg/*担任割り当てページ*/
 #HRTEACHER .form-button {
 	margin-top: 24px;
 }
@@ -45,14 +45,7 @@
 	width: 16%;
 }
 #TIMETABLE_ADD p.subject {
-	font-size: 14px;
 	font-weight: 900;
-}
-#TIMETABLE_ADD p.teacher {
-	font-size: 13px;
-}
-#TIMETABLE_ADD p.classroom {
-	font-size: 16px;
 }
 #TIMETABLE_ADD #selection.inactive {
 	background-color: #808080;
@@ -106,17 +99,8 @@
 	width: 16%;
 }
 #TIMETABLE_EDIT p.subject {
-	font-size: 14px;
 	font-weight: 900;
 }
-#TIMETABLE_EDIT p.teacher {
-	font-size: 13px;
-}
-#TIMETABLE_EDIT p.classroom {
-	font-size: 16px;
-}
-
-
 #TIMETABLE_EDIT #selection.inactive {
 	background-color: #808080;
 	border-color: #808080;
@@ -168,21 +152,14 @@
 	margin-bottom: 10px;
 }
 #TIMETABLE_VIEW p.subject {
-	font-size: 14px;
 	font-weight: 900;
 }
-#TIMETABLE_VIEW p.teacher {
-	font-size: 13px;
-}
-#TIMETABLE_VIEW p.classroom {
-	font-size: 16px;
-}
-
 #TIMETABLE_VIEW #selection.inactive {
 	background-color: #808080;
 	border-color: #808080;
 }
-#TIMETABLE_VIEW table td span,#TIMETABLE_EDIT table td span{
+#TIMETABLE_VIEW table td span,
+#TIMETABLE_EDIT table td span{
 	display: none;
 }
 #TIMETABLE_VIEW table td {
@@ -193,13 +170,28 @@
 }
 
 #TIMETABLE_VIEW .today {
-	background-color: #FFFCDB;
+	/*background-color: #FFFCDB;*/
+	border: 3px solid #337AB7 !important;
+	border-top: none !important;
+	border-bottom: none !important;
 }
 #TIMETABLE_VIEW th.today {
-	background: rgba(255,252,219,0.5);
+	/*background: rgba(255,252,219,0.5);*/
+	border-top: 3px solid #337AB7 !important;
+}
+#TIMETABLE_VIEW .last .today {
+	border-bottom: 3px solid #337AB7 !important;
 }
 #TIMETABLE_VIEW .now {
-	background-color: #FFFAB5;
+	/*background-color: #FFFAB5;*/
+	border-top: 3px dashed #337AB7 !important;
+	border-bottom: 3px dashed #337AB7 !important;
+}
+#TIMETABLE_VIEW .bg-primary {
+	background-color: rgba(51,122,183,0.5);
+}
+#TIMETABLE_VIEW .bg-primary .today {
+	background-color: #337AB7;
 }
 
 /*************************************/
@@ -603,7 +595,6 @@
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 #ON_CAMPUS_LIST .inner-box-header {
-	font-size: 20px;
 	font-weight: bold;
 	background-color: #ECEFF3;
 	border-bottom: 2px solid #C1C1C1;
@@ -616,9 +607,6 @@
 	-moz-border-radius: 25px 25px 25px 25px;
 	-webkit-border-radius: 25px 25px 25px 25px;
 	border-radius: 25px 25px 25px 25px;
-}
-#ON_CAMPUS_LIST .left-in-box {
-	font-size: 16px;
 }
 #ON_CAMPUS_LIST .inner-title {
 	font-weight: bold;
@@ -691,7 +679,6 @@
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 #TEACHER_ON_CAMPUS_LIST .inner-box-header {
-	font-size: 20px;
 	font-weight: bold;
 	background-color: #F9DCDC;
 	border-bottom: 2px solid #DDD8D8;
@@ -704,9 +691,6 @@
 	border-radius: 25px 25px 25px 25px;
 	-moz-border-radius: 25px 25px 25px 25px;
 	-webkit-border-radius: 25px 25px 25px 25px;
-}
-#TEACHER_ON_CAMPUS_LIST .left-in-box {
-	font-size: 16px;
 }
 #TEACHER_ON_CAMPUS_LIST .left-box-color {
 	color: #444;
@@ -770,7 +754,6 @@
 
 /******************学内説明会一覧画面締め切りログ*********************/
 #ON_CAMPUS_DEADLINE .inner-page-title {
-	font-size:24px;
 	margin-bottom: 13px;
 }
 #ON_CAMPUS_DEADLINE .page-count {
@@ -788,7 +771,6 @@
 	border: 1px solid #9BBFD3;
 }
 #ON_CAMPUS_DEADLINE .inner-box-header {
-	font-size: 20px;
 	font-weight: bold;
 	background-color: #ECEFF3;
 	border-bottom: 2px solid #C1C1C1;
@@ -801,9 +783,6 @@
 	-moz-border-radius: 25px 25px 25px 25px;
 	-webkit-border-radius: 25px 25px 25px 25px;
 	border-radius: 25px 25px 25px 25px;
-}
-#ON_CAMPUS_DEADLINE .left-in-box {
-	font-size: 16px;
 }
 #ON_CAMPUS_DEADLINE .inner-title {
 	font-weight: bold;
@@ -864,7 +843,6 @@
 
 /******************学内説明会一覧画面締め切りログ(教員用)*********************/
 #TEACHER_ON_CAMPUS_DEADLINE .inner-page-title {
-	font-size:24px;
 	margin-bottom: 13px;
 }
 #TEACHER_ON_CAMPUS_DEADLINE .page-count {
@@ -882,7 +860,6 @@
 	border: 1px solid #9BBFD3;
 }
 #TEACHER_ON_CAMPUS_DEADLINE .inner-box-header {
-	font-size: 20px;
 	font-weight: bold;
 	background-color: #F9DCDC;
 	border-bottom: 2px solid #DDD8D8;
@@ -895,9 +872,6 @@
 	-moz-border-radius: 25px 25px 25px 25px;
 	-webkit-border-radius: 25px 25px 25px 25px;
 	border-radius: 25px 25px 25px 25px;
-}
-#TEACHER_ON_CAMPUS_DEADLINE .left-in-box {
-	font-size: 16px;
 }
 #TEACHER_ON_CAMPUS_DEADLINE .left-box-color {
 	color: #444;
