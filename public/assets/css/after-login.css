@@ -184,17 +184,19 @@
 #TIMETABLE_VIEW .last .today {
 	border-bottom: 3px solid #337AB7 !important;
 }
-#TIMETABLE_VIEW .now {
-	border-top: 3px dashed #337AB7 !important;
-	border-bottom: 3px dashed #337AB7 !important;
-}
 #TIMETABLE_VIEW .bg-primary {
 	background-color: rgba(51,122,183,0.5);
 }
 #TIMETABLE_VIEW .bg-primary .today {
 	background-color: #337AB7;
 }
-
+#TIMETABLE_VIEW .now {
+	border-top: 3px dashed #337AB7 !important;
+	border-bottom: 3px dashed #337AB7 !important;
+}
+#TIMETABLE_VIEW .last .now {
+	border-bottom: 3px dashed #337AB7 !important;
+}
 /*************************************/
 
 /*TODO @Author kasai リファクタリング*/
