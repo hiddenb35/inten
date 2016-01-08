@@ -45,11 +45,19 @@
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
-		<script>
-
-		</script>
 	</head>
 	<body class="sidebar-mini <?php echo $user_info['body_skin']; ?>">
+		<!-- load画面 -->
+		<div id="loader-bg">
+			<div id="loader">
+				<img src="/assets/img/img-loading.gif" width="80" height="80" alt="Now Loading..." />
+				<p>Now Loading...</p>
+			</div>
+		</div>
+		<script>
+			$('#loader-bg ,#loader').height($(window).height()).css('display','block');
+		</script>
+
 		<div class="wrapper">
 
 			<header class="main-header">

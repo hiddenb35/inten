@@ -243,3 +243,8 @@ $(function(){
 		$(this).closest('div').remove();
 	});
 });
+//全ての読み込みが完了したら実行
+$(window).load(function(){
+	$('#loader-bg').delay(900).fadeOut(800);
+	$('#loader').delay(600).fadeOut(300);
+});
