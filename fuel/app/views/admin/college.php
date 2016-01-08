@@ -49,7 +49,6 @@
 						</div>
 						<div class="form-button col-sm-5">
 							<button type="submit" class="btn btn-primary">登録</button>
-							<button type="reset" class="btn btn-warning">キャンセル</button>
 						</div>
 					</div>
 				</div>
