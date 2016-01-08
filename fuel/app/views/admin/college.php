@@ -30,28 +30,17 @@
 			<h3 class="box-title">カレッジ追加</h3>
 		</div><!-- /.box-header -->
 		<div class="box-body">
-<!--				<form action="/admin/college/add" method="post" role="form" class="form-inline">-->
-<!--					<div class="form-group" id="form_college_add">-->
-<!--						<label for="name" class="control-label">カレッジ名</label>-->
-<!--						<input type="text" class="form-control" id="name" name="name">-->
-<!--						<div class="text-danger">--><?php //if(isset($errors)){ echo $errors['name']; }; ?><!--</div>-->
-<!--					</div>-->
-<!--					<button type="submit" class="btn btn-primary">登録</button>-->
-<!--					<button type="reset" class="btn btn-warning">キャンセル</button>-->
-<!--				</form>-->
-			<form action="/admin/college/add#college_form" method="post" role="form" class="form-horizontal" id="college_form">
-				<div class="row">
-					<div class="form-group" id="form_college_add">
-						<label for="name" class="control-label col-sm-2">カレッジ名</label>
-						<div class="col-sm-5">
+			<form action="/admin/college/add#college_form" method="post" role="form" class="form-horizontal">
+					<div class="form-group college_form col-lg-7">
+						<label for="name" class="control-label col-lg-3">カレッジ名</label>
+						<div class="col-lg-8">
 							<input type="text" class="form-control" id="name" name="name" value="<?php if(isset($inputs)){ echo $inputs['name']; }; ?>">
 							<div class="text-danger"><?php if(isset($errors)){ echo $errors['name']; }; ?></div>
 						</div>
-						<div class="form-button col-sm-5">
-							<button type="submit" class="btn btn-primary">登録</button>
-						</div>
 					</div>
-				</div>
+					<div class="col-lg-1 college_form">
+						<button type="submit" class="btn btn-primary">登録</button>
+					</div>
 			</form>
 		</div><!-- /.box-body -->
 	</div>
