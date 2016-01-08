@@ -88,7 +88,14 @@ class Timetable
 
 		foreach($timetable as $index => $row)
 		{
-			$body .= '<tr><th class="text-center bg-info"><span>' . $span[$index]['name'] . '</span><br>' . $span[$index]['term'] . '</th>';
+			if($index === count($timetable) - 1)
+			{
+				$body .= '<tr class="last"><th class="text-center bg-info"><span>' . $span[$index]['name'] . '</span><br>' . $span[$index]['term'] . '</th>';
+			}
+			else
+			{
+				$body .= '<tr><th class="text-center bg-info"><span>' . $span[$index]['name'] . '</span><br>' . $span[$index]['term'] . '</th>';
+			}
 			foreach($row as $key => $cell)
 			{
 				$subject = (isset($cell['lesson_id'])) ? Model_Lesson::find($cell['lesson_id'])->name : '';
