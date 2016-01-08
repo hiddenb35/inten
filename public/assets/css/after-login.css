@@ -7,13 +7,12 @@
 	margin-top: 24px;
 }
 /*カレッジ一覧ページ*/
-#COLLEGE_LIST #form_college_add {
-	margin-left: 10px;
-	margin-right: 20px;
+#COLLEGE_LIST {
+	margin-top: 2%;
 }
-#COLLEGE_LIST #form_college_add .form-control{
-	margin-left: 10px;
-	width: 300px;
+#COLLEGE_LIST .college_form {
+	margin-top: 1%;
+	margin-bottom: 2%;
 }
 #COLLEGE_LIST .college-name:hover {
 	background: #ddd;
@@ -23,7 +22,9 @@
 	background: #ddd;
 	cursor: pointer;
 }
-
+#COLLEGE_LIST #college_list_table {
+	font-weight: bold;
+}
 /***********時間割作成画面**************/
 #TIMETABLE_ADD textarea[name="note"]{
 	width:100%;
