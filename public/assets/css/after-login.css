@@ -25,6 +25,13 @@
 #COLLEGE_LIST #college_list_table {
 	font-weight: bold;
 }
+/*専攻一覧ページ*/
+#MAJOR_LIST {
+	margin-top: 2%;
+}
+#MAJOR_LIST #major_list_table {
+	font-weight: bold;
+}
 /***********時間割作成画面**************/
 #TIMETABLE_ADD textarea[name="note"]{
 	width:100%;
