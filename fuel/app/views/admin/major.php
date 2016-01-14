@@ -32,23 +32,20 @@
 					</div><!-- /.box-header -->
 					<div class="box-body">
 						<form action="/admin/major/add#magor_form" method="post" role="form" class="form-horizontal" id="magor_form">
-							<div class="form-group row" id="form_major_add">
-								<label for="name" class="col-sm-1 control-label">専攻名</label>
-								<div class="col-sm-3">
-									<input type="text" class="form-control" id="name" name="name" value="<?php if (isset($inputs['name'])) { echo $inputs['name']; }; ?>">
-								</div>
-								<label for="course_id" class="col-sm-1 control-label">学科</label>
-								<div class="col-sm-3">
-									<select id="course_id" name="course_id" class="form-control">
-										<?php foreach ($course_lists as $course_list): ?>
-											<option value="<?php echo $course_list['id']; ?>"><?php echo $course_list['name']; ?></option>
-										<?php endforeach; ?>
-									</select>
-								</div>
-								<div class="form-button col-sm-4">
-									<button type="submit" class="btn btn-primary">登録</button>
-									<button type="reset" class="btn btn-warning">キャンセル</button>
-								</div>
+							<label for="name" class="col-lg-2 control-label">専攻名</label>
+							<div class="col-lg-3">
+								<input type="text" class="form-control" id="name" name="name" value="<?php if (isset($inputs['name'])) { echo $inputs['name']; }; ?>">
+							</div>
+							<label for="course_id" class="col-lg-1 control-label">学科</label>
+							<div class="col-lg-3" id="course_list">
+								<select id="course_id" name="course_id" class="form-control">
+									<?php foreach ($course_lists as $course_list): ?>
+										<option value="<?php echo $course_list['id']; ?>"><?php echo $course_list['name']; ?></option>
+									<?php endforeach; ?>
+								</select>
+							</div>
+							<div class="form-button col-lg-1">
+								<button type="submit" class="btn btn-primary">登録</button>
 							</div>
 							<div class="row">
 								<div class="text-danger col-sm-4 col-sm-offset-1"><?php if (isset($errors['name'])) { echo $errors['name']; }; ?></div>

@@ -32,6 +32,9 @@
 #MAJOR_LIST #major_list_table {
 	font-weight: bold;
 }
+#MAJOR_LIST #course_list {
+	margin-bottom: 2%;
+}
 /***********時間割作成画面**************/
 #TIMETABLE_ADD textarea[name="note"]{
 	width:100%;
