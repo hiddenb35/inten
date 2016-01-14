@@ -18,11 +18,18 @@
 	background: #ddd;
 	cursor: pointer;
 }
+#COLLEGE_LIST #college_list_table {
+	font-weight: bold;
+}
+	/*学科一覧ページ*/
+#COURSE_LIST {
+	margin-top: 2%;
+}
 #COURSE_LIST .course-edit:hover {
 	background: #ddd;
 	cursor: pointer;
 }
-#COLLEGE_LIST #college_list_table {
+#COURSE_LIST #course_list_table {
 	font-weight: bold;
 }
 /***********時間割作成画面**************/
