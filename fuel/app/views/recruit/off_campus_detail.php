@@ -104,7 +104,10 @@
 						<div><a href="#"><i class="fa fa-paperclip"></i><span>2017年_求人票.pdf(ハードコード)</span></a></div>
 					</div>
 				</div>
-
 			</div>
+			<a class="back pull-right hidden-xs" onclick="history.back();">
+				<i class="fa fa-arrow-circle-o-left"></i>
+				一覧に戻る
+			</a>
 		</div>
 </section>
