@@ -32,6 +32,10 @@
 #COURSE_LIST #course_list_table {
 	font-weight: bold;
 }
+#COURSE_LIST .course-add-second,
+#COURSE_LIST .register-button {
+	margin-top: 2%;
+}
 /***********時間割作成画面**************/
 #TIMETABLE_ADD textarea[name="note"]{
 	width:100%;
