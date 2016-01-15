@@ -35,15 +35,15 @@
 					</div><!-- /.box-header -->
 					<div class="box-body">
 						<form action="/admin/class/add#class_form" method="post" role="form" class="form-horizontal" id="class_form">
-							<div class="form-group col-sm-6">
-								<label for="name" class="control-label col-sm-3">クラス名</label>
-								<div class="col-sm-6">
+							<div class="col-sm-3">
+								<label for="name" class="control-label">クラス名</label>
+								<div class="">
 									<input type="text" class="form-control" id="name" name="name" value="<?php if (isset($inputs['name'])) { echo $inputs['name']; }; ?>">
 								</div>
 							</div>
-							<div class="form-group col-sm-3">
-								<label for="teacher_id" class="control-label col-sm-6">担任</label>
-								<div class="col-sm-6">
+							<div class="col-sm-3">
+								<label for="teacher_id" class="control-label">担任</label>
+								<div class="">
 									<select id="teacher_id" name="teacher_id" class="form-control">
 										<?php foreach ($teacher_lists as $teacher_list): ?>
 											<option value="<?php echo $teacher_list['id']; ?>"><?php echo $teacher_list['full_name'] ?></option>
@@ -51,9 +51,9 @@
 									</select>
 								</div>
 							</div>
-							<div class="form-group col-sm-6">
-								<label for="course_id" class="control-label col-sm-6">学科</label>
-								<div class="col-sm-6">
+							<div class="col-sm-3">
+								<label for="course_id" class="control-label">学科</label>
+								<div class="">
 									<select id="course_id" name="course_id" class="form-control">
 										<?php foreach ($course_lists as $course_list): ?>
 											<option value="<?php echo $course_list['id'] ?>"><?php echo $course_list['name'] ?></option>
@@ -61,7 +61,7 @@
 									</select>
 								</div>
 							</div>
-							<div class="form-button col-sm-1">
+							<div class="form-button col-sm-1 class-button">
 								<button type="submit" class="btn btn-primary">登録</button>
 							</div>
 							<div class="row">
