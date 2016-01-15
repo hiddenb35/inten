@@ -1014,6 +1014,10 @@
 #ON_CAMPUS_DETAIL .files span {
 	margin-left: 4px;
 }
+#ON_CAMPUS_DETAIL .back {
+	font-size: 112%;
+	cursor: pointer;
+}
 /*****************************************************/
 
 /******************学内説明会詳細画面(教員用)*********************/

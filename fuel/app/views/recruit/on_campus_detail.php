@@ -97,6 +97,10 @@
 				<!--よろ-->
 				<a href="#" class="col-xs-offset-4 col-xs-4 col-sm-offset-5 col-sm-2 btn btn-primary">申し込み</a>
 			</div>
+			<a class="back pull-right hidden-xs" onclick="history.back();" style="margin-right: 9.5%">
+				<i class="fa fa-arrow-circle-o-left"></i>
+				一覧に戻る
+			</a>
 		</div>
 	</div>
 </section>
