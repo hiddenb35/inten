@@ -30,11 +30,24 @@
 	cursor: pointer;
 }
 #COURSE_LIST #course_list_table {
+	table-layout: fixed;
 	font-weight: bold;
 }
 #COURSE_LIST .course-add-second,
 #COURSE_LIST .register-button {
 	margin-top: 2%;
+}
+#COURSE_LIST .course-text-course-code + .editable-container input {
+	width: 55px;
+}
+#COURSE_LIST .course-text-course-name + .editable-container form {
+	width: 63%;
+}
+#COURSE_LIST .course-text-course-name + .editable-container input {
+	width: 100%;
+}
+#COURSE_LIST .course-text-course-year-system + .editable-container input {
+	width: 55px;
 }
 /***********時間割作成画面**************/
 #TIMETABLE_ADD textarea[name="note"]{
