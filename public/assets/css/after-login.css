@@ -38,6 +38,23 @@
 #CLASS_LIST .class-button {
 	margin-top: 2%;
 }
+/*専攻一覧ページ*/
+#MAJOR_LIST {
+	margin-top: 2%;
+}
+#MAJOR_LIST #major_list_table {
+	table-layout: fixed;
+	font-weight: bold;
+}
+#MAJOR_LIST #course_list {
+	margin-bottom: 2%;
+}
+#MAJOR_LIST .editableform {
+	width: 62%;
+}
+#MAJOR_LIST .editable-input input {
+	width: 100%;
+}
 /***********時間割作成画面**************/
 #TIMETABLE_ADD textarea[name="note"]{
 	width:100%;
@@ -531,6 +548,12 @@
 }
 #TAKE_ATTENDANCE .collapsed-box > div > .kana {
 	display: none;
+}
+#TAKE_ATTENDANCE .abtn:hover {
+	background-color: #E7E7E7;
+}
+#TAKE_ATTENDANCE .mr5 {
+	margin-right:5px;
 }
 /*********************************************************/
 
@@ -1026,6 +1049,10 @@
 }
 #ON_CAMPUS_DETAIL .files span {
 	margin-left: 4px;
+}
+#ON_CAMPUS_DETAIL .entry {
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 /*****************************************************/
 
