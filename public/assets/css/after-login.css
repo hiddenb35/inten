@@ -521,6 +521,9 @@
 #TAKE_ATTENDANCE .abtn:hover {
 	background-color: #E7E7E7;
 }
+#TAKE_ATTENDANCE .mr5 {
+	margin-right:5px;
+}
 /*********************************************************/
 
 /*****************説明会登録・編集**************************/
