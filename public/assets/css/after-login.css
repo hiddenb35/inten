@@ -604,9 +604,7 @@
 #ON_CAMPUS_LIST .box {
 	border-top: none;
 	box-shadow: none;
-}
-#ON_CAMPUS_LIST .outer-box-header {
-	background: #ECF0F5;
+	background: none;
 }
 /*#ON_CAMPUS_LIST .outer-box-header .pull-left {*/
 /*margin-top: 1px;*/
@@ -617,22 +615,18 @@
 }
 #ON_CAMPUS_LIST .outer-box-body {
 	padding: 2%;
-	border: 2px solid #98B8CC;
+	/*border: 2px solid #98B8CC;*/
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+	background-color: rgba(255, 255, 255, 0.3);
 }
 #ON_CAMPUS_LIST .inner-box-header {
 	font-weight: bold;
-	background-color: #ECEFF3;
-	border-bottom: 2px solid #C1C1C1;
-	border-radius: 25px 25px 0 0;
-	-moz-border-radius: 25px 25px 0 0;
-	-webkit-border-radius: 25px 25px 0 0;
+	border-bottom: 1px solid #C1C1C1;
 }
 #ON_CAMPUS_LIST .inner-box {
-	border: 2px solid #C1C1C1;
-	-moz-border-radius: 25px 25px 25px 25px;
-	-webkit-border-radius: 25px 25px 25px 25px;
-	border-radius: 25px 25px 25px 25px;
+	/*border: 2px solid #C1C1C1;*/
+	background-color: #FFF;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
 }
 #ON_CAMPUS_LIST .inner-title {
 	font-weight: bold;
@@ -649,6 +643,7 @@
 	margin: -10px;
 	margin-top: 1px;
 }
+
 #ON_CAMPUS_LIST .outer-box-header.clearfix > .pull-right {
 	width: 20%;
 }
