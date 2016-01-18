@@ -77,7 +77,7 @@
 			</div>
 		</div>
 		<div class="text-center row">
-			<button type="submit" class="btn btn-primary col-xs-offset-3 col-xs-3 col-sm-offset-4 col-sm-2">送信</button>
+			<button type="submit" class="btn btn-primary col-xs-offset-3 col-xs-3 col-sm-offset-4 col-sm-2 mr5">送信</button>
 			<button type="reset" class="btn btn-danger col-xs-3 col-sm-2">リセット</button>
 		</div>
 		<!-- popup -->
