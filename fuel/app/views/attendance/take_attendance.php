@@ -36,9 +36,9 @@
 						<div class="h3 text-center"><?php echo $student['full_name']; ?></div>
 					</div>
 					<div class="box-footer text-center">
-						<button type="button" class="btn btn-primary" data-status-code="1">出席</button>
-						<button type="button" class="btn btn-warning" data-status-code="2">遅刻</button>
-						<button type="button" class="btn btn-danger" data-status-code="3">欠席</button>
+						<button type="button" class="btn btn-primary abtn" data-status-code="1">出席</button>
+						<button type="button" class="btn btn-warning abtn" data-status-code="2">遅刻</button>
+						<button type="button" class="btn btn-danger abtn" data-status-code="3">欠席</button>
 					</div>
 				</div>
 			</div>
