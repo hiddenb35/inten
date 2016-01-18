@@ -33,7 +33,7 @@
 						</div>
 					</div>
 					<div class="box-content">
-						<div class="h3 text-right"><?php echo $student['full_name']; ?></div>
+						<div class="h3 text-center"><?php echo $student['full_name']; ?></div>
 					</div>
 					<div class="box-footer text-center">
 						<button type="button" class="btn btn-primary" data-status-code="1">出席</button>
