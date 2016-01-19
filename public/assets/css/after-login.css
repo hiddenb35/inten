@@ -25,6 +25,19 @@
 #COLLEGE_LIST #college_list_table {
 	font-weight: bold;
 }
+/*クラス一覧ページ*/
+#CLASS_LIST {
+	margin-top: 2%;
+}
+#CLASS_LIST #class_list_table {
+	font-weight: bold;
+}
+#CLASS_LIST #class_form {
+	margin-bottom: 2%;
+}
+#CLASS_LIST .class-button {
+	margin-top: 2%;
+}
 /*専攻一覧ページ*/
 #MAJOR_LIST {
 	margin-top: 2%;
