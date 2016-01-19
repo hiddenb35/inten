@@ -7,3 +7,11 @@ html, body {
 	background: #222d32;
 	width: 100%;
 }
+
+.content-wrapper {
+	background-image: url("../img/main-bg.png");
+}
+
+.main-footer {
+	background-image: url("../img/main-bg.png");
+}
