@@ -18,18 +18,43 @@
 	background: #ddd;
 	cursor: pointer;
 }
+#COLLEGE_LIST #college_list_table {
+	font-weight: bold;
+}
+	/*学科一覧ページ*/
+#COURSE_LIST {
+	margin-top: 2%;
+}
 #COURSE_LIST .course-edit:hover {
 	background: #ddd;
 	cursor: pointer;
 }
-#COLLEGE_LIST #college_list_table {
+#COURSE_LIST #course_list_table {
+	table-layout: fixed;
 	font-weight: bold;
+}
+#COURSE_LIST .course-add-second,
+#COURSE_LIST .register-button {
+	margin-top: 2%;
+}
+#COURSE_LIST .course-text-course-code + .editable-container input {
+	width: 55px;
+}
+#COURSE_LIST .course-text-course-name + .editable-container form {
+	width: 63%;
+}
+#COURSE_LIST .course-text-course-name + .editable-container input {
+	width: 100%;
+}
+#COURSE_LIST .course-text-course-year-system + .editable-container input {
+	width: 55px;
 }
 /*クラス一覧ページ*/
 #CLASS_LIST {
 	margin-top: 2%;
 }
 #CLASS_LIST #class_list_table {
+	table-layout: fixed;
 	font-weight: bold;
 }
 #CLASS_LIST #class_form {
@@ -37,6 +62,15 @@
 }
 #CLASS_LIST .class-button {
 	margin-top: 2%;
+}
+#CLASS_LIST .editableform {
+	width: 58%;
+}
+#CLASS_LIST .editable-input input {
+	width: 100%;
+}
+#CLASS_LIST .editable-input select {
+	width: 172%;
 }
 /*専攻一覧ページ*/
 #MAJOR_LIST {
