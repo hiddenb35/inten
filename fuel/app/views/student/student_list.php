@@ -2,9 +2,9 @@
 <section id="STUDENT_LIST" class="content">
 	<div class="container-fluid">
 		<div class="table-responsive">
-			<table class="table table-bordered table-striped table-hover table-condensed">
+			<table class="table table-base">
 				<thead>
-				<tr class="info">
+				<tr>
 					<th>学籍番号</th>
 					<th>フルネーム</th>
 					<th>フルネーム(カナ)</th>
