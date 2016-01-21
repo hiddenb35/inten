@@ -20,13 +20,11 @@ html, body {
 .table-base {
 	border: 2px solid #fff;
 }
-.table-base thead tr {
-	background-color: #3c8dbc;
-	color: #fff;
-}
 .table-base thead th {
 	border-right: 1px solid #fff;
 	box-shadow: -1px -1px 5px 0 rgba(210, 210, 210, 0.3) inset;
+	background-color: #3c8dbc !important;
+	color: #fff;
 }
 .table-base thead th:last-child {
 	border-right: none;
