@@ -1,6 +1,6 @@
 <!-- Main content -->
 <section id="COLLEGE_LIST" class="content">
-	<div class="box">
+	<div class="box box-main">
 		<div class="box-body">
 			<table class="table table-base" id="college_list_table">
 				<thead>
