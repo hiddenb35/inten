@@ -242,6 +242,32 @@ $(function(){
 			$(this).closest('div').next().removeClass('append-box');
 		$(this).closest('div').remove();
 	});
+	//責任者表示
+	var apple = {
+		string: ['a', 'p', 'p', 'l', 'e'],
+		count:0
+	};
+	$('span').click(function() {
+		var spel = $(this).attr('class');
+		spel = spel.substr(5);
+		if(apple.string[apple.count] === spel){
+			apple.count++;
+			if(apple.count === apple.string.length){
+				$("footer").append('<input type="image" class="apple" src="/assets/img/appleimg.png">');
+				$(".apple").animate({
+					top: "50%",
+					left: "80%"
+				},2000);
+				apple.count = 0;
+			}
+		}else{
+			apple.count = 0;
+		}
+	});
+	$(".content-wrapper").click(function(){
+		apple.count = 0;
+		$(".main-footer").children('input').remove();
+	});
 });
 //全ての読み込みが完了したら実行
 $(window).load(function(){
