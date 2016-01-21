@@ -2,8 +2,8 @@
 <section id="COLLEGE_LIST" class="content">
 	<div class="box">
 		<div class="box-body">
-			<table class="table table-bordered table-striped" id="college_list_table">
-				<tbody>
+			<table class="table table-base" id="college_list_table">
+				<thead>
 				<tr>
 					<th class="col-xs-5 col-sm-2">時間割名</th>
 					<th class="col-sm-3 hidden-xs">作成日</th>
@@ -11,6 +11,8 @@
 					<th class="col-xs-3 col-sm-2">ステータス</th>
 					<th class="col-xs-4 col-sm-2"></th>
 				</tr>
+				</thead>
+				<tbody>
 				<?php foreach($timetable_lists as $timetable): ?>
 					<tr>
 						<td><?php echo $timetable['name']; ?></td>
