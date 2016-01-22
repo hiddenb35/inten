@@ -19,7 +19,14 @@
 	cursor: pointer;
 }
 #COLLEGE_LIST #college_list_table {
+	table-layout: fixed;
 	font-weight: bold;
+}
+#COLLEGE_LIST .editableform {
+	width: 62%;
+}
+#COLLEGE_LIST .editable-input input {
+	width: 100%;
 }
 	/*学科一覧ページ*/
 #COURSE_LIST {
