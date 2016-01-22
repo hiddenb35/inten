@@ -18,12 +18,83 @@
 	background: #ddd;
 	cursor: pointer;
 }
+#COLLEGE_LIST #college_list_table {
+	table-layout: fixed;
+	font-weight: bold;
+}
+#COLLEGE_LIST .editableform {
+	width: 62%;
+}
+#COLLEGE_LIST .editable-input input {
+	width: 100%;
+}
+	/*学科一覧ページ*/
+#COURSE_LIST {
+	margin-top: 2%;
+}
 #COURSE_LIST .course-edit:hover {
 	background: #ddd;
 	cursor: pointer;
 }
-#COLLEGE_LIST #college_list_table {
+#COURSE_LIST #course_list_table {
+	table-layout: fixed;
 	font-weight: bold;
+}
+#COURSE_LIST .course-add-second,
+#COURSE_LIST .register-button {
+	margin-top: 2%;
+}
+#COURSE_LIST .course-text-course-code + .editable-container input {
+	width: 55px;
+}
+#COURSE_LIST .course-text-course-name + .editable-container form {
+	width: 63%;
+}
+#COURSE_LIST .course-text-course-name + .editable-container input {
+	width: 100%;
+}
+#COURSE_LIST .course-text-course-year-system + .editable-container input {
+	width: 55px;
+}
+/*クラス一覧ページ*/
+#CLASS_LIST {
+	margin-top: 2%;
+}
+#CLASS_LIST #class_list_table {
+	table-layout: fixed;
+	font-weight: bold;
+}
+#CLASS_LIST #class_form {
+	margin-bottom: 2%;
+}
+#CLASS_LIST .class-button {
+	margin-top: 2%;
+}
+#CLASS_LIST .editableform {
+	width: 58%;
+}
+#CLASS_LIST .editable-input input {
+	width: 100%;
+}
+#CLASS_LIST .editable-input select {
+	width: 172%;
+}
+/*専攻一覧ページ*/
+#MAJOR_LIST {
+	margin-top: 2%;
+}
+#MAJOR_LIST #major_list_table {
+	table-layout: fixed;
+	font-weight: bold;
+}
+#MAJOR_LIST #course_list {
+	margin-bottom: 2%;
+}
+#MAJOR_LIST .editableform {
+	width: 62%;
+}
+#MAJOR_LIST .editable-input input {
+	width: 100%;
 }
 /***********時間割作成画面**************/
 #TIMETABLE_ADD textarea[name="note"]{
@@ -519,6 +590,12 @@
 #TAKE_ATTENDANCE .collapsed-box > div > .kana {
 	display: none;
 }
+#TAKE_ATTENDANCE .abtn:hover {
+	background-color: #E7E7E7;
+}
+#TAKE_ATTENDANCE .mr5 {
+	margin-right:5px;
+}
 /*********************************************************/
 
 /*****************説明会登録・編集**************************/
@@ -581,9 +658,7 @@
 #ON_CAMPUS_LIST .box {
 	border-top: none;
 	box-shadow: none;
-}
-#ON_CAMPUS_LIST .outer-box-header {
-	background: #ECF0F5;
+	background: none;
 }
 /*#ON_CAMPUS_LIST .outer-box-header .pull-left {*/
 /*margin-top: 1px;*/
@@ -594,22 +669,18 @@
 }
 #ON_CAMPUS_LIST .outer-box-body {
 	padding: 2%;
-	border: 2px solid #98B8CC;
+	/*border: 2px solid #98B8CC;*/
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+	background-color: rgba(255, 255, 255, 0.3);
 }
 #ON_CAMPUS_LIST .inner-box-header {
 	font-weight: bold;
-	background-color: #ECEFF3;
-	border-bottom: 2px solid #C1C1C1;
-	border-radius: 25px 25px 0 0;
-	-moz-border-radius: 25px 25px 0 0;
-	-webkit-border-radius: 25px 25px 0 0;
+	border-bottom: 1px solid #C1C1C1;
 }
 #ON_CAMPUS_LIST .inner-box {
-	border: 2px solid #C1C1C1;
-	-moz-border-radius: 25px 25px 25px 25px;
-	-webkit-border-radius: 25px 25px 25px 25px;
-	border-radius: 25px 25px 25px 25px;
+	/*border: 2px solid #C1C1C1;*/
+	background-color: #FFF;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
 }
 #ON_CAMPUS_LIST .inner-title {
 	font-weight: bold;
@@ -626,6 +697,7 @@
 	margin: -10px;
 	margin-top: 1px;
 }
+
 #ON_CAMPUS_LIST .outer-box-header.clearfix > .pull-right {
 	width: 20%;
 }
@@ -662,13 +734,12 @@
 #TEACHER_ON_CAMPUS_LIST .box {
 	border-top: none;
 	box-shadow: none;
+	background: none;
 }
 /*#TEACHER_ON_CAMPUS_LIST .box a > div > span.inner-title {*/
 	/*color: #000;*/
 /*}*/
-#TEACHER_ON_CAMPUS_LIST .outer-box-header {
-	background: #ECF0F5;
-}
+
 /*#TEACHER_ON_CAMPUS_LIST .outer-box-header .pull-left {*/
 /*margin-top: 1px;*/
 /*}*/
@@ -678,22 +749,17 @@
 }
 #TEACHER_ON_CAMPUS_LIST .outer-box-body {
 	padding: 2%;
-	border: 2px solid #E59B91;
+	/*border: 2px solid #E59B91;*/
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+	background-color: rgba(255, 255, 255, 0.3);
 }
 #TEACHER_ON_CAMPUS_LIST .inner-box-header {
 	font-weight: bold;
-	background-color: #F9DCDC;
-	border-bottom: 2px solid #DDD8D8;
-	border-radius: 22px 22px 0 0;
-	-moz-border-radius: 22px 22px 0 0;
-	-webkit-border-radius: 22px 22px 0 0;
+	border-bottom: 1px solid #C1C1C1;
 }
 #TEACHER_ON_CAMPUS_LIST .inner-box {
-	border: 2px solid #DDD8D8;
-	border-radius: 25px 25px 25px 25px;
-	-moz-border-radius: 25px 25px 25px 25px;
-	-webkit-border-radius: 25px 25px 25px 25px;
+	background-color: #FFF;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
 }
 #TEACHER_ON_CAMPUS_LIST .left-box-color {
 	color: #444;
@@ -1019,6 +1085,10 @@
 	cursor: pointer;
 	margin-right: 9.5%;
 }
+#ON_CAMPUS_DETAIL .entry {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
 /*****************************************************/
 
 /******************学内説明会詳細画面(教員用)*********************/
@@ -1101,5 +1171,10 @@
 	opacity: 0.6;
 	color: #fff;
 }
-
+.apple{
+	position: fixed;
+	z-index: 10000;
+	top: 100%;
+	left: 80%;
+}
 /*********************************************************/

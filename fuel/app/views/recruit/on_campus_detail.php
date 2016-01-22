@@ -95,7 +95,7 @@
 			</div>
 			<div class="row">
 				<!--よろ-->
-				<a href="#" class="col-xs-offset-4 col-xs-4 col-sm-offset-5 col-sm-2 btn btn-primary">申し込み</a>
+				<button class="col-xs-offset-4 col-xs-4 col-sm-offset-5 col-sm-2 btn btn-primary entry">申し込み</button>
 			</div>
 			<a class="back pull-right hidden-xs" onclick="history.back();">
 				<i class="fa fa-arrow-circle-o-left"></i>
