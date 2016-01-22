@@ -97,6 +97,10 @@
 				<!--よろ-->
 				<button class="col-xs-offset-4 col-xs-4 col-sm-offset-5 col-sm-2 btn btn-primary entry">申し込み</button>
 			</div>
+			<a class="back pull-right hidden-xs" onclick="history.back();">
+				<i class="fa fa-arrow-circle-o-left"></i>
+				一覧に戻る
+			</a>
 		</div>
 	</div>
 </section>

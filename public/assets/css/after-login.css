@@ -1077,6 +1077,11 @@
 #ON_CAMPUS_DETAIL .files span {
 	margin-left: 4px;
 }
+#ON_CAMPUS_DETAIL .back {
+	font-size: 112%;
+	cursor: pointer;
+	margin-right: 9.5%;
+}
 #ON_CAMPUS_DETAIL .entry {
 	margin-top: 30px;
 	margin-bottom: 30px;
