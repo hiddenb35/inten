@@ -46,7 +46,7 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 	</head>
-	<body class="sidebar-mini <?php echo $user_info['body_skin']; ?>">
+	<body class="sidebar-mini <?php echo $user_info['body_skin']; ?> skin-expand">
 		<!-- load画面 -->
 		<div id="loader-bg">
 			<div id="loader">
