@@ -17,40 +17,40 @@ html, body {
 }
 
 /* ページ全体のスキン */
-.skin-base .sidebar a {
+.skin-expand .sidebar a {
 	color: #fff;
 }
-.skin-base .main-header .navbar .sidebar-toggle {
+.skin-expand .main-header .navbar .sidebar-toggle {
 	color: #fff;
 }
-.skin-base .main-header .navbar .nav>li>a {
+.skin-expand .main-header .navbar .nav>li>a {
 	color: #fff;
 }
-.skin-base .sidebar-menu>li>a {
+.skin-expand .sidebar-menu>li>a {
 	border-left: 3px solid #333;
 }
-.skin-base .sidebar-menu>li.header {
+.skin-expand .sidebar-menu>li.header {
 	color: #fff;
 	background: #1a2226;
 }
-.skin-base .wrapper, .skin-base .main-sidebar, .skin-base .left-side {
+.skin-expand .wrapper, .skin-expand .main-sidebar, .skin-expand .left-side {
 	background-color: #333;
 }
-.skin-base .sidebar-menu>li {
+.skin-expand .sidebar-menu>li {
 	border-bottom: 1px solid #444;
 }
-.skin-base .sidebar-menu>li:hover>a, .skin-base .sidebar-menu>li.active>a {
+.skin-expand .sidebar-menu>li:hover>a, .skin-expand .sidebar-menu>li.active>a {
 	color: #fff;
 	background: #222;
 	border-left-color: #ccc;
 }
-.skin-base .treeview-menu>li>a {
+.skin-expand .treeview-menu>li>a {
 	color: #ccc;
 }
-.skin-base .treeview-menu>li>a:hover {
+.skin-expand .treeview-menu>li>a:hover {
 	color: #eee;
 }
-.skin-base .sidebar-menu>li>.treeview-menu {
+.skin-expand .sidebar-menu>li>.treeview-menu {
 	background: #444;
 }
 
