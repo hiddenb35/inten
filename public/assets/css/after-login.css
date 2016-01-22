@@ -367,28 +367,29 @@
 
 
 /*************出席取るクラス一覧画面******************/
-
-#RESPONSIBLE_LIST .box {
-	position: relative;
-	border: 3px solid #D73925;
+#RESPONSIBLE_LIST img {
+	margin-bottom: -8px;
 }
-#RESPONSIBLE_LIST .box-body {
-	margin: 8px;
-	padding: 10px;
-	border: 1px solid;
-	border-color: #D73925;
+#RESPONSIBLE_LIST .box {
+	background: linear-gradient(135deg, #fff 50%, #3C8DBC);
+	box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.55);
+	-webkit-box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.55);
+	-moz-box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.55);
 }
 #RESPONSIBLE_LIST .class_name {
-	padding-top: 18px;
-	text-align: right;
 	color: #000;
+	margin-left: 12px;
 }
 #RESPONSIBLE_LIST .lesson_name {
+	color: #000;
+	font-weight: bold;
+	margin-left: 12px;
+}
+#RESPONSIBLE_LIST .relative {
+	position: relative;
+}
+#RESPONSIBLE_LIST .absolute {
 	position: absolute;
-	background-color: #D73925;
-	left: 0;
-	padding: 5px;
-	color: #fff;
 }
 /*********************************************************/
 
