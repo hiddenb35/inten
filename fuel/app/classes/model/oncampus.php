@@ -166,7 +166,7 @@ class Model_Oncampus extends \Orm\Model
 		$list['edit_link'] = Uri::create('recruit/oncampus/edit', array(), array('id' => $campus['id']));
 		$list['delete_link'] = Uri::create('recruit/oncampus/delete', array(), array('id' => $campus['id']));
 		$list['created_at'] = $campus['created_at'];
-		$list['created_at'] = $campus['updated_at'];
+		$list['updated_at'] = $campus['updated_at'];
 
 		return $list;
 	}

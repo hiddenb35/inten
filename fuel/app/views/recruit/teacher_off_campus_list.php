@@ -28,7 +28,10 @@
 						<div class="col-sm-6">
 							<div class="box inner-box">
 								<div class="box-header inner-box-header clearfix">
-									<span class="pull-left"><?php echo $offcampus['company_name']; ?></span>
+									<span class="pull-left">
+										<span class="label bg-red new-label" data-date="<?php if(!is_null($offcampus['updated_at'])){echo $offcampus['updated_at'];} else {echo $offcampus['created_at'];} ?>">NEW!</span>
+										<?php echo $offcampus['company_name']; ?>
+									</span>
 								<span class="pull-right box-edit">
 									<button type="button" class="btn btn-danger">編集</button>
 								</span>

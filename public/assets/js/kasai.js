@@ -424,4 +424,18 @@ $(function(){
 		$('#entry_start').attr('value', startDate);
 		$('#entry_end').attr('value', endDate);
 	});
+
+	//説明会一覧のNEWラベル
+	var now = new Date();
+
+	//NEW!のラベル取得
+	var boxsNewLabel = $('.new-label');
+	for(var i = 0; i < boxsNewLabel.length; i++) {
+		var timestamp = boxsNewLabel.eq(i).data('date');
+		var date = new Date(timestamp * 1000);
+		var dateDiff = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+		if(dateDiff <= 7) {
+			boxsNewLabel.eq(i).show();
+		}
+	}
 });
