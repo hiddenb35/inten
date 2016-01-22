@@ -105,6 +105,8 @@
 					</div>
 				</div>
 			</div>
+			<div class="row">
+			</div>
 			<a class="back pull-right hidden-xs" onclick="history.back();">
 				<i class="fa fa-arrow-circle-o-left"></i>
 				一覧に戻る
