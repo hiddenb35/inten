@@ -20,11 +20,6 @@ html, body {
 .skin-base .sidebar a {
 	color: #fff;
 }
-.skin-base .main-header .logo {
-	background-color: #000;
-	color: #fff;
-	border-bottom: 0 solid transparent;
-}
 .skin-base .main-header .navbar .sidebar-toggle {
 	color: #fff;
 }
