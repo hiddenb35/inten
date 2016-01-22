@@ -28,7 +28,10 @@
 					<?php foreach($oncampus_lists as $oncampus): ?>
 					<div class="col-sm-6">
 						<div class="box inner-box">
-							<div class="box-header inner-box-header"><?php echo $oncampus['company_name']; ?></div>
+							<div class="box-header inner-box-header">
+								<span class="label bg-red new-label" data-date="<?php if(!is_null($oncampus['updated_at'])){echo $oncampus['updated_at'];} else {echo $oncampus['created_at'];} ?>">NEW!</span>
+								<?php echo $oncampus['company_name']; ?>
+							</div>
 							<div class="box-body inner-box-body clearfix">
 								<div class="left-in-box pull-left">
 									<div>

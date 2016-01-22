@@ -817,6 +817,9 @@
 		padding: 16px;
 	}
 }
+#TEACHER_ON_CAMPUS_LIST .new-label {
+	display: none;
+}
 
 /*********************************************************/
 
