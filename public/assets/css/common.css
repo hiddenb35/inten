@@ -16,6 +16,49 @@ html, body {
 	background-image: url("../img/main-bg.png");
 }
 
+/* ページ全体のスキン */
+.skin-base .sidebar a {
+	color: #fff;
+}
+.skin-base .main-header .logo {
+	background-color: #000;
+	color: #fff;
+	border-bottom: 0 solid transparent;
+}
+.skin-base .main-header .navbar .sidebar-toggle {
+	color: #fff;
+}
+.skin-base .main-header .navbar .nav>li>a {
+	color: #fff;
+}
+.skin-base .sidebar-menu>li>a {
+	border-left: 3px solid #333;
+}
+.skin-base .sidebar-menu>li.header {
+	color: #fff;
+	background: #1a2226;
+}
+.skin-base .wrapper, .skin-base .main-sidebar, .skin-base .left-side {
+	background-color: #333;
+}
+.skin-base .sidebar-menu>li {
+	border-bottom: 1px solid #444;
+}
+.skin-base .sidebar-menu>li:hover>a, .skin-base .sidebar-menu>li.active>a {
+	color: #fff;
+	background: #222;
+	border-left-color: #ccc;
+}
+.skin-base .treeview-menu>li>a {
+	color: #ccc;
+}
+.skin-base .treeview-menu>li>a:hover {
+	color: #eee;
+}
+.skin-base .sidebar-menu>li>.treeview-menu {
+	background: #444;
+}
+
 /* メインコンテンツを囲むボックスレイアウト */
 .box-main {
 	background: none;
