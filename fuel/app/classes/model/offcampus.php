@@ -180,6 +180,8 @@ class Model_Offcampus extends \Orm\Model
 		$list['detail_link'] = Uri::create('recruit/offcampus/detail', array(), array('id' => $campus['id']));
 		$list['edit_link'] = Uri::create('recruit/offcampus/edit', array(), array('id' => $campus['id']));
 		$list['delete_link'] = Uri::create('recruit/offcampus/delete', array(), array('id' => $campus['id']));
+		$list['created_at'] = $campus['created_at'];
+		$list['created_at'] = $campus['updated_at'];
 
 		return $list;
 	}
