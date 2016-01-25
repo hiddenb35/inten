@@ -10,16 +10,10 @@
 
 				<div class="row pull-left button-box">
 					<a href="#" class="btn btn-default tab col-xs-6 col-sm-3">新着
-						<i class="fa fa-fw fa-arrow-up"></i>
-					</a>
-					<a href="#" class="btn btn-default tab col-xs-6 col-sm-3">新着
-						<i class="fa fa-fw fa-arrow-down"></i>
+						<i class="fa fa-fw fa-sort"></i>
 					</a>
 					<a href="#" class="btn btn-default tab col-xs-6 col-sm-3">締め切り
-						<i class="fa fa-fw fa-arrow-up"></i>
-					</a>
-					<a href="#" class="btn btn-default tab col-xs-6 col-sm-3">締め切り
-						<i class="fa fa-fw fa-arrow-down"></i>
+						<i class="fa fa-fw fa-sort"></i>
 					</a>
 				</div>
 			</div>
