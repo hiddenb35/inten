@@ -46,7 +46,11 @@
 												<?php endfor; ?>
 											</td>
 										</tr>
-										<tr><td colspan="2" class="text-right"><a href="<?php echo $offcampus['detail_link']; ?>" class="btn btn-primary">詳細</a></td></tr>
+										<tr class="btn-area">
+											<td colspan="2" class="text-right">
+												<a href="<?php echo $offcampus['detail_link']; ?>" class="btn btn-primary">詳細</a>
+											</td>
+										</tr>
 									</table>
 								</div>
 							</div>

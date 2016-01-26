@@ -47,7 +47,7 @@
 											<?php endfor; ?>
 										</td>
 									</tr>
-									<tr>
+									<tr class="btn-area">
 										<td colspan="2" class="text-right">
 											<a href="<?php echo $oncampus['detail_link']; ?>" class="btn btn-primary">詳細</a>
 											<a href="#" class="btn btn-success">編集</a>
