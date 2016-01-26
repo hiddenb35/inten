@@ -941,10 +941,8 @@ class Provider
 	public static function delete()
 	{
 		$tables = array(
-			'offparticipant',
-			'offcampus',
-			'onparticipant',
-			'oncampus',
+			'participant',
+			'session',
 			'attendance_status',
 			'timetable',
 			'attendance',
