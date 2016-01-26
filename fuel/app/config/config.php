@@ -310,5 +310,6 @@ return array(
 		 */
 		// 'language'  => array(),
 	),
+	'show_recruitment' => 3,
 
 );
