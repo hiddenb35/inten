@@ -2,7 +2,7 @@
 
 namespace Fuel\Migrations;
 
-class Table_Session
+class Table_session
 {
 	public function up()
 	{
