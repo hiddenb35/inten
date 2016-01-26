@@ -49,6 +49,7 @@
 										</tr>
 										<tr class="btn-area">
 											<td colspan="2" class="text-center">
+												<a href="<?php echo $session['participant_link']; ?>" class="btn btn-info">参加者</a>
 												<a href="<?php echo $session['detail_link']; ?>" class="btn btn-primary">詳細</a>
 												<a href="#" class="btn btn-success">編集</a>
 											</td>

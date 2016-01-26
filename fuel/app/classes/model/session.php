@@ -177,6 +177,7 @@ class Model_Session extends \Orm\Model
 		$list['recruitment'] = json_decode($session['recruitment'], true);
 		$list['files'] = json_decode($session['files'], true);
 		$list['note'] = $session['note'];
+		$list['participant_link'] = Uri::create('session/participant', array(), array('id' => $session['id']));
 		$list['detail_link'] = Uri::create('session/detail', array(), array('id' => $session['id']));
 		$list['edit_link'] = Uri::create('session/edit', array(), array('id' => $session['id']));
 		$list['delete_link'] = Uri::create('session/delete', array(), array('id' => $session['id']));
