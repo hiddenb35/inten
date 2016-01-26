@@ -174,7 +174,7 @@ class Controller_Session extends Controller_Loggedin
 	$session = Model_Session::find($session_id);
 	$view = View::forge(self::PARTICIPANT_VIEW);
 	$view->set('session', Model_Session::to_list($session));
-	$view->set('participant_lists', Model_Participant::tekito($session));
+	$view->set('participant_lists', Model_Participant::to_lists($session));
 
 	$this->template->title = '参加者一覧';
 	$this->template->content = $view;

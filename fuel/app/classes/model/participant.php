@@ -53,7 +53,7 @@ class Model_Participant extends \Orm\Model
 		return $val;
 	}
 
-	public static function tekito($session)
+	public static function to_lists($session)
 	{
 		$lists = array();
 		foreach($session->participants as $participant)
