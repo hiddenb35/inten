@@ -32,9 +32,6 @@
 										<span class="label bg-red new-label" data-date="<?php if(!is_null($offcampus['updated_at'])){echo $offcampus['updated_at'];} else {echo $offcampus['created_at'];} ?>">NEW!</span>
 										<?php echo $offcampus['company_name']; ?>
 									</span>
-								<span class="pull-right box-edit">
-									<button type="button" class="btn btn-danger">編集</button>
-								</span>
 								</div>
 								<div class="box-body inner-box-body clearfix">
 									<table class="table table-base">
@@ -50,7 +47,12 @@
 												<?php endfor; ?>
 											</td>
 										</tr>
-										<tr><td colspan="2" class="text-right"><a href="<?php echo $offcampus['detail_link']; ?>" class="btn btn-primary">詳細</a></td></tr>
+										<tr>
+											<td colspan="2" class="text-right">
+												<a href="<?php echo $offcampus['detail_link']; ?>" class="btn btn-primary">詳細</a>
+												<a href="#" class="btn btn-success">編集</a>
+											</td>
+										</tr>
 									</table>
 								</div>
 							</div>
