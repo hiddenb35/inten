@@ -27,19 +27,21 @@
 								<?php echo $oncampus['company_name']; ?>
 							</div>
 							<div class="box-body inner-box-body clearfix">
-								<div class="left-in-box pull-left">
-									<div>
-										<span class="inner-title">業種 </span>
-										<span class="inner-content">
-											<?php foreach($oncampus['recruitment'] as $recruit) echo $recruit . ' '; ?>
-										</span>
-									</div>
-									<div><span class="inner-title">締め切り </span><span class="inner-content"><?php echo $oncampus['entry_end']; ?></span>
-									</div>
-								</div>
-								<div class="right-in-box pull-right">
-									<a href="<?php echo $oncampus['detail_link']; ?>" class="btn btn-primary">詳細</a>
-								</div>
+								<table class="table table-base">
+									<tr>
+										<th>締め切り</th>
+										<td><?php echo $oncampus['entry_end']; ?></td>
+									</tr>
+									<tr>
+										<th>業種</th>
+										<td>
+											<?php for($i = 0; $i < Config::get('show_recruitment'); $i++): ?>
+												<p><?php if(isset($oncampus['recruitment'][$i])) echo $oncampus['recruitment'][$i]; ?>　</p>
+											<?php endfor; ?>
+										</td>
+									</tr>
+									<tr><td colspan="2" class="text-right"><a href="<?php echo $oncampus['detail_link']; ?>" class="btn btn-primary">詳細</a></td></tr>
+								</table>
 							</div>
 						</div>
 					</div>
