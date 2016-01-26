@@ -160,11 +160,11 @@ class Model_Session extends \Orm\Model
 		$list['id'] = $session['id'];
 		$list['company_name'] = $session['company_name'];
 		$list['company_code'] = $session['company_code'];
-		$list['start_date'] = date('Y年m月d日', strtotime($session['start_date']));
-		$list['start_time'] = date('H:i', strtotime($session['start_time']));
-		$list['end_time'] = date('H:i', strtotime($session['end_time']));
-		$list['entry_start'] = date('Y/m/d H:i', $session['entry_start']);
-		$list['entry_end'] = date('Y/m/d H:i', $session['entry_end']);
+		$list['start_date'] = $session['start_date'];
+		$list['start_time'] = $session['start_time'];
+		$list['end_time'] = $session['end_time'];
+		$list['entry_start'] = $session['entry_start'];
+		$list['entry_end'] = $session['entry_end'];
 		$list['target'] = $session['target'];
 		$list['location'] = $session['location'];
 		$list['content'] = $session['content'];
@@ -177,6 +177,7 @@ class Model_Session extends \Orm\Model
 		$list['recruitment'] = json_decode($session['recruitment'], true);
 		$list['files'] = json_decode($session['files'], true);
 		$list['note'] = $session['note'];
+		$list['participant_link'] = Uri::create('session/participant', array(), array('id' => $session['id']));
 		$list['detail_link'] = Uri::create('session/detail', array(), array('id' => $session['id']));
 		$list['edit_link'] = Uri::create('session/edit', array(), array('id' => $session['id']));
 		$list['delete_link'] = Uri::create('session/delete', array(), array('id' => $session['id']));

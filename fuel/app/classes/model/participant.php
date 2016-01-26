@@ -52,4 +52,17 @@ class Model_Participant extends \Orm\Model
 		$val->add_field('student_id', '生徒ID', 'required|max_length[10]')->add_rule('exist_id', 'student');
 		return $val;
 	}
+
+	public static function to_lists($session)
+	{
+		$lists = array();
+		foreach($session->participants as $participant)
+		{
+			$list = Model_Student::to_list($participant->student);
+			$list['entry_at'] = $participant['entry_at'];
+			$lists[] = $list;
+		}
+
+		return $lists;
+	}
 }
