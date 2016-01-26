@@ -5,7 +5,7 @@ class Controller_Session extends Controller_Loggedin
 	const FORM_VIEW = 'session/form';
 	const CONFIRM_VIEW = 'session/confirm';
 	const LIST_VIEW_FOR_STUDENT = 'session/list';
-	const LIST_VIEW_FOR_TEACHER = 'session/teacher_for_list';
+	const LIST_VIEW_FOR_TEACHER = 'session/list_for_teacher';
 	const DETAIL_VIEW = 'session/detail';
 	const FINISHED_VIEW = 'session/deadline';
 	const PER_PAGE = 10;
