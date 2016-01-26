@@ -3,7 +3,7 @@
 	<?php if(empty($html)): ?>
 		<h4>時間割が登録されていません</h4>
 	<?php else: ?>
-		<div class="box box-info">
+		<div class="box box-main">
 			<div class="box-header with-border">
 				<h3 class="box-title"><?php echo $name ?></h3>
 			</div>
