@@ -708,11 +708,11 @@ class Provider
 		$query->execute();
 
 
-		/* 学内説明会 */
-		$oncampus_lists = array(
+		/* 説明会 */
+		$session_lists = array(
 			array(
 				'company_name' => '株式会社KATO',
-				'company_code' => '2315235',
+				'company_code' => '1315235',
 				'start_date'   => '2016/1/12',
 				'start_time'   => '13:00:00',
 				'end_time'     => '17:00:00',
@@ -724,6 +724,9 @@ class Provider
 				'explainer'    => '加藤拓磨',
 				'bring'        => 'バイク',
 				'url'          => 'http://kato.com',
+				'entry_method' => '',
+				'tel'          => '',
+				'email'        => '',
 				'recruitment'  => json_encode(array('システムエンジニア', 'プログラマ')),
 				'files'        => '[]',
 				'note'         => '道路交通法は守りましょう',
@@ -731,7 +734,7 @@ class Provider
 			),
 			array(
 				'company_name' => '株式会社黄金りんご',
-				'company_code' => '123132',
+				'company_code' => '223132',
 				'start_date'   => '2016/1/12',
 				'start_time'   => '13:00:00',
 				'end_time'     => '17:00:00',
@@ -743,6 +746,9 @@ class Provider
 				'explainer'    => '鳴海翔太',
 				'bring'        => 'りんご',
 				'url'          => 'http://narumi.com',
+				'entry_method' => '',
+				'tel'          => '',
+				'email'        => '',
 				'recruitment'  => json_encode(array('農業', '畜産業')),
 				'files'        => '[]',
 				'note'         => '神',
@@ -750,7 +756,7 @@ class Provider
 			),
 			array(
 				'company_name' => '老人ホームSASAKI',
-				'company_code' => '54315235',
+				'company_code' => '34315235',
 				'start_date'   => '2016/1/12',
 				'start_time'   => '13:00:00',
 				'end_time'     => '17:00:00',
@@ -762,101 +768,17 @@ class Provider
 				'explainer'    => '佐々木佑梨',
 				'bring'        => 'お土産',
 				'url'          => 'http://sasaki.com',
+				'entry_method' => '',
+				'tel'          => '',
+				'email'        => '',
 				'recruitment'  => json_encode(array('介護', '福祉')),
 				'files'        => '[]',
 				'note'         => '',
 				'teacher_id'   => 1,
 			),
-
-		);
-
-		for($i = 0; $i < 500; $i++)
-		{
-			$entry_start = self::random_timestamp();
-			$entry_end = self::random_timestamp($entry_start);
-
-			$start_date = self::random_date(date('Y/m/d', $entry_end));
-			$start_time = self::random_time();
-			$end_time = self::random_time($start_time);
-
-			$oncampus_lists[] = array(
-				'company_name' => self::random_company_name(),
-				'company_code' => mt_rand(100, 999999),
-				'start_date'   => $start_date,
-				'start_time'   => $start_time,
-				'end_time'     => $end_time,
-				'entry_start'  => $entry_start,
-				'entry_end'    => $entry_end,
-				'target'       => '2017年度卒業見込み者',
-				'location'     => '30715教室',
-				'content'      => '会社説明会',
-				'explainer'    => '未定',
-				'bring'        => self::random_bring(),
-				'url'          => 'http://' . self::random_string() . '.com',
-				'recruitment'  => self::random_recruitment(),
-				'files'        => '[]',
-				'note'         => self::random_text(),
-				'teacher_id'   => 1,
-			);
-		}
-
-		$query = \DB::insert('oncampus')->columns(
-			array('company_name', 'company_code', 'start_date', 'start_time',
-			'end_time', 'entry_start', 'entry_end', 'target', 'location', 'content', 'explainer', 'bring',
-			'url', 'recruitment', 'files', 'note', 'created_at', 'updated_at', 'teacher_id')
-		);
-
-		foreach($oncampus_lists as $oncampus)
-		{
-			$query->values(
-				array($oncampus['company_name'], $oncampus['company_code'], $oncampus['start_date'],
-					$oncampus['start_time'], $oncampus['end_time'], $oncampus['entry_start'],
-					$oncampus['entry_end'], $oncampus['target'], $oncampus['location'],
-					$oncampus['content'], $oncampus['explainer'], $oncampus['bring'],
-					$oncampus['url'], $oncampus['recruitment'], $oncampus['files'],
-					$oncampus['note'], time(), null, $oncampus['teacher_id'])
-			);
-		}
-		$query->execute();
-
-
-		/* 学内説明会参加者 */
-		$onparticipant_lists = array(
-			// 渡辺
-			array('oncampus_id' => 1, 'student_id' => 18, 'entry_at' => '2016/1/2 13:00:00'),
-			array('oncampus_id' => 2, 'student_id' => 18, 'entry_at' => '2016/1/2 13:30:00'),
-			array('oncampus_id' => 3, 'student_id' => 18, 'entry_at' => '2016/1/3 14:00:00'),
-			// 加藤
-			array('oncampus_id' => 2, 'student_id' => 29, 'entry_at' => '2016/1/2 15:30:00'),
-			array('oncampus_id' => 3, 'student_id' => 29, 'entry_at' => '2016/1/3 16:00:00'),
-			// 笠井
-			array('oncampus_id' => 1, 'student_id' => 35, 'entry_at' => '2016/1/1 9:00:00'),
-			array('oncampus_id' => 2, 'student_id' => 35, 'entry_at' => '2016/1/1 9:30:00'),
-			array('oncampus_id' => 3, 'student_id' => 35, 'entry_at' => '2016/1/1 9:55:00'),
-			// 鳴海
-			array('oncampus_id' => 1, 'student_id' => 1, 'entry_at' => '2016/1/3 19:00:00'),
-			array('oncampus_id' => 3, 'student_id' => 1, 'entry_at' => '2016/1/3 19:55:00'),
-			// 佐々木
-			array('oncampus_id' => 1, 'student_id' => 34, 'entry_at' => '2016/1/3 21:00:00'),
-			array('oncampus_id' => 2, 'student_id' => 34, 'entry_at' => '2016/1/3 23:55:00'),
-			// 芦沢
-			array('oncampus_id' => 2, 'student_id' => 7, 'entry_at' => '2016/1/4 1:00:00'),
-		);
-
-		$query = \DB::insert('onparticipant')->columns(array('oncampus_id', 'student_id', 'entry_at'));
-		foreach($onparticipant_lists as $onparticipant)
-		{
-			$query->values(array($onparticipant['oncampus_id'], $onparticipant['student_id'],
-				strtotime($onparticipant['entry_at'])));
-		}
-		$query->execute();
-
-
-		/* 学外説明会 */
-		$offcampus_lists = array(
 			array(
 				'company_name' => 'KATO Holdings Inc.',
-				'company_code' => '2315235',
+				'company_code' => '4315235',
 				'start_date'   => '2016/2/12',
 				'start_time'   => '13:00:00',
 				'end_time'     => '17:00:00',
@@ -878,7 +800,7 @@ class Provider
 			),
 			array(
 				'company_name' => 'Ringo Holdings Inc.',
-				'company_code' => '123132',
+				'company_code' => '523132',
 				'start_date'   => '2016/2/12',
 				'start_time'   => '13:00:00',
 				'end_time'     => '17:00:00',
@@ -900,7 +822,7 @@ class Provider
 			),
 			array(
 				'company_name' => 'SASAKI Holdings Inc.',
-				'company_code' => '54315235',
+				'company_code' => '64315235',
 				'start_date'   => '2016/2/12',
 				'start_time'   => '13:00:00',
 				'end_time'     => '17:00:00',
@@ -923,7 +845,7 @@ class Provider
 
 		);
 
-		for($i = 0; $i < 500; $i++)
+		for($i = 0; $i < 100; $i++)
 		{
 			$entry_start = self::random_timestamp();
 			$entry_end = self::random_timestamp($entry_start);
@@ -932,7 +854,7 @@ class Provider
 			$start_time = self::random_time();
 			$end_time = self::random_time($start_time);
 
-			$offcampus_lists[] = array(
+			$session_lists[] = array(
 				'company_name' => self::random_company_name(),
 				'company_code' => mt_rand(100, 999999),
 				'start_date'   => $start_date,
@@ -955,58 +877,65 @@ class Provider
 				'teacher_id'   => 1,
 			);
 		}
-		$query = \DB::insert('offcampus')->columns(
+
+		$query = \DB::insert('session')->columns(
 			array('company_name', 'company_code', 'start_date', 'start_time',
-				'end_time', 'entry_start', 'entry_end', 'target', 'location', 'content',
-				'explainer', 'bring', 'url', 'entry_method', 'tel', 'email', 'recruitment',
-				'files', 'note', 'created_at', 'updated_at', 'teacher_id')
+			'end_time', 'entry_start', 'entry_end', 'target', 'location', 'content', 'explainer', 'bring',
+			'url', 'entry_method', 'tel', 'email', 'recruitment', 'files', 'note', 'created_at', 'updated_at', 'teacher_id')
 		);
 
-		foreach($offcampus_lists as $offcampus)
+		foreach($session_lists as $session)
 		{
 			$query->values(
-				array($offcampus['company_name'], $offcampus['company_code'], $offcampus['start_date'],
-					$offcampus['start_time'], $offcampus['end_time'], $offcampus['entry_start'],
-					$offcampus['entry_end'], $offcampus['target'], $offcampus['location'],
-					$offcampus['content'], $offcampus['explainer'], $offcampus['bring'],
-					$offcampus['url'], $offcampus['entry_method'], $offcampus['tel'],
-					$offcampus['email'], $offcampus['recruitment'], $offcampus['files'],
-					$offcampus['note'], time(), null, $offcampus['teacher_id'])
+				array($session['company_name'], $session['company_code'], $session['start_date'],
+					$session['start_time'], $session['end_time'], $session['entry_start'],
+					$session['entry_end'], $session['target'], $session['location'],
+					$session['content'], $session['explainer'], $session['bring'],
+					$session['url'], $session['entry_method'], $session['tel'], $session['email'],
+					$session['recruitment'], $session['files'],
+					$session['note'], time(), null, $session['teacher_id'])
 			);
 		}
 		$query->execute();
 
-
-		/* 学外説明会参加者 */
-		$offparticipant_lists = array(
+		/* 説明会参加者 */
+		$participant_lists = array(
 			// 渡辺
-			array('offcampus_id' => 1, 'student_id' => 18, 'entry_at' => '2016/2/2 13:00:00'),
-			array('offcampus_id' => 2, 'student_id' => 18, 'entry_at' => '2016/2/2 13:30:00'),
-			array('offcampus_id' => 3, 'student_id' => 18, 'entry_at' => '2016/2/3 14:00:00'),
+			array('session_id' => 1, 'student_id' => 18, 'entry_at' => '2016/1/2 13:00:00'),
+			array('session_id' => 2, 'student_id' => 18, 'entry_at' => '2016/1/2 13:30:00'),
+			array('session_id' => 3, 'student_id' => 18, 'entry_at' => '2016/1/3 14:00:00'),
 			// 加藤
-			array('offcampus_id' => 2, 'student_id' => 29, 'entry_at' => '2016/2/2 15:30:00'),
-			array('offcampus_id' => 3, 'student_id' => 29, 'entry_at' => '2016/2/3 16:00:00'),
+			array('session_id' => 2, 'student_id' => 29, 'entry_at' => '2016/1/2 15:30:00'),
+			array('session_id' => 3, 'student_id' => 29, 'entry_at' => '2016/1/3 16:00:00'),
+			array('session_id' => 4, 'student_id' => 29, 'entry_at' => '2016/1/4 16:00:00'),
 			// 笠井
-			array('offcampus_id' => 1, 'student_id' => 35, 'entry_at' => '2016/2/1 9:00:00'),
-			array('offcampus_id' => 2, 'student_id' => 35, 'entry_at' => '2016/2/1 9:30:00'),
-			array('offcampus_id' => 3, 'student_id' => 35, 'entry_at' => '2016/2/1 9:55:00'),
+			array('session_id' => 1, 'student_id' => 35, 'entry_at' => '2016/1/1 9:00:00'),
+			array('session_id' => 2, 'student_id' => 35, 'entry_at' => '2016/1/1 9:30:00'),
+			array('session_id' => 3, 'student_id' => 35, 'entry_at' => '2016/1/1 9:55:00'),
+			array('session_id' => 5, 'student_id' => 35, 'entry_at' => '2016/1/1 9:55:00'),
+			array('session_id' => 6, 'student_id' => 35, 'entry_at' => '2016/1/1 9:55:00'),
 			// 鳴海
-			array('offcampus_id' => 1, 'student_id' => 1, 'entry_at' => '2016/2/3 19:00:00'),
-			array('offcampus_id' => 3, 'student_id' => 1, 'entry_at' => '2016/2/3 19:55:00'),
+			array('session_id' => 1, 'student_id' => 1, 'entry_at' => '2016/1/3 19:00:00'),
+			array('session_id' => 3, 'student_id' => 1, 'entry_at' => '2016/1/3 19:55:00'),
+			array('session_id' => 4, 'student_id' => 1, 'entry_at' => '2016/1/3 19:55:00'),
+			array('session_id' => 5, 'student_id' => 1, 'entry_at' => '2016/1/3 19:55:00'),
 			// 佐々木
-			array('offcampus_id' => 1, 'student_id' => 34, 'entry_at' => '2016/2/3 21:00:00'),
-			array('offcampus_id' => 2, 'student_id' => 34, 'entry_at' => '2016/2/3 23:55:00'),
+			array('session_id' => 1, 'student_id' => 34, 'entry_at' => '2016/1/3 21:00:00'),
+			array('session_id' => 2, 'student_id' => 34, 'entry_at' => '2016/1/3 23:55:00'),
+			array('session_id' => 5, 'student_id' => 34, 'entry_at' => '2016/1/3 23:55:00'),
+			array('session_id' => 6, 'student_id' => 34, 'entry_at' => '2016/1/3 23:55:00'),
 			// 芦沢
-			array('offcampus_id' => 2, 'student_id' => 7, 'entry_at' => '2016/2/4 1:00:00'),
+			array('session_id' => 2, 'student_id' => 7, 'entry_at' => '2016/1/4 1:00:00'),
 		);
 
-		$query = \DB::insert('offparticipant')->columns(array('offcampus_id', 'student_id', 'entry_at'));
-		foreach($offparticipant_lists as $offparticipant)
+		$query = \DB::insert('participant')->columns(array('session_id', 'student_id', 'entry_at'));
+		foreach($participant_lists as $participant)
 		{
-			$query->values(array($offparticipant['offcampus_id'], $offparticipant['student_id'],
-				strtotime($offparticipant['entry_at'])));
+			$query->values(array($participant['session_id'], $participant['student_id'],
+				strtotime($participant['entry_at'])));
 		}
 		$query->execute();
+
 	}
 
 	public static function delete()

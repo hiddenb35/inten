@@ -1,8 +1,8 @@
 <?php
 
-class Model_Oncampus extends \Orm\Model
+class Model_Session extends \Orm\Model
 {
-	protected static $_table_name = 'oncampus';
+	protected static $_table_name = 'session';
 	protected static $_primary_key = array('id');
 
 	protected static $properties = array(
@@ -44,6 +44,15 @@ class Model_Oncampus extends \Orm\Model
 			'data_type' => 'text',
 		),
 		'url' => array(
+			'data_type' => 'varchar',
+		),
+		'entry_method' => array(
+			'data_type' => 'text',
+		),
+		'tel' => array(
+			'data_type' => 'varchar',
+		),
+		'email' => array(
 			'data_type' => 'varchar',
 		),
 		'recruitment' => array(
@@ -92,9 +101,9 @@ class Model_Oncampus extends \Orm\Model
 
 	protected static $_has_many = array(
 		'participants' => array(
-			'model_to' => 'Model_Onparticipant',
+			'model_to' => 'Model_Participant',
 			'key_from' => 'id',
-			'key_to'   => 'oncampus_id',
+			'key_to'   => 'session_id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		)
@@ -117,6 +126,9 @@ class Model_Oncampus extends \Orm\Model
 		$val->add_field('explainer', '説明者', 'trim');
 		$val->add_field('bring', '持ち物', 'trim');
 		$val->add_field('url', 'URL', 'trim|valid_url');
+		$val->add_field('entry_method', '申し込み方法', 'trim');
+		$val->add_field('tel', '電話番号', 'trim');
+		$val->add_field('email', 'メールアドレス', 'trim|valid_email');
 		$val->add_field('recruitment','募集職種', 'valid_array');
 		$val->add_field('note', '備考', 'trim');
 		return $val;
@@ -125,48 +137,51 @@ class Model_Oncampus extends \Orm\Model
 	public static function validate_edit()
 	{
 		$val = self::validate();
-		$val->add_field('id', '学内説明会ID', 'trim|required')->add_rule('exist_id', 'oncampus');
+		$val->add_field('id', '学外説明会ID', 'trim|required')->add_rule('exist_id', 'session');
 		return $val;
 	}
 
-	public static function to_lists($campuses)
+	public static function to_lists($sessions)
 	{
 		$lists = array();
 
-		foreach($campuses as $campus)
+		foreach($sessions as $session)
 		{
-			$lists[] = self::to_list($campus);
+			$lists[] = self::to_list($session);
 		}
 
 		return $lists;
 	}
 
-	public static function to_list($campus)
+	public static function to_list($session)
 	{
 		$list = array();
 
-		$list['id'] = $campus['id'];
-		$list['company_name'] = $campus['company_name'];
-		$list['company_code'] = $campus['company_code'];
-		$list['start_date'] = date('Y年m月d日', strtotime($campus['start_date']));
-		$list['start_time'] = date('H:i', strtotime($campus['start_time']));
-		$list['end_time'] = date('H:i', strtotime($campus['end_time']));
-		$list['entry_start'] = date('Y/m/d H:i', $campus['entry_start']);
-		$list['entry_end'] = date('Y/m/d H:i', $campus['entry_end']);
-		$list['target'] = $campus['target'];
-		$list['location'] = $campus['location'];
-		$list['content'] = $campus['content'];
-		$list['explainer'] = $campus['explainer'];
-		$list['bring'] = $campus['bring'];
-		$list['url'] = $campus['url'];
-		$list['recruitment'] = json_decode($campus['recruitment'], true);
-		$list['files'] = json_decode($campus['files'], true);
-		$list['note'] = $campus['note'];
-		$list['detail_link'] = Uri::create('recruit/oncampus/detail', array(), array('id' => $campus['id']));
-		$list['edit_link'] = Uri::create('recruit/oncampus/edit', array(), array('id' => $campus['id']));
-		$list['delete_link'] = Uri::create('recruit/oncampus/delete', array(), array('id' => $campus['id']));
-		$list['created_at'] = $campus['created_at'];
-		$list['updated_at'] = $campus['updated_at'];
+		$list['id'] = $session['id'];
+		$list['company_name'] = $session['company_name'];
+		$list['company_code'] = $session['company_code'];
+		$list['start_date'] = date('Y年m月d日', strtotime($session['start_date']));
+		$list['start_time'] = date('H:i', strtotime($session['start_time']));
+		$list['end_time'] = date('H:i', strtotime($session['end_time']));
+		$list['entry_start'] = date('Y/m/d H:i', $session['entry_start']);
+		$list['entry_end'] = date('Y/m/d H:i', $session['entry_end']);
+		$list['target'] = $session['target'];
+		$list['location'] = $session['location'];
+		$list['content'] = $session['content'];
+		$list['explainer'] = $session['explainer'];
+		$list['bring'] = $session['bring'];
+		$list['url'] = $session['url'];
+		$list['entry_method'] = $session['entry_method'];
+		$list['tel'] = $session['tel'];
+		$list['email'] = $session['email'];
+		$list['recruitment'] = json_decode($session['recruitment'], true);
+		$list['files'] = json_decode($session['files'], true);
+		$list['note'] = $session['note'];
+		$list['detail_link'] = Uri::create('session/detail', array(), array('id' => $session['id']));
+		$list['edit_link'] = Uri::create('session/edit', array(), array('id' => $session['id']));
+		$list['delete_link'] = Uri::create('session/delete', array(), array('id' => $session['id']));
+		$list['created_at'] = $session['created_at'];
+		$list['updated_at'] = $session['updated_at'];
 
 		return $list;
 	}

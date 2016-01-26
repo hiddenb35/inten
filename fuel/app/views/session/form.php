@@ -1,11 +1,11 @@
 <!-- Main content -->
-<section id="ON_CAMPUS_FORM" class="content">
+<section id="OFF_CAMPUS_FORM" class="content">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-				<form action="/recruit/oncampus/confirm" method="post" class="form-horizontal" role="form" id="on_campus_form_form" enctype="multipart/form-data">
+				<form action="/session/confirm" method="post" class="form-horizontal" role="form" id="off_campus_form_form" enctype="multipart/form-data">
 					<input type="hidden" name="id" value="<?php if(isset($inputs["company_id"])) { echo $inputs["id"]; }?>">
-					<div class="info-box" id="on_campus_form_box">
+					<div class="info-box" id="off_campus_form_box">
 						<div class="inside_box">
 							<div class="form-group">
 								<label for="company_name" class="col-md-2 control-label">企業名</label>
@@ -91,6 +91,24 @@
 								</div>
 							</div>
 							<div class="form-group">
+								<label for="entry_method" class="col-md-2 control-label">申し込み方法</label>
+								<div class="col-md-10">
+									<textarea id="entry_method" name="entry_method" class="form-control" rows="3"><?php if(isset($inputs["entry_method"])) { echo $inputs["entry_method"]; }; ?></textarea>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="email" class="col-md-2 control-label">E-mail</label>
+								<div class="col-md-10">
+									<input type="email" id="email" name="email" class="form-control" value="<?php if(isset($inputs["email"])) { echo $inputs["email"]; }; ?>">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="tel" class="col-md-2 control-label">TEL</label>
+								<div class="col-md-10">
+									<input type="tel" id="tel" name="tel" class="form-control" value="<?php if(isset($inputs["tel"])) { echo $inputs["tel"]; }; ?>">
+								</div>
+							</div>
+							<div class="form-group">
 								<label for="recruitment" class="col-md-2 control-label">
 									募集職種
 								</label>
@@ -133,8 +151,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="form-group" id="on_campus_form_form_button">
-						<button type="submit" class="btn btn-danger btn-lg"><?php if(isset($oncampus_id)) { echo "変更"; } else { echo "新規登録"; } ?></button>
+					<div class="form-group" id="off_campus_form_form_button">
+						<button type="submit" class="btn btn-danger btn-lg"><?php if(isset($session_id)) { echo "変更"; } else { echo "新規登録"; } ?></button>
 					</div>
 				</form>
 			</div>

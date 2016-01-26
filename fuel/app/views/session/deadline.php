@@ -7,23 +7,23 @@
 		</div>
 		<div class="outer-box-body">
 			<div class="row">
-				<?php foreach($offcampus_lists as $offcampus): ?>
+				<?php foreach($session_lists as $session): ?>
 					<div class="col-sm-6">
 						<div class="box inner-box">
-							<div class="box-header inner-box-header clearfix"><?php echo $offcampus['company_name']; ?></div>
+							<div class="box-header inner-box-header clearfix"><?php echo $session['company_name']; ?></div>
 							<div class="box-body inner-box-body clearfix">
 								<div class="left-in-box pull-left left-box-color">
 									<div>
 										<span class="inner-title">業種 </span>
-										<span class="inner-content"><?php foreach ($offcampus['recruitment'] as $recruit) echo $recruit . ' '; ?></span>
+										<span class="inner-content"><?php foreach ($session['recruitment'] as $recruit) echo $recruit . ' '; ?></span>
 									</div>
 									<div>
 										<span class="inner-title">締め切り </span>
-										<span class="inner-content"><?php echo $offcampus['entry_end']; ?></span>
+										<span class="inner-content"><?php echo $session['entry_end']; ?></span>
 									</div>
 								</div>
 								<div class="right-in-box pull-right">
-									<a href="<?php echo $offcampus['detail_link']; ?>" class="btn btn-danger">詳細</a>
+									<a href="<?php echo $session['detail_link']; ?>" class="btn btn-danger">詳細</a>
 								</div>
 							</div>
 						</div>

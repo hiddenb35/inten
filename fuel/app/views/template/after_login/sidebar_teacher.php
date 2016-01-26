@@ -39,20 +39,11 @@
 		</li>
 		<li class="treeview">
 			<a href="/">
-				<i class="fa ion-university"></i> <span>学内説明会情報</span> <i class="fa fa-angle-down pull-right"></i>
+				<i class="fa ion-university"></i> <span>説明会情報</span> <i class="fa fa-angle-down pull-right"></i>
 			</a>
 			<ul class="treeview-menu">
-				<li><a href="/recruit/oncampus/list"><i class="fa fa-circle-o"></i>学内説明会一覧</a></li>
-				<li><a href="/recruit/oncampus/form"><i class="fa fa-circle-o"></i>学内説明会追加</a></li>
-			</ul>
-		</li>
-		<li class="treeview">
-			<a href="/">
-				<i class="fa ion-university"></i> <span>学外説明会情報</span> <i class="fa fa-angle-down pull-right"></i>
-			</a>
-			<ul class="treeview-menu">
-				<li><a href="/recruit/offcampus/list"><i class="fa fa-circle-o"></i>学外説明会一覧</a></li>
-				<li><a href="/recruit/offcampus/form"><i class="fa fa-circle-o"></i>学外説明会追加</a></li>
+				<li><a href="/session/list"><i class="fa fa-circle-o"></i>説明会一覧</a></li>
+				<li><a href="/session/form"><i class="fa fa-circle-o"></i>説明会追加</a></li>
 			</ul>
 		</li>
 		<li>

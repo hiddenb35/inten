@@ -1,13 +1,13 @@
 <?php
 
-class Model_Offparticipant extends \Orm\Model
+class Model_Participant extends \Orm\Model
 {
-	protected static $_table_name = 'offparticipant';
+	protected static $_table_name = 'participant';
 	protected static $_primary_key = array('id');
 
 	protected static $properties = array(
 		'id',
-		'offcampus_id' => array(
+		'session_id' => array(
 			'data_type' => 'int',
 		),
 		'student_id' => array(
@@ -28,9 +28,9 @@ class Model_Offparticipant extends \Orm\Model
 
 
 	protected static $_belongs_to = array(
-		'offcampus' => array(
-			'model_to' => 'Model_Offcampus',
-			'key_from' => 'offcampus_id',
+		'session' => array(
+			'model_to' => 'Model_Session',
+			'key_from' => 'session_id',
 			'key_to'   => 'id',
 			'cascade_save' => false,
 			'cascade_delete' => false,
@@ -48,7 +48,7 @@ class Model_Offparticipant extends \Orm\Model
 	{
 		$val = Validation::forge();
 		$val->add_callable('exvalidation');
-		$val->add_field('offcampus_id', '学外説明会ID', 'required|max_length[10]')->add_rule('exist_id', 'offcampus');
+		$val->add_field('session_id', '学外説明会ID', 'required|max_length[10]')->add_rule('exist_id', 'session');
 		$val->add_field('student_id', '生徒ID', 'required|max_length[10]')->add_rule('exist_id', 'student');
 		return $val;
 	}

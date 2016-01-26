@@ -14,13 +14,8 @@
 			</a>
 		</li>
 		<li class="treeview">
-			<a href="/recruit/oncampus/list">
-				<i class="fa ion-clock"></i> <span>学内説明会情報</span>
-			</a>
-		</li>
-		<li class="treeview">
-			<a href="/recruit/offcampus/list">
-				<i class="fa ion-clock"></i> <span>学外説明会情報</span>
+			<a href="/session/list">
+				<i class="fa ion-clock"></i> <span>説明会情報一覧</span>
 			</a>
 		</li>
 		<li class="treeview">
