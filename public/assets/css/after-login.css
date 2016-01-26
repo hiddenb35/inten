@@ -205,6 +205,9 @@
 /*************************************/
 
 /***********時間割表示画面************/
+#TIMETABLE_VIEW tbody {
+	background-color: #fff;
+}
 #TIMETABLE_VIEW td {
 	cursor: pointer;
 }
