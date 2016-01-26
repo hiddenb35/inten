@@ -47,7 +47,7 @@
 											</td>
 										</tr>
 										<tr class="btn-area">
-											<td colspan="2" class="text-right">
+											<td colspan="2" class="text-center">
 												<a href="<?php echo $offcampus['detail_link']; ?>" class="btn btn-primary">詳細</a>
 											</td>
 										</tr>
