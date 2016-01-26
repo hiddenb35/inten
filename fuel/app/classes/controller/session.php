@@ -2,12 +2,12 @@
 
 class Controller_Session extends Controller_Loggedin
 {
-	const FORM_VIEW = 'session/on_campus_form';
-	const CONFIRM_VIEW = 'session/on_campus_confirm';
-	const LIST_VIEW_FOR_STUDENT = 'session/on_campus_list';
-	const LIST_VIEW_FOR_TEACHER = 'session/teacher_on_campus_list';
-	const DETAIL_VIEW = 'session/on_campus_detail';
-	const FINISHED_VIEW = 'session/teacher_on_campus_deadline';
+	const FORM_VIEW = 'session/form';
+	const CONFIRM_VIEW = 'session/confirm';
+	const LIST_VIEW_FOR_STUDENT = 'session/list';
+	const LIST_VIEW_FOR_TEACHER = 'session/teacher_for_list';
+	const DETAIL_VIEW = 'session/detail';
+	const FINISHED_VIEW = 'session/deadline';
 	const PER_PAGE = 10;
 
 	public function action_form()
