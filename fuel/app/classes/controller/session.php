@@ -91,7 +91,7 @@ class Controller_Session extends Controller_Loggedin
 
 			$session->save();
 
-			Response::redirect('/recruit/session/list');
+			Response::redirect('/session/list');
 
 		}
 
@@ -103,7 +103,7 @@ class Controller_Session extends Controller_Loggedin
 	{
 		$pagination = Pagination::forge('pagination', array(
 			'name' => 'bootstrap3',
-			'pagination_url' => Uri::create('recruit/session/list'),
+			'pagination_url' => Uri::create('session/list'),
 			'total_items' => Model_session::count(),
 			'per_page' => self::PER_PAGE,
 			'uri_segment' => 'page',
@@ -125,7 +125,7 @@ class Controller_Session extends Controller_Loggedin
 	{
 		$pagination = Pagination::forge('pagination', array(
 			'name' => 'bootstrap3',
-			'pagination_url' => Uri::create('recruit/session/finished'),
+			'pagination_url' => Uri::create('session/finished'),
 			'total_items' => Model_session::count(array('where' => array(array('entry_end', '<', time())))),
 			'per_page' => self::PER_PAGE,
 			'uri_segment' => 'page',
