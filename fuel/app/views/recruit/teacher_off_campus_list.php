@@ -28,10 +28,10 @@
 						<div class="col-sm-6">
 							<div class="box inner-box">
 								<div class="box-header inner-box-header clearfix">
-									<span>
+									<a href="<?php echo $offcampus['detail_link']; ?>">
 										<span class="label bg-red new-label" data-date="<?php if(!is_null($offcampus['updated_at'])){echo $offcampus['updated_at'];} else {echo $offcampus['created_at'];} ?>">NEW!</span>
 										<?php echo $offcampus['company_name']; ?>
-									</span>
+									</a>
 								</div>
 								<div class="box-body inner-box-body clearfix">
 									<table class="table table-base">
