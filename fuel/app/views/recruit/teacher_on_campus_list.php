@@ -28,7 +28,7 @@
 					<div class="col-sm-6">
 						<div class="box inner-box">
 							<div class="box-header inner-box-header clearfix">
-								<span class="pull-left">
+								<span>
 									<span class="label bg-red new-label" data-date="<?php if(!is_null($oncampus['updated_at'])){echo $oncampus['updated_at'];} else {echo $oncampus['created_at'];} ?>">NEW!</span>
 									<?php echo $oncampus['company_name']; ?>
 								</span>
