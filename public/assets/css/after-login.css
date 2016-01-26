@@ -668,6 +668,12 @@
 #ON_CAMPUS_LIST .inner-box-body {
 	padding: 0;
 }
+#ON_CAMPUS_LIST .btn-area td {
+	padding: 8px 20px;
+}
+#ON_CAMPUS_LIST .btn-area .btn {
+	width: 80%;
+}
 #ON_CAMPUS_LIST .inner-title {
 	font-weight: bold;
 }
@@ -750,6 +756,12 @@
 }
 #TEACHER_ON_CAMPUS_LIST .inner-box-body {
 	padding: 0;
+}
+#TEACHER_ON_CAMPUS_LIST .btn-area td {
+	padding: 8px 20px;
+}
+#TEACHER_ON_CAMPUS_LIST .btn-area .btn {
+	width: 40%;
 }
 #TEACHER_ON_CAMPUS_LIST .left-box-color {
 	color: #444;
