@@ -197,6 +197,30 @@ class Controller_Session extends Controller_Loggedin
 
 	public function action_participate()
 	{
-		// todo 説明会参加処理
+		if(!$this->is_student())
+		{
+			throw new HttpNotFoundException;
+		}
+
+		$session_id = Input::get('id');
+		$student_id = $this->get_id();
+
+		$count = Model_Participant::count(array(
+			'where' => array(
+				array('session_id', '=', $session_id),
+				array('student_id', '=', $student_id),
+			),
+		));
+
+		if($count)
+		{
+			throw new HttpServerErrorException;
+		}
+
+		$participant = Model_Participant::forge();
+		$participant->session_id = $session_id;
+		$participant->student_id = $student_id;
+		$participant->save();
+		Response::redirect('session/detail?id=' . $session_id);
 	}
 }
