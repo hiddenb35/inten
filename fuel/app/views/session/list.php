@@ -21,7 +21,7 @@
 									<table class="table table-base">
 										<tr>
 											<th>締め切り</th>
-											<td><?php echo $session['entry_end']; ?></td>
+											<td><?php echo date('Y/m/d H:i', $session['entry_end']); ?></td>
 										</tr>
 										<tr>
 											<th>業種</th>
