@@ -179,19 +179,24 @@ class Controller_Session extends Controller_Loggedin
 	}
 
 	public function action_participant()
-{
-	$session_id = Input::get('id');
-	if(is_null($session_id))
 	{
-		throw new HttpNotFoundException;
+		$session_id = Input::get('id');
+		if(is_null($session_id))
+		{
+			throw new HttpNotFoundException;
+		}
+
+		$session = Model_Session::find($session_id);
+		$view = View::forge(self::PARTICIPANT_VIEW);
+		$view->set('session', Model_Session::to_list($session));
+		$view->set('participant_lists', Model_Participant::to_lists($session));
+
+		$this->template->title = '参加者一覧';
+		$this->template->content = $view;
 	}
 
-	$session = Model_Session::find($session_id);
-	$view = View::forge(self::PARTICIPANT_VIEW);
-	$view->set('session', Model_Session::to_list($session));
-	$view->set('participant_lists', Model_Participant::to_lists($session));
-
-	$this->template->title = '参加者一覧';
-	$this->template->content = $view;
-}
+	public function action_participate()
+	{
+		// todo 説明会参加処理
+	}
 }
