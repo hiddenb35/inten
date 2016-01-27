@@ -141,19 +141,19 @@ class Model_Session extends \Orm\Model
 		return $val;
 	}
 
-	public static function to_lists($sessions)
+	public static function to_lists($sessions, $student_id = null)
 	{
 		$lists = array();
 
 		foreach($sessions as $session)
 		{
-			$lists[] = self::to_list($session);
+			$lists[] = self::to_list($session, $student_id);
 		}
 
 		return $lists;
 	}
 
-	public static function to_list($session)
+	public static function to_list($session, $student_id = null)
 	{
 		$list = array();
 
@@ -183,6 +183,19 @@ class Model_Session extends \Orm\Model
 		$list['delete_link'] = Uri::create('session/delete', array(), array('id' => $session['id']));
 		$list['created_at'] = $session['created_at'];
 		$list['updated_at'] = $session['updated_at'];
+
+		if(!is_null($student_id))
+		{
+			$list['is_participant'] = false;
+			foreach(Model_Student::find($student_id)->participants as $participant)
+			{
+				if($session['id'] === $participant->id)
+				{
+					$list['is_participant'] = true;
+					break;
+				}
+			}
+		}
 
 		return $list;
 	}
