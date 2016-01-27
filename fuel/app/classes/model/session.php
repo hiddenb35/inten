@@ -191,7 +191,7 @@ class Model_Session extends \Orm\Model
 			$list['is_participant'] = false;
 			foreach(Model_Student::find($student_id)->participants as $participant)
 			{
-				if($session['id'] === $participant->id)
+				if($session['id'] === $participant->session_id)
 				{
 					$list['is_participant'] = true;
 					break;
