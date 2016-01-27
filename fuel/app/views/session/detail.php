@@ -105,7 +105,16 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row"></div>
+			<div class="row text-center">
+				<!-- todo 実際のリンクを設定 -->
+				<?php if(isset($session['is_participant'])): ?>
+					<?php if($session['is_participant']): ?>
+						<a href="#" class="btn btn-danger">参加を取り消す</a>
+					<?php else: ?>
+						<a href="#" class="btn btn-primary">参加する</a>
+					<?php endif; ?>
+				<?php endif; ?>
 			</div>
 			<a class="back pull-right hidden-xs" onclick="history.back();">
 				<i class="fa fa-arrow-circle-o-left"></i>
