@@ -115,8 +115,16 @@ class Controller_Session extends Controller_Loggedin
 			'offset' => $pagination->offset,
 		));
 
-		$view = ($this->is_student()) ? View::forge(self::LIST_VIEW_FOR_STUDENT) : View::forge(self::LIST_VIEW_FOR_TEACHER);
-		$view->set('session_lists', Model_session::to_lists($sessions));
+		if($this->is_student())
+		{
+			$view = View::forge(self::LIST_VIEW_FOR_STUDENT);
+			$view->set('session_lists', Model_session::to_lists($sessions, $this->get_id()));
+		}
+		else
+		{
+			$view = View::forge(self::LIST_VIEW_FOR_TEACHER);
+			$view->set('session_lists', Model_session::to_lists($sessions));
+		}
 
 		$this->template->title = '説明会一覧';
 		$this->template->content = $view;
@@ -157,7 +165,14 @@ class Controller_Session extends Controller_Loggedin
 
 		$session = Model_session::find($session_id);
 		$view = View::forge(self::DETAIL_VIEW);
-		$view->set('session', Model_session::to_list($session));
+		if($this->is_student())
+		{
+			$view->set('session', Model_session::to_list($session, $this->get_id()));
+		}
+		else
+		{
+			$view->set('session', Model_session::to_list($session));
+		}
 
 		$this->template->title = '説明会詳細';
 		$this->template->content = $view;
