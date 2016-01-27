@@ -110,9 +110,9 @@
 				<!-- todo 実際のリンクを設定 -->
 				<?php if(isset($session['is_participant'])): ?>
 					<?php if($session['is_participant']): ?>
-						<a href="#" class="btn btn-danger">参加を取り消す</a>
+						<a href="<?php echo $session['cancel_link']; ?>" class="btn btn-danger">参加を取り消す</a>
 					<?php else: ?>
-						<a href="#" class="btn btn-primary">参加する</a>
+						<a href="<?php echo $session['participate_link']; ?>" class="btn btn-primary">参加する</a>
 					<?php endif; ?>
 				<?php endif; ?>
 			</div>
