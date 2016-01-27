@@ -102,13 +102,25 @@ class Controller_Session extends Controller_Loggedin
 
 	public function action_list()
 	{
-		$pagination = Pagination::forge('pagination', array(
+		static $orders = array(
+			'participated' => array(
+
+			),
+			'finished' => array(
+
+			),
+		);
+		$order = (array_key_exists(Input::get('order'), $orders)) ? $orders[Input::get('order')] : null;
+		$args = array(
 			'name' => 'bootstrap3',
 			'pagination_url' => Uri::create('session/list'),
 			'total_items' => Model_session::count(),
 			'per_page' => self::PER_PAGE,
 			'uri_segment' => 'page',
-		));
+		);
+
+
+		$pagination = Pagination::forge('pagination', $args);
 
 		$sessions = Model_session::find('all', array(
 			'limit' => $pagination->per_page,
