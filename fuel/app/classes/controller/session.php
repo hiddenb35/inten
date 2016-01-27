@@ -223,4 +223,30 @@ class Controller_Session extends Controller_Loggedin
 		$participant->save();
 		Response::redirect('session/detail?id=' . $session_id);
 	}
+
+	public function action_cancel()
+	{
+		if(!$this->is_student())
+		{
+			throw new HttpNotFoundException;
+		}
+
+		$session_id = Input::get('id');
+		$student_id = $this->get_id();
+
+		$participant = Model_Participant::find('first', array(
+			'where' => array(
+				array('session_id', '=', $session_id),
+				array('student_id', '=', $student_id),
+			),
+		));
+
+		if(is_null($participant))
+		{
+			throw new HttpServerErrorException;
+		}
+
+		$participant->delete();
+		Response::redirect('session/detail?id=' . $session_id);
+	}
 }
