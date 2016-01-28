@@ -3,7 +3,7 @@
 	<div class="container-fluid">
 		<div class="box">
 			<div class="box-header text-center outer-box-header clearfix">
-				<a href="/session/finished" class="btn btn-danger pull-right">終了済み説明会</a>
+				<a href="/session/list?order=finished" class="btn btn-danger pull-right">終了済み説明会</a>
 			</div>
 			<div class="outer-box-body">
 				<div class="row">

@@ -3,8 +3,8 @@
 	<div class="container-fluid">
 		<div class="box">
 			<div class="box-header text-right outer-box-header clearfix">
-				<a href="#" class="btn btn-primary">参加済み説明会</a>
-				<a href="/session/finished" class="btn btn-danger">終了済み説明会</a>
+				<a href="/session/list?order=participated" class="btn btn-primary">参加済み説明会</a>
+				<a href="/session/list?order=finished" class="btn btn-danger">終了済み説明会</a>
 			</div>
 			<div class="outer-box-body">
 				<div class="row">
