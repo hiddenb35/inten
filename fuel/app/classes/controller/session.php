@@ -102,27 +102,43 @@ class Controller_Session extends Controller_Loggedin
 
 	public function action_list()
 	{
-		static $orders = array(
-			'participated' => array(
+		$order = Input::get('order');
 
-			),
-			'finished' => array(
-
-			),
-		);
-		$order = (array_key_exists(Input::get('order'), $orders)) ? $orders[Input::get('order')] : null;
-		$args = array(
+		$pagination_args = array(
 			'name' => 'bootstrap3',
-			'pagination_url' => Uri::create('session/list'),
 			'total_items' => Model_session::count(),
 			'per_page' => self::PER_PAGE,
 			'uri_segment' => 'page',
 		);
 
+		$args = array();
+		switch($order) {
+			// 参加済み説明会
+			case 'participated':
+				$args = array('related' => array(
+					'participants' => array(
+						'where' => array(
+							array('student_id', '=' , $this->get_id()),
+						)
+					)
+				));
+				break;
+			// 終了済み説明会
+			case 'finished':
+				$args = array('where' => array(
+					array('entry_end', '<', time())
+				));
+				break;
+		}
+		$pagination_args['total_items'] = Model_Session::count($args);
 
-		$pagination = Pagination::forge('pagination', $args);
+
+		$pagination = Pagination::forge('pagination', $pagination_args);
+
 
 		$sessions = Model_session::find('all', array(
+			'related' => (isset($args['related'])) ? $args['related'] : array(),
+			'where' => (isset($args['where'])) ? $args['where'] : array(),
 			'limit' => $pagination->per_page,
 			'offset' => $pagination->offset,
 		));
