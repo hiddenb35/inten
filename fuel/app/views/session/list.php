@@ -1,27 +1,10 @@
 <!-- Main content -->
 <section id="ON_CAMPUS_LIST" class="content">
 	<div class="container-fluid">
-		<div class="hd-btn text-right">
-			<a href="/session/finished" class="btn btn-primary">締め切りログ</a>
-		</div>
 		<div class="box">
-			<div class="box-header text-center outer-box-header clearfix">
-				<a href="/session/finished" class="btn btn-primary pull-right">締め切りログ</a>
-
-				<div class="row pull-left button-box">
-					<a href="#" class="btn btn-default tab col-xs-6 col-sm-3">新着
-						<i class="fa fa-fw fa-arrow-up"></i>
-					</a>
-					<a href="#" class="btn btn-default tab col-xs-6 col-sm-3">新着
-						<i class="fa fa-fw fa-arrow-down"></i>
-					</a>
-					<a href="#" class="btn btn-default tab col-xs-6 col-sm-3">締め切り
-						<i class="fa fa-fw fa-arrow-up"></i>
-					</a>
-					<a href="#" class="btn btn-default tab col-xs-6 col-sm-3">締め切り
-						<i class="fa fa-fw fa-arrow-down"></i>
-					</a>
-				</div>
+			<div class="box-header text-right outer-box-header clearfix">
+				<a href="/session/list?order=participated" class="btn btn-primary">参加済み説明会</a>
+				<a href="/session/list?order=finished" class="btn btn-danger">終了済み説明会</a>
 			</div>
 			<div class="outer-box-body">
 				<div class="row">
@@ -38,7 +21,7 @@
 									<table class="table table-base">
 										<tr>
 											<th>締め切り</th>
-											<td><?php echo $session['entry_end']; ?></td>
+											<td><?php echo date('Y/m/d H:i', $session['entry_end']); ?></td>
 										</tr>
 										<tr>
 											<th>業種</th>

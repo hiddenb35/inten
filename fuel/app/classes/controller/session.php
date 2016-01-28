@@ -102,21 +102,57 @@ class Controller_Session extends Controller_Loggedin
 
 	public function action_list()
 	{
-		$pagination = Pagination::forge('pagination', array(
+		$order = Input::get('order');
+
+		$pagination_args = array(
 			'name' => 'bootstrap3',
-			'pagination_url' => Uri::create('session/list'),
 			'total_items' => Model_session::count(),
 			'per_page' => self::PER_PAGE,
 			'uri_segment' => 'page',
-		));
+		);
+
+		$args = array();
+		switch($order) {
+			// 参加済み説明会
+			case 'participated':
+				$args = array('related' => array(
+					'participants' => array(
+						'where' => array(
+							array('student_id', '=' , $this->get_id()),
+						)
+					)
+				));
+				break;
+			// 終了済み説明会
+			case 'finished':
+				$args = array('where' => array(
+					array('entry_end', '<', time())
+				));
+				break;
+		}
+		$pagination_args['total_items'] = Model_Session::count($args);
+
+
+		$pagination = Pagination::forge('pagination', $pagination_args);
+
 
 		$sessions = Model_session::find('all', array(
+			'related' => (isset($args['related'])) ? $args['related'] : array(),
+			'where' => (isset($args['where'])) ? $args['where'] : array(),
 			'limit' => $pagination->per_page,
 			'offset' => $pagination->offset,
 		));
 
-		$view = ($this->is_student()) ? View::forge(self::LIST_VIEW_FOR_STUDENT) : View::forge(self::LIST_VIEW_FOR_TEACHER);
-		$view->set('session_lists', Model_session::to_lists($sessions));
+		if($this->is_student())
+		{
+			$view = View::forge(self::LIST_VIEW_FOR_STUDENT);
+			$view->set('session_lists', Model_session::to_lists($sessions, $this->get_id()));
+		}
+		else
+		{
+			$view = View::forge(self::LIST_VIEW_FOR_TEACHER);
+			$view->set('session_lists', Model_session::to_lists($sessions));
+		}
 
 		$this->template->title = '説明会一覧';
 		$this->template->content = $view;
@@ -157,26 +193,88 @@ class Controller_Session extends Controller_Loggedin
 
 		$session = Model_session::find($session_id);
 		$view = View::forge(self::DETAIL_VIEW);
-		$view->set('session', Model_session::to_list($session));
+		if($this->is_student())
+		{
+			$view->set('session', Model_session::to_list($session, $this->get_id()));
+		}
+		else
+		{
+			$view->set('session', Model_session::to_list($session));
+		}
 
 		$this->template->title = '説明会詳細';
 		$this->template->content = $view;
 	}
 
 	public function action_participant()
-{
-	$session_id = Input::get('id');
-	if(is_null($session_id))
 	{
-		throw new HttpNotFoundException;
+		$session_id = Input::get('id');
+		if(is_null($session_id))
+		{
+			throw new HttpNotFoundException;
+		}
+
+		$session = Model_Session::find($session_id);
+		$view = View::forge(self::PARTICIPANT_VIEW);
+		$view->set('session', Model_Session::to_list($session));
+		$view->set('participant_lists', Model_Participant::to_lists($session));
+
+		$this->template->title = '参加者一覧';
+		$this->template->content = $view;
 	}
 
-	$session = Model_Session::find($session_id);
-	$view = View::forge(self::PARTICIPANT_VIEW);
-	$view->set('session', Model_Session::to_list($session));
-	$view->set('participant_lists', Model_Participant::to_lists($session));
+	public function action_participate()
+	{
+		if(!$this->is_student())
+		{
+			throw new HttpNotFoundException;
+		}
 
-	$this->template->title = '参加者一覧';
-	$this->template->content = $view;
-}
+		$session_id = Input::get('id');
+		$student_id = $this->get_id();
+
+		$count = Model_Participant::count(array(
+			'where' => array(
+				array('session_id', '=', $session_id),
+				array('student_id', '=', $student_id),
+			),
+		));
+
+		if($count)
+		{
+			throw new HttpServerErrorException;
+		}
+
+		$participant = Model_Participant::forge();
+		$participant->session_id = $session_id;
+		$participant->student_id = $student_id;
+		$participant->save();
+		Response::redirect('session/detail?id=' . $session_id);
+	}
+
+	public function action_cancel()
+	{
+		if(!$this->is_student())
+		{
+			throw new HttpNotFoundException;
+		}
+
+		$session_id = Input::get('id');
+		$student_id = $this->get_id();
+
+		$participant = Model_Participant::find('first', array(
+			'where' => array(
+				array('session_id', '=', $session_id),
+				array('student_id', '=', $student_id),
+			),
+		));
+
+		if(is_null($participant))
+		{
+			throw new HttpServerErrorException;
+		}
+
+		$participant->delete();
+		Response::redirect('session/detail?id=' . $session_id);
+	}
 }

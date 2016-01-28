@@ -704,21 +704,6 @@
 		width: 100%;
 	}
 }
-@media only screen and (max-width: 767px) {
-	#ON_CAMPUS_LIST .button-box {
-		width: 100% !important;
-		margin: 0 !important;
-	}
-	#ON_CAMPUS_LIST .hd-btn {
-		display: block;
-	}
-	#ON_CAMPUS_LIST .outer-box-header > a {
-		display: none;
-	}
-	#ON_CAMPUS_LIST .tab {
-		padding: 16px;
-	}
-}
 
 /*********************************************************/
 
@@ -789,38 +774,6 @@
 #TEACHER_ON_CAMPUS_LIST .box-header > .row {
 	margin: -10px;
 	margin-top: 1px;
-}
-#TEACHER_ON_CAMPUS_LIST .outer-box-header.clearfix > .pull-right {
-	width: 20%;
-}
-#TEACHER_ON_CAMPUS_LIST .outer-box-header.clearfix > .pull-left {
-	width: 80%;
-}
-#TEACHER_ON_CAMPUS_LIST .hd-btn {
-	display: none;
-}
-@media only screen and (max-width: 549px) {
-	#TEACHER_ON_CAMPUS_LIST .outer-box-header.clearfix > .pull-left {
-		width: 100%;
-	}
-}
-@media only screen and (max-width: 767px) {
-	#TEACHER_ON_CAMPUS_LIST .button-box {
-		width: 100% !important;
-		margin: 0 !important;
-	}
-	#TEACHER_ON_CAMPUS_LIST .hd-btn {
-		display: block;
-	}
-	#TEACHER_ON_CAMPUS_LIST .outer-box-header > a {
-		display: none;
-	}
-	#TEACHER_ON_CAMPUS_LIST .tab {
-		padding: 16px;
-	}
-}
-#TEACHER_ON_CAMPUS_LIST .new-label {
-	display: none;
 }
 
 /*********************************************************/

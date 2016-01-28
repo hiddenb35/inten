@@ -84,6 +84,13 @@ class Model_Student extends \Orm\Model
 			'cascade_save' => false,
 			'cascade_delete' => false,
 		),
+		'participants' => array(
+			'model_to' => 'Model_Participant',
+			'key_from' => 'id',
+			'key_to' => 'student_id',
+			'cascade_save' => false,
+			'cascade_delete' => false,
+		),
 	);
 
 	protected static $_belongs_to = array(
