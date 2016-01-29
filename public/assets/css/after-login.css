@@ -370,10 +370,7 @@
 
 
 /*************出席取るクラス一覧画面******************/
-#RESPONSIBLE_LIST img {
-	margin-bottom: -8px;
-}
-#RESPONSIBLE_LIST .box {
+#RESPONSIBLE_LIST .lesson-box {
 	background: linear-gradient(135deg, #fff 50%, #3C8DBC);
 	box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.55);
 	-webkit-box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.55);
