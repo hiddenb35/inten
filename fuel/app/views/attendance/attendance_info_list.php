@@ -73,7 +73,9 @@
 										<h3><a href="#">ビジネスマナー</a></h3>
 									</div>
 									<div class="col-sm-4">
-										<button type="button" class="btn btn-primary" style="margin-top:10%;">詳細</button>
+										<a class="btn btn-social btn-search" style="margin-top:10%;">
+											<i class="fa fa-search"></i>詳細
+										</a>
 									</div>
 								</div>
 							</div>
@@ -99,7 +101,7 @@
 							<div class="row">
 								<div class="hidden-xs col-sm-6" id="highcharts3d"></div>
 								<div class="col-sm-6">
-									<button type="button" class="btn btn-primary" style="margin-bottom:5%;">詳細</button>
+									<a class="btn btn-social btn-search" style="margin-bottom:5%;"><i class="fa fa-search"></i>詳細</a>
 									<table class="table">
 										<tr class="bg-primary"><th>学籍番号</th><th>学籍番号</th><th>学籍番号</th></tr>
 										<tr><td>名前</td><td>名前</td><td>名前</td></tr>
