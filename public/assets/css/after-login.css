@@ -1000,6 +1000,9 @@
 #ATTENDANCE_RATE_DETAIL .attendance-log {
 	margin: 0 3%;
 }
+#ATTENDANCE_RATE_DETAIL .bg-primary {
+	background-color: #337ab7 !important;
+}
 /*********************************************************/
 
 /******************学内説明会詳細画面*********************/
