@@ -95,3 +95,24 @@ html, body {
 .table-base tbody tr {
 	border-bottom: 2px solid #fff;
 }
+
+/* ボタン */
+.btn-search:hover {
+	color: #fff;
+	background-color: #2b2b2b;
+	border-color: rgba(0,0,0,0.2);
+}
+.btn-search {
+	color: #fff;
+	background-color: #444;
+	border-color: rgba(0,0,0,0.2);
+}
+.btn-edit:hover {
+	color: #000;
+	border-color: #aaa;
+	border-color: rgba(0,0,0,0.2);
+}
+.btn-edit {
+	color: #000;
+	background-color: #f4f4f4;
+}
