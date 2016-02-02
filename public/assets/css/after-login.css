@@ -366,6 +366,12 @@
 	-moz-border-radius: 15px 15px 15px 15px;
 	-webkit-border-radius: 15px 15px 15px 15px;
 }
+#ATTENDANCE_RATE_LIST .table-base {
+	border-top: 0;
+}
+#ATTENDANCE_RATE_LIST th {
+	border-top: 2px solid #fff;
+}
 /*****************************************************/
 
 
@@ -947,6 +953,9 @@
 }
 #ATTENDANCE_RATE_DETAIL .attendance-log {
 	margin: 0 3%;
+}
+#ATTENDANCE_RATE_DETAIL .bg-primary {
+	background-color: #337ab7 !important;
 }
 /*********************************************************/
 

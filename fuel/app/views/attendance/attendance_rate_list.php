@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-md-offset-1 col-md-10">
 				<div class="table-responsive">
-					<table class="table table-bordered table-striped table-hover table-condensed">
+					<table class="table table-base table-condensed table-responsive">
 						<thead class="row">
 						<tr>
 							<th class="col-sm-3 col-xs-5">学籍番号</th>
