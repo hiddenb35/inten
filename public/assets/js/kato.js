@@ -167,6 +167,7 @@ $(function(){
 
 	//*********************出席管理画面*********************
 	var setcolor = ["#3c8dbc","#f39c12","#dd4b39"];
+	var setlabel = ["出","遅","欠"];
 	$("#TAKE_ATTENDANCE #attendance").click(function(event) {
 		var i = 0;
 		function setName(){
@@ -185,6 +186,7 @@ $(function(){
 			var index = $('.modal-body input').index(this);
 			if(index === 1)index = 2;
 			$(".panel").eq(i).find('.create-circle').css('background-color', setcolor[index]);
+			$(".panel").eq(i).find('.create-circle').html("<span>" + setlabel[index] + "</span>");
 			i++;
 			setName();
 		});
@@ -199,6 +201,8 @@ $(function(){
 	$("#TAKE_ATTENDANCE .panel button").click(function(event) {
 		var index = $(this).closest('.panel').find('button').index(this);
 		$(this).closest(".panel").find('.create-circle').css('background-color',setcolor[index]);
+		$(this).closest('.panel').find('.create-circle').html("<span>" + setlabel[index] + "</span>");
+
 	});
 
 	$("#TAKE_ATTENDANCE .box-footer button").click(function(event) {
@@ -206,6 +210,11 @@ $(function(){
 		$(this).closest('.box').children('.box-header').css('border-bottom-color',setcolor[index]);
 		$(this).closest('.box').find('.box-header button').click();
 	});
+	//resetbutton
+	$('#TAKE_ATTENDANCE reset').click(function() {
+		location.reload();
+	});
+
 
 	//*********************学内説明会登録画面*********************
 
